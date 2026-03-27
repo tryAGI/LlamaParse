@@ -2,6 +2,7 @@ site_name: LlamaParse .NET Documentation
 nav:
 - Overview: index.md
 - Guides:
+  - Authentication: guides/authentication.md
   - MEAI Integration: guides/meai.md
 # EXAMPLES:START
 # EXAMPLES:END
