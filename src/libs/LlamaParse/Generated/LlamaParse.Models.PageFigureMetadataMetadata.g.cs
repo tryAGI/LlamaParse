@@ -1,0 +1,18 @@
+
+#nullable enable
+
+namespace LlamaParse
+{
+    /// <summary>
+    /// Metadata for the figure
+    /// </summary>
+    public sealed partial class PageFigureMetadataMetadata
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

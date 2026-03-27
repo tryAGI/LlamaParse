@@ -1,0 +1,49 @@
+#nullable enable
+
+namespace LlamaParse
+{
+    public partial interface IBetaClient
+    {
+        /// <summary>
+        /// Create Spreadsheet Job<br/>
+        /// Create a spreadsheet parsing job.<br/>
+        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LlamaParse.SpreadsheetJob> CreateSpreadsheetJobApiV1BetaSheetsJobsPostAsync(
+
+            global::LlamaParse.SpreadsheetJobCreate request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Spreadsheet Job<br/>
+        /// Create a spreadsheet parsing job.<br/>
+        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
+        /// <param name="fileId">
+        /// The ID of the file to parse
+        /// </param>
+        /// <param name="config">
+        /// Configuration for the parsing job
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::LlamaParse.SpreadsheetJob> CreateSpreadsheetJobApiV1BetaSheetsJobsPostAsync(
+            global::System.Guid fileId,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::LlamaParse.SpreadsheetParsingConfig? config = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

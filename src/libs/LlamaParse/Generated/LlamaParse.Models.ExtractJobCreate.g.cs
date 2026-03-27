@@ -1,0 +1,105 @@
+
+#pragma warning disable CS0618 // Type or member is obsolete
+
+#nullable enable
+
+namespace LlamaParse
+{
+    /// <summary>
+    /// Schema for creating an extraction job.
+    /// </summary>
+    public sealed partial class ExtractJobCreate
+    {
+        /// <summary>
+        /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("priority")]
+        public global::LlamaParse.ExtractJobCreatePriority2? Priority { get; set; }
+
+        /// <summary>
+        /// Outbound webhook endpoints to notify on job status changes
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configurations")]
+        public global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? WebhookConfigurations { get; set; }
+
+        /// <summary>
+        /// The id of the extraction agent
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extraction_agent_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid ExtractionAgentId { get; set; }
+
+        /// <summary>
+        /// The id of the file
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid FileId { get; set; }
+
+        /// <summary>
+        /// The data schema to override the extraction agent's data schema with
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_schema_override")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>))]
+        public global::LlamaParse.AnyOf<object, string, object>? DataSchemaOverride { get; set; }
+
+        /// <summary>
+        /// The config to override the extraction agent's config with
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("config_override")]
+        public global::LlamaParse.ExtractConfig? ConfigOverride { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtractJobCreate" /> class.
+        /// </summary>
+        /// <param name="priority">
+        /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
+        /// </param>
+        /// <param name="webhookConfigurations">
+        /// Outbound webhook endpoints to notify on job status changes
+        /// </param>
+        /// <param name="extractionAgentId">
+        /// The id of the extraction agent
+        /// </param>
+        /// <param name="fileId">
+        /// The id of the file
+        /// </param>
+        /// <param name="dataSchemaOverride">
+        /// The data schema to override the extraction agent's data schema with
+        /// </param>
+        /// <param name="configOverride">
+        /// The config to override the extraction agent's config with
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ExtractJobCreate(
+            global::System.Guid extractionAgentId,
+            global::System.Guid fileId,
+            global::LlamaParse.ExtractJobCreatePriority2? priority,
+            global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations,
+            global::LlamaParse.AnyOf<object, string, object>? dataSchemaOverride,
+            global::LlamaParse.ExtractConfig? configOverride)
+        {
+            this.ExtractionAgentId = extractionAgentId;
+            this.FileId = fileId;
+            this.Priority = priority;
+            this.WebhookConfigurations = webhookConfigurations;
+            this.DataSchemaOverride = dataSchemaOverride;
+            this.ConfigOverride = configOverride;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtractJobCreate" /> class.
+        /// </summary>
+        public ExtractJobCreate()
+        {
+        }
+    }
+}

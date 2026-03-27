@@ -1,0 +1,26 @@
+#nullable enable
+
+namespace LlamaParse
+{
+    public partial interface IBetaClient
+    {
+        /// <summary>
+        /// Get Directory File<br/>
+        /// Get a file by its directory_file_id within the specified directory. If you're trying to get a file by its unique_id, use the list endpoint with a filter instead.
+        /// </summary>
+        /// <param name="directoryId"></param>
+        /// <param name="directoryFileId"></param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryFileResponse> GetDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesDirectoryFileIdGetAsync(
+            string directoryId,
+            string directoryFileId,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

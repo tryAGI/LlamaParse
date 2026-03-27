@@ -1,0 +1,47 @@
+#nullable enable
+
+namespace LlamaParse
+{
+    public partial interface IEmbeddingModelConfigsClient
+    {
+        /// <summary>
+        /// Create a new Embedding Model Configuration<br/>
+        /// Create a new embedding model configuration within a specified project.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LlamaParse.EmbeddingModelConfig> CreateEmbeddingModelConfigApiV1EmbeddingModelConfigsPostAsync(
+
+            global::LlamaParse.EmbeddingModelConfigCreate request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a new Embedding Model Configuration<br/>
+        /// Create a new embedding model configuration within a specified project.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
+        /// <param name="name">
+        /// The name of the embedding model config.
+        /// </param>
+        /// <param name="embeddingConfig">
+        /// The embedding configuration for the embedding model config.
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::LlamaParse.EmbeddingModelConfig> CreateEmbeddingModelConfigApiV1EmbeddingModelConfigsPostAsync(
+            string name,
+            global::LlamaParse.EmbeddingConfig2 embeddingConfig,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

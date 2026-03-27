@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Nuget">
+    <Description>C# SDK based on LlamaParse OpenAPI specification.</Description>
+    <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;generated;nswag</PackageTags>
+  </PropertyGroup>
+
+</Project>

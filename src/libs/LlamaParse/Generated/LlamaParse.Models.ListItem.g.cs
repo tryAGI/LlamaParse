@@ -1,0 +1,96 @@
+
+#pragma warning disable CS0618 // Type or member is obsolete
+
+#nullable enable
+
+namespace LlamaParse
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class ListItem
+    {
+        /// <summary>
+        /// List item type<br/>
+        /// Default Value: list
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
+        /// Markdown representation preserving formatting
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("md")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Md { get; set; }
+
+        /// <summary>
+        /// List of bounding boxes
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bbox")]
+        public global::System.Collections.Generic.IList<global::LlamaParse.BBox>? Bbox { get; set; }
+
+        /// <summary>
+        /// List of nested text or list items
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("items")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<global::LlamaParse.TextItem, global::LlamaParse.ListItem>> Items { get; set; }
+
+        /// <summary>
+        /// Whether the list is ordered or unordered
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ordered")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Ordered { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListItem" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// List item type<br/>
+        /// Default Value: list
+        /// </param>
+        /// <param name="md">
+        /// Markdown representation preserving formatting
+        /// </param>
+        /// <param name="bbox">
+        /// List of bounding boxes
+        /// </param>
+        /// <param name="items">
+        /// List of nested text or list items
+        /// </param>
+        /// <param name="ordered">
+        /// Whether the list is ordered or unordered
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ListItem(
+            string md,
+            global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<global::LlamaParse.TextItem, global::LlamaParse.ListItem>> items,
+            bool ordered,
+            string? type,
+            global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
+        {
+            this.Md = md ?? throw new global::System.ArgumentNullException(nameof(md));
+            this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
+            this.Ordered = ordered;
+            this.Type = type;
+            this.Bbox = bbox;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListItem" /> class.
+        /// </summary>
+        public ListItem()
+        {
+        }
+    }
+}
