@@ -34,7 +34,7 @@ namespace LlamaParse
         /// Get a single extraction job by ID.<br/>
         /// Returns the job status and results when complete.<br/>
         /// Use `expand=configuration` to include the full configuration used,<br/>
-        /// and `expand=extract_metadata` for usage metrics and per-field metadata.
+        /// and `expand=extract_metadata` for per-field metadata.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="expand">

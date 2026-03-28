@@ -69,10 +69,16 @@ namespace LlamaParse
         public global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? ExtractResult { get; set; }
 
         /// <summary>
-        /// Extraction metadata including usage and field info
+        /// Extraction metadata including per-field info
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extract_metadata")]
         public global::LlamaParse.ExtractJobMetadata? ExtractMetadata { get; set; }
+
+        /// <summary>
+        /// Custom metadata - limited to enterprise plans.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public global::LlamaParse.ExtractV2JobMetadata2? Metadata { get; set; }
 
         /// <summary>
         /// Creation timestamp
@@ -127,7 +133,10 @@ namespace LlamaParse
         /// Extracted data conforming to the data_schema. Returns a single object for per_doc, or an array for per_page / per_table_row.
         /// </param>
         /// <param name="extractMetadata">
-        /// Extraction metadata including usage and field info
+        /// Extraction metadata including per-field info
+        /// </param>
+        /// <param name="metadata">
+        /// Custom metadata - limited to enterprise plans.
         /// </param>
         /// <param name="createdAt">
         /// Creation timestamp
@@ -149,7 +158,8 @@ namespace LlamaParse
             global::LlamaParse.ExtractConfiguration? configuration,
             string? errorMessage,
             global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? extractResult,
-            global::LlamaParse.ExtractJobMetadata? extractMetadata)
+            global::LlamaParse.ExtractJobMetadata? extractMetadata,
+            global::LlamaParse.ExtractV2JobMetadata2? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
@@ -162,6 +172,7 @@ namespace LlamaParse
             this.ErrorMessage = errorMessage;
             this.ExtractResult = extractResult;
             this.ExtractMetadata = extractMetadata;
+            this.Metadata = metadata;
         }
 
         /// <summary>

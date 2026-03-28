@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Usage metrics
+    /// Custom metadata - limited to enterprise plans.
     /// </summary>
-    public sealed partial class ExtractJobMetadataUsage
+    public sealed partial class ExtractV2JobMetadata
     {
 
         /// <summary>

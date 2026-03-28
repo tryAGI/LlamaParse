@@ -1,11 +1,12 @@
-dotnet tool install --global autosdk.cli --prerelease
+#!/usr/bin/env bash
+set -euo pipefail
+
+dotnet tool update --global autosdk.cli --prerelease || dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
 curl -o openapi.yaml https://api.cloud.llamaindex.ai/api/openapi.json
 
-# Fix: Add top-level security array and servers section
-# Fix: Rename FilterOperator symbolic enum values to valid C# identifiers
+# Fix 1: Add servers section and rename FilterOperator symbolic enum values to valid C# identifiers
 jq '
-  .security = [{"HTTPBearer": []}] |
   .servers = [{"url": "https://api.cloud.llamaindex.ai"}] |
   .components.schemas.FilterOperator.enum = [
     "eq", "gt", "lt", "ne", "gte", "lte",
@@ -15,9 +16,11 @@ jq '
 ' openapi.yaml > openapi_fixed.yaml
 mv openapi_fixed.yaml openapi.yaml
 
+# Auth: --security-scheme ensures AutoSDK generates Bearer constructors.
 autosdk generate openapi.yaml \
   --namespace LlamaParse \
   --clientClassName LlamaParseClient \
   --targetFramework net10.0 \
   --output Generated \
-  --exclude-deprecated-operations
+  --exclude-deprecated-operations \
+  --security-scheme Http:Header:Bearer

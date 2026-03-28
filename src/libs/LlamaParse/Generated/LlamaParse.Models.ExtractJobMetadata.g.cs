@@ -9,12 +9,6 @@ namespace LlamaParse
     public sealed partial class ExtractJobMetadata
     {
         /// <summary>
-        /// Usage metrics
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        public global::LlamaParse.ExtractJobUsage? Usage { get; set; }
-
-        /// <summary>
         /// Per-field metadata (citations, confidence, reasoning)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("field_metadata")]
@@ -41,9 +35,6 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractJobMetadata" /> class.
         /// </summary>
-        /// <param name="usage">
-        /// Usage metrics
-        /// </param>
         /// <param name="fieldMetadata">
         /// Per-field metadata (citations, confidence, reasoning)
         /// </param>
@@ -57,12 +48,10 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExtractJobMetadata(
-            global::LlamaParse.ExtractJobUsage? usage,
             global::LlamaParse.ExtractedFieldMetadata? fieldMetadata,
             string? parseJobId,
             string? parseTier)
         {
-            this.Usage = usage;
             this.FieldMetadata = fieldMetadata;
             this.ParseJobId = parseJobId;
             this.ParseTier = parseTier;

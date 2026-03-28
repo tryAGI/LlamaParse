@@ -51,7 +51,7 @@ namespace LlamaParse
         /// Filter by `configuration_id`, `status`, `document_input_value`,<br/>
         /// or creation date range. Results are returned newest-first.<br/>
         /// Use `expand=configuration` to include the full configuration used,<br/>
-        /// and `expand=extract_metadata` for usage metrics and per-field metadata.
+        /// and `expand=extract_metadata` for per-field metadata.
         /// </summary>
         /// <param name="configurationId">
         /// Filter by configuration ID
