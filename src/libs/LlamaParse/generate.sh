@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-dotnet tool update --global autosdk.cli --prerelease || dotnet tool install --global autosdk.cli --prerelease
+dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
-curl -o openapi.yaml https://api.cloud.llamaindex.ai/api/openapi.json
+curl --fail --silent --show-error -o openapi.yaml https://api.cloud.llamaindex.ai/api/openapi.json
 
 # Fix 1: Add servers section and rename FilterOperator symbolic enum values to valid C# identifiers
 jq '
