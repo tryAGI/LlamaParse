@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace LlamaParse
@@ -58,7 +56,7 @@ namespace LlamaParse
         /// Summary statistics about the output
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_metadata")]
-        public object? OutputMetadata { get; set; }
+        public global::LlamaParse.ProcessingResultMetadata? OutputMetadata { get; set; }
 
         /// <summary>
         /// When this processing occurred
@@ -111,7 +109,7 @@ namespace LlamaParse
             string parametersHash,
             string outputS3Path,
             global::System.DateTime processedAt,
-            object? outputMetadata)
+            global::LlamaParse.ProcessingResultMetadata? outputMetadata)
         {
             this.ResultId = resultId ?? throw new global::System.ArgumentNullException(nameof(resultId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

@@ -17712,7 +17712,7 @@
           "LlamaExtract"
         ],
         "summary": "List Extract Jobs",
-        "description": "List extraction jobs with optional filtering and pagination.\n\nFilter by `configuration_id`, `status`, `document_input_value`,\nor creation date range. Results are returned newest-first.\nUse `expand=configuration` to include the full configuration used,\nand `expand=extract_metadata` for usage metrics and per-field metadata.",
+        "description": "List extraction jobs with optional filtering and pagination.\n\nFilter by `configuration_id`, `status`, `document_input_value`,\nor creation date range. Results are returned newest-first.\nUse `expand=configuration` to include the full configuration used,\nand `expand=extract_metadata` for per-field metadata.",
         "operationId": "list_extract_jobs_api_v2_extract_get",
         "security": [
           {
@@ -17992,7 +17992,7 @@
           "LlamaExtract"
         ],
         "summary": "Get Extract Job",
-        "description": "Get a single extraction job by ID.\n\nReturns the job status and results when complete.\nUse `expand=configuration` to include the full configuration used,\nand `expand=extract_metadata` for usage metrics and per-field metadata.",
+        "description": "Get a single extraction job by ID.\n\nReturns the job status and results when complete.\nUse `expand=configuration` to include the full configuration used,\nand `expand=extract_metadata` for per-field metadata.",
         "operationId": "get_extract_job_api_v2_extract__job_id__get",
         "security": [
           {
@@ -19248,6 +19248,8 @@
                   "2026-03-23",
                   "2026-03-24",
                   "2026-03-25",
+                  "2026-03-26",
+                  "2026-03-27",
                   "latest"
                 ]
               },
@@ -28416,17 +28418,6 @@
       },
       "ExtractJobMetadata": {
         "properties": {
-          "usage": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ExtractJobUsage"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "Usage metrics"
-          },
           "field_metadata": {
             "anyOf": [
               {
@@ -29417,7 +29408,18 @@
                 "type": "null"
               }
             ],
-            "description": "Extraction metadata including usage and field info"
+            "description": "Extraction metadata including per-field info"
+          },
+          "metadata": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ExtractV2JobMetadata"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Custom metadata - limited to enterprise plans."
           },
           "created_at": {
             "type": "string",
@@ -29545,6 +29547,25 @@
             "document_input_value": "pjb-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
           }
         ]
+      },
+      "ExtractV2JobMetadata": {
+        "properties": {
+          "usage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ExtractJobUsage"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Usage metrics"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "title": "ExtractV2JobMetadata",
+        "description": "Job-level metadata."
       },
       "ExtractV2JobQueryResponse": {
         "properties": {
@@ -36539,6 +36560,8 @@
                   "2026-03-23",
                   "2026-03-24",
                   "2026-03-25",
+                  "2026-03-26",
+                  "2026-03-27",
                   "latest"
                 ]
               },
@@ -36857,6 +36880,8 @@
                   "2026-03-23",
                   "2026-03-24",
                   "2026-03-25",
+                  "2026-03-26",
+                  "2026-03-27",
                   "latest"
                 ]
               },
@@ -41753,11 +41778,6 @@
       }
     }
   },
-  "security": [
-    {
-      "HTTPBearer": []
-    }
-  ],
   "servers": [
     {
       "url": "https://api.cloud.llamaindex.ai"
