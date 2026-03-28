@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# OpenAPI spec: https://api.cloud.llamaindex.ai/api/openapi.json
+
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
 curl --fail --silent --show-error -L -o openapi.yaml https://api.cloud.llamaindex.ai/api/openapi.json
