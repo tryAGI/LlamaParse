@@ -38,10 +38,10 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="DataSinkUpdate" /> class.
         /// </summary>
+        /// <param name="sinkType"></param>
         /// <param name="name">
         /// The name of the data sink.
         /// </param>
-        /// <param name="sinkType"></param>
         /// <param name="component">
         /// Component that implements the data sink
         /// </param>
@@ -53,8 +53,8 @@ namespace LlamaParse
             string? name,
             global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>? component)
         {
-            this.SinkType = sinkType;
             this.Name = name;
+            this.SinkType = sinkType;
             this.Component = component;
         }
 

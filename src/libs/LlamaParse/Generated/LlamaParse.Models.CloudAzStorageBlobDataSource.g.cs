@@ -85,14 +85,14 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudAzStorageBlobDataSource" /> class.
         /// </summary>
-        /// <param name="supportsAccessControl">
-        /// Default Value: false
-        /// </param>
         /// <param name="containerName">
         /// The name of the Azure Storage Blob container to read from.
         /// </param>
         /// <param name="accountUrl">
         /// The Azure Storage Blob account URL to use for authentication.
+        /// </param>
+        /// <param name="supportsAccessControl">
+        /// Default Value: false
         /// </param>
         /// <param name="blob">
         /// The blob name to read from.
@@ -134,9 +134,9 @@ namespace LlamaParse
             string? clientSecret,
             string? className)
         {
+            this.SupportsAccessControl = supportsAccessControl;
             this.ContainerName = containerName ?? throw new global::System.ArgumentNullException(nameof(containerName));
             this.AccountUrl = accountUrl ?? throw new global::System.ArgumentNullException(nameof(accountUrl));
-            this.SupportsAccessControl = supportsAccessControl;
             this.Blob = blob;
             this.Prefix = prefix;
             this.AccountName = accountName;

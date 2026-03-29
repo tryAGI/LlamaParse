@@ -92,11 +92,11 @@ namespace LlamaParse
         /// <param name="outputS3Path">
         /// Location of the processing output
         /// </param>
-        /// <param name="outputMetadata">
-        /// Summary statistics about the output
-        /// </param>
         /// <param name="processedAt">
         /// When this processing occurred
+        /// </param>
+        /// <param name="outputMetadata">
+        /// Summary statistics about the output
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -117,8 +117,8 @@ namespace LlamaParse
             this.JobConfig = jobConfig;
             this.ParametersHash = parametersHash ?? throw new global::System.ArgumentNullException(nameof(parametersHash));
             this.OutputS3Path = outputS3Path ?? throw new global::System.ArgumentNullException(nameof(outputS3Path));
-            this.ProcessedAt = processedAt;
             this.OutputMetadata = outputMetadata;
+            this.ProcessedAt = processedAt;
         }
 
         /// <summary>

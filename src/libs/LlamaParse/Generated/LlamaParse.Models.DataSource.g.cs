@@ -81,26 +81,26 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier
         /// </param>
+        /// <param name="name">
+        /// The name of the data source.
+        /// </param>
+        /// <param name="sourceType"></param>
+        /// <param name="component">
+        /// Component that implements the data source
+        /// </param>
+        /// <param name="projectId"></param>
         /// <param name="createdAt">
         /// Creation datetime
         /// </param>
         /// <param name="updatedAt">
         /// Update datetime
         /// </param>
-        /// <param name="name">
-        /// The name of the data source.
-        /// </param>
-        /// <param name="sourceType"></param>
         /// <param name="customMetadata">
         /// Custom metadata that will be present on all data loaded from the data source
-        /// </param>
-        /// <param name="component">
-        /// Component that implements the data source
         /// </param>
         /// <param name="versionMetadata">
         /// Version metadata for the data source
         /// </param>
-        /// <param name="projectId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -116,14 +116,14 @@ namespace LlamaParse
             global::LlamaParse.DataSourceReaderVersionMetadata? versionMetadata)
         {
             this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.SourceType = sourceType;
-            this.Component = component;
-            this.ProjectId = projectId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.SourceType = sourceType;
             this.CustomMetadata = customMetadata;
+            this.Component = component;
             this.VersionMetadata = versionMetadata;
+            this.ProjectId = projectId;
         }
 
         /// <summary>

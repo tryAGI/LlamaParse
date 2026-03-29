@@ -104,14 +104,14 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudConfluenceDataSource" /> class.
         /// </summary>
-        /// <param name="supportsAccessControl">
-        /// Default Value: false
-        /// </param>
         /// <param name="serverUrl">
         /// The server URL of the Confluence instance.
         /// </param>
         /// <param name="authenticationMechanism">
         /// Type of Authentication for connecting to Confluence APIs.
+        /// </param>
+        /// <param name="supportsAccessControl">
+        /// Default Value: false
         /// </param>
         /// <param name="userName">
         /// The username to use for authentication.
@@ -168,9 +168,9 @@ namespace LlamaParse
             global::LlamaParse.FailureHandlingConfig? failureHandling,
             string? className)
         {
+            this.SupportsAccessControl = supportsAccessControl;
             this.ServerUrl = serverUrl ?? throw new global::System.ArgumentNullException(nameof(serverUrl));
             this.AuthenticationMechanism = authenticationMechanism ?? throw new global::System.ArgumentNullException(nameof(authenticationMechanism));
-            this.SupportsAccessControl = supportsAccessControl;
             this.UserName = userName;
             this.ApiToken = apiToken;
             this.SpaceKey = spaceKey;

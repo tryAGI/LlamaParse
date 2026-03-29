@@ -105,6 +105,12 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudSharepointDataSource" /> class.
         /// </summary>
+        /// <param name="clientId">
+        /// The client ID to use for authentication.
+        /// </param>
+        /// <param name="tenantId">
+        /// The tenant ID to use for authentication.
+        /// </param>
         /// <param name="supportsAccessControl">
         /// Default Value: true
         /// </param>
@@ -123,15 +129,9 @@ namespace LlamaParse
         /// <param name="driveName">
         /// The name of the Sharepoint drive to read from.
         /// </param>
-        /// <param name="clientId">
-        /// The client ID to use for authentication.
-        /// </param>
         /// <param name="clientSecret">
         /// The client secret to use for authentication.<br/>
         /// Included only in requests
-        /// </param>
-        /// <param name="tenantId">
-        /// The tenant ID to use for authentication.
         /// </param>
         /// <param name="requiredExts">
         /// The list of required file extensions.
@@ -168,15 +168,15 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<string>? excludePathPatterns,
             string? className)
         {
-            this.ClientId = clientId ?? throw new global::System.ArgumentNullException(nameof(clientId));
-            this.TenantId = tenantId ?? throw new global::System.ArgumentNullException(nameof(tenantId));
             this.SupportsAccessControl = supportsAccessControl;
             this.SiteName = siteName;
             this.SiteId = siteId;
             this.FolderPath = folderPath;
             this.FolderId = folderId;
             this.DriveName = driveName;
+            this.ClientId = clientId ?? throw new global::System.ArgumentNullException(nameof(clientId));
             this.ClientSecret = clientSecret;
+            this.TenantId = tenantId ?? throw new global::System.ArgumentNullException(nameof(tenantId));
             this.RequiredExts = requiredExts;
             this.GetPermissions = getPermissions;
             this.IncludePathPatterns = includePathPatterns;

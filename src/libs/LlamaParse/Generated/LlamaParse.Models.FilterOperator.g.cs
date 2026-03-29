@@ -11,15 +11,15 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        All,
+        Neq,
         /// <summary>
         /// 
         /// </summary>
-        Any,
+        Lt,
         /// <summary>
         /// 
         /// </summary>
-        Contains,
+        Lte,
         /// <summary>
         /// 
         /// </summary>
@@ -35,23 +35,23 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        All,
+        /// <summary>
+        /// 
+        /// </summary>
+        Any,
+        /// <summary>
+        /// 
+        /// </summary>
+        Contains,
+        /// <summary>
+        /// 
+        /// </summary>
         In,
         /// <summary>
         /// 
         /// </summary>
         IsEmpty,
-        /// <summary>
-        /// 
-        /// </summary>
-        Lt,
-        /// <summary>
-        /// 
-        /// </summary>
-        Lte,
-        /// <summary>
-        /// 
-        /// </summary>
-        Ne,
         /// <summary>
         /// 
         /// </summary>
@@ -78,17 +78,17 @@ namespace LlamaParse
         {
             return value switch
             {
+                FilterOperator.Neq => "!=",
+                FilterOperator.Lt => "<",
+                FilterOperator.Lte => "<=",
+                FilterOperator.Eq => "==",
+                FilterOperator.Gt => ">",
+                FilterOperator.Gte => ">=",
                 FilterOperator.All => "all",
                 FilterOperator.Any => "any",
                 FilterOperator.Contains => "contains",
-                FilterOperator.Eq => "eq",
-                FilterOperator.Gt => "gt",
-                FilterOperator.Gte => "gte",
                 FilterOperator.In => "in",
                 FilterOperator.IsEmpty => "is_empty",
-                FilterOperator.Lt => "lt",
-                FilterOperator.Lte => "lte",
-                FilterOperator.Ne => "ne",
                 FilterOperator.Nin => "nin",
                 FilterOperator.TextMatch => "text_match",
                 FilterOperator.TextMatchInsensitive => "text_match_insensitive",
@@ -102,17 +102,17 @@ namespace LlamaParse
         {
             return value switch
             {
+                "!=" => FilterOperator.Neq,
+                "<" => FilterOperator.Lt,
+                "<=" => FilterOperator.Lte,
+                "==" => FilterOperator.Eq,
+                ">" => FilterOperator.Gt,
+                ">=" => FilterOperator.Gte,
                 "all" => FilterOperator.All,
                 "any" => FilterOperator.Any,
                 "contains" => FilterOperator.Contains,
-                "eq" => FilterOperator.Eq,
-                "gt" => FilterOperator.Gt,
-                "gte" => FilterOperator.Gte,
                 "in" => FilterOperator.In,
                 "is_empty" => FilterOperator.IsEmpty,
-                "lt" => FilterOperator.Lt,
-                "lte" => FilterOperator.Lte,
-                "ne" => FilterOperator.Ne,
                 "nin" => FilterOperator.Nin,
                 "text_match" => FilterOperator.TextMatch,
                 "text_match_insensitive" => FilterOperator.TextMatchInsensitive,

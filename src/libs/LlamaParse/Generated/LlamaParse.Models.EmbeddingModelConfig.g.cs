@@ -61,12 +61,6 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier
         /// </param>
-        /// <param name="createdAt">
-        /// Creation datetime
-        /// </param>
-        /// <param name="updatedAt">
-        /// Update datetime
-        /// </param>
         /// <param name="name">
         /// The name of the embedding model config.
         /// </param>
@@ -74,6 +68,12 @@ namespace LlamaParse
         /// The embedding configuration for the embedding model config.
         /// </param>
         /// <param name="projectId"></param>
+        /// <param name="createdAt">
+        /// Creation datetime
+        /// </param>
+        /// <param name="updatedAt">
+        /// Update datetime
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,11 +86,11 @@ namespace LlamaParse
             global::System.DateTime? updatedAt)
         {
             this.Id = id;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.EmbeddingConfig = embeddingConfig;
             this.ProjectId = projectId;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

@@ -50,11 +50,11 @@ namespace LlamaParse
         /// The name of the data source.
         /// </param>
         /// <param name="sourceType"></param>
-        /// <param name="customMetadata">
-        /// Custom metadata that will be present on all data loaded from the data source
-        /// </param>
         /// <param name="component">
         /// Component that implements the data source
+        /// </param>
+        /// <param name="customMetadata">
+        /// Custom metadata that will be present on all data loaded from the data source
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,8 +67,8 @@ namespace LlamaParse
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.SourceType = sourceType;
-            this.Component = component;
             this.CustomMetadata = customMetadata;
+            this.Component = component;
         }
 
         /// <summary>

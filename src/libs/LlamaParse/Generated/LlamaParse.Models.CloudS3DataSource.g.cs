@@ -66,11 +66,11 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudS3DataSource" /> class.
         /// </summary>
-        /// <param name="supportsAccessControl">
-        /// Default Value: false
-        /// </param>
         /// <param name="bucket">
         /// The name of the S3 bucket to read from.
+        /// </param>
+        /// <param name="supportsAccessControl">
+        /// Default Value: false
         /// </param>
         /// <param name="prefix">
         /// The prefix of the S3 objects to read from.
@@ -103,8 +103,8 @@ namespace LlamaParse
             string? s3EndpointUrl,
             string? className)
         {
-            this.Bucket = bucket ?? throw new global::System.ArgumentNullException(nameof(bucket));
             this.SupportsAccessControl = supportsAccessControl;
+            this.Bucket = bucket ?? throw new global::System.ArgumentNullException(nameof(bucket));
             this.Prefix = prefix;
             this.RegexPattern = regexPattern;
             this.AwsAccessId = awsAccessId;

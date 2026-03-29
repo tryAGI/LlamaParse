@@ -44,18 +44,18 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="TextItem" /> class.
         /// </summary>
+        /// <param name="md">
+        /// Markdown representation preserving formatting
+        /// </param>
+        /// <param name="value">
+        /// Text content
+        /// </param>
         /// <param name="type">
         /// Text item type<br/>
         /// Default Value: text
         /// </param>
-        /// <param name="md">
-        /// Markdown representation preserving formatting
-        /// </param>
         /// <param name="bbox">
         /// List of bounding boxes
-        /// </param>
-        /// <param name="value">
-        /// Text content
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,10 +66,10 @@ namespace LlamaParse
             string? type,
             global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
         {
-            this.Md = md ?? throw new global::System.ArgumentNullException(nameof(md));
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.Type = type;
+            this.Md = md ?? throw new global::System.ArgumentNullException(nameof(md));
             this.Bbox = bbox;
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
         }
 
         /// <summary>

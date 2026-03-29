@@ -50,18 +50,18 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeItem" /> class.
         /// </summary>
+        /// <param name="md">
+        /// Markdown representation preserving formatting
+        /// </param>
+        /// <param name="value">
+        /// Code content
+        /// </param>
         /// <param name="type">
         /// Code block item type<br/>
         /// Default Value: code
         /// </param>
-        /// <param name="md">
-        /// Markdown representation preserving formatting
-        /// </param>
         /// <param name="bbox">
         /// List of bounding boxes
-        /// </param>
-        /// <param name="value">
-        /// Code content
         /// </param>
         /// <param name="language">
         /// Programming language identifier
@@ -76,10 +76,10 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox,
             string? language)
         {
-            this.Md = md ?? throw new global::System.ArgumentNullException(nameof(md));
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.Type = type;
+            this.Md = md ?? throw new global::System.ArgumentNullException(nameof(md));
             this.Bbox = bbox;
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.Language = language;
         }
 

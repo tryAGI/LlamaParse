@@ -72,17 +72,17 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique parse job identifier
         /// </param>
-        /// <param name="createdAt">
-        /// Creation datetime
-        /// </param>
-        /// <param name="updatedAt">
-        /// Update datetime
-        /// </param>
         /// <param name="projectId">
         /// Project this job belongs to
         /// </param>
         /// <param name="status">
         /// Current job status: PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation datetime
+        /// </param>
+        /// <param name="updatedAt">
+        /// Update datetime
         /// </param>
         /// <param name="errorMessage">
         /// Error details when status is FAILED
@@ -107,10 +107,10 @@ namespace LlamaParse
             string? tier)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
-            this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
+            this.Status = status;
             this.ErrorMessage = errorMessage;
             this.Name = name;
             this.Tier = tier;

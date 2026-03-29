@@ -136,6 +136,9 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier for the pipeline file.
         /// </param>
+        /// <param name="pipelineId">
+        /// The ID of the pipeline that the file is associated with.
+        /// </param>
         /// <param name="name">
         /// Name of the file.
         /// </param>
@@ -156,9 +159,6 @@ namespace LlamaParse
         /// </param>
         /// <param name="fileId">
         /// The ID of the file.
-        /// </param>
-        /// <param name="pipelineId">
-        /// The ID of the pipeline that the file is associated with.
         /// </param>
         /// <param name="resourceInfo">
         /// Resource information for the file.
@@ -215,7 +215,6 @@ namespace LlamaParse
             global::System.DateTime? updatedAt)
         {
             this.Id = id;
-            this.PipelineId = pipelineId;
             this.Name = name;
             this.ExternalFileId = externalFileId;
             this.FileSize = fileSize;
@@ -223,6 +222,7 @@ namespace LlamaParse
             this.ProjectId = projectId;
             this.LastModifiedAt = lastModifiedAt;
             this.FileId = fileId;
+            this.PipelineId = pipelineId;
             this.ResourceInfo = resourceInfo;
             this.PermissionInfo = permissionInfo;
             this.CustomMetadata = customMetadata;

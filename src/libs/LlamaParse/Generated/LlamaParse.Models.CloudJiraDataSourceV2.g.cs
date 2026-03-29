@@ -101,6 +101,15 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudJiraDataSourceV2" /> class.
         /// </summary>
+        /// <param name="serverUrl">
+        /// The server url for Jira Cloud.
+        /// </param>
+        /// <param name="authenticationMechanism">
+        /// Type of Authentication for connecting to Jira APIs.
+        /// </param>
+        /// <param name="query">
+        /// JQL (Jira Query Language) query to search.
+        /// </param>
         /// <param name="supportsAccessControl">
         /// Default Value: false
         /// </param>
@@ -110,21 +119,12 @@ namespace LlamaParse
         /// <param name="apiToken">
         /// The API Access Token used for Basic, PAT and OAuth2 authentication.
         /// </param>
-        /// <param name="serverUrl">
-        /// The server url for Jira Cloud.
-        /// </param>
         /// <param name="cloudId">
         /// The cloud ID, used in case of OAuth2.
-        /// </param>
-        /// <param name="authenticationMechanism">
-        /// Type of Authentication for connecting to Jira APIs.
         /// </param>
         /// <param name="apiVersion">
         /// Jira REST API version to use (2 or 3). 3 supports Atlassian Document Format (ADF).<br/>
         /// Default Value: 2
-        /// </param>
-        /// <param name="query">
-        /// JQL (Jira Query Language) query to search.
         /// </param>
         /// <param name="fields">
         /// List of fields to retrieve from Jira. If None, retrieves all fields.
@@ -160,14 +160,14 @@ namespace LlamaParse
             bool? getPermissions,
             string? className)
         {
-            this.ServerUrl = serverUrl ?? throw new global::System.ArgumentNullException(nameof(serverUrl));
-            this.AuthenticationMechanism = authenticationMechanism ?? throw new global::System.ArgumentNullException(nameof(authenticationMechanism));
-            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.SupportsAccessControl = supportsAccessControl;
             this.Email = email;
             this.ApiToken = apiToken;
+            this.ServerUrl = serverUrl ?? throw new global::System.ArgumentNullException(nameof(serverUrl));
             this.CloudId = cloudId;
+            this.AuthenticationMechanism = authenticationMechanism ?? throw new global::System.ArgumentNullException(nameof(authenticationMechanism));
             this.ApiVersion = apiVersion;
+            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Fields = fields;
             this.Expand = expand;
             this.RequestsPerMinute = requestsPerMinute;

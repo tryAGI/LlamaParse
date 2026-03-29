@@ -50,11 +50,11 @@ namespace LlamaParse
         /// <param name="expiresAt">
         /// The time at which the presigned URL expires
         /// </param>
-        /// <param name="formFields">
-        /// Form fields for a presigned POST request
-        /// </param>
         /// <param name="fileId">
         /// The ID of the file associated with the presigned URL
+        /// </param>
+        /// <param name="formFields">
+        /// Form fields for a presigned POST request
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,8 +67,8 @@ namespace LlamaParse
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ExpiresAt = expiresAt;
-            this.FileId = fileId;
             this.FormFields = formFields;
+            this.FileId = fileId;
         }
 
         /// <summary>

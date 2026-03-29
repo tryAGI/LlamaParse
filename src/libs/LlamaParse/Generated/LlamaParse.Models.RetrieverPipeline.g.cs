@@ -42,14 +42,14 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="RetrieverPipeline" /> class.
         /// </summary>
+        /// <param name="pipelineId">
+        /// The ID of the pipeline this tool uses.
+        /// </param>
         /// <param name="name">
         /// A name for the retriever tool. Will default to the pipeline name if not provided.
         /// </param>
         /// <param name="description">
         /// A description of the retriever tool.
-        /// </param>
-        /// <param name="pipelineId">
-        /// The ID of the pipeline this tool uses.
         /// </param>
         /// <param name="presetRetrievalParameters">
         /// Parameters for retrieval configuration.
@@ -63,9 +63,9 @@ namespace LlamaParse
             string? description,
             global::LlamaParse.PresetRetrievalParams? presetRetrievalParameters)
         {
-            this.PipelineId = pipelineId;
             this.Name = name;
             this.Description = description;
+            this.PipelineId = pipelineId;
             this.PresetRetrievalParameters = presetRetrievalParameters;
         }
 

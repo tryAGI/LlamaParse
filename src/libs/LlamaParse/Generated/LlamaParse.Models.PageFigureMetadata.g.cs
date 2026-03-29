@@ -77,12 +77,12 @@ namespace LlamaParse
         /// <param name="figureSize">
         /// The size of the figure in bytes
         /// </param>
+        /// <param name="confidence">
+        /// The confidence of the figure
+        /// </param>
         /// <param name="isLikelyNoise">
         /// Whether the figure is likely to be noise<br/>
         /// Default Value: false
-        /// </param>
-        /// <param name="confidence">
-        /// The confidence of the figure
         /// </param>
         /// <param name="metadata">
         /// Metadata for the figure
@@ -103,8 +103,8 @@ namespace LlamaParse
             this.FileId = fileId;
             this.PageIndex = pageIndex;
             this.FigureSize = figureSize;
-            this.Confidence = confidence;
             this.IsLikelyNoise = isLikelyNoise;
+            this.Confidence = confidence;
             this.Metadata = metadata;
         }
 

@@ -55,12 +55,12 @@ namespace LlamaParse
         /// <param name="rules">
         /// The rules to classify the files
         /// </param>
+        /// <param name="fileIds">
+        /// The IDs of the files to classify
+        /// </param>
         /// <param name="mode">
         /// The classification mode to use<br/>
         /// Default Value: FAST
-        /// </param>
-        /// <param name="fileIds">
-        /// The IDs of the files to classify
         /// </param>
         /// <param name="parsingConfiguration">
         /// The configuration for the parsing job<br/>
@@ -80,8 +80,8 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? webhookConfigurations)
         {
             this.Rules = rules ?? throw new global::System.ArgumentNullException(nameof(rules));
-            this.FileIds = fileIds ?? throw new global::System.ArgumentNullException(nameof(fileIds));
             this.Mode = mode;
+            this.FileIds = fileIds ?? throw new global::System.ArgumentNullException(nameof(fileIds));
             this.ParsingConfiguration = parsingConfiguration;
             this.WebhookConfigurations = webhookConfigurations;
         }

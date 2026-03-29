@@ -105,6 +105,9 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractV2Parameters" /> class.
         /// </summary>
+        /// <param name="dataSchema">
+        /// JSON Schema defining the fields to extract. Validate with the /schema/validate endpoint first.
+        /// </param>
         /// <param name="targetPages">
         /// Comma-separated page numbers or ranges to process (1-based). Omit to process all pages.
         /// </param>
@@ -122,9 +125,6 @@ namespace LlamaParse
         /// <param name="extractVersion">
         /// Extract algorithm version. Use 'latest' or a date string.<br/>
         /// Default Value: latest
-        /// </param>
-        /// <param name="dataSchema">
-        /// JSON Schema defining the fields to extract. Validate with the /schema/validate endpoint first.
         /// </param>
         /// <param name="extractionTarget">
         /// Granularity of extraction: per_doc returns one object per document, per_page returns one object per page, per_table_row returns one object per table row<br/>
@@ -168,12 +168,12 @@ namespace LlamaParse
             string? parseConfigId,
             string productType = "extract_v2")
         {
-            this.DataSchema = dataSchema ?? throw new global::System.ArgumentNullException(nameof(dataSchema));
             this.TargetPages = targetPages;
             this.MaxPages = maxPages;
             this.Lang = lang;
             this.Tier = tier;
             this.ExtractVersion = extractVersion;
+            this.DataSchema = dataSchema ?? throw new global::System.ArgumentNullException(nameof(dataSchema));
             this.ExtractionTarget = extractionTarget;
             this.SystemPrompt = systemPrompt;
             this.CiteSources = citeSources;

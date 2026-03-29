@@ -76,15 +76,8 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="TableItem" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Table item type<br/>
-        /// Default Value: table
-        /// </param>
         /// <param name="md">
         /// Markdown representation preserving formatting
-        /// </param>
-        /// <param name="bbox">
-        /// List of bounding boxes
         /// </param>
         /// <param name="rows">
         /// Table data as array of arrays (string, number, or null)
@@ -94,6 +87,13 @@ namespace LlamaParse
         /// </param>
         /// <param name="csv">
         /// CSV representation of the table
+        /// </param>
+        /// <param name="type">
+        /// Table item type<br/>
+        /// Default Value: table
+        /// </param>
+        /// <param name="bbox">
+        /// List of bounding boxes
         /// </param>
         /// <param name="mergedFromPages">
         /// List of page numbers with tables that were merged into this table (e.g., [1, 2, 3, 4])
@@ -118,12 +118,12 @@ namespace LlamaParse
             int? mergedIntoPage,
             global::System.Collections.Generic.IList<global::LlamaParse.ParseConcernItem>? parseConcerns)
         {
+            this.Type = type;
             this.Md = md ?? throw new global::System.ArgumentNullException(nameof(md));
+            this.Bbox = bbox;
             this.Rows = rows ?? throw new global::System.ArgumentNullException(nameof(rows));
             this.Html = html ?? throw new global::System.ArgumentNullException(nameof(html));
             this.Csv = csv ?? throw new global::System.ArgumentNullException(nameof(csv));
-            this.Type = type;
-            this.Bbox = bbox;
             this.MergedFromPages = mergedFromPages;
             this.MergedIntoPage = mergedIntoPage;
             this.ParseConcerns = parseConcerns;

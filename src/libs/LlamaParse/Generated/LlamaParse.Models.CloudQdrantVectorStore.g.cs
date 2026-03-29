@@ -69,11 +69,11 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudQdrantVectorStore" /> class.
         /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="url"></param>
         /// <param name="supportsNestedMetadataFilters">
         /// Default Value: true
         /// </param>
-        /// <param name="collectionName"></param>
-        /// <param name="url"></param>
         /// <param name="apiKey">
         /// Included only in requests
         /// </param>
@@ -96,9 +96,9 @@ namespace LlamaParse
             object? clientKwargs,
             string? className)
         {
+            this.SupportsNestedMetadataFilters = supportsNestedMetadataFilters;
             this.CollectionName = collectionName ?? throw new global::System.ArgumentNullException(nameof(collectionName));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.SupportsNestedMetadataFilters = supportsNestedMetadataFilters;
             this.ApiKey = apiKey;
             this.MaxRetries = maxRetries;
             this.ClientKwargs = clientKwargs;

@@ -114,12 +114,6 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier
         /// </param>
-        /// <param name="createdAt">
-        /// Creation datetime
-        /// </param>
-        /// <param name="updatedAt">
-        /// Update datetime
-        /// </param>
         /// <param name="projectId">
         /// Project this job belongs to
         /// </param>
@@ -137,6 +131,12 @@ namespace LlamaParse
         /// </param>
         /// <param name="configuration">
         /// Classify configuration used for this job
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation datetime
+        /// </param>
+        /// <param name="updatedAt">
+        /// Update datetime
         /// </param>
         /// <param name="result">
         /// Classify result — available when status is COMPLETED
@@ -173,14 +173,14 @@ namespace LlamaParse
             string? parseJobId)
         {
             this.Id = id;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.Status = status;
             this.DocumentInputType = documentInputType;
             this.DocumentInputValue = documentInputValue ?? throw new global::System.ArgumentNullException(nameof(documentInputValue));
             this.Configuration = configuration ?? throw new global::System.ArgumentNullException(nameof(configuration));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.Result = result;
             this.ErrorMessage = errorMessage;
             this.ConfigurationId = configurationId;

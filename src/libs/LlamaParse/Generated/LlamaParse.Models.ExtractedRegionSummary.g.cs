@@ -56,9 +56,6 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractedRegionSummary" /> class.
         /// </summary>
-        /// <param name="regionId">
-        /// Unique identifier for this region within the file
-        /// </param>
         /// <param name="sheetName">
         /// Worksheet name where region was found
         /// </param>
@@ -67,6 +64,9 @@ namespace LlamaParse
         /// </param>
         /// <param name="regionType">
         /// Type of the extracted region
+        /// </param>
+        /// <param name="regionId">
+        /// Unique identifier for this region within the file
         /// </param>
         /// <param name="title">
         /// Generated title for the region
@@ -85,10 +85,10 @@ namespace LlamaParse
             string? title,
             string? description)
         {
+            this.RegionId = regionId;
             this.SheetName = sheetName ?? throw new global::System.ArgumentNullException(nameof(sheetName));
             this.Location = location ?? throw new global::System.ArgumentNullException(nameof(location));
             this.RegionType = regionType ?? throw new global::System.ArgumentNullException(nameof(regionType));
-            this.RegionId = regionId;
             this.Title = title;
             this.Description = description;
         }

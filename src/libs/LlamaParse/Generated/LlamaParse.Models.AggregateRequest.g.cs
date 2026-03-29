@@ -82,6 +82,9 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="AggregateRequest" /> class.
         /// </summary>
+        /// <param name="deploymentName">
+        /// The agent deployment's name to aggregate data for
+        /// </param>
         /// <param name="pageSize">
         /// The maximum number of items to return. The service may return fewer than this value. If unspecified, a default page size will be used. The maximum value is typically 1000; values above this will be coerced to the maximum.
         /// </param>
@@ -93,9 +96,6 @@ namespace LlamaParse
         /// </param>
         /// <param name="orderBy">
         /// A comma-separated list of fields to order by, sorted in ascending order. Use 'field_name desc' to specify descending order.
-        /// </param>
-        /// <param name="deploymentName">
-        /// The agent deployment's name to aggregate data for
         /// </param>
         /// <param name="collection">
         /// The logical agent data collection to aggregate data for<br/>
@@ -131,11 +131,11 @@ namespace LlamaParse
             bool? first,
             int? offset)
         {
-            this.DeploymentName = deploymentName ?? throw new global::System.ArgumentNullException(nameof(deploymentName));
             this.PageSize = pageSize;
             this.PageToken = pageToken;
             this.Filter = filter;
             this.OrderBy = orderBy;
+            this.DeploymentName = deploymentName ?? throw new global::System.ArgumentNullException(nameof(deploymentName));
             this.Collection = collection;
             this.GroupBy = groupBy;
             this.Count = count;

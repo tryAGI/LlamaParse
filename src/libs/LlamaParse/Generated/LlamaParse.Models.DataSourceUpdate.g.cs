@@ -44,10 +44,10 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="DataSourceUpdate" /> class.
         /// </summary>
+        /// <param name="sourceType"></param>
         /// <param name="name">
         /// The name of the data source.
         /// </param>
-        /// <param name="sourceType"></param>
         /// <param name="customMetadata">
         /// Custom metadata that will be present on all data loaded from the data source
         /// </param>
@@ -63,8 +63,8 @@ namespace LlamaParse
             object? customMetadata,
             global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>? component)
         {
-            this.SourceType = sourceType;
             this.Name = name;
+            this.SourceType = sourceType;
             this.CustomMetadata = customMetadata;
             this.Component = component;
         }

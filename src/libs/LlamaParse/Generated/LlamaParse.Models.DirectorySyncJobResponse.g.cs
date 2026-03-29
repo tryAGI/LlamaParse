@@ -86,12 +86,6 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier for the directory sync job
         /// </param>
-        /// <param name="createdAt">
-        /// Creation datetime
-        /// </param>
-        /// <param name="updatedAt">
-        /// Update datetime
-        /// </param>
         /// <param name="projectId">
         /// Project this job belongs to
         /// </param>
@@ -106,6 +100,12 @@ namespace LlamaParse
         /// </param>
         /// <param name="applyStatusDetails">
         /// Status of the apply process (file updates and deletions)
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation datetime
+        /// </param>
+        /// <param name="updatedAt">
+        /// Update datetime
         /// </param>
         /// <param name="startedAt">
         /// Timestamp when job processing started
@@ -129,13 +129,13 @@ namespace LlamaParse
             global::System.DateTime? completedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.DirectoryId = directoryId ?? throw new global::System.ArgumentNullException(nameof(directoryId));
             this.ListingStatusDetails = listingStatusDetails ?? throw new global::System.ArgumentNullException(nameof(listingStatusDetails));
             this.DiffingStatusDetails = diffingStatusDetails ?? throw new global::System.ArgumentNullException(nameof(diffingStatusDetails));
             this.ApplyStatusDetails = applyStatusDetails ?? throw new global::System.ArgumentNullException(nameof(applyStatusDetails));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.StartedAt = startedAt;
             this.CompletedAt = completedAt;
         }

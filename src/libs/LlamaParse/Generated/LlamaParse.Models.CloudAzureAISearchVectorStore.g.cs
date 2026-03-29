@@ -84,13 +84,13 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudAzureAISearchVectorStore" /> class.
         /// </summary>
+        /// <param name="searchServiceEndpoint"></param>
         /// <param name="supportsNestedMetadataFilters">
         /// Default Value: true
         /// </param>
         /// <param name="searchServiceApiKey">
         /// Included only in requests
         /// </param>
-        /// <param name="searchServiceEndpoint"></param>
         /// <param name="searchServiceApiVersion"></param>
         /// <param name="indexName"></param>
         /// <param name="filterableMetadataFieldKeys"></param>
@@ -117,9 +117,9 @@ namespace LlamaParse
             string? tenantId,
             string? className)
         {
-            this.SearchServiceEndpoint = searchServiceEndpoint ?? throw new global::System.ArgumentNullException(nameof(searchServiceEndpoint));
             this.SupportsNestedMetadataFilters = supportsNestedMetadataFilters;
             this.SearchServiceApiKey = searchServiceApiKey;
+            this.SearchServiceEndpoint = searchServiceEndpoint ?? throw new global::System.ArgumentNullException(nameof(searchServiceEndpoint));
             this.SearchServiceApiVersion = searchServiceApiVersion;
             this.IndexName = indexName;
             this.FilterableMetadataFieldKeys = filterableMetadataFieldKeys;

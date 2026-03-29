@@ -59,20 +59,20 @@ namespace LlamaParse
         /// <param name="name">
         /// A name for the retriever tool. Will default to the pipeline name if not provided.
         /// </param>
-        /// <param name="pipelines">
-        /// The pipelines this retriever uses.
-        /// </param>
         /// <param name="id">
         /// Unique identifier
+        /// </param>
+        /// <param name="projectId">
+        /// The ID of the project this retriever resides in.
+        /// </param>
+        /// <param name="pipelines">
+        /// The pipelines this retriever uses.
         /// </param>
         /// <param name="createdAt">
         /// Creation datetime
         /// </param>
         /// <param name="updatedAt">
         /// Update datetime
-        /// </param>
-        /// <param name="projectId">
-        /// The ID of the project this retriever resides in.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -86,11 +86,11 @@ namespace LlamaParse
             global::System.DateTime? updatedAt)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Id = id;
-            this.ProjectId = projectId;
             this.Pipelines = pipelines;
+            this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.ProjectId = projectId;
         }
 
         /// <summary>

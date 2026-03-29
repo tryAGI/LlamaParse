@@ -74,14 +74,14 @@ namespace LlamaParse
         /// <param name="name">
         /// File name including extension
         /// </param>
+        /// <param name="projectId">
+        /// Project this file belongs to
+        /// </param>
         /// <param name="externalFileId">
         /// Optional ID for correlating with an external system
         /// </param>
         /// <param name="fileType">
         /// File extension (pdf, docx, png, etc.)
-        /// </param>
-        /// <param name="projectId">
-        /// Project this file belongs to
         /// </param>
         /// <param name="lastModifiedAt">
         /// When the file was last modified (ISO 8601)
@@ -107,9 +107,9 @@ namespace LlamaParse
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.ProjectId = projectId;
             this.ExternalFileId = externalFileId;
             this.FileType = fileType;
+            this.ProjectId = projectId;
             this.LastModifiedAt = lastModifiedAt;
             this.ExpiresAt = expiresAt;
             this.Purpose = purpose;

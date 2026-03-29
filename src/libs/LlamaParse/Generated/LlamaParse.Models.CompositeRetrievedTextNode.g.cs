@@ -82,11 +82,11 @@ namespace LlamaParse
         /// <param name="pipelineId">
         /// The ID of the pipeline this node was retrieved from.
         /// </param>
-        /// <param name="metadata">
-        /// Metadata associated with the retrieved node.
-        /// </param>
         /// <param name="text">
         /// The text of the retrieved node.
+        /// </param>
+        /// <param name="metadata">
+        /// Metadata associated with the retrieved node.
         /// </param>
         /// <param name="startCharIdx">
         /// The start character index of the retrieved node in the document
@@ -111,8 +111,8 @@ namespace LlamaParse
             this.RetrieverId = retrieverId;
             this.RetrieverPipelineName = retrieverPipelineName ?? throw new global::System.ArgumentNullException(nameof(retrieverPipelineName));
             this.PipelineId = pipelineId;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Metadata = metadata;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.StartCharIdx = startCharIdx;
             this.EndCharIdx = endCharIdx;
         }

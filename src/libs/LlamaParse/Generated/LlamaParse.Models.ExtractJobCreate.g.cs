@@ -56,17 +56,17 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractJobCreate" /> class.
         /// </summary>
-        /// <param name="priority">
-        /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
-        /// </param>
-        /// <param name="webhookConfigurations">
-        /// Outbound webhook endpoints to notify on job status changes
-        /// </param>
         /// <param name="extractionAgentId">
         /// The id of the extraction agent
         /// </param>
         /// <param name="fileId">
         /// The id of the file
+        /// </param>
+        /// <param name="priority">
+        /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
+        /// </param>
+        /// <param name="webhookConfigurations">
+        /// Outbound webhook endpoints to notify on job status changes
         /// </param>
         /// <param name="dataSchemaOverride">
         /// The data schema to override the extraction agent's data schema with
@@ -85,10 +85,10 @@ namespace LlamaParse
             global::LlamaParse.AnyOf<object, string, object>? dataSchemaOverride,
             global::LlamaParse.ExtractConfig? configOverride)
         {
-            this.ExtractionAgentId = extractionAgentId;
-            this.FileId = fileId;
             this.Priority = priority;
             this.WebhookConfigurations = webhookConfigurations;
+            this.ExtractionAgentId = extractionAgentId;
+            this.FileId = fileId;
             this.DataSchemaOverride = dataSchemaOverride;
             this.ConfigOverride = configOverride;
         }

@@ -64,6 +64,7 @@ namespace LlamaParse
         /// </summary>
         /// <param name="text"></param>
         /// <param name="metadata"></param>
+        /// <param name="id"></param>
         /// <param name="excludedEmbedMetadataKeys">
         /// Default Value: []
         /// </param>
@@ -73,7 +74,6 @@ namespace LlamaParse
         /// <param name="pagePositions">
         /// indices in the CloudDocument.text where a new page begins. e.g. Second page starts at index specified by page_positions[1].
         /// </param>
-        /// <param name="id"></param>
         /// <param name="statusMetadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -89,10 +89,10 @@ namespace LlamaParse
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ExcludedEmbedMetadataKeys = excludedEmbedMetadataKeys;
             this.ExcludedLlmMetadataKeys = excludedLlmMetadataKeys;
             this.PagePositions = pagePositions;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.StatusMetadata = statusMetadata;
         }
 

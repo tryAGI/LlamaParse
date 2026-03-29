@@ -95,6 +95,12 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="VertexTextEmbedding" /> class.
         /// </summary>
+        /// <param name="location">
+        /// The default location to use when making API calls.
+        /// </param>
+        /// <param name="project">
+        /// The default GCP project to use when making Vertex API calls.
+        /// </param>
         /// <param name="modelName">
         /// The modelId of the VertexAI model to use.<br/>
         /// Default Value: textembedding-gecko@003
@@ -105,12 +111,6 @@ namespace LlamaParse
         /// </param>
         /// <param name="numWorkers">
         /// The number of workers to use for async embedding calls.
-        /// </param>
-        /// <param name="location">
-        /// The default location to use when making API calls.
-        /// </param>
-        /// <param name="project">
-        /// The default GCP project to use when making Vertex API calls.
         /// </param>
         /// <param name="embedMode">
         /// The embedding mode to use.<br/>
@@ -151,11 +151,11 @@ namespace LlamaParse
             string? privateKey,
             string? className)
         {
-            this.Location = location ?? throw new global::System.ArgumentNullException(nameof(location));
-            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.ModelName = modelName;
             this.EmbedBatchSize = embedBatchSize;
             this.NumWorkers = numWorkers;
+            this.Location = location ?? throw new global::System.ArgumentNullException(nameof(location));
+            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.EmbedMode = embedMode;
             this.AdditionalKwargs = additionalKwargs;
             this.ClientEmail = clientEmail;

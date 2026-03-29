@@ -51,21 +51,21 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageItem" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Image item type<br/>
-        /// Default Value: image
-        /// </param>
         /// <param name="md">
         /// Markdown representation preserving formatting
-        /// </param>
-        /// <param name="bbox">
-        /// List of bounding boxes
         /// </param>
         /// <param name="caption">
         /// Image caption
         /// </param>
         /// <param name="url">
         /// URL to the image
+        /// </param>
+        /// <param name="type">
+        /// Image item type<br/>
+        /// Default Value: image
+        /// </param>
+        /// <param name="bbox">
+        /// List of bounding boxes
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,11 +77,11 @@ namespace LlamaParse
             string? type,
             global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
         {
+            this.Type = type;
             this.Md = md ?? throw new global::System.ArgumentNullException(nameof(md));
+            this.Bbox = bbox;
             this.Caption = caption ?? throw new global::System.ArgumentNullException(nameof(caption));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Type = type;
-            this.Bbox = bbox;
         }
 
         /// <summary>

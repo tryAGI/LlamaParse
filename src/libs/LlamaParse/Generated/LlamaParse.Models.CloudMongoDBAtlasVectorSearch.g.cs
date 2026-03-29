@@ -75,14 +75,14 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudMongoDBAtlasVectorSearch" /> class.
         /// </summary>
+        /// <param name="dbName"></param>
+        /// <param name="collectionName"></param>
         /// <param name="supportsNestedMetadataFilters">
         /// Default Value: false
         /// </param>
         /// <param name="mongodbUri">
         /// Included only in requests
         /// </param>
-        /// <param name="dbName"></param>
-        /// <param name="collectionName"></param>
         /// <param name="vectorIndexName"></param>
         /// <param name="fulltextIndexName"></param>
         /// <param name="embeddingDimension"></param>
@@ -102,10 +102,10 @@ namespace LlamaParse
             int? embeddingDimension,
             string? className)
         {
-            this.DbName = dbName ?? throw new global::System.ArgumentNullException(nameof(dbName));
-            this.CollectionName = collectionName ?? throw new global::System.ArgumentNullException(nameof(collectionName));
             this.SupportsNestedMetadataFilters = supportsNestedMetadataFilters;
             this.MongodbUri = mongodbUri;
+            this.DbName = dbName ?? throw new global::System.ArgumentNullException(nameof(dbName));
+            this.CollectionName = collectionName ?? throw new global::System.ArgumentNullException(nameof(collectionName));
             this.VectorIndexName = vectorIndexName;
             this.FulltextIndexName = fulltextIndexName;
             this.EmbeddingDimension = embeddingDimension;

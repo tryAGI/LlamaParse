@@ -107,13 +107,16 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier
         /// </param>
+        /// <param name="name"></param>
+        /// <param name="projectId">
+        /// The ID of the project that the file belongs to
+        /// </param>
         /// <param name="createdAt">
         /// Creation datetime
         /// </param>
         /// <param name="updatedAt">
         /// Update datetime
         /// </param>
-        /// <param name="name"></param>
         /// <param name="externalFileId">
         /// The ID of the file in the external system
         /// </param>
@@ -122,9 +125,6 @@ namespace LlamaParse
         /// </param>
         /// <param name="fileType">
         /// File type (e.g. pdf, docx, etc.)
-        /// </param>
-        /// <param name="projectId">
-        /// The ID of the project that the file belongs to
         /// </param>
         /// <param name="lastModifiedAt">
         /// The last modified time of the file
@@ -164,13 +164,13 @@ namespace LlamaParse
             string? purpose)
         {
             this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.ProjectId = projectId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ExternalFileId = externalFileId;
             this.FileSize = fileSize;
             this.FileType = fileType;
+            this.ProjectId = projectId;
             this.LastModifiedAt = lastModifiedAt;
             this.ResourceInfo = resourceInfo;
             this.PermissionInfo = permissionInfo;

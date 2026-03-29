@@ -67,11 +67,11 @@ namespace LlamaParse
         /// <param name="index">
         /// The index of the message in the chat.
         /// </param>
-        /// <param name="annotations">
-        /// Retrieval annotations for the message.
-        /// </param>
         /// <param name="role">
         /// The role of the message.
+        /// </param>
+        /// <param name="annotations">
+        /// Retrieval annotations for the message.
         /// </param>
         /// <param name="content">
         /// Text content of the generation
@@ -96,8 +96,8 @@ namespace LlamaParse
         {
             this.Id = id;
             this.Index = index;
-            this.Role = role;
             this.Annotations = annotations;
+            this.Role = role;
             this.Content = content;
             this.AdditionalKwargs = additionalKwargs;
             this.ClassName = className;

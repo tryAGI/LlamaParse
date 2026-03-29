@@ -92,20 +92,11 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier for the split job.
         /// </param>
-        /// <param name="createdAt">
-        /// Creation datetime
-        /// </param>
-        /// <param name="updatedAt">
-        /// Update datetime
-        /// </param>
         /// <param name="projectId">
         /// Project ID this job belongs to.
         /// </param>
         /// <param name="userId">
         /// User ID who created this job.
-        /// </param>
-        /// <param name="configurationId">
-        /// Split configuration ID used for this job.
         /// </param>
         /// <param name="documentInput">
         /// Document that was split.
@@ -115,6 +106,15 @@ namespace LlamaParse
         /// </param>
         /// <param name="status">
         /// Current status of the job. Valid values are: pending, processing, completed, failed, cancelled.
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation datetime
+        /// </param>
+        /// <param name="updatedAt">
+        /// Update datetime
+        /// </param>
+        /// <param name="configurationId">
+        /// Split configuration ID used for this job.
         /// </param>
         /// <param name="result">
         /// Split result (available when status is COMPLETED).
@@ -139,14 +139,14 @@ namespace LlamaParse
             string? errorMessage)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.ConfigurationId = configurationId;
             this.DocumentInput = documentInput ?? throw new global::System.ArgumentNullException(nameof(documentInput));
             this.Categories = categories ?? throw new global::System.ArgumentNullException(nameof(categories));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.ConfigurationId = configurationId;
             this.Result = result;
             this.ErrorMessage = errorMessage;
         }

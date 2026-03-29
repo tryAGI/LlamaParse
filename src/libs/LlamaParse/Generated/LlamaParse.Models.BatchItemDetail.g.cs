@@ -84,18 +84,18 @@ namespace LlamaParse
         /// <param name="status">
         /// Processing status of this item
         /// </param>
+        /// <param name="itemId">
+        /// ID of the item
+        /// </param>
+        /// <param name="itemName">
+        /// Name of the item
+        /// </param>
         /// <param name="effectiveAt"></param>
         /// <param name="jobRecordId">
         /// The job record ID associated with this status, if any.
         /// </param>
         /// <param name="errorMessage">
         /// Error message for the latest job attempt, if any.
-        /// </param>
-        /// <param name="itemId">
-        /// ID of the item
-        /// </param>
-        /// <param name="itemName">
-        /// Name of the item
         /// </param>
         /// <param name="jobId">
         /// Job ID for the underlying processing job (links to parse/extract job results)
@@ -125,11 +125,11 @@ namespace LlamaParse
             global::System.DateTime? completedAt)
         {
             this.Status = status;
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.ItemName = itemName ?? throw new global::System.ArgumentNullException(nameof(itemName));
             this.EffectiveAt = effectiveAt;
             this.JobRecordId = jobRecordId;
             this.ErrorMessage = errorMessage;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.ItemName = itemName ?? throw new global::System.ArgumentNullException(nameof(itemName));
             this.JobId = jobId;
             this.SkipReason = skipReason;
             this.StartedAt = startedAt;

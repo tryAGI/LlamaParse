@@ -75,11 +75,17 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudOneDriveDataSource" /> class.
         /// </summary>
-        /// <param name="supportsAccessControl">
-        /// Default Value: true
-        /// </param>
         /// <param name="userPrincipalName">
         /// The user principal name to use for authentication.
+        /// </param>
+        /// <param name="clientId">
+        /// The client ID to use for authentication.
+        /// </param>
+        /// <param name="tenantId">
+        /// The tenant ID to use for authentication.
+        /// </param>
+        /// <param name="supportsAccessControl">
+        /// Default Value: true
         /// </param>
         /// <param name="folderPath">
         /// The path of the OneDrive folder to read from.
@@ -87,15 +93,9 @@ namespace LlamaParse
         /// <param name="folderId">
         /// The ID of the OneDrive folder to read from.
         /// </param>
-        /// <param name="clientId">
-        /// The client ID to use for authentication.
-        /// </param>
         /// <param name="clientSecret">
         /// The client secret to use for authentication.<br/>
         /// Included only in requests
-        /// </param>
-        /// <param name="tenantId">
-        /// The tenant ID to use for authentication.
         /// </param>
         /// <param name="requiredExts">
         /// The list of required file extensions.
@@ -117,13 +117,13 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<string>? requiredExts,
             string? className)
         {
-            this.UserPrincipalName = userPrincipalName ?? throw new global::System.ArgumentNullException(nameof(userPrincipalName));
-            this.ClientId = clientId ?? throw new global::System.ArgumentNullException(nameof(clientId));
-            this.TenantId = tenantId ?? throw new global::System.ArgumentNullException(nameof(tenantId));
             this.SupportsAccessControl = supportsAccessControl;
+            this.UserPrincipalName = userPrincipalName ?? throw new global::System.ArgumentNullException(nameof(userPrincipalName));
             this.FolderPath = folderPath;
             this.FolderId = folderId;
+            this.ClientId = clientId ?? throw new global::System.ArgumentNullException(nameof(clientId));
             this.ClientSecret = clientSecret;
+            this.TenantId = tenantId ?? throw new global::System.ArgumentNullException(nameof(tenantId));
             this.RequiredExts = requiredExts;
             this.ClassName = className;
         }

@@ -71,17 +71,17 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier for the directory.
         /// </param>
-        /// <param name="createdAt">
-        /// Creation datetime
-        /// </param>
-        /// <param name="updatedAt">
-        /// Update datetime
-        /// </param>
         /// <param name="projectId">
         /// Project the directory belongs to.
         /// </param>
         /// <param name="name">
         /// Human-readable name for the directory.
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation datetime
+        /// </param>
+        /// <param name="updatedAt">
+        /// Update datetime
         /// </param>
         /// <param name="description">
         /// Optional description shown to users.
@@ -106,10 +106,10 @@ namespace LlamaParse
             global::System.DateTime? deletedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.DataSourceId = dataSourceId;
             this.DeletedAt = deletedAt;

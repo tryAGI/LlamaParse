@@ -67,6 +67,12 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudJiraDataSource" /> class.
         /// </summary>
+        /// <param name="authenticationMechanism">
+        /// Type of Authentication for connecting to Jira APIs.
+        /// </param>
+        /// <param name="query">
+        /// JQL (Jira Query Language) query to search.
+        /// </param>
         /// <param name="supportsAccessControl">
         /// Default Value: false
         /// </param>
@@ -81,12 +87,6 @@ namespace LlamaParse
         /// </param>
         /// <param name="cloudId">
         /// The cloud ID, used in case of OAuth2.
-        /// </param>
-        /// <param name="authenticationMechanism">
-        /// Type of Authentication for connecting to Jira APIs.
-        /// </param>
-        /// <param name="query">
-        /// JQL (Jira Query Language) query to search.
         /// </param>
         /// <param name="className">
         /// Default Value: CloudJiraDataSource
@@ -104,13 +104,13 @@ namespace LlamaParse
             string? cloudId,
             string? className)
         {
-            this.AuthenticationMechanism = authenticationMechanism ?? throw new global::System.ArgumentNullException(nameof(authenticationMechanism));
-            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.SupportsAccessControl = supportsAccessControl;
             this.Email = email;
             this.ApiToken = apiToken;
             this.ServerUrl = serverUrl;
             this.CloudId = cloudId;
+            this.AuthenticationMechanism = authenticationMechanism ?? throw new global::System.ArgumentNullException(nameof(authenticationMechanism));
+            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.ClassName = className;
         }
 

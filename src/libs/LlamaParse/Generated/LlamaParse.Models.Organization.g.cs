@@ -66,14 +66,14 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier
         /// </param>
+        /// <param name="name">
+        /// A name for the organization.
+        /// </param>
         /// <param name="createdAt">
         /// Creation datetime
         /// </param>
         /// <param name="updatedAt">
         /// Update datetime
-        /// </param>
-        /// <param name="name">
-        /// A name for the organization.
         /// </param>
         /// <param name="parsePlanLevel">
         /// [Deprecated] Whether the organization is a Parse Premium customer.<br/>
@@ -98,9 +98,9 @@ namespace LlamaParse
             object? featureFlags)
         {
             this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ParsePlanLevel = parsePlanLevel;
             this.StripeCustomerId = stripeCustomerId;
             this.FeatureFlags = featureFlags;

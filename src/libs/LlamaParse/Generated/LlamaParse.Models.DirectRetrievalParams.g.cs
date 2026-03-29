@@ -53,15 +53,15 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="DirectRetrievalParams" /> class.
         /// </summary>
+        /// <param name="query">
+        /// The query to retrieve against.
+        /// </param>
         /// <param name="mode">
         /// The mode of composite retrieval.<br/>
         /// Default Value: full
         /// </param>
         /// <param name="rerankConfig">
         /// The rerank configuration for composite retrieval.
-        /// </param>
-        /// <param name="query">
-        /// The query to retrieve against.
         /// </param>
         /// <param name="pipelines">
         /// The pipelines to use for retrieval.
@@ -75,9 +75,9 @@ namespace LlamaParse
             global::LlamaParse.ReRankConfig? rerankConfig,
             global::System.Collections.Generic.IList<global::LlamaParse.RetrieverPipeline>? pipelines)
         {
-            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Mode = mode;
             this.RerankConfig = rerankConfig;
+            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Pipelines = pipelines;
         }
 

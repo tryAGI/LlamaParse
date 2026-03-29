@@ -107,14 +107,8 @@ namespace LlamaParse
         /// <param name="projectId">
         /// Project this job belongs to
         /// </param>
-        /// <param name="configurationId">
-        /// Saved extract configuration ID used for this job, if any
-        /// </param>
         /// <param name="documentInputValue">
         /// File ID or parse job ID that was extracted
-        /// </param>
-        /// <param name="configuration">
-        /// Configuration used for this job
         /// </param>
         /// <param name="status">
         /// Current job status.<br/>
@@ -123,6 +117,18 @@ namespace LlamaParse
         /// - `COMPLETED` — finished successfully<br/>
         /// - `FAILED` — terminated with an error<br/>
         /// - `CANCELLED` — cancelled by user
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation timestamp
+        /// </param>
+        /// <param name="updatedAt">
+        /// Last update timestamp
+        /// </param>
+        /// <param name="configurationId">
+        /// Saved extract configuration ID used for this job, if any
+        /// </param>
+        /// <param name="configuration">
+        /// Configuration used for this job
         /// </param>
         /// <param name="errorMessage">
         /// Error details when status is FAILED
@@ -135,12 +141,6 @@ namespace LlamaParse
         /// </param>
         /// <param name="metadata">
         /// Custom metadata - limited to enterprise plans.
-        /// </param>
-        /// <param name="createdAt">
-        /// Creation timestamp
-        /// </param>
-        /// <param name="updatedAt">
-        /// Last update timestamp
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -161,16 +161,16 @@ namespace LlamaParse
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
-            this.DocumentInputValue = documentInputValue ?? throw new global::System.ArgumentNullException(nameof(documentInputValue));
-            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.ConfigurationId = configurationId;
+            this.DocumentInputValue = documentInputValue ?? throw new global::System.ArgumentNullException(nameof(documentInputValue));
             this.Configuration = configuration;
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.ErrorMessage = errorMessage;
             this.ExtractResult = extractResult;
             this.ExtractMetadata = extractMetadata;
             this.Metadata = metadata;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

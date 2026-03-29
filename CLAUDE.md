@@ -23,15 +23,15 @@ var client = new LlamaParseClient(apiKey); // LLAMAPARSE_API_KEY env var
 ## Key Files
 
 - `src/libs/LlamaParse/openapi.yaml` — OpenAPI spec (downloaded from LlamaCloud API)
-- `src/libs/LlamaParse/generate.sh` — Downloads spec, fixes servers/enum values, runs autosdk with `--security-scheme Http:Header:Bearer`
+- `src/libs/LlamaParse/generate.sh` — Downloads spec, fixes servers section, runs autosdk with `--security-scheme Http:Header:Bearer`
 - `src/libs/LlamaParse/Generated/` — **Never edit** — auto-generated code (~4500 files)
 - `src/tests/IntegrationTests/Tests.cs` — Test helper with bearer auth
 - `src/tests/IntegrationTests/Examples/` — Example tests (also generate docs)
 
 ## Spec Notes
 
-- `--security-scheme Http:Header:Bearer` handles auth; `jq` injects `servers` section
-- `FilterOperator` enum values are renamed from symbolic operators (`==`, `>`, `<`, etc.) to valid C# identifiers (`eq`, `gt`, `lt`, etc.)
+- `--security-scheme Http:Header:Bearer` handles auth; `jq` injects `servers` section (spec has none)
+- `FilterOperator` symbolic enum values (`==`, `>`, `<`, etc.) handled natively by AutoSDK dev.154+ (generates `Eq`, `Gt`, `Lt`, etc.)
 - Uses `--exclude-deprecated-operations` flag
 
 ## Sub-client Pattern

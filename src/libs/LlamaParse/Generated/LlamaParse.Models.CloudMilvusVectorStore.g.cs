@@ -54,10 +54,10 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudMilvusVectorStore" /> class.
         /// </summary>
+        /// <param name="uri"></param>
         /// <param name="supportsNestedMetadataFilters">
         /// Default Value: false
         /// </param>
-        /// <param name="uri"></param>
         /// <param name="collectionName"></param>
         /// <param name="token"></param>
         /// <param name="embeddingDimension"></param>
@@ -75,8 +75,8 @@ namespace LlamaParse
             int? embeddingDimension,
             string? className)
         {
-            this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
             this.SupportsNestedMetadataFilters = supportsNestedMetadataFilters;
+            this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
             this.CollectionName = collectionName;
             this.Token = token;
             this.EmbeddingDimension = embeddingDimension;

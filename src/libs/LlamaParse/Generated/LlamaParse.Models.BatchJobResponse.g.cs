@@ -132,6 +132,18 @@ namespace LlamaParse
         /// <param name="status">
         /// Current job status
         /// </param>
+        /// <param name="id">
+        /// Unique identifier for the batch job
+        /// </param>
+        /// <param name="projectId">
+        /// Project this job belongs to
+        /// </param>
+        /// <param name="jobType">
+        /// Type of processing operation (parse or classify)
+        /// </param>
+        /// <param name="totalItems">
+        /// Total number of items in the job
+        /// </param>
         /// <param name="effectiveAt"></param>
         /// <param name="jobRecordId">
         /// The job record ID associated with this status, if any.
@@ -139,26 +151,14 @@ namespace LlamaParse
         /// <param name="errorMessage">
         /// Error message for the latest job attempt, if any.
         /// </param>
-        /// <param name="id">
-        /// Unique identifier for the batch job
-        /// </param>
         /// <param name="createdAt">
         /// Creation datetime
         /// </param>
         /// <param name="updatedAt">
         /// Update datetime
         /// </param>
-        /// <param name="projectId">
-        /// Project this job belongs to
-        /// </param>
         /// <param name="directoryId">
         /// Directory being processed
-        /// </param>
-        /// <param name="jobType">
-        /// Type of processing operation (parse or classify)
-        /// </param>
-        /// <param name="totalItems">
-        /// Total number of items in the job
         /// </param>
         /// <param name="processedItems">
         /// Number of items processed so far<br/>
@@ -204,16 +204,16 @@ namespace LlamaParse
             global::System.DateTime? completedAt)
         {
             this.Status = status;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
-            this.JobType = jobType;
-            this.TotalItems = totalItems;
             this.EffectiveAt = effectiveAt;
             this.JobRecordId = jobRecordId;
             this.ErrorMessage = errorMessage;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.DirectoryId = directoryId;
+            this.JobType = jobType;
+            this.TotalItems = totalItems;
             this.ProcessedItems = processedItems;
             this.FailedItems = failedItems;
             this.SkippedItems = skippedItems;

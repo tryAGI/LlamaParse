@@ -121,6 +121,9 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="RetrievalParams" /> class.
         /// </summary>
+        /// <param name="query">
+        /// The query to retrieve against.
+        /// </param>
         /// <param name="denseSimilarityTopK">
         /// Number of nodes for dense retrieval.<br/>
         /// Default Value: 30
@@ -165,9 +168,6 @@ namespace LlamaParse
         /// Whether to retrieve page figure nodes.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="query">
-        /// The query to retrieve against.
-        /// </param>
         /// <param name="className">
         /// Default Value: base_component
         /// </param>
@@ -190,7 +190,6 @@ namespace LlamaParse
             bool? retrievePageFigureNodes,
             string? className)
         {
-            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.DenseSimilarityTopK = denseSimilarityTopK;
             this.DenseSimilarityCutoff = denseSimilarityCutoff;
             this.SparseSimilarityTopK = sparseSimilarityTopK;
@@ -203,6 +202,7 @@ namespace LlamaParse
             this.RetrievalMode = retrievalMode;
             this.RetrievePageScreenshotNodes = retrievePageScreenshotNodes;
             this.RetrievePageFigureNodes = retrievePageFigureNodes;
+            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.ClassName = className;
         }
 

@@ -42,11 +42,11 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudGoogleDriveDataSource" /> class.
         /// </summary>
-        /// <param name="supportsAccessControl">
-        /// Default Value: false
-        /// </param>
         /// <param name="folderId">
         /// The ID of the Google Drive folder to read from.
+        /// </param>
+        /// <param name="supportsAccessControl">
+        /// Default Value: false
         /// </param>
         /// <param name="serviceAccountKey">
         /// The service account key JSON to use for authentication.
@@ -63,8 +63,8 @@ namespace LlamaParse
             global::System.Collections.Generic.Dictionary<string, string>? serviceAccountKey,
             string? className)
         {
-            this.FolderId = folderId ?? throw new global::System.ArgumentNullException(nameof(folderId));
             this.SupportsAccessControl = supportsAccessControl;
+            this.FolderId = folderId ?? throw new global::System.ArgumentNullException(nameof(folderId));
             this.ServiceAccountKey = serviceAccountKey;
             this.ClassName = className;
         }

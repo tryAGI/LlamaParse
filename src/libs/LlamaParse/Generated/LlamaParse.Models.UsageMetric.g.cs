@@ -111,9 +111,6 @@ namespace LlamaParse
         /// <param name="value">
         /// The unit measurement associated with the event type
         /// </param>
-        /// <param name="properties">
-        /// Properties associated with the metric
-        /// </param>
         /// <param name="day">
         /// The day the metric was emitted [UTC], in the format 'YYYY-MM-DD'
         /// </param>
@@ -122,6 +119,9 @@ namespace LlamaParse
         /// </param>
         /// <param name="eventAggregationType">
         /// The source job aggregation type, i.e. pdf
+        /// </param>
+        /// <param name="properties">
+        /// Properties associated with the metric
         /// </param>
         /// <param name="credits">
         /// The number of credits consumed by this metric
@@ -148,10 +148,10 @@ namespace LlamaParse
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
             this.Value = value;
+            this.Properties = properties;
             this.Day = day ?? throw new global::System.ArgumentNullException(nameof(day));
             this.EventAggregationKey = eventAggregationKey ?? throw new global::System.ArgumentNullException(nameof(eventAggregationKey));
             this.EventAggregationType = eventAggregationType ?? throw new global::System.ArgumentNullException(nameof(eventAggregationType));
-            this.Properties = properties;
             this.Credits = credits;
         }
 

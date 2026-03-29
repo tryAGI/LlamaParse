@@ -122,12 +122,6 @@ namespace LlamaParse
         /// <param name="id">
         /// The id of the extraction run
         /// </param>
-        /// <param name="createdAt">
-        /// Creation datetime
-        /// </param>
-        /// <param name="updatedAt">
-        /// Update datetime
-        /// </param>
         /// <param name="projectId">
         /// The id of the project that the extraction run belongs to
         /// </param>
@@ -140,11 +134,20 @@ namespace LlamaParse
         /// <param name="config">
         /// The config used for extraction
         /// </param>
-        /// <param name="fileId">
-        /// The id of the file that the extract was extracted from
-        /// </param>
         /// <param name="status">
         /// The status of the extraction run
+        /// </param>
+        /// <param name="fromUi">
+        /// Whether this extraction run was triggered from the UI
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation datetime
+        /// </param>
+        /// <param name="updatedAt">
+        /// Update datetime
+        /// </param>
+        /// <param name="fileId">
+        /// The id of the file that the extract was extracted from
         /// </param>
         /// <param name="error">
         /// The error that occurred during extraction
@@ -157,9 +160,6 @@ namespace LlamaParse
         /// </param>
         /// <param name="extractionMetadata">
         /// The metadata extracted from the file
-        /// </param>
-        /// <param name="fromUi">
-        /// Whether this extraction run was triggered from the UI
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -181,19 +181,19 @@ namespace LlamaParse
             object? extractionMetadata)
         {
             this.Id = id;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.ProjectId = projectId;
             this.ExtractionAgentId = extractionAgentId;
             this.DataSchema = dataSchema ?? throw new global::System.ArgumentNullException(nameof(dataSchema));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
-            this.Status = status;
-            this.FromUi = fromUi;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.FileId = fileId;
+            this.Status = status;
             this.Error = error;
             this.JobId = jobId;
             this.Data = data;
             this.ExtractionMetadata = extractionMetadata;
+            this.FromUi = fromUi;
         }
 
         /// <summary>

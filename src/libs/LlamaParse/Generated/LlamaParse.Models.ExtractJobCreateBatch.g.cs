@@ -50,14 +50,14 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractJobCreateBatch" /> class.
         /// </summary>
-        /// <param name="webhookConfigurations">
-        /// Outbound webhook endpoints to notify on job status changes
-        /// </param>
         /// <param name="extractionAgentId">
         /// The id of the extraction agent
         /// </param>
         /// <param name="fileIds">
         /// The ids of the files
+        /// </param>
+        /// <param name="webhookConfigurations">
+        /// Outbound webhook endpoints to notify on job status changes
         /// </param>
         /// <param name="dataSchemaOverride">
         /// The data schema to override the extraction agent's data schema with
@@ -75,9 +75,9 @@ namespace LlamaParse
             global::LlamaParse.AnyOf<object, string, object>? dataSchemaOverride,
             global::LlamaParse.ExtractConfig? configOverride)
         {
+            this.WebhookConfigurations = webhookConfigurations;
             this.ExtractionAgentId = extractionAgentId;
             this.FileIds = fileIds ?? throw new global::System.ArgumentNullException(nameof(fileIds));
-            this.WebhookConfigurations = webhookConfigurations;
             this.DataSchemaOverride = dataSchemaOverride;
             this.ConfigOverride = configOverride;
         }

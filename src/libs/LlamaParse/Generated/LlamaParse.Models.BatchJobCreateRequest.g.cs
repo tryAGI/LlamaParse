@@ -53,14 +53,14 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchJobCreateRequest" /> class.
         /// </summary>
+        /// <param name="jobConfig">
+        /// Job configuration — either a parse or classify config
+        /// </param>
         /// <param name="directoryId">
         /// ID of the directory containing files to process
         /// </param>
         /// <param name="itemIds">
         /// List of specific item IDs to process. Either this or directory_id must be provided.
-        /// </param>
-        /// <param name="jobConfig">
-        /// Job configuration — either a parse or classify config
         /// </param>
         /// <param name="pageSize">
         /// Number of files to process per batch when using directory mode<br/>
@@ -79,9 +79,9 @@ namespace LlamaParse
             int? pageSize,
             int? continueAsNewThreshold)
         {
-            this.JobConfig = jobConfig;
             this.DirectoryId = directoryId;
             this.ItemIds = itemIds;
+            this.JobConfig = jobConfig;
             this.PageSize = pageSize;
             this.ContinueAsNewThreshold = continueAsNewThreshold;
         }

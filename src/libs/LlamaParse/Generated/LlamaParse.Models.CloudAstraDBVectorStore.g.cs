@@ -71,13 +71,6 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudAstraDBVectorStore" /> class.
         /// </summary>
-        /// <param name="supportsNestedMetadataFilters">
-        /// Default Value: true
-        /// </param>
-        /// <param name="token">
-        /// The Astra DB Application Token to use<br/>
-        /// Included only in requests
-        /// </param>
         /// <param name="apiEndpoint">
         /// The Astra DB JSON API endpoint for your database
         /// </param>
@@ -86,6 +79,13 @@ namespace LlamaParse
         /// </param>
         /// <param name="embeddingDimension">
         /// Length of the embedding vectors in use
+        /// </param>
+        /// <param name="supportsNestedMetadataFilters">
+        /// Default Value: true
+        /// </param>
+        /// <param name="token">
+        /// The Astra DB Application Token to use<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="keyspace">
         /// The keyspace to use. If not provided, 'default_keyspace'
@@ -105,11 +105,11 @@ namespace LlamaParse
             string? keyspace,
             string? className)
         {
+            this.SupportsNestedMetadataFilters = supportsNestedMetadataFilters;
+            this.Token = token;
             this.ApiEndpoint = apiEndpoint ?? throw new global::System.ArgumentNullException(nameof(apiEndpoint));
             this.CollectionName = collectionName ?? throw new global::System.ArgumentNullException(nameof(collectionName));
             this.EmbeddingDimension = embeddingDimension;
-            this.SupportsNestedMetadataFilters = supportsNestedMetadataFilters;
-            this.Token = token;
             this.Keyspace = keyspace;
             this.ClassName = className;
         }

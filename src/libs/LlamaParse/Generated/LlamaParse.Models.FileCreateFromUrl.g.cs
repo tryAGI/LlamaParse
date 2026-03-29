@@ -70,11 +70,11 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="FileCreateFromUrl" /> class.
         /// </summary>
-        /// <param name="name">
-        /// Name that will be used for created file. If possible, always include the file extension in the name.
-        /// </param>
         /// <param name="url">
         /// URL of the file to download
+        /// </param>
+        /// <param name="name">
+        /// Name that will be used for created file. If possible, always include the file extension in the name.
         /// </param>
         /// <param name="proxyUrl">
         /// URL of the proxy server to use for downloading the file
@@ -110,8 +110,8 @@ namespace LlamaParse
             object? resourceInfo,
             global::LlamaParse.AnyOf<global::LlamaParse.FileCreateFromUrlStorageType?, string>? storageType)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Name = name;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ProxyUrl = proxyUrl;
             this.RequestHeaders = requestHeaders;
             this.VerifySsl = verifySsl;

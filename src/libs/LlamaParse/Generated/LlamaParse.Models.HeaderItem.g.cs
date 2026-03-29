@@ -44,18 +44,18 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="HeaderItem" /> class.
         /// </summary>
+        /// <param name="md">
+        /// Markdown representation preserving formatting
+        /// </param>
+        /// <param name="items">
+        /// List of items within the header
+        /// </param>
         /// <param name="type">
         /// Page header container<br/>
         /// Default Value: header
         /// </param>
-        /// <param name="md">
-        /// Markdown representation preserving formatting
-        /// </param>
         /// <param name="bbox">
         /// List of bounding boxes
-        /// </param>
-        /// <param name="items">
-        /// List of items within the header
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,10 +66,10 @@ namespace LlamaParse
             string? type,
             global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
         {
-            this.Md = md ?? throw new global::System.ArgumentNullException(nameof(md));
-            this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
             this.Type = type;
+            this.Md = md ?? throw new global::System.ArgumentNullException(nameof(md));
             this.Bbox = bbox;
+            this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
         }
 
         /// <summary>

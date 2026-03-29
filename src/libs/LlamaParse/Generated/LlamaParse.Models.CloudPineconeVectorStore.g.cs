@@ -62,6 +62,7 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudPineconeVectorStore" /> class.
         /// </summary>
+        /// <param name="indexName"></param>
         /// <param name="supportsNestedMetadataFilters">
         /// Default Value: true
         /// </param>
@@ -69,7 +70,6 @@ namespace LlamaParse
         /// The API key for authenticating with Pinecone<br/>
         /// Included only in requests
         /// </param>
-        /// <param name="indexName"></param>
         /// <param name="namespace"></param>
         /// <param name="insertKwargs"></param>
         /// <param name="className">
@@ -86,9 +86,9 @@ namespace LlamaParse
             object? insertKwargs,
             string? className)
         {
-            this.IndexName = indexName ?? throw new global::System.ArgumentNullException(nameof(indexName));
             this.SupportsNestedMetadataFilters = supportsNestedMetadataFilters;
             this.ApiKey = apiKey;
+            this.IndexName = indexName ?? throw new global::System.ArgumentNullException(nameof(indexName));
             this.Namespace = @namespace;
             this.InsertKwargs = insertKwargs;
             this.ClassName = className;

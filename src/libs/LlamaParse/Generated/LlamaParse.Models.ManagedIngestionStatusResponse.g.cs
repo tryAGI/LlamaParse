@@ -49,14 +49,14 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ManagedIngestionStatusResponse" /> class.
         /// </summary>
+        /// <param name="status">
+        /// Status of the ingestion.
+        /// </param>
         /// <param name="jobId">
         /// ID of the latest job.
         /// </param>
         /// <param name="deploymentDate">
         /// Date of the deployment.
-        /// </param>
-        /// <param name="status">
-        /// Status of the ingestion.
         /// </param>
         /// <param name="error">
         /// List of errors that occurred during ingestion.
@@ -74,9 +74,9 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.IngestionErrorResponse>? error,
             global::System.DateTime? effectiveAt)
         {
-            this.Status = status;
             this.JobId = jobId;
             this.DeploymentDate = deploymentDate;
+            this.Status = status;
             this.Error = error;
             this.EffectiveAt = effectiveAt;
         }

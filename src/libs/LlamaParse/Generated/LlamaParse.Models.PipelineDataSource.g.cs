@@ -126,24 +126,12 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier
         /// </param>
-        /// <param name="createdAt">
-        /// Creation datetime
-        /// </param>
-        /// <param name="updatedAt">
-        /// Update datetime
-        /// </param>
         /// <param name="name">
         /// The name of the data source.
         /// </param>
         /// <param name="sourceType"></param>
-        /// <param name="customMetadata">
-        /// Custom metadata that will be present on all data loaded from the data source
-        /// </param>
         /// <param name="component">
         /// Component that implements the data source
-        /// </param>
-        /// <param name="versionMetadata">
-        /// Version metadata for the data source
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="dataSourceId">
@@ -154,6 +142,18 @@ namespace LlamaParse
         /// </param>
         /// <param name="lastSyncedAt">
         /// The last time the data source was automatically synced.
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation datetime
+        /// </param>
+        /// <param name="updatedAt">
+        /// Update datetime
+        /// </param>
+        /// <param name="customMetadata">
+        /// Custom metadata that will be present on all data loaded from the data source
+        /// </param>
+        /// <param name="versionMetadata">
+        /// Version metadata for the data source
         /// </param>
         /// <param name="syncInterval">
         /// The interval at which the data source should be synced.
@@ -189,17 +189,17 @@ namespace LlamaParse
             global::System.DateTime? statusUpdatedAt)
         {
             this.Id = id;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.SourceType = sourceType;
+            this.CustomMetadata = customMetadata;
             this.Component = component;
+            this.VersionMetadata = versionMetadata;
             this.ProjectId = projectId;
             this.DataSourceId = dataSourceId;
             this.PipelineId = pipelineId;
             this.LastSyncedAt = lastSyncedAt;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.CustomMetadata = customMetadata;
-            this.VersionMetadata = versionMetadata;
             this.SyncInterval = syncInterval;
             this.SyncScheduleSetBy = syncScheduleSetBy;
             this.Status = status;

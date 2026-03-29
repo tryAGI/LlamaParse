@@ -69,12 +69,6 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique configuration ID.
         /// </param>
-        /// <param name="createdAt">
-        /// Creation timestamp.
-        /// </param>
-        /// <param name="updatedAt">
-        /// Last update timestamp.
-        /// </param>
         /// <param name="name">
         /// Configuration name.
         /// </param>
@@ -86,6 +80,12 @@ namespace LlamaParse
         /// </param>
         /// <param name="parameters">
         /// Product-specific configuration parameters.
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation timestamp.
+        /// </param>
+        /// <param name="updatedAt">
+        /// Last update timestamp.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -100,12 +100,12 @@ namespace LlamaParse
             global::System.DateTime? updatedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ProductType = productType;
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
             this.Parameters = parameters;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

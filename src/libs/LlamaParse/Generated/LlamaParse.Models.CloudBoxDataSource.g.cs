@@ -73,14 +73,14 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudBoxDataSource" /> class.
         /// </summary>
+        /// <param name="authenticationMechanism">
+        /// The type of authentication to use (Developer Token or CCG)
+        /// </param>
         /// <param name="supportsAccessControl">
         /// Default Value: false
         /// </param>
         /// <param name="folderId">
         /// The ID of the Box folder to read from.
-        /// </param>
-        /// <param name="authenticationMechanism">
-        /// The type of authentication to use (Developer Token or CCG)
         /// </param>
         /// <param name="developerToken">
         /// Developer token for authentication if authentication_mechanism is 'developer_token'.
@@ -114,9 +114,9 @@ namespace LlamaParse
             string? enterpriseId,
             string? className)
         {
-            this.AuthenticationMechanism = authenticationMechanism;
             this.SupportsAccessControl = supportsAccessControl;
             this.FolderId = folderId;
+            this.AuthenticationMechanism = authenticationMechanism;
             this.DeveloperToken = developerToken;
             this.ClientId = clientId;
             this.ClientSecret = clientSecret;

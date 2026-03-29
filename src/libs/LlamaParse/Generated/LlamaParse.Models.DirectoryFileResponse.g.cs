@@ -85,12 +85,6 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier for the directory file.
         /// </param>
-        /// <param name="createdAt">
-        /// Creation datetime
-        /// </param>
-        /// <param name="updatedAt">
-        /// Update datetime
-        /// </param>
         /// <param name="projectId">
         /// Project the directory file belongs to.
         /// </param>
@@ -102,6 +96,12 @@ namespace LlamaParse
         /// </param>
         /// <param name="displayName">
         /// Display name for the file.
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation datetime
+        /// </param>
+        /// <param name="updatedAt">
+        /// Update datetime
         /// </param>
         /// <param name="dataSourceId">
         /// Optional data source credential associated with the file.
@@ -128,12 +128,12 @@ namespace LlamaParse
             global::System.DateTime? deletedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.DirectoryId = directoryId ?? throw new global::System.ArgumentNullException(nameof(directoryId));
             this.UniqueId = uniqueId ?? throw new global::System.ArgumentNullException(nameof(uniqueId));
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.DataSourceId = dataSourceId;
             this.FileId = fileId;
             this.DeletedAt = deletedAt;

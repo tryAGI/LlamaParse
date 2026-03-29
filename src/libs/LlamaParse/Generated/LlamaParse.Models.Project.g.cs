@@ -67,6 +67,9 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier
         /// </param>
+        /// <param name="organizationId">
+        /// The Organization ID the project is under.
+        /// </param>
         /// <param name="createdAt">
         /// Creation datetime
         /// </param>
@@ -74,9 +77,6 @@ namespace LlamaParse
         /// Update datetime
         /// </param>
         /// <param name="adHocEvalDatasetId"></param>
-        /// <param name="organizationId">
-        /// The Organization ID the project is under.
-        /// </param>
         /// <param name="isDefault">
         /// Whether this project is the default project for the user.<br/>
         /// Default Value: false
@@ -95,10 +95,10 @@ namespace LlamaParse
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
-            this.OrganizationId = organizationId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.AdHocEvalDatasetId = adHocEvalDatasetId;
+            this.OrganizationId = organizationId;
             this.IsDefault = isDefault;
         }
 

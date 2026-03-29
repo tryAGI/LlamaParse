@@ -85,19 +85,19 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier
         /// </param>
+        /// <param name="pipelineId"></param>
+        /// <param name="userId"></param>
+        /// <param name="llmParamsId"></param>
+        /// <param name="retrievalParamsId"></param>
         /// <param name="createdAt">
         /// Creation datetime
         /// </param>
         /// <param name="updatedAt">
         /// Update datetime
         /// </param>
-        /// <param name="pipelineId"></param>
-        /// <param name="userId"></param>
-        /// <param name="llmParamsId"></param>
         /// <param name="llmParams">
         /// LLM parameters last used in this session.
         /// </param>
-        /// <param name="retrievalParamsId"></param>
         /// <param name="retrievalParams">
         /// Preset retrieval parameters last used in this session.
         /// </param>
@@ -120,13 +120,13 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.ChatMessage>? chatMessages)
         {
             this.Id = id;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.PipelineId = pipelineId;
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.LlmParamsId = llmParamsId;
-            this.RetrievalParamsId = retrievalParamsId;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.LlmParams = llmParams;
+            this.RetrievalParamsId = retrievalParamsId;
             this.RetrievalParams = retrievalParams;
             this.ChatMessages = chatMessages;
         }

@@ -61,13 +61,13 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentData" /> class.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="deploymentName"></param>
+        /// <param name="data"></param>
+        /// <param name="id"></param>
         /// <param name="projectId"></param>
         /// <param name="collection">
         /// Default Value: default
         /// </param>
-        /// <param name="data"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
 #if NET7_0_OR_GREATER
@@ -82,11 +82,11 @@ namespace LlamaParse
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt)
         {
-            this.DeploymentName = deploymentName ?? throw new global::System.ArgumentNullException(nameof(deploymentName));
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Id = id;
+            this.DeploymentName = deploymentName ?? throw new global::System.ArgumentNullException(nameof(deploymentName));
             this.ProjectId = projectId;
             this.Collection = collection;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }

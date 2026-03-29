@@ -58,14 +58,14 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier
         /// </param>
+        /// <param name="classifyJobId">
+        /// The ID of the classify job
+        /// </param>
         /// <param name="createdAt">
         /// Creation datetime
         /// </param>
         /// <param name="updatedAt">
         /// Update datetime
-        /// </param>
-        /// <param name="classifyJobId">
-        /// The ID of the classify job
         /// </param>
         /// <param name="fileId">
         /// The ID of the classified file
@@ -85,9 +85,9 @@ namespace LlamaParse
             global::LlamaParse.ClassificationResult? result)
         {
             this.Id = id;
-            this.ClassifyJobId = classifyJobId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.ClassifyJobId = classifyJobId;
             this.FileId = fileId;
             this.Result = result;
         }

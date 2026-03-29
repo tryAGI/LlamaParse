@@ -91,9 +91,6 @@ namespace LlamaParse
         /// <param name="sourceId">
         /// ID of the source
         /// </param>
-        /// <param name="creator">
-        /// Creator of the configuration
-        /// </param>
         /// <param name="version">
         /// Version of the configuration
         /// </param>
@@ -105,6 +102,9 @@ namespace LlamaParse
         /// </param>
         /// <param name="updatedAt">
         /// Last update timestamp
+        /// </param>
+        /// <param name="creator">
+        /// Creator of the configuration
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -124,11 +124,11 @@ namespace LlamaParse
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.SourceType = sourceType ?? throw new global::System.ArgumentNullException(nameof(sourceType));
             this.SourceId = sourceId ?? throw new global::System.ArgumentNullException(nameof(sourceId));
+            this.Creator = creator;
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
             this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Creator = creator;
         }
 
         /// <summary>

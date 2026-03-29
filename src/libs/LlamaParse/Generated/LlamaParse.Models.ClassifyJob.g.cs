@@ -101,21 +101,8 @@ namespace LlamaParse
         /// <param name="status">
         /// The status of the classify job
         /// </param>
-        /// <param name="effectiveAt"></param>
-        /// <param name="jobRecordId">
-        /// The job record ID associated with this status, if any.
-        /// </param>
-        /// <param name="errorMessage">
-        /// Error message for the latest job attempt, if any.
-        /// </param>
         /// <param name="id">
         /// Unique identifier
-        /// </param>
-        /// <param name="createdAt">
-        /// Creation datetime
-        /// </param>
-        /// <param name="updatedAt">
-        /// Update datetime
         /// </param>
         /// <param name="rules">
         /// The rules to classify the files
@@ -125,6 +112,19 @@ namespace LlamaParse
         /// </param>
         /// <param name="projectId">
         /// The ID of the project
+        /// </param>
+        /// <param name="effectiveAt"></param>
+        /// <param name="jobRecordId">
+        /// The job record ID associated with this status, if any.
+        /// </param>
+        /// <param name="errorMessage">
+        /// Error message for the latest job attempt, if any.
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation datetime
+        /// </param>
+        /// <param name="updatedAt">
+        /// Update datetime
         /// </param>
         /// <param name="mode">
         /// The classification mode to use<br/>
@@ -152,15 +152,15 @@ namespace LlamaParse
             global::LlamaParse.ClassifyParsingConfiguration? parsingConfiguration)
         {
             this.Status = status;
-            this.Id = id;
-            this.Rules = rules ?? throw new global::System.ArgumentNullException(nameof(rules));
-            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
-            this.ProjectId = projectId;
             this.EffectiveAt = effectiveAt;
             this.JobRecordId = jobRecordId;
             this.ErrorMessage = errorMessage;
+            this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Rules = rules ?? throw new global::System.ArgumentNullException(nameof(rules));
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.ProjectId = projectId;
             this.Mode = mode;
             this.ParsingConfiguration = parsingConfiguration;
         }

@@ -56,14 +56,14 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractStatelessRequest" /> class.
         /// </summary>
-        /// <param name="webhookConfigurations">
-        /// Outbound webhook endpoints to notify on job status changes
-        /// </param>
         /// <param name="dataSchema">
         /// The schema of the data to extract
         /// </param>
         /// <param name="config">
         /// The configuration parameters for the extraction
+        /// </param>
+        /// <param name="webhookConfigurations">
+        /// Outbound webhook endpoints to notify on job status changes
         /// </param>
         /// <param name="fileId">
         /// The ID of the file to extract from
@@ -85,9 +85,9 @@ namespace LlamaParse
             string? text,
             global::LlamaParse.FileData? file)
         {
+            this.WebhookConfigurations = webhookConfigurations;
             this.DataSchema = dataSchema;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
-            this.WebhookConfigurations = webhookConfigurations;
             this.FileId = fileId;
             this.Text = text;
             this.File = file;

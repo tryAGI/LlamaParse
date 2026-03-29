@@ -99,6 +99,7 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="PipelineCreate" /> class.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="embeddingConfig"></param>
         /// <param name="transformConfig">
         /// Configuration for the transformation.
@@ -127,7 +128,6 @@ namespace LlamaParse
         /// <param name="metadataConfig">
         /// Metadata configuration for the pipeline.
         /// </param>
-        /// <param name="name"></param>
         /// <param name="pipelineType">
         /// Type of pipeline. Either PLAYGROUND or MANAGED.<br/>
         /// Default Value: MANAGED
@@ -153,7 +153,6 @@ namespace LlamaParse
             global::LlamaParse.PipelineType? pipelineType,
             global::System.Guid? managedPipelineId)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.EmbeddingConfig = embeddingConfig;
             this.TransformConfig = transformConfig;
             this.SparseModelConfig = sparseModelConfig;
@@ -164,6 +163,7 @@ namespace LlamaParse
             this.LlamaParseParameters = llamaParseParameters;
             this.Status = status;
             this.MetadataConfig = metadataConfig;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PipelineType = pipelineType;
             this.ManagedPipelineId = managedPipelineId;
         }

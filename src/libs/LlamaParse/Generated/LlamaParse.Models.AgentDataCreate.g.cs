@@ -38,10 +38,10 @@ namespace LlamaParse
         /// Initializes a new instance of the <see cref="AgentDataCreate" /> class.
         /// </summary>
         /// <param name="deploymentName"></param>
+        /// <param name="data"></param>
         /// <param name="collection">
         /// Default Value: default
         /// </param>
-        /// <param name="data"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -51,8 +51,8 @@ namespace LlamaParse
             string? collection)
         {
             this.DeploymentName = deploymentName ?? throw new global::System.ArgumentNullException(nameof(deploymentName));
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Collection = collection;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

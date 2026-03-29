@@ -31490,12 +31490,12 @@
       "FilterOperator": {
         "type": "string",
         "enum": [
-          "eq",
-          "gt",
-          "lt",
-          "ne",
-          "gte",
-          "lte",
+          "==",
+          ">",
+          "<",
+          "!=",
+          ">=",
+          "<=",
           "in",
           "nin",
           "any",

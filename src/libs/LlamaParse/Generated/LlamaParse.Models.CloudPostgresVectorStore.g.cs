@@ -102,19 +102,19 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudPostgresVectorStore" /> class.
         /// </summary>
-        /// <param name="supportsNestedMetadataFilters">
-        /// Default Value: true
-        /// </param>
         /// <param name="database"></param>
         /// <param name="host"></param>
-        /// <param name="password">
-        /// Included only in requests
-        /// </param>
         /// <param name="port"></param>
         /// <param name="user"></param>
         /// <param name="tableName"></param>
         /// <param name="schemaName"></param>
         /// <param name="embedDim"></param>
+        /// <param name="supportsNestedMetadataFilters">
+        /// Default Value: true
+        /// </param>
+        /// <param name="password">
+        /// Included only in requests
+        /// </param>
         /// <param name="hybridSearch">
         /// Default Value: true
         /// </param>
@@ -145,15 +145,15 @@ namespace LlamaParse
             global::LlamaParse.PGVectorHNSWSettings? hnswSettings,
             string? className)
         {
+            this.SupportsNestedMetadataFilters = supportsNestedMetadataFilters;
             this.Database = database ?? throw new global::System.ArgumentNullException(nameof(database));
             this.Host = host ?? throw new global::System.ArgumentNullException(nameof(host));
+            this.Password = password;
             this.Port = port;
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.TableName = tableName ?? throw new global::System.ArgumentNullException(nameof(tableName));
             this.SchemaName = schemaName ?? throw new global::System.ArgumentNullException(nameof(schemaName));
             this.EmbedDim = embedDim;
-            this.SupportsNestedMetadataFilters = supportsNestedMetadataFilters;
-            this.Password = password;
             this.HybridSearch = hybridSearch;
             this.PerformSetup = performSetup;
             this.HnswSettings = hnswSettings;

@@ -136,14 +136,15 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier
         /// </param>
+        /// <param name="name"></param>
+        /// <param name="projectId"></param>
+        /// <param name="embeddingConfig"></param>
         /// <param name="createdAt">
         /// Creation datetime
         /// </param>
         /// <param name="updatedAt">
         /// Update datetime
         /// </param>
-        /// <param name="name"></param>
-        /// <param name="projectId"></param>
         /// <param name="embeddingModelConfigId">
         /// The ID of the EmbeddingModelConfig this pipeline is using.
         /// </param>
@@ -157,7 +158,6 @@ namespace LlamaParse
         /// <param name="managedPipelineId">
         /// The ID of the ManagedPipeline this playground pipeline is linked to.
         /// </param>
-        /// <param name="embeddingConfig"></param>
         /// <param name="sparseModelConfig">
         /// Configuration for the sparse model used in hybrid search.
         /// </param>
@@ -206,15 +206,15 @@ namespace LlamaParse
             global::LlamaParse.PipelineMetadataConfig2? metadataConfig)
         {
             this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.ProjectId = projectId;
-            this.EmbeddingConfig = embeddingConfig;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.ProjectId = projectId;
             this.EmbeddingModelConfigId = embeddingModelConfigId;
             this.EmbeddingModelConfig = embeddingModelConfig;
             this.PipelineType = pipelineType;
             this.ManagedPipelineId = managedPipelineId;
+            this.EmbeddingConfig = embeddingConfig;
             this.SparseModelConfig = sparseModelConfig;
             this.ConfigHash = configHash;
             this.TransformConfig = transformConfig;

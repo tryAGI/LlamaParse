@@ -42,11 +42,11 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractV2JobCreate" /> class.
         /// </summary>
-        /// <param name="webhookConfigurations">
-        /// Outbound webhook endpoints to notify on job status changes
-        /// </param>
         /// <param name="documentInputValue">
         /// File ID or Parse Job ID to extract from
+        /// </param>
+        /// <param name="webhookConfigurations">
+        /// Outbound webhook endpoints to notify on job status changes
         /// </param>
         /// <param name="configurationId">
         /// Saved extract configuration ID (mutually exclusive with configuration)
@@ -63,8 +63,8 @@ namespace LlamaParse
             string? configurationId,
             global::LlamaParse.ExtractConfiguration? configuration)
         {
-            this.DocumentInputValue = documentInputValue ?? throw new global::System.ArgumentNullException(nameof(documentInputValue));
             this.WebhookConfigurations = webhookConfigurations;
+            this.DocumentInputValue = documentInputValue ?? throw new global::System.ArgumentNullException(nameof(documentInputValue));
             this.ConfigurationId = configurationId;
             this.Configuration = configuration;
         }

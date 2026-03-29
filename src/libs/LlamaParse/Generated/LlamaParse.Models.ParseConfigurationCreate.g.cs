@@ -59,6 +59,12 @@ namespace LlamaParse
         /// <param name="name">
         /// Name of the parse configuration
         /// </param>
+        /// <param name="version">
+        /// Version of the configuration
+        /// </param>
+        /// <param name="parameters">
+        /// LlamaParseParameters configuration
+        /// </param>
         /// <param name="sourceType">
         /// Type of the source (e.g., 'project')
         /// </param>
@@ -67,12 +73,6 @@ namespace LlamaParse
         /// </param>
         /// <param name="creator">
         /// Creator of the configuration
-        /// </param>
-        /// <param name="version">
-        /// Version of the configuration
-        /// </param>
-        /// <param name="parameters">
-        /// LlamaParseParameters configuration
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -86,11 +86,11 @@ namespace LlamaParse
             string? creator)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
-            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.SourceType = sourceType;
             this.SourceId = sourceId;
             this.Creator = creator;
+            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
         }
 
         /// <summary>

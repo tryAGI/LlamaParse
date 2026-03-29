@@ -51,21 +51,21 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ListItem" /> class.
         /// </summary>
-        /// <param name="type">
-        /// List item type<br/>
-        /// Default Value: list
-        /// </param>
         /// <param name="md">
         /// Markdown representation preserving formatting
-        /// </param>
-        /// <param name="bbox">
-        /// List of bounding boxes
         /// </param>
         /// <param name="items">
         /// List of nested text or list items
         /// </param>
         /// <param name="ordered">
         /// Whether the list is ordered or unordered
+        /// </param>
+        /// <param name="type">
+        /// List item type<br/>
+        /// Default Value: list
+        /// </param>
+        /// <param name="bbox">
+        /// List of bounding boxes
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,11 +77,11 @@ namespace LlamaParse
             string? type,
             global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
         {
+            this.Type = type;
             this.Md = md ?? throw new global::System.ArgumentNullException(nameof(md));
+            this.Bbox = bbox;
             this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
             this.Ordered = ordered;
-            this.Type = type;
-            this.Bbox = bbox;
         }
 
         /// <summary>

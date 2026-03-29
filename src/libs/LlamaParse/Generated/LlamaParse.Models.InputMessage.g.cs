@@ -50,13 +50,13 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="InputMessage" /> class.
         /// </summary>
-        /// <param name="id">
-        /// ID of the message, if any. a UUID.
-        /// </param>
         /// <param name="role">
         /// Message role.
         /// </param>
         /// <param name="content"></param>
+        /// <param name="id">
+        /// ID of the message, if any. a UUID.
+        /// </param>
         /// <param name="data">
         /// Additional data to be stored with the message.
         /// </param>
@@ -73,9 +73,9 @@ namespace LlamaParse
             object? data,
             string? className)
         {
+            this.Id = id;
             this.Role = role;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Id = id;
             this.Data = data;
             this.ClassName = className;
         }
