@@ -46,7 +46,7 @@ namespace LlamaParse
                 path: "/api/v1/extraction/jobs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("extraction_agent_id", extractionAgentId.ToString()) 
+                .AddRequiredParameter("extraction_agent_id", extractionAgentId.ToString()!) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
