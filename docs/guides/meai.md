@@ -1,8 +1,9 @@
 # Microsoft.Extensions.AI Integration
 
-LlamaParse provides `AIFunction` tools compatible with
-[Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI),
-allowing any `IChatClient` to parse documents via LlamaParse.
+!!! tip "Cross-SDK comparison"
+    See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
+
+The LlamaParse SDK provides `AIFunction` tool wrappers compatible with [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai). These tools can be used with any `IChatClient` to give AI models document parsing, extraction, and processing capabilities.
 
 ## Available Tools
 
