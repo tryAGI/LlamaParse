@@ -60,7 +60,7 @@ namespace LlamaParse
                 path: "/api/v1/extraction/runs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("extraction_agent_id", extractionAgentId.ToString())
+                .AddRequiredParameter("extraction_agent_id", extractionAgentId.ToString()!)
                 .AddOptionalParameter("skip", skip?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
