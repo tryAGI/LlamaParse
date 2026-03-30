@@ -34764,7 +34764,7 @@
               }
             ],
             "title": "Output Tables As Markdown",
-            "description": "Output tables as markdown pipe tables instead of HTML <table> tags. Markdown tables are simpler but cannot represent complex structures like merged cells"
+            "description": "Output tables as markdown pipe tables instead of HTML &lt;table&gt; tags. Markdown tables are simpler but cannot represent complex structures like merged cells"
           },
           "markdown_table_multiline_separator": {
             "anyOf": [
@@ -34776,7 +34776,7 @@
               }
             ],
             "title": "Markdown Table Multiline Separator",
-            "description": "Separator string for multiline cell content in markdown tables. Example: '<br>' to preserve line breaks, ' ' to join with spaces"
+            "description": "Separator string for multiline cell content in markdown tables. Example: '&lt;br&gt;' to preserve line breaks, ' ' to join with spaces"
           },
           "merge_continued_tables": {
             "anyOf": [

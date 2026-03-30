@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Separator string for multiline cell content in markdown tables. Example: '' to preserve line breaks, ' ' to join with spaces
+    /// Separator string for multiline cell content in markdown tables. Example: '&amp;lt;br&amp;gt;' to preserve line breaks, ' ' to join with spaces
     /// </summary>
     public sealed partial class LlamaParseTablesMarkdownTableMultilineSeparator
     {

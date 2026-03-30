@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Output tables as markdown pipe tables instead of HTML &lt;table&gt; tags. Markdown tables are simpler but cannot represent complex structures like merged cells
+    /// Output tables as markdown pipe tables instead of HTML &amp;lt;table&amp;gt; tags. Markdown tables are simpler but cannot represent complex structures like merged cells
     /// </summary>
     public sealed partial class LlamaParseTablesOutputTablesAsMarkdown
     {
