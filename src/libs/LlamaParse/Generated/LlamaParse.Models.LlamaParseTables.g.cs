@@ -15,13 +15,13 @@ namespace LlamaParse
         public bool? CompactMarkdownTables { get; set; }
 
         /// <summary>
-        /// Output tables as markdown pipe tables instead of HTML &lt;table&gt; tags. Markdown tables are simpler but cannot represent complex structures like merged cells
+        /// Output tables as markdown pipe tables instead of HTML &amp;lt;table&amp;gt; tags. Markdown tables are simpler but cannot represent complex structures like merged cells
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tables_as_markdown")]
         public bool? OutputTablesAsMarkdown { get; set; }
 
         /// <summary>
-        /// Separator string for multiline cell content in markdown tables. Example: '' to preserve line breaks, ' ' to join with spaces
+        /// Separator string for multiline cell content in markdown tables. Example: '&amp;lt;br&amp;gt;' to preserve line breaks, ' ' to join with spaces
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("markdown_table_multiline_separator")]
         public string? MarkdownTableMultilineSeparator { get; set; }
@@ -45,10 +45,10 @@ namespace LlamaParse
         /// Remove extra whitespace padding in markdown table cells for more compact output
         /// </param>
         /// <param name="outputTablesAsMarkdown">
-        /// Output tables as markdown pipe tables instead of HTML &lt;table&gt; tags. Markdown tables are simpler but cannot represent complex structures like merged cells
+        /// Output tables as markdown pipe tables instead of HTML &amp;lt;table&amp;gt; tags. Markdown tables are simpler but cannot represent complex structures like merged cells
         /// </param>
         /// <param name="markdownTableMultilineSeparator">
-        /// Separator string for multiline cell content in markdown tables. Example: '' to preserve line breaks, ' ' to join with spaces
+        /// Separator string for multiline cell content in markdown tables. Example: '&amp;lt;br&amp;gt;' to preserve line breaks, ' ' to join with spaces
         /// </param>
         /// <param name="mergeContinuedTables">
         /// Automatically merge tables that span multiple pages into a single table. The merged table appears on the first page with merged_from_pages metadata
