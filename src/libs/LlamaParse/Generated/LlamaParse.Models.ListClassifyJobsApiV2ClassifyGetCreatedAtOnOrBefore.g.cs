@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Include jobs created at or before this timestamp (inclusive)
+    /// Include items created at or before this timestamp (inclusive)
     /// </summary>
     public sealed partial class ListClassifyJobsApiV2ClassifyGetCreatedAtOnOrBefore
     {

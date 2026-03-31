@@ -53,14 +53,14 @@ namespace LlamaParse
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
         /// </param>
-        /// <param name="documentInputValue">
-        /// File ID or Parse Job ID to extract from
-        /// </param>
         /// <param name="configurationId">
-        /// Saved extract configuration ID (mutually exclusive with configuration)
+        /// Saved configuration ID
         /// </param>
         /// <param name="configuration">
         /// Inline configuration with extract options and optional parse settings
+        /// </param>
+        /// <param name="documentInputValue">
+        /// File ID or Parse Job ID to extract from
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

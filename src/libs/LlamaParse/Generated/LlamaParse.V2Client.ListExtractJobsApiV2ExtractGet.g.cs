@@ -7,34 +7,34 @@ namespace LlamaParse
     {
         partial void PrepareListExtractJobsApiV2ExtractGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? configurationId,
             ref string? documentInputType,
             ref string? documentInputValue,
             global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2? status,
             int? pageSize,
             ref string? pageToken,
-            global::System.DateTime? createdAtOnOrAfter,
-            global::System.DateTime? createdAtOnOrBefore,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
+            ref string? configurationId,
+            global::System.DateTime? createdAtOnOrAfter,
+            global::System.DateTime? createdAtOnOrBefore,
             ref string? session);
         partial void PrepareListExtractJobsApiV2ExtractGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? configurationId,
             string? documentInputType,
             string? documentInputValue,
             global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2? status,
             int? pageSize,
             string? pageToken,
-            global::System.DateTime? createdAtOnOrAfter,
-            global::System.DateTime? createdAtOnOrBefore,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
+            string? configurationId,
+            global::System.DateTime? createdAtOnOrAfter,
+            global::System.DateTime? createdAtOnOrBefore,
             string? session);
         partial void ProcessListExtractJobsApiV2ExtractGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -53,9 +53,6 @@ namespace LlamaParse
         /// Use `expand=configuration` to include the full configuration used,<br/>
         /// and `expand=extract_metadata` for per-field metadata.
         /// </summary>
-        /// <param name="configurationId">
-        /// Filter by configuration ID
-        /// </param>
         /// <param name="documentInputType">
         /// Filter by document input type (file_id or parse_job_id)
         /// </param>
@@ -71,12 +68,6 @@ namespace LlamaParse
         /// <param name="pageToken">
         /// Token for pagination
         /// </param>
-        /// <param name="createdAtOnOrAfter">
-        /// Include jobs created at or after this timestamp (inclusive)
-        /// </param>
-        /// <param name="createdAtOnOrBefore">
-        /// Include jobs created at or before this timestamp (inclusive)
-        /// </param>
         /// <param name="jobIds">
         /// Filter by specific job IDs
         /// </param>
@@ -85,22 +76,31 @@ namespace LlamaParse
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
+        /// <param name="configurationId">
+        /// Filter by configuration ID
+        /// </param>
+        /// <param name="createdAtOnOrAfter">
+        /// Include items created at or after this timestamp (inclusive)
+        /// </param>
+        /// <param name="createdAtOnOrBefore">
+        /// Include items created at or before this timestamp (inclusive)
+        /// </param>
         /// <param name="session"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.ExtractV2JobQueryResponse> ListExtractJobsApiV2ExtractGetAsync(
-            string? configurationId = default,
             string? documentInputType = default,
             string? documentInputValue = default,
             global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2? status = default,
             int? pageSize = default,
             string? pageToken = default,
-            global::System.DateTime? createdAtOnOrAfter = default,
-            global::System.DateTime? createdAtOnOrBefore = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
+            string? configurationId = default,
+            global::System.DateTime? createdAtOnOrAfter = default,
+            global::System.DateTime? createdAtOnOrBefore = default,
             string? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -108,36 +108,36 @@ namespace LlamaParse
                 client: HttpClient);
             PrepareListExtractJobsApiV2ExtractGetArguments(
                 httpClient: HttpClient,
-                configurationId: ref configurationId,
                 documentInputType: ref documentInputType,
                 documentInputValue: ref documentInputValue,
                 status: status,
                 pageSize: pageSize,
                 pageToken: ref pageToken,
-                createdAtOnOrAfter: createdAtOnOrAfter,
-                createdAtOnOrBefore: createdAtOnOrBefore,
                 jobIds: jobIds,
                 expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
+                configurationId: ref configurationId,
+                createdAtOnOrAfter: createdAtOnOrAfter,
+                createdAtOnOrBefore: createdAtOnOrBefore,
                 session: ref session);
 
             var __pathBuilder = new global::LlamaParse.PathBuilder(
                 path: "/api/v2/extract",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("configuration_id", configurationId)
                 .AddOptionalParameter("document_input_type", documentInputType)
                 .AddOptionalParameter("document_input_value", documentInputValue)
                 .AddOptionalParameter("status", status?.ToString())
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("page_token", pageToken)
-                .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
-                .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())
                 .AddOptionalParameter("job_ids", jobIds?.ToString())
                 .AddOptionalParameter("expand", expand, delimiter: ",", explode: true)
                 .AddOptionalParameter("project_id", projectId?.ToString())
-                .AddOptionalParameter("organization_id", organizationId?.ToString()) 
+                .AddOptionalParameter("organization_id", organizationId?.ToString())
+                .AddOptionalParameter("configuration_id", configurationId)
+                .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
+                .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -170,18 +170,18 @@ namespace LlamaParse
             PrepareListExtractJobsApiV2ExtractGetRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                configurationId: configurationId,
                 documentInputType: documentInputType,
                 documentInputValue: documentInputValue,
                 status: status,
                 pageSize: pageSize,
                 pageToken: pageToken,
-                createdAtOnOrAfter: createdAtOnOrAfter,
-                createdAtOnOrBefore: createdAtOnOrBefore,
                 jobIds: jobIds,
                 expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
+                configurationId: configurationId,
+                createdAtOnOrAfter: createdAtOnOrAfter,
+                createdAtOnOrBefore: createdAtOnOrBefore,
                 session: session);
 
             using var __response = await HttpClient.SendAsync(

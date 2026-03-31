@@ -9,26 +9,26 @@ namespace LlamaParse
             global::System.Net.Http.HttpClient httpClient,
             ref bool? includeResults,
             global::LlamaParse.StatusEnum? status,
-            global::System.DateTime? createdAtOnOrAfter,
-            global::System.DateTime? createdAtOnOrBefore,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             int? pageSize,
             ref string? pageToken,
+            global::System.DateTime? createdAtOnOrAfter,
+            global::System.DateTime? createdAtOnOrBefore,
             ref string? session);
         partial void PrepareListSpreadsheetJobsApiV1BetaSheetsJobsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? includeResults,
             global::LlamaParse.StatusEnum? status,
-            global::System.DateTime? createdAtOnOrAfter,
-            global::System.DateTime? createdAtOnOrBefore,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             int? pageSize,
             string? pageToken,
+            global::System.DateTime? createdAtOnOrAfter,
+            global::System.DateTime? createdAtOnOrBefore,
             string? session);
         partial void ProcessListSpreadsheetJobsApiV1BetaSheetsJobsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -50,12 +50,6 @@ namespace LlamaParse
         /// <param name="status">
         /// Filter by job status
         /// </param>
-        /// <param name="createdAtOnOrAfter">
-        /// Include jobs created at or after this timestamp (inclusive)
-        /// </param>
-        /// <param name="createdAtOnOrBefore">
-        /// Include jobs created at or before this timestamp (inclusive)
-        /// </param>
         /// <param name="jobIds">
         /// Filter by specific job IDs
         /// </param>
@@ -63,19 +57,25 @@ namespace LlamaParse
         /// <param name="organizationId"></param>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
+        /// <param name="createdAtOnOrAfter">
+        /// Include items created at or after this timestamp (inclusive)
+        /// </param>
+        /// <param name="createdAtOnOrBefore">
+        /// Include items created at or before this timestamp (inclusive)
+        /// </param>
         /// <param name="session"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseSpreadsheetJob> ListSpreadsheetJobsApiV1BetaSheetsJobsGetAsync(
             bool? includeResults = default,
             global::LlamaParse.StatusEnum? status = default,
-            global::System.DateTime? createdAtOnOrAfter = default,
-            global::System.DateTime? createdAtOnOrBefore = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,
             string? pageToken = default,
+            global::System.DateTime? createdAtOnOrAfter = default,
+            global::System.DateTime? createdAtOnOrBefore = default,
             string? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -85,13 +85,13 @@ namespace LlamaParse
                 httpClient: HttpClient,
                 includeResults: ref includeResults,
                 status: status,
-                createdAtOnOrAfter: createdAtOnOrAfter,
-                createdAtOnOrBefore: createdAtOnOrBefore,
                 jobIds: jobIds,
                 projectId: projectId,
                 organizationId: organizationId,
                 pageSize: pageSize,
                 pageToken: ref pageToken,
+                createdAtOnOrAfter: createdAtOnOrAfter,
+                createdAtOnOrBefore: createdAtOnOrBefore,
                 session: ref session);
 
             var __pathBuilder = new global::LlamaParse.PathBuilder(
@@ -100,13 +100,13 @@ namespace LlamaParse
             __pathBuilder
                 .AddOptionalParameter("include_results", includeResults?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("status", status?.ToString())
-                .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
-                .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())
                 .AddOptionalParameter("job_ids", jobIds?.ToString())
                 .AddOptionalParameter("project_id", projectId?.ToString())
                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                 .AddOptionalParameter("page_size", pageSize?.ToString())
-                .AddOptionalParameter("page_token", pageToken) 
+                .AddOptionalParameter("page_token", pageToken)
+                .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
+                .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -141,13 +141,13 @@ namespace LlamaParse
                 httpRequestMessage: __httpRequest,
                 includeResults: includeResults,
                 status: status,
-                createdAtOnOrAfter: createdAtOnOrAfter,
-                createdAtOnOrBefore: createdAtOnOrBefore,
                 jobIds: jobIds,
                 projectId: projectId,
                 organizationId: organizationId,
                 pageSize: pageSize,
                 pageToken: pageToken,
+                createdAtOnOrAfter: createdAtOnOrAfter,
+                createdAtOnOrBefore: createdAtOnOrBefore,
                 session: session);
 
             using var __response = await HttpClient.SendAsync(

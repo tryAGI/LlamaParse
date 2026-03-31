@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Include items created at or before this timestamp (inclusive)
+    /// Filter by run ID
     /// </summary>
-    public sealed partial class ListParseJobsApiV2ParseGetCreatedAtOnOrBefore
+    public sealed partial class ListExtractRunsApiV1ExtractionRunsGetRunId
     {
 
         /// <summary>

@@ -11,7 +11,6 @@ namespace LlamaParse
         ///     config_id: The ID of the parse configuration<br/>
         ///     project: Validated project from dependency<br/>
         ///     user: Current user<br/>
-        ///     db: Database session<br/>
         /// Returns:<br/>
         ///     The parse configuration
         /// </summary>

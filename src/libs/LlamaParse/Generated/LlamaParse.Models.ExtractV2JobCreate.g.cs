@@ -15,14 +15,7 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? WebhookConfigurations { get; set; }
 
         /// <summary>
-        /// File ID or Parse Job ID to extract from
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("document_input_value")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DocumentInputValue { get; set; }
-
-        /// <summary>
-        /// Saved extract configuration ID (mutually exclusive with configuration)
+        /// Saved configuration ID
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration_id")]
         public string? ConfigurationId { get; set; }
@@ -32,6 +25,13 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration")]
         public global::LlamaParse.ExtractConfiguration? Configuration { get; set; }
+
+        /// <summary>
+        /// File ID or Parse Job ID to extract from
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document_input_value")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string DocumentInputValue { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,7 +49,7 @@ namespace LlamaParse
         /// Outbound webhook endpoints to notify on job status changes
         /// </param>
         /// <param name="configurationId">
-        /// Saved extract configuration ID (mutually exclusive with configuration)
+        /// Saved configuration ID
         /// </param>
         /// <param name="configuration">
         /// Inline configuration with extract options and optional parse settings
@@ -64,9 +64,9 @@ namespace LlamaParse
             global::LlamaParse.ExtractConfiguration? configuration)
         {
             this.WebhookConfigurations = webhookConfigurations;
-            this.DocumentInputValue = documentInputValue ?? throw new global::System.ArgumentNullException(nameof(documentInputValue));
             this.ConfigurationId = configurationId;
             this.Configuration = configuration;
+            this.DocumentInputValue = documentInputValue ?? throw new global::System.ArgumentNullException(nameof(documentInputValue));
         }
 
         /// <summary>

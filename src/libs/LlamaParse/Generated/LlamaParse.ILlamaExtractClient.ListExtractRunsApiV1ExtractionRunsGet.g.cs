@@ -14,6 +14,12 @@ namespace LlamaParse
         /// <param name="limit">
         /// Default Value: 25
         /// </param>
+        /// <param name="status">
+        /// Filter by status
+        /// </param>
+        /// <param name="runId">
+        /// Filter by run ID
+        /// </param>
         /// <param name="session"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
@@ -21,6 +27,8 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
             int? skip = default,
             int? limit = default,
+            string? status = default,
+            string? runId = default,
             string? session = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

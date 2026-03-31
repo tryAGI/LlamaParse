@@ -8877,6 +8877,42 @@
             }
           },
           {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by status",
+              "title": "Status"
+            },
+            "description": "Filter by status"
+          },
+          {
+            "name": "run_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by run ID",
+              "title": "Run Id"
+            },
+            "description": "Filter by run ID"
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -11403,7 +11439,7 @@
           "Beta"
         ],
         "summary": "Query Files",
-        "description": "Query files with flexible filtering and pagination.\n\n**Deprecated**: Use GET /files instead for listing files with query parameters.\n\nArgs:\n    request: The query request with filters and pagination\n    project: Validated project from dependency\n    db: Database session\n\nReturns:\n    Paginated response with files",
+        "description": "Query files with flexible filtering and pagination.\n\n**Deprecated**: Use GET /files instead for listing files with query parameters.\n\nArgs:\n    request: The query request with filters and pagination\n    project: Validated project from dependency\n\nReturns:\n    Paginated response with files",
         "operationId": "query_files_api_v1_beta_files_query_post",
         "deprecated": true,
         "security": [
@@ -11711,7 +11747,7 @@
           "Parse Configurations"
         ],
         "summary": "Create Parse Configuration",
-        "description": "Create a new parse configuration.\n\nArgs:\n    config_create: Parse configuration creation data\n    project: Validated project from dependency\n    user: Current user\n    db: Database session\n\nReturns:\n    The created parse configuration",
+        "description": "Create a new parse configuration.\n\nArgs:\n    config_create: Parse configuration creation data\n    project: Validated project from dependency\n    user: Current user\n\nReturns:\n    The created parse configuration",
         "operationId": "create_parse_configuration_api_v1_beta_parse_configurations_post",
         "security": [
           {
@@ -11809,7 +11845,7 @@
           "Parse Configurations"
         ],
         "summary": "List Parse Configurations",
-        "description": "List parse configurations for the current project.\n\nArgs:\n    project: Validated project from dependency\n    user: Current user\n    db: Database session\n    page_size: Number of items per page\n    page_token: Token for pagination\n    name: Filter by configuration name\n    creator: Filter by creator\n    version: Filter by version\n\nReturns:\n    Paginated response with parse configurations",
+        "description": "List parse configurations for the current project.\n\nArgs:\n    project: Validated project from dependency\n    user: Current user\n    page_size: Number of items per page\n    page_token: Token for pagination\n    name: Filter by configuration name\n    creator: Filter by creator\n    version: Filter by version\n\nReturns:\n    Paginated response with parse configurations",
         "operationId": "list_parse_configurations_api_v1_beta_parse_configurations_get",
         "security": [
           {
@@ -11979,7 +12015,7 @@
           "Parse Configurations"
         ],
         "summary": "Get Parse Configuration",
-        "description": "Get a parse configuration by ID.\n\nArgs:\n    config_id: The ID of the parse configuration\n    project: Validated project from dependency\n    user: Current user\n    db: Database session\n\nReturns:\n    The parse configuration",
+        "description": "Get a parse configuration by ID.\n\nArgs:\n    config_id: The ID of the parse configuration\n    project: Validated project from dependency\n    user: Current user\n\nReturns:\n    The parse configuration",
         "operationId": "get_parse_configuration_api_v1_beta_parse_configurations__config_id__get",
         "security": [
           {
@@ -12076,7 +12112,7 @@
           "Parse Configurations"
         ],
         "summary": "Update Parse Configuration",
-        "description": "Update a parse configuration.\n\nArgs:\n    config_id: The ID of the parse configuration to update\n    config_update: Update data\n    project: Validated project from dependency\n    user: Current user\n    db: Database session\n\nReturns:\n    The updated parse configuration",
+        "description": "Update a parse configuration.\n\nArgs:\n    config_id: The ID of the parse configuration to update\n    config_update: Update data\n    project: Validated project from dependency\n    user: Current user\n\nReturns:\n    The updated parse configuration",
         "operationId": "update_parse_configuration_api_v1_beta_parse_configurations__config_id__put",
         "security": [
           {
@@ -12183,7 +12219,7 @@
           "Parse Configurations"
         ],
         "summary": "Delete Parse Configuration",
-        "description": "Delete a parse configuration.\n\nArgs:\n    config_id: The ID of the parse configuration to delete\n    project: Validated project from dependency\n    user: Current user\n    db: Database session",
+        "description": "Delete a parse configuration.\n\nArgs:\n    config_id: The ID of the parse configuration to delete\n    project: Validated project from dependency\n    user: Current user",
         "operationId": "delete_parse_configuration_api_v1_beta_parse_configurations__config_id__delete",
         "security": [
           {
@@ -12414,44 +12450,6 @@
             "description": "Filter by job status"
           },
           {
-            "name": "created_at_on_or_after",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Include jobs created at or after this timestamp (inclusive)",
-              "title": "Created At On Or After"
-            },
-            "description": "Include jobs created at or after this timestamp (inclusive)"
-          },
-          {
-            "name": "created_at_on_or_before",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Include jobs created at or before this timestamp (inclusive)",
-              "title": "Created At On Or Before"
-            },
-            "description": "Include jobs created at or before this timestamp (inclusive)"
-          },
-          {
             "name": "job_ids",
             "in": "query",
             "required": false,
@@ -12537,6 +12535,44 @@
               ],
               "title": "Page Token"
             }
+          },
+          {
+            "name": "created_at_on_or_after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or after this timestamp (inclusive)",
+              "title": "Created At On Or After"
+            },
+            "description": "Include items created at or after this timestamp (inclusive)"
+          },
+          {
+            "name": "created_at_on_or_before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or before this timestamp (inclusive)",
+              "title": "Created At On Or Before"
+            },
+            "description": "Include items created at or before this timestamp (inclusive)"
           },
           {
             "name": "session",
@@ -15266,44 +15302,6 @@
             "description": "Filter by specific job IDs"
           },
           {
-            "name": "created_at_on_or_after",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Include jobs created at or after this timestamp (inclusive)",
-              "title": "Created At On Or After"
-            },
-            "description": "Include jobs created at or after this timestamp (inclusive)"
-          },
-          {
-            "name": "created_at_on_or_before",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Include jobs created at or before this timestamp (inclusive)",
-              "title": "Created At On Or Before"
-            },
-            "description": "Include jobs created at or before this timestamp (inclusive)"
-          },
-          {
             "name": "project_id",
             "in": "query",
             "required": false,
@@ -15368,6 +15366,44 @@
               ],
               "title": "Page Token"
             }
+          },
+          {
+            "name": "created_at_on_or_after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or after this timestamp (inclusive)",
+              "title": "Created At On Or After"
+            },
+            "description": "Include items created at or after this timestamp (inclusive)"
+          },
+          {
+            "name": "created_at_on_or_before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or before this timestamp (inclusive)",
+              "title": "Created At On Or Before"
+            },
+            "description": "Include items created at or before this timestamp (inclusive)"
           },
           {
             "name": "session",
@@ -16747,44 +16783,6 @@
             "description": "Filter by job status (PENDING, RUNNING, COMPLETED, FAILED, CANCELLED)"
           },
           {
-            "name": "created_at_on_or_after",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Include jobs created at or after this timestamp (inclusive)",
-              "title": "Created At On Or After"
-            },
-            "description": "Include jobs created at or after this timestamp (inclusive)"
-          },
-          {
-            "name": "created_at_on_or_before",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Include jobs created at or before this timestamp (inclusive)",
-              "title": "Created At On Or Before"
-            },
-            "description": "Include jobs created at or before this timestamp (inclusive)"
-          },
-          {
             "name": "job_ids",
             "in": "query",
             "required": false,
@@ -16838,6 +16836,44 @@
               ],
               "title": "Organization Id"
             }
+          },
+          {
+            "name": "created_at_on_or_after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or after this timestamp (inclusive)",
+              "title": "Created At On Or After"
+            },
+            "description": "Include items created at or after this timestamp (inclusive)"
+          },
+          {
+            "name": "created_at_on_or_before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or before this timestamp (inclusive)",
+              "title": "Created At On Or Before"
+            },
+            "description": "Include items created at or before this timestamp (inclusive)"
           },
           {
             "name": "session",
@@ -17208,62 +17244,6 @@
             "description": "Filter by specific job IDs"
           },
           {
-            "name": "configuration_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Filter by configuration ID",
-              "title": "Configuration Id"
-            },
-            "description": "Filter by configuration ID"
-          },
-          {
-            "name": "created_at_on_or_after",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Include jobs created at or after this timestamp (inclusive)",
-              "title": "Created At On Or After"
-            },
-            "description": "Include jobs created at or after this timestamp (inclusive)"
-          },
-          {
-            "name": "created_at_on_or_before",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Include jobs created at or before this timestamp (inclusive)",
-              "title": "Created At On Or Before"
-            },
-            "description": "Include jobs created at or before this timestamp (inclusive)"
-          },
-          {
             "name": "project_id",
             "in": "query",
             "required": false,
@@ -17296,6 +17276,65 @@
               ],
               "title": "Organization Id"
             }
+          },
+          {
+            "name": "configuration_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by configuration ID",
+              "examples": [
+                "cfg-11111111-2222-3333-4444-555555555555"
+              ],
+              "title": "Configuration Id"
+            },
+            "description": "Filter by configuration ID"
+          },
+          {
+            "name": "created_at_on_or_after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or after this timestamp (inclusive)",
+              "title": "Created At On Or After"
+            },
+            "description": "Include items created at or after this timestamp (inclusive)"
+          },
+          {
+            "name": "created_at_on_or_before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or before this timestamp (inclusive)",
+              "title": "Created At On Or Before"
+            },
+            "description": "Include items created at or before this timestamp (inclusive)"
           },
           {
             "name": "session",
@@ -17721,24 +17760,6 @@
         ],
         "parameters": [
           {
-            "name": "configuration_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Filter by configuration ID",
-              "title": "Configuration Id"
-            },
-            "description": "Filter by configuration ID"
-          },
-          {
             "name": "document_input_type",
             "in": "query",
             "required": false,
@@ -17837,44 +17858,6 @@
             "description": "Token for pagination"
           },
           {
-            "name": "created_at_on_or_after",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Include jobs created at or after this timestamp (inclusive)",
-              "title": "Created At On Or After"
-            },
-            "description": "Include jobs created at or after this timestamp (inclusive)"
-          },
-          {
-            "name": "created_at_on_or_before",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Include jobs created at or before this timestamp (inclusive)",
-              "title": "Created At On Or Before"
-            },
-            "description": "Include jobs created at or before this timestamp (inclusive)"
-          },
-          {
             "name": "job_ids",
             "in": "query",
             "required": false,
@@ -17942,6 +17925,65 @@
               ],
               "title": "Organization Id"
             }
+          },
+          {
+            "name": "configuration_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by configuration ID",
+              "examples": [
+                "cfg-11111111-2222-3333-4444-555555555555"
+              ],
+              "title": "Configuration Id"
+            },
+            "description": "Filter by configuration ID"
+          },
+          {
+            "name": "created_at_on_or_after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or after this timestamp (inclusive)",
+              "title": "Created At On Or After"
+            },
+            "description": "Include items created at or after this timestamp (inclusive)"
+          },
+          {
+            "name": "created_at_on_or_before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or before this timestamp (inclusive)",
+              "title": "Created At On Or Before"
+            },
+            "description": "Include items created at or before this timestamp (inclusive)"
           },
           {
             "name": "session",
@@ -19250,6 +19292,8 @@
                   "2026-03-25",
                   "2026-03-26",
                   "2026-03-27",
+                  "2026-03-30",
+                  "2026-03-31",
                   "latest"
                 ]
               },
@@ -23320,6 +23364,32 @@
       },
       "ClassifyV2JobCreateRequest": {
         "properties": {
+          "configuration_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Configuration Id",
+            "description": "Saved configuration ID",
+            "examples": [
+              "cfg-11111111-2222-3333-4444-555555555555"
+            ]
+          },
+          "configuration": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ClassifyV2Configuration"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Inline classify configuration (required if configuration_id is not provided)"
+          },
           "file_id": {
             "anyOf": [
               {
@@ -23348,32 +23418,6 @@
             "description": "Parse job ID to classify",
             "examples": [
               "pjb-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
-            ]
-          },
-          "configuration": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ClassifyV2Configuration"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "Inline classify configuration (required if configuration_id is not provided)"
-          },
-          "configuration_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Configuration Id",
-            "description": "Product configuration ID for reusable presets",
-            "examples": [
-              "cfg-11111111-2222-3333-4444-555555555555"
             ]
           },
           "transaction_id": {
@@ -29463,15 +29507,6 @@
             "title": "Webhook Configurations",
             "description": "Outbound webhook endpoints to notify on job status changes"
           },
-          "document_input_value": {
-            "type": "string",
-            "maxLength": 200,
-            "title": "Document Input Value",
-            "description": "File ID or Parse Job ID to extract from",
-            "examples": [
-              "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
-            ]
-          },
           "configuration_id": {
             "anyOf": [
               {
@@ -29482,7 +29517,7 @@
               }
             ],
             "title": "Configuration Id",
-            "description": "Saved extract configuration ID (mutually exclusive with configuration)",
+            "description": "Saved configuration ID",
             "examples": [
               "cfg-11111111-2222-3333-4444-555555555555"
             ]
@@ -29497,6 +29532,15 @@
               }
             ],
             "description": "Inline configuration with extract options and optional parse settings"
+          },
+          "document_input_value": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Document Input Value",
+            "description": "File ID or Parse Job ID to extract from",
+            "examples": [
+              "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+            ]
           }
         },
         "type": "object",
@@ -30069,7 +30113,53 @@
               }
             ],
             "title": "Document Metadata",
-            "description": "Document-level metadata (citations, confidence) keyed by field name"
+            "description": "Per-field metadata keyed by field name from your schema. Scalar fields (e.g. `vendor`) map to a FieldMetadataEntry with citation and confidence. Array fields (e.g. `items`) map to a list where each element contains per-sub-field FieldMetadataEntry objects, indexed by array position. Nested objects contain sub-field entries recursively.",
+            "examples": [
+              {
+                "items": [
+                  {
+                    "amount": {
+                      "citation": [
+                        {
+                          "matching_text": "$10.00",
+                          "page": 1
+                        }
+                      ],
+                      "confidence": 1.0
+                    },
+                    "description": {
+                      "citation": [
+                        {
+                          "matching_text": "$10/month",
+                          "page": 1
+                        }
+                      ],
+                      "confidence": 0.998
+                    }
+                  }
+                ],
+                "total": {
+                  "citation": [
+                    {
+                      "matching_text": "$10.00",
+                      "page": 1
+                    }
+                  ],
+                  "confidence": 1.0
+                },
+                "vendor": {
+                  "citation": [
+                    {
+                      "matching_text": "Noisebridge",
+                      "page": 1
+                    }
+                  ],
+                  "confidence": 1.0,
+                  "extraction_confidence": 1.0,
+                  "parsing_confidence": 1.0
+                }
+              }
+            ]
           },
           "page_metadata": {
             "anyOf": [
@@ -36562,6 +36652,8 @@
                   "2026-03-25",
                   "2026-03-26",
                   "2026-03-27",
+                  "2026-03-30",
+                  "2026-03-31",
                   "latest"
                 ]
               },
@@ -36882,6 +36974,8 @@
                   "2026-03-25",
                   "2026-03-26",
                   "2026-03-27",
+                  "2026-03-30",
+                  "2026-03-31",
                   "latest"
                 ]
               },

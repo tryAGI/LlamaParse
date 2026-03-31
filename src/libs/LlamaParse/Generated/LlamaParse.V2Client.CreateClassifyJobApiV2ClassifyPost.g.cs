@@ -265,17 +265,17 @@ namespace LlamaParse
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="configurationId">
+        /// Saved configuration ID
+        /// </param>
+        /// <param name="configuration">
+        /// Inline classify configuration (required if configuration_id is not provided)
+        /// </param>
         /// <param name="fileId">
         /// File ID to classify
         /// </param>
         /// <param name="parseJobId">
         /// Parse job ID to classify
-        /// </param>
-        /// <param name="configuration">
-        /// Inline classify configuration (required if configuration_id is not provided)
-        /// </param>
-        /// <param name="configurationId">
-        /// Product configuration ID for reusable presets
         /// </param>
         /// <param name="transactionId">
         /// Idempotency key scoped to the project
@@ -286,19 +286,19 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            string? configurationId = default,
+            global::LlamaParse.ClassifyV2Configuration? configuration = default,
             string? fileId = default,
             string? parseJobId = default,
-            global::LlamaParse.ClassifyV2Configuration? configuration = default,
-            string? configurationId = default,
             string? transactionId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LlamaParse.ClassifyV2JobCreateRequest
             {
+                ConfigurationId = configurationId,
+                Configuration = configuration,
                 FileId = fileId,
                 ParseJobId = parseJobId,
-                Configuration = configuration,
-                ConfigurationId = configurationId,
                 TransactionId = transactionId,
             };
 

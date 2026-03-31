@@ -37,7 +37,6 @@ namespace LlamaParse
         ///     config_update: Update data<br/>
         ///     project: Validated project from dependency<br/>
         ///     user: Current user<br/>
-        ///     db: Database session<br/>
         /// Returns:<br/>
         ///     The updated parse configuration
         /// </summary>
@@ -262,7 +261,6 @@ namespace LlamaParse
         ///     config_update: Update data<br/>
         ///     project: Validated project from dependency<br/>
         ///     user: Current user<br/>
-        ///     db: Database session<br/>
         /// Returns:<br/>
         ///     The updated parse configuration
         /// </summary>
