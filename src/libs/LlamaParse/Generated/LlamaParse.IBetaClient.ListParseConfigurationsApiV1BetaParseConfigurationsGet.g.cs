@@ -10,7 +10,6 @@ namespace LlamaParse
         /// Args:<br/>
         ///     project: Validated project from dependency<br/>
         ///     user: Current user<br/>
-        ///     db: Database session<br/>
         ///     page_size: Number of items per page<br/>
         ///     page_token: Token for pagination<br/>
         ///     name: Filter by configuration name<br/>

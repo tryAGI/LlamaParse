@@ -10,8 +10,7 @@ namespace LlamaParse
         /// Args:<br/>
         ///     config_id: The ID of the parse configuration to delete<br/>
         ///     project: Validated project from dependency<br/>
-        ///     user: Current user<br/>
-        ///     db: Database session
+        ///     user: Current user
         /// </summary>
         /// <param name="configId"></param>
         /// <param name="projectId"></param>

@@ -9,6 +9,18 @@ namespace LlamaParse
     public sealed partial class ClassifyV2JobCreateRequest
     {
         /// <summary>
+        /// Saved configuration ID
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("configuration_id")]
+        public string? ConfigurationId { get; set; }
+
+        /// <summary>
+        /// Inline classify configuration (required if configuration_id is not provided)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("configuration")]
+        public global::LlamaParse.ClassifyV2Configuration? Configuration { get; set; }
+
+        /// <summary>
         /// File ID to classify
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
@@ -19,18 +31,6 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_job_id")]
         public string? ParseJobId { get; set; }
-
-        /// <summary>
-        /// Inline classify configuration (required if configuration_id is not provided)
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("configuration")]
-        public global::LlamaParse.ClassifyV2Configuration? Configuration { get; set; }
-
-        /// <summary>
-        /// Product configuration ID for reusable presets
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("configuration_id")]
-        public string? ConfigurationId { get; set; }
 
         /// <summary>
         /// Idempotency key scoped to the project
@@ -47,17 +47,17 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyV2JobCreateRequest" /> class.
         /// </summary>
+        /// <param name="configurationId">
+        /// Saved configuration ID
+        /// </param>
+        /// <param name="configuration">
+        /// Inline classify configuration (required if configuration_id is not provided)
+        /// </param>
         /// <param name="fileId">
         /// File ID to classify
         /// </param>
         /// <param name="parseJobId">
         /// Parse job ID to classify
-        /// </param>
-        /// <param name="configuration">
-        /// Inline classify configuration (required if configuration_id is not provided)
-        /// </param>
-        /// <param name="configurationId">
-        /// Product configuration ID for reusable presets
         /// </param>
         /// <param name="transactionId">
         /// Idempotency key scoped to the project
@@ -66,16 +66,16 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClassifyV2JobCreateRequest(
+            string? configurationId,
+            global::LlamaParse.ClassifyV2Configuration? configuration,
             string? fileId,
             string? parseJobId,
-            global::LlamaParse.ClassifyV2Configuration? configuration,
-            string? configurationId,
             string? transactionId)
         {
+            this.ConfigurationId = configurationId;
+            this.Configuration = configuration;
             this.FileId = fileId;
             this.ParseJobId = parseJobId;
-            this.Configuration = configuration;
-            this.ConfigurationId = configurationId;
             this.TransactionId = transactionId;
         }
 

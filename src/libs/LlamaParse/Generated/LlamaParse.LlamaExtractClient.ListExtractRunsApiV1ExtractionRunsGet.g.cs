@@ -10,6 +10,8 @@ namespace LlamaParse
             ref global::System.Guid extractionAgentId,
             ref int? skip,
             ref int? limit,
+            ref string? status,
+            ref string? runId,
             ref string? session);
         partial void PrepareListExtractRunsApiV1ExtractionRunsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -17,6 +19,8 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
             int? skip,
             int? limit,
+            string? status,
+            string? runId,
             string? session);
         partial void ProcessListExtractRunsApiV1ExtractionRunsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -37,6 +41,12 @@ namespace LlamaParse
         /// <param name="limit">
         /// Default Value: 25
         /// </param>
+        /// <param name="status">
+        /// Filter by status
+        /// </param>
+        /// <param name="runId">
+        /// Filter by run ID
+        /// </param>
         /// <param name="session"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
@@ -44,6 +54,8 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
             int? skip = default,
             int? limit = default,
+            string? status = default,
+            string? runId = default,
             string? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -54,6 +66,8 @@ namespace LlamaParse
                 extractionAgentId: ref extractionAgentId,
                 skip: ref skip,
                 limit: ref limit,
+                status: ref status,
+                runId: ref runId,
                 session: ref session);
 
             var __pathBuilder = new global::LlamaParse.PathBuilder(
@@ -62,7 +76,9 @@ namespace LlamaParse
             __pathBuilder
                 .AddRequiredParameter("extraction_agent_id", extractionAgentId.ToString()!)
                 .AddOptionalParameter("skip", skip?.ToString())
-                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("status", status)
+                .AddOptionalParameter("run_id", runId) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -98,6 +114,8 @@ namespace LlamaParse
                 extractionAgentId: extractionAgentId,
                 skip: skip,
                 limit: limit,
+                status: status,
+                runId: runId,
                 session: session);
 
             using var __response = await HttpClient.SendAsync(

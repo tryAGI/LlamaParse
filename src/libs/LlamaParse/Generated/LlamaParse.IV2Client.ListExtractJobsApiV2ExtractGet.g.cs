@@ -12,9 +12,6 @@ namespace LlamaParse
         /// Use `expand=configuration` to include the full configuration used,<br/>
         /// and `expand=extract_metadata` for per-field metadata.
         /// </summary>
-        /// <param name="configurationId">
-        /// Filter by configuration ID
-        /// </param>
         /// <param name="documentInputType">
         /// Filter by document input type (file_id or parse_job_id)
         /// </param>
@@ -30,12 +27,6 @@ namespace LlamaParse
         /// <param name="pageToken">
         /// Token for pagination
         /// </param>
-        /// <param name="createdAtOnOrAfter">
-        /// Include jobs created at or after this timestamp (inclusive)
-        /// </param>
-        /// <param name="createdAtOnOrBefore">
-        /// Include jobs created at or before this timestamp (inclusive)
-        /// </param>
         /// <param name="jobIds">
         /// Filter by specific job IDs
         /// </param>
@@ -44,22 +35,31 @@ namespace LlamaParse
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
+        /// <param name="configurationId">
+        /// Filter by configuration ID
+        /// </param>
+        /// <param name="createdAtOnOrAfter">
+        /// Include items created at or after this timestamp (inclusive)
+        /// </param>
+        /// <param name="createdAtOnOrBefore">
+        /// Include items created at or before this timestamp (inclusive)
+        /// </param>
         /// <param name="session"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.ExtractV2JobQueryResponse> ListExtractJobsApiV2ExtractGetAsync(
-            string? configurationId = default,
             string? documentInputType = default,
             string? documentInputValue = default,
             global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2? status = default,
             int? pageSize = default,
             string? pageToken = default,
-            global::System.DateTime? createdAtOnOrAfter = default,
-            global::System.DateTime? createdAtOnOrBefore = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
+            string? configurationId = default,
+            global::System.DateTime? createdAtOnOrAfter = default,
+            global::System.DateTime? createdAtOnOrBefore = default,
             string? session = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

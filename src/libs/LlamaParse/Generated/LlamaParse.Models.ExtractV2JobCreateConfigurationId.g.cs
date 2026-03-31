@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Saved extract configuration ID (mutually exclusive with configuration)
+    /// Saved configuration ID
     /// </summary>
     public sealed partial class ExtractV2JobCreateConfigurationId
     {

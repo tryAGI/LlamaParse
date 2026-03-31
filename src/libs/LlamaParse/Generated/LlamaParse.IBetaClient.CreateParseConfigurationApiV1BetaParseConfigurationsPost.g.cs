@@ -11,7 +11,6 @@ namespace LlamaParse
         ///     config_create: Parse configuration creation data<br/>
         ///     project: Validated project from dependency<br/>
         ///     user: Current user<br/>
-        ///     db: Database session<br/>
         /// Returns:<br/>
         ///     The created parse configuration
         /// </summary>
@@ -35,7 +34,6 @@ namespace LlamaParse
         ///     config_create: Parse configuration creation data<br/>
         ///     project: Validated project from dependency<br/>
         ///     user: Current user<br/>
-        ///     db: Database session<br/>
         /// Returns:<br/>
         ///     The created parse configuration
         /// </summary>

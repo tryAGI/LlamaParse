@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Product configuration ID for reusable presets
+    /// Saved configuration ID
     /// </summary>
     public sealed partial class ClassifyV2JobCreateRequestConfigurationId
     {

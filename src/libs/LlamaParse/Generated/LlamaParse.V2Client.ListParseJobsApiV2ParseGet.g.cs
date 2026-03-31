@@ -10,11 +10,11 @@ namespace LlamaParse
             int? pageSize,
             ref string? pageToken,
             global::LlamaParse.ListParseJobsApiV2ParseGetStatus2? status,
-            global::System.DateTime? createdAtOnOrAfter,
-            global::System.DateTime? createdAtOnOrBefore,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
+            global::System.DateTime? createdAtOnOrAfter,
+            global::System.DateTime? createdAtOnOrBefore,
             ref string? session);
         partial void PrepareListParseJobsApiV2ParseGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -22,11 +22,11 @@ namespace LlamaParse
             int? pageSize,
             string? pageToken,
             global::LlamaParse.ListParseJobsApiV2ParseGetStatus2? status,
-            global::System.DateTime? createdAtOnOrAfter,
-            global::System.DateTime? createdAtOnOrBefore,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
+            global::System.DateTime? createdAtOnOrAfter,
+            global::System.DateTime? createdAtOnOrBefore,
             string? session);
         partial void ProcessListParseJobsApiV2ParseGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -53,17 +53,17 @@ namespace LlamaParse
         /// <param name="status">
         /// Filter by job status (PENDING, RUNNING, COMPLETED, FAILED, CANCELLED)
         /// </param>
-        /// <param name="createdAtOnOrAfter">
-        /// Include jobs created at or after this timestamp (inclusive)
-        /// </param>
-        /// <param name="createdAtOnOrBefore">
-        /// Include jobs created at or before this timestamp (inclusive)
-        /// </param>
         /// <param name="jobIds">
         /// Filter by specific job IDs
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
+        /// <param name="createdAtOnOrAfter">
+        /// Include items created at or after this timestamp (inclusive)
+        /// </param>
+        /// <param name="createdAtOnOrBefore">
+        /// Include items created at or before this timestamp (inclusive)
+        /// </param>
         /// <param name="session"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
@@ -71,11 +71,11 @@ namespace LlamaParse
             int? pageSize = default,
             string? pageToken = default,
             global::LlamaParse.ListParseJobsApiV2ParseGetStatus2? status = default,
-            global::System.DateTime? createdAtOnOrAfter = default,
-            global::System.DateTime? createdAtOnOrBefore = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
+            global::System.DateTime? createdAtOnOrAfter = default,
+            global::System.DateTime? createdAtOnOrBefore = default,
             string? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -86,11 +86,11 @@ namespace LlamaParse
                 pageSize: pageSize,
                 pageToken: ref pageToken,
                 status: status,
-                createdAtOnOrAfter: createdAtOnOrAfter,
-                createdAtOnOrBefore: createdAtOnOrBefore,
                 jobIds: jobIds,
                 projectId: projectId,
                 organizationId: organizationId,
+                createdAtOnOrAfter: createdAtOnOrAfter,
+                createdAtOnOrBefore: createdAtOnOrBefore,
                 session: ref session);
 
             var __pathBuilder = new global::LlamaParse.PathBuilder(
@@ -100,11 +100,11 @@ namespace LlamaParse
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("page_token", pageToken)
                 .AddOptionalParameter("status", status?.ToString())
-                .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
-                .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())
                 .AddOptionalParameter("job_ids", jobIds?.ToString())
                 .AddOptionalParameter("project_id", projectId?.ToString())
-                .AddOptionalParameter("organization_id", organizationId?.ToString()) 
+                .AddOptionalParameter("organization_id", organizationId?.ToString())
+                .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
+                .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -140,11 +140,11 @@ namespace LlamaParse
                 pageSize: pageSize,
                 pageToken: pageToken,
                 status: status,
-                createdAtOnOrAfter: createdAtOnOrAfter,
-                createdAtOnOrBefore: createdAtOnOrBefore,
                 jobIds: jobIds,
                 projectId: projectId,
                 organizationId: organizationId,
+                createdAtOnOrAfter: createdAtOnOrAfter,
+                createdAtOnOrBefore: createdAtOnOrBefore,
                 session: session);
 
             using var __response = await HttpClient.SendAsync(

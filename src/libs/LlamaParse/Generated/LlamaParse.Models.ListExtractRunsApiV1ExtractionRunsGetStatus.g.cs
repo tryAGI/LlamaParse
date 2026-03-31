@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Include items created at or before this timestamp (inclusive)
+    /// Filter by status
     /// </summary>
-    public sealed partial class ListParseJobsApiV2ParseGetCreatedAtOnOrBefore
+    public sealed partial class ListExtractRunsApiV1ExtractionRunsGetStatus
     {
 
         /// <summary>
