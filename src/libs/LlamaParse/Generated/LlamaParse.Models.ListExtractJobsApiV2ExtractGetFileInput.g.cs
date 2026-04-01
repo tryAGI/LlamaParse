@@ -4,10 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Deprecated: use file_input instead
+    /// Filter by file input value
     /// </summary>
-    [global::System.Obsolete("This model marked as deprecated.")]
-    public sealed partial class ListExtractJobsApiV2ExtractGetDocumentInputValue
+    public sealed partial class ListExtractJobsApiV2ExtractGetFileInput
     {
 
         /// <summary>

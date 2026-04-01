@@ -17054,7 +17054,7 @@
           "Classify"
         ],
         "summary": "Create Classify Job",
-        "description": "Create a classify job.\n\nClassifies a document against a set of rules. Provide either\n`file_id` or `parse_job_id` as the document input, and either\ninline `configuration` with rules or a `configuration_id`\nreferencing a saved preset.\n\nEach rule has a `type` (the label to assign) and a `description`\n(natural language criteria). The classifier returns the best\nmatching rule with a confidence score.\n\nThe job runs asynchronously. Poll `GET /classify/{job_id}` to\ncheck status and retrieve results.",
+        "description": "Create a classify job.\n\nClassifies a document against a set of rules. Set `file_input`\nto a file ID (`dfl-...`) or parse job ID (`pjb-...`), and provide\neither inline `configuration` with rules or a `configuration_id`\nreferencing a saved preset.\n\nEach rule has a `type` (the label to assign) and a `description`\n(natural language criteria). The classifier returns the best\nmatching rule with a confidence score.\n\nThe job runs asynchronously. Poll `GET /classify/{job_id}` to\ncheck status and retrieve results.",
         "operationId": "create_classify_job_api_v2_classify_post",
         "security": [
           {
@@ -17652,7 +17652,7 @@
           "LlamaExtract"
         ],
         "summary": "Create Extract Job",
-        "description": "Create an extraction job.\n\nExtracts structured data from a document using either a saved\nconfiguration or an inline JSON Schema.\n\n## Input\n\nProvide exactly one of:\n- `configuration_id` — reference a saved extraction config\n- `configuration` — inline configuration with a `data_schema`\n\n## Document input\n\nSet `document_input_value` to a file ID (`dfl-...`) or a\ncompleted parse job ID (`pjb-...`).\n\nThe job runs asynchronously. Poll `GET /extract/{job_id}` or\nregister a webhook to monitor completion.",
+        "description": "Create an extraction job.\n\nExtracts structured data from a document using either a saved\nconfiguration or an inline JSON Schema.\n\n## Input\n\nProvide exactly one of:\n- `configuration_id` — reference a saved extraction config\n- `configuration` — inline configuration with a `data_schema`\n\n## Document input\n\nSet `file_input` to a file ID (`dfl-...`) or a\ncompleted parse job ID (`pjb-...`).\n\nThe job runs asynchronously. Poll `GET /extract/{job_id}` or\nregister a webhook to monitor completion.",
         "operationId": "create_extract_job_api_v2_extract_post",
         "security": [
           {
@@ -17751,7 +17751,7 @@
           "LlamaExtract"
         ],
         "summary": "List Extract Jobs",
-        "description": "List extraction jobs with optional filtering and pagination.\n\nFilter by `configuration_id`, `status`, `document_input_value`,\nor creation date range. Results are returned newest-first.\nUse `expand=configuration` to include the full configuration used,\nand `expand=extract_metadata` for per-field metadata.",
+        "description": "List extraction jobs with optional filtering and pagination.\n\nFilter by `configuration_id`, `status`, `file_input`,\nor creation date range. Results are returned newest-first.\nUse `expand=configuration` to include the full configuration used,\nand `expand=extract_metadata` for per-field metadata.",
         "operationId": "list_extract_jobs_api_v2_extract_get",
         "security": [
           {
@@ -17778,6 +17778,24 @@
             "description": "Filter by document input type (file_id or parse_job_id)"
           },
           {
+            "name": "file_input",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by file input value",
+              "title": "File Input"
+            },
+            "description": "Filter by file input value"
+          },
+          {
             "name": "document_input_value",
             "in": "query",
             "required": false,
@@ -17790,10 +17808,12 @@
                   "type": "null"
                 }
               ],
-              "description": "Filter by document input value",
+              "description": "Deprecated: use file_input instead",
+              "deprecated": true,
               "title": "Document Input Value"
             },
-            "description": "Filter by document input value"
+            "description": "Deprecated: use file_input instead",
+            "deprecated": true
           },
           {
             "name": "status",
@@ -23390,6 +23410,22 @@
             ],
             "description": "Inline classify configuration (required if configuration_id is not provided)"
           },
+          "file_input": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 200
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "File Input",
+            "description": "File ID or parse job ID to classify",
+            "examples": [
+              "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+            ]
+          },
           "file_id": {
             "anyOf": [
               {
@@ -23400,7 +23436,8 @@
               }
             ],
             "title": "File Id",
-            "description": "File ID to classify",
+            "description": "Deprecated: use file_input instead",
+            "deprecated": true,
             "examples": [
               "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
             ]
@@ -23415,7 +23452,8 @@
               }
             ],
             "title": "Parse Job Id",
-            "description": "Parse job ID to classify",
+            "description": "Deprecated: use file_input instead",
+            "deprecated": true,
             "examples": [
               "pjb-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
             ]
@@ -23523,6 +23561,11 @@
             "title": "Updated At",
             "description": "Update datetime"
           },
+          "file_input": {
+            "type": "string",
+            "title": "File Input",
+            "description": "ID of the input file or parse job"
+          },
           "project_id": {
             "type": "string",
             "title": "Project Id",
@@ -23553,11 +23596,6 @@
             ],
             "title": "Document Input Type",
             "description": "Whether the input was a file or parse job (FILE or PARSE_JOB)"
-          },
-          "document_input_value": {
-            "type": "string",
-            "title": "Document Input Value",
-            "description": "ID of the input file or parse job"
           },
           "configuration": {
             "$ref": "#/components/schemas/ClassifyV2Configuration",
@@ -23626,11 +23664,11 @@
         "type": "object",
         "required": [
           "id",
+          "file_input",
           "project_id",
           "user_id",
           "status",
           "document_input_type",
-          "document_input_value",
           "configuration"
         ],
         "title": "ClassifyV2JobResponse",
@@ -29301,6 +29339,14 @@
       },
       "ExtractV2Job": {
         "properties": {
+          "file_input": {
+            "type": "string",
+            "title": "File Input",
+            "description": "File ID or parse job ID that was extracted",
+            "examples": [
+              "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+            ]
+          },
           "id": {
             "type": "string",
             "title": "Id",
@@ -29330,14 +29376,6 @@
             "description": "Saved extract configuration ID used for this job, if any",
             "examples": [
               "cfg-11111111-2222-3333-4444-555555555555"
-            ]
-          },
-          "document_input_value": {
-            "type": "string",
-            "title": "Document Input Value",
-            "description": "File ID or parse job ID that was extracted",
-            "examples": [
-              "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
             ]
           },
           "configuration": {
@@ -29480,9 +29518,9 @@
         },
         "type": "object",
         "required": [
+          "file_input",
           "id",
           "project_id",
-          "document_input_value",
           "status",
           "created_at",
           "updated_at"
@@ -29533,11 +29571,11 @@
             ],
             "description": "Inline configuration with extract options and optional parse settings"
           },
-          "document_input_value": {
+          "file_input": {
             "type": "string",
             "maxLength": 200,
-            "title": "Document Input Value",
-            "description": "File ID or Parse Job ID to extract from",
+            "title": "File Input",
+            "description": "File ID or parse job ID to extract from",
             "examples": [
               "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
             ]
@@ -29545,14 +29583,14 @@
         },
         "type": "object",
         "required": [
-          "document_input_value"
+          "file_input"
         ],
         "title": "ExtractV2JobCreate",
         "description": "Request to create an extraction job. Provide configuration_id or inline configuration.",
         "examples": [
           {
             "configuration_id": "cfg-11111111-2222-3333-4444-555555555555",
-            "document_input_value": "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+            "file_input": "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
           },
           {
             "configuration": {
@@ -29575,7 +29613,7 @@
               },
               "target_pages": "1,3,5-7"
             },
-            "document_input_value": "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+            "file_input": "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
           },
           {
             "configuration": {
@@ -29588,7 +29626,7 @@
                 "type": "object"
               }
             },
-            "document_input_value": "pjb-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+            "file_input": "pjb-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
           }
         ]
       },

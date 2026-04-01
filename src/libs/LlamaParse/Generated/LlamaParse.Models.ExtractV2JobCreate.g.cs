@@ -27,11 +27,11 @@ namespace LlamaParse
         public global::LlamaParse.ExtractConfiguration? Configuration { get; set; }
 
         /// <summary>
-        /// File ID or Parse Job ID to extract from
+        /// File ID or parse job ID to extract from
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("document_input_value")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DocumentInputValue { get; set; }
+        public required string FileInput { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,8 +42,8 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractV2JobCreate" /> class.
         /// </summary>
-        /// <param name="documentInputValue">
-        /// File ID or Parse Job ID to extract from
+        /// <param name="fileInput">
+        /// File ID or parse job ID to extract from
         /// </param>
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
@@ -58,7 +58,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExtractV2JobCreate(
-            string documentInputValue,
+            string fileInput,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations,
             string? configurationId,
             global::LlamaParse.ExtractConfiguration? configuration)
@@ -66,7 +66,7 @@ namespace LlamaParse
             this.WebhookConfigurations = webhookConfigurations;
             this.ConfigurationId = configurationId;
             this.Configuration = configuration;
-            this.DocumentInputValue = documentInputValue ?? throw new global::System.ArgumentNullException(nameof(documentInputValue));
+            this.FileInput = fileInput ?? throw new global::System.ArgumentNullException(nameof(fileInput));
         }
 
         /// <summary>
