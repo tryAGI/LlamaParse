@@ -29,6 +29,13 @@ namespace LlamaParse
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
+        /// ID of the input file or parse job
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_input")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string FileInput { get; set; }
+
+        /// <summary>
         /// Project this job belongs to
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
@@ -57,13 +64,6 @@ namespace LlamaParse
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseDocumentInputTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::LlamaParse.ClassifyV2JobResponseDocumentInputType DocumentInputType { get; set; }
-
-        /// <summary>
-        /// ID of the input file or parse job
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("document_input_value")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DocumentInputValue { get; set; }
 
         /// <summary>
         /// Classify configuration used for this job
@@ -114,6 +114,9 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier
         /// </param>
+        /// <param name="fileInput">
+        /// ID of the input file or parse job
+        /// </param>
         /// <param name="projectId">
         /// Project this job belongs to
         /// </param>
@@ -125,9 +128,6 @@ namespace LlamaParse
         /// </param>
         /// <param name="documentInputType">
         /// Whether the input was a file or parse job (FILE or PARSE_JOB)
-        /// </param>
-        /// <param name="documentInputValue">
-        /// ID of the input file or parse job
         /// </param>
         /// <param name="configuration">
         /// Classify configuration used for this job
@@ -158,11 +158,11 @@ namespace LlamaParse
 #endif
         public ClassifyV2JobResponse(
             global::LlamaParse.AnyOf<string, global::System.Guid?> id,
+            string fileInput,
             string projectId,
             string userId,
             global::LlamaParse.ClassifyV2JobResponseStatus status,
             global::LlamaParse.ClassifyV2JobResponseDocumentInputType documentInputType,
-            string documentInputValue,
             global::LlamaParse.ClassifyV2Configuration configuration,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
@@ -175,11 +175,11 @@ namespace LlamaParse
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.FileInput = fileInput ?? throw new global::System.ArgumentNullException(nameof(fileInput));
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.Status = status;
             this.DocumentInputType = documentInputType;
-            this.DocumentInputValue = documentInputValue ?? throw new global::System.ArgumentNullException(nameof(documentInputValue));
             this.Configuration = configuration ?? throw new global::System.ArgumentNullException(nameof(configuration));
             this.Result = result;
             this.ErrorMessage = errorMessage;

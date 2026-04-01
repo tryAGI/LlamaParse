@@ -9,6 +9,13 @@ namespace LlamaParse
     public sealed partial class ExtractV2Job
     {
         /// <summary>
+        /// File ID or parse job ID that was extracted
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_input")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string FileInput { get; set; }
+
+        /// <summary>
         /// Unique job identifier (job_id)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -27,13 +34,6 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration_id")]
         public string? ConfigurationId { get; set; }
-
-        /// <summary>
-        /// File ID or parse job ID that was extracted
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("document_input_value")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DocumentInputValue { get; set; }
 
         /// <summary>
         /// Configuration used for this job
@@ -101,14 +101,14 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractV2Job" /> class.
         /// </summary>
+        /// <param name="fileInput">
+        /// File ID or parse job ID that was extracted
+        /// </param>
         /// <param name="id">
         /// Unique job identifier (job_id)
         /// </param>
         /// <param name="projectId">
         /// Project this job belongs to
-        /// </param>
-        /// <param name="documentInputValue">
-        /// File ID or parse job ID that was extracted
         /// </param>
         /// <param name="status">
         /// Current job status.<br/>
@@ -146,9 +146,9 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExtractV2Job(
+            string fileInput,
             string id,
             string projectId,
-            string documentInputValue,
             string status,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
@@ -159,10 +159,10 @@ namespace LlamaParse
             global::LlamaParse.ExtractJobMetadata? extractMetadata,
             global::LlamaParse.ExtractV2JobMetadata2? metadata)
         {
+            this.FileInput = fileInput ?? throw new global::System.ArgumentNullException(nameof(fileInput));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.ConfigurationId = configurationId;
-            this.DocumentInputValue = documentInputValue ?? throw new global::System.ArgumentNullException(nameof(documentInputValue));
             this.Configuration = configuration;
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.ErrorMessage = errorMessage;

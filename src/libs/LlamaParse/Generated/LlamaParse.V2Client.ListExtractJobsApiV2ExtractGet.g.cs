@@ -1,6 +1,8 @@
 
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace LlamaParse
 {
     public partial class V2Client
@@ -8,6 +10,7 @@ namespace LlamaParse
         partial void PrepareListExtractJobsApiV2ExtractGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? documentInputType,
+            ref string? fileInput,
             ref string? documentInputValue,
             global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2? status,
             int? pageSize,
@@ -24,6 +27,7 @@ namespace LlamaParse
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? documentInputType,
+            string? fileInput,
             string? documentInputValue,
             global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2? status,
             int? pageSize,
@@ -48,7 +52,7 @@ namespace LlamaParse
         /// <summary>
         /// List Extract Jobs<br/>
         /// List extraction jobs with optional filtering and pagination.<br/>
-        /// Filter by `configuration_id`, `status`, `document_input_value`,<br/>
+        /// Filter by `configuration_id`, `status`, `file_input`,<br/>
         /// or creation date range. Results are returned newest-first.<br/>
         /// Use `expand=configuration` to include the full configuration used,<br/>
         /// and `expand=extract_metadata` for per-field metadata.
@@ -56,8 +60,11 @@ namespace LlamaParse
         /// <param name="documentInputType">
         /// Filter by document input type (file_id or parse_job_id)
         /// </param>
+        /// <param name="fileInput">
+        /// Filter by file input value
+        /// </param>
         /// <param name="documentInputValue">
-        /// Filter by document input value
+        /// Deprecated: use file_input instead
         /// </param>
         /// <param name="status">
         /// Filter by status
@@ -90,6 +97,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.ExtractV2JobQueryResponse> ListExtractJobsApiV2ExtractGetAsync(
             string? documentInputType = default,
+            string? fileInput = default,
             string? documentInputValue = default,
             global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2? status = default,
             int? pageSize = default,
@@ -109,6 +117,7 @@ namespace LlamaParse
             PrepareListExtractJobsApiV2ExtractGetArguments(
                 httpClient: HttpClient,
                 documentInputType: ref documentInputType,
+                fileInput: ref fileInput,
                 documentInputValue: ref documentInputValue,
                 status: status,
                 pageSize: pageSize,
@@ -127,6 +136,7 @@ namespace LlamaParse
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("document_input_type", documentInputType)
+                .AddOptionalParameter("file_input", fileInput)
                 .AddOptionalParameter("document_input_value", documentInputValue)
                 .AddOptionalParameter("status", status?.ToString())
                 .AddOptionalParameter("page_size", pageSize?.ToString())
@@ -171,6 +181,7 @@ namespace LlamaParse
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 documentInputType: documentInputType,
+                fileInput: fileInput,
                 documentInputValue: documentInputValue,
                 status: status,
                 pageSize: pageSize,

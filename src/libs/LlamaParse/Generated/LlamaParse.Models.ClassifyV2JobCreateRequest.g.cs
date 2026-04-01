@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LlamaParse
@@ -21,15 +23,23 @@ namespace LlamaParse
         public global::LlamaParse.ClassifyV2Configuration? Configuration { get; set; }
 
         /// <summary>
-        /// File ID to classify
+        /// File ID or parse job ID to classify
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_input")]
+        public string? FileInput { get; set; }
+
+        /// <summary>
+        /// Deprecated: use file_input instead
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? FileId { get; set; }
 
         /// <summary>
-        /// Parse job ID to classify
+        /// Deprecated: use file_input instead
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_job_id")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? ParseJobId { get; set; }
 
         /// <summary>
@@ -53,11 +63,8 @@ namespace LlamaParse
         /// <param name="configuration">
         /// Inline classify configuration (required if configuration_id is not provided)
         /// </param>
-        /// <param name="fileId">
-        /// File ID to classify
-        /// </param>
-        /// <param name="parseJobId">
-        /// Parse job ID to classify
+        /// <param name="fileInput">
+        /// File ID or parse job ID to classify
         /// </param>
         /// <param name="transactionId">
         /// Idempotency key scoped to the project
@@ -68,14 +75,12 @@ namespace LlamaParse
         public ClassifyV2JobCreateRequest(
             string? configurationId,
             global::LlamaParse.ClassifyV2Configuration? configuration,
-            string? fileId,
-            string? parseJobId,
+            string? fileInput,
             string? transactionId)
         {
             this.ConfigurationId = configurationId;
             this.Configuration = configuration;
-            this.FileId = fileId;
-            this.ParseJobId = parseJobId;
+            this.FileInput = fileInput;
             this.TransactionId = transactionId;
         }
 

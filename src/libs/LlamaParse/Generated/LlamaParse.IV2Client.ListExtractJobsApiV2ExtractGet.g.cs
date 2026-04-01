@@ -1,5 +1,7 @@
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace LlamaParse
 {
     public partial interface IV2Client
@@ -7,7 +9,7 @@ namespace LlamaParse
         /// <summary>
         /// List Extract Jobs<br/>
         /// List extraction jobs with optional filtering and pagination.<br/>
-        /// Filter by `configuration_id`, `status`, `document_input_value`,<br/>
+        /// Filter by `configuration_id`, `status`, `file_input`,<br/>
         /// or creation date range. Results are returned newest-first.<br/>
         /// Use `expand=configuration` to include the full configuration used,<br/>
         /// and `expand=extract_metadata` for per-field metadata.
@@ -15,8 +17,11 @@ namespace LlamaParse
         /// <param name="documentInputType">
         /// Filter by document input type (file_id or parse_job_id)
         /// </param>
+        /// <param name="fileInput">
+        /// Filter by file input value
+        /// </param>
         /// <param name="documentInputValue">
-        /// Filter by document input value
+        /// Deprecated: use file_input instead
         /// </param>
         /// <param name="status">
         /// Filter by status
@@ -49,6 +54,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.ExtractV2JobQueryResponse> ListExtractJobsApiV2ExtractGetAsync(
             string? documentInputType = default,
+            string? fileInput = default,
             string? documentInputValue = default,
             global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2? status = default,
             int? pageSize = default,

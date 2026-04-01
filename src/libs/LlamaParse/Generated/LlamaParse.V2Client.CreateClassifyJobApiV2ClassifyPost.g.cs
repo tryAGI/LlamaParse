@@ -1,6 +1,8 @@
 
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace LlamaParse
 {
     public partial class V2Client
@@ -30,9 +32,9 @@ namespace LlamaParse
         /// <summary>
         /// Create Classify Job<br/>
         /// Create a classify job.<br/>
-        /// Classifies a document against a set of rules. Provide either<br/>
-        /// `file_id` or `parse_job_id` as the document input, and either<br/>
-        /// inline `configuration` with rules or a `configuration_id`<br/>
+        /// Classifies a document against a set of rules. Set `file_input`<br/>
+        /// to a file ID (`dfl-...`) or parse job ID (`pjb-...`), and provide<br/>
+        /// either inline `configuration` with rules or a `configuration_id`<br/>
         /// referencing a saved preset.<br/>
         /// Each rule has a `type` (the label to assign) and a `description`<br/>
         /// (natural language criteria). The classifier returns the best<br/>
@@ -252,9 +254,9 @@ namespace LlamaParse
         /// <summary>
         /// Create Classify Job<br/>
         /// Create a classify job.<br/>
-        /// Classifies a document against a set of rules. Provide either<br/>
-        /// `file_id` or `parse_job_id` as the document input, and either<br/>
-        /// inline `configuration` with rules or a `configuration_id`<br/>
+        /// Classifies a document against a set of rules. Set `file_input`<br/>
+        /// to a file ID (`dfl-...`) or parse job ID (`pjb-...`), and provide<br/>
+        /// either inline `configuration` with rules or a `configuration_id`<br/>
         /// referencing a saved preset.<br/>
         /// Each rule has a `type` (the label to assign) and a `description`<br/>
         /// (natural language criteria). The classifier returns the best<br/>
@@ -271,11 +273,8 @@ namespace LlamaParse
         /// <param name="configuration">
         /// Inline classify configuration (required if configuration_id is not provided)
         /// </param>
-        /// <param name="fileId">
-        /// File ID to classify
-        /// </param>
-        /// <param name="parseJobId">
-        /// Parse job ID to classify
+        /// <param name="fileInput">
+        /// File ID or parse job ID to classify
         /// </param>
         /// <param name="transactionId">
         /// Idempotency key scoped to the project
@@ -288,8 +287,7 @@ namespace LlamaParse
             string? session = default,
             string? configurationId = default,
             global::LlamaParse.ClassifyV2Configuration? configuration = default,
-            string? fileId = default,
-            string? parseJobId = default,
+            string? fileInput = default,
             string? transactionId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -297,8 +295,7 @@ namespace LlamaParse
             {
                 ConfigurationId = configurationId,
                 Configuration = configuration,
-                FileId = fileId,
-                ParseJobId = parseJobId,
+                FileInput = fileInput,
                 TransactionId = transactionId,
             };
 

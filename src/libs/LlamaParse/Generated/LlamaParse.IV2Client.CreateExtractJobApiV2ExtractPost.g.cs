@@ -14,7 +14,7 @@ namespace LlamaParse
         /// - `configuration_id` — reference a saved extraction config<br/>
         /// - `configuration` — inline configuration with a `data_schema`<br/>
         /// ## Document input<br/>
-        /// Set `document_input_value` to a file ID (`dfl-...`) or a<br/>
+        /// Set `file_input` to a file ID (`dfl-...`) or a<br/>
         /// completed parse job ID (`pjb-...`).<br/>
         /// The job runs asynchronously. Poll `GET /extract/{job_id}` or<br/>
         /// register a webhook to monitor completion.
@@ -42,7 +42,7 @@ namespace LlamaParse
         /// - `configuration_id` — reference a saved extraction config<br/>
         /// - `configuration` — inline configuration with a `data_schema`<br/>
         /// ## Document input<br/>
-        /// Set `document_input_value` to a file ID (`dfl-...`) or a<br/>
+        /// Set `file_input` to a file ID (`dfl-...`) or a<br/>
         /// completed parse job ID (`pjb-...`).<br/>
         /// The job runs asynchronously. Poll `GET /extract/{job_id}` or<br/>
         /// register a webhook to monitor completion.
@@ -59,13 +59,13 @@ namespace LlamaParse
         /// <param name="configuration">
         /// Inline configuration with extract options and optional parse settings
         /// </param>
-        /// <param name="documentInputValue">
-        /// File ID or Parse Job ID to extract from
+        /// <param name="fileInput">
+        /// File ID or parse job ID to extract from
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.ExtractV2Job> CreateExtractJobApiV2ExtractPostAsync(
-            string documentInputValue,
+            string fileInput,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,

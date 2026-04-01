@@ -4,10 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Deprecated: use file_input instead
+    /// File ID or parse job ID to classify
     /// </summary>
-    [global::System.Obsolete("This model marked as deprecated.")]
-    public sealed partial class ListExtractJobsApiV2ExtractGetDocumentInputValue
+    public sealed partial class ClassifyV2JobCreateRequestFileInput
     {
 
         /// <summary>
