@@ -281,7 +281,6 @@ namespace LlamaParse
             global::LlamaParse.FileData? file = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LlamaParse.ExtractStatelessRequest
             {
                 WebhookConfigurations = webhookConfigurations,

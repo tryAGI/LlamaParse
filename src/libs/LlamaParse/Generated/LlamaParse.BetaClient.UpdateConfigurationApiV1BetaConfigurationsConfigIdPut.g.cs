@@ -271,7 +271,6 @@ namespace LlamaParse
             global::LlamaParse.ParametersVariant1? parameters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LlamaParse.ConfigurationUpdateRequest
             {
                 Name = name,

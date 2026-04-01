@@ -300,7 +300,6 @@ namespace LlamaParse
             int? continueAsNewThreshold = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LlamaParse.BatchJobCreateRequest
             {
                 DirectoryId = directoryId,

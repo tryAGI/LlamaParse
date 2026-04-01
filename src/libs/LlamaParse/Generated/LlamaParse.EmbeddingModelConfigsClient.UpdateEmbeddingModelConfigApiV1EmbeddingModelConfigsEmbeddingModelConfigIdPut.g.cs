@@ -271,7 +271,6 @@ namespace LlamaParse
             global::LlamaParse.EmbeddingConfigVariant1? embeddingConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LlamaParse.EmbeddingModelConfigUpdate
             {
                 Name = name,
