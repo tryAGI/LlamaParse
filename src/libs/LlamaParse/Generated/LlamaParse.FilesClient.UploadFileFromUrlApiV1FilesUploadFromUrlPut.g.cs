@@ -296,7 +296,6 @@ namespace LlamaParse
             global::LlamaParse.AnyOf<global::LlamaParse.FileCreateFromUrlStorageType?, string>? storageType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LlamaParse.FileCreateFromUrl
             {
                 Name = name,
