@@ -271,6 +271,7 @@ namespace LlamaParse
             string? dataSourceId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LlamaParse.DirectoryCreateRequest
             {
                 Name = name,

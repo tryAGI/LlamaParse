@@ -251,6 +251,7 @@ namespace LlamaParse
             string? className = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LlamaParse.ChatInputParams
             {
                 Messages = messages,

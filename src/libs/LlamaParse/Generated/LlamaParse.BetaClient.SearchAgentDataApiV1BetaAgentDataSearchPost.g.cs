@@ -290,6 +290,7 @@ namespace LlamaParse
             int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LlamaParse.SearchRequest
             {
                 PageSize = pageSize,

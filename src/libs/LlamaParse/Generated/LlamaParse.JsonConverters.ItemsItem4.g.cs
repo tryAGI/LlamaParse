@@ -122,55 +122,55 @@ namespace LlamaParse.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.TextItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.TextItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.TextItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
             else if (value.IsHeading)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.HeadingItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.HeadingItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.HeadingItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Heading, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Heading!, typeInfo);
             }
             else if (value.IsList)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ListItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ListItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.ListItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.List, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.List!, typeInfo);
             }
             else if (value.IsCode)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.CodeItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.CodeItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.CodeItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Code, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Code!, typeInfo);
             }
             else if (value.IsTable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.TableItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.TableItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.TableItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Table, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Table!, typeInfo);
             }
             else if (value.IsImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ImageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ImageItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.ImageItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
             }
             else if (value.IsLink)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.LinkItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.LinkItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.LinkItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Link, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Link!, typeInfo);
             }
             else if (value.IsHeader)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.HeaderItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.HeaderItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.HeaderItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Header, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Header!, typeInfo);
             }
             else if (value.IsFooter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.FooterItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.FooterItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.FooterItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Footer, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Footer!, typeInfo);
             }
         }
     }

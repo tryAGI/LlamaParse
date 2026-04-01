@@ -274,6 +274,7 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.RetrieverPipeline>? pipelines = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LlamaParse.DirectRetrievalParams
             {
                 Mode = mode,
