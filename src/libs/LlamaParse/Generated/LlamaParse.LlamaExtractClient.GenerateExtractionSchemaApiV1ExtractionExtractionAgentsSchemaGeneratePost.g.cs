@@ -269,6 +269,7 @@ namespace LlamaParse
             global::LlamaParse.AnyOf<object, string, object>? dataSchema = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LlamaParse.ExtractSchemaGenerateRequest
             {
                 Prompt = prompt,
