@@ -120,13 +120,13 @@ namespace LlamaParse
                     if (ReadResponseAsString)
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::LlamaParse.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                        __value_422 = global::LlamaParse.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_422 = global::LlamaParse.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                        __value_422 = global::LlamaParse.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -170,7 +170,7 @@ namespace LlamaParse
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LlamaParse.ParsingJobMarkdownResult.FromJson(__content, JsonSerializerContext) ??
+                        global::LlamaParse.ParsingJobMarkdownResult.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -201,7 +201,7 @@ namespace LlamaParse
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LlamaParse.ParsingJobMarkdownResult.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LlamaParse.ParsingJobMarkdownResult.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
