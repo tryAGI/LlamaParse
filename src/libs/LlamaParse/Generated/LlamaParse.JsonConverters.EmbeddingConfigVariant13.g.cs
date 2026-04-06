@@ -12,46 +12,63 @@ namespace LlamaParse.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1Discriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1Discriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::LlamaParse.AzureOpenAIEmbeddingConfig? azureEmbedding1 = default;
             if (discriminator?.Type == global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.AzureEmbedding)
             {
-                azureEmbedding1 = global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.AzureOpenAIEmbeddingConfig>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.AzureOpenAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.AzureOpenAIEmbeddingConfig> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.AzureOpenAIEmbeddingConfig)}");
+                azureEmbedding1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.CohereEmbeddingConfig? cohereEmbedding = default;
             if (discriminator?.Type == global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.CohereEmbedding)
             {
-                cohereEmbedding = global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.CohereEmbeddingConfig>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.CohereEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.CohereEmbeddingConfig> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.CohereEmbeddingConfig)}");
+                cohereEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.GeminiEmbeddingConfig? geminiEmbedding = default;
             if (discriminator?.Type == global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.GeminiEmbedding)
             {
-                geminiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.GeminiEmbeddingConfig>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.GeminiEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.GeminiEmbeddingConfig> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.GeminiEmbeddingConfig)}");
+                geminiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig? huggingfaceApiEmbedding = default;
             if (discriminator?.Type == global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.HuggingfaceApiEmbedding)
             {
-                huggingfaceApiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig)}");
+                huggingfaceApiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.OpenAIEmbeddingConfig? azureEmbedding2 = default;
             if (discriminator?.Type == global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.AzureEmbedding)
             {
-                azureEmbedding2 = global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.OpenAIEmbeddingConfig>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.OpenAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.OpenAIEmbeddingConfig> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.OpenAIEmbeddingConfig)}");
+                azureEmbedding2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.VertexAIEmbeddingConfig? vertexaiEmbedding = default;
             if (discriminator?.Type == global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.VertexaiEmbedding)
             {
-                vertexaiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.VertexAIEmbeddingConfig>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.VertexAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.VertexAIEmbeddingConfig> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.VertexAIEmbeddingConfig)}");
+                vertexaiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.BedrockEmbeddingConfig? bedrockEmbedding = default;
             if (discriminator?.Type == global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.BedrockEmbedding)
             {
-                bedrockEmbedding = global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.BedrockEmbeddingConfig>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.BedrockEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.BedrockEmbeddingConfig> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.BedrockEmbeddingConfig)}");
+                bedrockEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::LlamaParse.EmbeddingConfigVariant13(
@@ -80,35 +97,50 @@ namespace LlamaParse.JsonConverters
             global::LlamaParse.EmbeddingConfigVariant13 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsAzureEmbedding1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureEmbedding1, typeof(global::LlamaParse.AzureOpenAIEmbeddingConfig), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.AzureOpenAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.AzureOpenAIEmbeddingConfig?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.AzureOpenAIEmbeddingConfig).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureEmbedding1!, typeInfo);
             }
             else if (value.IsCohereEmbedding)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CohereEmbedding, typeof(global::LlamaParse.CohereEmbeddingConfig), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.CohereEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.CohereEmbeddingConfig?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.CohereEmbeddingConfig).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CohereEmbedding!, typeInfo);
             }
             else if (value.IsGeminiEmbedding)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GeminiEmbedding, typeof(global::LlamaParse.GeminiEmbeddingConfig), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.GeminiEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.GeminiEmbeddingConfig?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.GeminiEmbeddingConfig).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GeminiEmbedding!, typeInfo);
             }
             else if (value.IsHuggingfaceApiEmbedding)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HuggingfaceApiEmbedding, typeof(global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HuggingfaceApiEmbedding!, typeInfo);
             }
             else if (value.IsAzureEmbedding2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureEmbedding2, typeof(global::LlamaParse.OpenAIEmbeddingConfig), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.OpenAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.OpenAIEmbeddingConfig?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.OpenAIEmbeddingConfig).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureEmbedding2!, typeInfo);
             }
             else if (value.IsVertexaiEmbedding)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VertexaiEmbedding, typeof(global::LlamaParse.VertexAIEmbeddingConfig), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.VertexAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.VertexAIEmbeddingConfig?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.VertexAIEmbeddingConfig).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VertexaiEmbedding!, typeInfo);
             }
             else if (value.IsBedrockEmbedding)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BedrockEmbedding, typeof(global::LlamaParse.BedrockEmbeddingConfig), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.BedrockEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.BedrockEmbeddingConfig?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.BedrockEmbeddingConfig).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BedrockEmbedding!, typeInfo);
             }
         }
     }
