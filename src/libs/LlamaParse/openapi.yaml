@@ -6367,6 +6367,40 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -6437,6 +6471,40 @@
               "type": "string",
               "format": "uuid",
               "title": "Retriever Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
             }
           },
           {
@@ -11740,570 +11808,6 @@
         }
       }
     },
-    "/api/v1/beta/parse-configurations": {
-      "post": {
-        "tags": [
-          "Beta",
-          "Parse Configurations"
-        ],
-        "summary": "Create Parse Configuration",
-        "description": "Create a new parse configuration.\n\nArgs:\n    config_create: Parse configuration creation data\n    project: Validated project from dependency\n    user: Current user\n\nReturns:\n    The created parse configuration",
-        "operationId": "create_parse_configuration_api_v1_beta_parse_configurations_post",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ParseConfigurationCreate"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ParseConfiguration"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Beta",
-          "Parse Configurations"
-        ],
-        "summary": "List Parse Configurations",
-        "description": "List parse configurations for the current project.\n\nArgs:\n    project: Validated project from dependency\n    user: Current user\n    page_size: Number of items per page\n    page_token: Token for pagination\n    name: Filter by configuration name\n    creator: Filter by creator\n    version: Filter by version\n\nReturns:\n    Paginated response with parse configurations",
-        "operationId": "list_parse_configurations_api_v1_beta_parse_configurations_get",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "page_size",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Page Size"
-            }
-          },
-          {
-            "name": "page_token",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Page Token"
-            }
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Name"
-            }
-          },
-          {
-            "name": "creator",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Creator"
-            }
-          },
-          {
-            "name": "version",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Version"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ParseConfigurationQueryResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/beta/parse-configurations/{config_id}": {
-      "get": {
-        "tags": [
-          "Beta",
-          "Parse Configurations"
-        ],
-        "summary": "Get Parse Configuration",
-        "description": "Get a parse configuration by ID.\n\nArgs:\n    config_id: The ID of the parse configuration\n    project: Validated project from dependency\n    user: Current user\n\nReturns:\n    The parse configuration",
-        "operationId": "get_parse_configuration_api_v1_beta_parse_configurations__config_id__get",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "config_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "title": "Config Id"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ParseConfiguration"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Beta",
-          "Parse Configurations"
-        ],
-        "summary": "Update Parse Configuration",
-        "description": "Update a parse configuration.\n\nArgs:\n    config_id: The ID of the parse configuration to update\n    config_update: Update data\n    project: Validated project from dependency\n    user: Current user\n\nReturns:\n    The updated parse configuration",
-        "operationId": "update_parse_configuration_api_v1_beta_parse_configurations__config_id__put",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "config_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "title": "Config Id"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ParseConfigurationUpdate"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ParseConfiguration"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Beta",
-          "Parse Configurations"
-        ],
-        "summary": "Delete Parse Configuration",
-        "description": "Delete a parse configuration.\n\nArgs:\n    config_id: The ID of the parse configuration to delete\n    project: Validated project from dependency\n    user: Current user",
-        "operationId": "delete_parse_configuration_api_v1_beta_parse_configurations__config_id__delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "config_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "title": "Config Id"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successful Response"
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/v1/beta/sheets/jobs": {
       "post": {
         "tags": [
@@ -14688,6 +14192,7 @@
                       "extract_v2",
                       "classify_v2",
                       "parse_v2",
+                      "spreadsheet_v1",
                       "unknown"
                     ],
                     "type": "string"
@@ -15149,7 +14654,7 @@
           "Split"
         ],
         "summary": "Create Split Job",
-        "description": "Create a document split job.\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "Create a document split job.",
         "operationId": "create_split_job_api_v1_beta_split_jobs_post",
         "security": [
           {
@@ -15247,7 +14752,7 @@
           "Split"
         ],
         "summary": "List Split Jobs",
-        "description": "List document split jobs.\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "List document split jobs.",
         "operationId": "list_split_jobs_api_v1_beta_split_jobs_get",
         "security": [
           {
@@ -15453,7 +14958,7 @@
           "Split"
         ],
         "summary": "Get Split Job",
-        "description": "Get a document split job.\n\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "Get a document split job.",
         "operationId": "get_split_job_api_v1_beta_split_jobs__split_job_id__get",
         "security": [
           {
@@ -19314,6 +18819,8 @@
                   "2026-03-27",
                   "2026-03-30",
                   "2026-03-31",
+                  "2026-04-02",
+                  "2026-04-06",
                   "latest"
                 ]
               },
@@ -23720,6 +23227,17 @@
       },
       "ClassifyV2ParsingConfiguration": {
         "properties": {
+          "lang": {
+            "type": "string",
+            "title": "Lang",
+            "description": "ISO 639-1 language code for the document",
+            "default": "en",
+            "examples": [
+              "en",
+              "es",
+              "zh"
+            ]
+          },
           "target_pages": {
             "anyOf": [
               {
@@ -23750,17 +23268,6 @@
             "description": "Maximum number of pages to process. Omit for no limit.",
             "examples": [
               10
-            ]
-          },
-          "lang": {
-            "type": "string",
-            "title": "Lang",
-            "description": "ISO 639-1 language code for the document",
-            "default": "en",
-            "examples": [
-              "en",
-              "es",
-              "zh"
             ]
           }
         },
@@ -25901,6 +25408,9 @@
                 "$ref": "#/components/schemas/ParseV2Parameters"
               },
               {
+                "$ref": "#/components/schemas/SpreadsheetV1Parameters"
+              },
+              {
                 "$ref": "#/components/schemas/UntypedParameters"
               }
             ],
@@ -25913,6 +25423,7 @@
                 "extract_v2": "#/components/schemas/ExtractV2Parameters",
                 "parse_v2": "#/components/schemas/ParseV2Parameters",
                 "split_v1": "#/components/schemas/SplitV1Parameters",
+                "spreadsheet_v1": "#/components/schemas/SpreadsheetV1Parameters",
                 "unknown": "#/components/schemas/UntypedParameters"
               }
             }
@@ -26013,6 +25524,7 @@
               "extract_v2",
               "classify_v2",
               "parse_v2",
+              "spreadsheet_v1",
               "unknown"
             ],
             "title": "Product Type",
@@ -26038,6 +25550,9 @@
                 "$ref": "#/components/schemas/ParseV2Parameters"
               },
               {
+                "$ref": "#/components/schemas/SpreadsheetV1Parameters"
+              },
+              {
                 "$ref": "#/components/schemas/UntypedParameters"
               }
             ],
@@ -26050,6 +25565,7 @@
                 "extract_v2": "#/components/schemas/ExtractV2Parameters",
                 "parse_v2": "#/components/schemas/ParseV2Parameters",
                 "split_v1": "#/components/schemas/SplitV1Parameters",
+                "spreadsheet_v1": "#/components/schemas/SpreadsheetV1Parameters",
                 "unknown": "#/components/schemas/UntypedParameters"
               }
             }
@@ -26099,6 +25615,9 @@
                     "$ref": "#/components/schemas/ParseV2Parameters"
                   },
                   {
+                    "$ref": "#/components/schemas/SpreadsheetV1Parameters"
+                  },
+                  {
                     "$ref": "#/components/schemas/UntypedParameters"
                   }
                 ],
@@ -26109,6 +25628,7 @@
                     "extract_v2": "#/components/schemas/ExtractV2Parameters",
                     "parse_v2": "#/components/schemas/ParseV2Parameters",
                     "split_v1": "#/components/schemas/SplitV1Parameters",
+                    "spreadsheet_v1": "#/components/schemas/SpreadsheetV1Parameters",
                     "unknown": "#/components/schemas/UntypedParameters"
                   }
                 }
@@ -26966,6 +26486,37 @@
             ],
             "title": "Display Name",
             "description": "Display name for the file. If not provided, will use the file's name."
+          },
+          "metadata": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metadata",
+            "description": "User-defined metadata key-value pairs to associate with the file."
           }
         },
         "type": "object",
@@ -27096,6 +26647,30 @@
             "title": "File Id",
             "description": "File ID for the storage location."
           },
+          "metadata": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Metadata",
+            "description": "Merged metadata from all sources. Higher-priority sources override lower."
+          },
           "deleted_at": {
             "anyOf": [
               {
@@ -27159,6 +26734,37 @@
             ],
             "title": "Directory Id",
             "description": "Move file to a different directory."
+          },
+          "metadata": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metadata",
+            "description": "User-defined metadata key-value pairs. Replaces the user metadata layer."
           }
         },
         "type": "object",
@@ -28074,17 +27680,6 @@
               10
             ]
           },
-          "lang": {
-            "type": "string",
-            "title": "Lang",
-            "description": "ISO 639-1 language code for the document",
-            "default": "en",
-            "examples": [
-              "en",
-              "es",
-              "zh"
-            ]
-          },
           "tier": {
             "type": "string",
             "enum": [
@@ -28194,7 +27789,7 @@
               }
             ],
             "title": "Parse Tier",
-            "description": "Parse tier to use before extraction (fast, cost_effective, or agentic)",
+            "description": "Parse tier to use before extraction. Defaults to the extract tier if not specified.",
             "examples": [
               "fast",
               "cost_effective"
@@ -29725,17 +29320,6 @@
               10
             ]
           },
-          "lang": {
-            "type": "string",
-            "title": "Lang",
-            "description": "ISO 639-1 language code for the document",
-            "default": "en",
-            "examples": [
-              "en",
-              "es",
-              "zh"
-            ]
-          },
           "tier": {
             "type": "string",
             "enum": [
@@ -29845,7 +29429,7 @@
               }
             ],
             "title": "Parse Tier",
-            "description": "Parse tier to use before extraction (fast, cost_effective, or agentic)",
+            "description": "Parse tier to use before extraction. Defaults to the extract tier if not specified.",
             "examples": [
               "fast",
               "cost_effective"
@@ -36285,198 +35869,6 @@
         ],
         "title": "ParseConcernItem"
       },
-      "ParseConfiguration": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "title": "Id",
-            "description": "Unique identifier for the parse configuration"
-          },
-          "name": {
-            "type": "string",
-            "title": "Name",
-            "description": "Name of the parse configuration"
-          },
-          "source_type": {
-            "type": "string",
-            "title": "Source Type",
-            "description": "Type of the source (e.g., 'project')"
-          },
-          "source_id": {
-            "type": "string",
-            "title": "Source Id",
-            "description": "ID of the source"
-          },
-          "creator": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Creator",
-            "description": "Creator of the configuration"
-          },
-          "version": {
-            "type": "string",
-            "title": "Version",
-            "description": "Version of the configuration"
-          },
-          "parameters": {
-            "$ref": "#/components/schemas/LlamaParseParameters",
-            "description": "LlamaParseParameters configuration"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "title": "Created At",
-            "description": "Creation timestamp"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "title": "Updated At",
-            "description": "Last update timestamp"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "source_type",
-          "source_id",
-          "version",
-          "parameters",
-          "created_at",
-          "updated_at"
-        ],
-        "title": "ParseConfiguration",
-        "description": "Parse configuration schema."
-      },
-      "ParseConfigurationCreate": {
-        "properties": {
-          "name": {
-            "type": "string",
-            "title": "Name",
-            "description": "Name of the parse configuration"
-          },
-          "source_type": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Source Type",
-            "description": "Type of the source (e.g., 'project')"
-          },
-          "source_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Source Id",
-            "description": "ID of the source"
-          },
-          "creator": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Creator",
-            "description": "Creator of the configuration"
-          },
-          "version": {
-            "type": "string",
-            "title": "Version",
-            "description": "Version of the configuration"
-          },
-          "parameters": {
-            "$ref": "#/components/schemas/LlamaParseParameters",
-            "description": "LlamaParseParameters configuration"
-          }
-        },
-        "type": "object",
-        "required": [
-          "name",
-          "version",
-          "parameters"
-        ],
-        "title": "ParseConfigurationCreate",
-        "description": "Schema for creating a new parse configuration (API boundary)."
-      },
-      "ParseConfigurationQueryResponse": {
-        "properties": {
-          "items": {
-            "items": {
-              "$ref": "#/components/schemas/ParseConfiguration"
-            },
-            "type": "array",
-            "title": "Items",
-            "description": "The list of items."
-          },
-          "next_page_token": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Next Page Token",
-            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
-          },
-          "total_size": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Total Size",
-            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
-          }
-        },
-        "type": "object",
-        "required": [
-          "items"
-        ],
-        "title": "ParseConfigurationQueryResponse",
-        "description": "Response schema for paginated parse configuration queries."
-      },
-      "ParseConfigurationUpdate": {
-        "properties": {
-          "parameters": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/LlamaParseParameters"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "Updated LlamaParseParameters configuration"
-          }
-        },
-        "type": "object",
-        "title": "ParseConfigurationUpdate",
-        "description": "Schema for updating an existing parse configuration."
-      },
       "ParseJobQueryResponse": {
         "properties": {
           "items": {
@@ -36692,6 +36084,8 @@
                   "2026-03-27",
                   "2026-03-30",
                   "2026-03-31",
+                  "2026-04-02",
+                  "2026-04-06",
                   "latest"
                 ]
               },
@@ -37014,6 +36408,8 @@
                   "2026-03-27",
                   "2026-03-30",
                   "2026-03-31",
+                  "2026-04-02",
+                  "2026-04-06",
                   "latest"
                 ]
               },
@@ -40418,7 +39814,7 @@
           "document_input"
         ],
         "title": "SplitCreateRequest",
-        "description": "Create a document split job.\n\nProvide configuration_id, inline configuration, or both. When both are\nprovided, inline fields override the saved configuration."
+        "description": "Beta create request — accepts legacy document_input and flat formats."
       },
       "SplitDocumentInput": {
         "properties": {
@@ -40439,7 +39835,7 @@
           "value"
         ],
         "title": "SplitDocumentInput",
-        "description": "Document input specification."
+        "description": "Document input specification for beta API."
       },
       "SplitJobQueryResponse": {
         "properties": {
@@ -40481,7 +39877,7 @@
           "items"
         ],
         "title": "SplitJobQueryResponse",
-        "description": "Paginated list of split jobs."
+        "description": "Beta paginated list of split jobs."
       },
       "SplitJobResponse": {
         "properties": {
@@ -40589,7 +39985,7 @@
           "status"
         ],
         "title": "SplitJobResponse",
-        "description": "A document split job."
+        "description": "Beta response — uses nested document_input object."
       },
       "SplitResultResponse": {
         "properties": {
@@ -40908,6 +40304,95 @@
           "cell_metadata"
         ],
         "title": "SpreadsheetResultType"
+      },
+      "SpreadsheetV1Parameters": {
+        "properties": {
+          "sheet_names": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sheet Names",
+            "description": "The names of the sheets to extract regions from. If empty, all sheets will be processed."
+          },
+          "include_hidden_cells": {
+            "type": "boolean",
+            "title": "Include Hidden Cells",
+            "description": "Whether to include hidden cells when extracting regions from the spreadsheet.",
+            "default": true
+          },
+          "extraction_range": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Extraction Range",
+            "description": "A1 notation of the range to extract a single region from. If None, the entire sheet is used."
+          },
+          "generate_additional_metadata": {
+            "type": "boolean",
+            "title": "Generate Additional Metadata",
+            "description": "Whether to generate additional metadata (title, description) for each extracted region.",
+            "default": true
+          },
+          "use_experimental_processing": {
+            "type": "boolean",
+            "title": "Use Experimental Processing",
+            "description": "Enables experimental processing. Accuracy may be impacted.",
+            "default": false
+          },
+          "flatten_hierarchical_tables": {
+            "type": "boolean",
+            "title": "Flatten Hierarchical Tables",
+            "description": "Return a flattened dataframe when a detected table is recognized as hierarchical.",
+            "default": false
+          },
+          "table_merge_sensitivity": {
+            "type": "string",
+            "enum": [
+              "strong",
+              "weak"
+            ],
+            "title": "Table Merge Sensitivity",
+            "description": "Influences how likely similar-looking regions are merged into a single table. Useful for spreadsheets that either have sparse tables (strong merging) or many distinct tables close together (weak merging).",
+            "default": "strong"
+          },
+          "specialization": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Specialization",
+            "description": "Optional specialization mode for domain-specific extraction. Supported values: 'financial-standard', 'financial-enhanced', 'financial-precise'. Default None uses the general-purpose pipeline."
+          },
+          "product_type": {
+            "type": "string",
+            "const": "spreadsheet_v1",
+            "title": "Product Type",
+            "description": "Product type."
+          }
+        },
+        "type": "object",
+        "required": [
+          "product_type"
+        ],
+        "title": "SpreadsheetV1Parameters",
+        "description": "Typed parameters for a *spreadsheet v1* product configuration."
       },
       "StatusEnum": {
         "type": "string",

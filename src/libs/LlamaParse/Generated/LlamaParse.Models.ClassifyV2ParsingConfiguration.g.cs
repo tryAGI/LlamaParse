@@ -9,6 +9,13 @@ namespace LlamaParse
     public sealed partial class ClassifyV2ParsingConfiguration
     {
         /// <summary>
+        /// ISO 639-1 language code for the document<br/>
+        /// Default Value: en
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lang")]
+        public string? Lang { get; set; }
+
+        /// <summary>
         /// Comma-separated page numbers or ranges to process (1-based). Omit to process all pages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_pages")]
@@ -21,13 +28,6 @@ namespace LlamaParse
         public int? MaxPages { get; set; }
 
         /// <summary>
-        /// ISO 639-1 language code for the document<br/>
-        /// Default Value: en
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("lang")]
-        public string? Lang { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,27 +36,27 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyV2ParsingConfiguration" /> class.
         /// </summary>
+        /// <param name="lang">
+        /// ISO 639-1 language code for the document<br/>
+        /// Default Value: en
+        /// </param>
         /// <param name="targetPages">
         /// Comma-separated page numbers or ranges to process (1-based). Omit to process all pages.
         /// </param>
         /// <param name="maxPages">
         /// Maximum number of pages to process. Omit for no limit.
         /// </param>
-        /// <param name="lang">
-        /// ISO 639-1 language code for the document<br/>
-        /// Default Value: en
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClassifyV2ParsingConfiguration(
+            string? lang,
             string? targetPages,
-            int? maxPages,
-            string? lang)
+            int? maxPages)
         {
+            this.Lang = lang;
             this.TargetPages = targetPages;
             this.MaxPages = maxPages;
-            this.Lang = lang;
         }
 
         /// <summary>

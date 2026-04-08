@@ -8,12 +8,16 @@ namespace LlamaParse
         partial void PrepareUpdateRetrieverApiV1RetrieversRetrieverIdPutArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid retrieverId,
+            global::System.Guid? projectId,
+            global::System.Guid? organizationId,
             ref string? session,
             global::LlamaParse.RetrieverUpdate request);
         partial void PrepareUpdateRetrieverApiV1RetrieversRetrieverIdPutRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid retrieverId,
+            global::System.Guid? projectId,
+            global::System.Guid? organizationId,
             string? session,
             global::LlamaParse.RetrieverUpdate request);
         partial void ProcessUpdateRetrieverApiV1RetrieversRetrieverIdPutResponse(
@@ -30,6 +34,8 @@ namespace LlamaParse
         /// Update an existing Retriever.
         /// </summary>
         /// <param name="retrieverId"></param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -38,6 +44,8 @@ namespace LlamaParse
             global::System.Guid retrieverId,
 
             global::LlamaParse.RetrieverUpdate request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
             string? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -48,12 +56,18 @@ namespace LlamaParse
             PrepareUpdateRetrieverApiV1RetrieversRetrieverIdPutArguments(
                 httpClient: HttpClient,
                 retrieverId: ref retrieverId,
+                projectId: projectId,
+                organizationId: organizationId,
                 session: ref session,
                 request: request);
 
             var __pathBuilder = new global::LlamaParse.PathBuilder(
                 path: $"/api/v1/retrievers/{retrieverId}",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("project_id", projectId?.ToString())
+                .AddOptionalParameter("organization_id", organizationId?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
@@ -92,6 +106,8 @@ namespace LlamaParse
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 retrieverId: retrieverId,
+                projectId: projectId,
+                organizationId: organizationId,
                 session: session,
                 request: request);
 
@@ -234,6 +250,8 @@ namespace LlamaParse
         /// Update an existing Retriever.
         /// </summary>
         /// <param name="retrieverId"></param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="name">
         /// A name for the retriever.
@@ -245,6 +263,8 @@ namespace LlamaParse
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.Retriever> UpdateRetrieverApiV1RetrieversRetrieverIdPutAsync(
             global::System.Guid retrieverId,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
             string? session = default,
             string? name = default,
             global::System.Collections.Generic.IList<global::LlamaParse.RetrieverPipeline>? pipelines = default,
@@ -258,6 +278,8 @@ namespace LlamaParse
 
             return await UpdateRetrieverApiV1RetrieversRetrieverIdPutAsync(
                 retrieverId: retrieverId,
+                projectId: projectId,
+                organizationId: organizationId,
                 session: session,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

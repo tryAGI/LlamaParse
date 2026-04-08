@@ -68,6 +68,12 @@ namespace LlamaParse
         public string? FileId { get; set; }
 
         /// <summary>
+        /// Merged metadata from all sources. Higher-priority sources override lower.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
         /// Soft delete marker when the file is removed upstream or by user action.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_at")]
@@ -109,6 +115,9 @@ namespace LlamaParse
         /// <param name="fileId">
         /// File ID for the storage location.
         /// </param>
+        /// <param name="metadata">
+        /// Merged metadata from all sources. Higher-priority sources override lower.
+        /// </param>
         /// <param name="deletedAt">
         /// Soft delete marker when the file is removed upstream or by user action.
         /// </param>
@@ -125,6 +134,7 @@ namespace LlamaParse
             global::System.DateTime? updatedAt,
             string? dataSourceId,
             string? fileId,
+            object? metadata,
             global::System.DateTime? deletedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -136,6 +146,7 @@ namespace LlamaParse
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.DataSourceId = dataSourceId;
             this.FileId = fileId;
+            this.Metadata = metadata;
             this.DeletedAt = deletedAt;
         }
 

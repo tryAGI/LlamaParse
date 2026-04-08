@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Document input specification.
+    /// Document input specification for beta API.
     /// </summary>
     public sealed partial class SplitDocumentInput
     {

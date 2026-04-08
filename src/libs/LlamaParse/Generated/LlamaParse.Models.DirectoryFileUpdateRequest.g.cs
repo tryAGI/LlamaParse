@@ -27,6 +27,12 @@ namespace LlamaParse
         public string? DirectoryId { get; set; }
 
         /// <summary>
+        /// User-defined metadata key-value pairs. Replaces the user metadata layer.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -44,17 +50,22 @@ namespace LlamaParse
         /// <param name="directoryId">
         /// Move file to a different directory.
         /// </param>
+        /// <param name="metadata">
+        /// User-defined metadata key-value pairs. Replaces the user metadata layer.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DirectoryFileUpdateRequest(
             string? uniqueId,
             string? displayName,
-            string? directoryId)
+            string? directoryId,
+            object? metadata)
         {
             this.UniqueId = uniqueId;
             this.DisplayName = displayName;
             this.DirectoryId = directoryId;
+            this.Metadata = metadata;
         }
 
         /// <summary>

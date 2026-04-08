@@ -39,8 +39,7 @@ namespace LlamaParse
 
         /// <summary>
         /// List Split Jobs<br/>
-        /// List document split jobs.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// List document split jobs.
         /// </summary>
         /// <param name="status">
         /// Filter by job status (pending, processing, completed, failed, cancelled)

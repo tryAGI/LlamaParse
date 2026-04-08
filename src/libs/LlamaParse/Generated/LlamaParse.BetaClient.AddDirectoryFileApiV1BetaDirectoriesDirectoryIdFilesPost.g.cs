@@ -266,6 +266,9 @@ namespace LlamaParse
         /// <param name="displayName">
         /// Display name for the file. If not provided, will use the file's name.
         /// </param>
+        /// <param name="metadata">
+        /// User-defined metadata key-value pairs to associate with the file.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryFileResponse> AddDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesPostAsync(
@@ -276,6 +279,7 @@ namespace LlamaParse
             string? session = default,
             string? uniqueId = default,
             string? displayName = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LlamaParse.DirectoryFileCreateRequest
@@ -283,6 +287,7 @@ namespace LlamaParse
                 FileId = fileId,
                 UniqueId = uniqueId,
                 DisplayName = displayName,
+                Metadata = metadata,
             };
 
             return await AddDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesPostAsync(
