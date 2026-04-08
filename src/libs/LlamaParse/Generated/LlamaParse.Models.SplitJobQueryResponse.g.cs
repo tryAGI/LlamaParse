@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Paginated list of split jobs.
+    /// Beta paginated list of split jobs.
     /// </summary>
     public sealed partial class SplitJobQueryResponse
     {

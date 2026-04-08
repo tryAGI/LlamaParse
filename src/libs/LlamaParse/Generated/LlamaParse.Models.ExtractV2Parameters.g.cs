@@ -21,13 +21,6 @@ namespace LlamaParse
         public int? MaxPages { get; set; }
 
         /// <summary>
-        /// ISO 639-1 language code for the document<br/>
-        /// Default Value: en
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("lang")]
-        public string? Lang { get; set; }
-
-        /// <summary>
         /// Extract tier: cost_effective (5 credits/page) or agentic (15 credits/page)<br/>
         /// Default Value: cost_effective
         /// </summary>
@@ -78,7 +71,7 @@ namespace LlamaParse
         public bool? ConfidenceScores { get; set; }
 
         /// <summary>
-        /// Parse tier to use before extraction (fast, cost_effective, or agentic)
+        /// Parse tier to use before extraction. Defaults to the extract tier if not specified.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_tier")]
         public string? ParseTier { get; set; }
@@ -114,10 +107,6 @@ namespace LlamaParse
         /// <param name="maxPages">
         /// Maximum number of pages to process. Omit for no limit.
         /// </param>
-        /// <param name="lang">
-        /// ISO 639-1 language code for the document<br/>
-        /// Default Value: en
-        /// </param>
         /// <param name="tier">
         /// Extract tier: cost_effective (5 credits/page) or agentic (15 credits/page)<br/>
         /// Default Value: cost_effective
@@ -142,7 +131,7 @@ namespace LlamaParse
         /// Default Value: false
         /// </param>
         /// <param name="parseTier">
-        /// Parse tier to use before extraction (fast, cost_effective, or agentic)
+        /// Parse tier to use before extraction. Defaults to the extract tier if not specified.
         /// </param>
         /// <param name="parseConfigId">
         /// Saved parse configuration ID to control how the document is parsed before extraction
@@ -157,7 +146,6 @@ namespace LlamaParse
             object dataSchema,
             string? targetPages,
             int? maxPages,
-            string? lang,
             global::LlamaParse.ExtractV2ParametersTier? tier,
             string? extractVersion,
             global::LlamaParse.ExtractV2ParametersExtractionTarget? extractionTarget,
@@ -170,7 +158,6 @@ namespace LlamaParse
         {
             this.TargetPages = targetPages;
             this.MaxPages = maxPages;
-            this.Lang = lang;
             this.Tier = tier;
             this.ExtractVersion = extractVersion;
             this.DataSchema = dataSchema ?? throw new global::System.ArgumentNullException(nameof(dataSchema));

@@ -27,6 +27,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        SpreadsheetV1,
+        /// <summary>
+        /// 
+        /// </summary>
         Unknown,
     }
 
@@ -46,6 +50,7 @@ namespace LlamaParse
                 ConfigurationResponseParametersDiscriminatorProductType.ExtractV2 => "extract_v2",
                 ConfigurationResponseParametersDiscriminatorProductType.ParseV2 => "parse_v2",
                 ConfigurationResponseParametersDiscriminatorProductType.SplitV1 => "split_v1",
+                ConfigurationResponseParametersDiscriminatorProductType.SpreadsheetV1 => "spreadsheet_v1",
                 ConfigurationResponseParametersDiscriminatorProductType.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -61,6 +66,7 @@ namespace LlamaParse
                 "extract_v2" => ConfigurationResponseParametersDiscriminatorProductType.ExtractV2,
                 "parse_v2" => ConfigurationResponseParametersDiscriminatorProductType.ParseV2,
                 "split_v1" => ConfigurationResponseParametersDiscriminatorProductType.SplitV1,
+                "spreadsheet_v1" => ConfigurationResponseParametersDiscriminatorProductType.SpreadsheetV1,
                 "unknown" => ConfigurationResponseParametersDiscriminatorProductType.Unknown,
                 _ => null,
             };

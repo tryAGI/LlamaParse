@@ -86,6 +86,23 @@ namespace LlamaParse
         public bool IsParseV2 => ParseV2 != null;
 
         /// <summary>
+        /// Typed parameters for a *spreadsheet v1* product configuration.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::LlamaParse.SpreadsheetV1Parameters? SpreadsheetV1 { get; init; }
+#else
+        public global::LlamaParse.SpreadsheetV1Parameters? SpreadsheetV1 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpreadsheetV1))]
+#endif
+        public bool IsSpreadsheetV1 => SpreadsheetV1 != null;
+
+        /// <summary>
         /// Catch-all for configurations without a dedicated typed schema.<br/>
         /// Accepts arbitrary JSON fields alongside ``product_type``.
         /// </summary>
@@ -177,6 +194,24 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ParametersVariant1(global::LlamaParse.SpreadsheetV1Parameters value) => new ParametersVariant1((global::LlamaParse.SpreadsheetV1Parameters?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::LlamaParse.SpreadsheetV1Parameters?(ParametersVariant1 @this) => @this.SpreadsheetV1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ParametersVariant1(global::LlamaParse.SpreadsheetV1Parameters? value)
+        {
+            SpreadsheetV1 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ParametersVariant1(global::LlamaParse.UntypedParameters value) => new ParametersVariant1((global::LlamaParse.UntypedParameters?)value);
 
         /// <summary>
@@ -201,6 +236,7 @@ namespace LlamaParse
             global::LlamaParse.ExtractV2Parameters? extractV2,
             global::LlamaParse.ClassifyV2Parameters? classifyV2,
             global::LlamaParse.ParseV2Parameters? parseV2,
+            global::LlamaParse.SpreadsheetV1Parameters? spreadsheetV1,
             global::LlamaParse.UntypedParameters? unknown
             )
         {
@@ -210,6 +246,7 @@ namespace LlamaParse
             ExtractV2 = extractV2;
             ClassifyV2 = classifyV2;
             ParseV2 = parseV2;
+            SpreadsheetV1 = spreadsheetV1;
             Unknown = unknown;
         }
 
@@ -218,6 +255,7 @@ namespace LlamaParse
         /// </summary>
         public object? Object =>
             Unknown as object ??
+            SpreadsheetV1 as object ??
             ParseV2 as object ??
             ClassifyV2 as object ??
             ExtractV2 as object ??
@@ -232,6 +270,7 @@ namespace LlamaParse
             ExtractV2?.ToString() ??
             ClassifyV2?.ToString() ??
             ParseV2?.ToString() ??
+            SpreadsheetV1?.ToString() ??
             Unknown?.ToString() 
             ;
 
@@ -240,7 +279,7 @@ namespace LlamaParse
         /// </summary>
         public bool Validate()
         {
-            return IsSplitV1 && !IsExtractV2 && !IsClassifyV2 && !IsParseV2 && !IsUnknown || !IsSplitV1 && IsExtractV2 && !IsClassifyV2 && !IsParseV2 && !IsUnknown || !IsSplitV1 && !IsExtractV2 && IsClassifyV2 && !IsParseV2 && !IsUnknown || !IsSplitV1 && !IsExtractV2 && !IsClassifyV2 && IsParseV2 && !IsUnknown || !IsSplitV1 && !IsExtractV2 && !IsClassifyV2 && !IsParseV2 && IsUnknown;
+            return IsSplitV1 && !IsExtractV2 && !IsClassifyV2 && !IsParseV2 && !IsSpreadsheetV1 && !IsUnknown || !IsSplitV1 && IsExtractV2 && !IsClassifyV2 && !IsParseV2 && !IsSpreadsheetV1 && !IsUnknown || !IsSplitV1 && !IsExtractV2 && IsClassifyV2 && !IsParseV2 && !IsSpreadsheetV1 && !IsUnknown || !IsSplitV1 && !IsExtractV2 && !IsClassifyV2 && IsParseV2 && !IsSpreadsheetV1 && !IsUnknown || !IsSplitV1 && !IsExtractV2 && !IsClassifyV2 && !IsParseV2 && IsSpreadsheetV1 && !IsUnknown || !IsSplitV1 && !IsExtractV2 && !IsClassifyV2 && !IsParseV2 && !IsSpreadsheetV1 && IsUnknown;
         }
 
         /// <summary>
@@ -251,6 +290,7 @@ namespace LlamaParse
             global::System.Func<global::LlamaParse.ExtractV2Parameters?, TResult>? extractV2 = null,
             global::System.Func<global::LlamaParse.ClassifyV2Parameters?, TResult>? classifyV2 = null,
             global::System.Func<global::LlamaParse.ParseV2Parameters?, TResult>? parseV2 = null,
+            global::System.Func<global::LlamaParse.SpreadsheetV1Parameters?, TResult>? spreadsheetV1 = null,
             global::System.Func<global::LlamaParse.UntypedParameters?, TResult>? unknown = null,
             bool validate = true)
         {
@@ -275,6 +315,10 @@ namespace LlamaParse
             {
                 return parseV2(ParseV2!);
             }
+            else if (IsSpreadsheetV1 && spreadsheetV1 != null)
+            {
+                return spreadsheetV1(SpreadsheetV1!);
+            }
             else if (IsUnknown && unknown != null)
             {
                 return unknown(Unknown!);
@@ -291,6 +335,7 @@ namespace LlamaParse
             global::System.Action<global::LlamaParse.ExtractV2Parameters?>? extractV2 = null,
             global::System.Action<global::LlamaParse.ClassifyV2Parameters?>? classifyV2 = null,
             global::System.Action<global::LlamaParse.ParseV2Parameters?>? parseV2 = null,
+            global::System.Action<global::LlamaParse.SpreadsheetV1Parameters?>? spreadsheetV1 = null,
             global::System.Action<global::LlamaParse.UntypedParameters?>? unknown = null,
             bool validate = true)
         {
@@ -315,6 +360,10 @@ namespace LlamaParse
             {
                 parseV2?.Invoke(ParseV2!);
             }
+            else if (IsSpreadsheetV1)
+            {
+                spreadsheetV1?.Invoke(SpreadsheetV1!);
+            }
             else if (IsUnknown)
             {
                 unknown?.Invoke(Unknown!);
@@ -336,6 +385,8 @@ namespace LlamaParse
                 typeof(global::LlamaParse.ClassifyV2Parameters),
                 ParseV2,
                 typeof(global::LlamaParse.ParseV2Parameters),
+                SpreadsheetV1,
+                typeof(global::LlamaParse.SpreadsheetV1Parameters),
                 Unknown,
                 typeof(global::LlamaParse.UntypedParameters),
             };
@@ -358,6 +409,7 @@ namespace LlamaParse
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.ExtractV2Parameters?>.Default.Equals(ExtractV2, other.ExtractV2) &&
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.ClassifyV2Parameters?>.Default.Equals(ClassifyV2, other.ClassifyV2) &&
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.ParseV2Parameters?>.Default.Equals(ParseV2, other.ParseV2) &&
+                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.SpreadsheetV1Parameters?>.Default.Equals(SpreadsheetV1, other.SpreadsheetV1) &&
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.UntypedParameters?>.Default.Equals(Unknown, other.Unknown) 
                 ;
         }

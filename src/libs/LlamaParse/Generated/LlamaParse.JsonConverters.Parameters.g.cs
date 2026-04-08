@@ -49,6 +49,13 @@ namespace LlamaParse.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.ParseV2Parameters)}");
                 parseV2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::LlamaParse.SpreadsheetV1Parameters? spreadsheetV1 = default;
+            if (discriminator?.ProductType == global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType.SpreadsheetV1)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.SpreadsheetV1Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.SpreadsheetV1Parameters> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.SpreadsheetV1Parameters)}");
+                spreadsheetV1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::LlamaParse.UntypedParameters? unknown = default;
             if (discriminator?.ProductType == global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType.Unknown)
             {
@@ -66,6 +73,8 @@ namespace LlamaParse.JsonConverters
                 classifyV2,
 
                 parseV2,
+
+                spreadsheetV1,
 
                 unknown
                 );
@@ -105,6 +114,12 @@ namespace LlamaParse.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ParseV2Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ParseV2Parameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.ParseV2Parameters).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ParseV2!, typeInfo);
+            }
+            else if (value.IsSpreadsheetV1)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.SpreadsheetV1Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.SpreadsheetV1Parameters?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.SpreadsheetV1Parameters).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpreadsheetV1!, typeInfo);
             }
             else if (value.IsUnknown)
             {

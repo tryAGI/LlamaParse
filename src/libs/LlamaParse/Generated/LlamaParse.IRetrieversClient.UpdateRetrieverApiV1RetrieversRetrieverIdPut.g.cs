@@ -9,6 +9,8 @@ namespace LlamaParse
         /// Update an existing Retriever.
         /// </summary>
         /// <param name="retrieverId"></param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -17,6 +19,8 @@ namespace LlamaParse
             global::System.Guid retrieverId,
 
             global::LlamaParse.RetrieverUpdate request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
             string? session = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -24,6 +28,8 @@ namespace LlamaParse
         /// Update an existing Retriever.
         /// </summary>
         /// <param name="retrieverId"></param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="name">
         /// A name for the retriever.
@@ -35,6 +41,8 @@ namespace LlamaParse
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.Retriever> UpdateRetrieverApiV1RetrieversRetrieverIdPutAsync(
             global::System.Guid retrieverId,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
             string? session = default,
             string? name = default,
             global::System.Collections.Generic.IList<global::LlamaParse.RetrieverPipeline>? pipelines = default,

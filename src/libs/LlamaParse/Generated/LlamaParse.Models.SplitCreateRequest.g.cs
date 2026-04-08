@@ -4,9 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Create a document split job.<br/>
-    /// Provide configuration_id, inline configuration, or both. When both are<br/>
-    /// provided, inline fields override the saved configuration.
+    /// Beta create request — accepts legacy document_input and flat formats.
     /// </summary>
     public sealed partial class SplitCreateRequest
     {

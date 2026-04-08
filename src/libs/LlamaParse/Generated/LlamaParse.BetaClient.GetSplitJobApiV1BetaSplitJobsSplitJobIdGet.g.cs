@@ -29,8 +29,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Get Split Job<br/>
-        /// Get a document split job.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Get a document split job.
         /// </summary>
         /// <param name="splitJobId"></param>
         /// <param name="projectId"></param>

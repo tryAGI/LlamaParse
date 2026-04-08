@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Parse tier to use before extraction (fast, cost_effective, or agentic)
+    /// Parse tier to use before extraction. Defaults to the extract tier if not specified.
     /// </summary>
     public sealed partial class ExtractConfigurationParseTier
     {

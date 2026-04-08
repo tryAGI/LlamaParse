@@ -28,6 +28,12 @@ namespace LlamaParse
         public string? DisplayName { get; set; }
 
         /// <summary>
+        /// User-defined metadata key-value pairs to associate with the file.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,17 +51,22 @@ namespace LlamaParse
         /// <param name="displayName">
         /// Display name for the file. If not provided, will use the file's name.
         /// </param>
+        /// <param name="metadata">
+        /// User-defined metadata key-value pairs to associate with the file.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DirectoryFileCreateRequest(
             string fileId,
             string? uniqueId,
-            string? displayName)
+            string? displayName,
+            object? metadata)
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.UniqueId = uniqueId;
             this.DisplayName = displayName;
+            this.Metadata = metadata;
         }
 
         /// <summary>

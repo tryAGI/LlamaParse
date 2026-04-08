@@ -273,6 +273,9 @@ namespace LlamaParse
         /// <param name="requestDirectoryId">
         /// Move file to a different directory.
         /// </param>
+        /// <param name="metadata">
+        /// User-defined metadata key-value pairs. Replaces the user metadata layer.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryFileResponse> UpdateDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesDirectoryFileIdPatchAsync(
@@ -284,6 +287,7 @@ namespace LlamaParse
             string? uniqueId = default,
             string? displayName = default,
             string? requestDirectoryId = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LlamaParse.DirectoryFileUpdateRequest
@@ -291,6 +295,7 @@ namespace LlamaParse
                 UniqueId = uniqueId,
                 DisplayName = displayName,
                 DirectoryId = requestDirectoryId,
+                Metadata = metadata,
             };
 
             return await UpdateDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesDirectoryFileIdPatchAsync(

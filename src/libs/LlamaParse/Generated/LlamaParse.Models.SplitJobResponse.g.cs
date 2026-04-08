@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// A document split job.
+    /// Beta response — uses nested document_input object.
     /// </summary>
     public sealed partial class SplitJobResponse
     {

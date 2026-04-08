@@ -27,6 +27,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        SpreadsheetV1,
+        /// <summary>
+        /// 
+        /// </summary>
         Unknown,
     }
 
@@ -46,6 +50,7 @@ namespace LlamaParse
                 ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item.ExtractV2 => "extract_v2",
                 ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item.ParseV2 => "parse_v2",
                 ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item.SplitV1 => "split_v1",
+                ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item.SpreadsheetV1 => "spreadsheet_v1",
                 ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -61,6 +66,7 @@ namespace LlamaParse
                 "extract_v2" => ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item.ExtractV2,
                 "parse_v2" => ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item.ParseV2,
                 "split_v1" => ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item.SplitV1,
+                "spreadsheet_v1" => ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item.SpreadsheetV1,
                 "unknown" => ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item.Unknown,
                 _ => null,
             };
