@@ -5,6 +5,25 @@ namespace LlamaParse
 {
     public partial class ParsingClient
     {
+
+
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_GetJobResultApiV1ParsingJobJobIdResultMarkdownGetSecurityRequirement0 =
+            new global::LlamaParse.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
+                {                    new global::LlamaParse.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_GetJobResultApiV1ParsingJobJobIdResultMarkdownGetSecurityRequirements =
+            new global::LlamaParse.EndPointSecurityRequirement[]
+            {                s_GetJobResultApiV1ParsingJobJobIdResultMarkdownGetSecurityRequirement0,
+            };
         partial void PrepareGetJobResultApiV1ParsingJobJobIdResultMarkdownGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string jobId,
@@ -55,13 +74,19 @@ namespace LlamaParse
                 projectId: projectId,
                 session: ref session);
 
+
+            var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetJobResultApiV1ParsingJobJobIdResultMarkdownGetSecurityRequirements,
+                operationName: "GetJobResultApiV1ParsingJobJobIdResultMarkdownGetAsync");
+
             var __pathBuilder = new global::LlamaParse.PathBuilder(
                 path: $"/api/v1/parsing/job/{jobId}/result/markdown",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                 .AddOptionalParameter("project_id", projectId?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -71,7 +96,7 @@ namespace LlamaParse
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -86,6 +111,17 @@ namespace LlamaParse
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+            var __cookies = new global::System.Collections.Generic.List<string>();
+            var __session = session;
+            if (__session is not null)
+            {
+                __cookies.Add($"session={__session.ToString() ?? string.Empty}");
+            }
+            if (__cookies.Count > 0)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
+            }
+
 
             PrepareRequest(
                 client: HttpClient,

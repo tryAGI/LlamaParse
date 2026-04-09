@@ -6,6 +6,7 @@ namespace LlamaParse
     public sealed partial class LlamaParseClient
     {
         /// <inheritdoc cref="LlamaParseClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::LlamaParse.EndPointAuthorization}?, bool)"/>
+
         public LlamaParseClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
