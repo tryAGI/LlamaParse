@@ -5,6 +5,25 @@ namespace LlamaParse
 {
     public partial class ParsingClient
     {
+
+
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_GetSupportedFileExtensionsApiV1ParsingSupportedFileExtensionsGetSecurityRequirement0 =
+            new global::LlamaParse.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
+                {                    new global::LlamaParse.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_GetSupportedFileExtensionsApiV1ParsingSupportedFileExtensionsGetSecurityRequirements =
+            new global::LlamaParse.EndPointSecurityRequirement[]
+            {                s_GetSupportedFileExtensionsApiV1ParsingSupportedFileExtensionsGetSecurityRequirement0,
+            };
         partial void PrepareGetSupportedFileExtensionsApiV1ParsingSupportedFileExtensionsGetArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetSupportedFileExtensionsApiV1ParsingSupportedFileExtensionsGetRequest(
@@ -33,9 +52,15 @@ namespace LlamaParse
             PrepareGetSupportedFileExtensionsApiV1ParsingSupportedFileExtensionsGetArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSupportedFileExtensionsApiV1ParsingSupportedFileExtensionsGetSecurityRequirements,
+                operationName: "GetSupportedFileExtensionsApiV1ParsingSupportedFileExtensionsGetAsync");
+
             var __pathBuilder = new global::LlamaParse.PathBuilder(
                 path: "/api/v1/parsing/supported_file_extensions",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -45,7 +70,7 @@ namespace LlamaParse
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
