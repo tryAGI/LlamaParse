@@ -12,6 +12,7 @@ namespace LlamaParse
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseAggregateGroup> AggregateAgentDataApiV1BetaAgentDataAggregatePostAsync(
@@ -20,6 +21,7 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Aggregate Agent Data<br/>
@@ -62,6 +64,7 @@ namespace LlamaParse
         /// The offset to start from. If not provided, the first page is returned<br/>
         /// Default Value: 0
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseAggregateGroup> AggregateAgentDataApiV1BetaAgentDataAggregatePostAsync(
@@ -78,6 +81,7 @@ namespace LlamaParse
             bool? count = default,
             bool? first = default,
             int? offset = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
