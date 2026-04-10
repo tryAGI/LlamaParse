@@ -13,6 +13,7 @@ namespace LlamaParse
         /// <param name="pipelineId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> ChatApiV1PipelinesPipelineIdChatPostAsync(
@@ -20,6 +21,7 @@ namespace LlamaParse
 
             global::LlamaParse.ChatInputParams request,
             string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Chat<br/>
@@ -34,6 +36,7 @@ namespace LlamaParse
         /// <param name="className">
         /// Default Value: base_component
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> ChatApiV1PipelinesPipelineIdChatPostAsync(
@@ -42,6 +45,7 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.InputMessage>? messages = default,
             global::LlamaParse.ChatData? data = default,
             string? className = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

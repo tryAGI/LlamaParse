@@ -23,6 +23,7 @@ namespace LlamaParse
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.ExtractV2Job> CreateExtractJobApiV2ExtractPostAsync(
@@ -31,6 +32,7 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Extract Job<br/>
@@ -62,6 +64,7 @@ namespace LlamaParse
         /// <param name="fileInput">
         /// File ID or parse job ID to extract from
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.ExtractV2Job> CreateExtractJobApiV2ExtractPostAsync(
@@ -72,6 +75,7 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,
             string? configurationId = default,
             global::LlamaParse.ExtractConfiguration? configuration = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -22,6 +22,7 @@ namespace LlamaParse
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.ParseJobResponse> ParseFileApiV2ParsePostAsync(
@@ -30,6 +31,7 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Parse File<br/>
@@ -96,6 +98,7 @@ namespace LlamaParse
         /// <param name="httpProxy">
         /// HTTP/HTTPS proxy for fetching source_url. Ignored if using file_id
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.ParseJobResponse> ParseFileApiV2ParsePostAsync(
@@ -118,6 +121,7 @@ namespace LlamaParse
             string? fileId = default,
             string? sourceUrl = default,
             string? httpProxy = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

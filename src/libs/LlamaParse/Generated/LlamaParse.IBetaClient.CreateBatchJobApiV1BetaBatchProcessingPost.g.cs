@@ -18,6 +18,7 @@ namespace LlamaParse
         /// <param name="temporalNamespace"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.BatchJobResponse> CreateBatchJobApiV1BetaBatchProcessingPostAsync(
@@ -27,6 +28,7 @@ namespace LlamaParse
             global::System.Guid? organizationId = default,
             string? temporalNamespace = default,
             string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Batch Job<br/>
@@ -57,6 +59,7 @@ namespace LlamaParse
         /// <param name="continueAsNewThreshold">
         /// Maximum files to process per execution cycle in directory mode. Defaults to page_size.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.BatchJobResponse> CreateBatchJobApiV1BetaBatchProcessingPostAsync(
@@ -69,6 +72,7 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<string>? itemIds = default,
             int? pageSize = default,
             int? continueAsNewThreshold = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
