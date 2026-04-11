@@ -10,9 +10,7 @@ namespace LlamaParse
     public sealed partial class TextNodeWithScore
     {
         /// <summary>
-        /// Provided for backward compatibility.<br/>
-        /// Note: we keep the field with the typo "seperator" to maintain backward compatibility for<br/>
-        /// serialized objects.
+        /// Provided for backward compatibility.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -40,9 +38,7 @@ namespace LlamaParse
         /// Initializes a new instance of the <see cref="TextNodeWithScore" /> class.
         /// </summary>
         /// <param name="node">
-        /// Provided for backward compatibility.<br/>
-        /// Note: we keep the field with the typo "seperator" to maintain backward compatibility for<br/>
-        /// serialized objects.
+        /// Provided for backward compatibility.
         /// </param>
         /// <param name="score"></param>
         /// <param name="className">

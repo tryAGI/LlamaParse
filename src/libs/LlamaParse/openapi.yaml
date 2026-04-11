@@ -18821,6 +18821,7 @@
                   "2026-03-31",
                   "2026-04-02",
                   "2026-04-06",
+                  "2026-04-09",
                   "latest"
                 ]
               },
@@ -34073,8 +34074,7 @@
           }
         },
         "type": "object",
-        "title": "LlamaParseParameters",
-        "description": "Settings that can be configured for how to use LlamaParse to parse files within a LlamaCloud pipeline."
+        "title": "LlamaParseParameters"
       },
       "LlamaParsePdfOptions": {
         "properties": {},
@@ -36086,6 +36086,7 @@
                   "2026-03-31",
                   "2026-04-02",
                   "2026-04-06",
+                  "2026-04-09",
                   "latest"
                 ]
               },
@@ -36410,6 +36411,7 @@
                   "2026-03-31",
                   "2026-04-02",
                   "2026-04-06",
+                  "2026-04-09",
                   "latest"
                 ]
               },
@@ -37144,7 +37146,8 @@
             "description": "Preset retrieval parameters for the pipeline."
           },
           "llama_parse_parameters": {
-            "$ref": "#/components/schemas/LlamaParseParameters"
+            "$ref": "#/components/schemas/LlamaParseParameters",
+            "description": "Settings that can be configured for how to use LlamaParse to parse files within a LlamaCloud pipeline."
           },
           "status": {
             "anyOf": [
@@ -40817,7 +40820,7 @@
         },
         "type": "object",
         "title": "TextNode",
-        "description": "Provided for backward compatibility.\n\nNote: we keep the field with the typo \"seperator\" to maintain backward compatibility for\nserialized objects."
+        "description": "Provided for backward compatibility."
       },
       "TextNodeWithScore": {
         "properties": {

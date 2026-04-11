@@ -4,9 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Provided for backward compatibility.<br/>
-    /// Note: we keep the field with the typo "seperator" to maintain backward compatibility for<br/>
-    /// serialized objects.
+    /// Provided for backward compatibility.
     /// </summary>
     public sealed partial class TextNode
     {
