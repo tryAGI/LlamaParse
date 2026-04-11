@@ -151,10 +151,10 @@ namespace LlamaParse
                 } 
             }
 
-                if (temporalNamespace != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("temporal-namespace", temporalNamespace.ToString());
-                }
+            if (temporalNamespace != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("temporal-namespace", temporalNamespace.ToString());
+            }
 
                             var __session = session;
                             if (__session is not null)

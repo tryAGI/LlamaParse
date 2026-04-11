@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Settings that can be configured for how to use LlamaParse to parse files within a LlamaCloud pipeline.
+    /// 
     /// </summary>
     public sealed partial class LlamaParseParameters
     {
