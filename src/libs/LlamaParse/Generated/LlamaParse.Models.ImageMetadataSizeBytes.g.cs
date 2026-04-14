@@ -4,8 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Size of the image file in bytes
+    /// Deprecated: always returns None. Will be removed in a future release.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class ImageMetadataSizeBytes
     {
 

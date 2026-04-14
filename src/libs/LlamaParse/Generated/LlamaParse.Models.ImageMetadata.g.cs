@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LlamaParse
@@ -29,9 +31,10 @@ namespace LlamaParse
         public string? ContentType { get; set; }
 
         /// <summary>
-        /// Size of the image file in bytes
+        /// Deprecated: always returns None. Will be removed in a future release.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_bytes")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public long? SizeBytes { get; set; }
 
         /// <summary>
@@ -70,9 +73,6 @@ namespace LlamaParse
         /// <param name="contentType">
         /// MIME type of the image
         /// </param>
-        /// <param name="sizeBytes">
-        /// Size of the image file in bytes
-        /// </param>
         /// <param name="presignedUrl">
         /// Presigned URL to download the image
         /// </param>
@@ -89,7 +89,6 @@ namespace LlamaParse
             int index,
             string filename,
             string? contentType,
-            long? sizeBytes,
             string? presignedUrl,
             global::LlamaParse.ImageMetadataCategory2? category,
             global::LlamaParse.ImageMetadataBBox2? bbox)
@@ -97,7 +96,6 @@ namespace LlamaParse
             this.Index = index;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.ContentType = contentType;
-            this.SizeBytes = sizeBytes;
             this.PresignedUrl = presignedUrl;
             this.Category = category;
             this.Bbox = bbox;

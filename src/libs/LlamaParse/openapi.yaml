@@ -31815,7 +31815,8 @@
               }
             ],
             "title": "Size Bytes",
-            "description": "Size of the image file in bytes"
+            "description": "Deprecated: always returns None. Will be removed in a future release.",
+            "deprecated": true
           },
           "presigned_url": {
             "anyOf": [
@@ -39070,7 +39071,7 @@
           "size_bytes": {
             "type": "integer",
             "title": "Size Bytes",
-            "description": "Size of the result file in S3 (bytes)"
+            "description": "Size of the result file in bytes"
           },
           "exists": {
             "type": "boolean",

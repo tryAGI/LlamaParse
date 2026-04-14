@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class ResultTypeMetadata
     {
         /// <summary>
-        /// Size of the result file in S3 (bytes)
+        /// Size of the result file in bytes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -38,7 +38,7 @@ namespace LlamaParse
         /// Initializes a new instance of the <see cref="ResultTypeMetadata" /> class.
         /// </summary>
         /// <param name="sizeBytes">
-        /// Size of the result file in S3 (bytes)
+        /// Size of the result file in bytes
         /// </param>
         /// <param name="exists">
         /// Whether the result file exists in S3<br/>
