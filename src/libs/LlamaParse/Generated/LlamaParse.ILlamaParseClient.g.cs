@@ -72,11 +72,6 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public FilesClient Files { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public LlamaExtractClient LlamaExtract { get; }
 
         /// <summary>

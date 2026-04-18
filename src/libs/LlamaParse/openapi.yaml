@@ -2230,653 +2230,6 @@
         }
       }
     },
-    "/api/v1/files/{id}": {
-      "get": {
-        "tags": [
-          "Files"
-        ],
-        "summary": "Get File",
-        "description": "Get file metadata by ID.",
-        "operationId": "get_file_api_v1_files__id__get",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid",
-              "title": "Id"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/File"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Files"
-        ],
-        "summary": "Delete File",
-        "description": "Delete a file from the project.",
-        "operationId": "delete_file_api_v1_files__id__delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid",
-              "title": "Id"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successful Response"
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/files": {
-      "put": {
-        "tags": [
-          "Files"
-        ],
-        "summary": "Generate Presigned Url",
-        "description": "Create a presigned URL for uploading a file.\n\nThe URL is valid for a limited time. Use it to upload the file\ncontent directly to storage via an HTTP PUT request.",
-        "operationId": "generate_presigned_url_api_v1_files_put",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "expires_at_seconds",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Expires At Seconds"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FileCreate"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FileIdPresignedUrl"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Files"
-        ],
-        "summary": "Upload File",
-        "description": "Upload a file directly using multipart/form-data.",
-        "operationId": "upload_file_api_v1_files_post",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "external_file_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "External File Id"
-            }
-          },
-          {
-            "name": "storage_type",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Storage Type"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "$ref": "#/components/schemas/Body_upload_file_api_v1_files_post"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/File"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/files/upload_from_url": {
-      "put": {
-        "tags": [
-          "Files"
-        ],
-        "summary": "Upload File From Url",
-        "description": "Upload a file from a URL.\n\nThe server fetches the file from the provided URL and stores it.\nIf `name` is omitted, the filename is derived from the response\nContent-Disposition header or the URL path.",
-        "operationId": "upload_file_from_url_api_v1_files_upload_from_url_put",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FileCreateFromUrl"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/File"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/files/{id}/content": {
-      "get": {
-        "tags": [
-          "Files"
-        ],
-        "summary": "Read File Content",
-        "description": "Get a presigned URL to download the file content.",
-        "operationId": "read_file_content_api_v1_files__id__content_get",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid",
-              "title": "Id"
-            }
-          },
-          {
-            "name": "expires_at_seconds",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Expires At Seconds"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PresignedUrl"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/v1/pipelines": {
       "get": {
         "tags": [
@@ -11204,7 +10557,8 @@
     "/api/v1/beta/files": {
       "get": {
         "tags": [
-          "Beta"
+          "Beta",
+          "Files"
         ],
         "summary": "List Files",
         "description": "List files with optional filtering and pagination.\n\nFilter by `file_name`, `file_ids`, or `external_file_id`.\nSupports cursor-based pagination and custom ordering.",
@@ -11405,7 +10759,8 @@
       },
       "post": {
         "tags": [
-          "Beta"
+          "Beta",
+          "Files"
         ],
         "summary": "Upload File",
         "description": "Upload a file using multipart/form-data.\n\nSet `purpose` to indicate how the file will be used:\n`user_data`, `parse`, `extract`, `classify`, `split`,\n`sheet`, or `agent_app`.\n\nReturns the created file metadata including its ID for use\nin subsequent parse, extract, or classify operations.",
@@ -11504,7 +10859,8 @@
     "/api/v1/beta/files/query": {
       "post": {
         "tags": [
-          "Beta"
+          "Beta",
+          "Files"
         ],
         "summary": "Query Files",
         "description": "Query files with flexible filtering and pagination.\n\n**Deprecated**: Use GET /files instead for listing files with query parameters.\n\nArgs:\n    request: The query request with filters and pagination\n    project: Validated project from dependency\n\nReturns:\n    Paginated response with files",
@@ -11601,10 +10957,202 @@
         }
       }
     },
+    "/api/v1/beta/files/{file_id}": {
+      "get": {
+        "tags": [
+          "Beta",
+          "Files"
+        ],
+        "summary": "Get File",
+        "description": "Get file metadata by ID.",
+        "operationId": "get_file_api_v1_beta_files__file_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "file_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "File Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileV2"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Beta",
+          "Files"
+        ],
+        "summary": "Delete File",
+        "description": "Delete a file from the project.",
+        "operationId": "delete_file_api_v1_beta_files__file_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "file_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "File Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/beta/files/{file_id}/content": {
       "get": {
         "tags": [
-          "Beta"
+          "Beta",
+          "Files"
         ],
         "summary": "Read File Content",
         "description": "Get a presigned URL to download the file content.",
@@ -11702,98 +11250,6 @@
                 }
               }
             }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/beta/files/{file_id}": {
-      "delete": {
-        "tags": [
-          "Beta"
-        ],
-        "summary": "Delete File",
-        "description": "Delete a file from the project.",
-        "operationId": "delete_file_api_v1_beta_files__file_id__delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "file_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid",
-              "title": "File Id"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successful Response"
           },
           "422": {
             "description": "Validation Error",
@@ -13004,205 +12460,6 @@
         "responses": {
           "204": {
             "description": "Successful Response"
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/beta/directory-sync-jobs/": {
-      "post": {
-        "tags": [
-          "Beta",
-          "Directory Sync Jobs"
-        ],
-        "summary": "Create Directory Sync Job",
-        "description": "Create a new directory sync job.",
-        "operationId": "create_directory_sync_job_api_v1_beta_directory_sync_jobs__post",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DirectorySyncJobCreateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DirectorySyncJobResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/beta/directory-sync-jobs/{job_id}": {
-      "get": {
-        "tags": [
-          "Beta",
-          "Directory Sync Jobs"
-        ],
-        "summary": "Get Directory Sync Job",
-        "description": "Get a directory sync job by ID.",
-        "operationId": "get_directory_sync_job_api_v1_beta_directory_sync_jobs__job_id__get",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "job_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "title": "Job Id"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DirectorySyncJobResponse"
-                }
-              }
-            }
           },
           "422": {
             "description": "Validation Error",
@@ -16454,10 +15711,10 @@
               "items": {
                 "type": "string"
               },
-              "description": "Fields to include: text, markdown, items, metadata, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs.",
+              "description": "Fields to include: text, markdown, items, metadata, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs.",
               "title": "Expand"
             },
-            "description": "Fields to include: text, markdown, items, metadata, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs."
+            "description": "Fields to include: text, markdown, items, metadata, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs."
           },
           {
             "name": "image_filenames",
@@ -16535,6 +15792,105 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParseResultResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/parse/{job_id}/cancel": {
+      "post": {
+        "tags": [
+          "V2",
+          "Parse"
+        ],
+        "summary": "Cancel Parse Job",
+        "description": "Cancel a running parse job.\n\nStops processing and marks the job as CANCELLED. Returns the updated job. Jobs already in a terminal state (COMPLETED, FAILED, CANCELLED) cannot be cancelled.",
+        "operationId": "cancel_parse_job_api_v2_parse__job_id__cancel_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParseJobResponse"
                 }
               }
             }
@@ -16891,6 +16247,105 @@
         "summary": "Get Classify Job",
         "description": "Get a classify job by ID.\n\nReturns the job status, configuration, and classify result\nwhen complete. The result includes the matched document type,\nconfidence score, and reasoning.",
         "operationId": "get_classify_job_api_v2_classify__job_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClassifyV2JobResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/classify/{job_id}/cancel": {
+      "post": {
+        "tags": [
+          "V2",
+          "Classify"
+        ],
+        "summary": "Cancel Classify Job",
+        "description": "Cancel a running classify job.\n\nStops processing and marks the job as CANCELLED. Returns the updated job. Jobs already in a terminal state (COMPLETED, FAILED, CANCELLED) cannot be cancelled.",
+        "operationId": "cancel_classify_job_api_v2_classify__job_id__cancel_post",
         "security": [
           {
             "HTTPBearer": []
@@ -17760,6 +17215,106 @@
           }
         }
       }
+    },
+    "/api/v2/extract/{job_id}/cancel": {
+      "post": {
+        "tags": [
+          "V2",
+          "Extract",
+          "LlamaExtract"
+        ],
+        "summary": "Cancel Extract Job",
+        "description": "Cancel a running extraction job.\n\nStops processing and marks the job as CANCELLED. Returns the updated job. Jobs already in a terminal state (COMPLETED, FAILED, CANCELLED) cannot be cancelled.",
+        "operationId": "cancel_extract_job_api_v2_extract__job_id__cancel_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractV2Job"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -18088,53 +17643,6 @@
         ],
         "title": "AggregateRequest",
         "description": "API request body for aggregating agent data"
-      },
-      "ApplyStatusDetails": {
-        "properties": {
-          "status": {
-            "type": "string",
-            "enum": [
-              "pending",
-              "processing",
-              "completed",
-              "failed"
-            ],
-            "title": "Status",
-            "description": "Status of the apply process (file updates and deletions)",
-            "default": "pending"
-          },
-          "effective_at": {
-            "type": "string",
-            "format": "date-time",
-            "title": "Effective At"
-          },
-          "job_record_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Job Record Id",
-            "description": "The job record ID associated with this status, if any."
-          },
-          "error_message": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Error Message",
-            "description": "Error message for the latest job attempt, if any."
-          }
-        },
-        "type": "object",
-        "title": "ApplyStatusDetails"
       },
       "AutoModeConfigurationEntry": {
         "properties": {
@@ -18822,6 +18330,7 @@
                   "2026-04-02",
                   "2026-04-06",
                   "2026-04-09",
+                  "2026-04-14",
                   "latest"
                 ]
               },
@@ -21757,20 +21266,6 @@
           "file"
         ],
         "title": "Body_upload_file_api_v1_beta_files_post"
-      },
-      "Body_upload_file_api_v1_files_post": {
-        "properties": {
-          "upload_file": {
-            "type": "string",
-            "format": "binary",
-            "title": "Upload File"
-          }
-        },
-        "type": "object",
-        "required": [
-          "upload_file"
-        ],
-        "title": "Body_upload_file_api_v1_files_post"
       },
       "Body_upload_file_api_v1_parsing_upload_post": {
         "properties": {
@@ -26305,53 +25800,6 @@
         "title": "DeleteResponse",
         "description": "API response for bulk delete operation"
       },
-      "DiffingStatusDetails": {
-        "properties": {
-          "status": {
-            "type": "string",
-            "enum": [
-              "pending",
-              "processing",
-              "completed",
-              "failed"
-            ],
-            "title": "Status",
-            "description": "Status of the diffing process",
-            "default": "pending"
-          },
-          "effective_at": {
-            "type": "string",
-            "format": "date-time",
-            "title": "Effective At"
-          },
-          "job_record_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Job Record Id",
-            "description": "The job record ID associated with this status, if any."
-          },
-          "error_message": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Error Message",
-            "description": "Error message for the latest job attempt, if any."
-          }
-        },
-        "type": "object",
-        "title": "DiffingStatusDetails"
-      },
       "DirectRetrievalParams": {
         "properties": {
           "mode": {
@@ -26904,115 +26352,6 @@
         ],
         "title": "DirectoryResponse",
         "description": "API response schema for a directory."
-      },
-      "DirectorySyncJobCreateRequest": {
-        "properties": {
-          "directory_id": {
-            "type": "string",
-            "title": "Directory Id",
-            "description": "Directory being processed"
-          }
-        },
-        "type": "object",
-        "required": [
-          "directory_id"
-        ],
-        "title": "DirectorySyncJobCreateRequest",
-        "description": "Schema for creating a directory sync job."
-      },
-      "DirectorySyncJobResponse": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "title": "Id",
-            "description": "Unique identifier for the directory sync job"
-          },
-          "created_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Created At",
-            "description": "Creation datetime"
-          },
-          "updated_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Updated At",
-            "description": "Update datetime"
-          },
-          "project_id": {
-            "type": "string",
-            "title": "Project Id",
-            "description": "Project this job belongs to"
-          },
-          "directory_id": {
-            "type": "string",
-            "title": "Directory Id",
-            "description": "Directory being processed"
-          },
-          "listing_status_details": {
-            "$ref": "#/components/schemas/ListingStatusDetails",
-            "description": "Status of the listing process"
-          },
-          "diffing_status_details": {
-            "$ref": "#/components/schemas/DiffingStatusDetails",
-            "description": "Status of the diffing process"
-          },
-          "apply_status_details": {
-            "$ref": "#/components/schemas/ApplyStatusDetails",
-            "description": "Status of the apply process (file updates and deletions)"
-          },
-          "started_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Started At",
-            "description": "Timestamp when job processing started"
-          },
-          "completed_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Completed At",
-            "description": "Timestamp when job completed"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "project_id",
-          "directory_id",
-          "listing_status_details",
-          "diffing_status_details",
-          "apply_status_details"
-        ],
-        "title": "DirectorySyncJobResponse",
-        "description": "Schema for a directory sync job."
       },
       "DirectoryUpdateRequest": {
         "properties": {
@@ -30358,297 +29697,6 @@
         ],
         "title": "FileCountByStatusResponse"
       },
-      "FileCreate": {
-        "properties": {
-          "name": {
-            "type": "string",
-            "maxLength": 3000,
-            "minLength": 1,
-            "title": "Name",
-            "description": "Name that will be used for created file. If possible, always include the file extension in the name."
-          },
-          "external_file_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "External File Id",
-            "description": "The ID of the file in the external system"
-          },
-          "file_size": {
-            "anyOf": [
-              {
-                "type": "integer",
-                "minimum": 0.0
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "File Size",
-            "description": "Size of the file in bytes"
-          },
-          "last_modified_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Last Modified At",
-            "description": "The last modified time of the file"
-          },
-          "resource_info": {
-            "anyOf": [
-              {
-                "additionalProperties": {
-                  "anyOf": [
-                    {
-                      "additionalProperties": true,
-                      "type": "object"
-                    },
-                    {
-                      "items": {},
-                      "type": "array"
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "object"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Resource Info",
-            "description": "Resource information for the file"
-          },
-          "permission_info": {
-            "anyOf": [
-              {
-                "additionalProperties": {
-                  "anyOf": [
-                    {
-                      "additionalProperties": true,
-                      "type": "object"
-                    },
-                    {
-                      "items": {},
-                      "type": "array"
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "object"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Permission Info",
-            "description": "Permission information for the file"
-          },
-          "data_source_id": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Data Source Id",
-            "description": "The ID of the data source that the file belongs to"
-          },
-          "storage_type": {
-            "anyOf": [
-              {
-                "type": "string",
-                "enum": [
-                  "ephemeral",
-                  "permanent"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "title": "Storage Type",
-            "description": "Storage type for the file. Valid values: 'Ephemeral', 'Permanent' (no expiration). If not specified, defaults to permanent storage.",
-            "default": "permanent"
-          }
-        },
-        "type": "object",
-        "required": [
-          "name"
-        ],
-        "title": "FileCreate",
-        "description": "Schema for creating a file."
-      },
-      "FileCreateFromUrl": {
-        "properties": {
-          "name": {
-            "anyOf": [
-              {
-                "type": "string",
-                "maxLength": 3000,
-                "minLength": 1
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Name",
-            "description": "Name that will be used for created file. If possible, always include the file extension in the name."
-          },
-          "url": {
-            "type": "string",
-            "minLength": 1,
-            "format": "uri",
-            "title": "Url",
-            "description": "URL of the file to download"
-          },
-          "proxy_url": {
-            "anyOf": [
-              {
-                "type": "string",
-                "minLength": 1,
-                "format": "uri"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Proxy Url",
-            "description": "URL of the proxy server to use for downloading the file"
-          },
-          "request_headers": {
-            "anyOf": [
-              {
-                "additionalProperties": {
-                  "type": "string"
-                },
-                "type": "object"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Request Headers",
-            "description": "Headers to include in the request when downloading the file"
-          },
-          "verify_ssl": {
-            "type": "boolean",
-            "title": "Verify Ssl",
-            "description": "Whether to verify the SSL certificate when downloading the file",
-            "default": true
-          },
-          "follow_redirects": {
-            "type": "boolean",
-            "title": "Follow Redirects",
-            "description": "Whether to follow redirects when downloading the file",
-            "default": true
-          },
-          "resource_info": {
-            "anyOf": [
-              {
-                "additionalProperties": {
-                  "anyOf": [
-                    {
-                      "additionalProperties": true,
-                      "type": "object"
-                    },
-                    {
-                      "items": {},
-                      "type": "array"
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "object"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Resource Info",
-            "description": "Resource information for the file"
-          },
-          "storage_type": {
-            "anyOf": [
-              {
-                "type": "string",
-                "enum": [
-                  "ephemeral",
-                  "permanent"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "title": "Storage Type",
-            "description": "Storage type for the file. Valid values: 'Ephemeral', 'Permanent' (no expiration). If not specified, defaults to permanent storage.",
-            "default": "permanent"
-          }
-        },
-        "type": "object",
-        "required": [
-          "url"
-        ],
-        "title": "FileCreateFromUrl",
-        "description": "Schema for creating a file from a URL."
-      },
       "FileData": {
         "properties": {
           "data": {
@@ -30754,52 +29802,6 @@
         "type": "object",
         "title": "FileFilter",
         "description": "Filter parameters for file queries."
-      },
-      "FileIdPresignedUrl": {
-        "properties": {
-          "url": {
-            "type": "string",
-            "minLength": 1,
-            "format": "uri",
-            "title": "Url",
-            "description": "A presigned URL for IO operations against a private file"
-          },
-          "expires_at": {
-            "type": "string",
-            "format": "date-time",
-            "title": "Expires At",
-            "description": "The time at which the presigned URL expires"
-          },
-          "form_fields": {
-            "anyOf": [
-              {
-                "additionalProperties": {
-                  "type": "string"
-                },
-                "type": "object"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Form Fields",
-            "description": "Form fields for a presigned POST request"
-          },
-          "file_id": {
-            "type": "string",
-            "format": "uuid",
-            "title": "File Id",
-            "description": "The ID of the file associated with the presigned URL"
-          }
-        },
-        "type": "object",
-        "required": [
-          "url",
-          "expires_at",
-          "file_id"
-        ],
-        "title": "FileIdPresignedUrl",
-        "description": "Schema for a presigned URL with a file ID."
       },
       "FileQueryRequest": {
         "properties": {
@@ -32207,53 +31209,6 @@
           "ordered"
         ],
         "title": "ListItem"
-      },
-      "ListingStatusDetails": {
-        "properties": {
-          "status": {
-            "type": "string",
-            "enum": [
-              "pending",
-              "processing",
-              "completed",
-              "failed"
-            ],
-            "title": "Status",
-            "description": "Status of the listing process",
-            "default": "pending"
-          },
-          "effective_at": {
-            "type": "string",
-            "format": "date-time",
-            "title": "Effective At"
-          },
-          "job_record_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Job Record Id",
-            "description": "The job record ID associated with this status, if any."
-          },
-          "error_message": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Error Message",
-            "description": "Error message for the latest job attempt, if any."
-          }
-        },
-        "type": "object",
-        "title": "ListingStatusDetails"
       },
       "LlamaParseAgenticOptions": {
         "properties": {
@@ -36088,6 +35043,7 @@
                   "2026-04-02",
                   "2026-04-06",
                   "2026-04-09",
+                  "2026-04-14",
                   "latest"
                 ]
               },
@@ -36413,6 +35369,7 @@
                   "2026-04-02",
                   "2026-04-06",
                   "2026-04-09",
+                  "2026-04-14",
                   "latest"
                 ]
               },
@@ -38980,9 +37937,7 @@
           "gemini-2.5-pro",
           "gemini-2.0-flash",
           "gemini-2.0-flash-lite",
-          "gemini-2.5-flash-lite",
-          "gemini-1.5-flash",
-          "gemini-1.5-pro"
+          "gemini-2.5-flash-lite"
         ],
         "title": "PublicModelName",
         "description": "Public model names."

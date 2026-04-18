@@ -39,14 +39,6 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        Gemini15Flash,
-        /// <summary>
-        /// 
-        /// </summary>
-        Gemini15Pro,
-        /// <summary>
-        /// 
-        /// </summary>
         Gemini20Flash,
         /// <summary>
         /// 
@@ -137,8 +129,6 @@ namespace LlamaParse
                 PublicModelName.AnthropicSonnet37 => "anthropic-sonnet-3.7",
                 PublicModelName.AnthropicSonnet40 => "anthropic-sonnet-4.0",
                 PublicModelName.AnthropicSonnet45 => "anthropic-sonnet-4.5",
-                PublicModelName.Gemini15Flash => "gemini-1.5-flash",
-                PublicModelName.Gemini15Pro => "gemini-1.5-pro",
                 PublicModelName.Gemini20Flash => "gemini-2.0-flash",
                 PublicModelName.Gemini20FlashLite => "gemini-2.0-flash-lite",
                 PublicModelName.Gemini25Flash => "gemini-2.5-flash",
@@ -174,8 +164,6 @@ namespace LlamaParse
                 "anthropic-sonnet-3.7" => PublicModelName.AnthropicSonnet37,
                 "anthropic-sonnet-4.0" => PublicModelName.AnthropicSonnet40,
                 "anthropic-sonnet-4.5" => PublicModelName.AnthropicSonnet45,
-                "gemini-1.5-flash" => PublicModelName.Gemini15Flash,
-                "gemini-1.5-pro" => PublicModelName.Gemini15Pro,
                 "gemini-2.0-flash" => PublicModelName.Gemini20Flash,
                 "gemini-2.0-flash-lite" => PublicModelName.Gemini20FlashLite,
                 "gemini-2.5-flash" => PublicModelName.Gemini25Flash,
