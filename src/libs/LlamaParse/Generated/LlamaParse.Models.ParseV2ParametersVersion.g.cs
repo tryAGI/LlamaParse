@@ -163,6 +163,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        x20260414,
+        /// <summary>
+        /// 
+        /// </summary>
         Latest,
     }
 
@@ -216,6 +220,7 @@ namespace LlamaParse
                 ParseV2ParametersVersion.x20260402 => "2026-04-02",
                 ParseV2ParametersVersion.x20260406 => "2026-04-06",
                 ParseV2ParametersVersion.x20260409 => "2026-04-09",
+                ParseV2ParametersVersion.x20260414 => "2026-04-14",
                 ParseV2ParametersVersion.Latest => "latest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -265,6 +270,7 @@ namespace LlamaParse
                 "2026-04-02" => ParseV2ParametersVersion.x20260402,
                 "2026-04-06" => ParseV2ParametersVersion.x20260406,
                 "2026-04-09" => ParseV2ParametersVersion.x20260409,
+                "2026-04-14" => ParseV2ParametersVersion.x20260414,
                 "latest" => ParseV2ParametersVersion.Latest,
                 _ => null,
             };

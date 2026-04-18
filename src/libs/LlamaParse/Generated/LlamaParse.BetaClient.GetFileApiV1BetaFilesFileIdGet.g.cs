@@ -3,11 +3,11 @@
 
 namespace LlamaParse
 {
-    public partial class V2Client
+    public partial class BetaClient
     {
 
 
-        private static readonly global::LlamaParse.EndPointSecurityRequirement s_GetParseJobApiV2ParseJobIdGetSecurityRequirement0 =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_GetFileApiV1BetaFilesFileIdGetSecurityRequirement0 =
             new global::LlamaParse.EndPointSecurityRequirement
             {
                 Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
@@ -21,65 +21,45 @@ namespace LlamaParse
                     },
                 },
             };
-        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_GetParseJobApiV2ParseJobIdGetSecurityRequirements =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_GetFileApiV1BetaFilesFileIdGetSecurityRequirements =
             new global::LlamaParse.EndPointSecurityRequirement[]
-            {                s_GetParseJobApiV2ParseJobIdGetSecurityRequirement0,
+            {                s_GetFileApiV1BetaFilesFileIdGetSecurityRequirement0,
             };
-        partial void PrepareGetParseJobApiV2ParseJobIdGetArguments(
+        partial void PrepareGetFileApiV1BetaFilesFileIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string jobId,
-            global::System.Collections.Generic.IList<string>? expand,
-            ref string? imageFilenames,
+            ref global::System.Guid fileId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
-        partial void PrepareGetParseJobApiV2ParseJobIdGetRequest(
+        partial void PrepareGetFileApiV1BetaFilesFileIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string jobId,
-            global::System.Collections.Generic.IList<string>? expand,
-            string? imageFilenames,
+            global::System.Guid fileId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
-        partial void ProcessGetParseJobApiV2ParseJobIdGetResponse(
+        partial void ProcessGetFileApiV1BetaFilesFileIdGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetParseJobApiV2ParseJobIdGetResponseContent(
+        partial void ProcessGetFileApiV1BetaFilesFileIdGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get Parse Job<br/>
-        /// Retrieve a parse job with optional expanded content.<br/>
-        /// By default returns job metadata only. Use `expand` to include<br/>
-        /// parsed content:<br/>
-        /// - `text` — plain text output<br/>
-        /// - `markdown` — markdown output<br/>
-        /// - `items` — structured page-by-page output<br/>
-        /// - `job_metadata` — usage and processing details<br/>
-        /// Content metadata fields (e.g. `text_content_metadata`) return<br/>
-        /// presigned URLs for downloading large results.
+        /// Get File<br/>
+        /// Get file metadata by ID.
         /// </summary>
-        /// <param name="jobId"></param>
-        /// <param name="expand">
-        /// Fields to include: text, markdown, items, metadata, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs.
-        /// </param>
-        /// <param name="imageFilenames">
-        /// Filter to specific image filenames (optional). Example: image_0.png,image_1.jpg
-        /// </param>
+        /// <param name="fileId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.ParseResultResponse> GetParseJobApiV2ParseJobIdGetAsync(
-            string jobId,
-            global::System.Collections.Generic.IList<string>? expand = default,
-            string? imageFilenames = default,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.FileV2> GetFileApiV1BetaFilesFileIdGetAsync(
+            global::System.Guid fileId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -88,11 +68,9 @@ namespace LlamaParse
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetParseJobApiV2ParseJobIdGetArguments(
+            PrepareGetFileApiV1BetaFilesFileIdGetArguments(
                 httpClient: HttpClient,
-                jobId: ref jobId,
-                expand: expand,
-                imageFilenames: ref imageFilenames,
+                fileId: ref fileId,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -100,8 +78,8 @@ namespace LlamaParse
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetParseJobApiV2ParseJobIdGetSecurityRequirements,
-                operationName: "GetParseJobApiV2ParseJobIdGetAsync");
+                securityRequirements: s_GetFileApiV1BetaFilesFileIdGetSecurityRequirements,
+                operationName: "GetFileApiV1BetaFilesFileIdGetAsync");
 
             using var __timeoutCancellationTokenSource = global::LlamaParse.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -120,11 +98,9 @@ namespace LlamaParse
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: $"/api/v2/parse/{jobId}",
+                                path: $"/api/v1/beta/files/{fileId}",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
-                                .AddOptionalParameter("expand", expand, delimiter: ",", explode: true)
-                                .AddOptionalParameter("image_filenames", imageFilenames)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString()) 
                                 ;
@@ -177,12 +153,10 @@ namespace LlamaParse
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetParseJobApiV2ParseJobIdGetRequest(
+                PrepareGetFileApiV1BetaFilesFileIdGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobId: jobId,
-                    expand: expand,
-                    imageFilenames: imageFilenames,
+                    fileId: fileId,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -202,9 +176,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetParseJobApiV2ParseJobIdGet",
-                                methodName: "GetParseJobApiV2ParseJobIdGetAsync",
-                                pathTemplate: "$\"/api/v2/parse/{jobId}\"",
+                                operationId: "GetFileApiV1BetaFilesFileIdGet",
+                                methodName: "GetFileApiV1BetaFilesFileIdGetAsync",
+                                pathTemplate: "$\"/api/v1/beta/files/{fileId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -229,9 +203,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetParseJobApiV2ParseJobIdGet",
-                                methodName: "GetParseJobApiV2ParseJobIdGetAsync",
-                                pathTemplate: "$\"/api/v2/parse/{jobId}\"",
+                                operationId: "GetFileApiV1BetaFilesFileIdGet",
+                                methodName: "GetFileApiV1BetaFilesFileIdGetAsync",
+                                pathTemplate: "$\"/api/v1/beta/files/{fileId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -264,9 +238,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetParseJobApiV2ParseJobIdGet",
-                                methodName: "GetParseJobApiV2ParseJobIdGetAsync",
-                                pathTemplate: "$\"/api/v2/parse/{jobId}\"",
+                                operationId: "GetFileApiV1BetaFilesFileIdGet",
+                                methodName: "GetFileApiV1BetaFilesFileIdGetAsync",
+                                pathTemplate: "$\"/api/v1/beta/files/{fileId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -303,7 +277,7 @@ namespace LlamaParse
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetParseJobApiV2ParseJobIdGetResponse(
+                ProcessGetFileApiV1BetaFilesFileIdGetResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -311,9 +285,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetParseJobApiV2ParseJobIdGet",
-                                methodName: "GetParseJobApiV2ParseJobIdGetAsync",
-                                pathTemplate: "$\"/api/v2/parse/{jobId}\"",
+                                operationId: "GetFileApiV1BetaFilesFileIdGet",
+                                methodName: "GetFileApiV1BetaFilesFileIdGetAsync",
+                                pathTemplate: "$\"/api/v1/beta/files/{fileId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -331,9 +305,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetParseJobApiV2ParseJobIdGet",
-                                methodName: "GetParseJobApiV2ParseJobIdGetAsync",
-                                pathTemplate: "$\"/api/v2/parse/{jobId}\"",
+                                operationId: "GetFileApiV1BetaFilesFileIdGet",
+                                methodName: "GetFileApiV1BetaFilesFileIdGetAsync",
+                                pathTemplate: "$\"/api/v1/beta/files/{fileId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -397,7 +371,7 @@ namespace LlamaParse
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetParseJobApiV2ParseJobIdGetResponseContent(
+                                ProcessGetFileApiV1BetaFilesFileIdGetResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -407,7 +381,7 @@ namespace LlamaParse
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::LlamaParse.ParseResultResponse.FromJson(__content, JsonSerializerContext) ??
+                                        global::LlamaParse.FileV2.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -437,7 +411,7 @@ namespace LlamaParse
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::LlamaParse.ParseResultResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::LlamaParse.FileV2.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)

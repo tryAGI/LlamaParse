@@ -18,7 +18,7 @@ namespace LlamaParse
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="expand">
-        /// Fields to include: text, markdown, items, metadata, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs.
+        /// Fields to include: text, markdown, items, metadata, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs.
         /// </param>
         /// <param name="imageFilenames">
         /// Filter to specific image filenames (optional). Example: image_0.png,image_1.jpg
