@@ -369,6 +369,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyNullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2JsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2NullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemNullableJsonConverter),
@@ -1174,6 +1178,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item), TypeInfoPropertyName = "ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy), TypeInfoPropertyName = "ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicy), TypeInfoPropertyName = "PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item), TypeInfoPropertyName = "ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2))]

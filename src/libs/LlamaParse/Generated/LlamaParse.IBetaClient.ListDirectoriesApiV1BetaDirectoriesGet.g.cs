@@ -11,6 +11,7 @@ namespace LlamaParse
         /// <param name="organizationId"></param>
         /// <param name="name"></param>
         /// <param name="dataSourceId"></param>
+        /// <param name="type"></param>
         /// <param name="includeDeleted">
         /// Default Value: false
         /// </param>
@@ -25,6 +26,7 @@ namespace LlamaParse
             global::System.Guid? organizationId = default,
             string? name = default,
             string? dataSourceId = default,
+            global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type = default,
             bool? includeDeleted = default,
             int? pageSize = default,
             string? pageToken = default,

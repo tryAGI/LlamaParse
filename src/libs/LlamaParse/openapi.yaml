@@ -12096,6 +12096,26 @@
             }
           },
           {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "user",
+                    "index"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Type"
+            }
+          },
+          {
             "name": "include_deleted",
             "in": "query",
             "required": false,
@@ -12762,6 +12782,27 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "maxItems": 200
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Directory File Ids"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -18331,6 +18372,8 @@
                   "2026-04-06",
                   "2026-04-09",
                   "2026-04-14",
+                  "2026-04-19",
+                  "2026-04-22",
                   "latest"
                 ]
               },
@@ -27037,10 +27080,11 @@
           "extract_version": {
             "type": "string",
             "title": "Extract Version",
-            "description": "Extract algorithm version. Use 'latest' or a date string.",
+            "description": "Extract algorithm version. Use 'latest' for the default pipeline, a date string (e.g. '2026-01-08'), or 'continuous' to opt into schema-guided splitting for documents with repeating entities.",
             "default": "latest",
             "examples": [
               "latest",
+              "continuous",
               "2026-01-08"
             ]
           },
@@ -28677,10 +28721,11 @@
           "extract_version": {
             "type": "string",
             "title": "Extract Version",
-            "description": "Extract algorithm version. Use 'latest' or a date string.",
+            "description": "Extract algorithm version. Use 'latest' for the default pipeline, a date string (e.g. '2026-01-08'), or 'continuous' to opt into schema-guided splitting for documents with repeating entities.",
             "default": "latest",
             "examples": [
               "latest",
+              "continuous",
               "2026-01-08"
             ]
           },
@@ -31042,7 +31087,7 @@
           "model_name": {
             "$ref": "#/components/schemas/SupportedLLMModelNames",
             "description": "The name of the model to use for LLM completions.",
-            "default": "GPT_4O_MINI"
+            "default": "GPT_4_1_MINI"
           },
           "system_prompt": {
             "anyOf": [
@@ -35044,6 +35089,8 @@
                   "2026-04-06",
                   "2026-04-09",
                   "2026-04-14",
+                  "2026-04-19",
+                  "2026-04-22",
                   "latest"
                 ]
               },
@@ -35370,6 +35417,8 @@
                   "2026-04-06",
                   "2026-04-09",
                   "2026-04-14",
+                  "2026-04-19",
+                  "2026-04-22",
                   "latest"
                 ]
               },

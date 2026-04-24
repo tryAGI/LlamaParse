@@ -29,7 +29,7 @@ namespace LlamaParse
         public global::LlamaParse.ExtractConfigurationTier? Tier { get; set; }
 
         /// <summary>
-        /// Extract algorithm version. Use 'latest' or a date string.<br/>
+        /// Extract algorithm version. Use 'latest' for the default pipeline, a date string (e.g. '2026-01-08'), or 'continuous' to opt into schema-guided splitting for documents with repeating entities.<br/>
         /// Default Value: latest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extract_version")]
@@ -105,7 +105,7 @@ namespace LlamaParse
         /// Default Value: cost_effective
         /// </param>
         /// <param name="extractVersion">
-        /// Extract algorithm version. Use 'latest' or a date string.<br/>
+        /// Extract algorithm version. Use 'latest' for the default pipeline, a date string (e.g. '2026-01-08'), or 'continuous' to opt into schema-guided splitting for documents with repeating entities.<br/>
         /// Default Value: latest
         /// </param>
         /// <param name="extractionTarget">
