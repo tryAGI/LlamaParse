@@ -10,7 +10,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// The name of the model to use for LLM completions.<br/>
-        /// Default Value: GPT_4O_MINI
+        /// Default Value: GPT_4_1_MINI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.SupportedLLMModelNamesJsonConverter))]
@@ -59,7 +59,7 @@ namespace LlamaParse
         /// </summary>
         /// <param name="modelName">
         /// The name of the model to use for LLM completions.<br/>
-        /// Default Value: GPT_4O_MINI
+        /// Default Value: GPT_4_1_MINI
         /// </param>
         /// <param name="systemPrompt">
         /// The system prompt to use for the completion.

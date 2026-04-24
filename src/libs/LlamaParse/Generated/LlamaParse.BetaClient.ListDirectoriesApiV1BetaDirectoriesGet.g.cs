@@ -31,6 +31,7 @@ namespace LlamaParse
             global::System.Guid? organizationId,
             ref string? name,
             ref string? dataSourceId,
+            global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type,
             ref bool? includeDeleted,
             int? pageSize,
             ref string? pageToken,
@@ -42,6 +43,7 @@ namespace LlamaParse
             global::System.Guid? organizationId,
             string? name,
             string? dataSourceId,
+            global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type,
             bool? includeDeleted,
             int? pageSize,
             string? pageToken,
@@ -62,6 +64,7 @@ namespace LlamaParse
         /// <param name="organizationId"></param>
         /// <param name="name"></param>
         /// <param name="dataSourceId"></param>
+        /// <param name="type"></param>
         /// <param name="includeDeleted">
         /// Default Value: false
         /// </param>
@@ -76,6 +79,7 @@ namespace LlamaParse
             global::System.Guid? organizationId = default,
             string? name = default,
             string? dataSourceId = default,
+            global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type = default,
             bool? includeDeleted = default,
             int? pageSize = default,
             string? pageToken = default,
@@ -91,6 +95,7 @@ namespace LlamaParse
                 organizationId: organizationId,
                 name: ref name,
                 dataSourceId: ref dataSourceId,
+                type: type,
                 includeDeleted: ref includeDeleted,
                 pageSize: pageSize,
                 pageToken: ref pageToken,
@@ -126,6 +131,7 @@ namespace LlamaParse
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("data_source_id", dataSourceId)
+                                .AddOptionalParameter("type", type?.ToString())
                                 .AddOptionalParameter("include_deleted", includeDeleted?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken) 
@@ -186,6 +192,7 @@ namespace LlamaParse
                     organizationId: organizationId,
                     name: name,
                     dataSourceId: dataSourceId,
+                    type: type,
                     includeDeleted: includeDeleted,
                     pageSize: pageSize,
                     pageToken: pageToken,
