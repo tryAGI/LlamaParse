@@ -16481,8 +16481,7 @@
       "post": {
         "tags": [
           "V2",
-          "Extract",
-          "LlamaExtract"
+          "Extract"
         ],
         "summary": "Validate Extraction Schema",
         "description": "Validate a JSON schema for extraction.",
@@ -16548,8 +16547,7 @@
       "post": {
         "tags": [
           "V2",
-          "Extract",
-          "LlamaExtract"
+          "Extract"
         ],
         "summary": "Generate Extraction Schema",
         "description": "Generate a JSON schema and return a product configuration request.",
@@ -16649,8 +16647,7 @@
       "post": {
         "tags": [
           "V2",
-          "Extract",
-          "LlamaExtract"
+          "Extract"
         ],
         "summary": "Create Extract Job",
         "description": "Create an extraction job.\n\nExtracts structured data from a document using either a saved\nconfiguration or an inline JSON Schema.\n\n## Input\n\nProvide exactly one of:\n- `configuration_id` — reference a saved extraction config\n- `configuration` — inline configuration with a `data_schema`\n\n## Document input\n\nSet `file_input` to a file ID (`dfl-...`) or a\ncompleted parse job ID (`pjb-...`).\n\nThe job runs asynchronously. Poll `GET /extract/{job_id}` or\nregister a webhook to monitor completion.",
@@ -16748,8 +16745,7 @@
       "get": {
         "tags": [
           "V2",
-          "Extract",
-          "LlamaExtract"
+          "Extract"
         ],
         "summary": "List Extract Jobs",
         "description": "List extraction jobs with optional filtering and pagination.\n\nFilter by `configuration_id`, `status`, `file_input`,\nor creation date range. Results are returned newest-first.\nUse `expand=configuration` to include the full configuration used,\nand `expand=extract_metadata` for per-field metadata.",
@@ -17051,8 +17047,7 @@
       "get": {
         "tags": [
           "V2",
-          "Extract",
-          "LlamaExtract"
+          "Extract"
         ],
         "summary": "Get Extract Job",
         "description": "Get a single extraction job by ID.\n\nReturns the job status and results when complete.\nUse `expand=configuration` to include the full configuration used,\nand `expand=extract_metadata` for per-field metadata.",
@@ -17163,8 +17158,7 @@
       "delete": {
         "tags": [
           "V2",
-          "Extract",
-          "LlamaExtract"
+          "Extract"
         ],
         "summary": "Delete Extract Job",
         "description": "Delete an extraction job and its results.",
@@ -17261,8 +17255,7 @@
       "post": {
         "tags": [
           "V2",
-          "Extract",
-          "LlamaExtract"
+          "Extract"
         ],
         "summary": "Cancel Extract Job",
         "description": "Cancel a running extraction job.\n\nStops processing and marks the job as CANCELLED. Returns the updated job. Jobs already in a terminal state (COMPLETED, FAILED, CANCELLED) cannot be cancelled.",
@@ -18374,6 +18367,7 @@
                   "2026-04-14",
                   "2026-04-19",
                   "2026-04-22",
+                  "2026-04-27",
                   "latest"
                 ]
               },
@@ -35091,6 +35085,7 @@
                   "2026-04-14",
                   "2026-04-19",
                   "2026-04-22",
+                  "2026-04-27",
                   "latest"
                 ]
               },
@@ -35419,6 +35414,7 @@
                   "2026-04-14",
                   "2026-04-19",
                   "2026-04-22",
+                  "2026-04-27",
                   "latest"
                 ]
               },
