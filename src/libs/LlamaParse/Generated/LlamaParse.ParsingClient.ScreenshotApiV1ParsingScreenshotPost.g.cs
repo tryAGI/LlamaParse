@@ -140,7 +140,7 @@ namespace LlamaParse
                             var __session = session;
                             if (__session is not null)
                             {
-                                __cookies.Add($"session={__session.ToString() ?? string.Empty}");
+                                __cookies.Add("session=" + (__session ?? string.Empty));
                             }
 
                 if (__cookies.Count > 0)
@@ -152,27 +152,55 @@ namespace LlamaParse
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{organizationId}"),
+                                    content: new global::System.Net.Http.StringContent(organizationId.ToString() ?? string.Empty),
                                     name: "\"organization_id\"");
                             } 
                             if (projectId != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{projectId}"),
+                                    content: new global::System.Net.Http.StringContent(projectId.ToString() ?? string.Empty),
                                     name: "\"project_id\"");
                             } 
                             if (session != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{session}"),
+                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
                                     name: "\"session\"");
                             } 
                             if (request.File != default)
                             {
 
                                 var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                                __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.Filename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentFile,
                                     name: "\"file\"",
@@ -186,98 +214,98 @@ namespace LlamaParse
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DoNotCache}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.DoNotCache, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"do_not_cache\"");
                             } 
                             if (request.HttpProxy != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.HttpProxy}"),
+                                    content: new global::System.Net.Http.StringContent(request.HttpProxy ?? string.Empty),
                                     name: "\"http_proxy\"");
                             } 
                             if (request.InputS3Path != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InputS3Path}"),
+                                    content: new global::System.Net.Http.StringContent(request.InputS3Path ?? string.Empty),
                                     name: "\"input_s3_path\"");
                             } 
                             if (request.InputS3Region != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InputS3Region}"),
+                                    content: new global::System.Net.Http.StringContent(request.InputS3Region ?? string.Empty),
                                     name: "\"input_s3_region\"");
                             } 
                             if (request.InputUrl != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InputUrl}"),
+                                    content: new global::System.Net.Http.StringContent(request.InputUrl ?? string.Empty),
                                     name: "\"input_url\"");
                             } 
                             if (request.InvalidateCache != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InvalidateCache}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.InvalidateCache, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"invalidate_cache\"");
                             } 
                             if (request.MaxPages != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MaxPages}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.MaxPages, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"max_pages\"");
                             } 
                             if (request.OutputS3PathPrefix != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputS3PathPrefix}"),
+                                    content: new global::System.Net.Http.StringContent(request.OutputS3PathPrefix ?? string.Empty),
                                     name: "\"output_s3_path_prefix\"");
                             } 
                             if (request.OutputS3Region != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputS3Region}"),
+                                    content: new global::System.Net.Http.StringContent(request.OutputS3Region ?? string.Empty),
                                     name: "\"output_s3_region\"");
                             } 
                             if (request.TargetPages != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.TargetPages}"),
+                                    content: new global::System.Net.Http.StringContent(request.TargetPages ?? string.Empty),
                                     name: "\"target_pages\"");
                             } 
                             if (request.WebhookUrl != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.WebhookUrl}"),
+                                    content: new global::System.Net.Http.StringContent(request.WebhookUrl ?? string.Empty),
                                     name: "\"webhook_url\"");
                             } 
                             if (request.WebhookConfigurations != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.WebhookConfigurations}"),
+                                    content: new global::System.Net.Http.StringContent(request.WebhookConfigurations ?? string.Empty),
                                     name: "\"webhook_configurations\"");
                             } 
                             if (request.JobTimeoutInSeconds != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.JobTimeoutInSeconds}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.JobTimeoutInSeconds, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"job_timeout_in_seconds\"");
                             } 
                             if (request.JobTimeoutExtraTimePerPageInSeconds != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.JobTimeoutExtraTimePerPageInSeconds}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.JobTimeoutExtraTimePerPageInSeconds, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"job_timeout_extra_time_per_page_in_seconds\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

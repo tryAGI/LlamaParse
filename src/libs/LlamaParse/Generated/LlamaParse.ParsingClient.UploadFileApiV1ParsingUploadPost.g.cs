@@ -140,7 +140,7 @@ namespace LlamaParse
                             var __session = session;
                             if (__session is not null)
                             {
-                                __cookies.Add($"session={__session.ToString() ?? string.Empty}");
+                                __cookies.Add("session=" + (__session ?? string.Empty));
                             }
 
                 if (__cookies.Count > 0)
@@ -152,27 +152,55 @@ namespace LlamaParse
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{organizationId}"),
+                                    content: new global::System.Net.Http.StringContent(organizationId.ToString() ?? string.Empty),
                                     name: "\"organization_id\"");
                             } 
                             if (projectId != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{projectId}"),
+                                    content: new global::System.Net.Http.StringContent(projectId.ToString() ?? string.Empty),
                                     name: "\"project_id\"");
                             } 
                             if (session != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{session}"),
+                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
                                     name: "\"session\"");
                             } 
                             if (request.File != default)
                             {
 
                                 var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                                __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.Filename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentFile,
                                     name: "\"file\"",
@@ -186,280 +214,280 @@ namespace LlamaParse
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AdaptiveLongTable}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AdaptiveLongTable, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"adaptive_long_table\"");
                             } 
                             if (request.AnnotateLinks != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AnnotateLinks}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AnnotateLinks, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"annotate_links\"");
                             } 
                             if (request.AutoMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AutoMode}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AutoMode, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"auto_mode\"");
                             } 
                             if (request.AutoModeTriggerOnImageInPage != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AutoModeTriggerOnImageInPage}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AutoModeTriggerOnImageInPage, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"auto_mode_trigger_on_image_in_page\"");
                             } 
                             if (request.AutoModeTriggerOnTableInPage != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AutoModeTriggerOnTableInPage}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AutoModeTriggerOnTableInPage, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"auto_mode_trigger_on_table_in_page\"");
                             } 
                             if (request.AutoModeTriggerOnTextInPage != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AutoModeTriggerOnTextInPage}"),
+                                    content: new global::System.Net.Http.StringContent(request.AutoModeTriggerOnTextInPage ?? string.Empty),
                                     name: "\"auto_mode_trigger_on_text_in_page\"");
                             } 
                             if (request.AutoModeTriggerOnRegexpInPage != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AutoModeTriggerOnRegexpInPage}"),
+                                    content: new global::System.Net.Http.StringContent(request.AutoModeTriggerOnRegexpInPage ?? string.Empty),
                                     name: "\"auto_mode_trigger_on_regexp_in_page\"");
                             } 
                             if (request.AutoModeConfigurationJson != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AutoModeConfigurationJson}"),
+                                    content: new global::System.Net.Http.StringContent(request.AutoModeConfigurationJson ?? string.Empty),
                                     name: "\"auto_mode_configuration_json\"");
                             } 
                             if (request.AzureOpenaiApiVersion != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AzureOpenaiApiVersion}"),
+                                    content: new global::System.Net.Http.StringContent(request.AzureOpenaiApiVersion ?? string.Empty),
                                     name: "\"azure_openai_api_version\"");
                             } 
                             if (request.AzureOpenaiDeploymentName != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AzureOpenaiDeploymentName}"),
+                                    content: new global::System.Net.Http.StringContent(request.AzureOpenaiDeploymentName ?? string.Empty),
                                     name: "\"azure_openai_deployment_name\"");
                             } 
                             if (request.AzureOpenaiEndpoint != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AzureOpenaiEndpoint}"),
+                                    content: new global::System.Net.Http.StringContent(request.AzureOpenaiEndpoint ?? string.Empty),
                                     name: "\"azure_openai_endpoint\"");
                             } 
                             if (request.AzureOpenaiKey != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AzureOpenaiKey}"),
+                                    content: new global::System.Net.Http.StringContent(request.AzureOpenaiKey ?? string.Empty),
                                     name: "\"azure_openai_key\"");
                             } 
                             if (request.BboxBottom != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BboxBottom}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BboxBottom, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"bbox_bottom\"");
                             } 
                             if (request.BboxLeft != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BboxLeft}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BboxLeft, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"bbox_left\"");
                             } 
                             if (request.BboxRight != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BboxRight}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BboxRight, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"bbox_right\"");
                             } 
                             if (request.BboxTop != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BboxTop}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BboxTop, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"bbox_top\"");
                             } 
                             if (request.CompactMarkdownTable != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.CompactMarkdownTable}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.CompactMarkdownTable, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"compact_markdown_table\"");
                             } 
                             if (request.DisableOcr != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DisableOcr}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.DisableOcr, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"disable_ocr\"");
                             } 
                             if (request.DisableReconstruction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DisableReconstruction}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.DisableReconstruction, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"disable_reconstruction\"");
                             } 
                             if (request.DisableImageExtraction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DisableImageExtraction}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.DisableImageExtraction, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"disable_image_extraction\"");
                             } 
                             if (request.DoNotCache != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DoNotCache}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.DoNotCache, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"do_not_cache\"");
                             } 
                             if (request.DoNotUnrollColumns != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DoNotUnrollColumns}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.DoNotUnrollColumns, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"do_not_unroll_columns\"");
                             } 
                             if (request.ExtractCharts != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ExtractCharts}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.ExtractCharts, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"extract_charts\"");
                             } 
                             if (request.GuessXlsxSheetName != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.GuessXlsxSheetName}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.GuessXlsxSheetName, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"guess_xlsx_sheet_name\"");
                             } 
                             if (request.HighResOcr != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.HighResOcr}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.HighResOcr, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"high_res_ocr\"");
                             } 
                             if (request.HtmlMakeAllElementsVisible != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.HtmlMakeAllElementsVisible}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.HtmlMakeAllElementsVisible, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"html_make_all_elements_visible\"");
                             } 
                             if (request.LayoutAware != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.LayoutAware}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.LayoutAware, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"layout_aware\"");
                             } 
                             if (request.SpecializedChartParsingAgentic != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SpecializedChartParsingAgentic}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.SpecializedChartParsingAgentic, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"specialized_chart_parsing_agentic\"");
                             } 
                             if (request.SpecializedChartParsingPlus != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SpecializedChartParsingPlus}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.SpecializedChartParsingPlus, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"specialized_chart_parsing_plus\"");
                             } 
                             if (request.SpecializedChartParsingEfficient != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SpecializedChartParsingEfficient}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.SpecializedChartParsingEfficient, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"specialized_chart_parsing_efficient\"");
                             } 
                             if (request.SpecializedImageParsing != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SpecializedImageParsing}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.SpecializedImageParsing, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"specialized_image_parsing\"");
                             } 
                             if (request.PreciseBoundingBox != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PreciseBoundingBox}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.PreciseBoundingBox, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"precise_bounding_box\"");
                             } 
                             if (request.LineLevelBoundingBox != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.LineLevelBoundingBox}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.LineLevelBoundingBox, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"line_level_bounding_box\"");
                             } 
                             if (request.HtmlRemoveFixedElements != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.HtmlRemoveFixedElements}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.HtmlRemoveFixedElements, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"html_remove_fixed_elements\"");
                             } 
                             if (request.HtmlRemoveNavigationElements != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.HtmlRemoveNavigationElements}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.HtmlRemoveNavigationElements, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"html_remove_navigation_elements\"");
                             } 
                             if (request.HttpProxy != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.HttpProxy}"),
+                                    content: new global::System.Net.Http.StringContent(request.HttpProxy ?? string.Empty),
                                     name: "\"http_proxy\"");
                             } 
                             if (request.InputS3Path != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InputS3Path}"),
+                                    content: new global::System.Net.Http.StringContent(request.InputS3Path ?? string.Empty),
                                     name: "\"input_s3_path\"");
                             } 
                             if (request.InputS3Region != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InputS3Region}"),
+                                    content: new global::System.Net.Http.StringContent(request.InputS3Region ?? string.Empty),
                                     name: "\"input_s3_region\"");
                             } 
                             if (request.InputUrl != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InputUrl}"),
+                                    content: new global::System.Net.Http.StringContent(request.InputUrl ?? string.Empty),
                                     name: "\"input_url\"");
                             } 
                             if (request.InvalidateCache != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InvalidateCache}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.InvalidateCache, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"invalidate_cache\"");
                             } 
                             if (request.Language != default)
@@ -473,497 +501,497 @@ namespace LlamaParse
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ExtractLayout}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.ExtractLayout, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"extract_layout\"");
                             } 
                             if (request.MaxPages != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MaxPages}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.MaxPages, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"max_pages\"");
                             } 
                             if (request.MergeTablesAcrossPagesInMarkdown != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MergeTablesAcrossPagesInMarkdown}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.MergeTablesAcrossPagesInMarkdown, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"merge_tables_across_pages_in_markdown\"");
                             } 
                             if (request.OutlinedTableExtraction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutlinedTableExtraction}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.OutlinedTableExtraction, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"outlined_table_extraction\"");
                             } 
                             if (request.AggressiveTableExtraction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AggressiveTableExtraction}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AggressiveTableExtraction, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"aggressive_table_extraction\"");
                             } 
                             if (request.OutputPdfOfDocument != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputPdfOfDocument}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.OutputPdfOfDocument, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"output_pdf_of_document\"");
                             } 
                             if (request.OutputS3PathPrefix != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputS3PathPrefix}"),
+                                    content: new global::System.Net.Http.StringContent(request.OutputS3PathPrefix ?? string.Empty),
                                     name: "\"output_s3_path_prefix\"");
                             } 
                             if (request.OutputS3Region != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputS3Region}"),
+                                    content: new global::System.Net.Http.StringContent(request.OutputS3Region ?? string.Empty),
                                     name: "\"output_s3_region\"");
                             } 
                             if (request.PagePrefix != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PagePrefix}"),
+                                    content: new global::System.Net.Http.StringContent(request.PagePrefix ?? string.Empty),
                                     name: "\"page_prefix\"");
                             } 
                             if (request.PageSeparator != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PageSeparator}"),
+                                    content: new global::System.Net.Http.StringContent(request.PageSeparator ?? string.Empty),
                                     name: "\"page_separator\"");
                             } 
                             if (request.PageSuffix != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PageSuffix}"),
+                                    content: new global::System.Net.Http.StringContent(request.PageSuffix ?? string.Empty),
                                     name: "\"page_suffix\"");
                             } 
                             if (request.PreserveLayoutAlignmentAcrossPages != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PreserveLayoutAlignmentAcrossPages}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.PreserveLayoutAlignmentAcrossPages, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"preserve_layout_alignment_across_pages\"");
                             } 
                             if (request.PreserveVerySmallText != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PreserveVerySmallText}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.PreserveVerySmallText, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"preserve_very_small_text\"");
                             } 
                             if (request.SkipDiagonalText != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SkipDiagonalText}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.SkipDiagonalText, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"skip_diagonal_text\"");
                             } 
                             if (request.SpreadsheetExtractSubTables != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SpreadsheetExtractSubTables}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.SpreadsheetExtractSubTables, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"spreadsheet_extract_sub_tables\"");
                             } 
                             if (request.SpreadsheetForceFormulaComputation != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SpreadsheetForceFormulaComputation}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.SpreadsheetForceFormulaComputation, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"spreadsheet_force_formula_computation\"");
                             } 
                             if (request.InlineImagesInMarkdown != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InlineImagesInMarkdown}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.InlineImagesInMarkdown, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"inline_images_in_markdown\"");
                             } 
                             if (request.StructuredOutput != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.StructuredOutput}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.StructuredOutput, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"structured_output\"");
                             } 
                             if (request.StructuredOutputJsonSchema != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.StructuredOutputJsonSchema}"),
+                                    content: new global::System.Net.Http.StringContent(request.StructuredOutputJsonSchema ?? string.Empty),
                                     name: "\"structured_output_json_schema\"");
                             } 
                             if (request.StructuredOutputJsonSchemaName != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.StructuredOutputJsonSchemaName}"),
+                                    content: new global::System.Net.Http.StringContent(request.StructuredOutputJsonSchemaName ?? string.Empty),
                                     name: "\"structured_output_json_schema_name\"");
                             } 
                             if (request.TakeScreenshot != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.TakeScreenshot}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.TakeScreenshot, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"take_screenshot\"");
                             } 
                             if (request.TargetPages != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.TargetPages}"),
+                                    content: new global::System.Net.Http.StringContent(request.TargetPages ?? string.Empty),
                                     name: "\"target_pages\"");
                             } 
                             if (request.VendorMultimodalApiKey != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VendorMultimodalApiKey}"),
+                                    content: new global::System.Net.Http.StringContent(request.VendorMultimodalApiKey ?? string.Empty),
                                     name: "\"vendor_multimodal_api_key\"");
                             } 
                             if (request.VendorMultimodalModelName != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VendorMultimodalModelName}"),
+                                    content: new global::System.Net.Http.StringContent(request.VendorMultimodalModelName ?? string.Empty),
                                     name: "\"vendor_multimodal_model_name\"");
                             } 
                             if (request.Model != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Model}"),
+                                    content: new global::System.Net.Http.StringContent(request.Model ?? string.Empty),
                                     name: "\"model\"");
                             } 
                             if (request.WebhookUrl != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.WebhookUrl}"),
+                                    content: new global::System.Net.Http.StringContent(request.WebhookUrl ?? string.Empty),
                                     name: "\"webhook_url\"");
                             } 
                             if (request.WebhookConfigurations != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.WebhookConfigurations}"),
+                                    content: new global::System.Net.Http.StringContent(request.WebhookConfigurations ?? string.Empty),
                                     name: "\"webhook_configurations\"");
                             } 
                             if (request.Preset != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Preset}"),
+                                    content: new global::System.Net.Http.StringContent(request.Preset ?? string.Empty),
                                     name: "\"preset\"");
                             } 
                             if (request.ParseMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ParseMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.ParseMode.ToString() ?? string.Empty),
                                     name: "\"parse_mode\"");
                             } 
                             if (request.PageErrorTolerance != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PageErrorTolerance}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.PageErrorTolerance, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"page_error_tolerance\"");
                             } 
                             if (request.ReplaceFailedPageMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ReplaceFailedPageMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.ReplaceFailedPageMode.ToString() ?? string.Empty),
                                     name: "\"replace_failed_page_mode\"");
                             } 
                             if (request.ReplaceFailedPageWithErrorMessagePrefix != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ReplaceFailedPageWithErrorMessagePrefix}"),
+                                    content: new global::System.Net.Http.StringContent(request.ReplaceFailedPageWithErrorMessagePrefix ?? string.Empty),
                                     name: "\"replace_failed_page_with_error_message_prefix\"");
                             } 
                             if (request.ReplaceFailedPageWithErrorMessageSuffix != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ReplaceFailedPageWithErrorMessageSuffix}"),
+                                    content: new global::System.Net.Http.StringContent(request.ReplaceFailedPageWithErrorMessageSuffix ?? string.Empty),
                                     name: "\"replace_failed_page_with_error_message_suffix\"");
                             } 
                             if (request.SystemPrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SystemPrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.SystemPrompt ?? string.Empty),
                                     name: "\"system_prompt\"");
                             } 
                             if (request.SystemPromptAppend != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SystemPromptAppend}"),
+                                    content: new global::System.Net.Http.StringContent(request.SystemPromptAppend ?? string.Empty),
                                     name: "\"system_prompt_append\"");
                             } 
                             if (request.UserPrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.UserPrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.UserPrompt ?? string.Empty),
                                     name: "\"user_prompt\"");
                             } 
                             if (request.JobTimeoutInSeconds != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.JobTimeoutInSeconds}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.JobTimeoutInSeconds, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"job_timeout_in_seconds\"");
                             } 
                             if (request.JobTimeoutExtraTimePerPageInSeconds != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.JobTimeoutExtraTimePerPageInSeconds}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.JobTimeoutExtraTimePerPageInSeconds, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"job_timeout_extra_time_per_page_in_seconds\"");
                             } 
                             if (request.StrictModeImageExtraction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.StrictModeImageExtraction}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.StrictModeImageExtraction, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"strict_mode_image_extraction\"");
                             } 
                             if (request.StrictModeImageOcr != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.StrictModeImageOcr}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.StrictModeImageOcr, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"strict_mode_image_ocr\"");
                             } 
                             if (request.StrictModeReconstruction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.StrictModeReconstruction}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.StrictModeReconstruction, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"strict_mode_reconstruction\"");
                             } 
                             if (request.StrictModeBuggyFont != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.StrictModeBuggyFont}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.StrictModeBuggyFont, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"strict_mode_buggy_font\"");
                             } 
                             if (request.SaveImages != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SaveImages}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.SaveImages, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"save_images\"");
                             } 
                             if (request.IgnoreDocumentElementsForLayoutDetection != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.IgnoreDocumentElementsForLayoutDetection}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.IgnoreDocumentElementsForLayoutDetection, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"ignore_document_elements_for_layout_detection\"");
                             } 
                             if (request.KeepPageSeparatorWhenMergingTables != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.KeepPageSeparatorWhenMergingTables}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.KeepPageSeparatorWhenMergingTables, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"keep_page_separator_when_merging_tables\"");
                             } 
                             if (request.OutputTablesAsHtml != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputTablesAsHtml}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.OutputTablesAsHtml, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"output_tables_as_HTML\"");
                             } 
                             if (request.MarkdownTableMultilineHeaderSeparator != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MarkdownTableMultilineHeaderSeparator}"),
+                                    content: new global::System.Net.Http.StringContent(request.MarkdownTableMultilineHeaderSeparator ?? string.Empty),
                                     name: "\"markdown_table_multiline_header_separator\"");
                             } 
                             if (request.UseVendorMultimodalModel != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.UseVendorMultimodalModel}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.UseVendorMultimodalModel, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"use_vendor_multimodal_model\"");
                             } 
                             if (request.BoundingBox != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BoundingBox}"),
+                                    content: new global::System.Net.Http.StringContent(request.BoundingBox ?? string.Empty),
                                     name: "\"bounding_box\"");
                             } 
                             if (request.Gpt4oMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Gpt4oMode}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Gpt4oMode, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"gpt4o_mode\"");
                             } 
                             if (request.Gpt4oApiKey != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Gpt4oApiKey}"),
+                                    content: new global::System.Net.Http.StringContent(request.Gpt4oApiKey ?? string.Empty),
                                     name: "\"gpt4o_api_key\"");
                             } 
                             if (request.ComplementalFormattingInstruction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ComplementalFormattingInstruction}"),
+                                    content: new global::System.Net.Http.StringContent(request.ComplementalFormattingInstruction ?? string.Empty),
                                     name: "\"complemental_formatting_instruction\"");
                             } 
                             if (request.ContentGuidelineInstruction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ContentGuidelineInstruction}"),
+                                    content: new global::System.Net.Http.StringContent(request.ContentGuidelineInstruction ?? string.Empty),
                                     name: "\"content_guideline_instruction\"");
                             } 
                             if (request.PremiumMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PremiumMode}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.PremiumMode, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"premium_mode\"");
                             } 
                             if (request.IsFormattingInstruction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.IsFormattingInstruction}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.IsFormattingInstruction, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"is_formatting_instruction\"");
                             } 
                             if (request.ContinuousMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ContinuousMode}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.ContinuousMode, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"continuous_mode\"");
                             } 
                             if (request.ParsingInstruction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ParsingInstruction}"),
+                                    content: new global::System.Net.Http.StringContent(request.ParsingInstruction ?? string.Empty),
                                     name: "\"parsing_instruction\"");
                             } 
                             if (request.FastMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.FastMode}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.FastMode, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"fast_mode\"");
                             } 
                             if (request.FormattingInstruction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.FormattingInstruction}"),
+                                    content: new global::System.Net.Http.StringContent(request.FormattingInstruction ?? string.Empty),
                                     name: "\"formatting_instruction\"");
                             } 
                             if (request.HideHeaders != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.HideHeaders}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.HideHeaders, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"hide_headers\"");
                             } 
                             if (request.HideFooters != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.HideFooters}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.HideFooters, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"hide_footers\"");
                             } 
                             if (request.PageHeaderPrefix != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PageHeaderPrefix}"),
+                                    content: new global::System.Net.Http.StringContent(request.PageHeaderPrefix ?? string.Empty),
                                     name: "\"page_header_prefix\"");
                             } 
                             if (request.PageHeaderSuffix != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PageHeaderSuffix}"),
+                                    content: new global::System.Net.Http.StringContent(request.PageHeaderSuffix ?? string.Empty),
                                     name: "\"page_header_suffix\"");
                             } 
                             if (request.PageFooterPrefix != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PageFooterPrefix}"),
+                                    content: new global::System.Net.Http.StringContent(request.PageFooterPrefix ?? string.Empty),
                                     name: "\"page_footer_prefix\"");
                             } 
                             if (request.PageFooterSuffix != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PageFooterSuffix}"),
+                                    content: new global::System.Net.Http.StringContent(request.PageFooterSuffix ?? string.Empty),
                                     name: "\"page_footer_suffix\"");
                             } 
                             if (request.RemoveHiddenText != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.RemoveHiddenText}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.RemoveHiddenText, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"remove_hidden_text\"");
                             } 
                             if (request.PresentationOutOfBoundsContent != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PresentationOutOfBoundsContent}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.PresentationOutOfBoundsContent, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"presentation_out_of_bounds_content\"");
                             } 
                             if (request.PresentationSkipEmbeddedData != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PresentationSkipEmbeddedData}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.PresentationSkipEmbeddedData, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"presentation_skip_embedded_data\"");
                             } 
                             if (request.ExtractPrintedPageNumber != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ExtractPrintedPageNumber}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.ExtractPrintedPageNumber, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"extract_printed_page_number\"");
                             } 
                             if (request.Tier != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Tier}"),
+                                    content: new global::System.Net.Http.StringContent(request.Tier ?? string.Empty),
                                     name: "\"tier\"");
                             } 
                             if (request.Version != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Version}"),
+                                    content: new global::System.Net.Http.StringContent(request.Version ?? string.Empty),
                                     name: "\"version\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

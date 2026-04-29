@@ -127,7 +127,7 @@ namespace LlamaParse
                             var __session = session;
                             if (__session is not null)
                             {
-                                __cookies.Add($"session={__session.ToString() ?? string.Empty}");
+                                __cookies.Add("session=" + (__session ?? string.Empty));
                             }
 
                 if (__cookies.Count > 0)
@@ -145,8 +145,8 @@ namespace LlamaParse
                 PrepareDeletePipelineDocumentApiV1PipelinesPipelineIdDocumentsDocumentIdDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    documentId: documentId,
-                    pipelineId: pipelineId,
+                    documentId: documentId!,
+                    pipelineId: pipelineId!,
                     session: session);
 
                 return __httpRequest;
