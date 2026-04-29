@@ -155,7 +155,7 @@ namespace LlamaParse
                             var __session = session;
                             if (__session is not null)
                             {
-                                __cookies.Add($"session={__session.ToString() ?? string.Empty}");
+                                __cookies.Add("session=" + (__session ?? string.Empty));
                             }
 
                 if (__cookies.Count > 0)
@@ -173,9 +173,9 @@ namespace LlamaParse
                 PrepareGetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    spreadsheetJobId: spreadsheetJobId,
-                    regionId: regionId,
-                    regionType: regionType,
+                    spreadsheetJobId: spreadsheetJobId!,
+                    regionId: regionId!,
+                    regionType: regionType!,
                     expiresAtSeconds: expiresAtSeconds,
                     projectId: projectId,
                     organizationId: organizationId,

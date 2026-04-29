@@ -178,7 +178,7 @@ namespace LlamaParse
                             var __session = session;
                             if (__session is not null)
                             {
-                                __cookies.Add($"session={__session.ToString() ?? string.Empty}");
+                                __cookies.Add("session=" + (__session ?? string.Empty));
                             }
 
                 if (__cookies.Count > 0)
@@ -196,7 +196,7 @@ namespace LlamaParse
                 PrepareListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    pipelineId: pipelineId,
+                    pipelineId: pipelineId!,
                     dataSourceId: dataSourceId,
                     fileNameContains: fileNameContains,
                     statuses: statuses,

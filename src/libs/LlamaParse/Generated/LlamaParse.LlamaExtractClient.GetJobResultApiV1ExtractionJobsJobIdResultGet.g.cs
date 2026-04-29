@@ -137,7 +137,7 @@ namespace LlamaParse
                             var __session = session;
                             if (__session is not null)
                             {
-                                __cookies.Add($"session={__session.ToString() ?? string.Empty}");
+                                __cookies.Add("session=" + (__session ?? string.Empty));
                             }
 
                 if (__cookies.Count > 0)
@@ -155,7 +155,7 @@ namespace LlamaParse
                 PrepareGetJobResultApiV1ExtractionJobsJobIdResultGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobId: jobId,
+                    jobId: jobId!,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);

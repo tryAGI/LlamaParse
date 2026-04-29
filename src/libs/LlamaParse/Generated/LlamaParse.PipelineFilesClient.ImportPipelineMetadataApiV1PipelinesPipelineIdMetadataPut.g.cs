@@ -132,7 +132,7 @@ namespace LlamaParse
                             var __session = session;
                             if (__session is not null)
                             {
-                                __cookies.Add($"session={__session.ToString() ?? string.Empty}");
+                                __cookies.Add("session=" + (__session ?? string.Empty));
                             }
 
                 if (__cookies.Count > 0)
@@ -141,16 +141,44 @@ namespace LlamaParse
                             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{pipelineId}"),
+                                content: new global::System.Net.Http.StringContent(pipelineId.ToString() ?? string.Empty),
                                 name: "\"pipeline_id\"");
                             if (session != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{session}"),
+                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
                                     name: "\"session\"");
                             }
                             var __contentUploadFile = new global::System.Net.Http.ByteArrayContent(request.UploadFile ?? global::System.Array.Empty<byte>());
+                            __contentUploadFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.UploadFilename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.UploadFilename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentUploadFile,
                                 name: "\"upload_file\"",
@@ -171,7 +199,7 @@ namespace LlamaParse
                 PrepareImportPipelineMetadataApiV1PipelinesPipelineIdMetadataPutRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    pipelineId: pipelineId,
+                    pipelineId: pipelineId!,
                     session: session,
                     request: request);
 
