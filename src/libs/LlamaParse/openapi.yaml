@@ -27074,11 +27074,10 @@
           "extract_version": {
             "type": "string",
             "title": "Extract Version",
-            "description": "Extract algorithm version. Use 'latest' for the default pipeline, a date string (e.g. '2026-01-08'), or 'continuous' to opt into schema-guided splitting for documents with repeating entities.",
+            "description": "Extract algorithm version. Use 'latest' for the default pipeline or a date string (e.g. '2026-01-08') to pin to a specific release.",
             "default": "latest",
             "examples": [
               "latest",
-              "continuous",
               "2026-01-08"
             ]
           },
@@ -28715,11 +28714,10 @@
           "extract_version": {
             "type": "string",
             "title": "Extract Version",
-            "description": "Extract algorithm version. Use 'latest' for the default pipeline, a date string (e.g. '2026-01-08'), or 'continuous' to opt into schema-guided splitting for documents with repeating entities.",
+            "description": "Extract algorithm version. Use 'latest' for the default pipeline or a date string (e.g. '2026-01-08') to pin to a specific release.",
             "default": "latest",
             "examples": [
               "latest",
-              "continuous",
               "2026-01-08"
             ]
           },
