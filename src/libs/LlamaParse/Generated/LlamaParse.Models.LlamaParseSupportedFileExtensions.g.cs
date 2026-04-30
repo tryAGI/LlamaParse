@@ -147,6 +147,14 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        Heic,
+        /// <summary>
+        /// 
+        /// </summary>
+        Heif,
+        /// <summary>
+        /// 
+        /// </summary>
         Htm,
         /// <summary>
         /// 
@@ -632,6 +640,8 @@ namespace LlamaParse
                 LlamaParseSupportedFileExtensions.Fodt => ".fodt",
                 LlamaParseSupportedFileExtensions.Fopd => ".fopd",
                 LlamaParseSupportedFileExtensions.Gif => ".gif",
+                LlamaParseSupportedFileExtensions.Heic => ".heic",
+                LlamaParseSupportedFileExtensions.Heif => ".heif",
                 LlamaParseSupportedFileExtensions.Htm => ".htm",
                 LlamaParseSupportedFileExtensions.Html => ".html",
                 LlamaParseSupportedFileExtensions.Htmlz => ".htmlz",
@@ -786,6 +796,8 @@ namespace LlamaParse
                 ".fodt" => LlamaParseSupportedFileExtensions.Fodt,
                 ".fopd" => LlamaParseSupportedFileExtensions.Fopd,
                 ".gif" => LlamaParseSupportedFileExtensions.Gif,
+                ".heic" => LlamaParseSupportedFileExtensions.Heic,
+                ".heif" => LlamaParseSupportedFileExtensions.Heif,
                 ".htm" => LlamaParseSupportedFileExtensions.Htm,
                 ".html" => LlamaParseSupportedFileExtensions.Html,
                 ".htmlz" => LlamaParseSupportedFileExtensions.Htmlz,
