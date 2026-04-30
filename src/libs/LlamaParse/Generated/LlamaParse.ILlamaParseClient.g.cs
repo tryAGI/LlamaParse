@@ -72,6 +72,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public JobDashboardClient JobDashboard { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public LlamaExtractClient LlamaExtract { get; }
 
         /// <summary>
