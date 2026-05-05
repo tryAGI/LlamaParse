@@ -15948,6 +15948,29 @@
         }
       }
     },
+    "/api/v2/parse/versions": {
+      "get": {
+        "tags": [
+          "V2",
+          "Parse"
+        ],
+        "summary": "List Parse Versions",
+        "description": "List the parse versions accepted by each tier.",
+        "operationId": "list_parse_versions_api_v2_parse_versions_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParseVersionsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v2/parse/{job_id}": {
       "get": {
         "tags": [
@@ -18555,50 +18578,12 @@
               {
                 "type": "string",
                 "enum": [
-                  "2025-12-11",
-                  "2025-12-18",
-                  "2025-12-31",
-                  "2026-01-08",
-                  "2026-01-09",
-                  "2026-01-16",
-                  "2026-01-21",
-                  "2026-01-22",
-                  "2026-01-24",
-                  "2026-01-29",
-                  "2026-01-30",
-                  "2026-02-03",
-                  "2026-02-18",
-                  "2026-02-20",
-                  "2026-02-24",
-                  "2026-02-26",
-                  "2026-03-02",
-                  "2026-03-03",
-                  "2026-03-04",
-                  "2026-03-05",
-                  "2026-03-09",
-                  "2026-03-10",
-                  "2026-03-11",
-                  "2026-03-12",
-                  "2026-03-17",
-                  "2026-03-19",
-                  "2026-03-20",
-                  "2026-03-22",
-                  "2026-03-23",
-                  "2026-03-24",
-                  "2026-03-25",
-                  "2026-03-26",
-                  "2026-03-27",
-                  "2026-03-30",
-                  "2026-03-31",
-                  "2026-04-02",
-                  "2026-04-06",
+                  "latest",
+                  "2026-05-04",
                   "2026-04-09",
-                  "2026-04-14",
-                  "2026-04-19",
-                  "2026-04-22",
-                  "2026-04-27",
-                  "latest"
-                ]
+                  "2025-12-11"
+                ],
+                "x-enum-order-preserved": true
               },
               {
                 "type": "string"
@@ -32099,6 +32084,21 @@
             "type": "array",
             "title": "Images To Save",
             "description": "Image categories to extract and save. Options: 'screenshot' (full page renders useful for visual QA), 'embedded' (images found within the document), 'layout' (cropped regions from layout detection like figures and diagrams). Empty list saves no images"
+          },
+          "additional_outputs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Additional Outputs",
+            "description": "Optional additional output artifacts to save alongside the primary parse output. Each value opts in to generating and persisting one extra file; the empty list (default) saves none. The three accepted values are: 'stripped_md' — per-page markdown stripped of formatting (links, bold/italic, images, HTML), saved as JSON for full-text-search indexing; fetch via `expand=stripped_markdown_content_metadata`. 'concatenated_stripped_txt' — all stripped pages concatenated into a single plain-text file with `\\n\\n---\\n\\n` between pages, useful for feeding the document into search or embedding pipelines as one blob; fetch via `expand=concatenated_stripped_markdown_content_metadata`. 'word_bbox' — raw word-level bounding boxes (one JSON object per word, with page number and x/y/w/h coordinates) saved as JSONL, useful for highlighting or grounding extracted answers back to the source document; fetch via `expand=raw_words_content_metadata`.",
+            "examples": [
+              [
+                "stripped_md",
+                "concatenated_stripped_txt",
+                "word_bbox"
+              ]
+            ]
           }
         },
         "additionalProperties": false,
@@ -35506,57 +35506,19 @@
               {
                 "type": "string",
                 "enum": [
-                  "2025-12-11",
-                  "2025-12-18",
-                  "2025-12-31",
-                  "2026-01-08",
-                  "2026-01-09",
-                  "2026-01-16",
-                  "2026-01-21",
-                  "2026-01-22",
-                  "2026-01-24",
-                  "2026-01-29",
-                  "2026-01-30",
-                  "2026-02-03",
-                  "2026-02-18",
-                  "2026-02-20",
-                  "2026-02-24",
-                  "2026-02-26",
-                  "2026-03-02",
-                  "2026-03-03",
-                  "2026-03-04",
-                  "2026-03-05",
-                  "2026-03-09",
-                  "2026-03-10",
-                  "2026-03-11",
-                  "2026-03-12",
-                  "2026-03-17",
-                  "2026-03-19",
-                  "2026-03-20",
-                  "2026-03-22",
-                  "2026-03-23",
-                  "2026-03-24",
-                  "2026-03-25",
-                  "2026-03-26",
-                  "2026-03-27",
-                  "2026-03-30",
-                  "2026-03-31",
-                  "2026-04-02",
-                  "2026-04-06",
+                  "latest",
+                  "2026-05-04",
                   "2026-04-09",
-                  "2026-04-14",
-                  "2026-04-19",
-                  "2026-04-22",
-                  "2026-04-27",
-                  "latest"
-                ]
+                  "2025-12-11"
+                ],
+                "x-enum-order-preserved": true
               },
               {
                 "type": "string"
               }
             ],
             "title": "Version",
-            "description": "Tier version. Use 'latest' for the current stable version, or specify a specific version (e.g., '1.0', '2.0') for reproducible results"
+            "description": "Tier version. Use 'latest' for the current stable version, or pin a dated version for reproducible results. See GET /api/v2/parse/versions for the per-tier list."
           },
           "client_name": {
             "anyOf": [
@@ -35835,57 +35797,19 @@
               {
                 "type": "string",
                 "enum": [
-                  "2025-12-11",
-                  "2025-12-18",
-                  "2025-12-31",
-                  "2026-01-08",
-                  "2026-01-09",
-                  "2026-01-16",
-                  "2026-01-21",
-                  "2026-01-22",
-                  "2026-01-24",
-                  "2026-01-29",
-                  "2026-01-30",
-                  "2026-02-03",
-                  "2026-02-18",
-                  "2026-02-20",
-                  "2026-02-24",
-                  "2026-02-26",
-                  "2026-03-02",
-                  "2026-03-03",
-                  "2026-03-04",
-                  "2026-03-05",
-                  "2026-03-09",
-                  "2026-03-10",
-                  "2026-03-11",
-                  "2026-03-12",
-                  "2026-03-17",
-                  "2026-03-19",
-                  "2026-03-20",
-                  "2026-03-22",
-                  "2026-03-23",
-                  "2026-03-24",
-                  "2026-03-25",
-                  "2026-03-26",
-                  "2026-03-27",
-                  "2026-03-30",
-                  "2026-03-31",
-                  "2026-04-02",
-                  "2026-04-06",
+                  "latest",
+                  "2026-05-04",
                   "2026-04-09",
-                  "2026-04-14",
-                  "2026-04-19",
-                  "2026-04-22",
-                  "2026-04-27",
-                  "latest"
-                ]
+                  "2025-12-11"
+                ],
+                "x-enum-order-preserved": true
               },
               {
                 "type": "string"
               }
             ],
             "title": "Version",
-            "description": "Tier version. Use 'latest' for the current stable version, or specify a specific version (e.g., '1.0', '2.0') for reproducible results"
+            "description": "Tier version. Use 'latest' for the current stable version, or pin a dated version for reproducible results. See GET /api/v2/parse/versions for the per-tier list."
           },
           "client_name": {
             "anyOf": [
@@ -35980,6 +35904,124 @@
         ],
         "title": "ParseV2Parameters",
         "description": "Configuration for LlamaParse v2 document parsing.\n\nIncludes tier selection, processing options, output formatting,\npage targeting, and webhook delivery. Refer to the LlamaParse\ndocumentation for details on each field."
+      },
+      "ParseVersionsResponse": {
+        "properties": {
+          "fast": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "2025-12-11"
+              ],
+              "x-enum-order-preserved": true
+            },
+            "type": "array",
+            "title": "Fast",
+            "description": "Versions for the fast tier"
+          },
+          "cost_effective": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "2026-04-09",
+                "2026-03-31",
+                "2026-03-27",
+                "2026-03-25"
+              ],
+              "x-enum-order-preserved": true
+            },
+            "type": "array",
+            "title": "Cost Effective",
+            "description": "Versions for the cost_effective tier"
+          },
+          "agentic": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "2026-05-04",
+                "2026-04-27",
+                "2026-04-22",
+                "2026-04-09",
+                "2026-04-06",
+                "2026-04-02",
+                "2026-03-31",
+                "2026-03-30",
+                "2026-03-27",
+                "2026-03-25",
+                "2026-03-23",
+                "2026-03-22",
+                "2026-03-20",
+                "2026-03-11",
+                "2026-03-10",
+                "2026-03-09",
+                "2026-03-03",
+                "2026-03-02",
+                "2026-02-26",
+                "2026-02-24",
+                "2026-01-30",
+                "2026-01-22",
+                "2026-01-21",
+                "2026-01-16",
+                "2026-01-08",
+                "2025-12-31",
+                "2025-12-18",
+                "2025-12-11"
+              ],
+              "x-enum-order-preserved": true
+            },
+            "type": "array",
+            "title": "Agentic",
+            "description": "Versions for the agentic tier"
+          },
+          "agentic_plus": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "2026-05-04",
+                "2026-05-01",
+                "2026-04-27",
+                "2026-04-19",
+                "2026-04-14",
+                "2026-04-09",
+                "2026-04-02",
+                "2026-03-31",
+                "2026-03-26",
+                "2026-03-25",
+                "2026-03-22",
+                "2026-03-20",
+                "2026-03-17",
+                "2026-03-12",
+                "2026-03-10",
+                "2026-03-09",
+                "2026-03-02",
+                "2026-02-26",
+                "2026-02-24",
+                "2026-01-30",
+                "2026-01-29",
+                "2026-01-24",
+                "2026-01-22",
+                "2026-01-21",
+                "2026-01-16",
+                "2025-12-31",
+                "2025-12-18",
+                "2025-12-11"
+              ],
+              "x-enum-order-preserved": true
+            },
+            "type": "array",
+            "title": "Agentic Plus",
+            "description": "Versions for the agentic_plus tier"
+          }
+        },
+        "type": "object",
+        "required": [
+          "fast",
+          "cost_effective",
+          "agentic",
+          "agentic_plus"
+        ],
+        "title": "ParseVersionsResponse",
+        "description": "Versions accepted by the parse API, grouped by tier."
       },
       "ParserLanguages": {
         "type": "string",
@@ -38382,18 +38424,6 @@
             ],
             "title": "Updated At",
             "description": "Update datetime"
-          },
-          "ad_hoc_eval_dataset_id": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Ad Hoc Eval Dataset Id"
           },
           "organization_id": {
             "type": "string",

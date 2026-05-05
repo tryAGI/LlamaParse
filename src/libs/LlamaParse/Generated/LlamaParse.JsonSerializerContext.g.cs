@@ -253,6 +253,22 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.ParseV2ParametersVersionNullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemNullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemNullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemNullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluNullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.ParserLanguagesJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.ParserLanguagesNullableJsonConverter),
@@ -1077,6 +1093,15 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseV2ParametersTier), TypeInfoPropertyName = "ParseV2ParametersTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.ParseV2ParametersVersion?, string>), TypeInfoPropertyName = "AnyOfParseV2ParametersVersionString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseV2ParametersVersion), TypeInfoPropertyName = "ParseV2ParametersVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseVersionsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseFastItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseVersionsResponseFastItem), TypeInfoPropertyName = "ParseVersionsResponseFastItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseCostEffectiveItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseVersionsResponseCostEffectiveItem), TypeInfoPropertyName = "ParseVersionsResponseCostEffectiveItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseAgenticItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseVersionsResponseAgenticItem), TypeInfoPropertyName = "ParseVersionsResponseAgenticItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseAgenticPlu>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseVersionsResponseAgenticPlu), TypeInfoPropertyName = "ParseVersionsResponseAgenticPlu2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParsingJob))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParsingJobJsonResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParsingJobMarkdownResult))]
@@ -1263,6 +1288,10 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ClassifyJob>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.SpreadsheetJob>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ParseJobResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ParseVersionsResponseFastItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ParseVersionsResponseCostEffectiveItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ParseVersionsResponseAgenticItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ParseVersionsResponseAgenticPlu>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.PipelineFileResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ChatMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.TextNodeWithScore>))]

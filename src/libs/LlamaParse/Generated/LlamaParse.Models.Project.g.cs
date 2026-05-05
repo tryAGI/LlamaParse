@@ -35,12 +35,6 @@ namespace LlamaParse
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ad_hoc_eval_dataset_id")]
-        public global::System.Guid? AdHocEvalDatasetId { get; set; }
-
-        /// <summary>
         /// The Organization ID the project is under.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
@@ -76,7 +70,6 @@ namespace LlamaParse
         /// <param name="updatedAt">
         /// Update datetime
         /// </param>
-        /// <param name="adHocEvalDatasetId"></param>
         /// <param name="isDefault">
         /// Whether this project is the default project for the user.<br/>
         /// Default Value: false
@@ -90,14 +83,12 @@ namespace LlamaParse
             global::System.Guid organizationId,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
-            global::System.Guid? adHocEvalDatasetId,
             bool? isDefault)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.AdHocEvalDatasetId = adHocEvalDatasetId;
             this.OrganizationId = organizationId;
             this.IsDefault = isDefault;
         }
