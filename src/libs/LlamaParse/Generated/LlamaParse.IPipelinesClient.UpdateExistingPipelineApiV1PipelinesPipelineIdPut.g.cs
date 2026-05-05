@@ -29,6 +29,23 @@ namespace LlamaParse
         /// </summary>
         /// <param name="pipelineId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.Pipeline>> UpdateExistingPipelineApiV1PipelinesPipelineIdPutAsResponseAsync(
+            global::System.Guid pipelineId,
+
+            global::LlamaParse.PipelineUpdate request,
+            string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Existing Pipeline<br/>
+        /// Update an existing pipeline's configuration.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="session"></param>
         /// <param name="embeddingConfig"></param>
         /// <param name="transformConfig">
         /// Configuration for the transformation.

@@ -42,7 +42,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public BetaClient Beta => new BetaClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BetaClient Beta => new BetaClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -51,7 +51,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public ClassifierClient Classifier => new ClassifierClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ClassifierClient Classifier => new ClassifierClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -60,7 +60,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public DataSinksClient DataSinks => new DataSinksClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DataSinksClient DataSinks => new DataSinksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -69,7 +69,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public DataSourcesClient DataSources => new DataSourcesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DataSourcesClient DataSources => new DataSourcesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -78,7 +78,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public EmbeddingModelConfigsClient EmbeddingModelConfigs => new EmbeddingModelConfigsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EmbeddingModelConfigsClient EmbeddingModelConfigs => new EmbeddingModelConfigsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -87,7 +87,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public JobDashboardClient JobDashboard => new JobDashboardClient(HttpClient, authorizations: Authorizations, options: Options)
+        public JobDashboardClient JobDashboard => new JobDashboardClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -96,7 +96,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public LlamaExtractClient LlamaExtract => new LlamaExtractClient(HttpClient, authorizations: Authorizations, options: Options)
+        public LlamaExtractClient LlamaExtract => new LlamaExtractClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -105,7 +105,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -114,7 +114,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public PageFiguresClient PageFigures => new PageFiguresClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PageFiguresClient PageFigures => new PageFiguresClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -123,7 +123,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public PageScreenshotsClient PageScreenshots => new PageScreenshotsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PageScreenshotsClient PageScreenshots => new PageScreenshotsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -132,7 +132,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public ParsingClient Parsing => new ParsingClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ParsingClient Parsing => new ParsingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -141,7 +141,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public PipelineDataSourcesClient PipelineDataSources => new PipelineDataSourcesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PipelineDataSourcesClient PipelineDataSources => new PipelineDataSourcesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -150,7 +150,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public PipelineFilesClient PipelineFiles => new PipelineFilesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PipelineFilesClient PipelineFiles => new PipelineFilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -159,7 +159,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public PipelinesClient Pipelines => new PipelinesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PipelinesClient Pipelines => new PipelinesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -168,7 +168,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ProjectsClient Projects => new ProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -177,7 +177,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public RetrieversClient Retrievers => new RetrieversClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RetrieversClient Retrievers => new RetrieversClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -186,7 +186,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public V2Client V2 => new V2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public V2Client V2 => new V2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -225,10 +225,10 @@ namespace LlamaParse
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public LlamaParseClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::LlamaParse.EndPointAuthorization>? authorizations = null,
-            global::LlamaParse.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::LlamaParse.EndPointAuthorization>? authorizations,
+            global::LlamaParse.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

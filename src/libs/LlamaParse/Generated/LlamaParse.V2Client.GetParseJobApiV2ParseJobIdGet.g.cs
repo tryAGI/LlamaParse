@@ -86,6 +86,54 @@ namespace LlamaParse
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetParseJobApiV2ParseJobIdGetAsResponseAsync(
+                jobId: jobId,
+                expand: expand,
+                imageFilenames: imageFilenames,
+                projectId: projectId,
+                organizationId: organizationId,
+                session: session,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get Parse Job<br/>
+        /// Retrieve a parse job with optional expanded content.<br/>
+        /// By default returns job metadata only. Use `expand` to include<br/>
+        /// parsed content:<br/>
+        /// - `text` — plain text output<br/>
+        /// - `markdown` — markdown output<br/>
+        /// - `items` — structured page-by-page output<br/>
+        /// - `job_metadata` — usage and processing details<br/>
+        /// Content metadata fields (e.g. `text_content_metadata`) return<br/>
+        /// presigned URLs for downloading large results.
+        /// </summary>
+        /// <param name="jobId"></param>
+        /// <param name="expand">
+        /// Fields to include: text, markdown, items, metadata, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs.
+        /// </param>
+        /// <param name="imageFilenames">
+        /// Filter to specific image filenames (optional). Example: image_0.png,image_1.jpg
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ParseResultResponse>> GetParseJobApiV2ParseJobIdGetAsResponseAsync(
+            string jobId,
+            global::System.Collections.Generic.IList<string>? expand = default,
+            string? imageFilenames = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetParseJobApiV2ParseJobIdGetArguments(
@@ -119,14 +167,15 @@ namespace LlamaParse
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
                                 path: $"/api/v2/parse/{jobId}",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("expand", expand, delimiter: ",", explode: true)
                                 .AddOptionalParameter("image_filenames", imageFilenames)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
-                                .AddOptionalParameter("organization_id", organizationId?.ToString()) 
+                                .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -215,6 +264,8 @@ namespace LlamaParse
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -225,6 +276,11 @@ namespace LlamaParse
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::LlamaParse.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -242,6 +298,8 @@ namespace LlamaParse
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -251,8 +309,7 @@ namespace LlamaParse
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -261,6 +318,11 @@ namespace LlamaParse
                         __attempt < __maxAttempts &&
                         global::LlamaParse.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::LlamaParse.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -277,14 +339,15 @@ namespace LlamaParse
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -324,6 +387,8 @@ namespace LlamaParse
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -344,6 +409,8 @@ namespace LlamaParse
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -406,9 +473,13 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::LlamaParse.ParseResultResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.ParseResultResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ParseResultResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -436,9 +507,13 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::LlamaParse.ParseResultResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.ParseResultResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ParseResultResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

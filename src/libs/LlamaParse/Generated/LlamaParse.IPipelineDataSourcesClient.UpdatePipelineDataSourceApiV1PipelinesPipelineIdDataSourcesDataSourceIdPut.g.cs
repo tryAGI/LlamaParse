@@ -30,6 +30,25 @@ namespace LlamaParse
         /// <param name="dataSourceId"></param>
         /// <param name="pipelineId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PipelineDataSource>> UpdatePipelineDataSourceApiV1PipelinesPipelineIdDataSourcesDataSourceIdPutAsResponseAsync(
+            global::System.Guid dataSourceId,
+            global::System.Guid pipelineId,
+
+            global::LlamaParse.PipelineDataSourceUpdate request,
+            string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Pipeline Data Source<br/>
+        /// Update the configuration of a data source in a pipeline.
+        /// </summary>
+        /// <param name="dataSourceId"></param>
+        /// <param name="pipelineId"></param>
+        /// <param name="session"></param>
         /// <param name="syncInterval">
         /// The interval at which the data source should be synced.
         /// </param>

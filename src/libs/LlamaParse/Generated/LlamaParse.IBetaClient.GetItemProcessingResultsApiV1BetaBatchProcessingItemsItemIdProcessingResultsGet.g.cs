@@ -29,5 +29,30 @@ namespace LlamaParse
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Item Processing Results<br/>
+        /// Get all processing results for a specific item.<br/>
+        /// Returns the complete processing history for an item including<br/>
+        /// what operations were performed, parameters used, and where<br/>
+        /// outputs are stored. Optionally filter by `job_type`.
+        /// </summary>
+        /// <param name="itemId"></param>
+        /// <param name="jobType">
+        /// Filter results by job type
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ItemProcessingResultsResponse>> GetItemProcessingResultsApiV1BetaBatchProcessingItemsItemIdProcessingResultsGetAsResponseAsync(
+            string itemId,
+            global::LlamaParse.BatchJobType? jobType = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

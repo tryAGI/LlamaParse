@@ -125,6 +125,86 @@ namespace LlamaParse
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListUsageMetricsApiV1BetaUsageMetricsGetAsResponseAsync(
+                organizationId: organizationId,
+                pageSize: pageSize,
+                pageToken: pageToken,
+                includeTotal: includeTotal,
+                projectId: projectId,
+                userId: userId,
+                eventTypes: eventTypes,
+                days: days,
+                dayOnOrBefore: dayOnOrBefore,
+                dayOnOrAfter: dayOnOrAfter,
+                eventAggregationType: eventAggregationType,
+                eventAggregationKey: eventAggregationKey,
+                session: session,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List Usage Metrics<br/>
+        /// List usage metrics with filtering and pagination.
+        /// </summary>
+        /// <param name="pageSize">
+        /// Number of items per page
+        /// </param>
+        /// <param name="pageToken">
+        /// Token for pagination
+        /// </param>
+        /// <param name="includeTotal">
+        /// Include total count in response<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="projectId">
+        /// Filter by project ID
+        /// </param>
+        /// <param name="userId">
+        /// Filter by user ID
+        /// </param>
+        /// <param name="eventTypes">
+        /// Filter by event types
+        /// </param>
+        /// <param name="days">
+        /// Filter by specific days (YYYY-MM-DD)
+        /// </param>
+        /// <param name="dayOnOrBefore">
+        /// Filter by days on or before this date (YYYY-MM-DD)
+        /// </param>
+        /// <param name="dayOnOrAfter">
+        /// Filter by days on or after this date (YYYY-MM-DD)
+        /// </param>
+        /// <param name="eventAggregationType">
+        /// Filter by event aggregation type
+        /// </param>
+        /// <param name="eventAggregationKey">
+        /// Filter by event aggregation key
+        /// </param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.UsageMetricQueryResponse>> ListUsageMetricsApiV1BetaUsageMetricsGetAsResponseAsync(
+            global::System.Guid organizationId,
+            int? pageSize = default,
+            string? pageToken = default,
+            bool? includeTotal = default,
+            global::System.Guid? projectId = default,
+            string? userId = default,
+            global::System.Collections.Generic.IList<string>? eventTypes = default,
+            global::System.Collections.Generic.IList<string>? days = default,
+            string? dayOnOrBefore = default,
+            string? dayOnOrAfter = default,
+            string? eventAggregationType = default,
+            string? eventAggregationKey = default,
+            string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListUsageMetricsApiV1BetaUsageMetricsGetArguments(
@@ -165,9 +245,10 @@ namespace LlamaParse
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
                                 path: "/api/v1/beta/usage-metrics",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
@@ -180,7 +261,7 @@ namespace LlamaParse
                                 .AddOptionalParameter("day_on_or_after", dayOnOrAfter)
                                 .AddOptionalParameter("event_aggregation_type", eventAggregationType)
                                 .AddOptionalParameter("event_aggregation_key", eventAggregationKey)
-                                .AddRequiredParameter("organization_id", organizationId.ToString()!) 
+                                .AddRequiredParameter("organization_id", organizationId.ToString()!)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -276,6 +357,8 @@ namespace LlamaParse
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -286,6 +369,11 @@ namespace LlamaParse
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::LlamaParse.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -303,6 +391,8 @@ namespace LlamaParse
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -312,8 +402,7 @@ namespace LlamaParse
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -322,6 +411,11 @@ namespace LlamaParse
                         __attempt < __maxAttempts &&
                         global::LlamaParse.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::LlamaParse.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -338,14 +432,15 @@ namespace LlamaParse
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -385,6 +480,8 @@ namespace LlamaParse
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -405,6 +502,8 @@ namespace LlamaParse
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -467,9 +566,13 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::LlamaParse.UsageMetricQueryResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.UsageMetricQueryResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.UsageMetricQueryResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -497,9 +600,13 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::LlamaParse.UsageMetricQueryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.UsageMetricQueryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.UsageMetricQueryResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

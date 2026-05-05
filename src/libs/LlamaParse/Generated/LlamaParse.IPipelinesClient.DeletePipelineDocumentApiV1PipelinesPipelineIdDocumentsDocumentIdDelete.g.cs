@@ -23,5 +23,24 @@ namespace LlamaParse
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete Pipeline Document<br/>
+        /// Delete a document from a pipeline.<br/>
+        /// Initiates an async job that will:<br/>
+        /// 1. Delete vectors from the vector store<br/>
+        /// 2. Delete the document from MongoDB after vectors are successfully deleted
+        /// </summary>
+        /// <param name="documentId"></param>
+        /// <param name="pipelineId"></param>
+        /// <param name="session"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse> DeletePipelineDocumentApiV1PipelinesPipelineIdDocumentsDocumentIdDeleteAsResponseAsync(
+            string documentId,
+            global::System.Guid pipelineId,
+            string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
