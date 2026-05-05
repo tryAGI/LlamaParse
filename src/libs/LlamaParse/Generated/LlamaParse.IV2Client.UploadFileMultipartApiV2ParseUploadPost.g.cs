@@ -24,5 +24,25 @@ namespace LlamaParse
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Upload File Multipart<br/>
+        /// Upload and parse a file using multipart/form-data.<br/>
+        /// Send the file as a `file` field and parsing configuration as a<br/>
+        /// `configuration` JSON string field.<br/>
+        /// The job runs asynchronously. Poll `GET /parse/{job_id}` with<br/>
+        /// `expand` to retrieve results.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ParseJobResponse>> UploadFileMultipartApiV2ParseUploadPostAsResponseAsync(
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

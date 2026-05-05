@@ -37,6 +37,29 @@ namespace LlamaParse
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DirectoryFileResponse>> AddDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesPostAsResponseAsync(
+            string directoryId,
+
+            global::LlamaParse.DirectoryFileCreateRequest request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add Directory File<br/>
+        /// Create a new file within the specified directory.<br/>
+        /// The directory must exist and belong to the project passed in.<br/>
+        /// The file_id must be provided and exist in the project.
+        /// </summary>
+        /// <param name="directoryId"></param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
         /// <param name="fileId">
         /// File ID for the storage location (required).
         /// </param>

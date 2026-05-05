@@ -96,6 +96,61 @@ namespace LlamaParse
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetAsResponseAsync(
+                pipelineId: pipelineId,
+                dataSourceId: dataSourceId,
+                fileNameContains: fileNameContains,
+                statuses: statuses,
+                pageSize: pageSize,
+                pageToken: pageToken,
+                projectId: projectId,
+                organizationId: organizationId,
+                session: session,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List Pipeline Files<br/>
+        /// List files for a pipeline with pagination and filtering.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="dataSourceId">
+        /// Filter by data source ID.
+        /// </param>
+        /// <param name="fileNameContains">
+        /// Filter by files whose names contain this substring (case-insensitive).
+        /// </param>
+        /// <param name="statuses">
+        /// Filter by pipeline file statuses.
+        /// </param>
+        /// <param name="pageSize">
+        /// Maximum number of items to return. Defaults to 50, max 1000.
+        /// </param>
+        /// <param name="pageToken">
+        /// Page token for pagination, from a previous response.
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LlamaParse.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PipelineFileListResponse>> ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetAsResponseAsync(
+            global::System.Guid pipelineId,
+            global::System.Guid? dataSourceId = default,
+            string? fileNameContains = default,
+            global::System.Collections.Generic.IList<global::LlamaParse.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item>? statuses = default,
+            int? pageSize = default,
+            string? pageToken = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetArguments(
@@ -132,9 +187,10 @@ namespace LlamaParse
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
                                 path: $"/api/v1/beta/pipelines/{pipelineId}/files",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("data_source_id", dataSourceId?.ToString())
                                 .AddOptionalParameter("file_name_contains", fileNameContains)
@@ -142,7 +198,7 @@ namespace LlamaParse
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
-                                .AddOptionalParameter("organization_id", organizationId?.ToString()) 
+                                .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -234,6 +290,8 @@ namespace LlamaParse
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -244,6 +302,11 @@ namespace LlamaParse
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::LlamaParse.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -261,6 +324,8 @@ namespace LlamaParse
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -270,8 +335,7 @@ namespace LlamaParse
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -280,6 +344,11 @@ namespace LlamaParse
                         __attempt < __maxAttempts &&
                         global::LlamaParse.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::LlamaParse.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -296,14 +365,15 @@ namespace LlamaParse
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -343,6 +413,8 @@ namespace LlamaParse
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -363,6 +435,8 @@ namespace LlamaParse
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -425,9 +499,13 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::LlamaParse.PipelineFileListResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.PipelineFileListResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PipelineFileListResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -455,9 +533,13 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::LlamaParse.PipelineFileListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.PipelineFileListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PipelineFileListResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
