@@ -15,167 +15,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        x20251218,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20251231,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260108,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260109,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260116,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260121,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260122,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260124,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260129,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260130,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260203,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260218,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260220,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260224,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260226,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260302,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260303,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260304,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260305,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260309,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260310,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260311,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260312,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260317,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260319,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260320,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260322,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260323,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260324,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260325,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260326,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260327,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260330,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260331,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260402,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260406,
-        /// <summary>
-        /// 
-        /// </summary>
         x20260409,
         /// <summary>
         /// 
         /// </summary>
-        x20260414,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260419,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260422,
-        /// <summary>
-        /// 
-        /// </summary>
-        x20260427,
+        x20260504,
         /// <summary>
         /// 
         /// </summary>
@@ -195,47 +39,8 @@ namespace LlamaParse
             return value switch
             {
                 ParseV2ParametersVersion.x20251211 => "2025-12-11",
-                ParseV2ParametersVersion.x20251218 => "2025-12-18",
-                ParseV2ParametersVersion.x20251231 => "2025-12-31",
-                ParseV2ParametersVersion.x20260108 => "2026-01-08",
-                ParseV2ParametersVersion.x20260109 => "2026-01-09",
-                ParseV2ParametersVersion.x20260116 => "2026-01-16",
-                ParseV2ParametersVersion.x20260121 => "2026-01-21",
-                ParseV2ParametersVersion.x20260122 => "2026-01-22",
-                ParseV2ParametersVersion.x20260124 => "2026-01-24",
-                ParseV2ParametersVersion.x20260129 => "2026-01-29",
-                ParseV2ParametersVersion.x20260130 => "2026-01-30",
-                ParseV2ParametersVersion.x20260203 => "2026-02-03",
-                ParseV2ParametersVersion.x20260218 => "2026-02-18",
-                ParseV2ParametersVersion.x20260220 => "2026-02-20",
-                ParseV2ParametersVersion.x20260224 => "2026-02-24",
-                ParseV2ParametersVersion.x20260226 => "2026-02-26",
-                ParseV2ParametersVersion.x20260302 => "2026-03-02",
-                ParseV2ParametersVersion.x20260303 => "2026-03-03",
-                ParseV2ParametersVersion.x20260304 => "2026-03-04",
-                ParseV2ParametersVersion.x20260305 => "2026-03-05",
-                ParseV2ParametersVersion.x20260309 => "2026-03-09",
-                ParseV2ParametersVersion.x20260310 => "2026-03-10",
-                ParseV2ParametersVersion.x20260311 => "2026-03-11",
-                ParseV2ParametersVersion.x20260312 => "2026-03-12",
-                ParseV2ParametersVersion.x20260317 => "2026-03-17",
-                ParseV2ParametersVersion.x20260319 => "2026-03-19",
-                ParseV2ParametersVersion.x20260320 => "2026-03-20",
-                ParseV2ParametersVersion.x20260322 => "2026-03-22",
-                ParseV2ParametersVersion.x20260323 => "2026-03-23",
-                ParseV2ParametersVersion.x20260324 => "2026-03-24",
-                ParseV2ParametersVersion.x20260325 => "2026-03-25",
-                ParseV2ParametersVersion.x20260326 => "2026-03-26",
-                ParseV2ParametersVersion.x20260327 => "2026-03-27",
-                ParseV2ParametersVersion.x20260330 => "2026-03-30",
-                ParseV2ParametersVersion.x20260331 => "2026-03-31",
-                ParseV2ParametersVersion.x20260402 => "2026-04-02",
-                ParseV2ParametersVersion.x20260406 => "2026-04-06",
                 ParseV2ParametersVersion.x20260409 => "2026-04-09",
-                ParseV2ParametersVersion.x20260414 => "2026-04-14",
-                ParseV2ParametersVersion.x20260419 => "2026-04-19",
-                ParseV2ParametersVersion.x20260422 => "2026-04-22",
-                ParseV2ParametersVersion.x20260427 => "2026-04-27",
+                ParseV2ParametersVersion.x20260504 => "2026-05-04",
                 ParseV2ParametersVersion.Latest => "latest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -248,47 +53,8 @@ namespace LlamaParse
             return value switch
             {
                 "2025-12-11" => ParseV2ParametersVersion.x20251211,
-                "2025-12-18" => ParseV2ParametersVersion.x20251218,
-                "2025-12-31" => ParseV2ParametersVersion.x20251231,
-                "2026-01-08" => ParseV2ParametersVersion.x20260108,
-                "2026-01-09" => ParseV2ParametersVersion.x20260109,
-                "2026-01-16" => ParseV2ParametersVersion.x20260116,
-                "2026-01-21" => ParseV2ParametersVersion.x20260121,
-                "2026-01-22" => ParseV2ParametersVersion.x20260122,
-                "2026-01-24" => ParseV2ParametersVersion.x20260124,
-                "2026-01-29" => ParseV2ParametersVersion.x20260129,
-                "2026-01-30" => ParseV2ParametersVersion.x20260130,
-                "2026-02-03" => ParseV2ParametersVersion.x20260203,
-                "2026-02-18" => ParseV2ParametersVersion.x20260218,
-                "2026-02-20" => ParseV2ParametersVersion.x20260220,
-                "2026-02-24" => ParseV2ParametersVersion.x20260224,
-                "2026-02-26" => ParseV2ParametersVersion.x20260226,
-                "2026-03-02" => ParseV2ParametersVersion.x20260302,
-                "2026-03-03" => ParseV2ParametersVersion.x20260303,
-                "2026-03-04" => ParseV2ParametersVersion.x20260304,
-                "2026-03-05" => ParseV2ParametersVersion.x20260305,
-                "2026-03-09" => ParseV2ParametersVersion.x20260309,
-                "2026-03-10" => ParseV2ParametersVersion.x20260310,
-                "2026-03-11" => ParseV2ParametersVersion.x20260311,
-                "2026-03-12" => ParseV2ParametersVersion.x20260312,
-                "2026-03-17" => ParseV2ParametersVersion.x20260317,
-                "2026-03-19" => ParseV2ParametersVersion.x20260319,
-                "2026-03-20" => ParseV2ParametersVersion.x20260320,
-                "2026-03-22" => ParseV2ParametersVersion.x20260322,
-                "2026-03-23" => ParseV2ParametersVersion.x20260323,
-                "2026-03-24" => ParseV2ParametersVersion.x20260324,
-                "2026-03-25" => ParseV2ParametersVersion.x20260325,
-                "2026-03-26" => ParseV2ParametersVersion.x20260326,
-                "2026-03-27" => ParseV2ParametersVersion.x20260327,
-                "2026-03-30" => ParseV2ParametersVersion.x20260330,
-                "2026-03-31" => ParseV2ParametersVersion.x20260331,
-                "2026-04-02" => ParseV2ParametersVersion.x20260402,
-                "2026-04-06" => ParseV2ParametersVersion.x20260406,
                 "2026-04-09" => ParseV2ParametersVersion.x20260409,
-                "2026-04-14" => ParseV2ParametersVersion.x20260414,
-                "2026-04-19" => ParseV2ParametersVersion.x20260419,
-                "2026-04-22" => ParseV2ParametersVersion.x20260422,
-                "2026-04-27" => ParseV2ParametersVersion.x20260427,
+                "2026-05-04" => ParseV2ParametersVersion.x20260504,
                 "latest" => ParseV2ParametersVersion.Latest,
                 _ => null,
             };

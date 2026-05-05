@@ -7,7 +7,7 @@ namespace LlamaParse
     {
 
 
-        private static readonly global::LlamaParse.EndPointSecurityRequirement s_ParseFileApiV2ParsePostSecurityRequirement0 =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_ListParseVersionsApiV2ParseVersionsGetSecurityRequirement0 =
             new global::LlamaParse.EndPointSecurityRequirement
             {
                 Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
@@ -21,68 +21,36 @@ namespace LlamaParse
                     },
                 },
             };
-        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_ParseFileApiV2ParsePostSecurityRequirements =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_ListParseVersionsApiV2ParseVersionsGetSecurityRequirements =
             new global::LlamaParse.EndPointSecurityRequirement[]
-            {                s_ParseFileApiV2ParsePostSecurityRequirement0,
+            {                s_ListParseVersionsApiV2ParseVersionsGetSecurityRequirement0,
             };
-        partial void PrepareParseFileApiV2ParsePostArguments(
+        partial void PrepareListParseVersionsApiV2ParseVersionsGetArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareListParseVersionsApiV2ParseVersionsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Guid? projectId,
-            global::System.Guid? organizationId,
-            ref string? session,
-            global::LlamaParse.ParseRequestConfiguration request);
-        partial void PrepareParseFileApiV2ParsePostRequest(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid? projectId,
-            global::System.Guid? organizationId,
-            string? session,
-            global::LlamaParse.ParseRequestConfiguration request);
-        partial void ProcessParseFileApiV2ParsePostResponse(
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessListParseVersionsApiV2ParseVersionsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessParseFileApiV2ParsePostResponseContent(
+        partial void ProcessListParseVersionsApiV2ParseVersionsGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Parse File<br/>
-        /// Parse a file by file ID or URL.<br/>
-        /// Provide either `file_id` (a previously uploaded file) or<br/>
-        /// `source_url` (a publicly accessible URL). Configure parsing<br/>
-        /// with options like `tier`, `target_pages`, and `lang`.<br/>
-        /// ## Tiers<br/>
-        /// - `fast` — rule-based, cheapest, no AI<br/>
-        /// - `cost_effective` — balanced speed and quality<br/>
-        /// - `agentic` — full AI-powered parsing<br/>
-        /// - `agentic_plus` — premium AI with specialized features<br/>
-        /// The job runs asynchronously. Poll `GET /parse/{job_id}` with<br/>
-        /// `expand=text` or `expand=markdown` to retrieve results.
+        /// List Parse Versions<br/>
+        /// List the parse versions accepted by each tier.
         /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="organizationId"></param>
-        /// <param name="session"></param>
-        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.ParseJobResponse> ParseFileApiV2ParsePostAsync(
-
-            global::LlamaParse.ParseRequestConfiguration request,
-            global::System.Guid? projectId = default,
-            global::System.Guid? organizationId = default,
-            string? session = default,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.ParseVersionsResponse> ListParseVersionsApiV2ParseVersionsGetAsync(
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ParseFileApiV2ParsePostAsResponseAsync(
-
-                request: request,
-                projectId: projectId,
-                organizationId: organizationId,
-                session: session,
+            var __response = await ListParseVersionsApiV2ParseVersionsGetAsResponseAsync(
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -90,51 +58,26 @@ namespace LlamaParse
             return __response.Body;
         }
         /// <summary>
-        /// Parse File<br/>
-        /// Parse a file by file ID or URL.<br/>
-        /// Provide either `file_id` (a previously uploaded file) or<br/>
-        /// `source_url` (a publicly accessible URL). Configure parsing<br/>
-        /// with options like `tier`, `target_pages`, and `lang`.<br/>
-        /// ## Tiers<br/>
-        /// - `fast` — rule-based, cheapest, no AI<br/>
-        /// - `cost_effective` — balanced speed and quality<br/>
-        /// - `agentic` — full AI-powered parsing<br/>
-        /// - `agentic_plus` — premium AI with specialized features<br/>
-        /// The job runs asynchronously. Poll `GET /parse/{job_id}` with<br/>
-        /// `expand=text` or `expand=markdown` to retrieve results.
+        /// List Parse Versions<br/>
+        /// List the parse versions accepted by each tier.
         /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="organizationId"></param>
-        /// <param name="session"></param>
-        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ParseJobResponse>> ParseFileApiV2ParsePostAsResponseAsync(
-
-            global::LlamaParse.ParseRequestConfiguration request,
-            global::System.Guid? projectId = default,
-            global::System.Guid? organizationId = default,
-            string? session = default,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ParseVersionsResponse>> ListParseVersionsApiV2ParseVersionsGetAsResponseAsync(
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareParseFileApiV2ParsePostArguments(
-                httpClient: HttpClient,
-                projectId: projectId,
-                organizationId: organizationId,
-                session: ref session,
-                request: request);
+            PrepareListParseVersionsApiV2ParseVersionsGetArguments(
+                httpClient: HttpClient);
 
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ParseFileApiV2ParsePostSecurityRequirements,
-                operationName: "ParseFileApiV2ParsePostAsync");
+                securityRequirements: s_ListParseVersionsApiV2ParseVersionsGetSecurityRequirements,
+                operationName: "ListParseVersionsApiV2ParseVersionsGetAsync");
 
             using var __timeoutCancellationTokenSource = global::LlamaParse.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -154,26 +97,20 @@ namespace LlamaParse
             {
 
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: "/api/v2/parse",
+                                path: "/api/v2/parse/versions",
                                 baseUri: HttpClient.BaseAddress);
-                            __pathBuilder
-                                .AddOptionalParameter("project_id", projectId?.ToString())
-                                .AddOptionalParameter("organization_id", organizationId?.ToString())
-                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
-
-                var __cookies = new global::System.Collections.Generic.List<string>();
 
             foreach (var __authorization in __authorizations)
             {
@@ -191,22 +128,6 @@ namespace LlamaParse
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __session = session;
-                            if (__session is not null)
-                            {
-                                __cookies.Add("session=" + (__session ?? string.Empty));
-                            }
-
-                if (__cookies.Count > 0)
-                            {
-                                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
-                            }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::LlamaParse.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -215,13 +136,9 @@ namespace LlamaParse
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareParseFileApiV2ParsePostRequest(
+                PrepareListParseVersionsApiV2ParseVersionsGetRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    organizationId: organizationId,
-                    session: session,
-                    request: request);
+                    httpRequestMessage: __httpRequest);
 
                 return __httpRequest;
             }
@@ -238,10 +155,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ParseFileApiV2ParsePost",
-                                methodName: "ParseFileApiV2ParsePostAsync",
-                                pathTemplate: "\"/api/v2/parse\"",
-                                httpMethod: "POST",
+                                operationId: "ListParseVersionsApiV2ParseVersionsGet",
+                                methodName: "ListParseVersionsApiV2ParseVersionsGetAsync",
+                                pathTemplate: "\"/api/v2/parse/versions\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -272,10 +189,10 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ParseFileApiV2ParsePost",
-                                methodName: "ParseFileApiV2ParsePostAsync",
-                                pathTemplate: "\"/api/v2/parse\"",
-                                httpMethod: "POST",
+                                operationId: "ListParseVersionsApiV2ParseVersionsGet",
+                                methodName: "ListParseVersionsApiV2ParseVersionsGetAsync",
+                                pathTemplate: "\"/api/v2/parse/versions\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -313,10 +230,10 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ParseFileApiV2ParsePost",
-                                methodName: "ParseFileApiV2ParsePostAsync",
-                                pathTemplate: "\"/api/v2/parse\"",
-                                httpMethod: "POST",
+                                operationId: "ListParseVersionsApiV2ParseVersionsGet",
+                                methodName: "ListParseVersionsApiV2ParseVersionsGetAsync",
+                                pathTemplate: "\"/api/v2/parse/versions\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -353,7 +270,7 @@ namespace LlamaParse
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessParseFileApiV2ParsePostResponse(
+                ProcessListParseVersionsApiV2ParseVersionsGetResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -361,10 +278,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ParseFileApiV2ParsePost",
-                                methodName: "ParseFileApiV2ParsePostAsync",
-                                pathTemplate: "\"/api/v2/parse\"",
-                                httpMethod: "POST",
+                                operationId: "ListParseVersionsApiV2ParseVersionsGet",
+                                methodName: "ListParseVersionsApiV2ParseVersionsGetAsync",
+                                pathTemplate: "\"/api/v2/parse/versions\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -383,10 +300,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ParseFileApiV2ParsePost",
-                                methodName: "ParseFileApiV2ParsePostAsync",
-                                pathTemplate: "\"/api/v2/parse\"",
-                                httpMethod: "POST",
+                                operationId: "ListParseVersionsApiV2ParseVersionsGet",
+                                methodName: "ListParseVersionsApiV2ParseVersionsGetAsync",
+                                pathTemplate: "\"/api/v2/parse/versions\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -400,44 +317,6 @@ namespace LlamaParse
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Validation Error
-                            if ((int)__response.StatusCode == 422)
-                            {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::LlamaParse.HTTPValidationError? __value_422 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::LlamaParse.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_422 = global::LlamaParse.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_422 = __ex;
-                                }
-
-                                throw new global::LlamaParse.ApiException<global::LlamaParse.HTTPValidationError>(
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value),
-                                };
-                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -451,7 +330,7 @@ namespace LlamaParse
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessParseFileApiV2ParsePostResponseContent(
+                                ProcessListParseVersionsApiV2ParseVersionsGetResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -460,9 +339,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.ParseJobResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.ParseVersionsResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ParseJobResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ParseVersionsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -494,9 +373,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.ParseJobResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.ParseVersionsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ParseJobResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ParseVersionsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -537,125 +416,6 @@ namespace LlamaParse
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Parse File<br/>
-        /// Parse a file by file ID or URL.<br/>
-        /// Provide either `file_id` (a previously uploaded file) or<br/>
-        /// `source_url` (a publicly accessible URL). Configure parsing<br/>
-        /// with options like `tier`, `target_pages`, and `lang`.<br/>
-        /// ## Tiers<br/>
-        /// - `fast` — rule-based, cheapest, no AI<br/>
-        /// - `cost_effective` — balanced speed and quality<br/>
-        /// - `agentic` — full AI-powered parsing<br/>
-        /// - `agentic_plus` — premium AI with specialized features<br/>
-        /// The job runs asynchronously. Poll `GET /parse/{job_id}` with<br/>
-        /// `expand=text` or `expand=markdown` to retrieve results.
-        /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="organizationId"></param>
-        /// <param name="session"></param>
-        /// <param name="tier">
-        /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
-        /// </param>
-        /// <param name="version">
-        /// Tier version. Use 'latest' for the current stable version, or pin a dated version for reproducible results. See GET /api/v2/parse/versions for the per-tier list.
-        /// </param>
-        /// <param name="clientName">
-        /// Identifier for the client/application making the request. Used for analytics and debugging. Example: 'my-app-v2'
-        /// </param>
-        /// <param name="processingOptions">
-        /// Document processing options including OCR, table extraction, and chart parsing
-        /// </param>
-        /// <param name="fastOptions">
-        /// Fast tier configuration options. Auto-initialized when tier='fast'. Cannot be used with other tiers
-        /// </param>
-        /// <param name="agenticOptions">
-        /// AI-powered tier configuration (custom prompts). Auto-initialized for cost_effective/agentic/agentic_plus tiers. Cannot be used with fast tier
-        /// </param>
-        /// <param name="webhookConfigurations">
-        /// Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services
-        /// </param>
-        /// <param name="inputOptions">
-        /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
-        /// </param>
-        /// <param name="cropBox">
-        /// Crop boundaries to process only a portion of each page. Values are ratios 0-1 from page edges
-        /// </param>
-        /// <param name="pageRanges">
-        /// Page selection: limit total pages or specify exact pages to process
-        /// </param>
-        /// <param name="disableCache">
-        /// Bypass result caching and force re-parsing. Use when document content may have changed or you need fresh results
-        /// </param>
-        /// <param name="outputOptions">
-        /// Output formatting options for markdown, text, and extracted images
-        /// </param>
-        /// <param name="processingControl">
-        /// Job execution controls including timeouts and failure thresholds
-        /// </param>
-        /// <param name="fileId">
-        /// ID of an existing file in the project to parse. Mutually exclusive with source_url
-        /// </param>
-        /// <param name="sourceUrl">
-        /// Public URL of the document to parse. Mutually exclusive with file_id
-        /// </param>
-        /// <param name="httpProxy">
-        /// HTTP/HTTPS proxy for fetching source_url. Ignored if using file_id
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.ParseJobResponse> ParseFileApiV2ParsePostAsync(
-            global::LlamaParse.ParseRequestConfigurationTier tier,
-            global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationVersion?, string> version,
-            global::System.Guid? projectId = default,
-            global::System.Guid? organizationId = default,
-            string? session = default,
-            string? clientName = default,
-            global::LlamaParse.LlamaParseProcessingOptions? processingOptions = default,
-            global::LlamaParse.LlamaParseFastOptions? fastOptions = default,
-            global::LlamaParse.LlamaParseAgenticOptions? agenticOptions = default,
-            global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? webhookConfigurations = default,
-            global::LlamaParse.LlamaParseInputOptions? inputOptions = default,
-            global::LlamaParse.LlamaParseCropBox? cropBox = default,
-            global::LlamaParse.LlamaParsePageRanges? pageRanges = default,
-            bool? disableCache = default,
-            global::LlamaParse.LlamaParseOutputOptions? outputOptions = default,
-            global::LlamaParse.LlamaParseProcessingControl? processingControl = default,
-            string? fileId = default,
-            string? sourceUrl = default,
-            string? httpProxy = default,
-            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LlamaParse.ParseRequestConfiguration
-            {
-                Tier = tier,
-                Version = version,
-                ClientName = clientName,
-                ProcessingOptions = processingOptions,
-                FastOptions = fastOptions,
-                AgenticOptions = agenticOptions,
-                WebhookConfigurations = webhookConfigurations,
-                InputOptions = inputOptions,
-                CropBox = cropBox,
-                PageRanges = pageRanges,
-                DisableCache = disableCache,
-                OutputOptions = outputOptions,
-                ProcessingControl = processingControl,
-                FileId = fileId,
-                SourceUrl = sourceUrl,
-                HttpProxy = httpProxy,
-            };
-
-            return await ParseFileApiV2ParsePostAsync(
-                projectId: projectId,
-                organizationId: organizationId,
-                session: session,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

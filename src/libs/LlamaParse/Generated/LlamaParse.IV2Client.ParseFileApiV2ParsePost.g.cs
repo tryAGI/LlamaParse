@@ -83,7 +83,7 @@ namespace LlamaParse
         /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
         /// </param>
         /// <param name="version">
-        /// Tier version. Use 'latest' for the current stable version, or specify a specific version (e.g., '1.0', '2.0') for reproducible results
+        /// Tier version. Use 'latest' for the current stable version, or pin a dated version for reproducible results. See GET /api/v2/parse/versions for the per-tier list.
         /// </param>
         /// <param name="clientName">
         /// Identifier for the client/application making the request. Used for analytics and debugging. Example: 'my-app-v2'
