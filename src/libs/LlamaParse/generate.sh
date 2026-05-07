@@ -8,10 +8,16 @@ rm -rf Generated
 curl --fail --silent --show-error -L -o openapi.yaml https://api.cloud.llamaindex.ai/api/openapi.json
 
 # Fix 1: Add servers section (spec has none).
+# Fix 2: Remove the request body from the directory-files listing GET endpoint.
+# The upstream spec exposes an optional JSON array body on a GET operation, which
+# currently makes AutoSDK generate an invalid IList<T> convenience overload.
 # Note: FilterOperator symbolic enum values (==, >, <, etc.) no longer need renaming —
 # AutoSDK dev.154+ generates clean names (Eq, Gt, Lt, etc.) natively and preserves
 # correct wire-format values.
-jq '.servers = [{"url": "https://api.cloud.llamaindex.ai"}]' openapi.yaml > openapi_fixed.yaml
+jq '
+  .servers = [{"url": "https://api.cloud.llamaindex.ai"}]
+  | del(.paths["/api/v1/beta/directories/{directory_id}/files"].get.requestBody)
+' openapi.yaml > openapi_fixed.yaml
 mv openapi_fixed.yaml openapi.yaml
 
 # Auth: --security-scheme ensures AutoSDK generates Bearer constructors.

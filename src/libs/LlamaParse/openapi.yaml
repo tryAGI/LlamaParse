@@ -13011,27 +13011,6 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "anyOf": [
-                  {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "maxItems": 200
-                  },
-                  {
-                    "type": "null"
-                  }
-                ],
-                "title": "Directory File Ids"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Successful Response",

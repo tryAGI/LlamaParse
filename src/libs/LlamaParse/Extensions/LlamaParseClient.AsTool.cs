@@ -25,11 +25,12 @@ public static class LlamaParseToolExtensions
     {
         ArgumentNullException.ThrowIfNull(client);
 
-        return AIFunctionFactory.Create(
-            async (string url, string? parsingInstruction, CancellationToken cancellationToken) =>
+        Func<string, string?, CancellationToken, Task<string>> parseUrlAsync =
+            async (url, parsingInstruction, cancellationToken) =>
             {
                 // Upload the URL for parsing
                 var job = await client.Parsing.UploadFileApiV1ParsingUploadPostAsync(
+                    file: (byte[]?)null,
                     inputUrl: url,
                     parsingInstruction: parsingInstruction,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -60,7 +61,10 @@ public static class LlamaParseToolExtensions
                 }
 
                 return $"Parsing timed out for URL '{url}' after {maxPollingAttempts * pollingIntervalMs / 1000} seconds.";
-            },
+            };
+
+        return AIFunctionFactory.Create(
+            parseUrlAsync,
             name: "ParseDocumentUrl",
             description: "Parses a document from a URL (PDF, DOCX, PPTX, HTML, etc.) and returns the content as markdown. Accepts an optional parsing instruction to guide the extraction. Supports 130+ file formats.");
     }

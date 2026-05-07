@@ -37,8 +37,7 @@ namespace LlamaParse
             ref bool? includeDeleted,
             int? pageSize,
             ref string? pageToken,
-            ref string? session,
-            global::System.Collections.Generic.IList<string> request);
+            ref string? session);
         partial void PrepareListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -52,8 +51,7 @@ namespace LlamaParse
             bool? includeDeleted,
             int? pageSize,
             string? pageToken,
-            string? session,
-            global::System.Collections.Generic.IList<string> request);
+            string? session);
         partial void ProcessListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -80,14 +78,11 @@ namespace LlamaParse
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
         /// <param name="session"></param>
-        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryFileQueryResponse> ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetAsync(
             string directoryId,
-
-            global::System.Collections.Generic.IList<string> request,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? displayName = default,
@@ -103,8 +98,6 @@ namespace LlamaParse
         {
             var __response = await ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetAsResponseAsync(
                 directoryId: directoryId,
-
-                request: request,
                 projectId: projectId,
                 organizationId: organizationId,
                 displayName: displayName,
@@ -138,14 +131,11 @@ namespace LlamaParse
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
         /// <param name="session"></param>
-        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DirectoryFileQueryResponse>> ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetAsResponseAsync(
             string directoryId,
-
-            global::System.Collections.Generic.IList<string> request,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? displayName = default,
@@ -159,8 +149,6 @@ namespace LlamaParse
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
             PrepareListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetArguments(
@@ -175,8 +163,7 @@ namespace LlamaParse
                 includeDeleted: ref includeDeleted,
                 pageSize: pageSize,
                 pageToken: ref pageToken,
-                session: ref session,
-                request: request);
+                session: ref session);
 
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
@@ -256,12 +243,6 @@ namespace LlamaParse
                             {
                                 __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
                             }
-                            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::LlamaParse.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -283,8 +264,7 @@ namespace LlamaParse
                     includeDeleted: includeDeleted,
                     pageSize: pageSize,
                     pageToken: pageToken,
-                    session: session,
-                    request: request);
+                    session: session);
 
                 return __httpRequest;
             }
@@ -600,61 +580,6 @@ namespace LlamaParse
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// List Directory Files<br/>
-        /// List all files within the specified directory with optional filtering and pagination.
-        /// </summary>
-        /// <param name="directoryId"></param>
-        /// <param name="projectId"></param>
-        /// <param name="organizationId"></param>
-        /// <param name="displayName"></param>
-        /// <param name="displayNameContains"></param>
-        /// <param name="uniqueId"></param>
-        /// <param name="fileId"></param>
-        /// <param name="includeDeleted">
-        /// Default Value: false
-        /// </param>
-        /// <param name="pageSize"></param>
-        /// <param name="pageToken"></param>
-        /// <param name="session"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryFileQueryResponse> ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetAsync(
-            string directoryId,
-            global::System.Guid? projectId = default,
-            global::System.Guid? organizationId = default,
-            string? displayName = default,
-            string? displayNameContains = default,
-            string? uniqueId = default,
-            string? fileId = default,
-            bool? includeDeleted = default,
-            int? pageSize = default,
-            string? pageToken = default,
-            string? session = default,
-            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::System.Collections.Generic.IList<string>
-            {
-            };
-
-            return await ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetAsync(
-                directoryId: directoryId,
-                projectId: projectId,
-                organizationId: organizationId,
-                displayName: displayName,
-                displayNameContains: displayNameContains,
-                uniqueId: uniqueId,
-                fileId: fileId,
-                includeDeleted: includeDeleted,
-                pageSize: pageSize,
-                pageToken: pageToken,
-                session: session,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
