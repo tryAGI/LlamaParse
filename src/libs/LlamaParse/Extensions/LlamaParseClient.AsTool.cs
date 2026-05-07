@@ -85,11 +85,7 @@ public static class LlamaParseToolExtensions
                     jobId: jobId,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return JsonSerializer.Serialize(new
-                {
-                    id = job.Id,
-                    status = job.Status.ToString(),
-                });
+                return $$"""{"id":"{{JsonEncodedText.Encode(job.Id).ToString()}}","status":"{{JsonEncodedText.Encode(job.Status.ToString()).ToString()}}"}""";
             },
             name: "GetParsingJobStatus",
             description: "Checks the status of a LlamaParse parsing job by job ID. Returns the job ID and current status (PENDING, SUCCESS, ERROR).");
@@ -132,7 +128,8 @@ public static class LlamaParseToolExtensions
                 var result = await client.Parsing.GetSupportedFileExtensionsApiV1ParsingSupportedFileExtensionsGetAsync(
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return JsonSerializer.Serialize(result);
+                return "[" + string.Join(",", result.Select(extension =>
+                    $"\"{JsonEncodedText.Encode(extension.ToValueString()).ToString()}\"")) + "]";
             },
             name: "GetSupportedFileExtensions",
             description: "Lists all file extensions supported by LlamaParse for document parsing (PDF, DOCX, PPTX, HTML, and 130+ more).");
