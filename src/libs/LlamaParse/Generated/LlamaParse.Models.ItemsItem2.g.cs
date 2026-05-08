@@ -34,6 +34,19 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.TextItem? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.HeadingItem? Heading { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Heading))]
 #endif
         public bool IsHeading => Heading != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHeading(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.HeadingItem? value)
+        {
+            value = Heading;
+            return IsHeading;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickList(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.ListItem? value)
+        {
+            value = List;
+            return IsList;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.CodeItem? Code { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Code))]
 #endif
         public bool IsCode => Code != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.CodeItem? value)
+        {
+            value = Code;
+            return IsCode;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTable(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.TableItem? value)
+        {
+            value = Table;
+            return IsTable;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.ImageItem? Image { get; init; }
 #else
@@ -119,6 +184,19 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.ImageItem? value)
+        {
+            value = Image;
+            return IsImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.LinkItem? Link { get; init; }
 #else
@@ -132,6 +210,19 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Link))]
 #endif
         public bool IsLink => Link != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLink(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.LinkItem? value)
+        {
+            value = Link;
+            return IsLink;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -321,13 +412,13 @@ namespace LlamaParse
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LlamaParse.TextItem?, TResult>? text = null,
-            global::System.Func<global::LlamaParse.HeadingItem?, TResult>? heading = null,
-            global::System.Func<global::LlamaParse.ListItem?, TResult>? list = null,
-            global::System.Func<global::LlamaParse.CodeItem?, TResult>? code = null,
-            global::System.Func<global::LlamaParse.TableItem?, TResult>? table = null,
-            global::System.Func<global::LlamaParse.ImageItem?, TResult>? image = null,
-            global::System.Func<global::LlamaParse.LinkItem?, TResult>? link = null,
+            global::System.Func<global::LlamaParse.TextItem, TResult>? text = null,
+            global::System.Func<global::LlamaParse.HeadingItem, TResult>? heading = null,
+            global::System.Func<global::LlamaParse.ListItem, TResult>? list = null,
+            global::System.Func<global::LlamaParse.CodeItem, TResult>? code = null,
+            global::System.Func<global::LlamaParse.TableItem, TResult>? table = null,
+            global::System.Func<global::LlamaParse.ImageItem, TResult>? image = null,
+            global::System.Func<global::LlamaParse.LinkItem, TResult>? link = null,
             bool validate = true)
         {
             if (validate)
@@ -371,13 +462,67 @@ namespace LlamaParse
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::LlamaParse.TextItem?>? text = null,
-            global::System.Action<global::LlamaParse.HeadingItem?>? heading = null,
-            global::System.Action<global::LlamaParse.ListItem?>? list = null,
-            global::System.Action<global::LlamaParse.CodeItem?>? code = null,
-            global::System.Action<global::LlamaParse.TableItem?>? table = null,
-            global::System.Action<global::LlamaParse.ImageItem?>? image = null,
-            global::System.Action<global::LlamaParse.LinkItem?>? link = null,
+            global::System.Action<global::LlamaParse.TextItem>? text = null,
+
+            global::System.Action<global::LlamaParse.HeadingItem>? heading = null,
+
+            global::System.Action<global::LlamaParse.ListItem>? list = null,
+
+            global::System.Action<global::LlamaParse.CodeItem>? code = null,
+
+            global::System.Action<global::LlamaParse.TableItem>? table = null,
+
+            global::System.Action<global::LlamaParse.ImageItem>? image = null,
+
+            global::System.Action<global::LlamaParse.LinkItem>? link = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsHeading)
+            {
+                heading?.Invoke(Heading!);
+            }
+            else if (IsList)
+            {
+                list?.Invoke(List!);
+            }
+            else if (IsCode)
+            {
+                code?.Invoke(Code!);
+            }
+            else if (IsTable)
+            {
+                table?.Invoke(Table!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsLink)
+            {
+                link?.Invoke(Link!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::LlamaParse.TextItem>? text = null,
+            global::System.Action<global::LlamaParse.HeadingItem>? heading = null,
+            global::System.Action<global::LlamaParse.ListItem>? list = null,
+            global::System.Action<global::LlamaParse.CodeItem>? code = null,
+            global::System.Action<global::LlamaParse.TableItem>? table = null,
+            global::System.Action<global::LlamaParse.ImageItem>? image = null,
+            global::System.Action<global::LlamaParse.LinkItem>? link = null,
             bool validate = true)
         {
             if (validate)
