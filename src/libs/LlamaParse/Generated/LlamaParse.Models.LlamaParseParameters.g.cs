@@ -1229,5 +1229,6 @@ namespace LlamaParse
         public LlamaParseParameters()
         {
         }
+
     }
 }

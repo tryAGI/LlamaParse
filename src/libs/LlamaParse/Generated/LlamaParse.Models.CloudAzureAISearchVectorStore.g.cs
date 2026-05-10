@@ -136,5 +136,6 @@ namespace LlamaParse
         public CloudAzureAISearchVectorStore()
         {
         }
+
     }
 }

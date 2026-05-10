@@ -58,5 +58,6 @@ namespace LlamaParse
         public AggregateGroup()
         {
         }
+
     }
 }

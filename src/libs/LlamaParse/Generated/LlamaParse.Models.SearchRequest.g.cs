@@ -125,5 +125,6 @@ namespace LlamaParse
         public SearchRequest()
         {
         }
+
     }
 }

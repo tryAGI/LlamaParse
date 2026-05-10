@@ -55,5 +55,6 @@ namespace LlamaParse
         public ConfigurationCreateRequest()
         {
         }
+
     }
 }

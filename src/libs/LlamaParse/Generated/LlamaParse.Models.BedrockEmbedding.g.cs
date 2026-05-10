@@ -170,5 +170,6 @@ namespace LlamaParse
         public BedrockEmbedding()
         {
         }
+
     }
 }

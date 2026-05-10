@@ -90,5 +90,6 @@ namespace LlamaParse
         public ClassifyV2JobCreateRequest()
         {
         }
+
     }
 }

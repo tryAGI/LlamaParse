@@ -452,5 +452,6 @@ namespace LlamaParse
         public AutoModeConfigurationEntry()
         {
         }
+
     }
 }

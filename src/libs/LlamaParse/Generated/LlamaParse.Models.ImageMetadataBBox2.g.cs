@@ -78,5 +78,6 @@ namespace LlamaParse
         public ImageMetadataBBox2()
         {
         }
+
     }
 }

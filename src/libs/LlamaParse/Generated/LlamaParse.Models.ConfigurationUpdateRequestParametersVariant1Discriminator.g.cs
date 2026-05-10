@@ -40,5 +40,6 @@ namespace LlamaParse
         public ConfigurationUpdateRequestParametersVariant1Discriminator()
         {
         }
+
     }
 }

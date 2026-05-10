@@ -60,5 +60,6 @@ namespace LlamaParse
         public CompositeRetrievedTextNodeWithScore()
         {
         }
+
     }
 }

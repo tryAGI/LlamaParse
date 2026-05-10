@@ -212,5 +212,6 @@ namespace LlamaParse
         public RetrievalParams()
         {
         }
+
     }
 }

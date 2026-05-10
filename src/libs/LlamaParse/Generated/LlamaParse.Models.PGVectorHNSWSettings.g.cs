@@ -97,5 +97,6 @@ namespace LlamaParse
         public PGVectorHNSWSettings()
         {
         }
+
     }
 }
