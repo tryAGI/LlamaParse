@@ -45,6 +45,13 @@ namespace LlamaParse
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.SplitV1Parameters PickSplitV1() => IsSplitV1
+            ? SplitV1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SplitV1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Typed parameters for an *extract v2* product configuration.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace LlamaParse
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.ExtractV2Parameters PickExtractV2() => IsExtractV2
+            ? ExtractV2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExtractV2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Typed parameters for a *classify v2* product configuration.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace LlamaParse
             value = ClassifyV2;
             return IsClassifyV2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.ClassifyV2Parameters PickClassifyV2() => IsClassifyV2
+            ? ClassifyV2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClassifyV2' but the value was {ToString()}.");
 
         /// <summary>
         /// Configuration for LlamaParse v2 document parsing.<br/>
@@ -138,6 +159,13 @@ namespace LlamaParse
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.ParseV2Parameters PickParseV2() => IsParseV2
+            ? ParseV2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ParseV2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Typed parameters for a *spreadsheet v1* product configuration.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -166,6 +194,13 @@ namespace LlamaParse
             value = SpreadsheetV1;
             return IsSpreadsheetV1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.SpreadsheetV1Parameters PickSpreadsheetV1() => IsSpreadsheetV1
+            ? SpreadsheetV1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpreadsheetV1' but the value was {ToString()}.");
 
         /// <summary>
         /// Catch-all for configurations without a dedicated typed schema.<br/>
@@ -197,6 +232,13 @@ namespace LlamaParse
             value = Unknown;
             return IsUnknown;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.UntypedParameters PickUnknown() => IsUnknown
+            ? Unknown!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Unknown' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -214,6 +256,11 @@ namespace LlamaParse
         {
             SplitV1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Parameters FromSplitV1(global::LlamaParse.SplitV1Parameters? value) => new Parameters(value);
 
         /// <summary>
         /// 
@@ -236,6 +283,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public static Parameters FromExtractV2(global::LlamaParse.ExtractV2Parameters? value) => new Parameters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Parameters(global::LlamaParse.ClassifyV2Parameters value) => new Parameters((global::LlamaParse.ClassifyV2Parameters?)value);
 
         /// <summary>
@@ -250,6 +302,11 @@ namespace LlamaParse
         {
             ClassifyV2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Parameters FromClassifyV2(global::LlamaParse.ClassifyV2Parameters? value) => new Parameters(value);
 
         /// <summary>
         /// 
@@ -272,6 +329,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public static Parameters FromParseV2(global::LlamaParse.ParseV2Parameters? value) => new Parameters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Parameters(global::LlamaParse.SpreadsheetV1Parameters value) => new Parameters((global::LlamaParse.SpreadsheetV1Parameters?)value);
 
         /// <summary>
@@ -290,6 +352,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public static Parameters FromSpreadsheetV1(global::LlamaParse.SpreadsheetV1Parameters? value) => new Parameters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Parameters(global::LlamaParse.UntypedParameters value) => new Parameters((global::LlamaParse.UntypedParameters?)value);
 
         /// <summary>
@@ -304,6 +371,11 @@ namespace LlamaParse
         {
             Unknown = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Parameters FromUnknown(global::LlamaParse.UntypedParameters? value) => new Parameters(value);
 
         /// <summary>
         /// 

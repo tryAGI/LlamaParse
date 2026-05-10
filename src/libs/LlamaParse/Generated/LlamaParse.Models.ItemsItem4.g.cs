@@ -47,6 +47,13 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public global::LlamaParse.TextItem PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.HeadingItem? Heading { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace LlamaParse
             value = Heading;
             return IsHeading;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.HeadingItem PickHeading() => IsHeading
+            ? Heading!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Heading' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public global::LlamaParse.ListItem PickList() => IsList
+            ? List!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'List' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.CodeItem? Code { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace LlamaParse
             value = Code;
             return IsCode;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.CodeItem PickCode() => IsCode
+            ? Code!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public global::LlamaParse.TableItem PickTable() => IsTable
+            ? Table!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.ImageItem? Image { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace LlamaParse
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.ImageItem PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -227,6 +269,13 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public global::LlamaParse.LinkItem PickLink() => IsLink
+            ? Link!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Link' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.HeaderItem? Header { get; init; }
 #else
@@ -257,6 +306,13 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public global::LlamaParse.HeaderItem PickHeader() => IsHeader
+            ? Header!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Header' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.FooterItem? Footer { get; init; }
 #else
@@ -283,6 +339,13 @@ namespace LlamaParse
             value = Footer;
             return IsFooter;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.FooterItem PickFooter() => IsFooter
+            ? Footer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Footer' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -300,6 +363,11 @@ namespace LlamaParse
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem4 FromText(global::LlamaParse.TextItem? value) => new ItemsItem4(value);
 
         /// <summary>
         /// 
@@ -322,6 +390,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem4 FromHeading(global::LlamaParse.HeadingItem? value) => new ItemsItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem4(global::LlamaParse.ListItem value) => new ItemsItem4((global::LlamaParse.ListItem?)value);
 
         /// <summary>
@@ -336,6 +409,11 @@ namespace LlamaParse
         {
             List = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem4 FromList(global::LlamaParse.ListItem? value) => new ItemsItem4(value);
 
         /// <summary>
         /// 
@@ -358,6 +436,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem4 FromCode(global::LlamaParse.CodeItem? value) => new ItemsItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem4(global::LlamaParse.TableItem value) => new ItemsItem4((global::LlamaParse.TableItem?)value);
 
         /// <summary>
@@ -372,6 +455,11 @@ namespace LlamaParse
         {
             Table = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem4 FromTable(global::LlamaParse.TableItem? value) => new ItemsItem4(value);
 
         /// <summary>
         /// 
@@ -394,6 +482,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem4 FromImage(global::LlamaParse.ImageItem? value) => new ItemsItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem4(global::LlamaParse.LinkItem value) => new ItemsItem4((global::LlamaParse.LinkItem?)value);
 
         /// <summary>
@@ -408,6 +501,11 @@ namespace LlamaParse
         {
             Link = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem4 FromLink(global::LlamaParse.LinkItem? value) => new ItemsItem4(value);
 
         /// <summary>
         /// 
@@ -430,6 +528,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem4 FromHeader(global::LlamaParse.HeaderItem? value) => new ItemsItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem4(global::LlamaParse.FooterItem value) => new ItemsItem4((global::LlamaParse.FooterItem?)value);
 
         /// <summary>
@@ -444,6 +547,11 @@ namespace LlamaParse
         {
             Footer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem4 FromFooter(global::LlamaParse.FooterItem? value) => new ItemsItem4(value);
 
         /// <summary>
         /// 
