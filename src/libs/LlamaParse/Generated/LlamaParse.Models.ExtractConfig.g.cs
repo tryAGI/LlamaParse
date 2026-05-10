@@ -227,5 +227,6 @@ namespace LlamaParse
         public ExtractConfig()
         {
         }
+
     }
 }

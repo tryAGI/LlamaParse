@@ -65,5 +65,6 @@ namespace LlamaParse
         public ClassifyV2Result()
         {
         }
+
     }
 }

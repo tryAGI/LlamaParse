@@ -108,5 +108,6 @@ namespace LlamaParse
         public FilterOperation()
         {
         }
+
     }
 }

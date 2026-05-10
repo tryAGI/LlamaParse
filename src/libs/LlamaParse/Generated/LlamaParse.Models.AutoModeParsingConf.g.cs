@@ -188,5 +188,6 @@ namespace LlamaParse
         public AutoModeParsingConf()
         {
         }
+
     }
 }

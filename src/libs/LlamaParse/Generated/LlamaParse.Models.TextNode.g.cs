@@ -192,5 +192,6 @@ namespace LlamaParse
         public TextNode()
         {
         }
+
     }
 }

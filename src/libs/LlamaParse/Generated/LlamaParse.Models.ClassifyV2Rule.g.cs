@@ -54,5 +54,6 @@ namespace LlamaParse
         public ClassifyV2Rule()
         {
         }
+
     }
 }

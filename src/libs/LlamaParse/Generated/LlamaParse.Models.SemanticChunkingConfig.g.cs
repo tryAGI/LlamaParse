@@ -63,5 +63,6 @@ namespace LlamaParse
         public SemanticChunkingConfig()
         {
         }
+
     }
 }

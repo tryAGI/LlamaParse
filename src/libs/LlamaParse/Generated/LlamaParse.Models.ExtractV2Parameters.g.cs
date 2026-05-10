@@ -176,5 +176,18 @@ namespace LlamaParse
         public ExtractV2Parameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ExtractV2Parameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ExtractV2Parameters FromDataSchema(object dataSchema)
+        {
+            return new ExtractV2Parameters
+            {
+                DataSchema = dataSchema,
+            };
+        }
+
     }
 }

@@ -122,5 +122,6 @@ namespace LlamaParse
         public ParseJobResponse()
         {
         }
+
     }
 }

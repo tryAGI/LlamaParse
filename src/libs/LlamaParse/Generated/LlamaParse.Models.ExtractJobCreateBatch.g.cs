@@ -88,5 +88,6 @@ namespace LlamaParse
         public ExtractJobCreateBatch()
         {
         }
+
     }
 }

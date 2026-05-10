@@ -143,5 +143,6 @@ namespace LlamaParse
         public BatchParseJobRecordCreate()
         {
         }
+
     }
 }

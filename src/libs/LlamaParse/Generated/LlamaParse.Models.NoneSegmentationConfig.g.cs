@@ -41,5 +41,6 @@ namespace LlamaParse
         public NoneSegmentationConfig()
         {
         }
+
     }
 }

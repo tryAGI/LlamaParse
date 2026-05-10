@@ -205,5 +205,6 @@ namespace LlamaParse
         public AzureOpenAIEmbedding()
         {
         }
+
     }
 }

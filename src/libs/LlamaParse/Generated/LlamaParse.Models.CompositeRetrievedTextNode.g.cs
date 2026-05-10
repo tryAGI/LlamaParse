@@ -123,5 +123,6 @@ namespace LlamaParse
         public CompositeRetrievedTextNode()
         {
         }
+
     }
 }

@@ -52,5 +52,6 @@ namespace LlamaParse
         public PipelineMetadataConfig2()
         {
         }
+
     }
 }

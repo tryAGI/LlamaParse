@@ -112,5 +112,6 @@ namespace LlamaParse
         public Organization()
         {
         }
+
     }
 }

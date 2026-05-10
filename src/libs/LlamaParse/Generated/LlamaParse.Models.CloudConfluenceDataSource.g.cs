@@ -189,5 +189,6 @@ namespace LlamaParse
         public CloudConfluenceDataSource()
         {
         }
+
     }
 }

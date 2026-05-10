@@ -120,5 +120,6 @@ namespace LlamaParse
         public CloudAstraDBVectorStore()
         {
         }
+
     }
 }

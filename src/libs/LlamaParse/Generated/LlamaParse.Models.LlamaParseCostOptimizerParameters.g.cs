@@ -44,5 +44,6 @@ namespace LlamaParse
         public LlamaParseCostOptimizerParameters()
         {
         }
+
     }
 }

@@ -89,5 +89,6 @@ namespace LlamaParse
         public CloudMilvusVectorStore()
         {
         }
+
     }
 }

@@ -74,5 +74,6 @@ namespace LlamaParse
         public ExtractV2SchemaGenerateRequest()
         {
         }
+
     }
 }

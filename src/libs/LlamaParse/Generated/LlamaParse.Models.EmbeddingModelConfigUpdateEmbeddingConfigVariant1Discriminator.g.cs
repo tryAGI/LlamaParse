@@ -40,5 +40,6 @@ namespace LlamaParse
         public EmbeddingModelConfigUpdateEmbeddingConfigVariant1Discriminator()
         {
         }
+
     }
 }

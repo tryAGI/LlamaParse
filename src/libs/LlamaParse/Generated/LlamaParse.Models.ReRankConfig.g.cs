@@ -57,5 +57,6 @@ namespace LlamaParse
         public ReRankConfig()
         {
         }
+
     }
 }

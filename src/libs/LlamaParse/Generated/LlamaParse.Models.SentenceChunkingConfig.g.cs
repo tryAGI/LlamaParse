@@ -81,5 +81,6 @@ namespace LlamaParse
         public SentenceChunkingConfig()
         {
         }
+
     }
 }

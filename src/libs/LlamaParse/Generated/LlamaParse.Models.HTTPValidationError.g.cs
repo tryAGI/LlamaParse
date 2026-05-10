@@ -39,5 +39,6 @@ namespace LlamaParse
         public HTTPValidationError()
         {
         }
+
     }
 }
