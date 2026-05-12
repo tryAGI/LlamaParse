@@ -22,12 +22,6 @@ namespace LlamaParse
         public string? Description { get; set; }
 
         /// <summary>
-        /// Optional data source id the directory syncs from.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data_source_id")]
-        public string? DataSourceId { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -42,20 +36,15 @@ namespace LlamaParse
         /// <param name="description">
         /// Optional description shown to users.
         /// </param>
-        /// <param name="dataSourceId">
-        /// Optional data source id the directory syncs from.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DirectoryCreateRequest(
             string name,
-            string? description,
-            string? dataSourceId)
+            string? description)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
-            this.DataSourceId = dataSourceId;
         }
 
         /// <summary>

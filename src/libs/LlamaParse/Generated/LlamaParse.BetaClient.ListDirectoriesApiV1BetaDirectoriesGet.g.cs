@@ -30,7 +30,6 @@ namespace LlamaParse
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? name,
-            ref string? dataSourceId,
             global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type,
             ref bool? includeDeleted,
             int? pageSize,
@@ -42,7 +41,6 @@ namespace LlamaParse
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? name,
-            string? dataSourceId,
             global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type,
             bool? includeDeleted,
             int? pageSize,
@@ -63,7 +61,6 @@ namespace LlamaParse
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="name"></param>
-        /// <param name="dataSourceId"></param>
         /// <param name="type"></param>
         /// <param name="includeDeleted">
         /// Default Value: false
@@ -78,7 +75,6 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? name = default,
-            string? dataSourceId = default,
             global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type = default,
             bool? includeDeleted = default,
             int? pageSize = default,
@@ -91,7 +87,6 @@ namespace LlamaParse
                 projectId: projectId,
                 organizationId: organizationId,
                 name: name,
-                dataSourceId: dataSourceId,
                 type: type,
                 includeDeleted: includeDeleted,
                 pageSize: pageSize,
@@ -109,7 +104,6 @@ namespace LlamaParse
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="name"></param>
-        /// <param name="dataSourceId"></param>
         /// <param name="type"></param>
         /// <param name="includeDeleted">
         /// Default Value: false
@@ -124,7 +118,6 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? name = default,
-            string? dataSourceId = default,
             global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type = default,
             bool? includeDeleted = default,
             int? pageSize = default,
@@ -140,7 +133,6 @@ namespace LlamaParse
                 projectId: projectId,
                 organizationId: organizationId,
                 name: ref name,
-                dataSourceId: ref dataSourceId,
                 type: type,
                 includeDeleted: ref includeDeleted,
                 pageSize: pageSize,
@@ -177,7 +169,6 @@ namespace LlamaParse
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("data_source_id", dataSourceId)
                                 .AddOptionalParameter("type", type?.ToString())
                                 .AddOptionalParameter("include_deleted", includeDeleted?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
@@ -238,7 +229,6 @@ namespace LlamaParse
                     projectId: projectId,
                     organizationId: organizationId,
                     name: name,
-                    dataSourceId: dataSourceId,
                     type: type,
                     includeDeleted: includeDeleted,
                     pageSize: pageSize,

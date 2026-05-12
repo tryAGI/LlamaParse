@@ -28,6 +28,7 @@ namespace LlamaParse
         partial void PrepareListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string directoryId,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? displayName,
@@ -37,11 +38,14 @@ namespace LlamaParse
             ref bool? includeDeleted,
             int? pageSize,
             ref string? pageToken,
+            global::System.DateTime? updatedAtOnOrAfter,
+            global::System.DateTime? updatedAtOnOrBefore,
             ref string? session);
         partial void PrepareListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string directoryId,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? displayName,
@@ -51,6 +55,8 @@ namespace LlamaParse
             bool? includeDeleted,
             int? pageSize,
             string? pageToken,
+            global::System.DateTime? updatedAtOnOrAfter,
+            global::System.DateTime? updatedAtOnOrBefore,
             string? session);
         partial void ProcessListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -66,6 +72,9 @@ namespace LlamaParse
         /// List all files within the specified directory with optional filtering and pagination.
         /// </summary>
         /// <param name="directoryId"></param>
+        /// <param name="expand">
+        /// Fields to expand on each directory file.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="displayName"></param>
@@ -77,12 +86,19 @@ namespace LlamaParse
         /// </param>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
+        /// <param name="updatedAtOnOrAfter">
+        /// Include items updated at or after this timestamp (inclusive)
+        /// </param>
+        /// <param name="updatedAtOnOrBefore">
+        /// Include items updated at or before this timestamp (inclusive)
+        /// </param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryFileQueryResponse> ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetAsync(
             string directoryId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? displayName = default,
@@ -92,12 +108,15 @@ namespace LlamaParse
             bool? includeDeleted = default,
             int? pageSize = default,
             string? pageToken = default,
+            global::System.DateTime? updatedAtOnOrAfter = default,
+            global::System.DateTime? updatedAtOnOrBefore = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetAsResponseAsync(
                 directoryId: directoryId,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 displayName: displayName,
@@ -107,6 +126,8 @@ namespace LlamaParse
                 includeDeleted: includeDeleted,
                 pageSize: pageSize,
                 pageToken: pageToken,
+                updatedAtOnOrAfter: updatedAtOnOrAfter,
+                updatedAtOnOrBefore: updatedAtOnOrBefore,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -119,6 +140,9 @@ namespace LlamaParse
         /// List all files within the specified directory with optional filtering and pagination.
         /// </summary>
         /// <param name="directoryId"></param>
+        /// <param name="expand">
+        /// Fields to expand on each directory file.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="displayName"></param>
@@ -130,12 +154,19 @@ namespace LlamaParse
         /// </param>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
+        /// <param name="updatedAtOnOrAfter">
+        /// Include items updated at or after this timestamp (inclusive)
+        /// </param>
+        /// <param name="updatedAtOnOrBefore">
+        /// Include items updated at or before this timestamp (inclusive)
+        /// </param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DirectoryFileQueryResponse>> ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetAsResponseAsync(
             string directoryId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? displayName = default,
@@ -145,6 +176,8 @@ namespace LlamaParse
             bool? includeDeleted = default,
             int? pageSize = default,
             string? pageToken = default,
+            global::System.DateTime? updatedAtOnOrAfter = default,
+            global::System.DateTime? updatedAtOnOrBefore = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -154,6 +187,7 @@ namespace LlamaParse
             PrepareListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetArguments(
                 httpClient: HttpClient,
                 directoryId: ref directoryId,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 displayName: ref displayName,
@@ -163,6 +197,8 @@ namespace LlamaParse
                 includeDeleted: ref includeDeleted,
                 pageSize: pageSize,
                 pageToken: ref pageToken,
+                updatedAtOnOrAfter: updatedAtOnOrAfter,
+                updatedAtOnOrBefore: updatedAtOnOrBefore,
                 session: ref session);
 
 
@@ -192,6 +228,7 @@ namespace LlamaParse
                                 path: $"/api/v1/beta/directories/{directoryId}/files",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("expand", expand?.ToString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("display_name", displayName)
@@ -201,6 +238,8 @@ namespace LlamaParse
                                 .AddOptionalParameter("include_deleted", includeDeleted?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
+                                .AddOptionalParameter("updated_at_on_or_after", updatedAtOnOrAfter?.ToString())
+                                .AddOptionalParameter("updated_at_on_or_before", updatedAtOnOrBefore?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -255,6 +294,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     directoryId: directoryId!,
+                    expand: expand,
                     projectId: projectId,
                     organizationId: organizationId,
                     displayName: displayName,
@@ -264,6 +304,8 @@ namespace LlamaParse
                     includeDeleted: includeDeleted,
                     pageSize: pageSize,
                     pageToken: pageToken,
+                    updatedAtOnOrAfter: updatedAtOnOrAfter,
+                    updatedAtOnOrBefore: updatedAtOnOrBefore,
                     session: session);
 
                 return __httpRequest;

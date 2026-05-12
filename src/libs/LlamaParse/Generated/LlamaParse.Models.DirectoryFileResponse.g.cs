@@ -56,12 +56,6 @@ namespace LlamaParse
         public required string DisplayName { get; set; }
 
         /// <summary>
-        /// Optional data source credential associated with the file.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data_source_id")]
-        public string? DataSourceId { get; set; }
-
-        /// <summary>
         /// File ID for the storage location.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
@@ -78,6 +72,12 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_at")]
         public global::System.DateTime? DeletedAt { get; set; }
+
+        /// <summary>
+        /// Presigned URL to download the underlying file content.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("download_url")]
+        public global::LlamaParse.PresignedUrl? DownloadUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -109,9 +109,6 @@ namespace LlamaParse
         /// <param name="updatedAt">
         /// Update datetime
         /// </param>
-        /// <param name="dataSourceId">
-        /// Optional data source credential associated with the file.
-        /// </param>
         /// <param name="fileId">
         /// File ID for the storage location.
         /// </param>
@@ -120,6 +117,9 @@ namespace LlamaParse
         /// </param>
         /// <param name="deletedAt">
         /// Soft delete marker when the file is removed upstream or by user action.
+        /// </param>
+        /// <param name="downloadUrl">
+        /// Presigned URL to download the underlying file content.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -132,10 +132,10 @@ namespace LlamaParse
             string displayName,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
-            string? dataSourceId,
             string? fileId,
             object? metadata,
-            global::System.DateTime? deletedAt)
+            global::System.DateTime? deletedAt,
+            global::LlamaParse.PresignedUrl? downloadUrl)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
@@ -144,10 +144,10 @@ namespace LlamaParse
             this.DirectoryId = directoryId ?? throw new global::System.ArgumentNullException(nameof(directoryId));
             this.UniqueId = uniqueId ?? throw new global::System.ArgumentNullException(nameof(uniqueId));
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
-            this.DataSourceId = dataSourceId;
             this.FileId = fileId;
             this.Metadata = metadata;
             this.DeletedAt = deletedAt;
+            this.DownloadUrl = downloadUrl;
         }
 
         /// <summary>

@@ -9,6 +9,9 @@ namespace LlamaParse
         /// List all files within the specified directory with optional filtering and pagination.
         /// </summary>
         /// <param name="directoryId"></param>
+        /// <param name="expand">
+        /// Fields to expand on each directory file.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="displayName"></param>
@@ -20,12 +23,19 @@ namespace LlamaParse
         /// </param>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
+        /// <param name="updatedAtOnOrAfter">
+        /// Include items updated at or after this timestamp (inclusive)
+        /// </param>
+        /// <param name="updatedAtOnOrBefore">
+        /// Include items updated at or before this timestamp (inclusive)
+        /// </param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryFileQueryResponse> ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetAsync(
             string directoryId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? displayName = default,
@@ -35,6 +45,8 @@ namespace LlamaParse
             bool? includeDeleted = default,
             int? pageSize = default,
             string? pageToken = default,
+            global::System.DateTime? updatedAtOnOrAfter = default,
+            global::System.DateTime? updatedAtOnOrBefore = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -43,6 +55,9 @@ namespace LlamaParse
         /// List all files within the specified directory with optional filtering and pagination.
         /// </summary>
         /// <param name="directoryId"></param>
+        /// <param name="expand">
+        /// Fields to expand on each directory file.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="displayName"></param>
@@ -54,12 +69,19 @@ namespace LlamaParse
         /// </param>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
+        /// <param name="updatedAtOnOrAfter">
+        /// Include items updated at or after this timestamp (inclusive)
+        /// </param>
+        /// <param name="updatedAtOnOrBefore">
+        /// Include items updated at or before this timestamp (inclusive)
+        /// </param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DirectoryFileQueryResponse>> ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetAsResponseAsync(
             string directoryId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? displayName = default,
@@ -69,6 +91,8 @@ namespace LlamaParse
             bool? includeDeleted = default,
             int? pageSize = default,
             string? pageToken = default,
+            global::System.DateTime? updatedAtOnOrAfter = default,
+            global::System.DateTime? updatedAtOnOrBefore = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Optional data source id the directory syncs from.
+    /// Creation datetime
     /// </summary>
-    public sealed partial class DirectoryCreateRequestDataSourceId
+    public sealed partial class ProjectResponseCreatedAt
     {
 
         /// <summary>
