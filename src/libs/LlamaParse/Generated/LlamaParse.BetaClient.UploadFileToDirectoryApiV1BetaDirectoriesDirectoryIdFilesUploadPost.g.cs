@@ -285,6 +285,14 @@ namespace LlamaParse
                                     name: "\"external_file_id\"");
 
                             }
+                            if (request.Metadata != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Metadata ?? string.Empty),
+                                    name: "\"metadata\"");
+
+                            }
 
                             __httpRequest.Content = __httpRequestContent;
 
@@ -635,6 +643,9 @@ namespace LlamaParse
         /// <param name="uniqueId"></param>
         /// <param name="displayName"></param>
         /// <param name="externalFileId"></param>
+        /// <param name="metadata">
+        /// User metadata as a JSON object string.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -648,6 +659,7 @@ namespace LlamaParse
             string? uniqueId = default,
             string? displayName = default,
             string? externalFileId = default,
+            string? metadata = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -658,6 +670,7 @@ namespace LlamaParse
                 UniqueId = uniqueId,
                 DisplayName = displayName,
                 ExternalFileId = externalFileId,
+                Metadata = metadata,
             };
 
             return await UploadFileToDirectoryApiV1BetaDirectoriesDirectoryIdFilesUploadPostAsync(
@@ -687,6 +700,9 @@ namespace LlamaParse
         /// <param name="uniqueId"></param>
         /// <param name="displayName"></param>
         /// <param name="externalFileId"></param>
+        /// <param name="metadata">
+        /// User metadata as a JSON object string.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
@@ -700,6 +716,7 @@ namespace LlamaParse
             string? uniqueId = default,
             string? displayName = default,
             string? externalFileId = default,
+            string? metadata = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -712,6 +729,7 @@ namespace LlamaParse
                 UniqueId = uniqueId,
                 DisplayName = displayName,
                 ExternalFileId = externalFileId,
+                Metadata = metadata,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -884,6 +902,14 @@ namespace LlamaParse
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.ExternalFileId ?? string.Empty),
                                     name: "\"external_file_id\"");
+
+                            }
+                            if (request.Metadata != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Metadata ?? string.Empty),
+                                    name: "\"metadata\"");
 
                             }
 
@@ -1230,6 +1256,9 @@ namespace LlamaParse
         /// <param name="uniqueId"></param>
         /// <param name="displayName"></param>
         /// <param name="externalFileId"></param>
+        /// <param name="metadata">
+        /// User metadata as a JSON object string.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
@@ -1243,6 +1272,7 @@ namespace LlamaParse
             string? uniqueId = default,
             string? displayName = default,
             string? externalFileId = default,
+            string? metadata = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1255,6 +1285,7 @@ namespace LlamaParse
                 UniqueId = uniqueId,
                 DisplayName = displayName,
                 ExternalFileId = externalFileId,
+                Metadata = metadata,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -1427,6 +1458,14 @@ namespace LlamaParse
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.ExternalFileId ?? string.Empty),
                                     name: "\"external_file_id\"");
+
+                            }
+                            if (request.Metadata != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Metadata ?? string.Empty),
+                                    name: "\"metadata\"");
 
                             }
 

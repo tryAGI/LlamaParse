@@ -29,6 +29,7 @@ namespace LlamaParse
             global::System.Net.Http.HttpClient httpClient,
             ref string directoryId,
             ref string directoryFileId,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
@@ -37,6 +38,7 @@ namespace LlamaParse
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string directoryId,
             string directoryFileId,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
@@ -55,6 +57,9 @@ namespace LlamaParse
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>
+        /// <param name="expand">
+        /// Fields to expand.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -64,6 +69,7 @@ namespace LlamaParse
         public async global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryFileResponse> GetDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesDirectoryFileIdGetAsync(
             string directoryId,
             string directoryFileId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -73,6 +79,7 @@ namespace LlamaParse
             var __response = await GetDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesDirectoryFileIdGetAsResponseAsync(
                 directoryId: directoryId,
                 directoryFileId: directoryFileId,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -88,6 +95,9 @@ namespace LlamaParse
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>
+        /// <param name="expand">
+        /// Fields to expand.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -97,6 +107,7 @@ namespace LlamaParse
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DirectoryFileResponse>> GetDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesDirectoryFileIdGetAsResponseAsync(
             string directoryId,
             string directoryFileId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -109,6 +120,7 @@ namespace LlamaParse
                 httpClient: HttpClient,
                 directoryId: ref directoryId,
                 directoryFileId: ref directoryFileId,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -140,6 +152,7 @@ namespace LlamaParse
                                 path: $"/api/v1/beta/directories/{directoryId}/files/{directoryFileId}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("expand", expand?.ToString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -197,6 +210,7 @@ namespace LlamaParse
                     httpRequestMessage: __httpRequest,
                     directoryId: directoryId!,
                     directoryFileId: directoryFileId!,
+                    expand: expand,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);

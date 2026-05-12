@@ -49,9 +49,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Create Directory<br/>
-        /// Create a new directory within the specified project.<br/>
-        /// If data_source_id is provided, validates that the data source exists<br/>
-        /// and belongs to the same project.
+        /// Create a new directory within the specified project.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -83,9 +81,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Create Directory<br/>
-        /// Create a new directory within the specified project.<br/>
-        /// If data_source_id is provided, validates that the data source exists<br/>
-        /// and belongs to the same project.
+        /// Create a new directory within the specified project.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -524,9 +520,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Create Directory<br/>
-        /// Create a new directory within the specified project.<br/>
-        /// If data_source_id is provided, validates that the data source exists<br/>
-        /// and belongs to the same project.
+        /// Create a new directory within the specified project.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -537,9 +531,6 @@ namespace LlamaParse
         /// <param name="description">
         /// Optional description shown to users.
         /// </param>
-        /// <param name="dataSourceId">
-        /// Optional data source id the directory syncs from.
-        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -549,7 +540,6 @@ namespace LlamaParse
             global::System.Guid? organizationId = default,
             string? session = default,
             string? description = default,
-            string? dataSourceId = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -557,7 +547,6 @@ namespace LlamaParse
             {
                 Name = name,
                 Description = description,
-                DataSourceId = dataSourceId,
             };
 
             return await CreateDirectoryApiV1BetaDirectoriesPostAsync(

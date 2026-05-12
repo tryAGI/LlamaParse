@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Optional data source id the directory syncs from. Null if just manual uploads.
+    /// 
     /// </summary>
-    public sealed partial class DirectoryResponseDataSourceId
+    public sealed partial class GetProjectApiV2ProjectsProjectIdGetSession
     {
 
         /// <summary>

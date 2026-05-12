@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Optional data source credential associated with the file.
+    /// Presigned URL to download the file content.
     /// </summary>
-    public sealed partial class DirectoryFileResponseDataSourceId
+    public sealed partial class FileV2DownloadUrl
     {
 
         /// <summary>

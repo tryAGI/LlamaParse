@@ -2,7 +2,7 @@
 
 namespace LlamaParse
 {
-    public sealed partial class ListDirectoriesApiV1BetaDirectoriesGetDataSourceId
+    public sealed partial class GetProjectApiV2ProjectsProjectIdGetProjectId
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace LlamaParse
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetDataSourceId? FromJson(
+        public static global::LlamaParse.GetProjectApiV2ProjectsProjectIdGetProjectId? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetDataSourceId),
-                jsonSerializerContext) as global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetDataSourceId;
+                typeof(global::LlamaParse.GetProjectApiV2ProjectsProjectIdGetProjectId),
+                jsonSerializerContext) as global::LlamaParse.GetProjectApiV2ProjectsProjectIdGetProjectId;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetDataSourceId? FromJson(
+        public static global::LlamaParse.GetProjectApiV2ProjectsProjectIdGetProjectId? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetDataSourceId>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.GetProjectApiV2ProjectsProjectIdGetProjectId>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace LlamaParse
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetDataSourceId?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::LlamaParse.GetProjectApiV2ProjectsProjectIdGetProjectId?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetDataSourceId),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetDataSourceId;
+                typeof(global::LlamaParse.GetProjectApiV2ProjectsProjectIdGetProjectId),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LlamaParse.GetProjectApiV2ProjectsProjectIdGetProjectId;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetDataSourceId?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.GetProjectApiV2ProjectsProjectIdGetProjectId?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetDataSourceId?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LlamaParse.GetProjectApiV2ProjectsProjectIdGetProjectId?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

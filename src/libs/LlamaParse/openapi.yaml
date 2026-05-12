@@ -10913,6 +10913,30 @@
             "description": "A comma-separated list of fields to order by, sorted in ascending order. Use 'field_name desc' to specify descending order."
           },
           {
+            "name": "expand",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Fields to expand on each file.",
+              "examples": [
+                "download_url"
+              ],
+              "title": "Expand"
+            },
+            "description": "Fields to expand on each file."
+          },
+          {
             "name": "project_id",
             "in": "query",
             "required": false,
@@ -11210,6 +11234,30 @@
               "format": "uuid",
               "title": "File Id"
             }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Fields to expand.",
+              "examples": [
+                "download_url"
+              ],
+              "title": "Expand"
+            },
+            "description": "Fields to expand."
           },
           {
             "name": "project_id",
@@ -12153,7 +12201,7 @@
           "Directories"
         ],
         "summary": "Create Directory",
-        "description": "Create a new directory within the specified project.\n\nIf data_source_id is provided, validates that the data source exists\nand belongs to the same project.",
+        "description": "Create a new directory within the specified project.",
         "operationId": "create_directory_api_v1_beta_directories_post",
         "security": [
           {
@@ -12306,22 +12354,6 @@
                 }
               ],
               "title": "Name"
-            }
-          },
-          {
-            "name": "data_source_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Data Source Id"
             }
           },
           {
@@ -12855,6 +12887,30 @@
             }
           },
           {
+            "name": "expand",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Fields to expand on each directory file.",
+              "examples": [
+                "download_url"
+              ],
+              "title": "Expand"
+            },
+            "description": "Fields to expand on each directory file."
+          },
+          {
             "name": "project_id",
             "in": "query",
             "required": false,
@@ -12993,6 +13049,44 @@
               ],
               "title": "Page Token"
             }
+          },
+          {
+            "name": "updated_at_on_or_after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items updated at or after this timestamp (inclusive)",
+              "title": "Updated At On Or After"
+            },
+            "description": "Include items updated at or after this timestamp (inclusive)"
+          },
+          {
+            "name": "updated_at_on_or_before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items updated at or before this timestamp (inclusive)",
+              "title": "Updated At On Or Before"
+            },
+            "description": "Include items updated at or before this timestamp (inclusive)"
           },
           {
             "name": "session",
@@ -13176,6 +13270,30 @@
               "type": "string",
               "title": "Directory File Id"
             }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Fields to expand.",
+              "examples": [
+                "download_url"
+              ],
+              "title": "Expand"
+            },
+            "description": "Fields to expand."
           },
           {
             "name": "project_id",
@@ -17580,6 +17698,216 @@
           }
         }
       }
+    },
+    "/api/v2/projects": {
+      "get": {
+        "tags": [
+          "V2",
+          "Projects"
+        ],
+        "summary": "List Projects",
+        "description": "List projects in an organization. Requires `organization_id` or a project-scoped API key.",
+        "operationId": "list_projects_api_v2_projects_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Name"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page Size"
+            }
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page Token"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectQueryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/projects/{project_id}": {
+      "get": {
+        "tags": [
+          "V2",
+          "Projects"
+        ],
+        "summary": "Get Project",
+        "description": "Get a project by ID.",
+        "operationId": "get_project_api_v2_projects__project_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -18558,7 +18886,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-05-04",
+                  "2026-05-11",
                   "2026-04-09",
                   "2025-12-11"
                 ],
@@ -22105,6 +22433,21 @@
               }
             ],
             "title": "External File Id"
+          },
+          "metadata": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metadata",
+            "description": "User metadata as a JSON object string.",
+            "examples": [
+              "{\"source\": \"web\", \"priority\": 1}"
+            ]
           }
         },
         "type": "object",
@@ -26094,18 +26437,6 @@
             ],
             "title": "Description",
             "description": "Optional description shown to users."
-          },
-          "data_source_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Data Source Id",
-            "description": "Optional data source id the directory syncs from."
           }
         },
         "type": "object",
@@ -26302,18 +26633,6 @@
             "title": "Display Name",
             "description": "Display name for the file."
           },
-          "data_source_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Data Source Id",
-            "description": "Optional data source credential associated with the file."
-          },
           "file_id": {
             "anyOf": [
               {
@@ -26362,6 +26681,17 @@
             ],
             "title": "Deleted At",
             "description": "Soft delete marker when the file is removed upstream or by user action."
+          },
+          "download_url": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PresignedUrl"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Presigned URL to download the underlying file content."
           }
         },
         "type": "object",
@@ -26547,18 +26877,6 @@
             ],
             "title": "Description",
             "description": "Optional description shown to users."
-          },
-          "data_source_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Data Source Id",
-            "description": "Optional data source id the directory syncs from. Null if just manual uploads."
           },
           "deleted_at": {
             "anyOf": [
@@ -30230,6 +30548,17 @@
             "examples": [
               "parse"
             ]
+          },
+          "download_url": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PresignedUrl"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Presigned URL to download the file content."
           }
         },
         "type": "object",
@@ -33883,7 +34212,8 @@
           ".mpeg",
           ".mpga",
           ".wav",
-          ".webm"
+          ".webm",
+          ".yxmd"
         ],
         "title": "LlamaParseSupportedFileExtensions",
         "description": "Enum for supported file extensions."
@@ -35486,7 +35816,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-05-04",
+                  "2026-05-11",
                   "2026-04-09",
                   "2025-12-11"
                 ],
@@ -35777,7 +36107,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-05-04",
+                  "2026-05-11",
                   "2026-04-09",
                   "2025-12-11"
                 ],
@@ -35917,6 +36247,8 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-05-11",
+                "2026-05-06",
                 "2026-05-04",
                 "2026-04-27",
                 "2026-04-22",
@@ -35956,6 +36288,8 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-05-11",
+                "2026-05-06",
                 "2026-05-04",
                 "2026-05-01",
                 "2026-04-27",
@@ -38425,6 +38759,107 @@
         ],
         "title": "Project",
         "description": "Schema for a project."
+      },
+      "ProjectQueryResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ProjectResponse"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "ProjectQueryResponse",
+        "description": "API query response schema for projects."
+      },
+      "ProjectResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The project's unique identifier."
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At",
+            "description": "Creation datetime"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At",
+            "description": "Update datetime"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "The project's display name."
+          },
+          "organization_id": {
+            "type": "string",
+            "title": "Organization Id",
+            "description": "The organization the project belongs to."
+          },
+          "is_default": {
+            "type": "boolean",
+            "title": "Is Default",
+            "description": "Whether this project is the default project for its organization.",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "organization_id"
+        ],
+        "title": "ProjectResponse",
+        "description": "API response schema for a project."
       },
       "PublicModelName": {
         "type": "string",

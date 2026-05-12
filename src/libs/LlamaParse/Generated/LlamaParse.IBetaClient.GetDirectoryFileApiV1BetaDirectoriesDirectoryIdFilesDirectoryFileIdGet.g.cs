@@ -10,6 +10,9 @@ namespace LlamaParse
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>
+        /// <param name="expand">
+        /// Fields to expand.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -19,6 +22,7 @@ namespace LlamaParse
         global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryFileResponse> GetDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesDirectoryFileIdGetAsync(
             string directoryId,
             string directoryFileId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -30,6 +34,9 @@ namespace LlamaParse
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>
+        /// <param name="expand">
+        /// Fields to expand.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -39,6 +46,7 @@ namespace LlamaParse
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DirectoryFileResponse>> GetDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesDirectoryFileIdGetAsResponseAsync(
             string directoryId,
             string directoryFileId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,

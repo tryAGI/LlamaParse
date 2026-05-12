@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    /// The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only.
     /// </summary>
-    public sealed partial class ListDirectoriesApiV1BetaDirectoriesGetDataSourceId
+    public sealed partial class ProjectQueryResponseTotalSize
     {
 
         /// <summary>
