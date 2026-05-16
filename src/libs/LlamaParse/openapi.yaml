@@ -26516,6 +26516,12 @@
                       "type": "boolean"
                     },
                     {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    {
                       "type": "null"
                     }
                   ]
@@ -26662,6 +26668,12 @@
                   "type": "boolean"
                 },
                 {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
                   "type": "null"
                 }
               ]
@@ -26761,6 +26773,12 @@
                     },
                     {
                       "type": "boolean"
+                    },
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
                     },
                     {
                       "type": "null"
