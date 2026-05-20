@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Base timeout for the job in seconds (max 1800 = 30 minutes). This is the minimum time allowed regardless of document size
+    /// Base timeout for the job in seconds (max 7200 = 2 hours). This is the minimum time allowed regardless of document size
     /// </summary>
     public sealed partial class LlamaParseTimeoutsBaseInSeconds
     {

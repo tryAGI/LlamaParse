@@ -36742,7 +36742,7 @@
             "anyOf": [
               {
                 "type": "integer",
-                "maximum": 1800.0,
+                "maximum": 7200.0,
                 "exclusiveMinimum": 0.0
               },
               {
@@ -36750,7 +36750,7 @@
               }
             ],
             "title": "Base In Seconds",
-            "description": "Base timeout for the job in seconds (max 1800 = 30 minutes). This is the minimum time allowed regardless of document size"
+            "description": "Base timeout for the job in seconds (max 7200 = 2 hours). This is the minimum time allowed regardless of document size"
           },
           "extra_time_per_page_in_seconds": {
             "anyOf": [
