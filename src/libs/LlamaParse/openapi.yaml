@@ -9892,7 +9892,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RetrieveApiResponse"
+                  "$ref": "#/components/schemas/RetrieveResult"
                 }
               }
             }
@@ -9910,14 +9910,14 @@
         }
       }
     },
-    "/api/v1/retrieval/files/search": {
+    "/api/v1/retrieval/files/find": {
       "post": {
         "tags": [
           "Retrieval"
         ],
-        "summary": "Search Files",
+        "summary": "Find Files",
         "description": "Search for files by name.",
-        "operationId": "search_files_api_v1_retrieval_files_search_post",
+        "operationId": "find_files_api_v1_retrieval_files_find_post",
         "security": [
           {
             "HTTPBearer": []
@@ -9980,7 +9980,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FileSearchParams"
+                "$ref": "#/components/schemas/FileFindParams"
               }
             }
           }
@@ -9991,7 +9991,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FileSearchApiResponse"
+                  "$ref": "#/components/schemas/FileFindResult"
                 }
               }
             }
@@ -10090,7 +10090,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FileGrepApiResponse"
+                  "$ref": "#/components/schemas/FileGrepResult"
                 }
               }
             }
@@ -10189,7 +10189,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FileReadApiResponse"
+                  "$ref": "#/components/schemas/FileReadResult"
                 }
               }
             }
@@ -10287,7 +10287,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SessionSummaryAPIResponse"
+                  "$ref": "#/components/schemas/SessionSummary"
                 }
               }
             }
@@ -10406,7 +10406,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SessionListAPIResponse"
+                  "$ref": "#/components/schemas/SessionList"
                 }
               }
             }
@@ -10504,7 +10504,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SessionGetAPIResponse"
+                  "$ref": "#/components/schemas/SessionDetail"
                 }
               }
             }
@@ -10691,7 +10691,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SessionSummaryAPIResponse"
+                  "$ref": "#/components/schemas/SessionSummary"
                 }
               }
             }
@@ -10799,7 +10799,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SessionSummaryAPIResponse"
+                  "$ref": "#/components/schemas/SessionSummary"
                 }
               }
             }
@@ -32061,26 +32061,188 @@
         "title": "FileFilter",
         "description": "Filter parameters for file queries."
       },
-      "FileGrepApiResponse": {
+      "FileFindEntry": {
         "properties": {
-          "matches": {
-            "items": {
-              "$ref": "#/components/schemas/GrepMatchResponse"
-            },
-            "type": "array",
-            "title": "Matches",
-            "description": "Regex matches found in the file."
+          "file_id": {
+            "type": "string",
+            "title": "File Id",
+            "description": "ID of the file."
+          },
+          "file_name": {
+            "type": "string",
+            "title": "File Name",
+            "description": "Display name of the file."
           }
         },
         "type": "object",
         "required": [
-          "matches"
+          "file_id",
+          "file_name"
         ],
-        "title": "FileGrepApiResponse",
-        "description": "Grep results for a file."
+        "title": "FileFindEntry",
+        "description": "A file returned by find."
+      },
+      "FileFindParams": {
+        "properties": {
+          "page_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page Size",
+            "description": "The maximum number of items to return. The service may return fewer than this value. If unspecified, a default page size will be used. The maximum value is typically 1000; values above this will be coerced to the maximum."
+          },
+          "page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page Token",
+            "description": "A page token, received from a previous list call. Provide this to retrieve the subsequent page."
+          },
+          "index_id": {
+            "type": "string",
+            "title": "Index Id",
+            "description": "ID of the index to search within.",
+            "examples": [
+              "idx-abc123"
+            ]
+          },
+          "file_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "File Name",
+            "description": "Exact file name to match."
+          },
+          "file_name_contains": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "File Name Contains",
+            "description": "Substring match on file name (case-insensitive)."
+          }
+        },
+        "type": "object",
+        "required": [
+          "index_id"
+        ],
+        "title": "FileFindParams",
+        "description": "Search for files by name."
+      },
+      "FileFindResult": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/FileFindEntry"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "FileFindResult",
+        "description": "Paginated file find results."
+      },
+      "FileGrepMatch": {
+        "properties": {
+          "start_char": {
+            "type": "integer",
+            "title": "Start Char",
+            "description": "Start character offset of the match."
+          },
+          "end_char": {
+            "type": "integer",
+            "title": "End Char",
+            "description": "End character offset of the match."
+          },
+          "content": {
+            "type": "string",
+            "title": "Content",
+            "description": "Matched text content."
+          }
+        },
+        "type": "object",
+        "required": [
+          "start_char",
+          "end_char",
+          "content"
+        ],
+        "title": "FileGrepMatch",
+        "description": "A single grep match within a file."
       },
       "FileGrepParams": {
         "properties": {
+          "page_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page Size",
+            "description": "The maximum number of items to return. The service may return fewer than this value. If unspecified, a default page size will be used. The maximum value is typically 1000; values above this will be coerced to the maximum."
+          },
+          "page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page Token",
+            "description": "A page token, received from a previous list call. Provide this to retrieve the subsequent page."
+          },
           "index_id": {
             "type": "string",
             "title": "Index Id",
@@ -32101,18 +32263,6 @@
             "examples": [
               "revenue|profit"
             ]
-          },
-          "limit": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Limit",
-            "description": "Maximum number of matches to return."
           },
           "context_chars": {
             "anyOf": [
@@ -32135,6 +32285,48 @@
         ],
         "title": "FileGrepParams",
         "description": "Grep within a specific file's parsed content."
+      },
+      "FileGrepResult": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/FileGrepMatch"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "FileGrepResult",
+        "description": "Paginated grep results for a file."
       },
       "FileQueryRequest": {
         "properties": {
@@ -32232,21 +32424,6 @@
         "title": "FileQueryResponseV2",
         "description": "Paginated list of files."
       },
-      "FileReadApiResponse": {
-        "properties": {
-          "content": {
-            "type": "string",
-            "title": "Content",
-            "description": "Parsed text content of the file."
-          }
-        },
-        "type": "object",
-        "required": [
-          "content"
-        ],
-        "title": "FileReadApiResponse",
-        "description": "File read result."
-      },
       "FileReadParams": {
         "properties": {
           "index_id": {
@@ -32289,98 +32466,20 @@
         "title": "FileReadParams",
         "description": "Read parsed content of a specific file."
       },
-      "FileSearchApiFileEntry": {
+      "FileReadResult": {
         "properties": {
-          "file_id": {
+          "content": {
             "type": "string",
-            "title": "File Id",
-            "description": "ID of the file."
-          },
-          "file_name": {
-            "type": "string",
-            "title": "File Name",
-            "description": "Display name of the file."
+            "title": "Content",
+            "description": "Parsed text content of the file."
           }
         },
         "type": "object",
         "required": [
-          "file_id",
-          "file_name"
+          "content"
         ],
-        "title": "FileSearchApiFileEntry",
-        "description": "A file returned by search."
-      },
-      "FileSearchApiResponse": {
-        "properties": {
-          "files": {
-            "items": {
-              "$ref": "#/components/schemas/FileSearchApiFileEntry"
-            },
-            "type": "array",
-            "title": "Files",
-            "description": "Matching files with names."
-          }
-        },
-        "type": "object",
-        "required": [
-          "files"
-        ],
-        "title": "FileSearchApiResponse",
-        "description": "File search results."
-      },
-      "FileSearchParams": {
-        "properties": {
-          "index_id": {
-            "type": "string",
-            "title": "Index Id",
-            "description": "ID of the index to search within.",
-            "examples": [
-              "idx-abc123"
-            ]
-          },
-          "file_name": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "File Name",
-            "description": "Exact file name to match."
-          },
-          "file_name_contains": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "File Name Contains",
-            "description": "Substring match on file name (case-insensitive)."
-          },
-          "limit": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Limit",
-            "description": "Maximum number of files to return."
-          }
-        },
-        "type": "object",
-        "required": [
-          "index_id"
-        ],
-        "title": "FileSearchParams",
-        "description": "Search for files by name."
+        "title": "FileReadResult",
+        "description": "File read result."
       },
       "FileV2": {
         "properties": {
@@ -33087,33 +33186,6 @@
         ],
         "title": "GenerateTitleParams",
         "description": "Request body for generating a session title."
-      },
-      "GrepMatchResponse": {
-        "properties": {
-          "start_char": {
-            "type": "integer",
-            "title": "Start Char",
-            "description": "Start character offset of the match."
-          },
-          "end_char": {
-            "type": "integer",
-            "title": "End Char",
-            "description": "End character offset of the match."
-          },
-          "content": {
-            "type": "string",
-            "title": "Content",
-            "description": "Matched text content."
-          }
-        },
-        "type": "object",
-        "required": [
-          "start_char",
-          "end_char",
-          "content"
-        ],
-        "title": "GrepMatchResponse",
-        "description": "A single grep match within a file."
       },
       "HTTPValidationError": {
         "properties": {
@@ -41427,7 +41499,7 @@
         ],
         "title": "RelatedNodeInfo"
       },
-      "RerankApiConfig": {
+      "RerankConfig": {
         "properties": {
           "enabled": {
             "type": "boolean",
@@ -41452,7 +41524,7 @@
           }
         },
         "type": "object",
-        "title": "RerankApiConfig",
+        "title": "RerankConfig",
         "description": "Reranking configuration to apply after hybrid search."
       },
       "ResultTypeMetadata": {
@@ -41694,7 +41766,7 @@
         "title": "RetrievalParams",
         "description": "Schema for the search params for an retrieval execution."
       },
-      "RetrievalResultResponse": {
+      "RetrievalResult": {
         "properties": {
           "content": {
             "type": "string",
@@ -41763,33 +41835,15 @@
             "description": "User-defined metadata associated with the chunk."
           },
           "static_fields": {
-            "$ref": "#/components/schemas/StaticFieldsResponse"
+            "$ref": "#/components/schemas/StaticFields"
           }
         },
         "type": "object",
         "required": [
           "content"
         ],
-        "title": "RetrievalResultResponse",
+        "title": "RetrievalResult",
         "description": "A single retrieval result."
-      },
-      "RetrieveApiResponse": {
-        "properties": {
-          "results": {
-            "items": {
-              "$ref": "#/components/schemas/RetrievalResultResponse"
-            },
-            "type": "array",
-            "title": "Results",
-            "description": "Ordered list of retrieved chunks."
-          }
-        },
-        "type": "object",
-        "required": [
-          "results"
-        ],
-        "title": "RetrieveApiResponse",
-        "description": "Response containing retrieval results."
       },
       "RetrieveParams": {
         "properties": {
@@ -41912,7 +41966,7 @@
             "description": "Filters on user-defined metadata fields."
           },
           "rerank": {
-            "$ref": "#/components/schemas/RerankApiConfig",
+            "$ref": "#/components/schemas/RerankConfig",
             "description": "Reranking configuration applied after hybrid search. Enabled by default."
           }
         },
@@ -41923,6 +41977,24 @@
         ],
         "title": "RetrieveParams",
         "description": "Hybrid retrieval request combining vector and full-text search."
+      },
+      "RetrieveResult": {
+        "properties": {
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/RetrievalResult"
+            },
+            "type": "array",
+            "title": "Results",
+            "description": "Ordered list of retrieved chunks."
+          }
+        },
+        "type": "object",
+        "required": [
+          "results"
+        ],
+        "title": "RetrieveResult",
+        "description": "Response containing retrieval results."
       },
       "RetrieveResults": {
         "properties": {
@@ -42349,7 +42421,7 @@
         "title": "SessionCreate",
         "description": "Request body for creating a chat session."
       },
-      "SessionGetAPIResponse": {
+      "SessionDetail": {
         "properties": {
           "session_id": {
             "type": "string",
@@ -42467,14 +42539,14 @@
           "last_updated_at",
           "events"
         ],
-        "title": "SessionGetAPIResponse",
+        "title": "SessionDetail",
         "description": "Full chat session including its complete event history."
       },
-      "SessionListAPIResponse": {
+      "SessionList": {
         "properties": {
           "items": {
             "items": {
-              "$ref": "#/components/schemas/SessionSummaryAPIResponse"
+              "$ref": "#/components/schemas/SessionSummary"
             },
             "type": "array",
             "title": "Items",
@@ -42497,10 +42569,10 @@
         "required": [
           "items"
         ],
-        "title": "SessionListAPIResponse",
+        "title": "SessionList",
         "description": "Paginated list of chat sessions."
       },
-      "SessionSummaryAPIResponse": {
+      "SessionSummary": {
         "properties": {
           "session_id": {
             "type": "string",
@@ -42571,7 +42643,7 @@
           "session_id",
           "last_updated_at"
         ],
-        "title": "SessionSummaryAPIResponse",
+        "title": "SessionSummary",
         "description": "Summary of a chat session, including its title and last run metadata."
       },
       "SparseModelConfig": {
@@ -43271,7 +43343,7 @@
         "title": "SpreadsheetV1Parameters",
         "description": "Typed parameters for a *spreadsheet v1* product configuration."
       },
-      "StaticFieldsResponse": {
+      "StaticFields": {
         "properties": {
           "parsed_directory_file_id": {
             "anyOf": [
@@ -43367,7 +43439,7 @@
           }
         },
         "type": "object",
-        "title": "StaticFieldsResponse",
+        "title": "StaticFields",
         "description": "Built-in fields stored for every exported chunk."
       },
       "StatusEnum": {

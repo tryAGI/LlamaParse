@@ -12,7 +12,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType? Type { get; }
+        public global::LlamaParse.SessionDetailEventDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -497,7 +497,7 @@ namespace LlamaParse
         /// 
         /// </summary>
         public EventsItem(
-            global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType? type,
+            global::LlamaParse.SessionDetailEventDiscriminatorType? type,
             global::LlamaParse.ThinkingDeltaEvent? thinkingDelta,
             global::LlamaParse.TextDeltaEvent? textDelta,
             global::LlamaParse.ThinkingEvent? thinking,

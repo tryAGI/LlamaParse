@@ -15,7 +15,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.FileReadApiResponse> ReadFileApiV1RetrievalFilesReadPostAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.FileReadResult> ReadFileApiV1RetrievalFilesReadPostAsync(
 
             global::LlamaParse.FileReadParams request,
             global::System.Guid? projectId = default,
@@ -34,7 +34,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.FileReadApiResponse>> ReadFileApiV1RetrievalFilesReadPostAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.FileReadResult>> ReadFileApiV1RetrievalFilesReadPostAsResponseAsync(
 
             global::LlamaParse.FileReadParams request,
             global::System.Guid? projectId = default,
@@ -65,7 +65,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.FileReadApiResponse> ReadFileApiV1RetrievalFilesReadPostAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.FileReadResult> ReadFileApiV1RetrievalFilesReadPostAsync(
             string indexId,
             string fileId,
             global::System.Guid? projectId = default,

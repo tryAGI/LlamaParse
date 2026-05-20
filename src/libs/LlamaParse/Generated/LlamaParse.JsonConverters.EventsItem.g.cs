@@ -17,61 +17,61 @@ namespace LlamaParse.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.SessionGetAPIResponseEventDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.SessionGetAPIResponseEventDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.SessionGetAPIResponseEventDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.SessionDetailEventDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.SessionDetailEventDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.SessionDetailEventDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::LlamaParse.ThinkingDeltaEvent? thinkingDelta = default;
-            if (discriminator?.Type == global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType.ThinkingDelta)
+            if (discriminator?.Type == global::LlamaParse.SessionDetailEventDiscriminatorType.ThinkingDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ThinkingDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ThinkingDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.ThinkingDeltaEvent)}");
                 thinkingDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.TextDeltaEvent? textDelta = default;
-            if (discriminator?.Type == global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType.TextDelta)
+            if (discriminator?.Type == global::LlamaParse.SessionDetailEventDiscriminatorType.TextDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.TextDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.TextDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.TextDeltaEvent)}");
                 textDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.ThinkingEvent? thinking = default;
-            if (discriminator?.Type == global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType.Thinking)
+            if (discriminator?.Type == global::LlamaParse.SessionDetailEventDiscriminatorType.Thinking)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ThinkingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ThinkingEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.ThinkingEvent)}");
                 thinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.TextEvent? text = default;
-            if (discriminator?.Type == global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType.Text)
+            if (discriminator?.Type == global::LlamaParse.SessionDetailEventDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.TextEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.TextEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.TextEvent)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.ToolCallEvent? toolCall = default;
-            if (discriminator?.Type == global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType.ToolCall)
+            if (discriminator?.Type == global::LlamaParse.SessionDetailEventDiscriminatorType.ToolCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ToolCallEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ToolCallEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.ToolCallEvent)}");
                 toolCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.ToolResultEvent? toolResult = default;
-            if (discriminator?.Type == global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType.ToolResult)
+            if (discriminator?.Type == global::LlamaParse.SessionDetailEventDiscriminatorType.ToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ToolResultEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ToolResultEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.ToolResultEvent)}");
                 toolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.StopEvent? stop = default;
-            if (discriminator?.Type == global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType.Stop)
+            if (discriminator?.Type == global::LlamaParse.SessionDetailEventDiscriminatorType.Stop)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.StopEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.StopEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.StopEvent)}");
                 stop = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.UserInputEvent? userInput = default;
-            if (discriminator?.Type == global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType.UserInput)
+            if (discriminator?.Type == global::LlamaParse.SessionDetailEventDiscriminatorType.UserInput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.UserInputEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.UserInputEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.UserInputEvent)}");
