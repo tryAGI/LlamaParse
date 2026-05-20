@@ -15,7 +15,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.SessionGetAPIResponse> GetFullSessionApiV1ChatSessionIdGetAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.SessionDetail> GetFullSessionApiV1ChatSessionIdGetAsync(
             string sessionId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
@@ -33,7 +33,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionGetAPIResponse>> GetFullSessionApiV1ChatSessionIdGetAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionDetail>> GetFullSessionApiV1ChatSessionIdGetAsResponseAsync(
             string sessionId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,

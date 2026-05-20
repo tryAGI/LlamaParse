@@ -1132,59 +1132,59 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.FileGrepApiResponse? Type276 { get; set; }
+        public global::LlamaParse.FileFindEntry? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.GrepMatchResponse>? Type277 { get; set; }
+        public global::LlamaParse.FileFindParams? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.GrepMatchResponse? Type278 { get; set; }
+        public global::LlamaParse.FileFindResult? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.FileGrepParams? Type279 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.FileFindEntry>? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.FileQueryRequest? Type280 { get; set; }
+        public global::LlamaParse.FileGrepMatch? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.FileQueryResponseV2? Type281 { get; set; }
+        public global::LlamaParse.FileGrepParams? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.FileV2>? Type282 { get; set; }
+        public global::LlamaParse.FileGrepResult? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.FileV2? Type283 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.FileGrepMatch>? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.FileReadApiResponse? Type284 { get; set; }
+        public global::LlamaParse.FileQueryRequest? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.FileReadParams? Type285 { get; set; }
+        public global::LlamaParse.FileQueryResponseV2? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.FileSearchApiFileEntry? Type286 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.FileV2>? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.FileSearchApiResponse? Type287 { get; set; }
+        public global::LlamaParse.FileV2? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.FileSearchApiFileEntry>? Type288 { get; set; }
+        public global::LlamaParse.FileReadParams? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.FileSearchParams? Type289 { get; set; }
+        public global::LlamaParse.FileReadResult? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2044,7 +2044,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.RerankApiConfig? Type504 { get; set; }
+        public global::LlamaParse.RerankConfig2? Type504 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2052,31 +2052,31 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.RetrievalResultResponse? Type506 { get; set; }
+        public global::LlamaParse.RetrievalResult? Type506 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.StaticFieldsResponse? Type507 { get; set; }
+        public global::LlamaParse.StaticFields? Type507 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.RetrieveApiResponse? Type508 { get; set; }
+        public global::LlamaParse.RetrieveParams? Type508 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.RetrievalResultResponse>? Type509 { get; set; }
+        public global::LlamaParse.AnyOf<global::LlamaParse.FilterTypeUnionStrIntBoolFloat, global::System.Collections.Generic.IList<global::LlamaParse.FilterTypeUnionIntFloat>, object>? Type509 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.RetrieveParams? Type510 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.FilterTypeUnionIntFloat>? Type510 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.AnyOf<global::LlamaParse.FilterTypeUnionStrIntBoolFloat, global::System.Collections.Generic.IList<global::LlamaParse.FilterTypeUnionIntFloat>, object>? Type511 { get; set; }
+        public global::LlamaParse.RetrieveResult? Type511 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.FilterTypeUnionIntFloat>? Type512 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.RetrievalResult>? Type512 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2116,7 +2116,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.SessionGetAPIResponse? Type522 { get; set; }
+        public global::LlamaParse.SessionDetail? Type522 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2160,23 +2160,23 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.SessionGetAPIResponseEventDiscriminator? Type533 { get; set; }
+        public global::LlamaParse.SessionDetailEventDiscriminator? Type533 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType? Type534 { get; set; }
+        public global::LlamaParse.SessionDetailEventDiscriminatorType? Type534 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.SessionListAPIResponse? Type535 { get; set; }
+        public global::LlamaParse.SessionList? Type535 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.SessionSummaryAPIResponse>? Type536 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.SessionSummary>? Type536 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.SessionSummaryAPIResponse? Type537 { get; set; }
+        public global::LlamaParse.SessionSummary? Type537 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2621,15 +2621,15 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.GrepMatchResponse>? ListType28 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.FileFindEntry>? ListType28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.FileV2>? ListType29 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.FileGrepMatch>? ListType29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.FileSearchApiFileEntry>? ListType30 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.FileV2>? ListType30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2789,15 +2789,15 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.RetrievalResultResponse>? ListType70 { get; set; }
+        public global::LlamaParse.AnyOf<global::LlamaParse.FilterTypeUnionStrIntBoolFloat, global::System.Collections.Generic.List<global::LlamaParse.FilterTypeUnionIntFloat>, object>? ListType70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LlamaParse.AnyOf<global::LlamaParse.FilterTypeUnionStrIntBoolFloat, global::System.Collections.Generic.List<global::LlamaParse.FilterTypeUnionIntFloat>, object>? ListType71 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.FilterTypeUnionIntFloat>? ListType71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.FilterTypeUnionIntFloat>? ListType72 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.RetrievalResult>? ListType72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2809,7 +2809,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.SessionSummaryAPIResponse>? ListType75 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.SessionSummary>? ListType75 { get; set; }
         /// <summary>
         /// 
         /// </summary>

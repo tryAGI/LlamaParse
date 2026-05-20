@@ -68,7 +68,7 @@ namespace LlamaParse
         /// Reranking configuration applied after hybrid search. Enabled by default.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rerank")]
-        public global::LlamaParse.RerankApiConfig? Rerank { get; set; }
+        public global::LlamaParse.RerankConfig2? Rerank { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -122,7 +122,7 @@ namespace LlamaParse
             double? scoreThreshold,
             global::LlamaParse.MongoStaticFilters? staticFilters,
             object? customFilters,
-            global::LlamaParse.RerankApiConfig? rerank)
+            global::LlamaParse.RerankConfig2? rerank)
         {
             this.IndexId = indexId ?? throw new global::System.ArgumentNullException(nameof(indexId));
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));

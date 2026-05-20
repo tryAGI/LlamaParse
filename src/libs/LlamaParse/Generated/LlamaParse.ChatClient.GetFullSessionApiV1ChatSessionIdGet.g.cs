@@ -58,7 +58,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.SessionGetAPIResponse> GetFullSessionApiV1ChatSessionIdGetAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.SessionDetail> GetFullSessionApiV1ChatSessionIdGetAsync(
             string sessionId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
@@ -88,7 +88,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionGetAPIResponse>> GetFullSessionApiV1ChatSessionIdGetAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionDetail>> GetFullSessionApiV1ChatSessionIdGetAsResponseAsync(
             string sessionId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
@@ -429,9 +429,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.SessionGetAPIResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.SessionDetail.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionGetAPIResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionDetail>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -463,9 +463,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.SessionGetAPIResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.SessionDetail.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionGetAPIResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionDetail>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

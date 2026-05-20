@@ -58,7 +58,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.FileReadApiResponse> ReadFileApiV1RetrievalFilesReadPostAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.FileReadResult> ReadFileApiV1RetrievalFilesReadPostAsync(
 
             global::LlamaParse.FileReadParams request,
             global::System.Guid? projectId = default,
@@ -90,7 +90,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.FileReadApiResponse>> ReadFileApiV1RetrievalFilesReadPostAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.FileReadResult>> ReadFileApiV1RetrievalFilesReadPostAsResponseAsync(
 
             global::LlamaParse.FileReadParams request,
             global::System.Guid? projectId = default,
@@ -440,9 +440,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.FileReadApiResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.FileReadResult.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.FileReadApiResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.FileReadResult>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -474,9 +474,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.FileReadApiResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.FileReadResult.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.FileReadApiResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.FileReadResult>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -541,7 +541,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.FileReadApiResponse> ReadFileApiV1RetrievalFilesReadPostAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.FileReadResult> ReadFileApiV1RetrievalFilesReadPostAsync(
             string indexId,
             string fileId,
             global::System.Guid? projectId = default,

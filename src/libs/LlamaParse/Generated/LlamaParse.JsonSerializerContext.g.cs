@@ -341,9 +341,9 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.RetrievalModeNullableJsonConverter),
 
-            typeof(global::LlamaParse.JsonConverters.SessionGetAPIResponseEventDiscriminatorTypeJsonConverter),
+            typeof(global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeJsonConverter),
 
-            typeof(global::LlamaParse.JsonConverters.SessionGetAPIResponseEventDiscriminatorTypeNullableJsonConverter),
+            typeof(global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeNullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SparseModelTypeJsonConverter),
 
@@ -1000,20 +1000,20 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileCountByStatusResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileFilter))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileGrepApiResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.GrepMatchResponse>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.GrepMatchResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileFindEntry))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileFindParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileFindResult))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.FileFindEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileGrepMatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileGrepParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileGrepResult))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.FileGrepMatch>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileQueryRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileQueryResponseV2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.FileV2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileV2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileReadApiResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileReadParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileSearchApiFileEntry))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileSearchApiResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.FileSearchApiFileEntry>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileSearchParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileReadResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FilterCondition), TypeInfoPropertyName = "FilterCondition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>), TypeInfoPropertyName = "AnyOfDoubleInt32StringDateTimeObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>>))]
@@ -1554,9 +1554,9 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.RetrievalModeNullableJsonConverter),
 
-            typeof(global::LlamaParse.JsonConverters.SessionGetAPIResponseEventDiscriminatorTypeJsonConverter),
+            typeof(global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeJsonConverter),
 
-            typeof(global::LlamaParse.JsonConverters.SessionGetAPIResponseEventDiscriminatorTypeNullableJsonConverter),
+            typeof(global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeNullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SparseModelTypeJsonConverter),
 
@@ -1949,15 +1949,15 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ReRankerType), TypeInfoPropertyName = "ReRankerType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RelatedNodeInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.ObjectType?, string, object>), TypeInfoPropertyName = "AnyOfObjectTypeStringObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RerankApiConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RerankConfig2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrievalParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrievalResultResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.StaticFieldsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrieveApiResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.RetrievalResultResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrievalResult))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.StaticFields))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrieveParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.FilterTypeUnionStrIntBoolFloat, global::System.Collections.Generic.IList<global::LlamaParse.FilterTypeUnionIntFloat>, object>), TypeInfoPropertyName = "AnyOfFilterTypeUnionStrIntBoolFloatIListFilterTypeUnionIntFloatObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.FilterTypeUnionIntFloat>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrieveResult))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.RetrievalResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrieveResults))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.TextNodeWithScore>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.TextNodeWithScore))]
@@ -1967,7 +1967,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrieverUpdate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SearchRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionCreate))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionGetAPIResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetail))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.EventsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EventsItem), TypeInfoPropertyName = "EventsItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ThinkingDeltaEvent))]
@@ -1978,11 +1978,11 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ToolResultEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.StopEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.UserInputEvent))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionGetAPIResponseEventDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionGetAPIResponseEventDiscriminatorType), TypeInfoPropertyName = "SessionGetAPIResponseEventDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionListAPIResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.SessionSummaryAPIResponse>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionSummaryAPIResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetailEventDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetailEventDiscriminatorType), TypeInfoPropertyName = "SessionDetailEventDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionList))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.SessionSummary>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionSummary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SparseModelType), TypeInfoPropertyName = "SparseModelType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitCategory))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfiguration))]
@@ -2093,9 +2093,9 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.DirectoryResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::System.Collections.Generic.List<object>, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ExtractV2Job>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.GrepMatchResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.FileFindEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.FileGrepMatch>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.FileV2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.FileSearchApiFileEntry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<int?, double?, global::System.Collections.Generic.List<global::LlamaParse.AnyOf<int?, double?>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<int?, double?>>))]
@@ -2135,12 +2135,12 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.PipelineFileResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ChatMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ProjectResponse>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.RetrievalResultResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.FilterTypeUnionStrIntBoolFloat, global::System.Collections.Generic.List<global::LlamaParse.FilterTypeUnionIntFloat>, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.FilterTypeUnionIntFloat>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.RetrievalResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.TextNodeWithScore>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.EventsItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.SessionSummaryAPIResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.SessionSummary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.SplitCategory>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.SplitJobResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.SplitSegmentResponse>))]
@@ -2384,8 +2384,8 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.ReRankerTypeNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.RetrievalModeJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.RetrievalModeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SessionGetAPIResponseEventDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SessionGetAPIResponseEventDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SparseModelTypeJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SparseModelTypeNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedJsonConverter());
