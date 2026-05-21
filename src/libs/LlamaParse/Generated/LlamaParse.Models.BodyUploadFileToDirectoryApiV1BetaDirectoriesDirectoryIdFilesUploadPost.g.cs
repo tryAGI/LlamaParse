@@ -41,6 +41,12 @@ namespace LlamaParse
         public string? ExternalFileId { get; set; }
 
         /// <summary>
+        /// User metadata as a JSON object string.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public string? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,6 +60,9 @@ namespace LlamaParse
         /// <param name="uniqueId"></param>
         /// <param name="displayName"></param>
         /// <param name="externalFileId"></param>
+        /// <param name="metadata">
+        /// User metadata as a JSON object string.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,13 +71,15 @@ namespace LlamaParse
             string uploadFilename,
             string? uniqueId,
             string? displayName,
-            string? externalFileId)
+            string? externalFileId,
+            string? metadata)
         {
             this.UploadFile = uploadFile ?? throw new global::System.ArgumentNullException(nameof(uploadFile));
             this.UploadFilename = uploadFilename ?? throw new global::System.ArgumentNullException(nameof(uploadFilename));
             this.UniqueId = uniqueId;
             this.DisplayName = displayName;
             this.ExternalFileId = externalFileId;
+            this.Metadata = metadata;
         }
 
         /// <summary>
@@ -77,5 +88,6 @@ namespace LlamaParse
         public BodyUploadFileToDirectoryApiV1BetaDirectoriesDirectoryIdFilesUploadPost()
         {
         }
+
     }
 }

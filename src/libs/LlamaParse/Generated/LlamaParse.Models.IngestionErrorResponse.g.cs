@@ -67,5 +67,6 @@ namespace LlamaParse
         public IngestionErrorResponse()
         {
         }
+
     }
 }

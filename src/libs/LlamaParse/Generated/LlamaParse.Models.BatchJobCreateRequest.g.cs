@@ -92,5 +92,6 @@ namespace LlamaParse
         public BatchJobCreateRequest()
         {
         }
+
     }
 }

@@ -54,5 +54,6 @@ namespace LlamaParse
         public VertexAIEmbeddingConfig()
         {
         }
+
     }
 }

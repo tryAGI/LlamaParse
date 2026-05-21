@@ -126,5 +126,6 @@ namespace LlamaParse
         public CohereEmbedding()
         {
         }
+
     }
 }

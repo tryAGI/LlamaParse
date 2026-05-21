@@ -60,6 +60,12 @@ namespace LlamaParse
         public string? Purpose { get; set; }
 
         /// <summary>
+        /// Presigned URL to download the file content.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("download_url")]
+        public global::LlamaParse.PresignedUrl? DownloadUrl { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -92,6 +98,9 @@ namespace LlamaParse
         /// <param name="purpose">
         /// How the file will be used: user_data, parse, extract, classify, split, sheet, or agent_app
         /// </param>
+        /// <param name="downloadUrl">
+        /// Presigned URL to download the file content.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -103,7 +112,8 @@ namespace LlamaParse
             string? fileType,
             global::System.DateTime? lastModifiedAt,
             global::System.DateTime? expiresAt,
-            string? purpose)
+            string? purpose,
+            global::LlamaParse.PresignedUrl? downloadUrl)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -113,6 +123,7 @@ namespace LlamaParse
             this.LastModifiedAt = lastModifiedAt;
             this.ExpiresAt = expiresAt;
             this.Purpose = purpose;
+            this.DownloadUrl = downloadUrl;
         }
 
         /// <summary>
@@ -121,5 +132,6 @@ namespace LlamaParse
         public FileV2()
         {
         }
+
     }
 }

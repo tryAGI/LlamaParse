@@ -19,7 +19,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        x20260504,
+        x20260511,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260513,
         /// <summary>
         /// 
         /// </summary>
@@ -40,7 +44,8 @@ namespace LlamaParse
             {
                 ParseRequestConfigurationVersion.x20251211 => "2025-12-11",
                 ParseRequestConfigurationVersion.x20260409 => "2026-04-09",
-                ParseRequestConfigurationVersion.x20260504 => "2026-05-04",
+                ParseRequestConfigurationVersion.x20260511 => "2026-05-11",
+                ParseRequestConfigurationVersion.x20260513 => "2026-05-13",
                 ParseRequestConfigurationVersion.Latest => "latest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,7 +59,8 @@ namespace LlamaParse
             {
                 "2025-12-11" => ParseRequestConfigurationVersion.x20251211,
                 "2026-04-09" => ParseRequestConfigurationVersion.x20260409,
-                "2026-05-04" => ParseRequestConfigurationVersion.x20260504,
+                "2026-05-11" => ParseRequestConfigurationVersion.x20260511,
+                "2026-05-13" => ParseRequestConfigurationVersion.x20260513,
                 "latest" => ParseRequestConfigurationVersion.Latest,
                 _ => null,
             };

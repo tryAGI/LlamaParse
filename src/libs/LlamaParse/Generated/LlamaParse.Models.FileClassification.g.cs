@@ -98,5 +98,6 @@ namespace LlamaParse
         public FileClassification()
         {
         }
+
     }
 }

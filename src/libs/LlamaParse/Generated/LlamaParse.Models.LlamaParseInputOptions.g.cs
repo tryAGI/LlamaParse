@@ -76,5 +76,6 @@ namespace LlamaParse
         public LlamaParseInputOptions()
         {
         }
+
     }
 }

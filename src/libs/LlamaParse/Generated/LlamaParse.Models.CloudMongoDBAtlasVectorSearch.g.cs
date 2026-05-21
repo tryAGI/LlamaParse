@@ -118,5 +118,6 @@ namespace LlamaParse
         public CloudMongoDBAtlasVectorSearch()
         {
         }
+
     }
 }

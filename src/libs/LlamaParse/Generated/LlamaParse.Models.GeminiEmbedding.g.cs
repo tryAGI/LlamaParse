@@ -146,5 +146,6 @@ namespace LlamaParse
         public GeminiEmbedding()
         {
         }
+
     }
 }

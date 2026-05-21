@@ -149,5 +149,6 @@ namespace LlamaParse
         public AggregateRequest()
         {
         }
+
     }
 }

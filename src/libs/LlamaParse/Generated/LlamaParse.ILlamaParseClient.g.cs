@@ -52,6 +52,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public ChatClient Chat { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ClassifierClient Classifier { get; }
 
         /// <summary>
@@ -68,6 +73,11 @@ namespace LlamaParse
         /// 
         /// </summary>
         public EmbeddingModelConfigsClient EmbeddingModelConfigs { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public IndexesClient Indexes { get; }
 
         /// <summary>
         /// 
@@ -118,6 +128,11 @@ namespace LlamaParse
         /// 
         /// </summary>
         public ProjectsClient Projects { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RetrievalClient Retrieval { get; }
 
         /// <summary>
         /// 

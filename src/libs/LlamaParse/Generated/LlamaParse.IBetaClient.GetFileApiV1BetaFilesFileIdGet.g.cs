@@ -9,6 +9,9 @@ namespace LlamaParse
         /// Get file metadata by ID.
         /// </summary>
         /// <param name="fileId"></param>
+        /// <param name="expand">
+        /// Fields to expand.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -17,6 +20,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.FileV2> GetFileApiV1BetaFilesFileIdGetAsync(
             global::System.Guid fileId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -27,6 +31,9 @@ namespace LlamaParse
         /// Get file metadata by ID.
         /// </summary>
         /// <param name="fileId"></param>
+        /// <param name="expand">
+        /// Fields to expand.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -35,6 +42,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.FileV2>> GetFileApiV1BetaFilesFileIdGetAsResponseAsync(
             global::System.Guid fileId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,

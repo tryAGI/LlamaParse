@@ -72,5 +72,6 @@ namespace LlamaParse
         public TokenChunkingConfig()
         {
         }
+
     }
 }

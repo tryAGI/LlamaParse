@@ -194,5 +194,6 @@ namespace LlamaParse
         public ClassifyV2JobResponse()
         {
         }
+
     }
 }

@@ -591,6 +591,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        Yxmd,
+        /// <summary>
+        /// 
+        /// </summary>
         Zabw,
     }
 
@@ -751,6 +755,7 @@ namespace LlamaParse
                 LlamaParseSupportedFileExtensions.Xlsx => ".xlsx",
                 LlamaParseSupportedFileExtensions.Xlw => ".xlw",
                 LlamaParseSupportedFileExtensions.Xml => ".xml",
+                LlamaParseSupportedFileExtensions.Yxmd => ".yxmd",
                 LlamaParseSupportedFileExtensions.Zabw => ".zabw",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -907,6 +912,7 @@ namespace LlamaParse
                 ".xlsx" => LlamaParseSupportedFileExtensions.Xlsx,
                 ".xlw" => LlamaParseSupportedFileExtensions.Xlw,
                 ".xml" => LlamaParseSupportedFileExtensions.Xml,
+                ".yxmd" => LlamaParseSupportedFileExtensions.Yxmd,
                 ".zabw" => LlamaParseSupportedFileExtensions.Zabw,
                 _ => null,
             };

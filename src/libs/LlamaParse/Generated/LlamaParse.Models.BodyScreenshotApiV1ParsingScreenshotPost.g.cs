@@ -178,5 +178,6 @@ namespace LlamaParse
         public BodyScreenshotApiV1ParsingScreenshotPost()
         {
         }
+
     }
 }

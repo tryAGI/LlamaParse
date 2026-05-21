@@ -48,12 +48,6 @@ namespace LlamaParse
         public string? Description { get; set; }
 
         /// <summary>
-        /// Optional data source id the directory syncs from. Null if just manual uploads.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data_source_id")]
-        public string? DataSourceId { get; set; }
-
-        /// <summary>
         /// Optional timestamp of when the directory was deleted. Null if not deleted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_at")]
@@ -86,9 +80,6 @@ namespace LlamaParse
         /// <param name="description">
         /// Optional description shown to users.
         /// </param>
-        /// <param name="dataSourceId">
-        /// Optional data source id the directory syncs from. Null if just manual uploads.
-        /// </param>
         /// <param name="deletedAt">
         /// Optional timestamp of when the directory was deleted. Null if not deleted.
         /// </param>
@@ -102,7 +93,6 @@ namespace LlamaParse
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
             string? description,
-            string? dataSourceId,
             global::System.DateTime? deletedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -111,7 +101,6 @@ namespace LlamaParse
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
-            this.DataSourceId = dataSourceId;
             this.DeletedAt = deletedAt;
         }
 
@@ -121,5 +110,6 @@ namespace LlamaParse
         public DirectoryResponse()
         {
         }
+
     }
 }

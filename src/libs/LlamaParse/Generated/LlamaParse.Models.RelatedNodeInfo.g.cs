@@ -79,5 +79,6 @@ namespace LlamaParse
         public RelatedNodeInfo()
         {
         }
+
     }
 }

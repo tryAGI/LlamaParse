@@ -28,6 +28,7 @@ namespace LlamaParse
         partial void PrepareGetFileApiV1BetaFilesFileIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid fileId,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
@@ -35,6 +36,7 @@ namespace LlamaParse
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid fileId,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
@@ -52,6 +54,9 @@ namespace LlamaParse
         /// Get file metadata by ID.
         /// </summary>
         /// <param name="fileId"></param>
+        /// <param name="expand">
+        /// Fields to expand.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -60,6 +65,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.FileV2> GetFileApiV1BetaFilesFileIdGetAsync(
             global::System.Guid fileId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -68,6 +74,7 @@ namespace LlamaParse
         {
             var __response = await GetFileApiV1BetaFilesFileIdGetAsResponseAsync(
                 fileId: fileId,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -82,6 +89,9 @@ namespace LlamaParse
         /// Get file metadata by ID.
         /// </summary>
         /// <param name="fileId"></param>
+        /// <param name="expand">
+        /// Fields to expand.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -90,6 +100,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.FileV2>> GetFileApiV1BetaFilesFileIdGetAsResponseAsync(
             global::System.Guid fileId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -101,6 +112,7 @@ namespace LlamaParse
             PrepareGetFileApiV1BetaFilesFileIdGetArguments(
                 httpClient: HttpClient,
                 fileId: ref fileId,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -132,6 +144,7 @@ namespace LlamaParse
                                 path: $"/api/v1/beta/files/{fileId}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("expand", expand?.ToString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -188,6 +201,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     fileId: fileId!,
+                    expand: expand,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);

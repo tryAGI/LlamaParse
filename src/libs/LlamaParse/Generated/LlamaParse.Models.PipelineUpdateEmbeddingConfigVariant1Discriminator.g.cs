@@ -40,5 +40,6 @@ namespace LlamaParse
         public PipelineUpdateEmbeddingConfigVariant1Discriminator()
         {
         }
+
     }
 }

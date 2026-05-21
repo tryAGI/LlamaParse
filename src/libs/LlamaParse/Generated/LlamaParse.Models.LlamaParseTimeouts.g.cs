@@ -11,7 +11,7 @@ namespace LlamaParse
     public sealed partial class LlamaParseTimeouts
     {
         /// <summary>
-        /// Base timeout for the job in seconds (max 1800 = 30 minutes). This is the minimum time allowed regardless of document size
+        /// Base timeout for the job in seconds (max 7200 = 2 hours). This is the minimum time allowed regardless of document size
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base_in_seconds")]
         public int? BaseInSeconds { get; set; }
@@ -32,7 +32,7 @@ namespace LlamaParse
         /// Initializes a new instance of the <see cref="LlamaParseTimeouts" /> class.
         /// </summary>
         /// <param name="baseInSeconds">
-        /// Base timeout for the job in seconds (max 1800 = 30 minutes). This is the minimum time allowed regardless of document size
+        /// Base timeout for the job in seconds (max 7200 = 2 hours). This is the minimum time allowed regardless of document size
         /// </param>
         /// <param name="extraTimePerPageInSeconds">
         /// Additional timeout per page in seconds (max 300 = 5 minutes). Total timeout = base + (this value × page count)
@@ -54,5 +54,6 @@ namespace LlamaParse
         public LlamaParseTimeouts()
         {
         }
+
     }
 }

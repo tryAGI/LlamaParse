@@ -28,6 +28,9 @@ namespace LlamaParse
         /// <param name="orderBy">
         /// A comma-separated list of fields to order by, sorted in ascending order. Use 'field_name desc' to specify descending order.
         /// </param>
+        /// <param name="expand">
+        /// Fields to expand on each file.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -41,6 +44,7 @@ namespace LlamaParse
             string? fileName = default,
             string? externalFileId = default,
             string? orderBy = default,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -70,6 +74,9 @@ namespace LlamaParse
         /// <param name="orderBy">
         /// A comma-separated list of fields to order by, sorted in ascending order. Use 'field_name desc' to specify descending order.
         /// </param>
+        /// <param name="expand">
+        /// Fields to expand on each file.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -83,6 +90,7 @@ namespace LlamaParse
             string? fileName = default,
             string? externalFileId = default,
             string? orderBy = default,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,

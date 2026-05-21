@@ -1309,5 +1309,6 @@ namespace LlamaParse
         public BatchParseJobConfig()
         {
         }
+
     }
 }

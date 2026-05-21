@@ -114,5 +114,6 @@ namespace LlamaParse
         public PageFigureMetadata()
         {
         }
+
     }
 }

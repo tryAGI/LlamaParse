@@ -124,5 +124,6 @@ namespace LlamaParse
         public JobDataPoint()
         {
         }
+
     }
 }

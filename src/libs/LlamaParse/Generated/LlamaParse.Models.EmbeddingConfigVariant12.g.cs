@@ -34,6 +34,26 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAzureEmbedding1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.AzureOpenAIEmbeddingConfig? value)
+        {
+            value = AzureEmbedding1;
+            return IsAzureEmbedding1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.AzureOpenAIEmbeddingConfig PickAzureEmbedding1() => IsAzureEmbedding1
+            ? AzureEmbedding1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureEmbedding1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.CohereEmbeddingConfig? CohereEmbedding { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CohereEmbedding))]
 #endif
         public bool IsCohereEmbedding => CohereEmbedding != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCohereEmbedding(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.CohereEmbeddingConfig? value)
+        {
+            value = CohereEmbedding;
+            return IsCohereEmbedding;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.CohereEmbeddingConfig PickCohereEmbedding() => IsCohereEmbedding
+            ? CohereEmbedding!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CohereEmbedding' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -68,6 +108,26 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGeminiEmbedding(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.GeminiEmbeddingConfig? value)
+        {
+            value = GeminiEmbedding;
+            return IsGeminiEmbedding;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.GeminiEmbeddingConfig PickGeminiEmbedding() => IsGeminiEmbedding
+            ? GeminiEmbedding!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GeminiEmbedding' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig? HuggingfaceApiEmbedding { get; init; }
 #else
@@ -81,6 +141,26 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HuggingfaceApiEmbedding))]
 #endif
         public bool IsHuggingfaceApiEmbedding => HuggingfaceApiEmbedding != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHuggingfaceApiEmbedding(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig? value)
+        {
+            value = HuggingfaceApiEmbedding;
+            return IsHuggingfaceApiEmbedding;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig PickHuggingfaceApiEmbedding() => IsHuggingfaceApiEmbedding
+            ? HuggingfaceApiEmbedding!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HuggingfaceApiEmbedding' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +182,26 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAzureEmbedding2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.OpenAIEmbeddingConfig? value)
+        {
+            value = AzureEmbedding2;
+            return IsAzureEmbedding2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.OpenAIEmbeddingConfig PickAzureEmbedding2() => IsAzureEmbedding2
+            ? AzureEmbedding2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureEmbedding2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.VertexAIEmbeddingConfig? VertexaiEmbedding { get; init; }
 #else
@@ -119,6 +219,26 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVertexaiEmbedding(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.VertexAIEmbeddingConfig? value)
+        {
+            value = VertexaiEmbedding;
+            return IsVertexaiEmbedding;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.VertexAIEmbeddingConfig PickVertexaiEmbedding() => IsVertexaiEmbedding
+            ? VertexaiEmbedding!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VertexaiEmbedding' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.BedrockEmbeddingConfig? BedrockEmbedding { get; init; }
 #else
@@ -132,6 +252,26 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BedrockEmbedding))]
 #endif
         public bool IsBedrockEmbedding => BedrockEmbedding != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBedrockEmbedding(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.BedrockEmbeddingConfig? value)
+        {
+            value = BedrockEmbedding;
+            return IsBedrockEmbedding;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LlamaParse.BedrockEmbeddingConfig PickBedrockEmbedding() => IsBedrockEmbedding
+            ? BedrockEmbedding!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BedrockEmbedding' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -149,6 +289,11 @@ namespace LlamaParse
         {
             AzureEmbedding1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingConfigVariant12 FromAzureEmbedding1(global::LlamaParse.AzureOpenAIEmbeddingConfig? value) => new EmbeddingConfigVariant12(value);
 
         /// <summary>
         /// 
@@ -171,6 +316,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingConfigVariant12 FromCohereEmbedding(global::LlamaParse.CohereEmbeddingConfig? value) => new EmbeddingConfigVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingConfigVariant12(global::LlamaParse.GeminiEmbeddingConfig value) => new EmbeddingConfigVariant12((global::LlamaParse.GeminiEmbeddingConfig?)value);
 
         /// <summary>
@@ -185,6 +335,11 @@ namespace LlamaParse
         {
             GeminiEmbedding = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingConfigVariant12 FromGeminiEmbedding(global::LlamaParse.GeminiEmbeddingConfig? value) => new EmbeddingConfigVariant12(value);
 
         /// <summary>
         /// 
@@ -207,6 +362,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingConfigVariant12 FromHuggingfaceApiEmbedding(global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig? value) => new EmbeddingConfigVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingConfigVariant12(global::LlamaParse.OpenAIEmbeddingConfig value) => new EmbeddingConfigVariant12((global::LlamaParse.OpenAIEmbeddingConfig?)value);
 
         /// <summary>
@@ -221,6 +381,11 @@ namespace LlamaParse
         {
             AzureEmbedding2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingConfigVariant12 FromAzureEmbedding2(global::LlamaParse.OpenAIEmbeddingConfig? value) => new EmbeddingConfigVariant12(value);
 
         /// <summary>
         /// 
@@ -243,6 +408,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingConfigVariant12 FromVertexaiEmbedding(global::LlamaParse.VertexAIEmbeddingConfig? value) => new EmbeddingConfigVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingConfigVariant12(global::LlamaParse.BedrockEmbeddingConfig value) => new EmbeddingConfigVariant12((global::LlamaParse.BedrockEmbeddingConfig?)value);
 
         /// <summary>
@@ -257,6 +427,11 @@ namespace LlamaParse
         {
             BedrockEmbedding = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingConfigVariant12 FromBedrockEmbedding(global::LlamaParse.BedrockEmbeddingConfig? value) => new EmbeddingConfigVariant12(value);
 
         /// <summary>
         /// 
@@ -321,13 +496,13 @@ namespace LlamaParse
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LlamaParse.AzureOpenAIEmbeddingConfig?, TResult>? azureEmbedding1 = null,
-            global::System.Func<global::LlamaParse.CohereEmbeddingConfig?, TResult>? cohereEmbedding = null,
-            global::System.Func<global::LlamaParse.GeminiEmbeddingConfig?, TResult>? geminiEmbedding = null,
-            global::System.Func<global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig?, TResult>? huggingfaceApiEmbedding = null,
-            global::System.Func<global::LlamaParse.OpenAIEmbeddingConfig?, TResult>? azureEmbedding2 = null,
-            global::System.Func<global::LlamaParse.VertexAIEmbeddingConfig?, TResult>? vertexaiEmbedding = null,
-            global::System.Func<global::LlamaParse.BedrockEmbeddingConfig?, TResult>? bedrockEmbedding = null,
+            global::System.Func<global::LlamaParse.AzureOpenAIEmbeddingConfig, TResult>? azureEmbedding1 = null,
+            global::System.Func<global::LlamaParse.CohereEmbeddingConfig, TResult>? cohereEmbedding = null,
+            global::System.Func<global::LlamaParse.GeminiEmbeddingConfig, TResult>? geminiEmbedding = null,
+            global::System.Func<global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig, TResult>? huggingfaceApiEmbedding = null,
+            global::System.Func<global::LlamaParse.OpenAIEmbeddingConfig, TResult>? azureEmbedding2 = null,
+            global::System.Func<global::LlamaParse.VertexAIEmbeddingConfig, TResult>? vertexaiEmbedding = null,
+            global::System.Func<global::LlamaParse.BedrockEmbeddingConfig, TResult>? bedrockEmbedding = null,
             bool validate = true)
         {
             if (validate)
@@ -371,13 +546,67 @@ namespace LlamaParse
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::LlamaParse.AzureOpenAIEmbeddingConfig?>? azureEmbedding1 = null,
-            global::System.Action<global::LlamaParse.CohereEmbeddingConfig?>? cohereEmbedding = null,
-            global::System.Action<global::LlamaParse.GeminiEmbeddingConfig?>? geminiEmbedding = null,
-            global::System.Action<global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig?>? huggingfaceApiEmbedding = null,
-            global::System.Action<global::LlamaParse.OpenAIEmbeddingConfig?>? azureEmbedding2 = null,
-            global::System.Action<global::LlamaParse.VertexAIEmbeddingConfig?>? vertexaiEmbedding = null,
-            global::System.Action<global::LlamaParse.BedrockEmbeddingConfig?>? bedrockEmbedding = null,
+            global::System.Action<global::LlamaParse.AzureOpenAIEmbeddingConfig>? azureEmbedding1 = null,
+
+            global::System.Action<global::LlamaParse.CohereEmbeddingConfig>? cohereEmbedding = null,
+
+            global::System.Action<global::LlamaParse.GeminiEmbeddingConfig>? geminiEmbedding = null,
+
+            global::System.Action<global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig>? huggingfaceApiEmbedding = null,
+
+            global::System.Action<global::LlamaParse.OpenAIEmbeddingConfig>? azureEmbedding2 = null,
+
+            global::System.Action<global::LlamaParse.VertexAIEmbeddingConfig>? vertexaiEmbedding = null,
+
+            global::System.Action<global::LlamaParse.BedrockEmbeddingConfig>? bedrockEmbedding = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAzureEmbedding1)
+            {
+                azureEmbedding1?.Invoke(AzureEmbedding1!);
+            }
+            else if (IsCohereEmbedding)
+            {
+                cohereEmbedding?.Invoke(CohereEmbedding!);
+            }
+            else if (IsGeminiEmbedding)
+            {
+                geminiEmbedding?.Invoke(GeminiEmbedding!);
+            }
+            else if (IsHuggingfaceApiEmbedding)
+            {
+                huggingfaceApiEmbedding?.Invoke(HuggingfaceApiEmbedding!);
+            }
+            else if (IsAzureEmbedding2)
+            {
+                azureEmbedding2?.Invoke(AzureEmbedding2!);
+            }
+            else if (IsVertexaiEmbedding)
+            {
+                vertexaiEmbedding?.Invoke(VertexaiEmbedding!);
+            }
+            else if (IsBedrockEmbedding)
+            {
+                bedrockEmbedding?.Invoke(BedrockEmbedding!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::LlamaParse.AzureOpenAIEmbeddingConfig>? azureEmbedding1 = null,
+            global::System.Action<global::LlamaParse.CohereEmbeddingConfig>? cohereEmbedding = null,
+            global::System.Action<global::LlamaParse.GeminiEmbeddingConfig>? geminiEmbedding = null,
+            global::System.Action<global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig>? huggingfaceApiEmbedding = null,
+            global::System.Action<global::LlamaParse.OpenAIEmbeddingConfig>? azureEmbedding2 = null,
+            global::System.Action<global::LlamaParse.VertexAIEmbeddingConfig>? vertexaiEmbedding = null,
+            global::System.Action<global::LlamaParse.BedrockEmbeddingConfig>? bedrockEmbedding = null,
             bool validate = true)
         {
             if (validate)

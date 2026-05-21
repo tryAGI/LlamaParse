@@ -56,5 +56,6 @@ namespace LlamaParse
         public ClassifierRule()
         {
         }
+
     }
 }
