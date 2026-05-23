@@ -61,7 +61,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.SessionSummary> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.ChatSessionSummary> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsync(
             string sessionId,
 
             global::LlamaParse.GenerateTitleParams request,
@@ -96,7 +96,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionSummary>> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ChatSessionSummary>> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsResponseAsync(
             string sessionId,
 
             global::LlamaParse.GenerateTitleParams request,
@@ -449,9 +449,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.SessionSummary.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.ChatSessionSummary.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionSummary>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ChatSessionSummary>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -483,9 +483,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.SessionSummary.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.ChatSessionSummary.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionSummary>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ChatSessionSummary>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -541,7 +541,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.SessionSummary> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.ChatSessionSummary> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsync(
             string sessionId,
             string firstMessage,
             global::System.Guid? projectId = default,

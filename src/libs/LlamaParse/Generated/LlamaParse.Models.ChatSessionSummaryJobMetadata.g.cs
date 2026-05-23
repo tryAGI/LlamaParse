@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Indexes this session is bound to. Null on unbound sessions.
+    /// Token usage and status from the most recent run. Null if the session has not been run yet.
     /// </summary>
-    public sealed partial class SessionSummaryIndexIds
+    public sealed partial class ChatSessionSummaryJobMetadata
     {
 
         /// <summary>

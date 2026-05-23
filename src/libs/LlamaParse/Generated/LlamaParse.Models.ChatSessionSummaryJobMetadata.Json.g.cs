@@ -2,7 +2,7 @@
 
 namespace LlamaParse
 {
-    public sealed partial class SessionSummaryGeneratedTitle
+    public sealed partial class ChatSessionSummaryJobMetadata
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace LlamaParse
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LlamaParse.SessionSummaryGeneratedTitle? FromJson(
+        public static global::LlamaParse.ChatSessionSummaryJobMetadata? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LlamaParse.SessionSummaryGeneratedTitle),
-                jsonSerializerContext) as global::LlamaParse.SessionSummaryGeneratedTitle;
+                typeof(global::LlamaParse.ChatSessionSummaryJobMetadata),
+                jsonSerializerContext) as global::LlamaParse.ChatSessionSummaryJobMetadata;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LlamaParse.SessionSummaryGeneratedTitle? FromJson(
+        public static global::LlamaParse.ChatSessionSummaryJobMetadata? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.SessionSummaryGeneratedTitle>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.ChatSessionSummaryJobMetadata>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace LlamaParse
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LlamaParse.SessionSummaryGeneratedTitle?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::LlamaParse.ChatSessionSummaryJobMetadata?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LlamaParse.SessionSummaryGeneratedTitle),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LlamaParse.SessionSummaryGeneratedTitle;
+                typeof(global::LlamaParse.ChatSessionSummaryJobMetadata),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LlamaParse.ChatSessionSummaryJobMetadata;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.SessionSummaryGeneratedTitle?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.ChatSessionSummaryJobMetadata?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LlamaParse.SessionSummaryGeneratedTitle?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LlamaParse.ChatSessionSummaryJobMetadata?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

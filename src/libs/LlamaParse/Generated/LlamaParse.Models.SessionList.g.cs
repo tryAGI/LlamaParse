@@ -13,7 +13,7 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LlamaParse.SessionSummary> Items { get; set; }
+        public required global::System.Collections.Generic.IList<global::LlamaParse.ChatSessionSummary> Items { get; set; }
 
         /// <summary>
         /// Opaque token to retrieve the next page. Omitted when there are no further pages.
@@ -40,7 +40,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SessionList(
-            global::System.Collections.Generic.IList<global::LlamaParse.SessionSummary> items,
+            global::System.Collections.Generic.IList<global::LlamaParse.ChatSessionSummary> items,
             string? nextPageToken)
         {
             this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
