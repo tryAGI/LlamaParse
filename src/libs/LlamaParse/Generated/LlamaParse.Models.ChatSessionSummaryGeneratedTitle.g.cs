@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Token usage and status from the most recent run. Null if the session has not been run yet.
+    /// Auto-generated title derived from the first user message.
     /// </summary>
-    public sealed partial class SessionSummaryJobMetadata
+    public sealed partial class ChatSessionSummaryGeneratedTitle
     {
 
         /// <summary>

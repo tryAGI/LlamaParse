@@ -16,7 +16,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.SessionSummary> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.ChatSessionSummary> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsync(
             string sessionId,
 
             global::LlamaParse.GenerateTitleParams request,
@@ -37,7 +37,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SessionSummary>> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ChatSessionSummary>> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsResponseAsync(
             string sessionId,
 
             global::LlamaParse.GenerateTitleParams request,
@@ -60,7 +60,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.SessionSummary> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.ChatSessionSummary> GenerateSessionTitleApiV1ChatSessionIdTitlePostAsync(
             string sessionId,
             string firstMessage,
             global::System.Guid? projectId = default,

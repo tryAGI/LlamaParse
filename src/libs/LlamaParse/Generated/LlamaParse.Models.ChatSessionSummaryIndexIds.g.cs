@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Auto-generated title derived from the first user message.
+    /// Indexes this session is bound to. Null on unbound sessions.
     /// </summary>
-    public sealed partial class SessionSummaryGeneratedTitle
+    public sealed partial class ChatSessionSummaryIndexIds
     {
 
         /// <summary>
