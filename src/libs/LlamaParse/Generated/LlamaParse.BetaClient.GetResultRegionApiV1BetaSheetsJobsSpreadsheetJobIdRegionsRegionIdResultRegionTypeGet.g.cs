@@ -155,7 +155,7 @@ namespace LlamaParse
             {
 
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: $"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionType}",
+                                path: $"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("expires_at_seconds", expiresAtSeconds?.ToString())
@@ -239,7 +239,7 @@ namespace LlamaParse
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet",
                                 methodName: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetAsync",
-                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionType}\"",
+                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -273,7 +273,7 @@ namespace LlamaParse
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet",
                                 methodName: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetAsync",
-                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionType}\"",
+                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -314,7 +314,7 @@ namespace LlamaParse
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet",
                                 methodName: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetAsync",
-                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionType}\"",
+                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -362,7 +362,7 @@ namespace LlamaParse
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet",
                                 methodName: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetAsync",
-                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionType}\"",
+                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -384,7 +384,7 @@ namespace LlamaParse
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet",
                                 methodName: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetAsync",
-                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionType}\"",
+                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
