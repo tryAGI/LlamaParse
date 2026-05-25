@@ -55,6 +55,16 @@ namespace LlamaParse
         /// <param name="description">
         /// Optional description shown to users.
         /// </param>
+        /// <param name="type">
+        /// Directory type. Use 'ephemeral' for batch processing with automatic cleanup.<br/>
+        /// Default Value: user
+        /// </param>
+        /// <param name="expiresAt">
+        /// When this directory expires. Required for ephemeral directories.
+        /// </param>
+        /// <param name="systemMetadata">
+        /// Reserved system-managed metadata.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -64,6 +74,9 @@ namespace LlamaParse
             global::System.Guid? organizationId = default,
             string? session = default,
             string? description = default,
+            global::LlamaParse.DirectoryCreateRequestType? type = default,
+            global::System.DateTime? expiresAt = default,
+            object? systemMetadata = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

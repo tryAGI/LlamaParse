@@ -128,6 +128,18 @@ namespace LlamaParse
         /// 
         /// </summary>
         x20260511,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260519,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260520,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260521,
     }
 
     /// <summary>
@@ -172,6 +184,9 @@ namespace LlamaParse
                 ParseVersionsResponseAgenticPlu.x20260504 => "2026-05-04",
                 ParseVersionsResponseAgenticPlu.x20260506 => "2026-05-06",
                 ParseVersionsResponseAgenticPlu.x20260511 => "2026-05-11",
+                ParseVersionsResponseAgenticPlu.x20260519 => "2026-05-19",
+                ParseVersionsResponseAgenticPlu.x20260520 => "2026-05-20",
+                ParseVersionsResponseAgenticPlu.x20260521 => "2026-05-21",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -212,6 +227,9 @@ namespace LlamaParse
                 "2026-05-04" => ParseVersionsResponseAgenticPlu.x20260504,
                 "2026-05-06" => ParseVersionsResponseAgenticPlu.x20260506,
                 "2026-05-11" => ParseVersionsResponseAgenticPlu.x20260511,
+                "2026-05-19" => ParseVersionsResponseAgenticPlu.x20260519,
+                "2026-05-20" => ParseVersionsResponseAgenticPlu.x20260520,
+                "2026-05-21" => ParseVersionsResponseAgenticPlu.x20260521,
                 _ => null,
             };
         }

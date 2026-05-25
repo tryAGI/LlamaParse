@@ -6,7 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Sync Pipeline Data Source<br/>
-        /// Run ingestion for the pipeline data source by incrementally updating the data-sink with upstream changes from data-source.
+        /// Run incremental ingestion: pull upstream changes from the data source into the data sink.
         /// </summary>
         /// <param name="dataSourceId"></param>
         /// <param name="pipelineId"></param>
@@ -25,7 +25,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Sync Pipeline Data Source<br/>
-        /// Run ingestion for the pipeline data source by incrementally updating the data-sink with upstream changes from data-source.
+        /// Run incremental ingestion: pull upstream changes from the data source into the data sink.
         /// </summary>
         /// <param name="dataSourceId"></param>
         /// <param name="pipelineId"></param>
@@ -44,7 +44,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Sync Pipeline Data Source<br/>
-        /// Run ingestion for the pipeline data source by incrementally updating the data-sink with upstream changes from data-source.
+        /// Run incremental ingestion: pull upstream changes from the data source into the data sink.
         /// </summary>
         /// <param name="dataSourceId"></param>
         /// <param name="pipelineId"></param>

@@ -6,8 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Get Classification Job Results<br/>
-        /// Get the results of a classify job.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Get the results of a classify job. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="classifyJobId"></param>
         /// <param name="projectId"></param>
@@ -25,8 +24,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Classification Job Results<br/>
-        /// Get the results of a classify job.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Get the results of a classify job. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="classifyJobId"></param>
         /// <param name="projectId"></param>

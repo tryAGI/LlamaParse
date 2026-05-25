@@ -6,8 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Get Result Region<br/>
-        /// Generate a presigned URL to download a specific extracted region.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Generate a presigned URL to download a specific extracted region. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="spreadsheetJobId"></param>
         /// <param name="regionId"></param>
@@ -31,8 +30,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Result Region<br/>
-        /// Generate a presigned URL to download a specific extracted region.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Generate a presigned URL to download a specific extracted region. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="spreadsheetJobId"></param>
         /// <param name="regionId"></param>

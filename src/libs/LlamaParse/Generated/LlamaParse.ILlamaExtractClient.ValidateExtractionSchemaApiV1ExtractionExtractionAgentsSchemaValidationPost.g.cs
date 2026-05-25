@@ -6,8 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Validate Extraction Schema<br/>
-        /// Validates an extraction agent's schema definition.<br/>
-        /// Returns the normalized and validated schema if valid, otherwise raises an HTTP 400.
+        /// Validate an extraction agent schema; returns the normalized schema or raises 400.
         /// </summary>
         /// <param name="session"></param>
         /// <param name="request"></param>
@@ -22,8 +21,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Validate Extraction Schema<br/>
-        /// Validates an extraction agent's schema definition.<br/>
-        /// Returns the normalized and validated schema if valid, otherwise raises an HTTP 400.
+        /// Validate an extraction agent schema; returns the normalized schema or raises 400.
         /// </summary>
         /// <param name="session"></param>
         /// <param name="request"></param>
@@ -38,8 +36,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Validate Extraction Schema<br/>
-        /// Validates an extraction agent's schema definition.<br/>
-        /// Returns the normalized and validated schema if valid, otherwise raises an HTTP 400.
+        /// Validate an extraction agent schema; returns the normalized schema or raises 400.
         /// </summary>
         /// <param name="session"></param>
         /// <param name="dataSchema"></param>

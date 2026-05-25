@@ -49,12 +49,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Get Parsing Job Details<br/>
-        /// Get detailed parsing job information including status, parameters, and telemetry.<br/>
-        /// Returns comprehensive job details with:<br/>
-        /// - Job status and error information<br/>
-        /// - Job parameters (with sensitive API keys removed)<br/>
-        /// - Job metadata (telemetry, performance metrics)<br/>
-        /// - Session logs (errors, warnings, page-level details)
+        /// Get a parsing job's status, parameters (API keys redacted), telemetry, and session logs.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="projectId"></param>
@@ -84,12 +79,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Get Parsing Job Details<br/>
-        /// Get detailed parsing job information including status, parameters, and telemetry.<br/>
-        /// Returns comprehensive job details with:<br/>
-        /// - Job status and error information<br/>
-        /// - Job parameters (with sensitive API keys removed)<br/>
-        /// - Job metadata (telemetry, performance metrics)<br/>
-        /// - Session logs (errors, warnings, page-level details)
+        /// Get a parsing job's status, parameters (API keys redacted), telemetry, and session logs.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="projectId"></param>

@@ -6,9 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Upload File To Directory<br/>
-        /// Upload a file directly to a directory.<br/>
-        /// Uploads a file and creates a directory file entry in a single operation.<br/>
-        /// If unique_id or display_name are not provided, they will be derived from the file metadata.
+        /// Upload a file and create its directory entry in one call; `unique_id` / `display_name` default to values derived from file metadata.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>
@@ -29,9 +27,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload File To Directory<br/>
-        /// Upload a file directly to a directory.<br/>
-        /// Uploads a file and creates a directory file entry in a single operation.<br/>
-        /// If unique_id or display_name are not provided, they will be derived from the file metadata.
+        /// Upload a file and create its directory entry in one call; `unique_id` / `display_name` default to values derived from file metadata.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>
@@ -52,9 +48,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload File To Directory<br/>
-        /// Upload a file directly to a directory.<br/>
-        /// Uploads a file and creates a directory file entry in a single operation.<br/>
-        /// If unique_id or display_name are not provided, they will be derived from the file metadata.
+        /// Upload a file and create its directory entry in one call; `unique_id` / `display_name` default to values derived from file metadata.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>
@@ -87,9 +81,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Upload File To Directory<br/>
-        /// Upload a file directly to a directory.<br/>
-        /// Uploads a file and creates a directory file entry in a single operation.<br/>
-        /// If unique_id or display_name are not provided, they will be derived from the file metadata.
+        /// Upload a file and create its directory entry in one call; `unique_id` / `display_name` default to values derived from file metadata.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>
@@ -123,9 +115,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload File To Directory<br/>
-        /// Upload a file directly to a directory.<br/>
-        /// Uploads a file and creates a directory file entry in a single operation.<br/>
-        /// If unique_id or display_name are not provided, they will be derived from the file metadata.
+        /// Upload a file and create its directory entry in one call; `unique_id` / `display_name` default to values derived from file metadata.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>

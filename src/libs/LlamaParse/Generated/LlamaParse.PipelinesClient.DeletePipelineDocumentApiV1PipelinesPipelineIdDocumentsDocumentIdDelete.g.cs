@@ -42,10 +42,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Delete Pipeline Document<br/>
-        /// Delete a document from a pipeline.<br/>
-        /// Initiates an async job that will:<br/>
-        /// 1. Delete vectors from the vector store<br/>
-        /// 2. Delete the document from MongoDB after vectors are successfully deleted
+        /// Delete a document from a pipeline; runs async (vectors first, then MongoDB record).
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="pipelineId"></param>
@@ -70,10 +67,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Delete Pipeline Document<br/>
-        /// Delete a document from a pipeline.<br/>
-        /// Initiates an async job that will:<br/>
-        /// 1. Delete vectors from the vector store<br/>
-        /// 2. Delete the document from MongoDB after vectors are successfully deleted
+        /// Delete a document from a pipeline; runs async (vectors first, then MongoDB record).
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="pipelineId"></param>

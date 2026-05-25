@@ -6,9 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Generate File Page Figure Presigned Url<br/>
-        /// Returns a presigned url to read a page figure.<br/>
-        /// The presigned url is valid for a limited time period, after which it will expire.<br/>
-        /// Be careful on accidental exposure of the presigned url, as it may allow unauthorized access to the file before the expiration.
+        /// Returns a short-lived presigned URL to read a page figure; treat the URL as sensitive while it is valid.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="pageIndex"></param>
@@ -30,9 +28,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate File Page Figure Presigned Url<br/>
-        /// Returns a presigned url to read a page figure.<br/>
-        /// The presigned url is valid for a limited time period, after which it will expire.<br/>
-        /// Be careful on accidental exposure of the presigned url, as it may allow unauthorized access to the file before the expiration.
+        /// Returns a short-lived presigned URL to read a page figure; treat the URL as sensitive while it is valid.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="pageIndex"></param>

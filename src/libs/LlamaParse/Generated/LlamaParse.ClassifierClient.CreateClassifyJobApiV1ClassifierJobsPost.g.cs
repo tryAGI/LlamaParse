@@ -49,8 +49,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Create Classify Job<br/>
-        /// Create a classify job.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Create a classify job. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -82,8 +81,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Create Classify Job<br/>
-        /// Create a classify job.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Create a classify job. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -517,8 +515,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Create Classify Job<br/>
-        /// Create a classify job.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Create a classify job. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>

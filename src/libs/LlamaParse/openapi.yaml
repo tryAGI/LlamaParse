@@ -1910,7 +1910,7 @@
           "Page Screenshots"
         ],
         "summary": "Generate File Page Screenshot Presigned Url",
-        "description": "Returns a presigned url to read a page screenshot.\n\nThe presigned url is valid for a limited time period, after which it will expire.\nBe careful on accidental exposure of the presigned url, as it may allow unauthorized access to the file before the expiration.",
+        "description": "Returns a short-lived presigned URL to read a page screenshot; treat the URL as sensitive while it is valid.",
         "operationId": "generate_file_page_screenshot_presigned_url_api_v1_files__id__page_screenshots__page_index__presigned_url_post",
         "security": [
           {
@@ -2348,7 +2348,7 @@
           "Page Figures"
         ],
         "summary": "Generate File Page Figure Presigned Url",
-        "description": "Returns a presigned url to read a page figure.\n\nThe presigned url is valid for a limited time period, after which it will expire.\nBe careful on accidental exposure of the presigned url, as it may allow unauthorized access to the file before the expiration.",
+        "description": "Returns a short-lived presigned URL to read a page figure; treat the URL as sensitive while it is valid.",
         "operationId": "generate_file_page_figure_presigned_url_api_v1_files__id__page_figures__page_index___figure_name__presigned_url_post",
         "security": [
           {
@@ -3809,7 +3809,7 @@
           "Pipeline Data Sources"
         ],
         "summary": "Sync Pipeline Data Source",
-        "description": "Run ingestion for the pipeline data source by incrementally updating the data-sink with upstream changes from data-source.",
+        "description": "Run incremental ingestion: pull upstream changes from the data source into the data sink.",
         "operationId": "sync_pipeline_data_source_api_v1_pipelines__pipeline_id__data_sources__data_source_id__sync_post",
         "security": [
           {
@@ -5239,7 +5239,7 @@
           "Pipelines"
         ],
         "summary": "Delete Pipeline Document",
-        "description": "Delete a document from a pipeline.\nInitiates an async job that will:\n1. Delete vectors from the vector store\n2. Delete the document from MongoDB after vectors are successfully deleted",
+        "description": "Delete a document from a pipeline; runs async (vectors first, then MongoDB record).",
         "operationId": "delete_pipeline_document_api_v1_pipelines__pipeline_id__documents__document_id__delete",
         "security": [
           {
@@ -6856,7 +6856,7 @@
           "Parsing"
         ],
         "summary": "Get Parsing Job Details",
-        "description": "Get detailed parsing job information including status, parameters, and telemetry.\n\nReturns comprehensive job details with:\n- Job status and error information\n- Job parameters (with sensitive API keys removed)\n- Job metadata (telemetry, performance metrics)\n- Session logs (errors, warnings, page-level details)",
+        "description": "Get a parsing job's status, parameters (API keys redacted), telemetry, and session logs.",
         "operationId": "get_parsing_job_details_api_v1_parsing_job__job_id__details_get",
         "security": [
           {
@@ -6954,7 +6954,7 @@
           "Parsing"
         ],
         "summary": "Get Job Text Result",
-        "description": "Get a job by id\n\nNote: The 'credits_used' and 'job_credits_usage' fields in the response metadata are deprecated\nand will be removed in a future release.",
+        "description": "Get a job by id. Deprecated: `credits_used` and `job_credits_usage` will be removed in a future release.",
         "operationId": "get_job_text_result_api_v1_parsing_job__job_id__result_text_get",
         "security": [
           {
@@ -7148,7 +7148,7 @@
           "Parsing"
         ],
         "summary": "Get Job Structured Result",
-        "description": "Get a job by id\n\nNote: The 'credits_used' and 'job_credits_usage' fields in the response metadata are deprecated\nand will be removed in a future release.",
+        "description": "Get a job by id. Deprecated: `credits_used` and `job_credits_usage` will be removed in a future release.",
         "operationId": "get_job_structured_result_api_v1_parsing_job__job_id__result_structured_get",
         "security": [
           {
@@ -7342,7 +7342,7 @@
           "Parsing"
         ],
         "summary": "Get Job Result",
-        "description": "Get a job by id\n\nNote: The 'credits_used' and 'job_credits_usage' fields in the response metadata are deprecated\nand will be removed in a future release.",
+        "description": "Get a job by id. Deprecated: `credits_used` and `job_credits_usage` will be removed in a future release.",
         "operationId": "get_job_result_api_v1_parsing_job__job_id__result_markdown_get",
         "security": [
           {
@@ -7440,7 +7440,7 @@
           "Parsing"
         ],
         "summary": "Get Job Json Result",
-        "description": "Get a job by id\n\nNote: The 'credits_used' and 'job_credits_usage' fields in the response metadata are deprecated\nand will be removed in a future release.",
+        "description": "Get a job by id. Deprecated: `credits_used` and `job_credits_usage` will be removed in a future release.",
         "operationId": "get_job_json_result_api_v1_parsing_job__job_id__result_json_get",
         "security": [
           {
@@ -7613,7 +7613,7 @@
           "Classifier"
         ],
         "summary": "Create Classify Job",
-        "description": "Create a classify job.\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "Create a classify job. Experimental: not production-ready and subject to change.",
         "operationId": "create_classify_job_api_v1_classifier_jobs_post",
         "security": [
           {
@@ -7712,7 +7712,7 @@
           "Classifier"
         ],
         "summary": "List Classify Jobs",
-        "description": "List classify jobs.\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "List classify jobs. Experimental: not production-ready and subject to change.",
         "operationId": "list_classify_jobs_api_v1_classifier_jobs_get",
         "security": [
           {
@@ -7835,7 +7835,7 @@
           "Classifier"
         ],
         "summary": "Get Classify Job",
-        "description": "Get a classify job.\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "Get a classify job. Experimental: not production-ready and subject to change.",
         "operationId": "get_classify_job_api_v1_classifier_jobs__classify_job_id__get",
         "security": [
           {
@@ -7936,7 +7936,7 @@
           "Classifier"
         ],
         "summary": "Get Classification Job Results",
-        "description": "Get the results of a classify job.\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "Get the results of a classify job. Experimental: not production-ready and subject to change.",
         "operationId": "get_classification_job_results_api_v1_classifier_jobs__classify_job_id__results_get",
         "security": [
           {
@@ -8971,7 +8971,7 @@
           "LlamaExtract"
         ],
         "summary": "Extract Stateless",
-        "description": "Stateless extraction endpoint that uses a default extraction agent in the user's default project.\nRequires data_schema, config, and either file_id, text, or base64 encoded file data.",
+        "description": "Stateless extraction using a default agent in the user's default project; requires `data_schema`, `config`, and one of `file_id` / `text` / base64 file data.",
         "operationId": "extract_stateless_api_v1_extraction_run_post",
         "security": [
           {
@@ -9270,7 +9270,7 @@
           "LlamaExtract"
         ],
         "summary": "Validate Extraction Schema",
-        "description": "Validates an extraction agent's schema definition.\nReturns the normalized and validated schema if valid, otherwise raises an HTTP 400.",
+        "description": "Validate an extraction agent schema; returns the normalized schema or raises 400.",
         "operationId": "validate_extraction_schema_api_v1_extraction_extraction_agents_schema_validation_post",
         "security": [
           {
@@ -9335,7 +9335,7 @@
           "LlamaExtract"
         ],
         "summary": "Generate Extraction Schema",
-        "description": "Generates or refines an extraction agent's schema definition from a file, natural language prompt,\nor existing schema.",
+        "description": "Generate or refine an extraction agent schema from a file, natural-language prompt, or existing schema.",
         "operationId": "generate_extraction_schema_api_v1_extraction_extraction_agents_schema_generate_post",
         "security": [
           {
@@ -9532,7 +9532,7 @@
           "LlamaExtract"
         ],
         "summary": "Get Or Create Default Extraction Agent",
-        "description": "Get or create a default extraction agent for the current project.\nThe default agent has an empty schema and default configuration.",
+        "description": "Get or create the default extraction agent for the current project (empty schema, default config).",
         "operationId": "get_or_create_default_extraction_agent_api_v1_extraction_extraction_agents_default_get",
         "security": [
           {
@@ -10685,114 +10685,6 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChatSessionSummary"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/chat/{session_id}/title": {
-      "post": {
-        "tags": [
-          "Chat"
-        ],
-        "summary": "Generate Session Title",
-        "description": "Generate a title for a session from its first user message.",
-        "operationId": "generate_session_title_api_v1_chat__session_id__title_post",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "session_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "title": "Session Id"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GenerateTitleParams"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -12745,7 +12637,7 @@
           "Files"
         ],
         "summary": "Query Files",
-        "description": "Query files with flexible filtering and pagination.\n\n**Deprecated**: Use GET /files instead for listing files with query parameters.\n\nArgs:\n    request: The query request with filters and pagination\n    project: Validated project from dependency\n\nReturns:\n    Paginated response with files",
+        "description": "Query files with filtering and pagination. Deprecated: use `GET /files`.",
         "operationId": "query_files_api_v1_beta_files_query_post",
         "deprecated": true,
         "security": [
@@ -13179,7 +13071,7 @@
           "Sheets"
         ],
         "summary": "Create Spreadsheet Job",
-        "description": "Create a spreadsheet parsing job.\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "Create a spreadsheet parsing job. Experimental: not production-ready and subject to change.",
         "operationId": "create_spreadsheet_job_api_v1_beta_sheets_jobs_post",
         "security": [
           {
@@ -13279,7 +13171,7 @@
           "Sheets"
         ],
         "summary": "List Spreadsheet Jobs",
-        "description": "List spreadsheet parsing jobs.\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "List spreadsheet parsing jobs. Experimental: not production-ready and subject to change.",
         "operationId": "list_spreadsheet_jobs_api_v1_beta_sheets_jobs_get",
         "security": [
           {
@@ -13490,7 +13382,7 @@
           "Sheets"
         ],
         "summary": "Get Spreadsheet Job",
-        "description": "Get a spreadsheet parsing job.\n\nWhen include_results=True (default), the response will include extracted regions and results\nif the job is complete, eliminating the need for a separate /results call.\n\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "Get a spreadsheet parsing job. When `include_results=True` (default), embeds extracted regions and results if complete, skipping the separate `/results` call. Experimental: not production-ready and subject to change.",
         "operationId": "get_spreadsheet_job_api_v1_beta_sheets_jobs__spreadsheet_job_id__get",
         "security": [
           {
@@ -13599,7 +13491,7 @@
           "Sheets"
         ],
         "summary": "Delete Spreadsheet Job",
-        "description": "Delete a spreadsheet parsing job and its associated data.\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "Delete a spreadsheet parsing job and its associated data. Experimental: not production-ready and subject to change.",
         "operationId": "delete_spreadsheet_job_api_v1_beta_sheets_jobs__spreadsheet_job_id__delete",
         "security": [
           {
@@ -13698,7 +13590,7 @@
           "Sheets"
         ],
         "summary": "Get Result Region",
-        "description": "Generate a presigned URL to download a specific extracted region.\nExperimental: This endpoint is not yet ready for production use and is subject to change at any time.",
+        "description": "Generate a presigned URL to download a specific extracted region. Experimental: not production-ready and subject to change.",
         "operationId": "get_result_region_api_v1_beta_sheets_jobs__spreadsheet_job_id__regions__region_id__result__region_type__get",
         "security": [
           {
@@ -13994,7 +13886,8 @@
                 {
                   "enum": [
                     "user",
-                    "index"
+                    "index",
+                    "ephemeral"
                   ],
                   "type": "string"
                 },
@@ -14391,7 +14284,7 @@
           "Directory Files"
         ],
         "summary": "Add Directory File",
-        "description": "Create a new file within the specified directory.\n\nThe directory must exist and belong to the project passed in.\nThe file_id must be provided and exist in the project.",
+        "description": "Create a new file within the specified directory; the directory must exist in the project and `file_id` must reference an existing file.",
         "operationId": "add_directory_file_api_v1_beta_directories__directory_id__files_post",
         "security": [
           {
@@ -14765,7 +14658,7 @@
           "Directory Files"
         ],
         "summary": "Upload File To Directory",
-        "description": "Upload a file directly to a directory.\n\nUploads a file and creates a directory file entry in a single operation.\nIf unique_id or display_name are not provided, they will be derived from the file metadata.",
+        "description": "Upload a file and create its directory entry in one call; `unique_id` / `display_name` default to values derived from file metadata.",
         "operationId": "upload_file_to_directory_api_v1_beta_directories__directory_id__files_upload_post",
         "security": [
           {
@@ -14874,7 +14767,7 @@
           "Directory Files"
         ],
         "summary": "Get Directory File",
-        "description": "Get a file by its directory_file_id within the specified directory. If you're trying to get a file by its unique_id, use the list endpoint with a filter instead.",
+        "description": "Get a directory file by `directory_file_id`; to look up by `unique_id`, use the list endpoint with a filter.",
         "operationId": "get_directory_file_api_v1_beta_directories__directory_id__files__directory_file_id__get",
         "security": [
           {
@@ -15004,7 +14897,7 @@
           "Directory Files"
         ],
         "summary": "Update Directory File",
-        "description": "Update file metadata within the specified directory.\n\nSupports moving files to a different directory by setting directory_id.\n\nNote: This endpoint uses directory_file_id (the internal ID). If you're trying to update a file by its unique_id, use the list endpoint with a filter to find the directory_file_id first.",
+        "description": "Update directory-file metadata by `directory_file_id`; set `directory_id` to move the file to a different directory. To resolve from `unique_id`, list with a filter first.",
         "operationId": "update_directory_file_api_v1_beta_directories__directory_id__files__directory_file_id__patch",
         "security": [
           {
@@ -15120,7 +15013,7 @@
           "Directory Files"
         ],
         "summary": "Delete Directory File",
-        "description": "Delete a file from the specified directory.\n\nNote: This endpoint uses directory_file_id (the internal ID). If you're trying to delete a file by its unique_id, use the list endpoint with a filter to find the directory_file_id first.",
+        "description": "Delete a directory file by `directory_file_id`; to resolve from `unique_id`, list with a filter first.",
         "operationId": "delete_directory_file_api_v1_beta_directories__directory_id__files__directory_file_id__delete",
         "security": [
           {
@@ -15221,7 +15114,7 @@
           "Directory Files"
         ],
         "summary": "Bulk Delete Directory Files",
-        "description": "Delete multiple files from the specified directory.\n\nAll files must belong to the specified directory. Maximum 100 files per request.",
+        "description": "Delete up to 100 files from the specified directory; all must belong to it.",
         "operationId": "bulk_delete_directory_files_api_v1_beta_directories__directory_id__files_bulk_delete_post",
         "security": [
           {
@@ -15324,7 +15217,7 @@
           "Configurations"
         ],
         "summary": "Create Configuration",
-        "description": "Create or update a product configuration.\n\nIf a configuration with the same name already exists for this product\ntype and project, it will be updated (upsert semantics).",
+        "description": "Upsert a product configuration; updates if one with the same name + product type + project exists, otherwise creates.",
         "operationId": "create_configuration_api_v1_beta_configurations_post",
         "security": [
           {
@@ -19537,6 +19430,176 @@
           }
         }
       }
+    },
+    "/api/v2/organizations": {
+      "get": {
+        "tags": [
+          "V2",
+          "Organizations"
+        ],
+        "summary": "List Organizations",
+        "description": "List organizations the current user can access.",
+        "operationId": "list_organizations_api_v2_organizations_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Name"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page Size"
+            }
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page Token"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganizationQueryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/organizations/{organization_id}": {
+      "get": {
+        "tags": [
+          "V2",
+          "Organizations"
+        ],
+        "summary": "Get Organization",
+        "description": "Get an organization by ID.",
+        "operationId": "get_organization_api_v2_organizations__organization_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganizationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -20542,8 +20605,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-05-13",
-                  "2026-05-11",
+                  "2026-05-21",
                   "2026-04-09",
                   "2025-12-11"
                 ],
@@ -28203,6 +28265,49 @@
             ],
             "title": "Description",
             "description": "Optional description shown to users."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "user",
+              "ephemeral"
+            ],
+            "title": "Type",
+            "description": "Directory type. Use 'ephemeral' for batch processing with automatic cleanup.",
+            "default": "user",
+            "examples": [
+              "user",
+              "ephemeral"
+            ]
+          },
+          "expires_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires At",
+            "description": "When this directory expires. Required for ephemeral directories.",
+            "examples": [
+              "2026-05-10T00:00:00Z"
+            ]
+          },
+          "system_metadata": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "System Metadata",
+            "description": "Reserved system-managed metadata."
           }
         },
         "type": "object",
@@ -28510,7 +28615,7 @@
             "title": "Display Name",
             "description": "Updated display name."
           },
-          "directory_id": {
+          "target_directory_id": {
             "anyOf": [
               {
                 "type": "string"
@@ -28519,7 +28624,7 @@
                 "type": "null"
               }
             ],
-            "title": "Directory Id",
+            "title": "Target Directory Id",
             "description": "Move file to a different directory."
           },
           "metadata": {
@@ -28661,6 +28766,50 @@
             ],
             "title": "Description",
             "description": "Optional description shown to users."
+          },
+          "type": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "user",
+                  "index",
+                  "ephemeral",
+                  "system_ephemeral"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Type",
+            "description": "Directory type: 'user', 'index', 'ephemeral', or 'system_ephemeral'."
+          },
+          "expires_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires At",
+            "description": "When this directory expires and is eligible for cleanup."
+          },
+          "system_metadata": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "System Metadata",
+            "description": "Reserved system-managed metadata."
           },
           "deleted_at": {
             "anyOf": [
@@ -29820,30 +29969,6 @@
             ],
             "title": "Num Pages Extracted",
             "description": "Number of pages extracted"
-          },
-          "num_document_tokens": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Num Document Tokens",
-            "description": "Number of document tokens"
-          },
-          "num_output_tokens": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Num Output Tokens",
-            "description": "Number of output tokens"
           }
         },
         "type": "object",
@@ -33243,23 +33368,249 @@
         "type": "object",
         "title": "GeminiEmbeddingConfig"
       },
-      "GenerateTitleParams": {
+      "GroundedLine": {
         "properties": {
-          "first_message": {
-            "type": "string",
-            "title": "First Message",
-            "description": "First user message of the session, used to infer a short title.",
-            "examples": [
-              "What were the main findings in Q3?"
-            ]
+          "span": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Span",
+            "description": "`[start, end)` byte span in the item's source text"
+          },
+          "bbox": {
+            "$ref": "#/components/schemas/BBox",
+            "description": "Line bounding box"
+          },
+          "words": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/GroundedWord"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Words",
+            "description": "Per-word grounding within the line, when available"
           }
         },
         "type": "object",
         "required": [
-          "first_message"
+          "span",
+          "bbox"
         ],
-        "title": "GenerateTitleParams",
-        "description": "Request body for generating a session title."
+        "title": "GroundedLine",
+        "description": "One grounded line of text with an optional per-word breakdown."
+      },
+      "GroundedTableCell": {
+        "properties": {
+          "span": {
+            "anyOf": [
+              {
+                "prefixItems": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ],
+                "type": "array",
+                "maxItems": 2,
+                "minItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Span",
+            "description": "`[start, end)` byte span in the cell text"
+          },
+          "lines": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/GroundedLine"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lines",
+            "description": "Per-line grounding inside the cell"
+          },
+          "bbox": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/BBox"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bbox",
+            "description": "One or more bounding boxes covering the cell"
+          }
+        },
+        "type": "object",
+        "title": "GroundedTableCell",
+        "description": "Grounding for a single table cell."
+      },
+      "GroundedTableSupport": {
+        "properties": {
+          "rows": {
+            "anyOf": [
+              {
+                "items": {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/GroundedTableCell"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "type": "array"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows",
+            "description": "Per-cell grounding by `[row][col]`; `null` entries mark missing cells"
+          },
+          "row_bboxes": {
+            "anyOf": [
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "$ref": "#/components/schemas/BBox"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Row Bboxes",
+            "description": "Bounding boxes for each row (a row may have multiple boxes)"
+          },
+          "column_bboxes": {
+            "anyOf": [
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "$ref": "#/components/schemas/BBox"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Column Bboxes",
+            "description": "Bounding boxes for each column (a column may have multiple boxes)"
+          }
+        },
+        "type": "object",
+        "title": "GroundedTableSupport",
+        "description": "Grounding for a table-shaped item."
+      },
+      "GroundedTextSupport": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "enum": [
+              "md",
+              "caption"
+            ],
+            "title": "Source",
+            "description": "Which textual surface of the item the spans index into"
+          },
+          "lines": {
+            "items": {
+              "$ref": "#/components/schemas/GroundedLine"
+            },
+            "type": "array",
+            "title": "Lines",
+            "description": "Per-line grounding for the item text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source",
+          "lines"
+        ],
+        "title": "GroundedTextSupport",
+        "description": "Grounding for a text-shaped item (paragraph, heading, caption, etc.)."
+      },
+      "GroundedWord": {
+        "properties": {
+          "span": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Span",
+            "description": "`[start, end)` byte span in the item's source text"
+          },
+          "bbox": {
+            "$ref": "#/components/schemas/BBox",
+            "description": "Word bounding box"
+          }
+        },
+        "type": "object",
+        "required": [
+          "span",
+          "bbox"
+        ],
+        "title": "GroundedWord",
+        "description": "One grounded word: a `[start, end)` span in the source text and its bbox."
       },
       "HTTPValidationError": {
         "properties": {
@@ -33786,11 +34137,23 @@
               "dir-abc123"
             ]
           },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name",
+            "description": "Optional display name for the index. If omitted, the index is named after the source directory."
+          },
           "products": {
             "anyOf": [
               {
                 "items": {
-                  "$ref": "#/components/schemas/SyncProductEntryRequest"
+                  "$ref": "#/components/schemas/IndexProductEntry"
                 },
                 "type": "array"
               },
@@ -33820,6 +34183,35 @@
             ],
             "title": "Description",
             "description": "Optional description of the index."
+          },
+          "sync_frequency": {
+            "type": "string",
+            "title": "Sync Frequency",
+            "description": "How often to re-run the sync. One of: manual, daily, on_source_change. Defaults to manual.",
+            "default": "manual",
+            "examples": [
+              "manual"
+            ]
+          },
+          "store_attachments": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Store Attachments",
+            "description": "Attachment kinds to store alongside parsed output. Each entry must be one of: screenshots, items. For example, ['screenshots'] renders and stores per-page screenshots; ['items'] stores structured items with bounding boxes. Omit or pass an empty list to skip attachments.",
+            "examples": [
+              [
+                "screenshots"
+              ]
+            ]
           }
         },
         "type": "object",
@@ -33835,6 +34227,30 @@
         "type": "object",
         "title": "IndexMetadata",
         "description": "Build state and diagnostic info about an index. Schema is open; only `status` of `ready` or `failed` is stable."
+      },
+      "IndexProductEntry": {
+        "properties": {
+          "product_type": {
+            "type": "string",
+            "title": "Product Type",
+            "description": "Product type. One of: parse, extract.",
+            "examples": [
+              "parse"
+            ]
+          },
+          "product_config_id": {
+            "type": "string",
+            "title": "Product Config Id",
+            "description": "ID of the product configuration."
+          }
+        },
+        "type": "object",
+        "required": [
+          "product_type",
+          "product_config_id"
+        ],
+        "title": "IndexProductEntry",
+        "description": "A product configuration to include in an index's sync.\n\nStructurally mirrors ``directory_sync.SyncProductEntryRequest`` but is a\ndistinct class so the Index API surface stays SDK-gen-isolated from\ndirectory-sync internals. Translation between the two happens in\n``index/api_utils.py``."
       },
       "IndexQueryResponse": {
         "properties": {
@@ -37711,6 +38127,95 @@
         "title": "Organization",
         "description": "Schema for an organization."
       },
+      "OrganizationQueryResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/OrganizationResponse"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "OrganizationQueryResponse",
+        "description": "API query response schema for organizations."
+      },
+      "OrganizationResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The organization's unique identifier."
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At",
+            "description": "Creation datetime"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At",
+            "description": "Update datetime"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "The organization's display name."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "title": "OrganizationResponse",
+        "description": "API response schema for an organization."
+      },
       "PGVectorDistanceMethod": {
         "type": "string",
         "enum": [
@@ -38414,8 +38919,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-05-13",
-                  "2026-05-11",
+                  "2026-05-21",
                   "2026-04-09",
                   "2025-12-11"
                 ],
@@ -38706,8 +39210,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-05-13",
-                  "2026-05-11",
+                  "2026-05-21",
                   "2026-04-09",
                   "2025-12-11"
                 ],
@@ -38847,6 +39350,9 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-05-21",
+                "2026-05-20",
+                "2026-05-19",
                 "2026-05-13",
                 "2026-05-11",
                 "2026-05-06",
@@ -38889,6 +39395,9 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-05-21",
+                "2026-05-20",
+                "2026-05-19",
                 "2026-05-11",
                 "2026-05-06",
                 "2026-05-04",
@@ -43615,35 +44124,6 @@
           "BEDROCK_CLAUDE_3_5_SONNET_V2"
         ],
         "title": "SupportedLLMModelNames"
-      },
-      "SyncProductEntryRequest": {
-        "properties": {
-          "product_type": {
-            "type": "string",
-            "enum": [
-              "parse",
-              "extract"
-            ],
-            "title": "Product Type",
-            "description": "Product type: parse or extract.",
-            "examples": [
-              "parse",
-              "extract"
-            ]
-          },
-          "product_config_id": {
-            "type": "string",
-            "title": "Product Config Id",
-            "description": "ID of the product configuration."
-          }
-        },
-        "type": "object",
-        "required": [
-          "product_type",
-          "product_config_id"
-        ],
-        "title": "SyncProductEntryRequest",
-        "description": "A product configuration to include in a sync."
       },
       "TableItem": {
         "properties": {

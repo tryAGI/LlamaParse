@@ -51,9 +51,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Generate File Page Screenshot Presigned Url<br/>
-        /// Returns a presigned url to read a page screenshot.<br/>
-        /// The presigned url is valid for a limited time period, after which it will expire.<br/>
-        /// Be careful on accidental exposure of the presigned url, as it may allow unauthorized access to the file before the expiration.
+        /// Returns a short-lived presigned URL to read a page screenshot; treat the URL as sensitive while it is valid.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="pageIndex"></param>
@@ -86,9 +84,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Generate File Page Screenshot Presigned Url<br/>
-        /// Returns a presigned url to read a page screenshot.<br/>
-        /// The presigned url is valid for a limited time period, after which it will expire.<br/>
-        /// Be careful on accidental exposure of the presigned url, as it may allow unauthorized access to the file before the expiration.
+        /// Returns a short-lived presigned URL to read a page screenshot; treat the URL as sensitive while it is valid.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="pageIndex"></param>

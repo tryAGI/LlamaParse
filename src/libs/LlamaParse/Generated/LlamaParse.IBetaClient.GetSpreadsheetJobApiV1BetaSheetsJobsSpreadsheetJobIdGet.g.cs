@@ -6,10 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Get Spreadsheet Job<br/>
-        /// Get a spreadsheet parsing job.<br/>
-        /// When include_results=True (default), the response will include extracted regions and results<br/>
-        /// if the job is complete, eliminating the need for a separate /results call.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Get a spreadsheet parsing job. When `include_results=True` (default), embeds extracted regions and results if complete, skipping the separate `/results` call. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="spreadsheetJobId"></param>
         /// <param name="includeResults">
@@ -31,10 +28,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Spreadsheet Job<br/>
-        /// Get a spreadsheet parsing job.<br/>
-        /// When include_results=True (default), the response will include extracted regions and results<br/>
-        /// if the job is complete, eliminating the need for a separate /results call.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Get a spreadsheet parsing job. When `include_results=True` (default), embeds extracted regions and results if complete, skipping the separate `/results` call. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="spreadsheetJobId"></param>
         /// <param name="includeResults">
