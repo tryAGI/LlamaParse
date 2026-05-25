@@ -11,6 +11,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        Ephemeral,
+        /// <summary>
+        /// 
+        /// </summary>
         Index,
         /// <summary>
         /// 
@@ -30,6 +34,7 @@ namespace LlamaParse
         {
             return value switch
             {
+                ListDirectoriesApiV1BetaDirectoriesGetType2.Ephemeral => "ephemeral",
                 ListDirectoriesApiV1BetaDirectoriesGetType2.Index => "index",
                 ListDirectoriesApiV1BetaDirectoriesGetType2.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace LlamaParse
         {
             return value switch
             {
+                "ephemeral" => ListDirectoriesApiV1BetaDirectoriesGetType2.Ephemeral,
                 "index" => ListDirectoriesApiV1BetaDirectoriesGetType2.Index,
                 "user" => ListDirectoriesApiV1BetaDirectoriesGetType2.User,
                 _ => null,

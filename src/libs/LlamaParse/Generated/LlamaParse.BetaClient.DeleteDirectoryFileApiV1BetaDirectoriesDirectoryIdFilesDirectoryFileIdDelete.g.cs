@@ -46,8 +46,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Delete Directory File<br/>
-        /// Delete a file from the specified directory.<br/>
-        /// Note: This endpoint uses directory_file_id (the internal ID). If you're trying to delete a file by its unique_id, use the list endpoint with a filter to find the directory_file_id first.
+        /// Delete a directory file by `directory_file_id`; to resolve from `unique_id`, list with a filter first.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>
@@ -78,8 +77,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Delete Directory File<br/>
-        /// Delete a file from the specified directory.<br/>
-        /// Note: This endpoint uses directory_file_id (the internal ID). If you're trying to delete a file by its unique_id, use the list endpoint with a filter to find the directory_file_id first.
+        /// Delete a directory file by `directory_file_id`; to resolve from `unique_id`, list with a filter first.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>

@@ -15,18 +15,6 @@ namespace LlamaParse
         public int? NumPagesExtracted { get; set; }
 
         /// <summary>
-        /// Number of document tokens
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("num_document_tokens")]
-        public int? NumDocumentTokens { get; set; }
-
-        /// <summary>
-        /// Number of output tokens
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("num_output_tokens")]
-        public int? NumOutputTokens { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,23 +26,13 @@ namespace LlamaParse
         /// <param name="numPagesExtracted">
         /// Number of pages extracted
         /// </param>
-        /// <param name="numDocumentTokens">
-        /// Number of document tokens
-        /// </param>
-        /// <param name="numOutputTokens">
-        /// Number of output tokens
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExtractJobUsage(
-            int? numPagesExtracted,
-            int? numDocumentTokens,
-            int? numOutputTokens)
+            int? numPagesExtracted)
         {
             this.NumPagesExtracted = numPagesExtracted;
-            this.NumDocumentTokens = numDocumentTokens;
-            this.NumOutputTokens = numOutputTokens;
         }
 
         /// <summary>

@@ -6,8 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// List Spreadsheet Jobs<br/>
-        /// List spreadsheet parsing jobs.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// List spreadsheet parsing jobs. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="includeResults">
         /// Default Value: false
@@ -47,8 +46,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List Spreadsheet Jobs<br/>
-        /// List spreadsheet parsing jobs.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// List spreadsheet parsing jobs. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="includeResults">
         /// Default Value: false

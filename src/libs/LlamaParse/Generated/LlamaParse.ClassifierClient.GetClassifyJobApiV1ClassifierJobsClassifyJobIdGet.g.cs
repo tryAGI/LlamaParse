@@ -49,8 +49,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Get Classify Job<br/>
-        /// Get a classify job.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Get a classify job. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="classifyJobId"></param>
         /// <param name="projectId"></param>
@@ -80,8 +79,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Get Classify Job<br/>
-        /// Get a classify job.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Get a classify job. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="classifyJobId"></param>
         /// <param name="projectId"></param>

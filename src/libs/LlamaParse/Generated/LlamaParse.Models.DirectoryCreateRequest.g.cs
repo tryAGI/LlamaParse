@@ -22,6 +22,26 @@ namespace LlamaParse
         public string? Description { get; set; }
 
         /// <summary>
+        /// Directory type. Use 'ephemeral' for batch processing with automatic cleanup.<br/>
+        /// Default Value: user
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.DirectoryCreateRequestTypeJsonConverter))]
+        public global::LlamaParse.DirectoryCreateRequestType? Type { get; set; }
+
+        /// <summary>
+        /// When this directory expires. Required for ephemeral directories.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public global::System.DateTime? ExpiresAt { get; set; }
+
+        /// <summary>
+        /// Reserved system-managed metadata.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("system_metadata")]
+        public object? SystemMetadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,15 +56,31 @@ namespace LlamaParse
         /// <param name="description">
         /// Optional description shown to users.
         /// </param>
+        /// <param name="type">
+        /// Directory type. Use 'ephemeral' for batch processing with automatic cleanup.<br/>
+        /// Default Value: user
+        /// </param>
+        /// <param name="expiresAt">
+        /// When this directory expires. Required for ephemeral directories.
+        /// </param>
+        /// <param name="systemMetadata">
+        /// Reserved system-managed metadata.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DirectoryCreateRequest(
             string name,
-            string? description)
+            string? description,
+            global::LlamaParse.DirectoryCreateRequestType? type,
+            global::System.DateTime? expiresAt,
+            object? systemMetadata)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
+            this.Type = type;
+            this.ExpiresAt = expiresAt;
+            this.SystemMetadata = systemMetadata;
         }
 
         /// <summary>

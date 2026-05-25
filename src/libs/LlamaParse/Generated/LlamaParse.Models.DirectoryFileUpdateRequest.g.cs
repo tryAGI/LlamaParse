@@ -23,8 +23,8 @@ namespace LlamaParse
         /// <summary>
         /// Move file to a different directory.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("directory_id")]
-        public string? DirectoryId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("target_directory_id")]
+        public string? TargetDirectoryId { get; set; }
 
         /// <summary>
         /// User-defined metadata key-value pairs. Replaces the user metadata layer.
@@ -47,7 +47,7 @@ namespace LlamaParse
         /// <param name="displayName">
         /// Updated display name.
         /// </param>
-        /// <param name="directoryId">
+        /// <param name="targetDirectoryId">
         /// Move file to a different directory.
         /// </param>
         /// <param name="metadata">
@@ -59,12 +59,12 @@ namespace LlamaParse
         public DirectoryFileUpdateRequest(
             string? uniqueId,
             string? displayName,
-            string? directoryId,
+            string? targetDirectoryId,
             object? metadata)
         {
             this.UniqueId = uniqueId;
             this.DisplayName = displayName;
-            this.DirectoryId = directoryId;
+            this.TargetDirectoryId = targetDirectoryId;
             this.Metadata = metadata;
         }
 

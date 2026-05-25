@@ -51,9 +51,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Add Directory File<br/>
-        /// Create a new file within the specified directory.<br/>
-        /// The directory must exist and belong to the project passed in.<br/>
-        /// The file_id must be provided and exist in the project.
+        /// Create a new file within the specified directory; the directory must exist in the project and `file_id` must reference an existing file.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>
@@ -88,9 +86,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Add Directory File<br/>
-        /// Create a new file within the specified directory.<br/>
-        /// The directory must exist and belong to the project passed in.<br/>
-        /// The file_id must be provided and exist in the project.
+        /// Create a new file within the specified directory; the directory must exist in the project and `file_id` must reference an existing file.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>
@@ -528,9 +524,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Add Directory File<br/>
-        /// Create a new file within the specified directory.<br/>
-        /// The directory must exist and belong to the project passed in.<br/>
-        /// The file_id must be provided and exist in the project.
+        /// Create a new file within the specified directory; the directory must exist in the project and `file_id` must reference an existing file.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>

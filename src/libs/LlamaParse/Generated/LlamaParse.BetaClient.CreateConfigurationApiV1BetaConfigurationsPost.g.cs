@@ -49,9 +49,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Create Configuration<br/>
-        /// Create or update a product configuration.<br/>
-        /// If a configuration with the same name already exists for this product<br/>
-        /// type and project, it will be updated (upsert semantics).
+        /// Upsert a product configuration; updates if one with the same name + product type + project exists, otherwise creates.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -83,9 +81,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Create Configuration<br/>
-        /// Create or update a product configuration.<br/>
-        /// If a configuration with the same name already exists for this product<br/>
-        /// type and project, it will be updated (upsert semantics).
+        /// Upsert a product configuration; updates if one with the same name + product type + project exists, otherwise creates.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -519,9 +515,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Create Configuration<br/>
-        /// Create or update a product configuration.<br/>
-        /// If a configuration with the same name already exists for this product<br/>
-        /// type and project, it will be updated (upsert semantics).
+        /// Upsert a product configuration; updates if one with the same name + product type + project exists, otherwise creates.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>

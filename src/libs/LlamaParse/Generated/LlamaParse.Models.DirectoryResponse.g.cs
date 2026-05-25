@@ -48,6 +48,24 @@ namespace LlamaParse
         public string? Description { get; set; }
 
         /// <summary>
+        /// Directory type: 'user', 'index', 'ephemeral', or 'system_ephemeral'.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public global::LlamaParse.DirectoryResponseType2? Type { get; set; }
+
+        /// <summary>
+        /// When this directory expires and is eligible for cleanup.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public global::System.DateTime? ExpiresAt { get; set; }
+
+        /// <summary>
+        /// Reserved system-managed metadata.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("system_metadata")]
+        public object? SystemMetadata { get; set; }
+
+        /// <summary>
         /// Optional timestamp of when the directory was deleted. Null if not deleted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_at")]
@@ -80,6 +98,15 @@ namespace LlamaParse
         /// <param name="description">
         /// Optional description shown to users.
         /// </param>
+        /// <param name="type">
+        /// Directory type: 'user', 'index', 'ephemeral', or 'system_ephemeral'.
+        /// </param>
+        /// <param name="expiresAt">
+        /// When this directory expires and is eligible for cleanup.
+        /// </param>
+        /// <param name="systemMetadata">
+        /// Reserved system-managed metadata.
+        /// </param>
         /// <param name="deletedAt">
         /// Optional timestamp of when the directory was deleted. Null if not deleted.
         /// </param>
@@ -93,6 +120,9 @@ namespace LlamaParse
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
             string? description,
+            global::LlamaParse.DirectoryResponseType2? type,
+            global::System.DateTime? expiresAt,
+            object? systemMetadata,
             global::System.DateTime? deletedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -101,6 +131,9 @@ namespace LlamaParse
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
+            this.Type = type;
+            this.ExpiresAt = expiresAt;
+            this.SystemMetadata = systemMetadata;
             this.DeletedAt = deletedAt;
         }
 

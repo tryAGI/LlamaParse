@@ -46,8 +46,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Bulk Delete Directory Files<br/>
-        /// Delete multiple files from the specified directory.<br/>
-        /// All files must belong to the specified directory. Maximum 100 files per request.
+        /// Delete up to 100 files from the specified directory; all must belong to it.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>
@@ -80,8 +79,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Bulk Delete Directory Files<br/>
-        /// Delete multiple files from the specified directory.<br/>
-        /// All files must belong to the specified directory. Maximum 100 files per request.
+        /// Delete up to 100 files from the specified directory; all must belong to it.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>
@@ -503,8 +501,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Bulk Delete Directory Files<br/>
-        /// Delete multiple files from the specified directory.<br/>
-        /// All files must belong to the specified directory. Maximum 100 files per request.
+        /// Delete up to 100 files from the specified directory; all must belong to it.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>

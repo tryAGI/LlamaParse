@@ -49,9 +49,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Get Job Result<br/>
-        /// Get a job by id<br/>
-        /// Note: The 'credits_used' and 'job_credits_usage' fields in the response metadata are deprecated<br/>
-        /// and will be removed in a future release.
+        /// Get a job by id. Deprecated: `credits_used` and `job_credits_usage` will be removed in a future release.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="organizationId"></param>
@@ -81,9 +79,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Get Job Result<br/>
-        /// Get a job by id<br/>
-        /// Note: The 'credits_used' and 'job_credits_usage' fields in the response metadata are deprecated<br/>
-        /// and will be removed in a future release.
+        /// Get a job by id. Deprecated: `credits_used` and `job_credits_usage` will be removed in a future release.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="organizationId"></param>

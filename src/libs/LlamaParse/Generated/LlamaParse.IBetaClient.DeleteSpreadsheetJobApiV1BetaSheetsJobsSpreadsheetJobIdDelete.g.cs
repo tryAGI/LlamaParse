@@ -6,8 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Delete Spreadsheet Job<br/>
-        /// Delete a spreadsheet parsing job and its associated data.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Delete a spreadsheet parsing job and its associated data. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="spreadsheetJobId"></param>
         /// <param name="projectId"></param>
@@ -25,8 +24,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete Spreadsheet Job<br/>
-        /// Delete a spreadsheet parsing job and its associated data.<br/>
-        /// Experimental: This endpoint is not yet ready for production use and is subject to change at any time.
+        /// Delete a spreadsheet parsing job and its associated data. Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="spreadsheetJobId"></param>
         /// <param name="projectId"></param>

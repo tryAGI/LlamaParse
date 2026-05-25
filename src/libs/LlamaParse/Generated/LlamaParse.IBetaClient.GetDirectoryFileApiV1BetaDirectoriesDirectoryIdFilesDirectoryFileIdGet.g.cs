@@ -6,7 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Get Directory File<br/>
-        /// Get a file by its directory_file_id within the specified directory. If you're trying to get a file by its unique_id, use the list endpoint with a filter instead.
+        /// Get a directory file by `directory_file_id`; to look up by `unique_id`, use the list endpoint with a filter.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>
@@ -30,7 +30,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Directory File<br/>
-        /// Get a file by its directory_file_id within the specified directory. If you're trying to get a file by its unique_id, use the list endpoint with a filter instead.
+        /// Get a directory file by `directory_file_id`; to look up by `unique_id`, use the list endpoint with a filter.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>

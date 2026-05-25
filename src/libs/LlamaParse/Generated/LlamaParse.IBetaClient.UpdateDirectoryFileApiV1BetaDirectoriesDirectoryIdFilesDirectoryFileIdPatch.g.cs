@@ -6,9 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Update Directory File<br/>
-        /// Update file metadata within the specified directory.<br/>
-        /// Supports moving files to a different directory by setting directory_id.<br/>
-        /// Note: This endpoint uses directory_file_id (the internal ID). If you're trying to update a file by its unique_id, use the list endpoint with a filter to find the directory_file_id first.
+        /// Update directory-file metadata by `directory_file_id`; set `directory_id` to move the file to a different directory. To resolve from `unique_id`, list with a filter first.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>
@@ -31,9 +29,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Directory File<br/>
-        /// Update file metadata within the specified directory.<br/>
-        /// Supports moving files to a different directory by setting directory_id.<br/>
-        /// Note: This endpoint uses directory_file_id (the internal ID). If you're trying to update a file by its unique_id, use the list endpoint with a filter to find the directory_file_id first.
+        /// Update directory-file metadata by `directory_file_id`; set `directory_id` to move the file to a different directory. To resolve from `unique_id`, list with a filter first.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>
@@ -56,9 +52,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Directory File<br/>
-        /// Update file metadata within the specified directory.<br/>
-        /// Supports moving files to a different directory by setting directory_id.<br/>
-        /// Note: This endpoint uses directory_file_id (the internal ID). If you're trying to update a file by its unique_id, use the list endpoint with a filter to find the directory_file_id first.
+        /// Update directory-file metadata by `directory_file_id`; set `directory_id` to move the file to a different directory. To resolve from `unique_id`, list with a filter first.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>
@@ -71,7 +65,7 @@ namespace LlamaParse
         /// <param name="displayName">
         /// Updated display name.
         /// </param>
-        /// <param name="requestDirectoryId">
+        /// <param name="targetDirectoryId">
         /// Move file to a different directory.
         /// </param>
         /// <param name="metadata">
@@ -88,7 +82,7 @@ namespace LlamaParse
             string? session = default,
             string? uniqueId = default,
             string? displayName = default,
-            string? requestDirectoryId = default,
+            string? targetDirectoryId = default,
             object? metadata = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

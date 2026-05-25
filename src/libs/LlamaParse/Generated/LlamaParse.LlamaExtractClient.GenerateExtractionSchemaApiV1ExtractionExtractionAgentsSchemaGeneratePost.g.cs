@@ -49,8 +49,7 @@ namespace LlamaParse
 
         /// <summary>
         /// Generate Extraction Schema<br/>
-        /// Generates or refines an extraction agent's schema definition from a file, natural language prompt,<br/>
-        /// or existing schema.
+        /// Generate or refine an extraction agent schema from a file, natural-language prompt, or existing schema.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -82,8 +81,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Generate Extraction Schema<br/>
-        /// Generates or refines an extraction agent's schema definition from a file, natural language prompt,<br/>
-        /// or existing schema.
+        /// Generate or refine an extraction agent schema from a file, natural-language prompt, or existing schema.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -517,8 +515,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// Generate Extraction Schema<br/>
-        /// Generates or refines an extraction agent's schema definition from a file, natural language prompt,<br/>
-        /// or existing schema.
+        /// Generate or refine an extraction agent schema from a file, natural-language prompt, or existing schema.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>

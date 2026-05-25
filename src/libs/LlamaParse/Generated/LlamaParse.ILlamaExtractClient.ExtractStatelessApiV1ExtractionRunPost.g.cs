@@ -6,8 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Extract Stateless<br/>
-        /// Stateless extraction endpoint that uses a default extraction agent in the user's default project.<br/>
-        /// Requires data_schema, config, and either file_id, text, or base64 encoded file data.
+        /// Stateless extraction using a default agent in the user's default project; requires `data_schema`, `config`, and one of `file_id` / `text` / base64 file data.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -26,8 +25,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Extract Stateless<br/>
-        /// Stateless extraction endpoint that uses a default extraction agent in the user's default project.<br/>
-        /// Requires data_schema, config, and either file_id, text, or base64 encoded file data.
+        /// Stateless extraction using a default agent in the user's default project; requires `data_schema`, `config`, and one of `file_id` / `text` / base64 file data.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -46,8 +44,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Extract Stateless<br/>
-        /// Stateless extraction endpoint that uses a default extraction agent in the user's default project.<br/>
-        /// Requires data_schema, config, and either file_id, text, or base64 encoded file data.
+        /// Stateless extraction using a default agent in the user's default project; requires `data_schema`, `config`, and one of `file_id` / `text` / base64 file data.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>

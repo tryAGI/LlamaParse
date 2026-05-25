@@ -6,8 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Get Or Create Default Extraction Agent<br/>
-        /// Get or create a default extraction agent for the current project.<br/>
-        /// The default agent has an empty schema and default configuration.
+        /// Get or create the default extraction agent for the current project (empty schema, default config).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -23,8 +22,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Or Create Default Extraction Agent<br/>
-        /// Get or create a default extraction agent for the current project.<br/>
-        /// The default agent has an empty schema and default configuration.
+        /// Get or create the default extraction agent for the current project (empty schema, default config).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
