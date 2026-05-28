@@ -37,6 +37,12 @@ namespace LlamaParse
         public required double H { get; set; }
 
         /// <summary>
+        /// Optional visual text rotation angle in degrees. Omitted when unrotated.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("r")]
+        public double? R { get; set; }
+
+        /// <summary>
         /// Confidence score
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
@@ -81,6 +87,9 @@ namespace LlamaParse
         /// <param name="h">
         /// Height of the bounding box
         /// </param>
+        /// <param name="r">
+        /// Optional visual text rotation angle in degrees. Omitted when unrotated.
+        /// </param>
         /// <param name="confidence">
         /// Confidence score
         /// </param>
@@ -101,6 +110,7 @@ namespace LlamaParse
             double y,
             double w,
             double h,
+            double? r,
             double? confidence,
             int? startIndex,
             int? endIndex,
@@ -110,6 +120,7 @@ namespace LlamaParse
             this.Y = y;
             this.W = w;
             this.H = h;
+            this.R = r;
             this.Confidence = confidence;
             this.StartIndex = startIndex;
             this.EndIndex = endIndex;

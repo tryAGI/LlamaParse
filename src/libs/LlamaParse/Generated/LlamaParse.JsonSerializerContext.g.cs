@@ -45,6 +45,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemNullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.BatchResponseStatusJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.BatchResponseStatusNullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.BoxAuthMechanismJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.BoxAuthMechanismNullableJsonConverter),
@@ -204,6 +208,10 @@ namespace LlamaParse
             typeof(global::LlamaParse.JsonConverters.ImageMetadataCategory2JsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.ImageMetadataCategory2NullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetNullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.JobNameMappingJsonConverter),
 
@@ -445,6 +453,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2NullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2JsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2NullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.ParametersJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.Parameters2JsonConverter),
@@ -524,6 +536,8 @@ namespace LlamaParse
             typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.BatchParseJobRecordCreate, global::LlamaParse.ClassifyJob>),
 
             typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
 
             typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
 
@@ -775,6 +789,9 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AzureOpenAIEmbeddingConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BBox))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchConfiguration))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchJobConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchFileStatus), TypeInfoPropertyName = "BatchFileStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchItemDetail))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchItemListResponse))]
@@ -789,6 +806,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchJobQueryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.BatchJobResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchJobResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchJobReference))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchJobType), TypeInfoPropertyName = "BatchJobType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchJobStatusResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchParseJobConfig))]
@@ -803,6 +821,13 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FailPageMode))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::System.Guid?, string>), TypeInfoPropertyName = "AnyOfGuidString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchQueryResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.BatchResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<string, global::System.Guid?>), TypeInfoPropertyName = "AnyOfStringGuid2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchResponseStatus), TypeInfoPropertyName = "BatchResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.BatchResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BedrockEmbedding))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BedrockEmbeddingConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BodyImportPipelineMetadataApiV1PipelinesPipelineIdMetadataPut))]
@@ -848,7 +873,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2JobQueryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ClassifyV2JobResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2JobResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<string, global::System.Guid?>), TypeInfoPropertyName = "AnyOfStringGuid2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2JobResponseStatus), TypeInfoPropertyName = "ClassifyV2JobResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2JobResponseDocumentInputType), TypeInfoPropertyName = "ClassifyV2JobResponseDocumentInputType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2Result))]
@@ -1087,6 +1111,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.IndexCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.IndexProductEntry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.IndexProductEntry))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.IndexCreateRequestVectorTarget), TypeInfoPropertyName = "IndexCreateRequestVectorTarget2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.IndexMetadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.IndexQueryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.IndexResponse>))]
@@ -1212,17 +1237,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParsingJobStructuredResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParsingJobTextResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PartitionNames), TypeInfoPropertyName = "PartitionNames2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Pipeline))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineType), TypeInfoPropertyName = "PipelineType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EmbeddingConfig3), TypeInfoPropertyName = "EmbeddingConfig32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineEmbeddingConfigDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineEmbeddingConfigDiscriminatorType), TypeInfoPropertyName = "PipelineEmbeddingConfigDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SparseModelConfig))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineConfigurationHashes))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>), TypeInfoPropertyName = "AnyOfAutoTransformConfigAdvancedModeTransformConfig2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineStatus2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineMetadataConfig2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineCreate))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1265,6 +1279,10 @@ namespace LlamaParse
             typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemNullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.BatchResponseStatusJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.BatchResponseStatusNullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.BoxAuthMechanismJsonConverter),
 
@@ -1425,6 +1443,10 @@ namespace LlamaParse
             typeof(global::LlamaParse.JsonConverters.ImageMetadataCategory2JsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.ImageMetadataCategory2NullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetNullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.JobNameMappingJsonConverter),
 
@@ -1666,6 +1688,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2NullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2JsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2NullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.ParametersJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.Parameters2JsonConverter),
@@ -1745,6 +1771,8 @@ namespace LlamaParse
             typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.BatchParseJobRecordCreate, global::LlamaParse.ClassifyJob>),
 
             typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
 
             typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
 
@@ -1952,6 +1980,17 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>?), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_d9f8945237261e89")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>?), TypeInfoPropertyName = "CloudBoxDataSource_ee99e0e6ec633008")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>?), TypeInfoPropertyName = "CloudBoxDataSource_object_dfe1806971be6576")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Pipeline))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineType), TypeInfoPropertyName = "PipelineType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EmbeddingConfig3), TypeInfoPropertyName = "EmbeddingConfig32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineEmbeddingConfigDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineEmbeddingConfigDiscriminatorType), TypeInfoPropertyName = "PipelineEmbeddingConfigDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SparseModelConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineConfigurationHashes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>), TypeInfoPropertyName = "AnyOfAutoTransformConfigAdvancedModeTransformConfig2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineStatus2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineMetadataConfig2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineCreate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EmbeddingConfigVariant12))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineCreateEmbeddingConfigVariant1Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineCreateEmbeddingConfigVariant1DiscriminatorType), TypeInfoPropertyName = "PipelineCreateEmbeddingConfigVariant1DiscriminatorType2")]
@@ -2082,6 +2121,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListParseJobsApiV2ParseGetStatus2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListClassifyJobsApiV2ClassifyGetStatus2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListBatchesApiV2BatchesGetStatus2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.DataSink>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.DataSource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.EmbeddingModelConfig>))]
@@ -2102,6 +2142,8 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.WebhookConfiguration>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ParserLanguages>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.BatchParseJobConfigImagesToSaveVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.BatchResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.BatchResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.InputMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.MessageAnnotation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ClassifierRule>))]
@@ -2274,6 +2316,8 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.BatchParseJobConfigPriority2NullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemNullableJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchResponseStatusJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchResponseStatusNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.BoxAuthMechanismJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.BoxAuthMechanismNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ClassifyModeJsonConverter());
@@ -2354,6 +2398,8 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.HeaderItemItemDiscriminatorTypeNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ImageMetadataCategory2JsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ImageMetadataCategory2NullableJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.JobNameMappingJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.JobNameMappingNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveItemJsonConverter());
@@ -2474,6 +2520,8 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2NullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2JsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2NullableJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2JsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2NullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ParametersJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.Parameters2JsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ParametersVariant1JsonConverter());
@@ -2514,6 +2562,7 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoModeParsingConfVersion?, string, object>());
             options.Converters.Add(new global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.BatchParseJobRecordCreate, global::LlamaParse.ClassifyJob>());
             options.Converters.Add(new global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>());
             options.Converters.Add(new global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>());
             options.Converters.Add(new global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore>());
             options.Converters.Add(new global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore>());

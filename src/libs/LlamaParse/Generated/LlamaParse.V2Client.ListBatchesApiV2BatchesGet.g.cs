@@ -3,11 +3,11 @@
 
 namespace LlamaParse
 {
-    public partial class IndexesClient
+    public partial class V2Client
     {
 
 
-        private static readonly global::LlamaParse.EndPointSecurityRequirement s_CreateIndexApiV1IndexesPostSecurityRequirement0 =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_ListBatchesApiV2BatchesGetSecurityRequirement0 =
             new global::LlamaParse.EndPointSecurityRequirement
             {
                 Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
@@ -21,57 +21,80 @@ namespace LlamaParse
                     },
                 },
             };
-        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_CreateIndexApiV1IndexesPostSecurityRequirements =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_ListBatchesApiV2BatchesGetSecurityRequirements =
             new global::LlamaParse.EndPointSecurityRequirement[]
-            {                s_CreateIndexApiV1IndexesPostSecurityRequirement0,
+            {                s_ListBatchesApiV2BatchesGetSecurityRequirement0,
             };
-        partial void PrepareCreateIndexApiV1IndexesPostArguments(
+        partial void PrepareListBatchesApiV2BatchesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
-            ref string? session,
-            global::LlamaParse.IndexCreateRequest request);
-        partial void PrepareCreateIndexApiV1IndexesPostRequest(
+            int? pageSize,
+            ref string? pageToken,
+            global::System.DateTime? createdAtOnOrAfter,
+            global::System.DateTime? createdAtOnOrBefore,
+            global::LlamaParse.ListBatchesApiV2BatchesGetStatus2? status,
+            ref string? sourceDirectoryId,
+            ref string? session);
+        partial void PrepareListBatchesApiV2BatchesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
-            string? session,
-            global::LlamaParse.IndexCreateRequest request);
-        partial void ProcessCreateIndexApiV1IndexesPostResponse(
+            int? pageSize,
+            string? pageToken,
+            global::System.DateTime? createdAtOnOrAfter,
+            global::System.DateTime? createdAtOnOrBefore,
+            global::LlamaParse.ListBatchesApiV2BatchesGetStatus2? status,
+            string? sourceDirectoryId,
+            string? session);
+        partial void ProcessListBatchesApiV2BatchesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateIndexApiV1IndexesPostResponseContent(
+        partial void ProcessListBatchesApiV2BatchesGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Index<br/>
-        /// Create a searchable index over a source directory.
+        /// List Batches<br/>
+        /// List batches for the current project.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="pageToken"></param>
+        /// <param name="createdAtOnOrAfter"></param>
+        /// <param name="createdAtOnOrBefore"></param>
+        /// <param name="status"></param>
+        /// <param name="sourceDirectoryId"></param>
         /// <param name="session"></param>
-        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.IndexResponse> CreateIndexApiV1IndexesPostAsync(
-
-            global::LlamaParse.IndexCreateRequest request,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.BatchQueryResponse> ListBatchesApiV2BatchesGetAsync(
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
+            int? pageSize = default,
+            string? pageToken = default,
+            global::System.DateTime? createdAtOnOrAfter = default,
+            global::System.DateTime? createdAtOnOrBefore = default,
+            global::LlamaParse.ListBatchesApiV2BatchesGetStatus2? status = default,
+            string? sourceDirectoryId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateIndexApiV1IndexesPostAsResponseAsync(
-
-                request: request,
+            var __response = await ListBatchesApiV2BatchesGetAsResponseAsync(
                 projectId: projectId,
                 organizationId: organizationId,
+                pageSize: pageSize,
+                pageToken: pageToken,
+                createdAtOnOrAfter: createdAtOnOrAfter,
+                createdAtOnOrBefore: createdAtOnOrBefore,
+                status: status,
+                sourceDirectoryId: sourceDirectoryId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -80,41 +103,53 @@ namespace LlamaParse
             return __response.Body;
         }
         /// <summary>
-        /// Create Index<br/>
-        /// Create a searchable index over a source directory.
+        /// List Batches<br/>
+        /// List batches for the current project.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="pageToken"></param>
+        /// <param name="createdAtOnOrAfter"></param>
+        /// <param name="createdAtOnOrBefore"></param>
+        /// <param name="status"></param>
+        /// <param name="sourceDirectoryId"></param>
         /// <param name="session"></param>
-        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.IndexResponse>> CreateIndexApiV1IndexesPostAsResponseAsync(
-
-            global::LlamaParse.IndexCreateRequest request,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.BatchQueryResponse>> ListBatchesApiV2BatchesGetAsResponseAsync(
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
+            int? pageSize = default,
+            string? pageToken = default,
+            global::System.DateTime? createdAtOnOrAfter = default,
+            global::System.DateTime? createdAtOnOrBefore = default,
+            global::LlamaParse.ListBatchesApiV2BatchesGetStatus2? status = default,
+            string? sourceDirectoryId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateIndexApiV1IndexesPostArguments(
+            PrepareListBatchesApiV2BatchesGetArguments(
                 httpClient: HttpClient,
                 projectId: projectId,
                 organizationId: organizationId,
-                session: ref session,
-                request: request);
+                pageSize: pageSize,
+                pageToken: ref pageToken,
+                createdAtOnOrAfter: createdAtOnOrAfter,
+                createdAtOnOrBefore: createdAtOnOrBefore,
+                status: status,
+                sourceDirectoryId: ref sourceDirectoryId,
+                session: ref session);
 
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateIndexApiV1IndexesPostSecurityRequirements,
-                operationName: "CreateIndexApiV1IndexesPostAsync");
+                securityRequirements: s_ListBatchesApiV2BatchesGetSecurityRequirements,
+                operationName: "ListBatchesApiV2BatchesGetAsync");
 
             using var __timeoutCancellationTokenSource = global::LlamaParse.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -134,11 +169,17 @@ namespace LlamaParse
             {
 
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: "/api/v1/indexes",
+                                path: "/api/v2/batches",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("page_token", pageToken)
+                                .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
+                                .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())
+                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("source_directory_id", sourceDirectoryId)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -146,7 +187,7 @@ namespace LlamaParse
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -181,12 +222,6 @@ namespace LlamaParse
                             {
                                 __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
                             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::LlamaParse.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -195,13 +230,18 @@ namespace LlamaParse
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateIndexApiV1IndexesPostRequest(
+                PrepareListBatchesApiV2BatchesGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     projectId: projectId,
                     organizationId: organizationId,
-                    session: session,
-                    request: request);
+                    pageSize: pageSize,
+                    pageToken: pageToken,
+                    createdAtOnOrAfter: createdAtOnOrAfter,
+                    createdAtOnOrBefore: createdAtOnOrBefore,
+                    status: status,
+                    sourceDirectoryId: sourceDirectoryId,
+                    session: session);
 
                 return __httpRequest;
             }
@@ -218,10 +258,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateIndexApiV1IndexesPost",
-                                methodName: "CreateIndexApiV1IndexesPostAsync",
-                                pathTemplate: "\"/api/v1/indexes\"",
-                                httpMethod: "POST",
+                                operationId: "ListBatchesApiV2BatchesGet",
+                                methodName: "ListBatchesApiV2BatchesGetAsync",
+                                pathTemplate: "\"/api/v2/batches\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -252,10 +292,10 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateIndexApiV1IndexesPost",
-                                methodName: "CreateIndexApiV1IndexesPostAsync",
-                                pathTemplate: "\"/api/v1/indexes\"",
-                                httpMethod: "POST",
+                                operationId: "ListBatchesApiV2BatchesGet",
+                                methodName: "ListBatchesApiV2BatchesGetAsync",
+                                pathTemplate: "\"/api/v2/batches\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -293,10 +333,10 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateIndexApiV1IndexesPost",
-                                methodName: "CreateIndexApiV1IndexesPostAsync",
-                                pathTemplate: "\"/api/v1/indexes\"",
-                                httpMethod: "POST",
+                                operationId: "ListBatchesApiV2BatchesGet",
+                                methodName: "ListBatchesApiV2BatchesGetAsync",
+                                pathTemplate: "\"/api/v2/batches\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -333,7 +373,7 @@ namespace LlamaParse
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateIndexApiV1IndexesPostResponse(
+                ProcessListBatchesApiV2BatchesGetResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -341,10 +381,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateIndexApiV1IndexesPost",
-                                methodName: "CreateIndexApiV1IndexesPostAsync",
-                                pathTemplate: "\"/api/v1/indexes\"",
-                                httpMethod: "POST",
+                                operationId: "ListBatchesApiV2BatchesGet",
+                                methodName: "ListBatchesApiV2BatchesGetAsync",
+                                pathTemplate: "\"/api/v2/batches\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -363,10 +403,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateIndexApiV1IndexesPost",
-                                methodName: "CreateIndexApiV1IndexesPostAsync",
-                                pathTemplate: "\"/api/v1/indexes\"",
-                                httpMethod: "POST",
+                                operationId: "ListBatchesApiV2BatchesGet",
+                                methodName: "ListBatchesApiV2BatchesGetAsync",
+                                pathTemplate: "\"/api/v2/batches\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -430,7 +470,7 @@ namespace LlamaParse
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateIndexApiV1IndexesPostResponseContent(
+                                ProcessListBatchesApiV2BatchesGetResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -439,9 +479,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.IndexResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.BatchQueryResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.IndexResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.BatchQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -471,9 +511,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.IndexResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.BatchQueryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.IndexResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.BatchQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -512,72 +552,6 @@ namespace LlamaParse
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Create Index<br/>
-        /// Create a searchable index over a source directory.
-        /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="organizationId"></param>
-        /// <param name="session"></param>
-        /// <param name="sourceDirectoryId">
-        /// ID of the source directory containing your documents.
-        /// </param>
-        /// <param name="name">
-        /// Optional display name for the index. If omitted, the index is named after the source directory.
-        /// </param>
-        /// <param name="products">
-        /// Product configurations for syncing. Omit to use a default parse configuration. Include an explicit entry per product type (e.g. parse, extract) to override the default.
-        /// </param>
-        /// <param name="description">
-        /// Optional description of the index.
-        /// </param>
-        /// <param name="syncFrequency">
-        /// How often to re-run the sync. One of: manual, daily, on_source_change. Defaults to manual.<br/>
-        /// Default Value: manual
-        /// </param>
-        /// <param name="storeAttachments">
-        /// Attachment kinds to store alongside parsed output. Each entry must be one of: screenshots, items. For example, ['screenshots'] renders and stores per-page screenshots; ['items'] stores structured items with bounding boxes. Omit or pass an empty list to skip attachments.
-        /// </param>
-        /// <param name="vectorTarget">
-        /// Vector export destination for the index. 'DEFAULT' exports to the managed vector DB destination resolved from configuration. 'DISABLED' skips vector export — the export destination falls back to 'Download'.<br/>
-        /// Default Value: DEFAULT
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.IndexResponse> CreateIndexApiV1IndexesPostAsync(
-            string sourceDirectoryId,
-            global::System.Guid? projectId = default,
-            global::System.Guid? organizationId = default,
-            string? session = default,
-            string? name = default,
-            global::System.Collections.Generic.IList<global::LlamaParse.IndexProductEntry>? products = default,
-            string? description = default,
-            string? syncFrequency = default,
-            global::System.Collections.Generic.IList<string>? storeAttachments = default,
-            global::LlamaParse.IndexCreateRequestVectorTarget? vectorTarget = default,
-            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LlamaParse.IndexCreateRequest
-            {
-                SourceDirectoryId = sourceDirectoryId,
-                Name = name,
-                Products = products,
-                Description = description,
-                SyncFrequency = syncFrequency,
-                StoreAttachments = storeAttachments,
-                VectorTarget = vectorTarget,
-            };
-
-            return await CreateIndexApiV1IndexesPostAsync(
-                projectId: projectId,
-                organizationId: organizationId,
-                session: session,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
