@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Expanded per-file result mappings. Null unless requested with expand=results, or until result mappings are available.
+    /// Expanded per-file result mappings. Null unless requested with expand=results, or while the batch is still running.
     /// </summary>
     public sealed partial class BatchResponseResults
     {

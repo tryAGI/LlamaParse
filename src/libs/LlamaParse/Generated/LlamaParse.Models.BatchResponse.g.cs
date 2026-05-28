@@ -13,7 +13,7 @@ namespace LlamaParse
     ///         "config": {<br/>
     ///             "job": {<br/>
     ///                 "type": "parse_v2",<br/>
-    ///                 "configuration_id": "cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"<br/>
+    ///                 "configuration_id": "cfg-PARSE_AGENTIC"<br/>
     ///             }<br/>
     ///         },<br/>
     ///         "status": "COMPLETED",<br/>
@@ -31,7 +31,7 @@ namespace LlamaParse
     /// Batch-level ``FAILED`` means the orchestration failed and cannot provide a<br/>
     /// reliable per-file result set. ``results`` is only populated when explicitly<br/>
     /// requested with ``expand=results`` and may be ``null`` while a batch is still<br/>
-    /// running or before result mappings are available.
+    /// running.
     /// </summary>
     public sealed partial class BatchResponse
     {
@@ -85,7 +85,7 @@ namespace LlamaParse
         public required global::LlamaParse.BatchResponseStatus Status { get; set; }
 
         /// <summary>
-        /// Expanded per-file result mappings. Null unless requested with expand=results, or until result mappings are available.
+        /// Expanded per-file result mappings. Null unless requested with expand=results, or while the batch is still running.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         public global::System.Collections.Generic.IList<global::LlamaParse.BatchResult>? Results { get; set; }
@@ -121,7 +121,7 @@ namespace LlamaParse
         /// Update datetime
         /// </param>
         /// <param name="results">
-        /// Expanded per-file result mappings. Null unless requested with expand=results, or until result mappings are available.
+        /// Expanded per-file result mappings. Null unless requested with expand=results, or while the batch is still running.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
