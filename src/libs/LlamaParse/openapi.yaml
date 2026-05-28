@@ -21548,7 +21548,7 @@
           "job"
         ],
         "title": "BatchConfiguration",
-        "description": "Configuration for a batch.\n\nExample:\n    {\n        \"job\": {\n            \"type\": \"parse_v2\",\n            \"configuration_id\": \"cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n        }\n    }\n\nThis wraps the saved product configuration to run over the source\ndirectory. Create or reuse the product configuration through the generic\nconfigurations API before creating the batch."
+        "description": "Configuration for a batch.\n\nExample:\n    {\n        \"job\": {\n            \"type\": \"parse_v2\",\n            \"configuration_id\": \"cfg-PARSE_AGENTIC\"\n        }\n    }\n\nThis wraps the product configuration ID to run over the source directory.\nUse a built-in preset ID when available, or create/reuse a product\nconfiguration through the generic configurations API before creating the\nbatch."
       },
       "BatchCreateRequest": {
         "properties": {
@@ -21571,7 +21571,7 @@
           "config"
         ],
         "title": "BatchCreateRequest",
-        "description": "Create a batch over a directory.\n\nExample:\n    {\n        \"source_directory_id\": \"dir-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"config\": {\n            \"job\": {\n                \"type\": \"parse_v2\",\n                \"configuration_id\": \"cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n            }\n        },\n    }\n\nThe source is always a directory. Callers upload or attach files to the\ndirectory first, then this API maps each source directory file to an\noutput job such as a parse job ID."
+        "description": "Create a batch over a directory.\n\nExample:\n    {\n        \"source_directory_id\": \"dir-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"config\": {\n            \"job\": {\n                \"type\": \"parse_v2\",\n                \"configuration_id\": \"cfg-PARSE_AGENTIC\"\n            }\n        },\n    }\n\nThe source is always a directory. Callers upload or attach files to the\ndirectory first, then this API maps each source directory file to an\noutput job such as a parse job ID."
       },
       "BatchFileStatus": {
         "type": "string",
@@ -21804,9 +21804,9 @@
           "configuration_id": {
             "type": "string",
             "title": "Configuration Id",
-            "description": "Saved product configuration ID matching the job type.",
+            "description": "Product configuration ID or built-in preset ID matching the job type.",
             "examples": [
-              "cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+              "cfg-PARSE_AGENTIC"
             ]
           }
         },
@@ -21816,7 +21816,7 @@
           "configuration_id"
         ],
         "title": "BatchJobConfig",
-        "description": "Job to run for each file in the source directory.\n\nExample:\n    {\n        \"type\": \"parse_v2\",\n        \"configuration_id\": \"cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n    }\n\nBatch V2 references saved product configurations so the underlying\ndirectory-sync flow can resolve a stable config ID for every file-level job."
+        "description": "Job to run for each file in the source directory.\n\nExample:\n    {\n        \"type\": \"parse_v2\",\n        \"configuration_id\": \"cfg-PARSE_AGENTIC\"\n    }\n\nBatch V2 references product configuration IDs so the underlying\ndirectory-sync flow can resolve a stable config ID for every file-level job.\nIDs may refer to saved project configurations or built-in presets for the\nrequested product type."
       },
       "BatchJobCreateRequest": {
         "properties": {
@@ -23884,7 +23884,7 @@
               }
             ],
             "title": "Results",
-            "description": "Expanded per-file result mappings. Null unless requested with expand=results, or until result mappings are available."
+            "description": "Expanded per-file result mappings. Null unless requested with expand=results, or while the batch is still running."
           }
         },
         "type": "object",
@@ -23896,7 +23896,7 @@
           "status"
         ],
         "title": "BatchResponse",
-        "description": "A top-level batch.\n\nExample:\n    {\n        \"id\": \"bat-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"project_id\": \"prj-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"source_directory_id\": \"dir-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"config\": {\n            \"job\": {\n                \"type\": \"parse_v2\",\n                \"configuration_id\": \"cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n            }\n        },\n        \"status\": \"COMPLETED\",\n        \"results\": [\n            {\n                \"source_directory_file_id\": \"dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n                \"job_reference\": {\n                    \"type\": \"parse_v2\",\n                    \"id\": \"pjb-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n                },\n                \"error_message\": null\n            }\n        ]\n    }\n\nBatch-level ``FAILED`` means the orchestration failed and cannot provide a\nreliable per-file result set. ``results`` is only populated when explicitly\nrequested with ``expand=results`` and may be ``null`` while a batch is still\nrunning or before result mappings are available."
+        "description": "A top-level batch.\n\nExample:\n    {\n        \"id\": \"bat-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"project_id\": \"prj-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"source_directory_id\": \"dir-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"config\": {\n            \"job\": {\n                \"type\": \"parse_v2\",\n                \"configuration_id\": \"cfg-PARSE_AGENTIC\"\n            }\n        },\n        \"status\": \"COMPLETED\",\n        \"results\": [\n            {\n                \"source_directory_file_id\": \"dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n                \"job_reference\": {\n                    \"type\": \"parse_v2\",\n                    \"id\": \"pjb-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n                },\n                \"error_message\": null\n            }\n        ]\n    }\n\nBatch-level ``FAILED`` means the orchestration failed and cannot provide a\nreliable per-file result set. ``results`` is only populated when explicitly\nrequested with ``expand=results`` and may be ``null`` while a batch is still\nrunning."
       },
       "BatchResult": {
         "properties": {

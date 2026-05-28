@@ -8,10 +8,12 @@ namespace LlamaParse
     /// Example:<br/>
     ///     {<br/>
     ///         "type": "parse_v2",<br/>
-    ///         "configuration_id": "cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"<br/>
+    ///         "configuration_id": "cfg-PARSE_AGENTIC"<br/>
     ///     }<br/>
-    /// Batch V2 references saved product configurations so the underlying<br/>
-    /// directory-sync flow can resolve a stable config ID for every file-level job.
+    /// Batch V2 references product configuration IDs so the underlying<br/>
+    /// directory-sync flow can resolve a stable config ID for every file-level job.<br/>
+    /// IDs may refer to saved project configurations or built-in presets for the<br/>
+    /// requested product type.
     /// </summary>
     public sealed partial class BatchJobConfig
     {
@@ -23,7 +25,7 @@ namespace LlamaParse
         public required string Type { get; set; }
 
         /// <summary>
-        /// Saved product configuration ID matching the job type.
+        /// Product configuration ID or built-in preset ID matching the job type.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -42,7 +44,7 @@ namespace LlamaParse
         /// Product job type to run for each source directory file.
         /// </param>
         /// <param name="configurationId">
-        /// Saved product configuration ID matching the job type.
+        /// Product configuration ID or built-in preset ID matching the job type.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

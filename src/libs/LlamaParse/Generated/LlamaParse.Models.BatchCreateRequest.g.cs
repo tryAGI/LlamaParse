@@ -11,7 +11,7 @@ namespace LlamaParse
     ///         "config": {<br/>
     ///             "job": {<br/>
     ///                 "type": "parse_v2",<br/>
-    ///                 "configuration_id": "cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"<br/>
+    ///                 "configuration_id": "cfg-PARSE_AGENTIC"<br/>
     ///             }<br/>
     ///         },<br/>
     ///     }<br/>
