@@ -52,6 +52,14 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<string>? StoreAttachments { get; set; }
 
         /// <summary>
+        /// Vector export destination for the index. 'DEFAULT' exports to the managed vector DB destination resolved from configuration. 'DISABLED' skips vector export — the export destination falls back to 'Download'.<br/>
+        /// Default Value: DEFAULT
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("vector_target")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetJsonConverter))]
+        public global::LlamaParse.IndexCreateRequestVectorTarget? VectorTarget { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -79,6 +87,10 @@ namespace LlamaParse
         /// <param name="storeAttachments">
         /// Attachment kinds to store alongside parsed output. Each entry must be one of: screenshots, items. For example, ['screenshots'] renders and stores per-page screenshots; ['items'] stores structured items with bounding boxes. Omit or pass an empty list to skip attachments.
         /// </param>
+        /// <param name="vectorTarget">
+        /// Vector export destination for the index. 'DEFAULT' exports to the managed vector DB destination resolved from configuration. 'DISABLED' skips vector export — the export destination falls back to 'Download'.<br/>
+        /// Default Value: DEFAULT
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -88,7 +100,8 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.IndexProductEntry>? products,
             string? description,
             string? syncFrequency,
-            global::System.Collections.Generic.IList<string>? storeAttachments)
+            global::System.Collections.Generic.IList<string>? storeAttachments,
+            global::LlamaParse.IndexCreateRequestVectorTarget? vectorTarget)
         {
             this.SourceDirectoryId = sourceDirectoryId ?? throw new global::System.ArgumentNullException(nameof(sourceDirectoryId));
             this.Name = name;
@@ -96,6 +109,7 @@ namespace LlamaParse
             this.Description = description;
             this.SyncFrequency = syncFrequency;
             this.StoreAttachments = storeAttachments;
+            this.VectorTarget = vectorTarget;
         }
 
         /// <summary>

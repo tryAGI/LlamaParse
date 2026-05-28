@@ -2,11 +2,11 @@
 
 namespace LlamaParse
 {
-    public partial interface IIndexesClient
+    public partial interface IV2Client
     {
         /// <summary>
-        /// Create Index<br/>
-        /// Create a searchable index over a source directory.
+        /// Create Batch<br/>
+        /// Create a batch over a source directory and start processing asynchronously.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -15,17 +15,17 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.IndexResponse> CreateIndexApiV1IndexesPostAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.BatchResponse> CreateBatchApiV2BatchesPostAsync(
 
-            global::LlamaParse.IndexCreateRequest request,
+            global::LlamaParse.BatchCreateRequest request,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Index<br/>
-        /// Create a searchable index over a source directory.
+        /// Create Batch<br/>
+        /// Create a batch over a source directory and start processing asynchronously.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -34,58 +34,36 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.IndexResponse>> CreateIndexApiV1IndexesPostAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.BatchResponse>> CreateBatchApiV2BatchesPostAsResponseAsync(
 
-            global::LlamaParse.IndexCreateRequest request,
+            global::LlamaParse.BatchCreateRequest request,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Index<br/>
-        /// Create a searchable index over a source directory.
+        /// Create Batch<br/>
+        /// Create a batch over a source directory and start processing asynchronously.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="sourceDirectoryId">
-        /// ID of the source directory containing your documents.
+        /// Directory whose files should be processed.
         /// </param>
-        /// <param name="name">
-        /// Optional display name for the index. If omitted, the index is named after the source directory.
-        /// </param>
-        /// <param name="products">
-        /// Product configurations for syncing. Omit to use a default parse configuration. Include an explicit entry per product type (e.g. parse, extract) to override the default.
-        /// </param>
-        /// <param name="description">
-        /// Optional description of the index.
-        /// </param>
-        /// <param name="syncFrequency">
-        /// How often to re-run the sync. One of: manual, daily, on_source_change. Defaults to manual.<br/>
-        /// Default Value: manual
-        /// </param>
-        /// <param name="storeAttachments">
-        /// Attachment kinds to store alongside parsed output. Each entry must be one of: screenshots, items. For example, ['screenshots'] renders and stores per-page screenshots; ['items'] stores structured items with bounding boxes. Omit or pass an empty list to skip attachments.
-        /// </param>
-        /// <param name="vectorTarget">
-        /// Vector export destination for the index. 'DEFAULT' exports to the managed vector DB destination resolved from configuration. 'DISABLED' skips vector export — the export destination falls back to 'Download'.<br/>
-        /// Default Value: DEFAULT
+        /// <param name="config">
+        /// Batch configuration snapshot to apply to this source directory.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.IndexResponse> CreateIndexApiV1IndexesPostAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.BatchResponse> CreateBatchApiV2BatchesPostAsync(
             string sourceDirectoryId,
+            global::LlamaParse.BatchConfiguration config,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
-            string? name = default,
-            global::System.Collections.Generic.IList<global::LlamaParse.IndexProductEntry>? products = default,
-            string? description = default,
-            string? syncFrequency = default,
-            global::System.Collections.Generic.IList<string>? storeAttachments = default,
-            global::LlamaParse.IndexCreateRequestVectorTarget? vectorTarget = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
