@@ -29,7 +29,7 @@ namespace LlamaParse
         public global::LlamaParse.ExtractConfigurationTier? Tier { get; set; }
 
         /// <summary>
-        /// Extract algorithm version. Use 'latest' for the default pipeline or a date string (e.g. '2026-01-08') to pin to a specific release.<br/>
+        /// Use 'latest' for the default pipeline or a date string (YYYY-MM-DD format) to pin to a specific release.<br/>
         /// Default Value: latest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extract_version")]
@@ -105,7 +105,7 @@ namespace LlamaParse
         /// Default Value: cost_effective
         /// </param>
         /// <param name="extractVersion">
-        /// Extract algorithm version. Use 'latest' for the default pipeline or a date string (e.g. '2026-01-08') to pin to a specific release.<br/>
+        /// Use 'latest' for the default pipeline or a date string (YYYY-MM-DD format) to pin to a specific release.<br/>
         /// Default Value: latest
         /// </param>
         /// <param name="extractionTarget">
