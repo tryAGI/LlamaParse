@@ -38099,6 +38099,25 @@
             ],
             "title": "Webhook Events",
             "description": "Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.failure' (job failed), 'parse.partial' (some pages failed). If not specified, webhook fires for all events"
+          },
+          "webhook_output_format": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "string",
+                  "json"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Output Format",
+            "description": "Format of the webhook payload body. 'string' (default) sends the payload as a JSON-encoded string; 'json' sends it as a JSON object.",
+            "examples": [
+              "json"
+            ]
           }
         },
         "additionalProperties": false,

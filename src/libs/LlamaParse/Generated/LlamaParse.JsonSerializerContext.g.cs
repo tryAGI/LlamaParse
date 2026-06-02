@@ -237,6 +237,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsNullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2JsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2NullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.ManagedIngestionStatusJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.ManagedIngestionStatusNullableJsonConverter),
@@ -1158,6 +1162,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseProcessingOptionsSpecializedChartParsing2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.AutoModeConfigurationEntry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseSupportedFileExtensions), TypeInfoPropertyName = "LlamaParseSupportedFileExtensions2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ManagedIngestionStatus), TypeInfoPropertyName = "ManagedIngestionStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ManagedIngestionStatusResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.IngestionErrorResponse>))]
@@ -1236,7 +1241,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParsingJobMarkdownResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParsingJobStructuredResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParsingJobTextResult))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PartitionNames), TypeInfoPropertyName = "PartitionNames2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1471,6 +1475,10 @@ namespace LlamaParse
             typeof(global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsNullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2JsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2NullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.ManagedIngestionStatusJsonConverter),
 
@@ -1980,6 +1988,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>?), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_d9f8945237261e89")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>?), TypeInfoPropertyName = "CloudBoxDataSource_ee99e0e6ec633008")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>?), TypeInfoPropertyName = "CloudBoxDataSource_object_dfe1806971be6576")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PartitionNames), TypeInfoPropertyName = "PartitionNames2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Pipeline))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineType), TypeInfoPropertyName = "PipelineType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EmbeddingConfig3), TypeInfoPropertyName = "EmbeddingConfig32")]
@@ -2412,6 +2421,8 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2NullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsNullableJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2JsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2NullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ManagedIngestionStatusJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ManagedIngestionStatusNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.MessageRoleJsonConverter());
