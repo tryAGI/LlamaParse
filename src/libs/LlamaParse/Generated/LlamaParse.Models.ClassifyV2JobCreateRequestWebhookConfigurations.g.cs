@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.error' (job failed), 'parse.partial_success' (some pages failed), 'parse.pending', 'parse.running', 'parse.cancelled'. If not specified, webhook fires for all events
+    /// Outbound webhook endpoints to notify on job status changes
     /// </summary>
-    public sealed partial class LlamaParseWebhookConfigurationWebhookEvents
+    public sealed partial class ClassifyV2JobCreateRequestWebhookConfigurations
     {
 
         /// <summary>

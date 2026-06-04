@@ -12,6 +12,9 @@ namespace LlamaParse
         /// <param name="includeResults">
         /// Default Value: true
         /// </param>
+        /// <param name="expand">
+        /// Optional fields to populate on the response. Valid values: metadata_state_transitions.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -21,6 +24,7 @@ namespace LlamaParse
         global::System.Threading.Tasks.Task<global::LlamaParse.SpreadsheetJob> GetSpreadsheetJobApiV1BetaSheetsJobsSpreadsheetJobIdGetAsync(
             string spreadsheetJobId,
             bool? includeResults = default,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -34,6 +38,9 @@ namespace LlamaParse
         /// <param name="includeResults">
         /// Default Value: true
         /// </param>
+        /// <param name="expand">
+        /// Optional fields to populate on the response. Valid values: metadata_state_transitions.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -43,6 +50,7 @@ namespace LlamaParse
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SpreadsheetJob>> GetSpreadsheetJobApiV1BetaSheetsJobsSpreadsheetJobIdGetAsResponseAsync(
             string spreadsheetJobId,
             bool? includeResults = default,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,

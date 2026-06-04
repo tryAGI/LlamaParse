@@ -17,6 +17,9 @@ namespace LlamaParse
         /// <param name="jobIds">
         /// Filter by specific job IDs
         /// </param>
+        /// <param name="configurationId">
+        /// Filter by saved configuration ID
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="pageSize"></param>
@@ -33,8 +36,9 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseSpreadsheetJob> ListSpreadsheetJobsApiV1BetaSheetsJobsGetAsync(
             bool? includeResults = default,
-            global::LlamaParse.StatusEnum? status = default,
+            global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
+            string? configurationId = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,
@@ -57,6 +61,9 @@ namespace LlamaParse
         /// <param name="jobIds">
         /// Filter by specific job IDs
         /// </param>
+        /// <param name="configurationId">
+        /// Filter by saved configuration ID
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="pageSize"></param>
@@ -73,8 +80,9 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseSpreadsheetJob>> ListSpreadsheetJobsApiV1BetaSheetsJobsGetAsResponseAsync(
             bool? includeResults = default,
-            global::LlamaParse.StatusEnum? status = default,
+            global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
+            string? configurationId = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,

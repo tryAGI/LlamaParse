@@ -28,8 +28,9 @@ namespace LlamaParse
         partial void PrepareListSpreadsheetJobsApiV1BetaSheetsJobsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? includeResults,
-            global::LlamaParse.StatusEnum? status,
+            global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2? status,
             global::System.Collections.Generic.IList<string>? jobIds,
+            ref string? configurationId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             int? pageSize,
@@ -41,8 +42,9 @@ namespace LlamaParse
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? includeResults,
-            global::LlamaParse.StatusEnum? status,
+            global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2? status,
             global::System.Collections.Generic.IList<string>? jobIds,
+            string? configurationId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             int? pageSize,
@@ -72,6 +74,9 @@ namespace LlamaParse
         /// <param name="jobIds">
         /// Filter by specific job IDs
         /// </param>
+        /// <param name="configurationId">
+        /// Filter by saved configuration ID
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="pageSize"></param>
@@ -88,8 +93,9 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseSpreadsheetJob> ListSpreadsheetJobsApiV1BetaSheetsJobsGetAsync(
             bool? includeResults = default,
-            global::LlamaParse.StatusEnum? status = default,
+            global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
+            string? configurationId = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,
@@ -104,6 +110,7 @@ namespace LlamaParse
                 includeResults: includeResults,
                 status: status,
                 jobIds: jobIds,
+                configurationId: configurationId,
                 projectId: projectId,
                 organizationId: organizationId,
                 pageSize: pageSize,
@@ -130,6 +137,9 @@ namespace LlamaParse
         /// <param name="jobIds">
         /// Filter by specific job IDs
         /// </param>
+        /// <param name="configurationId">
+        /// Filter by saved configuration ID
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="pageSize"></param>
@@ -146,8 +156,9 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseSpreadsheetJob>> ListSpreadsheetJobsApiV1BetaSheetsJobsGetAsResponseAsync(
             bool? includeResults = default,
-            global::LlamaParse.StatusEnum? status = default,
+            global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
+            string? configurationId = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,
@@ -165,6 +176,7 @@ namespace LlamaParse
                 includeResults: ref includeResults,
                 status: status,
                 jobIds: jobIds,
+                configurationId: ref configurationId,
                 projectId: projectId,
                 organizationId: organizationId,
                 pageSize: pageSize,
@@ -203,6 +215,7 @@ namespace LlamaParse
                                 .AddOptionalParameter("include_results", includeResults?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("status", status?.ToString())
                                 .AddOptionalParameter("job_ids", jobIds?.ToString())
+                                .AddOptionalParameter("configuration_id", configurationId)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
@@ -265,6 +278,7 @@ namespace LlamaParse
                     includeResults: includeResults,
                     status: status,
                     jobIds: jobIds,
+                    configurationId: configurationId,
                     projectId: projectId,
                     organizationId: organizationId,
                     pageSize: pageSize,

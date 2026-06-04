@@ -11,6 +11,12 @@ namespace LlamaParse
     public sealed partial class ClassifyV2JobCreateRequest
     {
         /// <summary>
+        /// Outbound webhook endpoints to notify on job status changes
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configurations")]
+        public global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? WebhookConfigurations { get; set; }
+
+        /// <summary>
         /// Saved configuration ID
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration_id")]
@@ -57,6 +63,9 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyV2JobCreateRequest" /> class.
         /// </summary>
+        /// <param name="webhookConfigurations">
+        /// Outbound webhook endpoints to notify on job status changes
+        /// </param>
         /// <param name="configurationId">
         /// Saved configuration ID
         /// </param>
@@ -73,11 +82,13 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClassifyV2JobCreateRequest(
+            global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations,
             string? configurationId,
             global::LlamaParse.ClassifyV2Configuration? configuration,
             string? fileInput,
             string? transactionId)
         {
+            this.WebhookConfigurations = webhookConfigurations;
             this.ConfigurationId = configurationId;
             this.Configuration = configuration;
             this.FileInput = fileInput;

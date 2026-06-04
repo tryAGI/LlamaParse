@@ -6,7 +6,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// A spreadsheet parsing job
+    /// A spreadsheet parsing job.
     /// </summary>
     public sealed partial class SpreadsheetJob
     {
@@ -32,19 +32,44 @@ namespace LlamaParse
         public required global::System.Guid ProjectId { get; set; }
 
         /// <summary>
-        /// Configuration for the parsing job
+        /// Configuration applied to the parsing job (inline or resolved from a saved preset).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("configuration")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LlamaParse.SpreadsheetParsingConfig Configuration { get; set; }
+
+        /// <summary>
+        /// Deprecated: use `configuration` instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LlamaParse.SpreadsheetParsingConfig Config { get; set; }
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::LlamaParse.SpreadsheetParsingConfig? Config { get; set; }
 
         /// <summary>
         /// The status of the parsing job
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.StatusEnumJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LlamaParse.StatusEnum Status { get; set; }
+        public required global::LlamaParse.SpreadsheetJobStatus Status { get; set; }
+
+        /// <summary>
+        /// Job-time parameters such as webhook configurations.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
+        public global::LlamaParse.SpreadsheetJobParameters? Parameters { get; set; }
+
+        /// <summary>
+        /// The saved product configuration ID used at create time, if any.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("configuration_id")]
+        public string? ConfigurationId { get; set; }
+
+        /// <summary>
+        /// Per-status entry timestamps. Returned only when requested via `?expand=metadata_state_transitions`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata_state_transitions")]
+        public object? MetadataStateTransitions { get; set; }
 
         /// <summary>
         /// When the job was created
@@ -115,8 +140,8 @@ namespace LlamaParse
         /// <param name="projectId">
         /// The ID of the project
         /// </param>
-        /// <param name="config">
-        /// Configuration for the parsing job
+        /// <param name="configuration">
+        /// Configuration applied to the parsing job (inline or resolved from a saved preset).
         /// </param>
         /// <param name="status">
         /// The status of the parsing job
@@ -126,6 +151,15 @@ namespace LlamaParse
         /// </param>
         /// <param name="updatedAt">
         /// When the job was last updated
+        /// </param>
+        /// <param name="parameters">
+        /// Job-time parameters such as webhook configurations.
+        /// </param>
+        /// <param name="configurationId">
+        /// The saved product configuration ID used at create time, if any.
+        /// </param>
+        /// <param name="metadataStateTransitions">
+        /// Per-status entry timestamps. Returned only when requested via `?expand=metadata_state_transitions`.
         /// </param>
         /// <param name="success">
         /// Whether the job completed successfully
@@ -149,10 +183,13 @@ namespace LlamaParse
             string id,
             string userId,
             global::System.Guid projectId,
-            global::LlamaParse.SpreadsheetParsingConfig config,
-            global::LlamaParse.StatusEnum status,
+            global::LlamaParse.SpreadsheetParsingConfig configuration,
+            global::LlamaParse.SpreadsheetJobStatus status,
             string createdAt,
             string updatedAt,
+            global::LlamaParse.SpreadsheetJobParameters? parameters,
+            string? configurationId,
+            object? metadataStateTransitions,
             bool? success,
             global::System.Collections.Generic.IList<global::LlamaParse.ExtractedRegionSummary>? regions,
             global::System.Collections.Generic.IList<global::LlamaParse.WorksheetMetadata>? worksheetMetadata,
@@ -162,8 +199,11 @@ namespace LlamaParse
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.ProjectId = projectId;
-            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.Configuration = configuration ?? throw new global::System.ArgumentNullException(nameof(configuration));
             this.Status = status;
+            this.Parameters = parameters;
+            this.ConfigurationId = configurationId;
+            this.MetadataStateTransitions = metadataStateTransitions;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Success = success;
