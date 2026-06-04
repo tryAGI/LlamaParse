@@ -13071,7 +13071,7 @@
           "Sheets"
         ],
         "summary": "Create Spreadsheet Job",
-        "description": "Create a spreadsheet parsing job. Experimental: not production-ready and subject to change.",
+        "description": "Create a spreadsheet parsing job.\n\nProvide **exactly one** of `configuration` (an inline parsing configuration) or `configuration_id` (a saved configuration preset). Optionally include `webhook_configurations` to receive `sheets.*` status notifications.\n\nExperimental: not production-ready and subject to change.",
         "operationId": "create_spreadsheet_job_api_v1_beta_sheets_jobs_post",
         "security": [
           {
@@ -13196,7 +13196,14 @@
             "schema": {
               "anyOf": [
                 {
-                  "$ref": "#/components/schemas/StatusEnum"
+                  "enum": [
+                    "PENDING",
+                    "SUCCESS",
+                    "ERROR",
+                    "PARTIAL_SUCCESS",
+                    "CANCELLED"
+                  ],
+                  "type": "string"
                 },
                 {
                   "type": "null"
@@ -13227,6 +13234,24 @@
               "title": "Job Ids"
             },
             "description": "Filter by specific job IDs"
+          },
+          {
+            "name": "configuration_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by saved configuration ID",
+              "title": "Configuration Id"
+            },
+            "description": "Filter by saved configuration ID"
           },
           {
             "name": "project_id",
@@ -13408,6 +13433,20 @@
               "default": true,
               "title": "Include Results"
             }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Optional fields to populate on the response. Valid values: metadata_state_transitions.",
+              "title": "Expand"
+            },
+            "description": "Optional fields to populate on the response. Valid values: metadata_state_transitions."
           },
           {
             "name": "project_id",
@@ -21019,8 +21058,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-06-01",
                   "2026-05-28",
-                  "2026-05-21",
                   "2025-12-11"
                 ],
                 "x-enum-order-preserved": true
@@ -21033,7 +21072,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-05-28`\n- `agentic`: `2026-05-21`\n- `agentic_plus`: `2026-05-21`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-05-28`\n- `agentic`: `2026-06-01`\n- `agentic_plus`: `2026-06-01`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -25499,6 +25538,21 @@
       },
       "ClassifyV2JobCreateRequest": {
         "properties": {
+          "webhook_configurations": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/WebhookConfiguration"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configurations",
+            "description": "Outbound webhook endpoints to notify on job status changes"
+          },
           "configuration_id": {
             "anyOf": [
               {
@@ -27483,14 +27537,7 @@
             "description": "The list of required file extensions."
           },
           "get_permissions": {
-            "anyOf": [
-              {
-                "type": "boolean"
-              },
-              {
-                "type": "null"
-              }
-            ],
+            "type": "boolean",
             "title": "Get Permissions",
             "description": "Whether to get permissions for the sharepoint site.",
             "default": true
@@ -30226,10 +30273,10 @@
               "agentic"
             ]
           },
-          "extract_version": {
+          "version": {
             "type": "string",
-            "title": "Extract Version",
-            "description": "Use 'latest' for the default pipeline or a date string (YYYY-MM-DD format) to pin to a specific release.",
+            "title": "Version",
+            "description": "Use 'latest' for the latest release for the selected tier or a date string (YYYY-MM-DD format) to pin to the nearest release at or before that date.",
             "default": "latest",
             "examples": [
               "latest"
@@ -31841,10 +31888,10 @@
               "agentic"
             ]
           },
-          "extract_version": {
+          "version": {
             "type": "string",
-            "title": "Extract Version",
-            "description": "Use 'latest' for the default pipeline or a date string (YYYY-MM-DD format) to pin to a specific release.",
+            "title": "Version",
+            "description": "Use 'latest' for the latest release for the selected tier or a date string (YYYY-MM-DD format) to pin to the nearest release at or before that date.",
             "default": "latest",
             "examples": [
               "latest"
@@ -38098,7 +38145,13 @@
               }
             ],
             "title": "Webhook Events",
-            "description": "Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.failure' (job failed), 'parse.partial' (some pages failed). If not specified, webhook fires for all events"
+            "description": "Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.error' (job failed), 'parse.partial_success' (some pages failed), 'parse.pending', 'parse.running', 'parse.cancelled'. If not specified, webhook fires for all events",
+            "examples": [
+              [
+                "parse.success",
+                "parse.error"
+              ]
+            ]
           },
           "webhook_output_format": {
             "anyOf": [
@@ -39661,8 +39714,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-06-01",
                   "2026-05-28",
-                  "2026-05-21",
                   "2025-12-11"
                 ],
                 "x-enum-order-preserved": true
@@ -39672,7 +39725,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-05-28`\n- `agentic`: `2026-05-21`\n- `agentic_plus`: `2026-05-21`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-05-28`\n- `agentic`: `2026-06-01`\n- `agentic_plus`: `2026-06-01`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -39952,8 +40005,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-06-01",
                   "2026-05-28",
-                  "2026-05-21",
                   "2025-12-11"
                 ],
                 "x-enum-order-preserved": true
@@ -39963,7 +40016,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-05-28`\n- `agentic`: `2026-05-21`\n- `agentic_plus`: `2026-05-21`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-05-28`\n- `agentic`: `2026-06-01`\n- `agentic_plus`: `2026-06-01`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -40093,6 +40146,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-06-01",
                 "2026-05-26",
                 "2026-05-21",
                 "2026-05-20",
@@ -40139,6 +40193,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-06-01",
                 "2026-05-26",
                 "2026-05-21",
                 "2026-05-20",
@@ -44305,13 +44360,62 @@
             "title": "Project Id",
             "description": "The ID of the project"
           },
-          "config": {
+          "configuration": {
             "$ref": "#/components/schemas/SpreadsheetParsingConfig",
-            "description": "Configuration for the parsing job"
+            "description": "Configuration applied to the parsing job (inline or resolved from a saved preset)."
+          },
+          "config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SpreadsheetParsingConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Deprecated: use `configuration` instead.",
+            "deprecated": true
           },
           "status": {
-            "$ref": "#/components/schemas/StatusEnum",
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "SUCCESS",
+              "ERROR",
+              "PARTIAL_SUCCESS",
+              "CANCELLED"
+            ],
+            "title": "Status",
             "description": "The status of the parsing job"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/SpreadsheetJobParameters",
+            "description": "Job-time parameters such as webhook configurations."
+          },
+          "configuration_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Configuration Id",
+            "description": "The saved product configuration ID used at create time, if any."
+          },
+          "metadata_state_transitions": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metadata State Transitions",
+            "description": "Per-status entry timestamps. Returned only when requested via `?expand=metadata_state_transitions`."
           },
           "created_at": {
             "type": "string",
@@ -44390,26 +44494,75 @@
           "id",
           "user_id",
           "project_id",
-          "config",
+          "configuration",
           "status",
           "created_at",
           "updated_at",
           "file_id"
         ],
         "title": "SpreadsheetJob",
-        "description": "A spreadsheet parsing job"
+        "description": "A spreadsheet parsing job."
       },
       "SpreadsheetJobCreate": {
         "properties": {
+          "configuration_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Configuration Id",
+            "description": "Saved configuration ID",
+            "examples": [
+              "cfg-11111111-2222-3333-4444-555555555555"
+            ]
+          },
+          "configuration": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SpreadsheetParsingConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Inline configuration"
+          },
+          "webhook_configurations": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/WebhookConfiguration"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configurations",
+            "description": "Outbound webhook endpoints to notify on job status changes"
+          },
+          "config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SpreadsheetParsingConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Deprecated: use `configuration` instead.",
+            "deprecated": true
+          },
           "file_id": {
             "type": "string",
             "format": "uuid",
             "title": "File Id",
             "description": "The ID of the file to parse"
-          },
-          "config": {
-            "$ref": "#/components/schemas/SpreadsheetParsingConfig",
-            "description": "Configuration for the parsing job"
           }
         },
         "type": "object",
@@ -44417,7 +44570,29 @@
           "file_id"
         ],
         "title": "SpreadsheetJobCreate",
-        "description": "Request to create a spreadsheet parsing job"
+        "description": "Request to create a spreadsheet parsing job.\n\nExactly one of `configuration` (inline) or `configuration_id` (saved\npreset) must be provided."
+      },
+      "SpreadsheetJobParameters": {
+        "properties": {
+          "webhook_configurations": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/WebhookConfiguration"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configurations",
+            "description": "Webhook configurations for job status notifications."
+          }
+        },
+        "type": "object",
+        "title": "SpreadsheetJobParameters",
+        "description": "Job-time parameters returned on a spreadsheet job response."
       },
       "SpreadsheetParsingConfig": {
         "properties": {
@@ -45844,10 +46019,16 @@
                     "parse.partial_success",
                     "parse.cancelled",
                     "classify.pending",
+                    "classify.running",
                     "classify.success",
                     "classify.error",
                     "classify.partial_success",
                     "classify.cancelled",
+                    "sheets.pending",
+                    "sheets.success",
+                    "sheets.error",
+                    "sheets.partial_success",
+                    "sheets.cancelled",
                     "unmapped_event"
                   ]
                 },

@@ -78,6 +78,9 @@ namespace LlamaParse
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="webhookConfigurations">
+        /// Outbound webhook endpoints to notify on job status changes
+        /// </param>
         /// <param name="configurationId">
         /// Saved configuration ID
         /// </param>
@@ -97,6 +100,7 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,
             string? configurationId = default,
             global::LlamaParse.ClassifyV2Configuration? configuration = default,
             string? fileInput = default,

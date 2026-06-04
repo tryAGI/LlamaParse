@@ -29,6 +29,7 @@ namespace LlamaParse
             global::System.Net.Http.HttpClient httpClient,
             ref string spreadsheetJobId,
             ref bool? includeResults,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
@@ -37,6 +38,7 @@ namespace LlamaParse
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string spreadsheetJobId,
             bool? includeResults,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
@@ -57,6 +59,9 @@ namespace LlamaParse
         /// <param name="includeResults">
         /// Default Value: true
         /// </param>
+        /// <param name="expand">
+        /// Optional fields to populate on the response. Valid values: metadata_state_transitions.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -66,6 +71,7 @@ namespace LlamaParse
         public async global::System.Threading.Tasks.Task<global::LlamaParse.SpreadsheetJob> GetSpreadsheetJobApiV1BetaSheetsJobsSpreadsheetJobIdGetAsync(
             string spreadsheetJobId,
             bool? includeResults = default,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -75,6 +81,7 @@ namespace LlamaParse
             var __response = await GetSpreadsheetJobApiV1BetaSheetsJobsSpreadsheetJobIdGetAsResponseAsync(
                 spreadsheetJobId: spreadsheetJobId,
                 includeResults: includeResults,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -92,6 +99,9 @@ namespace LlamaParse
         /// <param name="includeResults">
         /// Default Value: true
         /// </param>
+        /// <param name="expand">
+        /// Optional fields to populate on the response. Valid values: metadata_state_transitions.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -101,6 +111,7 @@ namespace LlamaParse
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SpreadsheetJob>> GetSpreadsheetJobApiV1BetaSheetsJobsSpreadsheetJobIdGetAsResponseAsync(
             string spreadsheetJobId,
             bool? includeResults = default,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -113,6 +124,7 @@ namespace LlamaParse
                 httpClient: HttpClient,
                 spreadsheetJobId: ref spreadsheetJobId,
                 includeResults: ref includeResults,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -145,6 +157,7 @@ namespace LlamaParse
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("include_results", includeResults?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("expand", expand, delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -202,6 +215,7 @@ namespace LlamaParse
                     httpRequestMessage: __httpRequest,
                     spreadsheetJobId: spreadsheetJobId!,
                     includeResults: includeResults,
+                    expand: expand,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);

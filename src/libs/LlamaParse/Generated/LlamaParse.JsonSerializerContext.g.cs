@@ -377,6 +377,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter),
@@ -428,6 +432,10 @@ namespace LlamaParse
             typeof(global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyNullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2JsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2NullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2JsonConverter),
 
@@ -1616,6 +1624,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter),
@@ -1667,6 +1679,10 @@ namespace LlamaParse
             typeof(global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyNullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2JsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2NullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2JsonConverter),
 
@@ -2078,6 +2094,8 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitSegmentResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized), TypeInfoPropertyName = "SplitStrategyAllowUncategorized2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetParsingConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetJobStatus), TypeInfoPropertyName = "SpreadsheetJobStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetJobParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ExtractedRegionSummary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.WorksheetMetadata>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WorksheetMetadata))]
@@ -2121,6 +2139,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item), TypeInfoPropertyName = "ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy), TypeInfoPropertyName = "ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicy), TypeInfoPropertyName = "PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item), TypeInfoPropertyName = "ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item2")]
@@ -2491,6 +2510,8 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.SparseModelTypeNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetJobStatusJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetResultTypeJsonConverter());
@@ -2517,6 +2538,8 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicyNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyNullableJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2JsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2NullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2JsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2NullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemJsonConverter());
