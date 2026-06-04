@@ -13071,7 +13071,7 @@
           "Sheets"
         ],
         "summary": "Create Spreadsheet Job",
-        "description": "Create a spreadsheet parsing job.\n\nProvide **exactly one** of `configuration` (an inline parsing configuration) or `configuration_id` (a saved configuration preset). Optionally include `webhook_configurations` to receive `sheets.*` status notifications.\n\nExperimental: not production-ready and subject to change.",
+        "description": "Create a spreadsheet parsing job.\n\nProvide at most one of `configuration` (an inline parsing configuration) or `configuration_id` (a saved configuration preset). If neither is provided, a default configuration is used. Optionally include `webhook_configurations` to receive `sheets.*` status notifications.\n\nExperimental: not production-ready and subject to change.",
         "operationId": "create_spreadsheet_job_api_v1_beta_sheets_jobs_post",
         "security": [
           {
@@ -44570,7 +44570,7 @@
           "file_id"
         ],
         "title": "SpreadsheetJobCreate",
-        "description": "Request to create a spreadsheet parsing job.\n\nExactly one of `configuration` (inline) or `configuration_id` (saved\npreset) must be provided."
+        "description": "Request to create a spreadsheet parsing job.\n\nProvide at most one of `configuration` (inline) or `configuration_id`\n(saved preset). If neither is provided, a default inline configuration is\nused."
       },
       "SpreadsheetJobParameters": {
         "properties": {
