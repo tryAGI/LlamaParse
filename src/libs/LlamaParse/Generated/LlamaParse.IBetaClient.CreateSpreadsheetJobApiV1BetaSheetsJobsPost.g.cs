@@ -9,7 +9,7 @@ namespace LlamaParse
         /// <summary>
         /// Create Spreadsheet Job<br/>
         /// Create a spreadsheet parsing job.<br/>
-        /// Provide **exactly one** of `configuration` (an inline parsing configuration) or `configuration_id` (a saved configuration preset). Optionally include `webhook_configurations` to receive `sheets.*` status notifications.<br/>
+        /// Provide at most one of `configuration` (an inline parsing configuration) or `configuration_id` (a saved configuration preset). If neither is provided, a default configuration is used. Optionally include `webhook_configurations` to receive `sheets.*` status notifications.<br/>
         /// Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="projectId"></param>
@@ -30,7 +30,7 @@ namespace LlamaParse
         /// <summary>
         /// Create Spreadsheet Job<br/>
         /// Create a spreadsheet parsing job.<br/>
-        /// Provide **exactly one** of `configuration` (an inline parsing configuration) or `configuration_id` (a saved configuration preset). Optionally include `webhook_configurations` to receive `sheets.*` status notifications.<br/>
+        /// Provide at most one of `configuration` (an inline parsing configuration) or `configuration_id` (a saved configuration preset). If neither is provided, a default configuration is used. Optionally include `webhook_configurations` to receive `sheets.*` status notifications.<br/>
         /// Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="projectId"></param>
@@ -51,7 +51,7 @@ namespace LlamaParse
         /// <summary>
         /// Create Spreadsheet Job<br/>
         /// Create a spreadsheet parsing job.<br/>
-        /// Provide **exactly one** of `configuration` (an inline parsing configuration) or `configuration_id` (a saved configuration preset). Optionally include `webhook_configurations` to receive `sheets.*` status notifications.<br/>
+        /// Provide at most one of `configuration` (an inline parsing configuration) or `configuration_id` (a saved configuration preset). If neither is provided, a default configuration is used. Optionally include `webhook_configurations` to receive `sheets.*` status notifications.<br/>
         /// Experimental: not production-ready and subject to change.
         /// </summary>
         /// <param name="projectId"></param>

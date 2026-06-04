@@ -7,8 +7,9 @@ namespace LlamaParse
 {
     /// <summary>
     /// Request to create a spreadsheet parsing job.<br/>
-    /// Exactly one of `configuration` (inline) or `configuration_id` (saved<br/>
-    /// preset) must be provided.
+    /// Provide at most one of `configuration` (inline) or `configuration_id`<br/>
+    /// (saved preset). If neither is provided, a default inline configuration is<br/>
+    /// used.
     /// </summary>
     public sealed partial class SpreadsheetJobCreate
     {
