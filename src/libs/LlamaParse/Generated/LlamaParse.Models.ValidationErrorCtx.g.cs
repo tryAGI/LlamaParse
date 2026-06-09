@@ -6,7 +6,7 @@ namespace LlamaParse
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class DirectoryFileCreateRequestMetadata2
+    public sealed partial class ValidationErrorCtx
     {
 
         /// <summary>

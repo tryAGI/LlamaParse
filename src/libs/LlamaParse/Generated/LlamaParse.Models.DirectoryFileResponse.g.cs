@@ -65,7 +65,7 @@ namespace LlamaParse
         /// Merged metadata from all sources. Higher-priority sources override lower.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::LlamaParse.MetadataDict? Metadata { get; set; }
 
         /// <summary>
         /// Soft delete marker when the file is removed upstream or by user action.
@@ -133,7 +133,7 @@ namespace LlamaParse
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
             string? fileId,
-            object? metadata,
+            global::LlamaParse.MetadataDict? metadata,
             global::System.DateTime? deletedAt,
             global::LlamaParse.PresignedUrl? downloadUrl)
         {

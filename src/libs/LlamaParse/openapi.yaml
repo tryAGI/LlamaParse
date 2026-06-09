@@ -21058,8 +21058,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-06-01",
-                  "2026-05-28",
+                  "2026-06-05",
+                  "2026-06-04",
                   "2025-12-11"
                 ],
                 "x-enum-order-preserved": true
@@ -21072,7 +21072,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-05-28`\n- `agentic`: `2026-06-01`\n- `agentic_plus`: `2026-06-01`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-05`\n- `agentic`: `2026-06-04`\n- `agentic_plus`: `2026-06-04`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -26511,8 +26511,8 @@
         },
         "type": "object",
         "required": [
-          "server_url",
-          "authentication_mechanism"
+          "authentication_mechanism",
+          "server_url"
         ],
         "title": "CloudConfluenceDataSource"
       },
@@ -29129,38 +29129,12 @@
           "metadata": {
             "anyOf": [
               {
-                "additionalProperties": {
-                  "anyOf": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "items": {
-                        "type": "string"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "object"
+                "$ref": "#/components/schemas/MetadataDict"
               },
               {
                 "type": "null"
               }
             ],
-            "title": "Metadata",
             "description": "User-defined metadata key-value pairs to associate with the file."
           }
         },
@@ -29281,33 +29255,7 @@
             "description": "File ID for the storage location."
           },
           "metadata": {
-            "additionalProperties": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "boolean"
-                },
-                {
-                  "items": {
-                    "type": "string"
-                  },
-                  "type": "array"
-                },
-                {
-                  "type": "null"
-                }
-              ]
-            },
-            "type": "object",
-            "title": "Metadata",
+            "$ref": "#/components/schemas/MetadataDict",
             "description": "Merged metadata from all sources. Higher-priority sources override lower."
           },
           "deleted_at": {
@@ -29388,38 +29336,12 @@
           "metadata": {
             "anyOf": [
               {
-                "additionalProperties": {
-                  "anyOf": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "items": {
-                        "type": "string"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "object"
+                "$ref": "#/components/schemas/MetadataDict"
               },
               {
                 "type": "null"
               }
             ],
-            "title": "Metadata",
             "description": "User-defined metadata key-value pairs. Replaces the user metadata layer."
           }
         },
@@ -34124,250 +34046,6 @@
         "type": "object",
         "title": "GeminiEmbeddingConfig"
       },
-      "GroundedLine": {
-        "properties": {
-          "span": {
-            "prefixItems": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "integer"
-              }
-            ],
-            "type": "array",
-            "maxItems": 2,
-            "minItems": 2,
-            "title": "Span",
-            "description": "`[start, end)` byte span in the item's source text"
-          },
-          "bbox": {
-            "$ref": "#/components/schemas/BBox",
-            "description": "Line bounding box"
-          },
-          "words": {
-            "anyOf": [
-              {
-                "items": {
-                  "$ref": "#/components/schemas/GroundedWord"
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Words",
-            "description": "Per-word grounding within the line, when available"
-          }
-        },
-        "type": "object",
-        "required": [
-          "span",
-          "bbox"
-        ],
-        "title": "GroundedLine",
-        "description": "One grounded line of text with an optional per-word breakdown."
-      },
-      "GroundedTableCell": {
-        "properties": {
-          "span": {
-            "anyOf": [
-              {
-                "prefixItems": [
-                  {
-                    "type": "integer"
-                  },
-                  {
-                    "type": "integer"
-                  }
-                ],
-                "type": "array",
-                "maxItems": 2,
-                "minItems": 2
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Span",
-            "description": "`[start, end)` byte span in the cell text"
-          },
-          "lines": {
-            "anyOf": [
-              {
-                "items": {
-                  "$ref": "#/components/schemas/GroundedLine"
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Lines",
-            "description": "Per-line grounding inside the cell"
-          },
-          "bbox": {
-            "anyOf": [
-              {
-                "items": {
-                  "$ref": "#/components/schemas/BBox"
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Bbox",
-            "description": "One or more bounding boxes covering the cell"
-          }
-        },
-        "type": "object",
-        "title": "GroundedTableCell",
-        "description": "Grounding for a single table cell."
-      },
-      "GroundedTableSupport": {
-        "properties": {
-          "rows": {
-            "anyOf": [
-              {
-                "items": {
-                  "items": {
-                    "anyOf": [
-                      {
-                        "$ref": "#/components/schemas/GroundedTableCell"
-                      },
-                      {
-                        "type": "null"
-                      }
-                    ]
-                  },
-                  "type": "array"
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Rows",
-            "description": "Per-cell grounding by `[row][col]`; `null` entries mark missing cells"
-          },
-          "row_bboxes": {
-            "anyOf": [
-              {
-                "items": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/components/schemas/BBox"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Row Bboxes",
-            "description": "Bounding boxes for each row (a row may have multiple boxes)"
-          },
-          "column_bboxes": {
-            "anyOf": [
-              {
-                "items": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/components/schemas/BBox"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Column Bboxes",
-            "description": "Bounding boxes for each column (a column may have multiple boxes)"
-          }
-        },
-        "type": "object",
-        "title": "GroundedTableSupport",
-        "description": "Grounding for a table-shaped item."
-      },
-      "GroundedTextSupport": {
-        "properties": {
-          "source": {
-            "type": "string",
-            "enum": [
-              "md",
-              "caption"
-            ],
-            "title": "Source",
-            "description": "Which textual surface of the item the spans index into"
-          },
-          "lines": {
-            "items": {
-              "$ref": "#/components/schemas/GroundedLine"
-            },
-            "type": "array",
-            "title": "Lines",
-            "description": "Per-line grounding for the item text"
-          }
-        },
-        "type": "object",
-        "required": [
-          "source",
-          "lines"
-        ],
-        "title": "GroundedTextSupport",
-        "description": "Grounding for a text-shaped item (paragraph, heading, caption, etc.)."
-      },
-      "GroundedWord": {
-        "properties": {
-          "span": {
-            "prefixItems": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "integer"
-              }
-            ],
-            "type": "array",
-            "maxItems": 2,
-            "minItems": 2,
-            "title": "Span",
-            "description": "`[start, end)` byte span in the item's source text"
-          },
-          "bbox": {
-            "$ref": "#/components/schemas/BBox",
-            "description": "Word bounding box"
-          }
-        },
-        "type": "object",
-        "required": [
-          "span",
-          "bbox"
-        ],
-        "title": "GroundedWord",
-        "description": "One grounded word: a `[start, end)` span in the source text and its bbox."
-      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -36173,6 +35851,26 @@
                 "stripped_md",
                 "concatenated_stripped_txt",
                 "word_bbox"
+              ]
+            ]
+          },
+          "granular_bboxes": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "cell",
+                "line",
+                "word"
+              ]
+            },
+            "type": "array",
+            "title": "Granular Bboxes",
+            "description": "Bounding-box granularity levels to compute for the parse. 'word' computes one bounding box per detected word; 'line' computes one per text line; 'cell' computes one per table cell. Multiple levels can be requested. Empty list (default) disables granular bboxes — only item-level layout boxes are returned on the result. When set, the computed boxes are not inlined on the result items; they are written to a separate `grounded_items` sidecar (JSONL, one row per page) and exposed as `result_content_metadata.grounded_items` (a presigned download URL) on the parse result. Each row matches the `GroundedJsonItem` shape.",
+            "examples": [
+              [
+                "word",
+                "line",
+                "cell"
               ]
             ]
           }
@@ -38428,6 +38126,12 @@
         "title": "MessageRole",
         "description": "Message role."
       },
+      "MetadataDict": {
+        "additionalProperties": {
+          "$ref": "#/components/schemas/MetadataValue"
+        },
+        "type": "object"
+      },
       "MetadataFilter": {
         "properties": {
           "key": {
@@ -38516,6 +38220,12 @@
         ],
         "title": "MetadataFilters",
         "description": "Metadata filters for vector stores."
+      },
+      "MetadataListValue": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
       },
       "MetadataResult": {
         "properties": {
@@ -38633,6 +38343,35 @@
         ],
         "title": "MetadataResultPage",
         "description": "Page-level metadata including confidence scores and presentation-specific data."
+      },
+      "MetadataScalarValue": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "MetadataValue": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/MetadataScalarValue"
+          },
+          {
+            "$ref": "#/components/schemas/MetadataListValue"
+          }
+        ]
       },
       "MongoStaticFilters": {
         "properties": {
@@ -39714,8 +39453,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-06-01",
-                  "2026-05-28",
+                  "2026-06-05",
+                  "2026-06-04",
                   "2025-12-11"
                 ],
                 "x-enum-order-preserved": true
@@ -39725,7 +39464,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-05-28`\n- `agentic`: `2026-06-01`\n- `agentic_plus`: `2026-06-01`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-05`\n- `agentic`: `2026-06-04`\n- `agentic_plus`: `2026-06-04`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -40005,8 +39744,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-06-01",
-                  "2026-05-28",
+                  "2026-06-05",
+                  "2026-06-04",
                   "2025-12-11"
                 ],
                 "x-enum-order-preserved": true
@@ -40016,7 +39755,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-05-28`\n- `agentic`: `2026-06-01`\n- `agentic_plus`: `2026-06-01`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-05`\n- `agentic`: `2026-06-04`\n- `agentic_plus`: `2026-06-04`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -40130,6 +39869,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-06-05",
                 "2026-05-28",
                 "2026-04-09",
                 "2026-03-31",
@@ -40146,6 +39886,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-06-04",
                 "2026-06-01",
                 "2026-05-26",
                 "2026-05-21",
@@ -40193,6 +39934,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-06-04",
                 "2026-06-01",
                 "2026-05-26",
                 "2026-05-21",
@@ -43183,38 +42925,12 @@
           "metadata": {
             "anyOf": [
               {
-                "additionalProperties": {
-                  "anyOf": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "items": {
-                        "type": "string"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "object"
+                "$ref": "#/components/schemas/MetadataDict"
               },
               {
                 "type": "null"
               }
             ],
-            "title": "Metadata",
             "description": "User-defined metadata associated with the chunk."
           },
           "static_fields": {
@@ -45658,7 +45374,9 @@
               "extraction_num_pages",
               "extraction_num_pages_parsed",
               "pages_split",
-              "pages_classified"
+              "pages_classified",
+              "directory_file_count_snapshot",
+              "directory_count_snapshot"
             ],
             "title": "Event Type",
             "description": "The event type that is emitted"
@@ -45811,6 +45529,13 @@
           "type": {
             "type": "string",
             "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
           }
         },
         "type": "object",
