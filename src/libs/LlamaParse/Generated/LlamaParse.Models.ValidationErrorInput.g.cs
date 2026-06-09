@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Per-cell grounding by `[row][col]`; `null` entries mark missing cells
+    /// 
     /// </summary>
-    public sealed partial class GroundedTableSupportRows
+    public sealed partial class ValidationErrorInput
     {
 
         /// <summary>

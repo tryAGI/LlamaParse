@@ -31,7 +31,7 @@ namespace LlamaParse
         /// User-defined metadata key-value pairs to associate with the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::LlamaParse.MetadataDict? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,7 +61,7 @@ namespace LlamaParse
             string fileId,
             string? uniqueId,
             string? displayName,
-            object? metadata)
+            global::LlamaParse.MetadataDict? metadata)
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.UniqueId = uniqueId;

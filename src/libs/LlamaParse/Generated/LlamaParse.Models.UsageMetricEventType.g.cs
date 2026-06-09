@@ -27,6 +27,14 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        DirectoryCountSnapshot,
+        /// <summary>
+        /// 
+        /// </summary>
+        DirectoryFileCountSnapshot,
+        /// <summary>
+        /// 
+        /// </summary>
         ExtractionNumPages,
         /// <summary>
         /// 
@@ -98,6 +106,8 @@ namespace LlamaParse
                 UsageMetricEventType.ChartParsingAgentic => "chart_parsing_agentic",
                 UsageMetricEventType.ChartParsingEfficient => "chart_parsing_efficient",
                 UsageMetricEventType.ChartParsingPlus => "chart_parsing_plus",
+                UsageMetricEventType.DirectoryCountSnapshot => "directory_count_snapshot",
+                UsageMetricEventType.DirectoryFileCountSnapshot => "directory_file_count_snapshot",
                 UsageMetricEventType.ExtractionNumPages => "extraction_num_pages",
                 UsageMetricEventType.ExtractionNumPagesParsed => "extraction_num_pages_parsed",
                 UsageMetricEventType.ImageClassified => "image_classified",
@@ -126,6 +136,8 @@ namespace LlamaParse
                 "chart_parsing_agentic" => UsageMetricEventType.ChartParsingAgentic,
                 "chart_parsing_efficient" => UsageMetricEventType.ChartParsingEfficient,
                 "chart_parsing_plus" => UsageMetricEventType.ChartParsingPlus,
+                "directory_count_snapshot" => UsageMetricEventType.DirectoryCountSnapshot,
+                "directory_file_count_snapshot" => UsageMetricEventType.DirectoryFileCountSnapshot,
                 "extraction_num_pages" => UsageMetricEventType.ExtractionNumPages,
                 "extraction_num_pages_parsed" => UsageMetricEventType.ExtractionNumPagesParsed,
                 "image_classified" => UsageMetricEventType.ImageClassified,

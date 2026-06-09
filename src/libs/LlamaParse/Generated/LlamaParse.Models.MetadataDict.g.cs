@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Bounding boxes for each row (a row may have multiple boxes)
+    /// 
     /// </summary>
-    public sealed partial class GroundedTableSupportRowBboxes
+    public sealed partial class MetadataDict
     {
 
         /// <summary>

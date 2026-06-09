@@ -46,6 +46,12 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<string>? AdditionalOutputs { get; set; }
 
         /// <summary>
+        /// Bounding-box granularity levels to compute for the parse. 'word' computes one bounding box per detected word; 'line' computes one per text line; 'cell' computes one per table cell. Multiple levels can be requested. Empty list (default) disables granular bboxes — only item-level layout boxes are returned on the result. When set, the computed boxes are not inlined on the result items; they are written to a separate `grounded_items` sidecar (JSONL, one row per page) and exposed as `result_content_metadata.grounded_items` (a presigned download URL) on the parse result. Each row matches the `GroundedJsonItem` shape.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("granular_bboxes")]
+        public global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseOutputOptionsGranularBboxe>? GranularBboxes { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,6 +78,9 @@ namespace LlamaParse
         /// <param name="additionalOutputs">
         /// Optional additional output artifacts to save alongside the primary parse output. Each value opts in to generating and persisting one extra file; the empty list (default) saves none. The three accepted values are: 'stripped_md' — per-page markdown stripped of formatting (links, bold/italic, images, HTML), saved as JSON for full-text-search indexing; fetch via `expand=stripped_markdown_content_metadata`. 'concatenated_stripped_txt' — all stripped pages concatenated into a single plain-text file with `\n\n---\n\n` between pages, useful for feeding the document into search or embedding pipelines as one blob; fetch via `expand=concatenated_stripped_markdown_content_metadata`. 'word_bbox' — raw word-level bounding boxes (one JSON object per word, with page number and x/y/w/h coordinates) saved as JSONL, useful for highlighting or grounding extracted answers back to the source document; fetch via `expand=raw_words_content_metadata`.
         /// </param>
+        /// <param name="granularBboxes">
+        /// Bounding-box granularity levels to compute for the parse. 'word' computes one bounding box per detected word; 'line' computes one per text line; 'cell' computes one per table cell. Multiple levels can be requested. Empty list (default) disables granular bboxes — only item-level layout boxes are returned on the result. When set, the computed boxes are not inlined on the result items; they are written to a separate `grounded_items` sidecar (JSONL, one row per page) and exposed as `result_content_metadata.grounded_items` (a presigned download URL) on the parse result. Each row matches the `GroundedJsonItem` shape.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -81,7 +90,8 @@ namespace LlamaParse
             global::LlamaParse.LlamaParseTablesAsSpreadsheetOptions? tablesAsSpreadsheet,
             bool? extractPrintedPageNumber,
             global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItem>? imagesToSave,
-            global::System.Collections.Generic.IList<string>? additionalOutputs)
+            global::System.Collections.Generic.IList<string>? additionalOutputs,
+            global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseOutputOptionsGranularBboxe>? granularBboxes)
         {
             this.Markdown = markdown;
             this.SpatialText = spatialText;
@@ -89,6 +99,7 @@ namespace LlamaParse
             this.ExtractPrintedPageNumber = extractPrintedPageNumber;
             this.ImagesToSave = imagesToSave;
             this.AdditionalOutputs = additionalOutputs;
+            this.GranularBboxes = granularBboxes;
         }
 
         /// <summary>

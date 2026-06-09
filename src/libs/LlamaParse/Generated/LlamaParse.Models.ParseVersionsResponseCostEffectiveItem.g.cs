@@ -28,6 +28,10 @@ namespace LlamaParse
         /// 
         /// </summary>
         x20260528,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260605,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace LlamaParse
                 ParseVersionsResponseCostEffectiveItem.x20260331 => "2026-03-31",
                 ParseVersionsResponseCostEffectiveItem.x20260409 => "2026-04-09",
                 ParseVersionsResponseCostEffectiveItem.x20260528 => "2026-05-28",
+                ParseVersionsResponseCostEffectiveItem.x20260605 => "2026-06-05",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace LlamaParse
                 "2026-03-31" => ParseVersionsResponseCostEffectiveItem.x20260331,
                 "2026-04-09" => ParseVersionsResponseCostEffectiveItem.x20260409,
                 "2026-05-28" => ParseVersionsResponseCostEffectiveItem.x20260528,
+                "2026-06-05" => ParseVersionsResponseCostEffectiveItem.x20260605,
                 _ => null,
             };
         }

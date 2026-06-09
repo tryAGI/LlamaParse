@@ -564,7 +564,7 @@ namespace LlamaParse
             string? uniqueId = default,
             string? displayName = default,
             string? targetDirectoryId = default,
-            object? metadata = default,
+            global::LlamaParse.MetadataDict? metadata = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
