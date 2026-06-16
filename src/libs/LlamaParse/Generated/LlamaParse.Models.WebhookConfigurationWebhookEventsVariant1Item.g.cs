@@ -27,6 +27,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        ClassifyRunning,
+        /// <summary>
+        /// 
+        /// </summary>
         ClassifySuccess,
         /// <summary>
         /// 
@@ -75,6 +79,26 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        SheetsCancelled,
+        /// <summary>
+        /// 
+        /// </summary>
+        SheetsError,
+        /// <summary>
+        /// 
+        /// </summary>
+        SheetsPartialSuccess,
+        /// <summary>
+        /// 
+        /// </summary>
+        SheetsPending,
+        /// <summary>
+        /// 
+        /// </summary>
+        SheetsSuccess,
+        /// <summary>
+        /// 
+        /// </summary>
         UnmappedEvent,
     }
 
@@ -94,6 +118,7 @@ namespace LlamaParse
                 WebhookConfigurationWebhookEventsVariant1Item.ClassifyError => "classify.error",
                 WebhookConfigurationWebhookEventsVariant1Item.ClassifyPartialSuccess => "classify.partial_success",
                 WebhookConfigurationWebhookEventsVariant1Item.ClassifyPending => "classify.pending",
+                WebhookConfigurationWebhookEventsVariant1Item.ClassifyRunning => "classify.running",
                 WebhookConfigurationWebhookEventsVariant1Item.ClassifySuccess => "classify.success",
                 WebhookConfigurationWebhookEventsVariant1Item.ExtractCancelled => "extract.cancelled",
                 WebhookConfigurationWebhookEventsVariant1Item.ExtractError => "extract.error",
@@ -106,6 +131,11 @@ namespace LlamaParse
                 WebhookConfigurationWebhookEventsVariant1Item.ParsePending => "parse.pending",
                 WebhookConfigurationWebhookEventsVariant1Item.ParseRunning => "parse.running",
                 WebhookConfigurationWebhookEventsVariant1Item.ParseSuccess => "parse.success",
+                WebhookConfigurationWebhookEventsVariant1Item.SheetsCancelled => "sheets.cancelled",
+                WebhookConfigurationWebhookEventsVariant1Item.SheetsError => "sheets.error",
+                WebhookConfigurationWebhookEventsVariant1Item.SheetsPartialSuccess => "sheets.partial_success",
+                WebhookConfigurationWebhookEventsVariant1Item.SheetsPending => "sheets.pending",
+                WebhookConfigurationWebhookEventsVariant1Item.SheetsSuccess => "sheets.success",
                 WebhookConfigurationWebhookEventsVariant1Item.UnmappedEvent => "unmapped_event",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -121,6 +151,7 @@ namespace LlamaParse
                 "classify.error" => WebhookConfigurationWebhookEventsVariant1Item.ClassifyError,
                 "classify.partial_success" => WebhookConfigurationWebhookEventsVariant1Item.ClassifyPartialSuccess,
                 "classify.pending" => WebhookConfigurationWebhookEventsVariant1Item.ClassifyPending,
+                "classify.running" => WebhookConfigurationWebhookEventsVariant1Item.ClassifyRunning,
                 "classify.success" => WebhookConfigurationWebhookEventsVariant1Item.ClassifySuccess,
                 "extract.cancelled" => WebhookConfigurationWebhookEventsVariant1Item.ExtractCancelled,
                 "extract.error" => WebhookConfigurationWebhookEventsVariant1Item.ExtractError,
@@ -133,6 +164,11 @@ namespace LlamaParse
                 "parse.pending" => WebhookConfigurationWebhookEventsVariant1Item.ParsePending,
                 "parse.running" => WebhookConfigurationWebhookEventsVariant1Item.ParseRunning,
                 "parse.success" => WebhookConfigurationWebhookEventsVariant1Item.ParseSuccess,
+                "sheets.cancelled" => WebhookConfigurationWebhookEventsVariant1Item.SheetsCancelled,
+                "sheets.error" => WebhookConfigurationWebhookEventsVariant1Item.SheetsError,
+                "sheets.partial_success" => WebhookConfigurationWebhookEventsVariant1Item.SheetsPartialSuccess,
+                "sheets.pending" => WebhookConfigurationWebhookEventsVariant1Item.SheetsPending,
+                "sheets.success" => WebhookConfigurationWebhookEventsVariant1Item.SheetsSuccess,
                 "unmapped_event" => WebhookConfigurationWebhookEventsVariant1Item.UnmappedEvent,
                 _ => null,
             };

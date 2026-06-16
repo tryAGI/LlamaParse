@@ -23,10 +23,16 @@ namespace LlamaParse
         public object? WebhookHeaders { get; set; }
 
         /// <summary>
-        /// Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.failure' (job failed), 'parse.partial' (some pages failed). If not specified, webhook fires for all events
+        /// Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.error' (job failed), 'parse.partial_success' (some pages failed), 'parse.pending', 'parse.running', 'parse.cancelled'. If not specified, webhook fires for all events
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_events")]
         public global::System.Collections.Generic.IList<string>? WebhookEvents { get; set; }
+
+        /// <summary>
+        /// Format of the webhook payload body. 'string' (default) sends the payload as a JSON-encoded string; 'json' sends it as a JSON object.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_output_format")]
+        public global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat2? WebhookOutputFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,7 +50,10 @@ namespace LlamaParse
         /// Custom HTTP headers to include in webhook requests. Use for authentication tokens or custom routing. Example: {'Authorization': 'Bearer xyz'}
         /// </param>
         /// <param name="webhookEvents">
-        /// Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.failure' (job failed), 'parse.partial' (some pages failed). If not specified, webhook fires for all events
+        /// Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.error' (job failed), 'parse.partial_success' (some pages failed), 'parse.pending', 'parse.running', 'parse.cancelled'. If not specified, webhook fires for all events
+        /// </param>
+        /// <param name="webhookOutputFormat">
+        /// Format of the webhook payload body. 'string' (default) sends the payload as a JSON-encoded string; 'json' sends it as a JSON object.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -52,11 +61,13 @@ namespace LlamaParse
         public LlamaParseWebhookConfiguration(
             string? webhookUrl,
             object? webhookHeaders,
-            global::System.Collections.Generic.IList<string>? webhookEvents)
+            global::System.Collections.Generic.IList<string>? webhookEvents,
+            global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat2? webhookOutputFormat)
         {
             this.WebhookUrl = webhookUrl;
             this.WebhookHeaders = webhookHeaders;
             this.WebhookEvents = webhookEvents;
+            this.WebhookOutputFormat = webhookOutputFormat;
         }
 
         /// <summary>

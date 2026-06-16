@@ -13071,7 +13071,7 @@
           "Sheets"
         ],
         "summary": "Create Spreadsheet Job",
-        "description": "Create a spreadsheet parsing job. Experimental: not production-ready and subject to change.",
+        "description": "Create a spreadsheet parsing job.\n\nProvide at most one of `configuration` (an inline parsing configuration) or `configuration_id` (a saved configuration preset). If neither is provided, a default configuration is used. Optionally include `webhook_configurations` to receive `sheets.*` status notifications.\n\nExperimental: not production-ready and subject to change.",
         "operationId": "create_spreadsheet_job_api_v1_beta_sheets_jobs_post",
         "security": [
           {
@@ -13196,7 +13196,14 @@
             "schema": {
               "anyOf": [
                 {
-                  "$ref": "#/components/schemas/StatusEnum"
+                  "enum": [
+                    "PENDING",
+                    "SUCCESS",
+                    "ERROR",
+                    "PARTIAL_SUCCESS",
+                    "CANCELLED"
+                  ],
+                  "type": "string"
                 },
                 {
                   "type": "null"
@@ -13227,6 +13234,24 @@
               "title": "Job Ids"
             },
             "description": "Filter by specific job IDs"
+          },
+          {
+            "name": "configuration_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by saved configuration ID",
+              "title": "Configuration Id"
+            },
+            "description": "Filter by saved configuration ID"
           },
           {
             "name": "project_id",
@@ -13408,6 +13433,20 @@
               "default": true,
               "title": "Include Results"
             }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Optional fields to populate on the response. Valid values: metadata_state_transitions.",
+              "title": "Expand"
+            },
+            "description": "Optional fields to populate on the response. Valid values: metadata_state_transitions."
           },
           {
             "name": "project_id",
@@ -21019,8 +21058,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-05-21",
-                  "2026-04-09",
+                  "2026-06-05",
+                  "2026-06-04",
                   "2025-12-11"
                 ],
                 "x-enum-order-preserved": true
@@ -21033,7 +21072,7 @@
               }
             ],
             "title": "Version",
-            "description": "Tier version when overriding tier. Required when tier is specified"
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-05`\n- `agentic`: `2026-06-04`\n- `agentic_plus`: `2026-06-04`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -21548,7 +21587,7 @@
           "job"
         ],
         "title": "BatchConfiguration",
-        "description": "Configuration for a batch.\n\nExample:\n    {\n        \"job\": {\n            \"type\": \"parse_v2\",\n            \"configuration_id\": \"cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n        }\n    }\n\nThis wraps the saved product configuration to run over the source\ndirectory. Create or reuse the product configuration through the generic\nconfigurations API before creating the batch."
+        "description": "Configuration for a batch.\n\nExample:\n    {\n        \"job\": {\n            \"type\": \"parse_v2\",\n            \"configuration_id\": \"cfg-PARSE_AGENTIC\"\n        }\n    }\n\nThis wraps the product configuration ID to run over the source directory.\nUse a built-in preset ID when available, or create/reuse a product\nconfiguration through the generic configurations API before creating the\nbatch."
       },
       "BatchCreateRequest": {
         "properties": {
@@ -21571,7 +21610,7 @@
           "config"
         ],
         "title": "BatchCreateRequest",
-        "description": "Create a batch over a directory.\n\nExample:\n    {\n        \"source_directory_id\": \"dir-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"config\": {\n            \"job\": {\n                \"type\": \"parse_v2\",\n                \"configuration_id\": \"cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n            }\n        },\n    }\n\nThe source is always a directory. Callers upload or attach files to the\ndirectory first, then this API maps each source directory file to an\noutput job such as a parse job ID."
+        "description": "Create a batch over a directory.\n\nExample:\n    {\n        \"source_directory_id\": \"dir-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"config\": {\n            \"job\": {\n                \"type\": \"parse_v2\",\n                \"configuration_id\": \"cfg-PARSE_AGENTIC\"\n            }\n        },\n    }\n\nThe source is always a directory. Callers upload or attach files to the\ndirectory first, then this API maps each source directory file to an\noutput job such as a parse job ID."
       },
       "BatchFileStatus": {
         "type": "string",
@@ -21804,9 +21843,9 @@
           "configuration_id": {
             "type": "string",
             "title": "Configuration Id",
-            "description": "Saved product configuration ID matching the job type.",
+            "description": "Product configuration ID or built-in preset ID matching the job type.",
             "examples": [
-              "cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+              "cfg-PARSE_AGENTIC"
             ]
           }
         },
@@ -21816,7 +21855,7 @@
           "configuration_id"
         ],
         "title": "BatchJobConfig",
-        "description": "Job to run for each file in the source directory.\n\nExample:\n    {\n        \"type\": \"parse_v2\",\n        \"configuration_id\": \"cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n    }\n\nBatch V2 references saved product configurations so the underlying\ndirectory-sync flow can resolve a stable config ID for every file-level job."
+        "description": "Job to run for each file in the source directory.\n\nExample:\n    {\n        \"type\": \"parse_v2\",\n        \"configuration_id\": \"cfg-PARSE_AGENTIC\"\n    }\n\nBatch V2 references product configuration IDs so the underlying\ndirectory-sync flow can resolve a stable config ID for every file-level job.\nIDs may refer to saved project configurations or built-in presets for the\nrequested product type."
       },
       "BatchJobCreateRequest": {
         "properties": {
@@ -23884,7 +23923,7 @@
               }
             ],
             "title": "Results",
-            "description": "Expanded per-file result mappings. Null unless requested with expand=results, or until result mappings are available."
+            "description": "Expanded per-file result mappings. Null unless requested with expand=results, or while the batch is still running."
           }
         },
         "type": "object",
@@ -23896,7 +23935,7 @@
           "status"
         ],
         "title": "BatchResponse",
-        "description": "A top-level batch.\n\nExample:\n    {\n        \"id\": \"bat-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"project_id\": \"prj-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"source_directory_id\": \"dir-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"config\": {\n            \"job\": {\n                \"type\": \"parse_v2\",\n                \"configuration_id\": \"cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n            }\n        },\n        \"status\": \"COMPLETED\",\n        \"results\": [\n            {\n                \"source_directory_file_id\": \"dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n                \"job_reference\": {\n                    \"type\": \"parse_v2\",\n                    \"id\": \"pjb-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n                },\n                \"error_message\": null\n            }\n        ]\n    }\n\nBatch-level ``FAILED`` means the orchestration failed and cannot provide a\nreliable per-file result set. ``results`` is only populated when explicitly\nrequested with ``expand=results`` and may be ``null`` while a batch is still\nrunning or before result mappings are available."
+        "description": "A top-level batch.\n\nExample:\n    {\n        \"id\": \"bat-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"project_id\": \"prj-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"source_directory_id\": \"dir-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n        \"config\": {\n            \"job\": {\n                \"type\": \"parse_v2\",\n                \"configuration_id\": \"cfg-PARSE_AGENTIC\"\n            }\n        },\n        \"status\": \"COMPLETED\",\n        \"results\": [\n            {\n                \"source_directory_file_id\": \"dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n                \"job_reference\": {\n                    \"type\": \"parse_v2\",\n                    \"id\": \"pjb-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n                },\n                \"error_message\": null\n            }\n        ]\n    }\n\nBatch-level ``FAILED`` means the orchestration failed and cannot provide a\nreliable per-file result set. ``results`` is only populated when explicitly\nrequested with ``expand=results`` and may be ``null`` while a batch is still\nrunning."
       },
       "BatchResult": {
         "properties": {
@@ -25499,6 +25538,21 @@
       },
       "ClassifyV2JobCreateRequest": {
         "properties": {
+          "webhook_configurations": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/WebhookConfiguration"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configurations",
+            "description": "Outbound webhook endpoints to notify on job status changes"
+          },
           "configuration_id": {
             "anyOf": [
               {
@@ -26457,8 +26511,8 @@
         },
         "type": "object",
         "required": [
-          "server_url",
-          "authentication_mechanism"
+          "authentication_mechanism",
+          "server_url"
         ],
         "title": "CloudConfluenceDataSource"
       },
@@ -27483,14 +27537,7 @@
             "description": "The list of required file extensions."
           },
           "get_permissions": {
-            "anyOf": [
-              {
-                "type": "boolean"
-              },
-              {
-                "type": "null"
-              }
-            ],
+            "type": "boolean",
             "title": "Get Permissions",
             "description": "Whether to get permissions for the sharepoint site.",
             "default": true
@@ -29082,38 +29129,12 @@
           "metadata": {
             "anyOf": [
               {
-                "additionalProperties": {
-                  "anyOf": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "items": {
-                        "type": "string"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "object"
+                "$ref": "#/components/schemas/MetadataDict"
               },
               {
                 "type": "null"
               }
             ],
-            "title": "Metadata",
             "description": "User-defined metadata key-value pairs to associate with the file."
           }
         },
@@ -29234,33 +29255,7 @@
             "description": "File ID for the storage location."
           },
           "metadata": {
-            "additionalProperties": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "boolean"
-                },
-                {
-                  "items": {
-                    "type": "string"
-                  },
-                  "type": "array"
-                },
-                {
-                  "type": "null"
-                }
-              ]
-            },
-            "type": "object",
-            "title": "Metadata",
+            "$ref": "#/components/schemas/MetadataDict",
             "description": "Merged metadata from all sources. Higher-priority sources override lower."
           },
           "deleted_at": {
@@ -29341,38 +29336,12 @@
           "metadata": {
             "anyOf": [
               {
-                "additionalProperties": {
-                  "anyOf": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "items": {
-                        "type": "string"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "object"
+                "$ref": "#/components/schemas/MetadataDict"
               },
               {
                 "type": "null"
               }
             ],
-            "title": "Metadata",
             "description": "User-defined metadata key-value pairs. Replaces the user metadata layer."
           }
         },
@@ -30226,14 +30195,13 @@
               "agentic"
             ]
           },
-          "extract_version": {
+          "version": {
             "type": "string",
-            "title": "Extract Version",
-            "description": "Extract algorithm version. Use 'latest' for the default pipeline or a date string (e.g. '2026-01-08') to pin to a specific release.",
+            "title": "Version",
+            "description": "Use 'latest' for the latest release for the selected tier or a date string (YYYY-MM-DD format) to pin to the nearest release at or before that date.",
             "default": "latest",
             "examples": [
-              "latest",
-              "2026-01-08"
+              "latest"
             ]
           },
           "data_schema": {
@@ -31842,14 +31810,13 @@
               "agentic"
             ]
           },
-          "extract_version": {
+          "version": {
             "type": "string",
-            "title": "Extract Version",
-            "description": "Extract algorithm version. Use 'latest' for the default pipeline or a date string (e.g. '2026-01-08') to pin to a specific release.",
+            "title": "Version",
+            "description": "Use 'latest' for the latest release for the selected tier or a date string (YYYY-MM-DD format) to pin to the nearest release at or before that date.",
             "default": "latest",
             "examples": [
-              "latest",
-              "2026-01-08"
+              "latest"
             ]
           },
           "data_schema": {
@@ -34079,250 +34046,6 @@
         "type": "object",
         "title": "GeminiEmbeddingConfig"
       },
-      "GroundedLine": {
-        "properties": {
-          "span": {
-            "prefixItems": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "integer"
-              }
-            ],
-            "type": "array",
-            "maxItems": 2,
-            "minItems": 2,
-            "title": "Span",
-            "description": "`[start, end)` byte span in the item's source text"
-          },
-          "bbox": {
-            "$ref": "#/components/schemas/BBox",
-            "description": "Line bounding box"
-          },
-          "words": {
-            "anyOf": [
-              {
-                "items": {
-                  "$ref": "#/components/schemas/GroundedWord"
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Words",
-            "description": "Per-word grounding within the line, when available"
-          }
-        },
-        "type": "object",
-        "required": [
-          "span",
-          "bbox"
-        ],
-        "title": "GroundedLine",
-        "description": "One grounded line of text with an optional per-word breakdown."
-      },
-      "GroundedTableCell": {
-        "properties": {
-          "span": {
-            "anyOf": [
-              {
-                "prefixItems": [
-                  {
-                    "type": "integer"
-                  },
-                  {
-                    "type": "integer"
-                  }
-                ],
-                "type": "array",
-                "maxItems": 2,
-                "minItems": 2
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Span",
-            "description": "`[start, end)` byte span in the cell text"
-          },
-          "lines": {
-            "anyOf": [
-              {
-                "items": {
-                  "$ref": "#/components/schemas/GroundedLine"
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Lines",
-            "description": "Per-line grounding inside the cell"
-          },
-          "bbox": {
-            "anyOf": [
-              {
-                "items": {
-                  "$ref": "#/components/schemas/BBox"
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Bbox",
-            "description": "One or more bounding boxes covering the cell"
-          }
-        },
-        "type": "object",
-        "title": "GroundedTableCell",
-        "description": "Grounding for a single table cell."
-      },
-      "GroundedTableSupport": {
-        "properties": {
-          "rows": {
-            "anyOf": [
-              {
-                "items": {
-                  "items": {
-                    "anyOf": [
-                      {
-                        "$ref": "#/components/schemas/GroundedTableCell"
-                      },
-                      {
-                        "type": "null"
-                      }
-                    ]
-                  },
-                  "type": "array"
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Rows",
-            "description": "Per-cell grounding by `[row][col]`; `null` entries mark missing cells"
-          },
-          "row_bboxes": {
-            "anyOf": [
-              {
-                "items": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/components/schemas/BBox"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Row Bboxes",
-            "description": "Bounding boxes for each row (a row may have multiple boxes)"
-          },
-          "column_bboxes": {
-            "anyOf": [
-              {
-                "items": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/components/schemas/BBox"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "array"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Column Bboxes",
-            "description": "Bounding boxes for each column (a column may have multiple boxes)"
-          }
-        },
-        "type": "object",
-        "title": "GroundedTableSupport",
-        "description": "Grounding for a table-shaped item."
-      },
-      "GroundedTextSupport": {
-        "properties": {
-          "source": {
-            "type": "string",
-            "enum": [
-              "md",
-              "caption"
-            ],
-            "title": "Source",
-            "description": "Which textual surface of the item the spans index into"
-          },
-          "lines": {
-            "items": {
-              "$ref": "#/components/schemas/GroundedLine"
-            },
-            "type": "array",
-            "title": "Lines",
-            "description": "Per-line grounding for the item text"
-          }
-        },
-        "type": "object",
-        "required": [
-          "source",
-          "lines"
-        ],
-        "title": "GroundedTextSupport",
-        "description": "Grounding for a text-shaped item (paragraph, heading, caption, etc.)."
-      },
-      "GroundedWord": {
-        "properties": {
-          "span": {
-            "prefixItems": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "integer"
-              }
-            ],
-            "type": "array",
-            "maxItems": 2,
-            "minItems": 2,
-            "title": "Span",
-            "description": "`[start, end)` byte span in the item's source text"
-          },
-          "bbox": {
-            "$ref": "#/components/schemas/BBox",
-            "description": "Word bounding box"
-          }
-        },
-        "type": "object",
-        "required": [
-          "span",
-          "bbox"
-        ],
-        "title": "GroundedWord",
-        "description": "One grounded word: a `[start, end)` span in the source text and its bbox."
-      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -36128,6 +35851,26 @@
                 "stripped_md",
                 "concatenated_stripped_txt",
                 "word_bbox"
+              ]
+            ]
+          },
+          "granular_bboxes": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "cell",
+                "line",
+                "word"
+              ]
+            },
+            "type": "array",
+            "title": "Granular Bboxes",
+            "description": "Bounding-box granularity levels to compute for the parse. 'word' computes one bounding box per detected word; 'line' computes one per text line; 'cell' computes one per table cell. Multiple levels can be requested. Empty list (default) disables granular bboxes — only item-level layout boxes are returned on the result. When set, the computed boxes are not inlined on the result items; they are written to a separate `grounded_items` sidecar (JSONL, one row per page) and exposed as `result_content_metadata.grounded_items` (a presigned download URL) on the parse result. Each row matches the `GroundedJsonItem` shape.",
+            "examples": [
+              [
+                "word",
+                "line",
+                "cell"
               ]
             ]
           }
@@ -38100,7 +37843,32 @@
               }
             ],
             "title": "Webhook Events",
-            "description": "Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.failure' (job failed), 'parse.partial' (some pages failed). If not specified, webhook fires for all events"
+            "description": "Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.error' (job failed), 'parse.partial_success' (some pages failed), 'parse.pending', 'parse.running', 'parse.cancelled'. If not specified, webhook fires for all events",
+            "examples": [
+              [
+                "parse.success",
+                "parse.error"
+              ]
+            ]
+          },
+          "webhook_output_format": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "string",
+                  "json"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Output Format",
+            "description": "Format of the webhook payload body. 'string' (default) sends the payload as a JSON-encoded string; 'json' sends it as a JSON object.",
+            "examples": [
+              "json"
+            ]
           }
         },
         "additionalProperties": false,
@@ -38358,6 +38126,12 @@
         "title": "MessageRole",
         "description": "Message role."
       },
+      "MetadataDict": {
+        "additionalProperties": {
+          "$ref": "#/components/schemas/MetadataValue"
+        },
+        "type": "object"
+      },
       "MetadataFilter": {
         "properties": {
           "key": {
@@ -38446,6 +38220,12 @@
         ],
         "title": "MetadataFilters",
         "description": "Metadata filters for vector stores."
+      },
+      "MetadataListValue": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
       },
       "MetadataResult": {
         "properties": {
@@ -38563,6 +38343,35 @@
         ],
         "title": "MetadataResultPage",
         "description": "Page-level metadata including confidence scores and presentation-specific data."
+      },
+      "MetadataScalarValue": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "MetadataValue": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/MetadataScalarValue"
+          },
+          {
+            "$ref": "#/components/schemas/MetadataListValue"
+          }
+        ]
       },
       "MongoStaticFilters": {
         "properties": {
@@ -39644,8 +39453,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-05-21",
-                  "2026-04-09",
+                  "2026-06-05",
+                  "2026-06-04",
                   "2025-12-11"
                 ],
                 "x-enum-order-preserved": true
@@ -39655,7 +39464,7 @@
               }
             ],
             "title": "Version",
-            "description": "Tier version. Use 'latest' for the current stable version, or pin a dated version for reproducible results. See GET /api/v2/parse/versions for the per-tier list."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-05`\n- `agentic`: `2026-06-04`\n- `agentic_plus`: `2026-06-04`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -39935,8 +39744,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-05-21",
-                  "2026-04-09",
+                  "2026-06-05",
+                  "2026-06-04",
                   "2025-12-11"
                 ],
                 "x-enum-order-preserved": true
@@ -39946,7 +39755,7 @@
               }
             ],
             "title": "Version",
-            "description": "Tier version. Use 'latest' for the current stable version, or pin a dated version for reproducible results. See GET /api/v2/parse/versions for the per-tier list."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-05`\n- `agentic`: `2026-06-04`\n- `agentic_plus`: `2026-06-04`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -40060,6 +39869,8 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-06-05",
+                "2026-05-28",
                 "2026-04-09",
                 "2026-03-31",
                 "2026-03-27",
@@ -40075,6 +39886,8 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-06-04",
+                "2026-06-01",
                 "2026-05-26",
                 "2026-05-21",
                 "2026-05-20",
@@ -40121,6 +39934,8 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-06-04",
+                "2026-06-01",
                 "2026-05-26",
                 "2026-05-21",
                 "2026-05-20",
@@ -43110,38 +42925,12 @@
           "metadata": {
             "anyOf": [
               {
-                "additionalProperties": {
-                  "anyOf": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "items": {
-                        "type": "string"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                },
-                "type": "object"
+                "$ref": "#/components/schemas/MetadataDict"
               },
               {
                 "type": "null"
               }
             ],
-            "title": "Metadata",
             "description": "User-defined metadata associated with the chunk."
           },
           "static_fields": {
@@ -44287,13 +44076,62 @@
             "title": "Project Id",
             "description": "The ID of the project"
           },
-          "config": {
+          "configuration": {
             "$ref": "#/components/schemas/SpreadsheetParsingConfig",
-            "description": "Configuration for the parsing job"
+            "description": "Configuration applied to the parsing job (inline or resolved from a saved preset)."
+          },
+          "config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SpreadsheetParsingConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Deprecated: use `configuration` instead.",
+            "deprecated": true
           },
           "status": {
-            "$ref": "#/components/schemas/StatusEnum",
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "SUCCESS",
+              "ERROR",
+              "PARTIAL_SUCCESS",
+              "CANCELLED"
+            ],
+            "title": "Status",
             "description": "The status of the parsing job"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/SpreadsheetJobParameters",
+            "description": "Job-time parameters such as webhook configurations."
+          },
+          "configuration_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Configuration Id",
+            "description": "The saved product configuration ID used at create time, if any."
+          },
+          "metadata_state_transitions": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metadata State Transitions",
+            "description": "Per-status entry timestamps. Returned only when requested via `?expand=metadata_state_transitions`."
           },
           "created_at": {
             "type": "string",
@@ -44372,26 +44210,75 @@
           "id",
           "user_id",
           "project_id",
-          "config",
+          "configuration",
           "status",
           "created_at",
           "updated_at",
           "file_id"
         ],
         "title": "SpreadsheetJob",
-        "description": "A spreadsheet parsing job"
+        "description": "A spreadsheet parsing job."
       },
       "SpreadsheetJobCreate": {
         "properties": {
+          "configuration_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Configuration Id",
+            "description": "Saved configuration ID",
+            "examples": [
+              "cfg-11111111-2222-3333-4444-555555555555"
+            ]
+          },
+          "configuration": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SpreadsheetParsingConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Inline configuration"
+          },
+          "webhook_configurations": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/WebhookConfiguration"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configurations",
+            "description": "Outbound webhook endpoints to notify on job status changes"
+          },
+          "config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SpreadsheetParsingConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Deprecated: use `configuration` instead.",
+            "deprecated": true
+          },
           "file_id": {
             "type": "string",
             "format": "uuid",
             "title": "File Id",
             "description": "The ID of the file to parse"
-          },
-          "config": {
-            "$ref": "#/components/schemas/SpreadsheetParsingConfig",
-            "description": "Configuration for the parsing job"
           }
         },
         "type": "object",
@@ -44399,7 +44286,29 @@
           "file_id"
         ],
         "title": "SpreadsheetJobCreate",
-        "description": "Request to create a spreadsheet parsing job"
+        "description": "Request to create a spreadsheet parsing job.\n\nProvide at most one of `configuration` (inline) or `configuration_id`\n(saved preset). If neither is provided, a default inline configuration is\nused."
+      },
+      "SpreadsheetJobParameters": {
+        "properties": {
+          "webhook_configurations": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/WebhookConfiguration"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configurations",
+            "description": "Webhook configurations for job status notifications."
+          }
+        },
+        "type": "object",
+        "title": "SpreadsheetJobParameters",
+        "description": "Job-time parameters returned on a spreadsheet job response."
       },
       "SpreadsheetParsingConfig": {
         "properties": {
@@ -45465,7 +45374,9 @@
               "extraction_num_pages",
               "extraction_num_pages_parsed",
               "pages_split",
-              "pages_classified"
+              "pages_classified",
+              "directory_file_count_snapshot",
+              "directory_count_snapshot"
             ],
             "title": "Event Type",
             "description": "The event type that is emitted"
@@ -45618,6 +45529,13 @@
           "type": {
             "type": "string",
             "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
           }
         },
         "type": "object",
@@ -45826,10 +45744,16 @@
                     "parse.partial_success",
                     "parse.cancelled",
                     "classify.pending",
+                    "classify.running",
                     "classify.success",
                     "classify.error",
                     "classify.partial_success",
                     "classify.cancelled",
+                    "sheets.pending",
+                    "sheets.success",
+                    "sheets.error",
+                    "sheets.partial_success",
+                    "sheets.cancelled",
                     "unmapped_event"
                   ]
                 },

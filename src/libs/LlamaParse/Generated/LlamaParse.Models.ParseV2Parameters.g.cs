@@ -20,7 +20,13 @@ namespace LlamaParse
         public required global::LlamaParse.ParseV2ParametersTier Tier { get; set; }
 
         /// <summary>
-        /// Tier version. Use 'latest' for the current stable version, or pin a dated version for reproducible results. See GET /api/v2/parse/versions for the per-tier list.
+        /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
+        /// Current `latest` by tier:<br/>
+        /// - `fast`: `2025-12-11`<br/>
+        /// - `cost_effective`: `2026-06-05`<br/>
+        /// - `agentic`: `2026-06-04`<br/>
+        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// Full list: `GET /api/v2/parse/versions`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseV2ParametersVersion?, string>))]
@@ -113,7 +119,13 @@ namespace LlamaParse
         /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
         /// </param>
         /// <param name="version">
-        /// Tier version. Use 'latest' for the current stable version, or pin a dated version for reproducible results. See GET /api/v2/parse/versions for the per-tier list.
+        /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
+        /// Current `latest` by tier:<br/>
+        /// - `fast`: `2025-12-11`<br/>
+        /// - `cost_effective`: `2026-06-05`<br/>
+        /// - `agentic`: `2026-06-04`<br/>
+        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="clientName">
         /// Identifier for the client/application making the request. Used for analytics and debugging. Example: 'my-app-v2'

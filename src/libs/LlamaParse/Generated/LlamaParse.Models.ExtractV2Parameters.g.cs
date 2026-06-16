@@ -29,11 +29,11 @@ namespace LlamaParse
         public global::LlamaParse.ExtractV2ParametersTier? Tier { get; set; }
 
         /// <summary>
-        /// Extract algorithm version. Use 'latest' for the default pipeline or a date string (e.g. '2026-01-08') to pin to a specific release.<br/>
+        /// Use 'latest' for the latest release for the selected tier or a date string (YYYY-MM-DD format) to pin to the nearest release at or before that date.<br/>
         /// Default Value: latest
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("extract_version")]
-        public string? ExtractVersion { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("version")]
+        public string? Version { get; set; }
 
         /// <summary>
         /// JSON Schema defining the fields to extract. Validate with the /schema/validate endpoint first.
@@ -111,8 +111,8 @@ namespace LlamaParse
         /// Extract tier: cost_effective (5 credits/page) or agentic (15 credits/page)<br/>
         /// Default Value: cost_effective
         /// </param>
-        /// <param name="extractVersion">
-        /// Extract algorithm version. Use 'latest' for the default pipeline or a date string (e.g. '2026-01-08') to pin to a specific release.<br/>
+        /// <param name="version">
+        /// Use 'latest' for the latest release for the selected tier or a date string (YYYY-MM-DD format) to pin to the nearest release at or before that date.<br/>
         /// Default Value: latest
         /// </param>
         /// <param name="extractionTarget">
@@ -147,7 +147,7 @@ namespace LlamaParse
             string? targetPages,
             int? maxPages,
             global::LlamaParse.ExtractV2ParametersTier? tier,
-            string? extractVersion,
+            string? version,
             global::LlamaParse.ExtractV2ParametersExtractionTarget? extractionTarget,
             string? systemPrompt,
             bool? citeSources,
@@ -159,7 +159,7 @@ namespace LlamaParse
             this.TargetPages = targetPages;
             this.MaxPages = maxPages;
             this.Tier = tier;
-            this.ExtractVersion = extractVersion;
+            this.Version = version;
             this.DataSchema = dataSchema ?? throw new global::System.ArgumentNullException(nameof(dataSchema));
             this.ExtractionTarget = extractionTarget;
             this.SystemPrompt = systemPrompt;

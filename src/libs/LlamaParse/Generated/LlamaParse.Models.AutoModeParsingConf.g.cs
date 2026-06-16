@@ -18,7 +18,13 @@ namespace LlamaParse
         public global::LlamaParse.AutoModeParsingConfTier2? Tier { get; set; }
 
         /// <summary>
-        /// Tier version when overriding tier. Required when tier is specified
+        /// Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.<br/>
+        /// Current `latest` by tier:<br/>
+        /// - `fast`: `2025-12-11`<br/>
+        /// - `cost_effective`: `2026-06-05`<br/>
+        /// - `agentic`: `2026-06-04`<br/>
+        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// Full list: `GET /api/v2/parse/versions`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoModeParsingConfVersion?, string, object>))]
@@ -109,7 +115,13 @@ namespace LlamaParse
         /// Override the parsing tier for matched pages. Must be paired with version
         /// </param>
         /// <param name="version">
-        /// Tier version when overriding tier. Required when tier is specified
+        /// Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.<br/>
+        /// Current `latest` by tier:<br/>
+        /// - `fast`: `2025-12-11`<br/>
+        /// - `cost_effective`: `2026-06-05`<br/>
+        /// - `agentic`: `2026-06-04`<br/>
+        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="customPrompt">
         /// Custom AI instructions for matched pages. Overrides the base custom_prompt

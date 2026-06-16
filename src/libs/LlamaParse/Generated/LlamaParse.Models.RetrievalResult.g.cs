@@ -31,7 +31,7 @@ namespace LlamaParse
         /// User-defined metadata associated with the chunk.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::LlamaParse.MetadataDict? Metadata { get; set; }
 
         /// <summary>
         /// Built-in fields stored for every exported chunk.
@@ -70,7 +70,7 @@ namespace LlamaParse
             string content,
             double? score,
             double? rerankScore,
-            object? metadata,
+            global::LlamaParse.MetadataDict? metadata,
             global::LlamaParse.StaticFields? staticFields)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));

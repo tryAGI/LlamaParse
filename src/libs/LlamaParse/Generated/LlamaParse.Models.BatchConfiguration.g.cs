@@ -9,12 +9,13 @@ namespace LlamaParse
     ///     {<br/>
     ///         "job": {<br/>
     ///             "type": "parse_v2",<br/>
-    ///             "configuration_id": "cfg-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"<br/>
+    ///             "configuration_id": "cfg-PARSE_AGENTIC"<br/>
     ///         }<br/>
     ///     }<br/>
-    /// This wraps the saved product configuration to run over the source<br/>
-    /// directory. Create or reuse the product configuration through the generic<br/>
-    /// configurations API before creating the batch.
+    /// This wraps the product configuration ID to run over the source directory.<br/>
+    /// Use a built-in preset ID when available, or create/reuse a product<br/>
+    /// configuration through the generic configurations API before creating the<br/>
+    /// batch.
     /// </summary>
     public sealed partial class BatchConfiguration
     {

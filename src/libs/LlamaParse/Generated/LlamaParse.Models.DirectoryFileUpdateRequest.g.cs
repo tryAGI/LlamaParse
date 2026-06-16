@@ -30,7 +30,7 @@ namespace LlamaParse
         /// User-defined metadata key-value pairs. Replaces the user metadata layer.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::LlamaParse.MetadataDict? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,7 +60,7 @@ namespace LlamaParse
             string? uniqueId,
             string? displayName,
             string? targetDirectoryId,
-            object? metadata)
+            global::LlamaParse.MetadataDict? metadata)
         {
             this.UniqueId = uniqueId;
             this.DisplayName = displayName;
