@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Idempotency key scoped to the project
+    /// Idempotency key scoped to the project. Reusing a key returns the original job; the new request body is ignored.
     /// </summary>
     public sealed partial class ClassifyV2JobCreateRequestTransactionId
     {

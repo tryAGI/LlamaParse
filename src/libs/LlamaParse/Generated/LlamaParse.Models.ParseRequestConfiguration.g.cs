@@ -14,17 +14,17 @@ namespace LlamaParse
         /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationTierJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseRequestConfigurationTier?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LlamaParse.ParseRequestConfigurationTier Tier { get; set; }
+        public required global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string> Tier { get; set; }
 
         /// <summary>
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
         /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-05`<br/>
-        /// - `agentic`: `2026-06-04`<br/>
-        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// - `cost_effective`: `2026-06-11`<br/>
+        /// - `agentic`: `2026-06-11`<br/>
+        /// - `agentic_plus`: `2026-06-11`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
@@ -99,6 +99,12 @@ namespace LlamaParse
         public global::LlamaParse.LlamaParseProcessingControl? ProcessingControl { get; set; }
 
         /// <summary>
+        /// ID of a saved parse configuration. When set, `tier` and `version` default to the saved configuration's values — omit them or pass `'configured'`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("configuration_id")]
+        public string? ConfigurationId { get; set; }
+
+        /// <summary>
         /// ID of an existing file in the project to parse. Mutually exclusive with source_url
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
@@ -132,9 +138,9 @@ namespace LlamaParse
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
         /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-05`<br/>
-        /// - `agentic`: `2026-06-04`<br/>
-        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// - `cost_effective`: `2026-06-11`<br/>
+        /// - `agentic`: `2026-06-11`<br/>
+        /// - `agentic_plus`: `2026-06-11`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="clientName">
@@ -170,6 +176,9 @@ namespace LlamaParse
         /// <param name="processingControl">
         /// Job execution controls including timeouts and failure thresholds
         /// </param>
+        /// <param name="configurationId">
+        /// ID of a saved parse configuration. When set, `tier` and `version` default to the saved configuration's values — omit them or pass `'configured'`.
+        /// </param>
         /// <param name="fileId">
         /// ID of an existing file in the project to parse. Mutually exclusive with source_url
         /// </param>
@@ -183,7 +192,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ParseRequestConfiguration(
-            global::LlamaParse.ParseRequestConfigurationTier tier,
+            global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string> tier,
             global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationVersion?, string> version,
             string? clientName,
             global::LlamaParse.LlamaParseProcessingOptions? processingOptions,
@@ -196,6 +205,7 @@ namespace LlamaParse
             bool? disableCache,
             global::LlamaParse.LlamaParseOutputOptions? outputOptions,
             global::LlamaParse.LlamaParseProcessingControl? processingControl,
+            string? configurationId,
             string? fileId,
             string? sourceUrl,
             string? httpProxy)
@@ -213,6 +223,7 @@ namespace LlamaParse
             this.DisableCache = disableCache;
             this.OutputOptions = outputOptions;
             this.ProcessingControl = processingControl;
+            this.ConfigurationId = configurationId;
             this.FileId = fileId;
             this.SourceUrl = sourceUrl;
             this.HttpProxy = httpProxy;

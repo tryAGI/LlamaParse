@@ -99,6 +99,26 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        SplitCancelled,
+        /// <summary>
+        /// 
+        /// </summary>
+        SplitError,
+        /// <summary>
+        /// 
+        /// </summary>
+        SplitPending,
+        /// <summary>
+        /// 
+        /// </summary>
+        SplitProcessing,
+        /// <summary>
+        /// 
+        /// </summary>
+        SplitSuccess,
+        /// <summary>
+        /// 
+        /// </summary>
         UnmappedEvent,
     }
 
@@ -136,6 +156,11 @@ namespace LlamaParse
                 WebhookConfigurationWebhookEventsVariant1Item.SheetsPartialSuccess => "sheets.partial_success",
                 WebhookConfigurationWebhookEventsVariant1Item.SheetsPending => "sheets.pending",
                 WebhookConfigurationWebhookEventsVariant1Item.SheetsSuccess => "sheets.success",
+                WebhookConfigurationWebhookEventsVariant1Item.SplitCancelled => "split.cancelled",
+                WebhookConfigurationWebhookEventsVariant1Item.SplitError => "split.error",
+                WebhookConfigurationWebhookEventsVariant1Item.SplitPending => "split.pending",
+                WebhookConfigurationWebhookEventsVariant1Item.SplitProcessing => "split.processing",
+                WebhookConfigurationWebhookEventsVariant1Item.SplitSuccess => "split.success",
                 WebhookConfigurationWebhookEventsVariant1Item.UnmappedEvent => "unmapped_event",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -169,6 +194,11 @@ namespace LlamaParse
                 "sheets.partial_success" => WebhookConfigurationWebhookEventsVariant1Item.SheetsPartialSuccess,
                 "sheets.pending" => WebhookConfigurationWebhookEventsVariant1Item.SheetsPending,
                 "sheets.success" => WebhookConfigurationWebhookEventsVariant1Item.SheetsSuccess,
+                "split.cancelled" => WebhookConfigurationWebhookEventsVariant1Item.SplitCancelled,
+                "split.error" => WebhookConfigurationWebhookEventsVariant1Item.SplitError,
+                "split.pending" => WebhookConfigurationWebhookEventsVariant1Item.SplitPending,
+                "split.processing" => WebhookConfigurationWebhookEventsVariant1Item.SplitProcessing,
+                "split.success" => WebhookConfigurationWebhookEventsVariant1Item.SplitSuccess,
                 "unmapped_event" => WebhookConfigurationWebhookEventsVariant1Item.UnmappedEvent,
                 _ => null,
             };

@@ -49,7 +49,7 @@ namespace LlamaParse
         public string? ParseJobId { get; set; }
 
         /// <summary>
-        /// Idempotency key scoped to the project
+        /// Idempotency key scoped to the project. Reusing a key returns the original job; the new request body is ignored.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
         public string? TransactionId { get; set; }
@@ -76,7 +76,7 @@ namespace LlamaParse
         /// File ID or parse job ID to classify
         /// </param>
         /// <param name="transactionId">
-        /// Idempotency key scoped to the project
+        /// Idempotency key scoped to the project. Reusing a key returns the original job; the new request body is ignored.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
