@@ -159,33 +159,6 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public PipelineDataSourcesClient PipelineDataSources => new PipelineDataSourcesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PipelineFilesClient PipelineFiles => new PipelineFilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PipelinesClient Pipelines => new PipelinesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ProjectsClient Projects => new ProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -205,6 +178,15 @@ namespace LlamaParse
         /// 
         /// </summary>
         public RetrieversClient Retrievers => new RetrieversClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SheetsClient Sheets => new SheetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,

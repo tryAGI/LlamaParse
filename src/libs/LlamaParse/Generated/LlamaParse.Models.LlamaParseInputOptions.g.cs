@@ -35,6 +35,12 @@ namespace LlamaParse
         public global::LlamaParse.LlamaParsePresentationOptions? Presentation { get; set; }
 
         /// <summary>
+        /// Image parsing options (applies to .jpg, .jpeg, .png, .webp files)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        public global::LlamaParse.LlamaParseImageOptions? Image { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,6 +61,9 @@ namespace LlamaParse
         /// <param name="presentation">
         /// Presentation parsing options (applies to .pptx, .ppt, .odp, .key files)
         /// </param>
+        /// <param name="image">
+        /// Image parsing options (applies to .jpg, .jpeg, .png, .webp files)
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,12 +71,14 @@ namespace LlamaParse
             global::LlamaParse.LlamaParseHtmlOptions? html,
             global::LlamaParse.LlamaParsePdfOptions? pdf,
             global::LlamaParse.LlamaParseSpreadsheetOptions? spreadsheet,
-            global::LlamaParse.LlamaParsePresentationOptions? presentation)
+            global::LlamaParse.LlamaParsePresentationOptions? presentation,
+            global::LlamaParse.LlamaParseImageOptions? image)
         {
             this.Html = html;
             this.Pdf = pdf;
             this.Spreadsheet = spreadsheet;
             this.Presentation = presentation;
+            this.Image = image;
         }
 
         /// <summary>

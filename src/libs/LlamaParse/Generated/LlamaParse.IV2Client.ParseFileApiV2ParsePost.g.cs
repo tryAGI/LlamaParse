@@ -86,9 +86,9 @@ namespace LlamaParse
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
         /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-05`<br/>
-        /// - `agentic`: `2026-06-04`<br/>
-        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// - `cost_effective`: `2026-06-11`<br/>
+        /// - `agentic`: `2026-06-11`<br/>
+        /// - `agentic_plus`: `2026-06-11`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="clientName">
@@ -124,6 +124,9 @@ namespace LlamaParse
         /// <param name="processingControl">
         /// Job execution controls including timeouts and failure thresholds
         /// </param>
+        /// <param name="configurationId">
+        /// ID of a saved parse configuration. When set, `tier` and `version` default to the saved configuration's values — omit them or pass `'configured'`.
+        /// </param>
         /// <param name="fileId">
         /// ID of an existing file in the project to parse. Mutually exclusive with source_url
         /// </param>
@@ -137,7 +140,7 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.ParseJobResponse> ParseFileApiV2ParsePostAsync(
-            global::LlamaParse.ParseRequestConfigurationTier tier,
+            global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string> tier,
             global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationVersion?, string> version,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
@@ -153,6 +156,7 @@ namespace LlamaParse
             bool? disableCache = default,
             global::LlamaParse.LlamaParseOutputOptions? outputOptions = default,
             global::LlamaParse.LlamaParseProcessingControl? processingControl = default,
+            string? configurationId = default,
             string? fileId = default,
             string? sourceUrl = default,
             string? httpProxy = default,
