@@ -12,6 +12,10 @@ namespace LlamaParse
         /// 
         /// </summary>
         x20251211,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260615,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace LlamaParse
             return value switch
             {
                 ParseVersionsResponseFastItem.x20251211 => "2025-12-11",
+                ParseVersionsResponseFastItem.x20260615 => "2026-06-15",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace LlamaParse
             return value switch
             {
                 "2025-12-11" => ParseVersionsResponseFastItem.x20251211,
+                "2026-06-15" => ParseVersionsResponseFastItem.x20260615,
                 _ => null,
             };
         }
