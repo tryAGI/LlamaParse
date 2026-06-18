@@ -19,6 +19,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        x20260617,
+        /// <summary>
+        /// 
+        /// </summary>
         Latest,
     }
 
@@ -36,6 +40,7 @@ namespace LlamaParse
             {
                 AutoModeParsingConfVersion.x20251211 => "2025-12-11",
                 AutoModeParsingConfVersion.x20260611 => "2026-06-11",
+                AutoModeParsingConfVersion.x20260617 => "2026-06-17",
                 AutoModeParsingConfVersion.Latest => "latest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace LlamaParse
             {
                 "2025-12-11" => AutoModeParsingConfVersion.x20251211,
                 "2026-06-11" => AutoModeParsingConfVersion.x20260611,
+                "2026-06-17" => AutoModeParsingConfVersion.x20260617,
                 "latest" => AutoModeParsingConfVersion.Latest,
                 _ => null,
             };
