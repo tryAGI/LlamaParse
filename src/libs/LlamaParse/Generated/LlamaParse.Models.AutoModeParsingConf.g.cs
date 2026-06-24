@@ -21,9 +21,9 @@ namespace LlamaParse
         /// Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
         /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-17`<br/>
-        /// - `agentic`: `2026-06-11`<br/>
-        /// - `agentic_plus`: `2026-06-11`<br/>
+        /// - `cost_effective`: `2026-06-18`<br/>
+        /// - `agentic`: `2026-06-18`<br/>
+        /// - `agentic_plus`: `2026-06-18`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
@@ -118,9 +118,9 @@ namespace LlamaParse
         /// Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
         /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-17`<br/>
-        /// - `agentic`: `2026-06-11`<br/>
-        /// - `agentic_plus`: `2026-06-11`<br/>
+        /// - `cost_effective`: `2026-06-18`<br/>
+        /// - `agentic`: `2026-06-18`<br/>
+        /// - `agentic_plus`: `2026-06-18`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="customPrompt">
