@@ -445,6 +445,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2NullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemNullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemNullableJsonConverter),
@@ -1694,6 +1698,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2NullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemNullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemNullableJsonConverter),
@@ -2140,6 +2148,8 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item), TypeInfoPropertyName = "ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item), TypeInfoPropertyName = "ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2))]
@@ -2263,6 +2273,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.PipelineFileCreate>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.CloudDocumentCreate>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.DataSink>))]
@@ -2537,6 +2548,8 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2NullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2JsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2NullableJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2JsonConverter());
