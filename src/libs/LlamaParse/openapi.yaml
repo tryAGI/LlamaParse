@@ -14574,6 +14574,85 @@
         ],
         "parameters": [
           {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Directory name to match.",
+              "title": "Name"
+            },
+            "description": "Directory name to match."
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "user",
+                    "index",
+                    "ephemeral"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Directory type to include.",
+              "title": "Type"
+            },
+            "description": "Directory type to include."
+          },
+          {
+            "name": "types",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "user",
+                      "index",
+                      "ephemeral"
+                    ],
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by one or more directory types. Repeat the parameter for multiple values.",
+              "title": "Types"
+            },
+            "description": "Filter by one or more directory types. Repeat the parameter for multiple values."
+          },
+          {
+            "name": "include_deleted",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Include deleted directories.",
+              "default": false,
+              "title": "Include Deleted"
+            },
+            "description": "Include deleted directories."
+          },
+          {
             "name": "project_id",
             "in": "query",
             "required": false,
@@ -14605,53 +14684,6 @@
                 }
               ],
               "title": "Organization Id"
-            }
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Name"
-            }
-          },
-          {
-            "name": "type",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "enum": [
-                    "user",
-                    "index",
-                    "ephemeral"
-                  ],
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Type"
-            }
-          },
-          {
-            "name": "include_deleted",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false,
-              "title": "Include Deleted"
             }
           },
           {
@@ -29749,22 +29781,6 @@
             "examples": [
               "user",
               "ephemeral"
-            ]
-          },
-          "expires_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Expires At",
-            "description": "When this directory expires. Required for ephemeral directories.",
-            "examples": [
-              "2026-05-10T00:00:00Z"
             ]
           },
           "system_metadata": {

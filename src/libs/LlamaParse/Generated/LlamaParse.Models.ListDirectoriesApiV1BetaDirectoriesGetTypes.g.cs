@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// When this directory expires. Required for ephemeral directories.
+    /// Filter by one or more directory types. Repeat the parameter for multiple values.
     /// </summary>
-    public sealed partial class DirectoryCreateRequestExpiresAt
+    public sealed partial class ListDirectoriesApiV1BetaDirectoriesGetTypes
     {
 
         /// <summary>

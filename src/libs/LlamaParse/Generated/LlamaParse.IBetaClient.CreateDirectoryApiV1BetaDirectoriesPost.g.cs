@@ -59,9 +59,6 @@ namespace LlamaParse
         /// Directory type. Use 'ephemeral' for batch processing with automatic cleanup.<br/>
         /// Default Value: user
         /// </param>
-        /// <param name="expiresAt">
-        /// When this directory expires. Required for ephemeral directories.
-        /// </param>
         /// <param name="systemMetadata">
         /// Reserved system-managed metadata.
         /// </param>
@@ -75,7 +72,6 @@ namespace LlamaParse
             string? session = default,
             string? description = default,
             global::LlamaParse.DirectoryCreateRequestType? type = default,
-            global::System.DateTime? expiresAt = default,
             object? systemMetadata = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

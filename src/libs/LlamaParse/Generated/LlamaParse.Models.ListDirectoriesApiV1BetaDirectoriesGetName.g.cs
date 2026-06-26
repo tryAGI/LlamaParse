@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    /// Directory name to match.
     /// </summary>
     public sealed partial class ListDirectoriesApiV1BetaDirectoriesGetName
     {

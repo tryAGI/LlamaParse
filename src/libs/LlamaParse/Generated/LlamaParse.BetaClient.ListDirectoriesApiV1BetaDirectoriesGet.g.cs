@@ -27,22 +27,24 @@ namespace LlamaParse
             };
         partial void PrepareListDirectoriesApiV1BetaDirectoriesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Guid? projectId,
-            global::System.Guid? organizationId,
             ref string? name,
             global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type,
+            global::System.Collections.Generic.IList<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item>? types,
             ref bool? includeDeleted,
+            global::System.Guid? projectId,
+            global::System.Guid? organizationId,
             int? pageSize,
             ref string? pageToken,
             ref string? session);
         partial void PrepareListDirectoriesApiV1BetaDirectoriesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid? projectId,
-            global::System.Guid? organizationId,
             string? name,
             global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type,
+            global::System.Collections.Generic.IList<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item>? types,
             bool? includeDeleted,
+            global::System.Guid? projectId,
+            global::System.Guid? organizationId,
             int? pageSize,
             string? pageToken,
             string? session);
@@ -58,13 +60,21 @@ namespace LlamaParse
         /// <summary>
         /// List Directories
         /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="organizationId"></param>
-        /// <param name="name"></param>
-        /// <param name="type"></param>
+        /// <param name="name">
+        /// Directory name to match.
+        /// </param>
+        /// <param name="type">
+        /// Directory type to include.
+        /// </param>
+        /// <param name="types">
+        /// Filter by one or more directory types. Repeat the parameter for multiple values.
+        /// </param>
         /// <param name="includeDeleted">
+        /// Include deleted directories.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
         /// <param name="session"></param>
@@ -72,11 +82,12 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryQueryResponse> ListDirectoriesApiV1BetaDirectoriesGetAsync(
-            global::System.Guid? projectId = default,
-            global::System.Guid? organizationId = default,
             string? name = default,
             global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type = default,
+            global::System.Collections.Generic.IList<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item>? types = default,
             bool? includeDeleted = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
             int? pageSize = default,
             string? pageToken = default,
             string? session = default,
@@ -84,11 +95,12 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListDirectoriesApiV1BetaDirectoriesGetAsResponseAsync(
-                projectId: projectId,
-                organizationId: organizationId,
                 name: name,
                 type: type,
+                types: types,
                 includeDeleted: includeDeleted,
+                projectId: projectId,
+                organizationId: organizationId,
                 pageSize: pageSize,
                 pageToken: pageToken,
                 session: session,
@@ -101,13 +113,21 @@ namespace LlamaParse
         /// <summary>
         /// List Directories
         /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="organizationId"></param>
-        /// <param name="name"></param>
-        /// <param name="type"></param>
+        /// <param name="name">
+        /// Directory name to match.
+        /// </param>
+        /// <param name="type">
+        /// Directory type to include.
+        /// </param>
+        /// <param name="types">
+        /// Filter by one or more directory types. Repeat the parameter for multiple values.
+        /// </param>
         /// <param name="includeDeleted">
+        /// Include deleted directories.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
         /// <param name="session"></param>
@@ -115,11 +135,12 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DirectoryQueryResponse>> ListDirectoriesApiV1BetaDirectoriesGetAsResponseAsync(
-            global::System.Guid? projectId = default,
-            global::System.Guid? organizationId = default,
             string? name = default,
             global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type = default,
+            global::System.Collections.Generic.IList<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item>? types = default,
             bool? includeDeleted = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
             int? pageSize = default,
             string? pageToken = default,
             string? session = default,
@@ -130,11 +151,12 @@ namespace LlamaParse
                 client: HttpClient);
             PrepareListDirectoriesApiV1BetaDirectoriesGetArguments(
                 httpClient: HttpClient,
-                projectId: projectId,
-                organizationId: organizationId,
                 name: ref name,
                 type: type,
+                types: types,
                 includeDeleted: ref includeDeleted,
+                projectId: projectId,
+                organizationId: organizationId,
                 pageSize: pageSize,
                 pageToken: ref pageToken,
                 session: ref session);
@@ -166,11 +188,12 @@ namespace LlamaParse
                                 path: "/api/v1/beta/directories",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("project_id", projectId?.ToString())
-                                .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("type", type?.ToString())
+                                .AddOptionalParameter("types", types?.ToString())
                                 .AddOptionalParameter("include_deleted", includeDeleted?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("project_id", projectId?.ToString())
+                                .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
                                 ;
@@ -226,11 +249,12 @@ namespace LlamaParse
                 PrepareListDirectoriesApiV1BetaDirectoriesGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    organizationId: organizationId,
                     name: name,
                     type: type,
+                    types: types,
                     includeDeleted: includeDeleted,
+                    projectId: projectId,
+                    organizationId: organizationId,
                     pageSize: pageSize,
                     pageToken: pageToken,
                     session: session);

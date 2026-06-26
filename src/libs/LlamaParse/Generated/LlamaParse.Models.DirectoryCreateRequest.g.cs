@@ -30,12 +30,6 @@ namespace LlamaParse
         public global::LlamaParse.DirectoryCreateRequestType? Type { get; set; }
 
         /// <summary>
-        /// When this directory expires. Required for ephemeral directories.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        public global::System.DateTime? ExpiresAt { get; set; }
-
-        /// <summary>
         /// Reserved system-managed metadata.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_metadata")]
@@ -60,9 +54,6 @@ namespace LlamaParse
         /// Directory type. Use 'ephemeral' for batch processing with automatic cleanup.<br/>
         /// Default Value: user
         /// </param>
-        /// <param name="expiresAt">
-        /// When this directory expires. Required for ephemeral directories.
-        /// </param>
         /// <param name="systemMetadata">
         /// Reserved system-managed metadata.
         /// </param>
@@ -73,13 +64,11 @@ namespace LlamaParse
             string name,
             string? description,
             global::LlamaParse.DirectoryCreateRequestType? type,
-            global::System.DateTime? expiresAt,
             object? systemMetadata)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Type = type;
-            this.ExpiresAt = expiresAt;
             this.SystemMetadata = systemMetadata;
         }
 
