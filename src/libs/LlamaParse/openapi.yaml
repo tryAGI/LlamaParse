@@ -21797,6 +21797,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-06-26",
                   "2026-06-18",
                   "2025-12-11"
                 ],
@@ -21810,7 +21811,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-18`\n- `agentic`: `2026-06-18`\n- `agentic_plus`: `2026-06-18`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-26`\n- `agentic`: `2026-06-18`\n- `agentic_plus`: `2026-06-18`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -35539,6 +35540,11 @@
             "title": "Source Directory Id",
             "description": "ID of the source directory."
           },
+          "output_directory_id": {
+            "type": "string",
+            "title": "Output Directory Id",
+            "description": "ID of the output directory holding the indexed files."
+          },
           "sync_config_id": {
             "type": "string",
             "title": "Sync Config Id",
@@ -35586,6 +35592,7 @@
           "name",
           "project_id",
           "source_directory_id",
+          "output_directory_id",
           "sync_config_id",
           "export_config_id"
         ],
@@ -40220,6 +40227,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-06-26",
                   "2026-06-18",
                   "2025-12-11"
                 ],
@@ -40230,7 +40238,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-18`\n- `agentic`: `2026-06-18`\n- `agentic_plus`: `2026-06-18`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-26`\n- `agentic`: `2026-06-18`\n- `agentic_plus`: `2026-06-18`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -40522,6 +40530,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-06-26",
                   "2026-06-18",
                   "2025-12-11"
                 ],
@@ -40532,7 +40541,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-18`\n- `agentic`: `2026-06-18`\n- `agentic_plus`: `2026-06-18`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2025-12-11`\n- `cost_effective`: `2026-06-26`\n- `agentic`: `2026-06-18`\n- `agentic_plus`: `2026-06-18`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -40647,6 +40656,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-06-26",
                 "2026-06-18",
                 "2026-06-17",
                 "2026-06-11",
