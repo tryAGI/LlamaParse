@@ -23,7 +23,7 @@ namespace LlamaParse
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
         /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-18`<br/>
+        /// - `cost_effective`: `2026-06-26`<br/>
         /// - `agentic`: `2026-06-18`<br/>
         /// - `agentic_plus`: `2026-06-18`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
@@ -122,7 +122,7 @@ namespace LlamaParse
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
         /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-18`<br/>
+        /// - `cost_effective`: `2026-06-26`<br/>
         /// - `agentic`: `2026-06-18`<br/>
         /// - `agentic_plus`: `2026-06-18`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
