@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Split result (available when status is COMPLETED).
+    /// Split result, available when status is completed.
     /// </summary>
     public sealed partial class SplitJobResponseResult
     {

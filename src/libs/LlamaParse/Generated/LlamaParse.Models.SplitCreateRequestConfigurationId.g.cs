@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Saved split configuration ID.
+    /// Saved configuration ID
     /// </summary>
     public sealed partial class SplitCreateRequestConfigurationId
     {

@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Inline split configuration.
+    /// Inline configuration
     /// </summary>
     public sealed partial class SplitCreateRequestConfiguration
     {

@@ -10523,6 +10523,598 @@
         }
       }
     },
+    "/api/v1/split/jobs": {
+      "post": {
+        "tags": [
+          "Split"
+        ],
+        "summary": "Create Split Job",
+        "description": "Create a document split job.",
+        "operationId": "create_split_job_api_v1_split_jobs_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplitCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SplitJobResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Split"
+        ],
+        "summary": "List Split Jobs",
+        "description": "List document split jobs.",
+        "operationId": "list_split_jobs_api_v1_split_jobs_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "pending",
+                    "processing",
+                    "completed",
+                    "failed",
+                    "cancelled"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by job status (pending, processing, completed, failed, cancelled)",
+              "title": "Status"
+            },
+            "description": "Filter by job status (pending, processing, completed, failed, cancelled)"
+          },
+          {
+            "name": "job_ids",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by specific job IDs",
+              "title": "Job Ids"
+            },
+            "description": "Filter by specific job IDs"
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page Size"
+            }
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page Token"
+            }
+          },
+          {
+            "name": "created_at_on_or_after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or after this timestamp (inclusive)",
+              "title": "Created At On Or After"
+            },
+            "description": "Include items created at or after this timestamp (inclusive)"
+          },
+          {
+            "name": "created_at_on_or_before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include items created at or before this timestamp (inclusive)",
+              "title": "Created At On Or Before"
+            },
+            "description": "Include items created at or before this timestamp (inclusive)"
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SplitJobQueryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/split/jobs/{split_job_id}": {
+      "get": {
+        "tags": [
+          "Split"
+        ],
+        "summary": "Get Split Job",
+        "description": "Get a document split job.",
+        "operationId": "get_split_job_api_v1_split_jobs__split_job_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "split_job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Split Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SplitJobResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Split"
+        ],
+        "summary": "Delete Split Job",
+        "description": "Delete a split job and its results.",
+        "operationId": "delete_split_job_api_v1_split_jobs__split_job_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "split_job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Split Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/split/jobs/{split_job_id}/cancel": {
+      "post": {
+        "tags": [
+          "Split"
+        ],
+        "summary": "Cancel Split Job",
+        "description": "Cancel a running split job.\n\nRequests cancellation; the job transitions to CANCELLED asynchronously once processing stops. Returns the job, which may still be in its current non-terminal state. Jobs already in a terminal state (COMPLETED, FAILED, CANCELLED) cannot be cancelled.",
+        "operationId": "cancel_split_job_api_v1_split_jobs__split_job_id__cancel_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "split_job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Split Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SplitJobResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/retrieval/retrieve": {
       "post": {
         "tags": [
@@ -16571,6 +17163,494 @@
         }
       }
     },
+    "/api/v1/beta/webhook-configs": {
+      "post": {
+        "tags": [
+          "Beta",
+          "Webhook Configs"
+        ],
+        "summary": "Create Webhook Config",
+        "description": "Create a reusable webhook configuration for the current project.",
+        "operationId": "create_webhook_config_api_v1_beta_webhook_configs_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookConfigCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookConfigResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Beta",
+          "Webhook Configs"
+        ],
+        "summary": "List Webhook Configs",
+        "description": "List the webhook configurations for the current project, newest first.",
+        "operationId": "list_webhook_configs_api_v1_beta_webhook_configs_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WebhookConfigResponse"
+                  },
+                  "title": "Response List Webhook Configs Api V1 Beta Webhook Configs Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/beta/webhook-configs/{config_id}": {
+      "get": {
+        "tags": [
+          "Beta",
+          "Webhook Configs"
+        ],
+        "summary": "Get Webhook Config",
+        "description": "Get a single webhook configuration by ID.",
+        "operationId": "get_webhook_config_api_v1_beta_webhook_configs__config_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Config Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookConfigResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Beta",
+          "Webhook Configs"
+        ],
+        "summary": "Update Webhook Config",
+        "description": "Update a webhook configuration. Only fields present in the request change.",
+        "operationId": "update_webhook_config_api_v1_beta_webhook_configs__config_id__put",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Config Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookConfigUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookConfigResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Beta",
+          "Webhook Configs"
+        ],
+        "summary": "Delete Webhook Config",
+        "description": "Delete a webhook configuration.",
+        "operationId": "delete_webhook_config_api_v1_beta_webhook_configs__config_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Config Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/beta/split/jobs": {
       "post": {
         "tags": [
@@ -16642,7 +17722,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SplitCreateRequest"
+                "$ref": "#/components/schemas/SplitCreateRequestBeta"
               }
             }
           }
@@ -16653,7 +17733,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SplitJobResponse"
+                  "$ref": "#/components/schemas/SplitJobResponseBeta"
                 }
               }
             }
@@ -16857,7 +17937,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SplitJobQueryResponse"
+                  "$ref": "#/components/schemas/SplitJobQueryResponseBeta"
                 }
               }
             }
@@ -16956,7 +18036,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SplitJobResponse"
+                  "$ref": "#/components/schemas/SplitJobResponseBeta"
                 }
               }
             }
@@ -38590,6 +39670,18 @@
             "title": "Webhook Headers",
             "description": "Custom HTTP headers to include in webhook requests. Use for authentication tokens or custom routing. Example: {'Authorization': 'Bearer xyz'}"
           },
+          "webhook_signing_secret": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Signing Secret",
+            "description": "Shared signing secret used to sign webhook deliveries. When set, each request includes an HMAC-SHA256 signature of the request body in the 'LC-Signature' header (value 'sha256=<hex>'). Recompute the HMAC over the raw request body with this secret to verify the delivery is authentic."
+          },
           "webhook_events": {
             "anyOf": [
               {
@@ -40082,6 +41174,27 @@
       },
       "ParseJobResponse": {
         "properties": {
+          "user_metadata": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "User Metadata",
+            "description": "Key/value tags associated with this job.",
+            "examples": [
+              {
+                "owner": "jerry",
+                "team": "research"
+              }
+            ]
+          },
           "id": {
             "type": "string",
             "title": "Id",
@@ -40202,6 +41315,27 @@
       },
       "ParseRequestConfiguration": {
         "properties": {
+          "user_metadata": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "User Metadata",
+            "description": "Arbitrary key/value tags to attach to this job. Returned when retrieving the job. Not searchable. Limits apply to the number of entries and the length of keys and values; oversized metadata is rejected.",
+            "examples": [
+              {
+                "owner": "jerry",
+                "team": "research"
+              }
+            ]
+          },
           "tier": {
             "anyOf": [
               {
@@ -40285,6 +41419,28 @@
             "type": "array",
             "title": "Webhook Configurations",
             "description": "Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services"
+          },
+          "webhook_configuration_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "maxItems": 4
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configuration Ids",
+            "description": "IDs of saved webhook configurations to notify for this job.",
+            "examples": [
+              [
+                "whc-...",
+                "whc-..."
+              ]
+            ]
           },
           "input_options": {
             "$ref": "#/components/schemas/LlamaParseInputOptions",
@@ -40588,6 +41744,28 @@
             "type": "array",
             "title": "Webhook Configurations",
             "description": "Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services"
+          },
+          "webhook_configuration_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "maxItems": 4
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configuration Ids",
+            "description": "IDs of saved webhook configurations to notify for this job.",
+            "examples": [
+              [
+                "whc-...",
+                "whc-..."
+              ]
+            ]
           },
           "input_options": {
             "$ref": "#/components/schemas/LlamaParseInputOptions",
@@ -44551,6 +45729,81 @@
       },
       "SplitCreateRequest": {
         "properties": {
+          "transaction_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transaction Id",
+            "description": "Idempotency key scoped to the project. Reusing a key returns the original job; the new request body is ignored.",
+            "examples": [
+              "tx-unique-idempotency-key"
+            ]
+          },
+          "webhook_configurations": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/WebhookConfiguration"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configurations",
+            "description": "Outbound webhook endpoints to notify on job status changes"
+          },
+          "configuration_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Configuration Id",
+            "description": "Saved configuration ID",
+            "examples": [
+              "cfg-11111111-2222-3333-4444-555555555555"
+            ]
+          },
+          "configuration": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SplitConfiguration"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Inline configuration"
+          },
+          "file_input": {
+            "type": "string",
+            "title": "File Input",
+            "description": "File ID or parse job ID",
+            "examples": [
+              "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "file_input"
+        ],
+        "title": "SplitCreateRequest",
+        "description": "Create a split job."
+      },
+      "SplitCreateRequestBeta": {
+        "properties": {
           "document_input": {
             "$ref": "#/components/schemas/SplitDocumentInput",
             "description": "Document to be split."
@@ -44583,7 +45836,7 @@
         "required": [
           "document_input"
         ],
-        "title": "SplitCreateRequest",
+        "title": "SplitCreateRequestBeta",
         "description": "Beta create request — accepts legacy document_input and flat formats."
       },
       "SplitDocumentInput": {
@@ -44647,9 +45900,190 @@
           "items"
         ],
         "title": "SplitJobQueryResponse",
+        "description": "Paginated list of split jobs."
+      },
+      "SplitJobQueryResponseBeta": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SplitJobResponseBeta"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "SplitJobQueryResponseBeta",
         "description": "Beta paginated list of split jobs."
       },
       "SplitJobResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "Unique identifier for the split job."
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At",
+            "description": "Creation datetime"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At",
+            "description": "Update datetime"
+          },
+          "transaction_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transaction Id",
+            "description": "Idempotency key scoped to the project, if one was provided."
+          },
+          "file_input": {
+            "type": "string",
+            "title": "File Input",
+            "description": "File ID or parse job ID",
+            "examples": [
+              "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+            ]
+          },
+          "project_id": {
+            "type": "string",
+            "title": "Project Id",
+            "description": "Project this job belongs to."
+          },
+          "user_id": {
+            "type": "string",
+            "title": "User Id",
+            "description": "User who created this job."
+          },
+          "configuration_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Configuration Id",
+            "description": "Split configuration ID used for this job."
+          },
+          "document_input_type": {
+            "type": "string",
+            "enum": [
+              "url",
+              "file_id",
+              "parse_job_id"
+            ],
+            "title": "Document Input Type",
+            "description": "Whether the input was a file or parse job"
+          },
+          "categories": {
+            "items": {
+              "$ref": "#/components/schemas/SplitCategory"
+            },
+            "type": "array",
+            "title": "Categories",
+            "description": "Categories used for splitting."
+          },
+          "splitting_strategy": {
+            "$ref": "#/components/schemas/SplitStrategy",
+            "description": "Strategy used for splitting."
+          },
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "description": "Current job status. Valid values are: pending, processing, completed, failed, cancelled."
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SplitResultResponse"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Split result, available when status is completed."
+          },
+          "error_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Message",
+            "description": "Error message if the job failed."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "file_input",
+          "project_id",
+          "user_id",
+          "document_input_type",
+          "categories",
+          "status"
+        ],
+        "title": "SplitJobResponse",
+        "description": "A split job."
+      },
+      "SplitJobResponseBeta": {
         "properties": {
           "id": {
             "type": "string",
@@ -44754,7 +46188,7 @@
           "categories",
           "status"
         ],
-        "title": "SplitJobResponse",
+        "title": "SplitJobResponseBeta",
         "description": "Beta response — uses nested document_input object."
       },
       "SplitResultResponse": {
@@ -46229,6 +47663,21 @@
             ],
             "title": "Credits",
             "description": "The number of credits consumed by this metric"
+          },
+          "usage_tags": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Usage Tags",
+            "description": "Caller-supplied attribution tags, used to attribute usage within an organization"
           }
         },
         "type": "object",
@@ -46490,6 +47939,378 @@
         ],
         "title": "VertexTextEmbedding"
       },
+      "WebhookConfigCreateRequest": {
+        "properties": {
+          "webhook_url": {
+            "type": "string",
+            "title": "Webhook Url",
+            "description": "URL to receive webhook POST notifications.",
+            "examples": [
+              "https://example.com/webhooks/llamacloud"
+            ]
+          },
+          "webhook_signing_secret": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Signing Secret",
+            "description": "Shared secret used to sign deliveries to this endpoint. Write-only: it is never returned in responses.",
+            "examples": [
+              "whsec_..."
+            ]
+          },
+          "webhook_headers": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Headers",
+            "description": "Custom HTTP headers sent with each webhook request.",
+            "examples": [
+              {
+                "Authorization": "Bearer sk-..."
+              }
+            ]
+          },
+          "webhook_events": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "extract.pending",
+                    "extract.success",
+                    "extract.error",
+                    "extract.partial_success",
+                    "extract.cancelled",
+                    "parse.pending",
+                    "parse.running",
+                    "parse.success",
+                    "parse.error",
+                    "parse.partial_success",
+                    "parse.cancelled",
+                    "classify.pending",
+                    "classify.running",
+                    "classify.success",
+                    "classify.error",
+                    "classify.partial_success",
+                    "classify.cancelled",
+                    "sheets.pending",
+                    "sheets.success",
+                    "sheets.error",
+                    "sheets.partial_success",
+                    "sheets.cancelled",
+                    "split.pending",
+                    "split.processing",
+                    "split.success",
+                    "split.error",
+                    "split.cancelled",
+                    "unmapped_event"
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Events",
+            "description": "Events to subscribe to. If null, all events are delivered.",
+            "examples": [
+              [
+                "parse.success",
+                "parse.error"
+              ]
+            ]
+          },
+          "webhook_output_format": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "string",
+                  "json"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Output Format",
+            "description": "Response format sent to the webhook: 'string' (default) or 'json'.",
+            "examples": [
+              "json"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "webhook_url"
+        ],
+        "title": "WebhookConfigCreateRequest",
+        "description": "Request to create a stored webhook configuration.\n\nThe owning tenant is taken from the request context (e.g. the project in the\npath), not the body."
+      },
+      "WebhookConfigResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "Unique identifier for the webhook configuration."
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At",
+            "description": "Creation datetime"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At",
+            "description": "Update datetime"
+          },
+          "tenant_type": {
+            "type": "string",
+            "const": "project",
+            "title": "Tenant Type",
+            "description": "Owner tenant type."
+          },
+          "tenant_id": {
+            "type": "string",
+            "title": "Tenant Id",
+            "description": "Owner tenant ID."
+          },
+          "webhook_url": {
+            "type": "string",
+            "title": "Webhook Url",
+            "description": "URL that receives webhook POST notifications."
+          },
+          "has_secret": {
+            "type": "boolean",
+            "title": "Has Secret",
+            "description": "Whether a signing secret is configured for this endpoint."
+          },
+          "webhook_headers": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Headers",
+            "description": "Custom HTTP headers sent with each request."
+          },
+          "webhook_events": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "extract.pending",
+                    "extract.success",
+                    "extract.error",
+                    "extract.partial_success",
+                    "extract.cancelled",
+                    "parse.pending",
+                    "parse.running",
+                    "parse.success",
+                    "parse.error",
+                    "parse.partial_success",
+                    "parse.cancelled",
+                    "classify.pending",
+                    "classify.running",
+                    "classify.success",
+                    "classify.error",
+                    "classify.partial_success",
+                    "classify.cancelled",
+                    "sheets.pending",
+                    "sheets.success",
+                    "sheets.error",
+                    "sheets.partial_success",
+                    "sheets.cancelled",
+                    "split.pending",
+                    "split.processing",
+                    "split.success",
+                    "split.error",
+                    "split.cancelled",
+                    "unmapped_event"
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Events",
+            "description": "Subscribed events (null = all events)."
+          },
+          "webhook_output_format": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "string",
+                  "json"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Output Format",
+            "description": "Response format sent to the webhook."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "tenant_type",
+          "tenant_id",
+          "webhook_url",
+          "has_secret"
+        ],
+        "title": "WebhookConfigResponse",
+        "description": "A stored webhook configuration. The signing secret is never included."
+      },
+      "WebhookConfigUpdateRequest": {
+        "properties": {
+          "webhook_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Url",
+            "description": "Updated webhook URL."
+          },
+          "webhook_signing_secret": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Signing Secret",
+            "description": "Updated signing secret (write-only). Send to rotate the secret."
+          },
+          "webhook_headers": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Headers",
+            "description": "Updated headers."
+          },
+          "webhook_events": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "extract.pending",
+                    "extract.success",
+                    "extract.error",
+                    "extract.partial_success",
+                    "extract.cancelled",
+                    "parse.pending",
+                    "parse.running",
+                    "parse.success",
+                    "parse.error",
+                    "parse.partial_success",
+                    "parse.cancelled",
+                    "classify.pending",
+                    "classify.running",
+                    "classify.success",
+                    "classify.error",
+                    "classify.partial_success",
+                    "classify.cancelled",
+                    "sheets.pending",
+                    "sheets.success",
+                    "sheets.error",
+                    "sheets.partial_success",
+                    "sheets.cancelled",
+                    "split.pending",
+                    "split.processing",
+                    "split.success",
+                    "split.error",
+                    "split.cancelled",
+                    "unmapped_event"
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Events",
+            "description": "Updated event subscriptions."
+          },
+          "webhook_output_format": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "string",
+                  "json"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Output Format",
+            "description": "Updated output format."
+          }
+        },
+        "type": "object",
+        "title": "WebhookConfigUpdateRequest",
+        "description": "Request to update a stored webhook configuration. Only set fields change."
+      },
       "WebhookConfiguration": {
         "properties": {
           "webhook_url": {
@@ -46525,6 +48346,21 @@
               {
                 "Authorization": "Bearer sk-..."
               }
+            ]
+          },
+          "webhook_signing_secret": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Signing Secret",
+            "description": "Shared signing secret used to sign webhook deliveries. When set, each request includes an HMAC-SHA256 signature of the request body in the 'LC-Signature' header (value 'sha256=<hex>'). Recompute the HMAC over the raw request body with this secret to verify the delivery is authentic.",
+            "examples": [
+              "whsec_..."
             ]
           },
           "webhook_events": {

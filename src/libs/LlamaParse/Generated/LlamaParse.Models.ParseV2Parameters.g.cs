@@ -64,6 +64,12 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? WebhookConfigurations { get; set; }
 
         /// <summary>
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configuration_ids")]
+        public global::System.Collections.Generic.IList<string>? WebhookConfigurationIds { get; set; }
+
+        /// <summary>
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_options")]
@@ -142,6 +148,9 @@ namespace LlamaParse
         /// <param name="webhookConfigurations">
         /// Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services
         /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </param>
         /// <param name="inputOptions">
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
         /// </param>
@@ -174,6 +183,7 @@ namespace LlamaParse
             global::LlamaParse.LlamaParseFastOptions? fastOptions,
             global::LlamaParse.LlamaParseAgenticOptions? agenticOptions,
             global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? webhookConfigurations,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
             global::LlamaParse.LlamaParseInputOptions? inputOptions,
             global::LlamaParse.LlamaParseCropBox? cropBox,
             global::LlamaParse.LlamaParsePageRanges? pageRanges,
@@ -189,6 +199,7 @@ namespace LlamaParse
             this.FastOptions = fastOptions;
             this.AgenticOptions = agenticOptions;
             this.WebhookConfigurations = webhookConfigurations;
+            this.WebhookConfigurationIds = webhookConfigurationIds;
             this.InputOptions = inputOptions;
             this.CropBox = cropBox;
             this.PageRanges = pageRanges;
