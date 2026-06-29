@@ -85,6 +85,12 @@ namespace LlamaParse
         public double? Credits { get; set; }
 
         /// <summary>
+        /// Caller-supplied attribution tags, used to attribute usage within an organization
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage_tags")]
+        public global::System.Collections.Generic.IList<string>? UsageTags { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -126,6 +132,9 @@ namespace LlamaParse
         /// <param name="credits">
         /// The number of credits consumed by this metric
         /// </param>
+        /// <param name="usageTags">
+        /// Caller-supplied attribution tags, used to attribute usage within an organization
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -140,7 +149,8 @@ namespace LlamaParse
             string eventAggregationKey,
             string eventAggregationType,
             object? properties,
-            double? credits)
+            double? credits,
+            global::System.Collections.Generic.IList<string>? usageTags)
         {
             this.Id = id;
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
@@ -153,6 +163,7 @@ namespace LlamaParse
             this.EventAggregationKey = eventAggregationKey ?? throw new global::System.ArgumentNullException(nameof(eventAggregationKey));
             this.EventAggregationType = eventAggregationType ?? throw new global::System.ArgumentNullException(nameof(eventAggregationType));
             this.Credits = credits;
+            this.UsageTags = usageTags;
         }
 
         /// <summary>

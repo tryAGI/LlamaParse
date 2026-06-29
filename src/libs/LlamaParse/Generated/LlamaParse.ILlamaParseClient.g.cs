@@ -132,6 +132,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public SplitClient Split { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public V2Client V2 { get; }
 
     }

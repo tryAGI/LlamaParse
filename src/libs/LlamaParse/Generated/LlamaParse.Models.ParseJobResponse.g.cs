@@ -9,6 +9,12 @@ namespace LlamaParse
     public sealed partial class ParseJobResponse
     {
         /// <summary>
+        /// Key/value tags associated with this job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? UserMetadata { get; set; }
+
+        /// <summary>
         /// Unique parse job identifier
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -78,6 +84,9 @@ namespace LlamaParse
         /// <param name="status">
         /// Current job status: PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
         /// </param>
+        /// <param name="userMetadata">
+        /// Key/value tags associated with this job.
+        /// </param>
         /// <param name="createdAt">
         /// Creation datetime
         /// </param>
@@ -100,12 +109,14 @@ namespace LlamaParse
             string id,
             string projectId,
             global::LlamaParse.ParseJobResponseStatus status,
+            global::System.Collections.Generic.Dictionary<string, string>? userMetadata,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
             string? errorMessage,
             string? name,
             string? tier)
         {
+            this.UserMetadata = userMetadata;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;

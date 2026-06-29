@@ -79,6 +79,9 @@ namespace LlamaParse
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="userMetadata">
+        /// Arbitrary key/value tags to attach to this job. Returned when retrieving the job. Not searchable. Limits apply to the number of entries and the length of keys and values; oversized metadata is rejected.
+        /// </param>
         /// <param name="tier">
         /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
         /// </param>
@@ -105,6 +108,9 @@ namespace LlamaParse
         /// </param>
         /// <param name="webhookConfigurations">
         /// Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services
+        /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
         /// </param>
         /// <param name="inputOptions">
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
@@ -145,11 +151,13 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            global::System.Collections.Generic.Dictionary<string, string>? userMetadata = default,
             string? clientName = default,
             global::LlamaParse.LlamaParseProcessingOptions? processingOptions = default,
             global::LlamaParse.LlamaParseFastOptions? fastOptions = default,
             global::LlamaParse.LlamaParseAgenticOptions? agenticOptions = default,
             global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? webhookConfigurations = default,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds = default,
             global::LlamaParse.LlamaParseInputOptions? inputOptions = default,
             global::LlamaParse.LlamaParseCropBox? cropBox = default,
             global::LlamaParse.LlamaParsePageRanges? pageRanges = default,

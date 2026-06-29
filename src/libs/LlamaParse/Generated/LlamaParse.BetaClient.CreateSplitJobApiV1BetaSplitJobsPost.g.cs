@@ -30,14 +30,14 @@ namespace LlamaParse
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session,
-            global::LlamaParse.SplitCreateRequest request);
+            global::LlamaParse.SplitCreateRequestBeta request);
         partial void PrepareCreateSplitJobApiV1BetaSplitJobsPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session,
-            global::LlamaParse.SplitCreateRequest request);
+            global::LlamaParse.SplitCreateRequestBeta request);
         partial void ProcessCreateSplitJobApiV1BetaSplitJobsPostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -58,9 +58,9 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobResponse> CreateSplitJobApiV1BetaSplitJobsPostAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobResponseBeta> CreateSplitJobApiV1BetaSplitJobsPostAsync(
 
-            global::LlamaParse.SplitCreateRequest request,
+            global::LlamaParse.SplitCreateRequestBeta request,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -90,9 +90,9 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponse>> CreateSplitJobApiV1BetaSplitJobsPostAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponseBeta>> CreateSplitJobApiV1BetaSplitJobsPostAsResponseAsync(
 
-            global::LlamaParse.SplitCreateRequest request,
+            global::LlamaParse.SplitCreateRequestBeta request,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -439,9 +439,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.SplitJobResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.SplitJobResponseBeta.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponseBeta>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -471,9 +471,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.SplitJobResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.SplitJobResponseBeta.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponseBeta>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -532,7 +532,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobResponse> CreateSplitJobApiV1BetaSplitJobsPostAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobResponseBeta> CreateSplitJobApiV1BetaSplitJobsPostAsync(
             global::LlamaParse.SplitDocumentInput documentInput,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
@@ -542,7 +542,7 @@ namespace LlamaParse
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LlamaParse.SplitCreateRequest
+            var __request = new global::LlamaParse.SplitCreateRequestBeta
             {
                 DocumentInput = documentInput,
                 Configuration = configuration,

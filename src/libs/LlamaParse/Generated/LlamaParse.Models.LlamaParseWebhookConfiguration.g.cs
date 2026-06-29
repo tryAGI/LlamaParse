@@ -23,6 +23,12 @@ namespace LlamaParse
         public object? WebhookHeaders { get; set; }
 
         /// <summary>
+        /// Shared signing secret used to sign webhook deliveries. When set, each request includes an HMAC-SHA256 signature of the request body in the 'LC-Signature' header (value 'sha256=&lt;hex&gt;'). Recompute the HMAC over the raw request body with this secret to verify the delivery is authentic.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_signing_secret")]
+        public string? WebhookSigningSecret { get; set; }
+
+        /// <summary>
         /// Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.error' (job failed), 'parse.partial_success' (some pages failed), 'parse.pending', 'parse.running', 'parse.cancelled'. If not specified, webhook fires for all events
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_events")]
@@ -49,6 +55,9 @@ namespace LlamaParse
         /// <param name="webhookHeaders">
         /// Custom HTTP headers to include in webhook requests. Use for authentication tokens or custom routing. Example: {'Authorization': 'Bearer xyz'}
         /// </param>
+        /// <param name="webhookSigningSecret">
+        /// Shared signing secret used to sign webhook deliveries. When set, each request includes an HMAC-SHA256 signature of the request body in the 'LC-Signature' header (value 'sha256=&lt;hex&gt;'). Recompute the HMAC over the raw request body with this secret to verify the delivery is authentic.
+        /// </param>
         /// <param name="webhookEvents">
         /// Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.error' (job failed), 'parse.partial_success' (some pages failed), 'parse.pending', 'parse.running', 'parse.cancelled'. If not specified, webhook fires for all events
         /// </param>
@@ -61,11 +70,13 @@ namespace LlamaParse
         public LlamaParseWebhookConfiguration(
             string? webhookUrl,
             object? webhookHeaders,
+            string? webhookSigningSecret,
             global::System.Collections.Generic.IList<string>? webhookEvents,
             global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat2? webhookOutputFormat)
         {
             this.WebhookUrl = webhookUrl;
             this.WebhookHeaders = webhookHeaders;
+            this.WebhookSigningSecret = webhookSigningSecret;
             this.WebhookEvents = webhookEvents;
             this.WebhookOutputFormat = webhookOutputFormat;
         }

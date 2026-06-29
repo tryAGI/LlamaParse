@@ -28,7 +28,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobQueryResponse> ListSplitJobsApiV1BetaSplitJobsGetAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobQueryResponseBeta> ListSplitJobsApiV1BetaSplitJobsGetAsync(
             global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,
@@ -64,7 +64,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobQueryResponse>> ListSplitJobsApiV1BetaSplitJobsGetAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobQueryResponseBeta>> ListSplitJobsApiV1BetaSplitJobsGetAsResponseAsync(
             global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,

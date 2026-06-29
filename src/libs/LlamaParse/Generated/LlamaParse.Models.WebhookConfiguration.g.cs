@@ -21,6 +21,12 @@ namespace LlamaParse
         public global::System.Collections.Generic.Dictionary<string, string>? WebhookHeaders { get; set; }
 
         /// <summary>
+        /// Shared signing secret used to sign webhook deliveries. When set, each request includes an HMAC-SHA256 signature of the request body in the 'LC-Signature' header (value 'sha256=&lt;hex&gt;'). Recompute the HMAC over the raw request body with this secret to verify the delivery is authentic.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_signing_secret")]
+        public string? WebhookSigningSecret { get; set; }
+
+        /// <summary>
         /// Events to subscribe to (e.g. 'parse.success', 'extract.error'). If null, all events are delivered.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_events")]
@@ -47,6 +53,9 @@ namespace LlamaParse
         /// <param name="webhookHeaders">
         /// Custom HTTP headers sent with each webhook request (e.g. auth tokens)
         /// </param>
+        /// <param name="webhookSigningSecret">
+        /// Shared signing secret used to sign webhook deliveries. When set, each request includes an HMAC-SHA256 signature of the request body in the 'LC-Signature' header (value 'sha256=&lt;hex&gt;'). Recompute the HMAC over the raw request body with this secret to verify the delivery is authentic.
+        /// </param>
         /// <param name="webhookEvents">
         /// Events to subscribe to (e.g. 'parse.success', 'extract.error'). If null, all events are delivered.
         /// </param>
@@ -59,11 +68,13 @@ namespace LlamaParse
         public WebhookConfiguration(
             string? webhookUrl,
             global::System.Collections.Generic.Dictionary<string, string>? webhookHeaders,
+            string? webhookSigningSecret,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item>? webhookEvents,
             string? webhookOutputFormat)
         {
             this.WebhookUrl = webhookUrl;
             this.WebhookHeaders = webhookHeaders;
+            this.WebhookSigningSecret = webhookSigningSecret;
             this.WebhookEvents = webhookEvents;
             this.WebhookOutputFormat = webhookOutputFormat;
         }
