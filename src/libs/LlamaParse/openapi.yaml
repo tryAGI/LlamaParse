@@ -26463,7 +26463,9 @@
           "preset": {
             "type": "string",
             "title": "Preset",
-            "default": ""
+            "description": "Deprecated for named presets; use `tier` instead. Parse-configuration IDs still accepted.",
+            "default": "",
+            "deprecated": true
           },
           "parse_mode": {
             "anyOf": [
@@ -31264,8 +31266,7 @@
                 "enum": [
                   "user",
                   "index",
-                  "ephemeral",
-                  "system_ephemeral"
+                  "ephemeral"
                 ]
               },
               {
@@ -31273,7 +31274,7 @@
               }
             ],
             "title": "Type",
-            "description": "Directory type: 'user', 'index', 'ephemeral', or 'system_ephemeral'."
+            "description": "Directory type: 'user', 'index', or 'ephemeral'."
           },
           "expires_at": {
             "anyOf": [
@@ -34057,6 +34058,14 @@
                 "vendor": {
                   "citation": [
                     {
+                      "bounding_boxes": [
+                        {
+                          "h": 14.0,
+                          "w": 120.0,
+                          "x": 72.0,
+                          "y": 96.0
+                        }
+                      ],
                       "matching_text": "Noisebridge",
                       "page": 1
                     }
@@ -47607,6 +47616,8 @@
               "pages_classified",
               "directory_file_count_snapshot",
               "directory_count_snapshot",
+              "stored_file_count",
+              "stored_file_mb",
               "directory_files_ingested",
               "directory_files_exported",
               "directory_pages_exported",

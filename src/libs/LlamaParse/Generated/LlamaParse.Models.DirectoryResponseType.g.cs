@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Directory type: 'user', 'index', 'ephemeral', or 'system_ephemeral'.
+    /// Directory type: 'user', 'index', or 'ephemeral'.
     /// </summary>
     public sealed partial class DirectoryResponseType
     {

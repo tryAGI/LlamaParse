@@ -1,5 +1,7 @@
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace LlamaParse
 {
     public partial interface IParsingClient
@@ -194,7 +196,6 @@ namespace LlamaParse
         /// <param name="model"></param>
         /// <param name="webhookUrl"></param>
         /// <param name="webhookConfigurations"></param>
-        /// <param name="preset"></param>
         /// <param name="parseMode"></param>
         /// <param name="pageErrorTolerance">
         /// Default Value: 0.05F
@@ -357,7 +358,6 @@ namespace LlamaParse
             string? model = default,
             string? webhookUrl = default,
             string? webhookConfigurations = default,
-            string? preset = default,
             global::LlamaParse.ParsingMode? parseMode = default,
             double? pageErrorTolerance = default,
             global::LlamaParse.FailPageMode? replaceFailedPageMode = default,

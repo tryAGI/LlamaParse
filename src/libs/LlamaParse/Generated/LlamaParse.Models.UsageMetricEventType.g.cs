@@ -108,6 +108,14 @@ namespace LlamaParse
         /// 
         /// </summary>
         SetTotalPagesIndexed,
+        /// <summary>
+        /// 
+        /// </summary>
+        StoredFileCount,
+        /// <summary>
+        /// 
+        /// </summary>
+        StoredFileMb,
     }
 
     /// <summary>
@@ -147,6 +155,8 @@ namespace LlamaParse
                 UsageMetricEventType.PreciseBboxExtraction => "precise_bbox_extraction",
                 UsageMetricEventType.SetTotalIndexes => "set_total_indexes",
                 UsageMetricEventType.SetTotalPagesIndexed => "set_total_pages_indexed",
+                UsageMetricEventType.StoredFileCount => "stored_file_count",
+                UsageMetricEventType.StoredFileMb => "stored_file_mb",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -182,6 +192,8 @@ namespace LlamaParse
                 "precise_bbox_extraction" => UsageMetricEventType.PreciseBboxExtraction,
                 "set_total_indexes" => UsageMetricEventType.SetTotalIndexes,
                 "set_total_pages_indexed" => UsageMetricEventType.SetTotalPagesIndexed,
+                "stored_file_count" => UsageMetricEventType.StoredFileCount,
+                "stored_file_mb" => UsageMetricEventType.StoredFileMb,
                 _ => null,
             };
         }

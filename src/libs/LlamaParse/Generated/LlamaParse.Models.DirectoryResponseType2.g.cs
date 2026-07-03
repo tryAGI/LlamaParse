@@ -19,10 +19,6 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        SystemEphemeral,
-        /// <summary>
-        /// 
-        /// </summary>
         User,
     }
 
@@ -40,7 +36,6 @@ namespace LlamaParse
             {
                 DirectoryResponseType2.Ephemeral => "ephemeral",
                 DirectoryResponseType2.Index => "index",
-                DirectoryResponseType2.SystemEphemeral => "system_ephemeral",
                 DirectoryResponseType2.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,7 +49,6 @@ namespace LlamaParse
             {
                 "ephemeral" => DirectoryResponseType2.Ephemeral,
                 "index" => DirectoryResponseType2.Index,
-                "system_ephemeral" => DirectoryResponseType2.SystemEphemeral,
                 "user" => DirectoryResponseType2.User,
                 _ => null,
             };

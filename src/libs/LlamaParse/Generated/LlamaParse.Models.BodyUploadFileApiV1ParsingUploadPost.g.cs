@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LlamaParse
@@ -429,9 +431,10 @@ namespace LlamaParse
         public string? WebhookConfigurations { get; set; }
 
         /// <summary>
-        /// 
+        /// Deprecated for named presets; use `tier` instead. Parse-configuration IDs still accepted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preset")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Preset { get; set; }
 
         /// <summary>
@@ -849,7 +852,6 @@ namespace LlamaParse
         /// <param name="model"></param>
         /// <param name="webhookUrl"></param>
         /// <param name="webhookConfigurations"></param>
-        /// <param name="preset"></param>
         /// <param name="parseMode"></param>
         /// <param name="pageErrorTolerance">
         /// Default Value: 0.05F
@@ -1009,7 +1011,6 @@ namespace LlamaParse
             string? model,
             string? webhookUrl,
             string? webhookConfigurations,
-            string? preset,
             global::LlamaParse.ParsingMode? parseMode,
             double? pageErrorTolerance,
             global::LlamaParse.FailPageMode? replaceFailedPageMode,
@@ -1124,7 +1125,6 @@ namespace LlamaParse
             this.Model = model;
             this.WebhookUrl = webhookUrl;
             this.WebhookConfigurations = webhookConfigurations;
-            this.Preset = preset;
             this.ParseMode = parseMode;
             this.PageErrorTolerance = pageErrorTolerance;
             this.ReplaceFailedPageMode = replaceFailedPageMode;
