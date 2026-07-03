@@ -48,7 +48,7 @@ namespace LlamaParse
         public string? Description { get; set; }
 
         /// <summary>
-        /// Directory type: 'user', 'index', 'ephemeral', or 'system_ephemeral'.
+        /// Directory type: 'user', 'index', or 'ephemeral'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public global::LlamaParse.DirectoryResponseType2? Type { get; set; }
@@ -99,7 +99,7 @@ namespace LlamaParse
         /// Optional description shown to users.
         /// </param>
         /// <param name="type">
-        /// Directory type: 'user', 'index', 'ephemeral', or 'system_ephemeral'.
+        /// Directory type: 'user', 'index', or 'ephemeral'.
         /// </param>
         /// <param name="expiresAt">
         /// When this directory expires and is eligible for cleanup.
