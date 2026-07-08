@@ -11,20 +11,26 @@ namespace LlamaParse
     public sealed partial class ParseRequestConfiguration
     {
         /// <summary>
+        /// Arbitrary key/value tags to attach to this job. Returned when retrieving the job. Not searchable. Limits apply to the number of entries and the length of keys and values; oversized metadata is rejected.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? UserMetadata { get; set; }
+
+        /// <summary>
         /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationTierJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseRequestConfigurationTier?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LlamaParse.ParseRequestConfigurationTier Tier { get; set; }
+        public required global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string> Tier { get; set; }
 
         /// <summary>
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
-        /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-05`<br/>
-        /// - `agentic`: `2026-06-04`<br/>
-        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// - `fast`: `2026-06-15`<br/>
+        /// - `cost_effective`: `2026-06-26`<br/>
+        /// - `agentic`: `2026-06-18`<br/>
+        /// - `agentic_plus`: `2026-07-08`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
@@ -63,6 +69,12 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? WebhookConfigurations { get; set; }
 
         /// <summary>
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configuration_ids")]
+        public global::System.Collections.Generic.IList<string>? WebhookConfigurationIds { get; set; }
+
+        /// <summary>
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_options")]
@@ -99,6 +111,12 @@ namespace LlamaParse
         public global::LlamaParse.LlamaParseProcessingControl? ProcessingControl { get; set; }
 
         /// <summary>
+        /// ID of a saved parse configuration. When set, `tier` and `version` default to the saved configuration's values — omit them or pass `'configured'`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("configuration_id")]
+        public string? ConfigurationId { get; set; }
+
+        /// <summary>
         /// ID of an existing file in the project to parse. Mutually exclusive with source_url
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
@@ -131,11 +149,14 @@ namespace LlamaParse
         /// <param name="version">
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
-        /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-05`<br/>
-        /// - `agentic`: `2026-06-04`<br/>
-        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// - `fast`: `2026-06-15`<br/>
+        /// - `cost_effective`: `2026-06-26`<br/>
+        /// - `agentic`: `2026-06-18`<br/>
+        /// - `agentic_plus`: `2026-07-08`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
+        /// </param>
+        /// <param name="userMetadata">
+        /// Arbitrary key/value tags to attach to this job. Returned when retrieving the job. Not searchable. Limits apply to the number of entries and the length of keys and values; oversized metadata is rejected.
         /// </param>
         /// <param name="clientName">
         /// Identifier for the client/application making the request. Used for analytics and debugging. Example: 'my-app-v2'
@@ -151,6 +172,9 @@ namespace LlamaParse
         /// </param>
         /// <param name="webhookConfigurations">
         /// Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services
+        /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
         /// </param>
         /// <param name="inputOptions">
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
@@ -170,6 +194,9 @@ namespace LlamaParse
         /// <param name="processingControl">
         /// Job execution controls including timeouts and failure thresholds
         /// </param>
+        /// <param name="configurationId">
+        /// ID of a saved parse configuration. When set, `tier` and `version` default to the saved configuration's values — omit them or pass `'configured'`.
+        /// </param>
         /// <param name="fileId">
         /// ID of an existing file in the project to parse. Mutually exclusive with source_url
         /// </param>
@@ -183,23 +210,27 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ParseRequestConfiguration(
-            global::LlamaParse.ParseRequestConfigurationTier tier,
+            global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string> tier,
             global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationVersion?, string> version,
+            global::System.Collections.Generic.Dictionary<string, string>? userMetadata,
             string? clientName,
             global::LlamaParse.LlamaParseProcessingOptions? processingOptions,
             global::LlamaParse.LlamaParseFastOptions? fastOptions,
             global::LlamaParse.LlamaParseAgenticOptions? agenticOptions,
             global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? webhookConfigurations,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
             global::LlamaParse.LlamaParseInputOptions? inputOptions,
             global::LlamaParse.LlamaParseCropBox? cropBox,
             global::LlamaParse.LlamaParsePageRanges? pageRanges,
             bool? disableCache,
             global::LlamaParse.LlamaParseOutputOptions? outputOptions,
             global::LlamaParse.LlamaParseProcessingControl? processingControl,
+            string? configurationId,
             string? fileId,
             string? sourceUrl,
             string? httpProxy)
         {
+            this.UserMetadata = userMetadata;
             this.Tier = tier;
             this.Version = version;
             this.ClientName = clientName;
@@ -207,12 +238,14 @@ namespace LlamaParse
             this.FastOptions = fastOptions;
             this.AgenticOptions = agenticOptions;
             this.WebhookConfigurations = webhookConfigurations;
+            this.WebhookConfigurationIds = webhookConfigurationIds;
             this.InputOptions = inputOptions;
             this.CropBox = cropBox;
             this.PageRanges = pageRanges;
             this.DisableCache = disableCache;
             this.OutputOptions = outputOptions;
             this.ProcessingControl = processingControl;
+            this.ConfigurationId = configurationId;
             this.FileId = fileId;
             this.SourceUrl = sourceUrl;
             this.HttpProxy = httpProxy;

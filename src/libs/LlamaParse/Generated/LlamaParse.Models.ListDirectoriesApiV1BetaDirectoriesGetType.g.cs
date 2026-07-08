@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    /// Directory type to include.
     /// </summary>
     public sealed partial class ListDirectoriesApiV1BetaDirectoriesGetType
     {

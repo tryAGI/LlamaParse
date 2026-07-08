@@ -35,6 +35,12 @@ namespace LlamaParse
         public required string Name { get; set; }
 
         /// <summary>
+        /// Additional organization metadata.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,6 +61,9 @@ namespace LlamaParse
         /// <param name="updatedAt">
         /// Update datetime
         /// </param>
+        /// <param name="metadata">
+        /// Additional organization metadata.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,12 +71,14 @@ namespace LlamaParse
             string id,
             string name,
             global::System.DateTime? createdAt,
-            global::System.DateTime? updatedAt)
+            global::System.DateTime? updatedAt,
+            object? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Metadata = metadata;
         }
 
         /// <summary>

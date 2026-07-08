@@ -58,7 +58,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobResponse> GetSplitJobApiV1BetaSplitJobsSplitJobIdGetAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobResponseBeta> GetSplitJobApiV1BetaSplitJobsSplitJobIdGetAsync(
             string splitJobId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
@@ -88,7 +88,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponse>> GetSplitJobApiV1BetaSplitJobsSplitJobIdGetAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponseBeta>> GetSplitJobApiV1BetaSplitJobsSplitJobIdGetAsResponseAsync(
             string splitJobId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
@@ -428,9 +428,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.SplitJobResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.SplitJobResponseBeta.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponseBeta>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -460,9 +460,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.SplitJobResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.SplitJobResponseBeta.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobResponseBeta>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

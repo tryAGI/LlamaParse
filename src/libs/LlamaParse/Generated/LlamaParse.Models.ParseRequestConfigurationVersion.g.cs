@@ -11,15 +11,19 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        x20251211,
+        x20260615,
         /// <summary>
         /// 
         /// </summary>
-        x20260604,
+        x20260618,
         /// <summary>
         /// 
         /// </summary>
-        x20260605,
+        x20260626,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260708,
         /// <summary>
         /// 
         /// </summary>
@@ -38,9 +42,10 @@ namespace LlamaParse
         {
             return value switch
             {
-                ParseRequestConfigurationVersion.x20251211 => "2025-12-11",
-                ParseRequestConfigurationVersion.x20260604 => "2026-06-04",
-                ParseRequestConfigurationVersion.x20260605 => "2026-06-05",
+                ParseRequestConfigurationVersion.x20260615 => "2026-06-15",
+                ParseRequestConfigurationVersion.x20260618 => "2026-06-18",
+                ParseRequestConfigurationVersion.x20260626 => "2026-06-26",
+                ParseRequestConfigurationVersion.x20260708 => "2026-07-08",
                 ParseRequestConfigurationVersion.Latest => "latest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,9 +57,10 @@ namespace LlamaParse
         {
             return value switch
             {
-                "2025-12-11" => ParseRequestConfigurationVersion.x20251211,
-                "2026-06-04" => ParseRequestConfigurationVersion.x20260604,
-                "2026-06-05" => ParseRequestConfigurationVersion.x20260605,
+                "2026-06-15" => ParseRequestConfigurationVersion.x20260615,
+                "2026-06-18" => ParseRequestConfigurationVersion.x20260618,
+                "2026-06-26" => ParseRequestConfigurationVersion.x20260626,
+                "2026-07-08" => ParseRequestConfigurationVersion.x20260708,
                 "latest" => ParseRequestConfigurationVersion.Latest,
                 _ => null,
             };

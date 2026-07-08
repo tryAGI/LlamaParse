@@ -29,7 +29,7 @@ namespace LlamaParse
         public global::LlamaParse.ExtractV2ParametersTier? Tier { get; set; }
 
         /// <summary>
-        /// Use 'latest' for the latest release for the selected tier or a date string (YYYY-MM-DD format) to pin to the nearest release at or before that date.<br/>
+        /// Use 'latest' for the latest release for the selected tier or a date string (YYYY-MM-DD format) to pin to the nearest release at or before that date. Job responses always report the concrete resolved version the job runs, fixed at job creation; saved configurations keep the value as provided.<br/>
         /// Default Value: latest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
@@ -112,7 +112,7 @@ namespace LlamaParse
         /// Default Value: cost_effective
         /// </param>
         /// <param name="version">
-        /// Use 'latest' for the latest release for the selected tier or a date string (YYYY-MM-DD format) to pin to the nearest release at or before that date.<br/>
+        /// Use 'latest' for the latest release for the selected tier or a date string (YYYY-MM-DD format) to pin to the nearest release at or before that date. Job responses always report the concrete resolved version the job runs, fixed at job creation; saved configurations keep the value as provided.<br/>
         /// Default Value: latest
         /// </param>
         /// <param name="extractionTarget">

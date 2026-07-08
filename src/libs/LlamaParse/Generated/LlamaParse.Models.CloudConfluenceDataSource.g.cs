@@ -72,6 +72,13 @@ namespace LlamaParse
         public bool? IndexRestrictedPages { get; set; }
 
         /// <summary>
+        /// Whether to fetch space-level permissions (allowed users/groups) and attach them to document metadata for access control. Disable for Confluence Server/Data Center versions whose permission APIs are unavailable (e.g. the JSON-RPC API removed in Data Center 9.2.6+), which otherwise surface as 401 errors during sync.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sync_permissions")]
+        public bool? SyncPermissions { get; set; }
+
+        /// <summary>
         /// Whether to keep the markdown format.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keep_markdown_format")]
@@ -135,6 +142,10 @@ namespace LlamaParse
         /// Whether to index restricted pages.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="syncPermissions">
+        /// Whether to fetch space-level permissions (allowed users/groups) and attach them to document metadata for access control. Disable for Confluence Server/Data Center versions whose permission APIs are unavailable (e.g. the JSON-RPC API removed in Data Center 9.2.6+), which otherwise surface as 401 errors during sync.<br/>
+        /// Default Value: true
+        /// </param>
         /// <param name="keepMarkdownFormat">
         /// Whether to keep the markdown format.
         /// </param>
@@ -164,6 +175,7 @@ namespace LlamaParse
             string? cql,
             string? label,
             bool? indexRestrictedPages,
+            bool? syncPermissions,
             bool? keepMarkdownFormat,
             global::LlamaParse.FailureHandlingConfig? failureHandling,
             string? className)
@@ -178,6 +190,7 @@ namespace LlamaParse
             this.Cql = cql;
             this.Label = label;
             this.IndexRestrictedPages = indexRestrictedPages;
+            this.SyncPermissions = syncPermissions;
             this.KeepMarkdownFormat = keepMarkdownFormat;
             this.FailureHandling = failureHandling;
             this.ClassName = className;

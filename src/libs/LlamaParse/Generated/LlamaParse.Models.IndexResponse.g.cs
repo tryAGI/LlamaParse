@@ -56,6 +56,13 @@ namespace LlamaParse
         public required string SourceDirectoryId { get; set; }
 
         /// <summary>
+        /// ID of the output directory holding the indexed files.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_directory_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string OutputDirectoryId { get; set; }
+
+        /// <summary>
         /// ID of the sync configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sync_config_id")]
@@ -108,6 +115,9 @@ namespace LlamaParse
         /// <param name="sourceDirectoryId">
         /// ID of the source directory.
         /// </param>
+        /// <param name="outputDirectoryId">
+        /// ID of the output directory holding the indexed files.
+        /// </param>
         /// <param name="syncConfigId">
         /// ID of the sync configuration.
         /// </param>
@@ -140,6 +150,7 @@ namespace LlamaParse
             string name,
             string projectId,
             string sourceDirectoryId,
+            string outputDirectoryId,
             string syncConfigId,
             string exportConfigId,
             global::System.DateTime? createdAt,
@@ -156,6 +167,7 @@ namespace LlamaParse
             this.Description = description;
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.SourceDirectoryId = sourceDirectoryId ?? throw new global::System.ArgumentNullException(nameof(sourceDirectoryId));
+            this.OutputDirectoryId = outputDirectoryId ?? throw new global::System.ArgumentNullException(nameof(outputDirectoryId));
             this.SyncConfigId = syncConfigId ?? throw new global::System.ArgumentNullException(nameof(syncConfigId));
             this.ExportConfigId = exportConfigId ?? throw new global::System.ArgumentNullException(nameof(exportConfigId));
             this.LastSyncedAt = lastSyncedAt;

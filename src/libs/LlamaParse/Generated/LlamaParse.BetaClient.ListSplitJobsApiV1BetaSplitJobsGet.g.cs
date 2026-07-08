@@ -81,7 +81,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobQueryResponse> ListSplitJobsApiV1BetaSplitJobsGetAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobQueryResponseBeta> ListSplitJobsApiV1BetaSplitJobsGetAsync(
             global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,
@@ -134,7 +134,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobQueryResponse>> ListSplitJobsApiV1BetaSplitJobsGetAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobQueryResponseBeta>> ListSplitJobsApiV1BetaSplitJobsGetAsResponseAsync(
             global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,
@@ -495,9 +495,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.SplitJobQueryResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.SplitJobQueryResponseBeta.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobQueryResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobQueryResponseBeta>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -527,9 +527,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.SplitJobQueryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.SplitJobQueryResponseBeta.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobQueryResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobQueryResponseBeta>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

@@ -32,6 +32,26 @@ namespace LlamaParse
         /// 
         /// </summary>
         x20260605,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260608,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260611,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260617,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260618,
+        /// <summary>
+        /// 
+        /// </summary>
+        x20260626,
     }
 
     /// <summary>
@@ -52,6 +72,11 @@ namespace LlamaParse
                 ParseVersionsResponseCostEffectiveItem.x20260409 => "2026-04-09",
                 ParseVersionsResponseCostEffectiveItem.x20260528 => "2026-05-28",
                 ParseVersionsResponseCostEffectiveItem.x20260605 => "2026-06-05",
+                ParseVersionsResponseCostEffectiveItem.x20260608 => "2026-06-08",
+                ParseVersionsResponseCostEffectiveItem.x20260611 => "2026-06-11",
+                ParseVersionsResponseCostEffectiveItem.x20260617 => "2026-06-17",
+                ParseVersionsResponseCostEffectiveItem.x20260618 => "2026-06-18",
+                ParseVersionsResponseCostEffectiveItem.x20260626 => "2026-06-26",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,6 +93,11 @@ namespace LlamaParse
                 "2026-04-09" => ParseVersionsResponseCostEffectiveItem.x20260409,
                 "2026-05-28" => ParseVersionsResponseCostEffectiveItem.x20260528,
                 "2026-06-05" => ParseVersionsResponseCostEffectiveItem.x20260605,
+                "2026-06-08" => ParseVersionsResponseCostEffectiveItem.x20260608,
+                "2026-06-11" => ParseVersionsResponseCostEffectiveItem.x20260611,
+                "2026-06-17" => ParseVersionsResponseCostEffectiveItem.x20260617,
+                "2026-06-18" => ParseVersionsResponseCostEffectiveItem.x20260618,
+                "2026-06-26" => ParseVersionsResponseCostEffectiveItem.x20260626,
                 _ => null,
             };
         }

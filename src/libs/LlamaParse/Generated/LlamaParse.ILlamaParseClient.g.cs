@@ -112,21 +112,6 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public PipelineDataSourcesClient PipelineDataSources { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PipelineFilesClient PipelineFiles { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PipelinesClient Pipelines { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ProjectsClient Projects { get; }
 
         /// <summary>
@@ -138,6 +123,16 @@ namespace LlamaParse
         /// 
         /// </summary>
         public RetrieversClient Retrievers { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SheetsClient Sheets { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SplitClient Split { get; }
 
         /// <summary>
         /// 

@@ -4,24 +4,24 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
+    /// 
     /// </summary>
     public enum ParseRequestConfigurationTier
     {
         /// <summary>
-        /// 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
+        /// 
         /// </summary>
         Agentic,
         /// <summary>
-        /// 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
+        /// 
         /// </summary>
         AgenticPlus,
         /// <summary>
-        /// 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
+        /// 
         /// </summary>
         CostEffective,
         /// <summary>
-        /// 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
+        /// 
         /// </summary>
         Fast,
     }

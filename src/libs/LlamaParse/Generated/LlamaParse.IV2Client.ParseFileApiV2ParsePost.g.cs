@@ -79,16 +79,19 @@ namespace LlamaParse
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="userMetadata">
+        /// Arbitrary key/value tags to attach to this job. Returned when retrieving the job. Not searchable. Limits apply to the number of entries and the length of keys and values; oversized metadata is rejected.
+        /// </param>
         /// <param name="tier">
         /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
         /// </param>
         /// <param name="version">
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
-        /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-05`<br/>
-        /// - `agentic`: `2026-06-04`<br/>
-        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// - `fast`: `2026-06-15`<br/>
+        /// - `cost_effective`: `2026-06-26`<br/>
+        /// - `agentic`: `2026-06-18`<br/>
+        /// - `agentic_plus`: `2026-07-08`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="clientName">
@@ -105,6 +108,9 @@ namespace LlamaParse
         /// </param>
         /// <param name="webhookConfigurations">
         /// Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services
+        /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
         /// </param>
         /// <param name="inputOptions">
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
@@ -124,6 +130,9 @@ namespace LlamaParse
         /// <param name="processingControl">
         /// Job execution controls including timeouts and failure thresholds
         /// </param>
+        /// <param name="configurationId">
+        /// ID of a saved parse configuration. When set, `tier` and `version` default to the saved configuration's values — omit them or pass `'configured'`.
+        /// </param>
         /// <param name="fileId">
         /// ID of an existing file in the project to parse. Mutually exclusive with source_url
         /// </param>
@@ -137,22 +146,25 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.ParseJobResponse> ParseFileApiV2ParsePostAsync(
-            global::LlamaParse.ParseRequestConfigurationTier tier,
+            global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string> tier,
             global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationVersion?, string> version,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            global::System.Collections.Generic.Dictionary<string, string>? userMetadata = default,
             string? clientName = default,
             global::LlamaParse.LlamaParseProcessingOptions? processingOptions = default,
             global::LlamaParse.LlamaParseFastOptions? fastOptions = default,
             global::LlamaParse.LlamaParseAgenticOptions? agenticOptions = default,
             global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? webhookConfigurations = default,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds = default,
             global::LlamaParse.LlamaParseInputOptions? inputOptions = default,
             global::LlamaParse.LlamaParseCropBox? cropBox = default,
             global::LlamaParse.LlamaParsePageRanges? pageRanges = default,
             bool? disableCache = default,
             global::LlamaParse.LlamaParseOutputOptions? outputOptions = default,
             global::LlamaParse.LlamaParseProcessingControl? processingControl = default,
+            string? configurationId = default,
             string? fileId = default,
             string? sourceUrl = default,
             string? httpProxy = default,

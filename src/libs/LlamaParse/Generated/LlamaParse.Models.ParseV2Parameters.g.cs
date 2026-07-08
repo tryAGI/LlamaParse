@@ -22,10 +22,10 @@ namespace LlamaParse
         /// <summary>
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
-        /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-05`<br/>
-        /// - `agentic`: `2026-06-04`<br/>
-        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// - `fast`: `2026-06-15`<br/>
+        /// - `cost_effective`: `2026-06-26`<br/>
+        /// - `agentic`: `2026-06-18`<br/>
+        /// - `agentic_plus`: `2026-07-08`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
@@ -62,6 +62,12 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configurations")]
         public global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? WebhookConfigurations { get; set; }
+
+        /// <summary>
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configuration_ids")]
+        public global::System.Collections.Generic.IList<string>? WebhookConfigurationIds { get; set; }
 
         /// <summary>
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
@@ -121,10 +127,10 @@ namespace LlamaParse
         /// <param name="version">
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
-        /// - `fast`: `2025-12-11`<br/>
-        /// - `cost_effective`: `2026-06-05`<br/>
-        /// - `agentic`: `2026-06-04`<br/>
-        /// - `agentic_plus`: `2026-06-04`<br/>
+        /// - `fast`: `2026-06-15`<br/>
+        /// - `cost_effective`: `2026-06-26`<br/>
+        /// - `agentic`: `2026-06-18`<br/>
+        /// - `agentic_plus`: `2026-07-08`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="clientName">
@@ -141,6 +147,9 @@ namespace LlamaParse
         /// </param>
         /// <param name="webhookConfigurations">
         /// Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services
+        /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
         /// </param>
         /// <param name="inputOptions">
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
@@ -174,6 +183,7 @@ namespace LlamaParse
             global::LlamaParse.LlamaParseFastOptions? fastOptions,
             global::LlamaParse.LlamaParseAgenticOptions? agenticOptions,
             global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? webhookConfigurations,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
             global::LlamaParse.LlamaParseInputOptions? inputOptions,
             global::LlamaParse.LlamaParseCropBox? cropBox,
             global::LlamaParse.LlamaParsePageRanges? pageRanges,
@@ -189,6 +199,7 @@ namespace LlamaParse
             this.FastOptions = fastOptions;
             this.AgenticOptions = agenticOptions;
             this.WebhookConfigurations = webhookConfigurations;
+            this.WebhookConfigurationIds = webhookConfigurationIds;
             this.InputOptions = inputOptions;
             this.CropBox = cropBox;
             this.PageRanges = pageRanges;
