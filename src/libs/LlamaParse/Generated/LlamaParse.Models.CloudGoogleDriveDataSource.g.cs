@@ -22,6 +22,12 @@ namespace LlamaParse
         public required string FolderId { get; set; }
 
         /// <summary>
+        /// Human-readable name of the selected folder, for display.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("folder_name")]
+        public string? FolderName { get; set; }
+
+        /// <summary>
         /// The service account key JSON to use for authentication.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_account_key")]
@@ -48,6 +54,9 @@ namespace LlamaParse
         /// <param name="supportsAccessControl">
         /// Default Value: false
         /// </param>
+        /// <param name="folderName">
+        /// Human-readable name of the selected folder, for display.
+        /// </param>
         /// <param name="serviceAccountKey">
         /// The service account key JSON to use for authentication.
         /// </param>
@@ -60,11 +69,13 @@ namespace LlamaParse
         public CloudGoogleDriveDataSource(
             string folderId,
             bool? supportsAccessControl,
+            string? folderName,
             global::System.Collections.Generic.Dictionary<string, string>? serviceAccountKey,
             string? className)
         {
             this.SupportsAccessControl = supportsAccessControl;
             this.FolderId = folderId ?? throw new global::System.ArgumentNullException(nameof(folderId));
+            this.FolderName = folderName;
             this.ServiceAccountKey = serviceAccountKey;
             this.ClassName = className;
         }
