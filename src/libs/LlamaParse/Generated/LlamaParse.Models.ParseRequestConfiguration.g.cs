@@ -27,10 +27,10 @@ namespace LlamaParse
         /// <summary>
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
-        /// - `fast`: `2025-12-11`<br/>
+        /// - `fast`: `2026-06-15`<br/>
         /// - `cost_effective`: `2026-06-26`<br/>
         /// - `agentic`: `2026-06-18`<br/>
-        /// - `agentic_plus`: `2026-06-18`<br/>
+        /// - `agentic_plus`: `2026-07-08`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
@@ -149,10 +149,10 @@ namespace LlamaParse
         /// <param name="version">
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
-        /// - `fast`: `2025-12-11`<br/>
+        /// - `fast`: `2026-06-15`<br/>
         /// - `cost_effective`: `2026-06-26`<br/>
         /// - `agentic`: `2026-06-18`<br/>
-        /// - `agentic_plus`: `2026-06-18`<br/>
+        /// - `agentic_plus`: `2026-07-08`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="userMetadata">

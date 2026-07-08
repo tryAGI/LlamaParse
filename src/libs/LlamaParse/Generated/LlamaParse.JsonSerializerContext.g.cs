@@ -1128,6 +1128,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LinkItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FooterItemItemDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FooterItemItemDiscriminatorType), TypeInfoPropertyName = "FooterItemItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.GDriveBrokeredCreds))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.GeminiEmbedding))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.HTTPValidationError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ValidationError>))]
@@ -1286,7 +1287,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineType), TypeInfoPropertyName = "PipelineType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EmbeddingConfig3), TypeInfoPropertyName = "EmbeddingConfig32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineEmbeddingConfigDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineEmbeddingConfigDiscriminatorType), TypeInfoPropertyName = "PipelineEmbeddingConfigDiscriminatorType2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -2080,6 +2080,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>?), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_d9f8945237261e89")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>?), TypeInfoPropertyName = "CloudBoxDataSource_ee99e0e6ec633008")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>?), TypeInfoPropertyName = "CloudBoxDataSource_object_dfe1806971be6576")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineEmbeddingConfigDiscriminatorType), TypeInfoPropertyName = "PipelineEmbeddingConfigDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SparseModelConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineConfigurationHashes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>), TypeInfoPropertyName = "AnyOfAutoTransformConfigAdvancedModeTransformConfig2")]
