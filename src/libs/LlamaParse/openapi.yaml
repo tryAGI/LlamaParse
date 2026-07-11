@@ -35750,69 +35750,6 @@
         ],
         "title": "FooterItem"
       },
-      "GDriveBrokeredCreds": {
-        "properties": {
-          "broker_kind": {
-            "type": "string",
-            "title": "Broker Kind",
-            "description": "Credential broker holding the connection (e.g. 'workos')."
-          },
-          "broker_user_ref": {
-            "type": "string",
-            "title": "Broker User Ref",
-            "description": "Broker-side user id used to vend tokens headlessly."
-          },
-          "provider": {
-            "type": "string",
-            "title": "Provider",
-            "description": "The connected data source.",
-            "default": "google_drive"
-          },
-          "account_name": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Account Name",
-            "description": "Connected account display name."
-          },
-          "account_email": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Account Email",
-            "description": "Connected account email."
-          },
-          "external_ref": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "External Ref",
-            "description": "Connected-account id; unused by WorkOS."
-          }
-        },
-        "type": "object",
-        "required": [
-          "broker_kind",
-          "broker_user_ref"
-        ],
-        "title": "GDriveBrokeredCreds",
-        "description": "Inline brokered-connection pointer for a managed-OAuth Google Drive source.\n\nHolds no secrets — just enough to vend a provider token headlessly later\n(broker + broker-side user + provider). Additive alternative to\n``service_account_key``; see the multi-broker OAuth design."
-      },
       "GeminiEmbedding": {
         "properties": {
           "model_name": {
