@@ -47,6 +47,12 @@ namespace LlamaParse
         public global::LlamaParse.MetadataResult? Metadata { get; set; }
 
         /// <summary>
+        /// Form analysis result (if requested; jobs with forms=enrich only)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("forms")]
+        public global::LlamaParse.FormsResult? Forms { get; set; }
+
+        /// <summary>
         /// Full raw markdown content (if requested)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("markdown_full")]
@@ -103,6 +109,9 @@ namespace LlamaParse
         /// <param name="metadata">
         /// Page-level metadata including confidence scores and presentation data (if requested)
         /// </param>
+        /// <param name="forms">
+        /// Form analysis result (if requested; jobs with forms=enrich only)
+        /// </param>
         /// <param name="markdownFull">
         /// Full raw markdown content (if requested)
         /// </param>
@@ -126,6 +135,7 @@ namespace LlamaParse
             global::LlamaParse.MarkdownResult? markdown,
             global::LlamaParse.StructuredResult? items,
             global::LlamaParse.MetadataResult? metadata,
+            global::LlamaParse.FormsResult? forms,
             string? markdownFull,
             string? textFull,
             global::LlamaParse.ImagesContentMetadata? imagesContentMetadata,
@@ -138,6 +148,7 @@ namespace LlamaParse
             this.Markdown = markdown;
             this.Items = items;
             this.Metadata = metadata;
+            this.Forms = forms;
             this.MarkdownFull = markdownFull;
             this.TextFull = textFull;
             this.ImagesContentMetadata = imagesContentMetadata;

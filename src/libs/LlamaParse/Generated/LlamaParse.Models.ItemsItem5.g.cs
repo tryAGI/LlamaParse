@@ -7,7 +7,7 @@ namespace LlamaParse
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct ItemsItem2 : global::System.IEquatable<ItemsItem2>
+    public readonly partial struct ItemsItem5 : global::System.IEquatable<ItemsItem5>
     {
         /// <summary>
         /// 
@@ -275,17 +275,17 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemsItem2(global::LlamaParse.TextItem value) => new ItemsItem2((global::LlamaParse.TextItem?)value);
+        public static implicit operator ItemsItem5(global::LlamaParse.TextItem value) => new ItemsItem5((global::LlamaParse.TextItem?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LlamaParse.TextItem?(ItemsItem2 @this) => @this.Text;
+        public static implicit operator global::LlamaParse.TextItem?(ItemsItem5 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ItemsItem2(global::LlamaParse.TextItem? value)
+        public ItemsItem5(global::LlamaParse.TextItem? value)
         {
             Text = value;
         }
@@ -293,22 +293,22 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public static ItemsItem2 FromText(global::LlamaParse.TextItem? value) => new ItemsItem2(value);
+        public static ItemsItem5 FromText(global::LlamaParse.TextItem? value) => new ItemsItem5(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemsItem2(global::LlamaParse.HeadingItem value) => new ItemsItem2((global::LlamaParse.HeadingItem?)value);
+        public static implicit operator ItemsItem5(global::LlamaParse.HeadingItem value) => new ItemsItem5((global::LlamaParse.HeadingItem?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LlamaParse.HeadingItem?(ItemsItem2 @this) => @this.Heading;
+        public static implicit operator global::LlamaParse.HeadingItem?(ItemsItem5 @this) => @this.Heading;
 
         /// <summary>
         /// 
         /// </summary>
-        public ItemsItem2(global::LlamaParse.HeadingItem? value)
+        public ItemsItem5(global::LlamaParse.HeadingItem? value)
         {
             Heading = value;
         }
@@ -316,22 +316,22 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public static ItemsItem2 FromHeading(global::LlamaParse.HeadingItem? value) => new ItemsItem2(value);
+        public static ItemsItem5 FromHeading(global::LlamaParse.HeadingItem? value) => new ItemsItem5(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemsItem2(global::LlamaParse.ListItem value) => new ItemsItem2((global::LlamaParse.ListItem?)value);
+        public static implicit operator ItemsItem5(global::LlamaParse.ListItem value) => new ItemsItem5((global::LlamaParse.ListItem?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LlamaParse.ListItem?(ItemsItem2 @this) => @this.List;
+        public static implicit operator global::LlamaParse.ListItem?(ItemsItem5 @this) => @this.List;
 
         /// <summary>
         /// 
         /// </summary>
-        public ItemsItem2(global::LlamaParse.ListItem? value)
+        public ItemsItem5(global::LlamaParse.ListItem? value)
         {
             List = value;
         }
@@ -339,22 +339,22 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public static ItemsItem2 FromList(global::LlamaParse.ListItem? value) => new ItemsItem2(value);
+        public static ItemsItem5 FromList(global::LlamaParse.ListItem? value) => new ItemsItem5(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemsItem2(global::LlamaParse.CodeItem value) => new ItemsItem2((global::LlamaParse.CodeItem?)value);
+        public static implicit operator ItemsItem5(global::LlamaParse.CodeItem value) => new ItemsItem5((global::LlamaParse.CodeItem?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LlamaParse.CodeItem?(ItemsItem2 @this) => @this.Code;
+        public static implicit operator global::LlamaParse.CodeItem?(ItemsItem5 @this) => @this.Code;
 
         /// <summary>
         /// 
         /// </summary>
-        public ItemsItem2(global::LlamaParse.CodeItem? value)
+        public ItemsItem5(global::LlamaParse.CodeItem? value)
         {
             Code = value;
         }
@@ -362,22 +362,22 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public static ItemsItem2 FromCode(global::LlamaParse.CodeItem? value) => new ItemsItem2(value);
+        public static ItemsItem5 FromCode(global::LlamaParse.CodeItem? value) => new ItemsItem5(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemsItem2(global::LlamaParse.TableItem value) => new ItemsItem2((global::LlamaParse.TableItem?)value);
+        public static implicit operator ItemsItem5(global::LlamaParse.TableItem value) => new ItemsItem5((global::LlamaParse.TableItem?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LlamaParse.TableItem?(ItemsItem2 @this) => @this.Table;
+        public static implicit operator global::LlamaParse.TableItem?(ItemsItem5 @this) => @this.Table;
 
         /// <summary>
         /// 
         /// </summary>
-        public ItemsItem2(global::LlamaParse.TableItem? value)
+        public ItemsItem5(global::LlamaParse.TableItem? value)
         {
             Table = value;
         }
@@ -385,22 +385,22 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public static ItemsItem2 FromTable(global::LlamaParse.TableItem? value) => new ItemsItem2(value);
+        public static ItemsItem5 FromTable(global::LlamaParse.TableItem? value) => new ItemsItem5(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemsItem2(global::LlamaParse.ImageItem value) => new ItemsItem2((global::LlamaParse.ImageItem?)value);
+        public static implicit operator ItemsItem5(global::LlamaParse.ImageItem value) => new ItemsItem5((global::LlamaParse.ImageItem?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LlamaParse.ImageItem?(ItemsItem2 @this) => @this.Image;
+        public static implicit operator global::LlamaParse.ImageItem?(ItemsItem5 @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
-        public ItemsItem2(global::LlamaParse.ImageItem? value)
+        public ItemsItem5(global::LlamaParse.ImageItem? value)
         {
             Image = value;
         }
@@ -408,22 +408,22 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public static ItemsItem2 FromImage(global::LlamaParse.ImageItem? value) => new ItemsItem2(value);
+        public static ItemsItem5 FromImage(global::LlamaParse.ImageItem? value) => new ItemsItem5(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemsItem2(global::LlamaParse.LinkItem value) => new ItemsItem2((global::LlamaParse.LinkItem?)value);
+        public static implicit operator ItemsItem5(global::LlamaParse.LinkItem value) => new ItemsItem5((global::LlamaParse.LinkItem?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LlamaParse.LinkItem?(ItemsItem2 @this) => @this.Link;
+        public static implicit operator global::LlamaParse.LinkItem?(ItemsItem5 @this) => @this.Link;
 
         /// <summary>
         /// 
         /// </summary>
-        public ItemsItem2(global::LlamaParse.LinkItem? value)
+        public ItemsItem5(global::LlamaParse.LinkItem? value)
         {
             Link = value;
         }
@@ -431,12 +431,12 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public static ItemsItem2 FromLink(global::LlamaParse.LinkItem? value) => new ItemsItem2(value);
+        public static ItemsItem5 FromLink(global::LlamaParse.LinkItem? value) => new ItemsItem5(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public ItemsItem2(
+        public ItemsItem5(
             global::LlamaParse.HeaderItemItemDiscriminatorType? type,
             global::LlamaParse.TextItem? text,
             global::LlamaParse.HeadingItem? heading,
@@ -678,7 +678,7 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(ItemsItem2 other)
+        public bool Equals(ItemsItem5 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.TextItem?>.Default.Equals(Text, other.Text) &&
@@ -694,15 +694,15 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(ItemsItem2 obj1, ItemsItem2 obj2)
+        public static bool operator ==(ItemsItem5 obj1, ItemsItem5 obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<ItemsItem2>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<ItemsItem5>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(ItemsItem2 obj1, ItemsItem2 obj2)
+        public static bool operator !=(ItemsItem5 obj1, ItemsItem5 obj2)
         {
             return !(obj1 == obj2);
         }
@@ -712,7 +712,7 @@ namespace LlamaParse
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is ItemsItem2 o && Equals(o);
+            return obj is ItemsItem5 o && Equals(o);
         }
     }
 }

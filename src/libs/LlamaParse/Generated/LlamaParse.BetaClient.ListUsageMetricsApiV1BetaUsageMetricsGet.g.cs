@@ -38,6 +38,7 @@ namespace LlamaParse
             ref string? dayOnOrAfter,
             ref string? eventAggregationType,
             ref string? eventAggregationKey,
+            double? creditsConsumedGreaterThanOrEqual,
             ref global::System.Guid organizationId,
             ref string? session);
         partial void PrepareListUsageMetricsApiV1BetaUsageMetricsGetRequest(
@@ -54,6 +55,7 @@ namespace LlamaParse
             string? dayOnOrAfter,
             string? eventAggregationType,
             string? eventAggregationKey,
+            double? creditsConsumedGreaterThanOrEqual,
             global::System.Guid organizationId,
             string? session);
         partial void ProcessListUsageMetricsApiV1BetaUsageMetricsGetResponse(
@@ -103,6 +105,9 @@ namespace LlamaParse
         /// <param name="eventAggregationKey">
         /// Filter by event aggregation key
         /// </param>
+        /// <param name="creditsConsumedGreaterThanOrEqual">
+        /// Filter by credits consumed greater than or equal to this value
+        /// </param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -121,6 +126,7 @@ namespace LlamaParse
             string? dayOnOrAfter = default,
             string? eventAggregationType = default,
             string? eventAggregationKey = default,
+            double? creditsConsumedGreaterThanOrEqual = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -138,6 +144,7 @@ namespace LlamaParse
                 dayOnOrAfter: dayOnOrAfter,
                 eventAggregationType: eventAggregationType,
                 eventAggregationKey: eventAggregationKey,
+                creditsConsumedGreaterThanOrEqual: creditsConsumedGreaterThanOrEqual,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -183,6 +190,9 @@ namespace LlamaParse
         /// <param name="eventAggregationKey">
         /// Filter by event aggregation key
         /// </param>
+        /// <param name="creditsConsumedGreaterThanOrEqual">
+        /// Filter by credits consumed greater than or equal to this value
+        /// </param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -201,6 +211,7 @@ namespace LlamaParse
             string? dayOnOrAfter = default,
             string? eventAggregationType = default,
             string? eventAggregationKey = default,
+            double? creditsConsumedGreaterThanOrEqual = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -220,6 +231,7 @@ namespace LlamaParse
                 dayOnOrAfter: ref dayOnOrAfter,
                 eventAggregationType: ref eventAggregationType,
                 eventAggregationKey: ref eventAggregationKey,
+                creditsConsumedGreaterThanOrEqual: creditsConsumedGreaterThanOrEqual,
                 organizationId: ref organizationId,
                 session: ref session);
 
@@ -261,6 +273,7 @@ namespace LlamaParse
                                 .AddOptionalParameter("day_on_or_after", dayOnOrAfter)
                                 .AddOptionalParameter("event_aggregation_type", eventAggregationType)
                                 .AddOptionalParameter("event_aggregation_key", eventAggregationKey)
+                                .AddOptionalParameter("credits_consumed_greater_than_or_equal", creditsConsumedGreaterThanOrEqual?.ToString())
                                 .AddRequiredParameter("organization_id", organizationId.ToString()!)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -326,6 +339,7 @@ namespace LlamaParse
                     dayOnOrAfter: dayOnOrAfter,
                     eventAggregationType: eventAggregationType,
                     eventAggregationKey: eventAggregationKey,
+                    creditsConsumedGreaterThanOrEqual: creditsConsumedGreaterThanOrEqual,
                     organizationId: organizationId!,
                     session: session);
 

@@ -42,6 +42,9 @@ namespace LlamaParse
         /// <param name="eventAggregationKey">
         /// Filter by event aggregation key
         /// </param>
+        /// <param name="creditsConsumedGreaterThanOrEqual">
+        /// Filter by credits consumed greater than or equal to this value
+        /// </param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -60,6 +63,7 @@ namespace LlamaParse
             string? dayOnOrAfter = default,
             string? eventAggregationType = default,
             string? eventAggregationKey = default,
+            double? creditsConsumedGreaterThanOrEqual = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -101,6 +105,9 @@ namespace LlamaParse
         /// <param name="eventAggregationKey">
         /// Filter by event aggregation key
         /// </param>
+        /// <param name="creditsConsumedGreaterThanOrEqual">
+        /// Filter by credits consumed greater than or equal to this value
+        /// </param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -119,6 +126,7 @@ namespace LlamaParse
             string? dayOnOrAfter = default,
             string? eventAggregationType = default,
             string? eventAggregationKey = default,
+            double? creditsConsumedGreaterThanOrEqual = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
