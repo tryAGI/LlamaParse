@@ -12851,6 +12851,24 @@
             "description": "Filter by event aggregation key"
           },
           {
+            "name": "credits_consumed_greater_than_or_equal",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by credits consumed greater than or equal to this value",
+              "title": "Credits Consumed Greater Than Or Equal"
+            },
+            "description": "Filter by credits consumed greater than or equal to this value"
+          },
+          {
             "name": "organization_id",
             "in": "query",
             "required": true,
@@ -19481,10 +19499,10 @@
               "items": {
                 "type": "string"
               },
-              "description": "Fields to include: text, markdown, items, metadata, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs.",
+              "description": "Fields to include: text, markdown, items, metadata, forms, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, forms_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs.",
               "title": "Expand"
             },
-            "description": "Fields to include: text, markdown, items, metadata, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs."
+            "description": "Fields to include: text, markdown, items, metadata, forms, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, forms_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs."
           },
           {
             "name": "image_filenames",
@@ -24374,6 +24392,17 @@
             ],
             "title": "High Res Ocr",
             "default": false
+          },
+          "confidence_scores": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence Scores"
           },
           "html_make_all_elements_visible": {
             "anyOf": [
@@ -34245,6 +34274,34 @@
         "title": "FailPageMode",
         "description": "Enum for representing the different available page error handling modes."
       },
+      "FailedFormsPage": {
+        "properties": {
+          "page_number": {
+            "type": "integer",
+            "title": "Page Number",
+            "description": "Page number of the document"
+          },
+          "error": {
+            "type": "string",
+            "title": "Error",
+            "description": "Error message describing the failure"
+          },
+          "success": {
+            "type": "boolean",
+            "const": false,
+            "title": "Success",
+            "description": "Failure indicator"
+          }
+        },
+        "type": "object",
+        "required": [
+          "page_number",
+          "error",
+          "success"
+        ],
+        "title": "FailedFormsPage",
+        "description": "A page whose processing failed."
+      },
       "FailedMarkdownPage": {
         "properties": {
           "page_number": {
@@ -35749,6 +35806,468 @@
           "items"
         ],
         "title": "FooterItem"
+      },
+      "Form": {
+        "properties": {
+          "json": {
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/FormSection"
+                },
+                {
+                  "$ref": "#/components/schemas/FormField"
+                },
+                {
+                  "$ref": "#/components/schemas/FormTable"
+                }
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "field": "#/components/schemas/FormField",
+                  "section": "#/components/schemas/FormSection",
+                  "table": "#/components/schemas/FormTable"
+                }
+              }
+            },
+            "type": "array",
+            "title": "Json",
+            "description": "Structured representation: an ordered tree of sections, fields, and tables"
+          },
+          "list": {
+            "$ref": "#/components/schemas/FormListItem",
+            "description": "Flattened list representation of the same content"
+          }
+        },
+        "type": "object",
+        "required": [
+          "json",
+          "list"
+        ],
+        "title": "Form",
+        "description": "One form detected on a page, in two representations of the same content."
+      },
+      "FormField": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "field",
+            "title": "Type",
+            "description": "Form field node",
+            "default": "field"
+          },
+          "field": {
+            "type": "string",
+            "enum": [
+              "text",
+              "checkbox",
+              "single_select",
+              "multi_select",
+              "signature"
+            ],
+            "title": "Field",
+            "description": "Kind of entry: text (any free-text input), checkbox, single_select, multi_select, or signature"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id",
+            "description": "Field number/letter printed on the form (e.g. '1a'), if any"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label",
+            "description": "Printed field caption, if any"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value",
+            "description": "Entered content: verbatim text for text fields, or a boolean for checkbox (checked) and signature (signed). Absent on blank text fields and on select groups"
+          },
+          "isEmpty": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Isempty",
+            "description": "True for a printed-but-blank text field (mutually exclusive with value)"
+          },
+          "valueItems": {
+            "anyOf": [
+              {
+                "items": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/FormSection"
+                    },
+                    {
+                      "$ref": "#/components/schemas/FormField"
+                    },
+                    {
+                      "$ref": "#/components/schemas/FormTable"
+                    }
+                  ],
+                  "discriminator": {
+                    "propertyName": "type",
+                    "mapping": {
+                      "field": "#/components/schemas/FormField",
+                      "section": "#/components/schemas/FormSection",
+                      "table": "#/components/schemas/FormTable"
+                    }
+                  }
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Valueitems",
+            "description": "Options of a single_select/multi_select group (only on select fields)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "field"
+        ],
+        "title": "FormField",
+        "description": "One labeled form entry: a text input, checkbox, select group, or signature line."
+      },
+      "FormListItem": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "list",
+            "title": "Type",
+            "description": "List node",
+            "default": "list"
+          },
+          "items": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormListTextItem"
+                },
+                {
+                  "$ref": "#/components/schemas/FormListItem"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "Nested lines and sub-lists, in the form's reading order"
+          },
+          "ordered": {
+            "type": "boolean",
+            "title": "Ordered",
+            "description": "Whether the list is ordered"
+          },
+          "md": {
+            "type": "string",
+            "title": "Md",
+            "description": "Markdown representation of this list"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "ordered",
+          "md"
+        ],
+        "title": "FormListItem",
+        "description": "The list representation of form content: nested lists of rendered field lines."
+      },
+      "FormListTextItem": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "text",
+            "title": "Type",
+            "description": "Text line",
+            "default": "text"
+          },
+          "value": {
+            "type": "string",
+            "title": "Value",
+            "description": "Line content (e.g. '[1a] Wages: 29,513')"
+          },
+          "md": {
+            "type": "string",
+            "title": "Md",
+            "description": "Markdown representation of the line"
+          }
+        },
+        "type": "object",
+        "required": [
+          "value",
+          "md"
+        ],
+        "title": "FormListTextItem",
+        "description": "One line of a form's list representation."
+      },
+      "FormSection": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "section",
+            "title": "Type",
+            "description": "Form section node",
+            "default": "section"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id",
+            "description": "Identifier printed on the form (e.g. 'Part III'), if any"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label",
+            "description": "Printed section heading, if any"
+          },
+          "items": {
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/FormSection"
+                },
+                {
+                  "$ref": "#/components/schemas/FormField"
+                },
+                {
+                  "$ref": "#/components/schemas/FormTable"
+                }
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "field": "#/components/schemas/FormField",
+                  "section": "#/components/schemas/FormSection",
+                  "table": "#/components/schemas/FormTable"
+                }
+              }
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "Child form nodes in reading order"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "FormSection",
+        "description": "A grouping of form content, in the form's reading order."
+      },
+      "FormTable": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "table",
+            "title": "Type",
+            "description": "Form table node",
+            "default": "table"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id",
+            "description": "Identifier printed on the form, if any"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label",
+            "description": "Printed table caption, if any"
+          },
+          "columns": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Columns",
+            "description": "Printed column headers in order, if any"
+          },
+          "rows": {
+            "items": {
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "$ref": "#/components/schemas/FormTableCellItems"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Rows",
+            "description": "Table cells: a verbatim string, null for a printed-but-blank cell, or an object holding the cell's own form nodes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "rows"
+        ],
+        "title": "FormTable",
+        "description": "A fillable grid printed on the form: repeating records or a row-by-column matrix."
+      },
+      "FormTableCellItems": {
+        "properties": {
+          "items": {
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/FormSection"
+                },
+                {
+                  "$ref": "#/components/schemas/FormField"
+                },
+                {
+                  "$ref": "#/components/schemas/FormTable"
+                }
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "field": "#/components/schemas/FormField",
+                  "section": "#/components/schemas/FormSection",
+                  "table": "#/components/schemas/FormTable"
+                }
+              }
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "Form nodes inside the cell"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "FormTableCellItems",
+        "description": "A table cell holding its own form nodes (e.g. a checkbox column)."
+      },
+      "FormsResult": {
+        "properties": {
+          "pages": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormsResultPage"
+                },
+                {
+                  "$ref": "#/components/schemas/FailedFormsPage"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Pages",
+            "description": "List of form pages or failed page entries"
+          }
+        },
+        "type": "object",
+        "required": [
+          "pages"
+        ],
+        "title": "FormsResult",
+        "description": "Per-page form analysis results (one entry per page)."
+      },
+      "FormsResultPage": {
+        "properties": {
+          "page_number": {
+            "type": "integer",
+            "title": "Page Number",
+            "description": "Page number of the document"
+          },
+          "forms": {
+            "items": {
+              "$ref": "#/components/schemas/Form"
+            },
+            "type": "array",
+            "title": "Forms",
+            "description": "Forms detected on the page"
+          },
+          "success": {
+            "type": "boolean",
+            "const": true,
+            "title": "Success",
+            "description": "Success indicator"
+          }
+        },
+        "type": "object",
+        "required": [
+          "page_number",
+          "forms",
+          "success"
+        ],
+        "title": "FormsResultPage",
+        "description": "Forms found on one page. Pages without form content have an empty forms list."
       },
       "GeminiEmbedding": {
         "properties": {
@@ -38081,6 +38600,17 @@
             "title": "High Res Ocr",
             "default": false
           },
+          "confidence_scores": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence Scores"
+          },
           "html_make_all_elements_visible": {
             "anyOf": [
               {
@@ -39243,6 +39773,25 @@
             "title": "Aggressive Table Extraction",
             "description": "Use aggressive heuristics to detect table boundaries, even without visible borders. Useful for documents with borderless or complex tables"
           },
+          "confidence_scores": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "default",
+                  "verified"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence Scores",
+            "description": "Confidence scoring mode. 'default': standard scoring. 'verified': more accurate assessment of the parsing quality of every page, plus a document-level score in the result metadata; costs an additional 5 credits per page",
+            "examples": [
+              "verified"
+            ]
+          },
           "disable_heuristics": {
             "anyOf": [
               {
@@ -39297,6 +39846,25 @@
             ],
             "title": "Auto Mode Configuration",
             "description": "Conditional processing rules that apply different parsing options based on page content, document structure, or filename patterns. Each entry defines trigger conditions and the parsing configuration to apply when triggered"
+          },
+          "forms": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "default",
+                  "enrich"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Forms",
+            "description": "Beta: set to 'enrich' to run an additional AI form-analysis pass on pages detected as forms, producing a structured tree of the form's sections, fields, and fillable grids. Retrieve the result with expand=forms. 'default' (the default) applies standard parsing with no extra pass. Not available on the fast tier",
+            "examples": [
+              "enrich"
+            ]
           }
         },
         "additionalProperties": false,
@@ -41621,6 +42189,17 @@
               }
             ],
             "description": "Page-level metadata including confidence scores and presentation data (if requested)"
+          },
+          "forms": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormsResult"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Form analysis result (if requested; jobs with forms=enrich only)"
           },
           "markdown_full": {
             "anyOf": [
@@ -47624,8 +48203,10 @@
               "chart_parsing_plus",
               "chart_parsing_efficient",
               "image_classified",
+              "verified_confidence_score",
               "precise_bbox_extraction",
               "audio_seconds_parsed",
+              "form_parsing_pages",
               "extraction_num_pages",
               "extraction_num_pages_parsed",
               "pages_split",

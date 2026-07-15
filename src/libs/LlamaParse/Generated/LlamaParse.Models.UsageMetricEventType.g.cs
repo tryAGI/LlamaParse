@@ -59,6 +59,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        FormParsingPages,
+        /// <summary>
+        /// 
+        /// </summary>
         ImageClassified,
         /// <summary>
         /// 
@@ -116,6 +120,10 @@ namespace LlamaParse
         /// 
         /// </summary>
         StoredFileMb,
+        /// <summary>
+        /// 
+        /// </summary>
+        VerifiedConfidenceScore,
     }
 
     /// <summary>
@@ -142,6 +150,7 @@ namespace LlamaParse
                 UsageMetricEventType.DirectoryPagesExported => "directory_pages_exported",
                 UsageMetricEventType.ExtractionNumPages => "extraction_num_pages",
                 UsageMetricEventType.ExtractionNumPagesParsed => "extraction_num_pages_parsed",
+                UsageMetricEventType.FormParsingPages => "form_parsing_pages",
                 UsageMetricEventType.ImageClassified => "image_classified",
                 UsageMetricEventType.IndexRetrieveQuery => "index_retrieve_query",
                 UsageMetricEventType.LayoutAwareChartExtraction => "layout_aware_chart_extraction",
@@ -157,6 +166,7 @@ namespace LlamaParse
                 UsageMetricEventType.SetTotalPagesIndexed => "set_total_pages_indexed",
                 UsageMetricEventType.StoredFileCount => "stored_file_count",
                 UsageMetricEventType.StoredFileMb => "stored_file_mb",
+                UsageMetricEventType.VerifiedConfidenceScore => "verified_confidence_score",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -179,6 +189,7 @@ namespace LlamaParse
                 "directory_pages_exported" => UsageMetricEventType.DirectoryPagesExported,
                 "extraction_num_pages" => UsageMetricEventType.ExtractionNumPages,
                 "extraction_num_pages_parsed" => UsageMetricEventType.ExtractionNumPagesParsed,
+                "form_parsing_pages" => UsageMetricEventType.FormParsingPages,
                 "image_classified" => UsageMetricEventType.ImageClassified,
                 "index_retrieve_query" => UsageMetricEventType.IndexRetrieveQuery,
                 "layout_aware_chart_extraction" => UsageMetricEventType.LayoutAwareChartExtraction,
@@ -194,6 +205,7 @@ namespace LlamaParse
                 "set_total_pages_indexed" => UsageMetricEventType.SetTotalPagesIndexed,
                 "stored_file_count" => UsageMetricEventType.StoredFileCount,
                 "stored_file_mb" => UsageMetricEventType.StoredFileMb,
+                "verified_confidence_score" => UsageMetricEventType.VerifiedConfidenceScore,
                 _ => null,
             };
         }

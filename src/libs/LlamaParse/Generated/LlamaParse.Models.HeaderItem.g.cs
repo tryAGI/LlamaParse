@@ -33,7 +33,7 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem2> Items { get; set; }
+        public required global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem5> Items { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,7 +62,7 @@ namespace LlamaParse
 #endif
         public HeaderItem(
             string md,
-            global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem2> items,
+            global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem5> items,
             string? type,
             global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
         {

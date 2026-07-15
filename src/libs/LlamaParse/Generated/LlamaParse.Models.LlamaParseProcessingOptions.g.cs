@@ -30,6 +30,12 @@ namespace LlamaParse
         public bool? AggressiveTableExtraction { get; set; }
 
         /// <summary>
+        /// Confidence scoring mode. 'default': standard scoring. 'verified': more accurate assessment of the parsing quality of every page, plus a document-level score in the result metadata; costs an additional 5 credits per page
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("confidence_scores")]
+        public global::LlamaParse.LlamaParseProcessingOptionsConfidenceScores2? ConfidenceScores { get; set; }
+
+        /// <summary>
         /// Disable automatic heuristics including outlined table extraction and adaptive long table handling. Use when heuristics produce incorrect results
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disable_heuristics")]
@@ -54,6 +60,12 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<global::LlamaParse.AutoModeConfigurationEntry>? AutoModeConfiguration { get; set; }
 
         /// <summary>
+        /// Beta: set to 'enrich' to run an additional AI form-analysis pass on pages detected as forms, producing a structured tree of the form's sections, fields, and fillable grids. Retrieve the result with expand=forms. 'default' (the default) applies standard parsing with no extra pass. Not available on the fast tier
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("forms")]
+        public global::LlamaParse.LlamaParseProcessingOptionsForms2? Forms { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -71,6 +83,9 @@ namespace LlamaParse
         /// <param name="aggressiveTableExtraction">
         /// Use aggressive heuristics to detect table boundaries, even without visible borders. Useful for documents with borderless or complex tables
         /// </param>
+        /// <param name="confidenceScores">
+        /// Confidence scoring mode. 'default': standard scoring. 'verified': more accurate assessment of the parsing quality of every page, plus a document-level score in the result metadata; costs an additional 5 credits per page
+        /// </param>
         /// <param name="disableHeuristics">
         /// Disable automatic heuristics including outlined table extraction and adaptive long table handling. Use when heuristics produce incorrect results
         /// </param>
@@ -83,6 +98,9 @@ namespace LlamaParse
         /// <param name="autoModeConfiguration">
         /// Conditional processing rules that apply different parsing options based on page content, document structure, or filename patterns. Each entry defines trigger conditions and the parsing configuration to apply when triggered
         /// </param>
+        /// <param name="forms">
+        /// Beta: set to 'enrich' to run an additional AI form-analysis pass on pages detected as forms, producing a structured tree of the form's sections, fields, and fillable grids. Retrieve the result with expand=forms. 'default' (the default) applies standard parsing with no extra pass. Not available on the fast tier
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,18 +108,22 @@ namespace LlamaParse
             global::LlamaParse.LlamaParseIgnoreOptions? ignore,
             global::LlamaParse.LlamaParseOcrParameters? ocrParameters,
             bool? aggressiveTableExtraction,
+            global::LlamaParse.LlamaParseProcessingOptionsConfidenceScores2? confidenceScores,
             bool? disableHeuristics,
             global::LlamaParse.LlamaParseProcessingOptionsSpecializedChartParsing2? specializedChartParsing,
             global::LlamaParse.LlamaParseCostOptimizerParameters? costOptimizer,
-            global::System.Collections.Generic.IList<global::LlamaParse.AutoModeConfigurationEntry>? autoModeConfiguration)
+            global::System.Collections.Generic.IList<global::LlamaParse.AutoModeConfigurationEntry>? autoModeConfiguration,
+            global::LlamaParse.LlamaParseProcessingOptionsForms2? forms)
         {
             this.Ignore = ignore;
             this.OcrParameters = ocrParameters;
             this.AggressiveTableExtraction = aggressiveTableExtraction;
+            this.ConfidenceScores = confidenceScores;
             this.DisableHeuristics = disableHeuristics;
             this.SpecializedChartParsing = specializedChartParsing;
             this.CostOptimizer = costOptimizer;
             this.AutoModeConfiguration = autoModeConfiguration;
+            this.Forms = forms;
         }
 
         /// <summary>

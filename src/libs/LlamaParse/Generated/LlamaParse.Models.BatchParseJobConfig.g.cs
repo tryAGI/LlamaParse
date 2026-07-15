@@ -177,6 +177,12 @@ namespace LlamaParse
         public bool? HighResOcr { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("confidence_scores")]
+        public string? ConfidenceScores { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_make_all_elements_visible")]
@@ -849,6 +855,7 @@ namespace LlamaParse
         /// <param name="highResOcr">
         /// Default Value: false
         /// </param>
+        /// <param name="confidenceScores"></param>
         /// <param name="htmlMakeAllElementsVisible">
         /// Default Value: false
         /// </param>
@@ -1077,6 +1084,7 @@ namespace LlamaParse
             bool? doNotUnrollColumns,
             bool? extractLayout,
             bool? highResOcr,
+            string? confidenceScores,
             bool? htmlMakeAllElementsVisible,
             bool? layoutAware,
             bool? specializedChartParsingAgentic,
@@ -1203,6 +1211,7 @@ namespace LlamaParse
             this.DoNotUnrollColumns = doNotUnrollColumns;
             this.ExtractLayout = extractLayout;
             this.HighResOcr = highResOcr;
+            this.ConfidenceScores = confidenceScores;
             this.HtmlMakeAllElementsVisible = htmlMakeAllElementsVisible;
             this.LayoutAware = layoutAware;
             this.SpecializedChartParsingAgentic = specializedChartParsingAgentic;
