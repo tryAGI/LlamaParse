@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    /// Confidence scoring effort. Omit for standard scoring. 'high': more accurate assessment of the parsing quality of every page, plus a document-level score in the result metadata; costs an additional 5 credits per page
     /// </summary>
-    public sealed partial class BatchParseJobConfigConfidenceScores
+    public sealed partial class LlamaParseProcessingOptionsConfidenceScoreEffort
     {
 
         /// <summary>

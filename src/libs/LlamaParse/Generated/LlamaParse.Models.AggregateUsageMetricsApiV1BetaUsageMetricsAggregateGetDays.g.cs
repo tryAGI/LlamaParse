@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Confidence scoring mode. 'default': standard scoring. 'verified': more accurate assessment of the parsing quality of every page, plus a document-level score in the result metadata; costs an additional 5 credits per page
+    /// Filter by specific days (YYYY-MM-DD)
     /// </summary>
-    public sealed partial class LlamaParseProcessingOptionsConfidenceScores
+    public sealed partial class AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetDays
     {
 
         /// <summary>

@@ -31,6 +31,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        ConfidenceScoreHigh,
+        /// <summary>
+        /// 
+        /// </summary>
         DirectoryCountSnapshot,
         /// <summary>
         /// 
@@ -103,6 +107,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        PagesVerified,
+        /// <summary>
+        /// 
+        /// </summary>
         PreciseBboxExtraction,
         /// <summary>
         /// 
@@ -120,10 +128,6 @@ namespace LlamaParse
         /// 
         /// </summary>
         StoredFileMb,
-        /// <summary>
-        /// 
-        /// </summary>
-        VerifiedConfidenceScore,
     }
 
     /// <summary>
@@ -143,6 +147,7 @@ namespace LlamaParse
                 UsageMetricEventType.ChartParsingEfficient => "chart_parsing_efficient",
                 UsageMetricEventType.ChartParsingPlus => "chart_parsing_plus",
                 UsageMetricEventType.ChatMessageSent => "chat_message_sent",
+                UsageMetricEventType.ConfidenceScoreHigh => "confidence_score_high",
                 UsageMetricEventType.DirectoryCountSnapshot => "directory_count_snapshot",
                 UsageMetricEventType.DirectoryFileCountSnapshot => "directory_file_count_snapshot",
                 UsageMetricEventType.DirectoryFilesExported => "directory_files_exported",
@@ -161,12 +166,12 @@ namespace LlamaParse
                 UsageMetricEventType.PagesIndexed => "pages_indexed",
                 UsageMetricEventType.PagesParsed => "pages_parsed",
                 UsageMetricEventType.PagesSplit => "pages_split",
+                UsageMetricEventType.PagesVerified => "pages_verified",
                 UsageMetricEventType.PreciseBboxExtraction => "precise_bbox_extraction",
                 UsageMetricEventType.SetTotalIndexes => "set_total_indexes",
                 UsageMetricEventType.SetTotalPagesIndexed => "set_total_pages_indexed",
                 UsageMetricEventType.StoredFileCount => "stored_file_count",
                 UsageMetricEventType.StoredFileMb => "stored_file_mb",
-                UsageMetricEventType.VerifiedConfidenceScore => "verified_confidence_score",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -182,6 +187,7 @@ namespace LlamaParse
                 "chart_parsing_efficient" => UsageMetricEventType.ChartParsingEfficient,
                 "chart_parsing_plus" => UsageMetricEventType.ChartParsingPlus,
                 "chat_message_sent" => UsageMetricEventType.ChatMessageSent,
+                "confidence_score_high" => UsageMetricEventType.ConfidenceScoreHigh,
                 "directory_count_snapshot" => UsageMetricEventType.DirectoryCountSnapshot,
                 "directory_file_count_snapshot" => UsageMetricEventType.DirectoryFileCountSnapshot,
                 "directory_files_exported" => UsageMetricEventType.DirectoryFilesExported,
@@ -200,12 +206,12 @@ namespace LlamaParse
                 "pages_indexed" => UsageMetricEventType.PagesIndexed,
                 "pages_parsed" => UsageMetricEventType.PagesParsed,
                 "pages_split" => UsageMetricEventType.PagesSplit,
+                "pages_verified" => UsageMetricEventType.PagesVerified,
                 "precise_bbox_extraction" => UsageMetricEventType.PreciseBboxExtraction,
                 "set_total_indexes" => UsageMetricEventType.SetTotalIndexes,
                 "set_total_pages_indexed" => UsageMetricEventType.SetTotalPagesIndexed,
                 "stored_file_count" => UsageMetricEventType.StoredFileCount,
                 "stored_file_mb" => UsageMetricEventType.StoredFileMb,
-                "verified_confidence_score" => UsageMetricEventType.VerifiedConfidenceScore,
                 _ => null,
             };
         }
