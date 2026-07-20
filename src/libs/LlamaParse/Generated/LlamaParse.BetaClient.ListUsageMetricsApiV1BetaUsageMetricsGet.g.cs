@@ -30,6 +30,7 @@ namespace LlamaParse
             int? pageSize,
             ref string? pageToken,
             ref bool? includeTotal,
+            ref global::System.Guid organizationId,
             global::System.Guid? projectId,
             ref string? userId,
             global::System.Collections.Generic.IList<string>? eventTypes,
@@ -39,7 +40,6 @@ namespace LlamaParse
             ref string? eventAggregationType,
             ref string? eventAggregationKey,
             double? creditsConsumedGreaterThanOrEqual,
-            ref global::System.Guid organizationId,
             ref string? session);
         partial void PrepareListUsageMetricsApiV1BetaUsageMetricsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,6 +47,7 @@ namespace LlamaParse
             int? pageSize,
             string? pageToken,
             bool? includeTotal,
+            global::System.Guid organizationId,
             global::System.Guid? projectId,
             string? userId,
             global::System.Collections.Generic.IList<string>? eventTypes,
@@ -56,7 +57,6 @@ namespace LlamaParse
             string? eventAggregationType,
             string? eventAggregationKey,
             double? creditsConsumedGreaterThanOrEqual,
-            global::System.Guid organizationId,
             string? session);
         partial void ProcessListUsageMetricsApiV1BetaUsageMetricsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -81,6 +81,7 @@ namespace LlamaParse
         /// Include total count in response<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="organizationId"></param>
         /// <param name="projectId">
         /// Filter by project ID
         /// </param>
@@ -108,7 +109,6 @@ namespace LlamaParse
         /// <param name="creditsConsumedGreaterThanOrEqual">
         /// Filter by credits consumed greater than or equal to this value
         /// </param>
-        /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -166,6 +166,7 @@ namespace LlamaParse
         /// Include total count in response<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="organizationId"></param>
         /// <param name="projectId">
         /// Filter by project ID
         /// </param>
@@ -193,7 +194,6 @@ namespace LlamaParse
         /// <param name="creditsConsumedGreaterThanOrEqual">
         /// Filter by credits consumed greater than or equal to this value
         /// </param>
-        /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -223,6 +223,7 @@ namespace LlamaParse
                 pageSize: pageSize,
                 pageToken: ref pageToken,
                 includeTotal: ref includeTotal,
+                organizationId: ref organizationId,
                 projectId: projectId,
                 userId: ref userId,
                 eventTypes: eventTypes,
@@ -232,7 +233,6 @@ namespace LlamaParse
                 eventAggregationType: ref eventAggregationType,
                 eventAggregationKey: ref eventAggregationKey,
                 creditsConsumedGreaterThanOrEqual: creditsConsumedGreaterThanOrEqual,
-                organizationId: ref organizationId,
                 session: ref session);
 
 
@@ -265,6 +265,7 @@ namespace LlamaParse
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
                                 .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant())
+                                .AddRequiredParameter("organization_id", organizationId.ToString()!)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("user_id", userId)
                                 .AddOptionalParameter("event_types", eventTypes?.ToString())
@@ -274,7 +275,6 @@ namespace LlamaParse
                                 .AddOptionalParameter("event_aggregation_type", eventAggregationType)
                                 .AddOptionalParameter("event_aggregation_key", eventAggregationKey)
                                 .AddOptionalParameter("credits_consumed_greater_than_or_equal", creditsConsumedGreaterThanOrEqual?.ToString())
-                                .AddRequiredParameter("organization_id", organizationId.ToString()!)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -331,6 +331,7 @@ namespace LlamaParse
                     pageSize: pageSize,
                     pageToken: pageToken,
                     includeTotal: includeTotal,
+                    organizationId: organizationId!,
                     projectId: projectId,
                     userId: userId,
                     eventTypes: eventTypes,
@@ -340,7 +341,6 @@ namespace LlamaParse
                     eventAggregationType: eventAggregationType,
                     eventAggregationKey: eventAggregationKey,
                     creditsConsumedGreaterThanOrEqual: creditsConsumedGreaterThanOrEqual,
-                    organizationId: organizationId!,
                     session: session);
 
                 return __httpRequest;

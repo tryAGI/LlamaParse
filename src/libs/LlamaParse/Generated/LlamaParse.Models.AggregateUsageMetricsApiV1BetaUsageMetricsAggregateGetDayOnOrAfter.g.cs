@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    /// Filter by days on or after this date (YYYY-MM-DD)
     /// </summary>
-    public sealed partial class LlamaParseParametersConfidenceScores
+    public sealed partial class AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetDayOnOrAfter
     {
 
         /// <summary>

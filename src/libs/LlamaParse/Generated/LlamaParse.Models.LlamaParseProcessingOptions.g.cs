@@ -30,10 +30,10 @@ namespace LlamaParse
         public bool? AggressiveTableExtraction { get; set; }
 
         /// <summary>
-        /// Confidence scoring mode. 'default': standard scoring. 'verified': more accurate assessment of the parsing quality of every page, plus a document-level score in the result metadata; costs an additional 5 credits per page
+        /// Confidence scoring effort. Omit for standard scoring. 'high': more accurate assessment of the parsing quality of every page, plus a document-level score in the result metadata; costs an additional 5 credits per page
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("confidence_scores")]
-        public global::LlamaParse.LlamaParseProcessingOptionsConfidenceScores2? ConfidenceScores { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("confidence_score_effort")]
+        public string? ConfidenceScoreEffort { get; set; }
 
         /// <summary>
         /// Disable automatic heuristics including outlined table extraction and adaptive long table handling. Use when heuristics produce incorrect results
@@ -83,8 +83,8 @@ namespace LlamaParse
         /// <param name="aggressiveTableExtraction">
         /// Use aggressive heuristics to detect table boundaries, even without visible borders. Useful for documents with borderless or complex tables
         /// </param>
-        /// <param name="confidenceScores">
-        /// Confidence scoring mode. 'default': standard scoring. 'verified': more accurate assessment of the parsing quality of every page, plus a document-level score in the result metadata; costs an additional 5 credits per page
+        /// <param name="confidenceScoreEffort">
+        /// Confidence scoring effort. Omit for standard scoring. 'high': more accurate assessment of the parsing quality of every page, plus a document-level score in the result metadata; costs an additional 5 credits per page
         /// </param>
         /// <param name="disableHeuristics">
         /// Disable automatic heuristics including outlined table extraction and adaptive long table handling. Use when heuristics produce incorrect results
@@ -108,7 +108,7 @@ namespace LlamaParse
             global::LlamaParse.LlamaParseIgnoreOptions? ignore,
             global::LlamaParse.LlamaParseOcrParameters? ocrParameters,
             bool? aggressiveTableExtraction,
-            global::LlamaParse.LlamaParseProcessingOptionsConfidenceScores2? confidenceScores,
+            string? confidenceScoreEffort,
             bool? disableHeuristics,
             global::LlamaParse.LlamaParseProcessingOptionsSpecializedChartParsing2? specializedChartParsing,
             global::LlamaParse.LlamaParseCostOptimizerParameters? costOptimizer,
@@ -118,7 +118,7 @@ namespace LlamaParse
             this.Ignore = ignore;
             this.OcrParameters = ocrParameters;
             this.AggressiveTableExtraction = aggressiveTableExtraction;
-            this.ConfidenceScores = confidenceScores;
+            this.ConfidenceScoreEffort = confidenceScoreEffort;
             this.DisableHeuristics = disableHeuristics;
             this.SpecializedChartParsing = specializedChartParsing;
             this.CostOptimizer = costOptimizer;

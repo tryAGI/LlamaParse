@@ -3,10 +3,10 @@
 namespace LlamaParse.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class LlamaParseProcessingOptionsConfidenceScores2JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LlamaParse.LlamaParseProcessingOptionsConfidenceScores2>
+    public sealed class UsageMetricAggregateResponseGroupByItemJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LlamaParse.UsageMetricAggregateResponseGroupByItem>
     {
         /// <inheritdoc />
-        public override global::LlamaParse.LlamaParseProcessingOptionsConfidenceScores2 Read(
+        public override global::LlamaParse.UsageMetricAggregateResponseGroupByItem Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace LlamaParse.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::LlamaParse.LlamaParseProcessingOptionsConfidenceScores2Extensions.ToEnum(stringValue) ?? default;
+                        return global::LlamaParse.UsageMetricAggregateResponseGroupByItemExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace LlamaParse.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::LlamaParse.LlamaParseProcessingOptionsConfidenceScores2)numValue;
+                    return (global::LlamaParse.UsageMetricAggregateResponseGroupByItem)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::LlamaParse.LlamaParseProcessingOptionsConfidenceScores2);
+                    return default(global::LlamaParse.UsageMetricAggregateResponseGroupByItem);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace LlamaParse.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::LlamaParse.LlamaParseProcessingOptionsConfidenceScores2 value,
+            global::LlamaParse.UsageMetricAggregateResponseGroupByItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::LlamaParse.LlamaParseProcessingOptionsConfidenceScores2Extensions.ToValueString(value));
+            writer.WriteStringValue(global::LlamaParse.UsageMetricAggregateResponseGroupByItemExtensions.ToValueString(value));
         }
     }
 }

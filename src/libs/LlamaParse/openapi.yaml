@@ -12636,15 +12636,15 @@
         }
       }
     },
-    "/api/v1/beta/usage-metrics": {
+    "/api/v1/beta/usage-metrics/aggregate": {
       "get": {
         "tags": [
           "Beta",
           "Usage Metrics"
         ],
-        "summary": "List Usage Metrics",
-        "description": "List usage metrics with filtering and pagination.",
-        "operationId": "list_usage_metrics_api_v1_beta_usage_metrics_get",
+        "summary": "Aggregate Usage Metrics",
+        "description": "Aggregate usage metrics using the same filters as the regular list endpoint.\n\nThe authenticated organization is always applied as a filter.",
+        "operationId": "aggregate_usage_metrics_api_v1_beta_usage_metrics_aggregate_get",
         "security": [
           {
             "HTTPBearer": []
@@ -12652,52 +12652,35 @@
         ],
         "parameters": [
           {
-            "name": "page_size",
+            "name": "group_by",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
-              "anyOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Number of items per page",
-              "title": "Page Size"
+              "type": "array",
+              "items": {
+                "enum": [
+                  "day",
+                  "project_id",
+                  "event_type",
+                  "tier"
+                ],
+                "type": "string"
+              },
+              "minItems": 1,
+              "description": "Dimensions to group by: day, project_id, event_type, tier.",
+              "title": "Group By"
             },
-            "description": "Number of items per page"
+            "description": "Dimensions to group by: day, project_id, event_type, tier."
           },
           {
-            "name": "page_token",
+            "name": "organization_id",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Token for pagination",
-              "title": "Page Token"
-            },
-            "description": "Token for pagination"
-          },
-          {
-            "name": "include_total",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "description": "Include total count in response",
-              "default": false,
-              "title": "Include Total"
-            },
-            "description": "Include total count in response"
+              "type": "string",
+              "format": "uuid",
+              "title": "Organization Id"
+            }
           },
           {
             "name": "project_id",
@@ -12869,6 +12852,110 @@
             "description": "Filter by credits consumed greater than or equal to this value"
           },
           {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsageMetricAggregateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/beta/usage-metrics": {
+      "get": {
+        "tags": [
+          "Beta",
+          "Usage Metrics"
+        ],
+        "summary": "List Usage Metrics",
+        "description": "List usage metrics with filtering and pagination.",
+        "operationId": "list_usage_metrics_api_v1_beta_usage_metrics_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Number of items per page",
+              "title": "Page Size"
+            },
+            "description": "Number of items per page"
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Token for pagination",
+              "title": "Page Token"
+            },
+            "description": "Token for pagination"
+          },
+          {
+            "name": "include_total",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Include total count in response",
+              "default": false,
+              "title": "Include Total"
+            },
+            "description": "Include total count in response"
+          },
+          {
             "name": "organization_id",
             "in": "query",
             "required": true,
@@ -12877,6 +12964,175 @@
               "format": "uuid",
               "title": "Organization Id"
             }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by project ID",
+              "title": "Project Id"
+            },
+            "description": "Filter by project ID"
+          },
+          {
+            "name": "user_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by user ID",
+              "title": "User Id"
+            },
+            "description": "Filter by user ID"
+          },
+          {
+            "name": "event_types",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by event types",
+              "title": "Event Types"
+            },
+            "description": "Filter by event types"
+          },
+          {
+            "name": "days",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by specific days (YYYY-MM-DD)",
+              "title": "Days"
+            },
+            "description": "Filter by specific days (YYYY-MM-DD)"
+          },
+          {
+            "name": "day_on_or_before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by days on or before this date (YYYY-MM-DD)",
+              "title": "Day On Or Before"
+            },
+            "description": "Filter by days on or before this date (YYYY-MM-DD)"
+          },
+          {
+            "name": "day_on_or_after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by days on or after this date (YYYY-MM-DD)",
+              "title": "Day On Or After"
+            },
+            "description": "Filter by days on or after this date (YYYY-MM-DD)"
+          },
+          {
+            "name": "event_aggregation_type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by event aggregation type",
+              "title": "Event Aggregation Type"
+            },
+            "description": "Filter by event aggregation type"
+          },
+          {
+            "name": "event_aggregation_key",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by event aggregation key",
+              "title": "Event Aggregation Key"
+            },
+            "description": "Filter by event aggregation key"
+          },
+          {
+            "name": "credits_consumed_greater_than_or_equal",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by credits consumed greater than or equal to this value",
+              "title": "Credits Consumed Greater Than Or Equal"
+            },
+            "description": "Filter by credits consumed greater than or equal to this value"
           },
           {
             "name": "session",
@@ -22895,9 +23151,9 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-07-15",
                   "2026-07-08",
                   "2026-06-26",
-                  "2026-06-18",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -22910,7 +23166,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-06-26`\n- `agentic`: `2026-06-18`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-06-26`\n- `agentic`: `2026-07-15`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -24393,7 +24649,7 @@
             "title": "High Res Ocr",
             "default": false
           },
-          "confidence_scores": {
+          "confidence_score_effort": {
             "anyOf": [
               {
                 "type": "string"
@@ -24402,7 +24658,7 @@
                 "type": "null"
               }
             ],
-            "title": "Confidence Scores"
+            "title": "Confidence Score Effort"
           },
           "html_make_all_elements_visible": {
             "anyOf": [
@@ -38600,7 +38856,7 @@
             "title": "High Res Ocr",
             "default": false
           },
-          "confidence_scores": {
+          "confidence_score_effort": {
             "anyOf": [
               {
                 "type": "string"
@@ -38609,7 +38865,7 @@
                 "type": "null"
               }
             ],
-            "title": "Confidence Scores"
+            "title": "Confidence Score Effort"
           },
           "html_make_all_elements_visible": {
             "anyOf": [
@@ -39773,23 +40029,20 @@
             "title": "Aggressive Table Extraction",
             "description": "Use aggressive heuristics to detect table boundaries, even without visible borders. Useful for documents with borderless or complex tables"
           },
-          "confidence_scores": {
+          "confidence_score_effort": {
             "anyOf": [
               {
                 "type": "string",
-                "enum": [
-                  "default",
-                  "verified"
-                ]
+                "const": "high"
               },
               {
                 "type": "null"
               }
             ],
-            "title": "Confidence Scores",
-            "description": "Confidence scoring mode. 'default': standard scoring. 'verified': more accurate assessment of the parsing quality of every page, plus a document-level score in the result metadata; costs an additional 5 credits per page",
+            "title": "Confidence Score Effort",
+            "description": "Confidence scoring effort. Omit for standard scoring. 'high': more accurate assessment of the parsing quality of every page, plus a document-level score in the result metadata; costs an additional 5 credits per page",
             "examples": [
-              "verified"
+              "high"
             ]
           },
           "disable_heuristics": {
@@ -41951,9 +42204,9 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-07-15",
                   "2026-07-08",
                   "2026-06-26",
-                  "2026-06-18",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -41963,7 +42216,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-06-26`\n- `agentic`: `2026-06-18`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-06-26`\n- `agentic`: `2026-07-15`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -42288,9 +42541,9 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-07-15",
                   "2026-07-08",
                   "2026-06-26",
-                  "2026-06-18",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -42300,7 +42553,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-06-26`\n- `agentic`: `2026-06-18`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-06-26`\n- `agentic`: `2026-07-15`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -42459,6 +42712,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-07-15",
                 "2026-06-18",
                 "2026-06-11",
                 "2026-06-04",
@@ -48203,14 +48457,15 @@
               "chart_parsing_plus",
               "chart_parsing_efficient",
               "image_classified",
-              "verified_confidence_score",
               "precise_bbox_extraction",
               "audio_seconds_parsed",
               "form_parsing_pages",
+              "confidence_score_high",
               "extraction_num_pages",
               "extraction_num_pages_parsed",
               "pages_split",
               "pages_classified",
+              "pages_verified",
               "directory_file_count_snapshot",
               "directory_count_snapshot",
               "stored_file_count",
@@ -48302,6 +48557,75 @@
         ],
         "title": "UsageMetric",
         "description": "API boundary representation of a usage metric."
+      },
+      "UsageMetricAggregateBucket": {
+        "properties": {
+          "dimensions": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Dimensions",
+            "description": "Values defining this group"
+          },
+          "total_credits": {
+            "type": "number",
+            "title": "Total Credits",
+            "description": "Credits consumed in this group"
+          },
+          "total_value": {
+            "type": "integer",
+            "title": "Total Value",
+            "description": "Metric units in this group"
+          },
+          "metric_count": {
+            "type": "integer",
+            "title": "Metric Count",
+            "description": "Usage records in this group"
+          }
+        },
+        "type": "object",
+        "required": [
+          "dimensions",
+          "total_credits",
+          "total_value",
+          "metric_count"
+        ],
+        "title": "UsageMetricAggregateBucket",
+        "description": "A group of usage metric totals."
+      },
+      "UsageMetricAggregateResponse": {
+        "properties": {
+          "group_by": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "day",
+                "project_id",
+                "event_type",
+                "tier"
+              ]
+            },
+            "type": "array",
+            "title": "Group By",
+            "description": "Dimensions used to group metrics"
+          },
+          "buckets": {
+            "items": {
+              "$ref": "#/components/schemas/UsageMetricAggregateBucket"
+            },
+            "type": "array",
+            "title": "Buckets",
+            "description": "Aggregated metric groups"
+          }
+        },
+        "type": "object",
+        "required": [
+          "group_by",
+          "buckets"
+        ],
+        "title": "UsageMetricAggregateResponse",
+        "description": "Usage metrics aggregated by the requested dimensions."
       },
       "UsageMetricQueryResponse": {
         "properties": {

@@ -5,18 +5,12 @@ namespace LlamaParse
     public partial interface IBetaClient
     {
         /// <summary>
-        /// List Usage Metrics<br/>
-        /// List usage metrics with filtering and pagination.
+        /// Aggregate Usage Metrics<br/>
+        /// Aggregate usage metrics using the same filters as the regular list endpoint.<br/>
+        /// The authenticated organization is always applied as a filter.
         /// </summary>
-        /// <param name="pageSize">
-        /// Number of items per page
-        /// </param>
-        /// <param name="pageToken">
-        /// Token for pagination
-        /// </param>
-        /// <param name="includeTotal">
-        /// Include total count in response<br/>
-        /// Default Value: false
+        /// <param name="groupBy">
+        /// Dimensions to group by: day, project_id, event_type, tier.
         /// </param>
         /// <param name="organizationId"></param>
         /// <param name="projectId">
@@ -50,11 +44,9 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.UsageMetricQueryResponse> ListUsageMetricsApiV1BetaUsageMetricsGetAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.UsageMetricAggregateResponse> AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetAsync(
+            global::System.Collections.Generic.IList<global::LlamaParse.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItem> groupBy,
             global::System.Guid organizationId,
-            int? pageSize = default,
-            string? pageToken = default,
-            bool? includeTotal = default,
             global::System.Guid? projectId = default,
             string? userId = default,
             global::System.Collections.Generic.IList<string>? eventTypes = default,
@@ -68,18 +60,12 @@ namespace LlamaParse
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List Usage Metrics<br/>
-        /// List usage metrics with filtering and pagination.
+        /// Aggregate Usage Metrics<br/>
+        /// Aggregate usage metrics using the same filters as the regular list endpoint.<br/>
+        /// The authenticated organization is always applied as a filter.
         /// </summary>
-        /// <param name="pageSize">
-        /// Number of items per page
-        /// </param>
-        /// <param name="pageToken">
-        /// Token for pagination
-        /// </param>
-        /// <param name="includeTotal">
-        /// Include total count in response<br/>
-        /// Default Value: false
+        /// <param name="groupBy">
+        /// Dimensions to group by: day, project_id, event_type, tier.
         /// </param>
         /// <param name="organizationId"></param>
         /// <param name="projectId">
@@ -113,11 +99,9 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.UsageMetricQueryResponse>> ListUsageMetricsApiV1BetaUsageMetricsGetAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.UsageMetricAggregateResponse>> AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetAsResponseAsync(
+            global::System.Collections.Generic.IList<global::LlamaParse.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItem> groupBy,
             global::System.Guid organizationId,
-            int? pageSize = default,
-            string? pageToken = default,
-            bool? includeTotal = default,
             global::System.Guid? projectId = default,
             string? userId = default,
             global::System.Collections.Generic.IList<string>? eventTypes = default,
