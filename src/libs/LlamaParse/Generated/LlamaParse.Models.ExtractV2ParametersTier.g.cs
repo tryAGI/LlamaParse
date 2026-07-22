@@ -4,17 +4,21 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Extract tier: cost_effective (5 credits/page) or agentic (15 credits/page)<br/>
+    /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)<br/>
     /// Default Value: cost_effective
     /// </summary>
     public enum ExtractV2ParametersTier
     {
         /// <summary>
-        /// cost_effective (5 credits/page) or agentic (15 credits/page)
+        /// cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)
         /// </summary>
         Agentic,
         /// <summary>
-        /// cost_effective (5 credits/page) or agentic (15 credits/page)
+        /// cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)
+        /// </summary>
+        AgenticPlus,
+        /// <summary>
+        /// cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)
         /// </summary>
         CostEffective,
     }
@@ -32,6 +36,7 @@ namespace LlamaParse
             return value switch
             {
                 ExtractV2ParametersTier.Agentic => "agentic",
+                ExtractV2ParametersTier.AgenticPlus => "agentic_plus",
                 ExtractV2ParametersTier.CostEffective => "cost_effective",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -44,6 +49,7 @@ namespace LlamaParse
             return value switch
             {
                 "agentic" => ExtractV2ParametersTier.Agentic,
+                "agentic_plus" => ExtractV2ParametersTier.AgenticPlus,
                 "cost_effective" => ExtractV2ParametersTier.CostEffective,
                 _ => null,
             };

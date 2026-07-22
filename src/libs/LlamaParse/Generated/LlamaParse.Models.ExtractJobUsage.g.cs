@@ -15,6 +15,12 @@ namespace LlamaParse
         public int? NumPagesExtracted { get; set; }
 
         /// <summary>
+        /// Number of effective pages billed
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_pages_billed")]
+        public int? NumPagesBilled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -26,13 +32,18 @@ namespace LlamaParse
         /// <param name="numPagesExtracted">
         /// Number of pages extracted
         /// </param>
+        /// <param name="numPagesBilled">
+        /// Number of effective pages billed
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExtractJobUsage(
-            int? numPagesExtracted)
+            int? numPagesExtracted,
+            int? numPagesBilled)
         {
             this.NumPagesExtracted = numPagesExtracted;
+            this.NumPagesBilled = numPagesBilled;
         }
 
         /// <summary>

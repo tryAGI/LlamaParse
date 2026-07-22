@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Influences how likely similar-looking regions are merged into a single table. Useful for spreadsheets that either have sparse tables (strong merging) or many distinct tables close together (weak merging).<br/>
+    /// Deprecated: controlled by `tier`. Influences how likely similar-looking regions are merged into a single table. Honored only on `agentic`.<br/>
     /// Default Value: strong
     /// </summary>
     public enum SpreadsheetV1ParametersTableMergeSensitivity

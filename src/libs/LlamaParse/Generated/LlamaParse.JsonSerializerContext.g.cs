@@ -409,6 +409,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierNullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter),
@@ -416,6 +420,10 @@ namespace LlamaParse
             typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeNullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierNullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityJsonConverter),
 
@@ -1742,6 +1750,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierNullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter),
@@ -1749,6 +1761,10 @@ namespace LlamaParse
             typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeNullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierNullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityJsonConverter),
 
@@ -2308,8 +2324,10 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.WorksheetMetadata>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WorksheetMetadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetJobCreate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetParsingConfigTier), TypeInfoPropertyName = "SpreadsheetParsingConfigTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetParsingConfigTableMergeSensitivity), TypeInfoPropertyName = "SpreadsheetParsingConfigTableMergeSensitivity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetResultType), TypeInfoPropertyName = "SpreadsheetResultType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTier), TypeInfoPropertyName = "SpreadsheetV1ParametersTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity), TypeInfoPropertyName = "SpreadsheetV1ParametersTableMergeSensitivity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.AttachmentRef>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Usage))]
@@ -2527,8 +2545,10 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitJobResponseDocumentInputType?), TypeInfoPropertyName = "NullableSplitJobResponseDocumentInputType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized?), TypeInfoPropertyName = "NullableSplitStrategyAllowUncategorized2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetJobStatus?), TypeInfoPropertyName = "NullableSpreadsheetJobStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetParsingConfigTier?), TypeInfoPropertyName = "NullableSpreadsheetParsingConfigTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetParsingConfigTableMergeSensitivity?), TypeInfoPropertyName = "NullableSpreadsheetParsingConfigTableMergeSensitivity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetResultType?), TypeInfoPropertyName = "NullableSpreadsheetResultType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTier?), TypeInfoPropertyName = "NullableSpreadsheetV1ParametersTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity?), TypeInfoPropertyName = "NullableSpreadsheetV1ParametersTableMergeSensitivity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.StructuredResultPage, global::LlamaParse.FailedStructuredPage>?), TypeInfoPropertyName = "NullableAnyOfStructuredResultPageFailedStructuredPage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ItemsItem7?), TypeInfoPropertyName = "NullableItemsItem72")]
@@ -2664,10 +2684,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.PipelineDataSourceCreate>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.PipelineFileCreate>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.CloudDocumentCreate>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item>))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -3075,6 +3091,10 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter),
 
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierNullableJsonConverter),
+
             typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter),
@@ -3082,6 +3102,10 @@ namespace LlamaParse
             typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeNullableJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierJsonConverter),
+
+            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierNullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityJsonConverter),
 
@@ -3509,6 +3533,10 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>?), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_d9f8945237261e89")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>?), TypeInfoPropertyName = "CloudBoxDataSource_ee99e0e6ec633008")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>?), TypeInfoPropertyName = "CloudBoxDataSource_object_dfe1806971be6576")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.CloudDocumentCreate>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.DataSink>))]
@@ -3768,10 +3796,14 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetJobStatusJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetResultTypeJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetResultTypeNullableJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.StatusEnumJsonConverter());

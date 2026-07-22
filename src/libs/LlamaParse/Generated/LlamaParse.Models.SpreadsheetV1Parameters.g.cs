@@ -9,6 +9,14 @@ namespace LlamaParse
     public sealed partial class SpreadsheetV1Parameters
     {
         /// <summary>
+        /// Spreadsheet extraction tier. `cost_effective` uses the rule-based/ML-only pipeline; `agentic` uses the full pipeline.<br/>
+        /// Default Value: agentic
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierJsonConverter))]
+        public global::LlamaParse.SpreadsheetV1ParametersTier? Tier { get; set; }
+
+        /// <summary>
         /// The names of the sheets to extract regions from. If empty, all sheets will be processed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sheet_names")]
@@ -28,14 +36,14 @@ namespace LlamaParse
         public string? ExtractionRange { get; set; }
 
         /// <summary>
-        /// Whether to generate additional metadata (title, description) for each extracted region.<br/>
+        /// Deprecated: controlled by `tier`. Whether to generate additional metadata (title, description) for each extracted region. Honored only on `agentic`.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generate_additional_metadata")]
         public bool? GenerateAdditionalMetadata { get; set; }
 
         /// <summary>
-        /// Enables experimental processing. Accuracy may be impacted.<br/>
+        /// Deprecated: controlled by `tier`. Enables experimental processing. Honored only on `agentic`.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_experimental_processing")]
@@ -49,7 +57,7 @@ namespace LlamaParse
         public bool? FlattenHierarchicalTables { get; set; }
 
         /// <summary>
-        /// Influences how likely similar-looking regions are merged into a single table. Useful for spreadsheets that either have sparse tables (strong merging) or many distinct tables close together (weak merging).<br/>
+        /// Deprecated: controlled by `tier`. Influences how likely similar-looking regions are merged into a single table. Honored only on `agentic`.<br/>
         /// Default Value: strong
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("table_merge_sensitivity")]
@@ -57,7 +65,7 @@ namespace LlamaParse
         public global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity? TableMergeSensitivity { get; set; }
 
         /// <summary>
-        /// Optional specialization mode for domain-specific extraction. Supported values: 'financial-standard', 'financial-enhanced', 'financial-precise'. Default None uses the general-purpose pipeline.
+        /// Deprecated: controlled by `tier`. Optional specialization mode for domain-specific extraction. Supported values: 'financial-standard', 'financial-enhanced', 'financial-precise'. Default None uses the general-purpose pipeline. Honored only on `agentic`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("specialization")]
         public string? Specialization { get; set; }
@@ -78,6 +86,10 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="SpreadsheetV1Parameters" /> class.
         /// </summary>
+        /// <param name="tier">
+        /// Spreadsheet extraction tier. `cost_effective` uses the rule-based/ML-only pipeline; `agentic` uses the full pipeline.<br/>
+        /// Default Value: agentic
+        /// </param>
         /// <param name="sheetNames">
         /// The names of the sheets to extract regions from. If empty, all sheets will be processed.
         /// </param>
@@ -89,11 +101,11 @@ namespace LlamaParse
         /// A1 notation of the range to extract a single region from. If None, the entire sheet is used.
         /// </param>
         /// <param name="generateAdditionalMetadata">
-        /// Whether to generate additional metadata (title, description) for each extracted region.<br/>
+        /// Deprecated: controlled by `tier`. Whether to generate additional metadata (title, description) for each extracted region. Honored only on `agentic`.<br/>
         /// Default Value: true
         /// </param>
         /// <param name="useExperimentalProcessing">
-        /// Enables experimental processing. Accuracy may be impacted.<br/>
+        /// Deprecated: controlled by `tier`. Enables experimental processing. Honored only on `agentic`.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="flattenHierarchicalTables">
@@ -101,11 +113,11 @@ namespace LlamaParse
         /// Default Value: false
         /// </param>
         /// <param name="tableMergeSensitivity">
-        /// Influences how likely similar-looking regions are merged into a single table. Useful for spreadsheets that either have sparse tables (strong merging) or many distinct tables close together (weak merging).<br/>
+        /// Deprecated: controlled by `tier`. Influences how likely similar-looking regions are merged into a single table. Honored only on `agentic`.<br/>
         /// Default Value: strong
         /// </param>
         /// <param name="specialization">
-        /// Optional specialization mode for domain-specific extraction. Supported values: 'financial-standard', 'financial-enhanced', 'financial-precise'. Default None uses the general-purpose pipeline.
+        /// Deprecated: controlled by `tier`. Optional specialization mode for domain-specific extraction. Supported values: 'financial-standard', 'financial-enhanced', 'financial-precise'. Default None uses the general-purpose pipeline. Honored only on `agentic`.
         /// </param>
         /// <param name="productType">
         /// Product type.
@@ -114,6 +126,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SpreadsheetV1Parameters(
+            global::LlamaParse.SpreadsheetV1ParametersTier? tier,
             global::System.Collections.Generic.IList<string>? sheetNames,
             bool? includeHiddenCells,
             string? extractionRange,
@@ -124,6 +137,7 @@ namespace LlamaParse
             string? specialization,
             string productType = "spreadsheet_v1")
         {
+            this.Tier = tier;
             this.SheetNames = sheetNames;
             this.IncludeHiddenCells = includeHiddenCells;
             this.ExtractionRange = extractionRange;

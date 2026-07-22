@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Optional specialization mode for domain-specific extraction. Supported values: 'financial-standard', 'financial-enhanced', 'financial-precise'. Default None uses the general-purpose pipeline.
+    /// Deprecated: controlled by `tier`. Optional specialization mode for domain-specific extraction. Supported values: 'financial-standard', 'financial-enhanced', 'financial-precise'. Default None uses the general-purpose pipeline. Honored only on `agentic`.
     /// </summary>
     public sealed partial class SpreadsheetParsingConfigSpecialization
     {
