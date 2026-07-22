@@ -21,7 +21,7 @@ namespace LlamaParse
         public int? MaxPages { get; set; }
 
         /// <summary>
-        /// Extract tier: cost_effective (5 credits/page) or agentic (15 credits/page)<br/>
+        /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)<br/>
         /// Default Value: cost_effective
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
@@ -108,7 +108,7 @@ namespace LlamaParse
         /// Maximum number of pages to process. Omit for no limit.
         /// </param>
         /// <param name="tier">
-        /// Extract tier: cost_effective (5 credits/page) or agentic (15 credits/page)<br/>
+        /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)<br/>
         /// Default Value: cost_effective
         /// </param>
         /// <param name="version">

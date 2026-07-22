@@ -32294,14 +32294,16 @@
             "type": "string",
             "enum": [
               "cost_effective",
-              "agentic"
+              "agentic",
+              "agentic_plus"
             ],
             "title": "Tier",
-            "description": "Extract tier: cost_effective (5 credits/page) or agentic (15 credits/page)",
+            "description": "Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)",
             "default": "cost_effective",
             "examples": [
               "cost_effective",
-              "agentic"
+              "agentic",
+              "agentic_plus"
             ]
           },
           "version": {
@@ -32757,6 +32759,18 @@
             ],
             "title": "Num Pages Extracted",
             "description": "Number of pages extracted"
+          },
+          "num_pages_billed": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Num Pages Billed",
+            "description": "Number of effective pages billed"
           }
         },
         "type": "object",
@@ -33909,14 +33923,16 @@
             "type": "string",
             "enum": [
               "cost_effective",
-              "agentic"
+              "agentic",
+              "agentic_plus"
             ],
             "title": "Tier",
-            "description": "Extract tier: cost_effective (5 credits/page) or agentic (15 credits/page)",
+            "description": "Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)",
             "default": "cost_effective",
             "examples": [
               "cost_effective",
-              "agentic"
+              "agentic",
+              "agentic_plus"
             ]
           },
           "version": {
@@ -46568,7 +46584,7 @@
               "$ref": "#/components/schemas/SplitCategory"
             },
             "type": "array",
-            "maxItems": 50,
+            "maxItems": 500,
             "minItems": 1,
             "title": "Categories",
             "description": "Categories to split documents into."
@@ -47122,7 +47138,7 @@
               "$ref": "#/components/schemas/SplitCategory"
             },
             "type": "array",
-            "maxItems": 50,
+            "maxItems": 500,
             "minItems": 1,
             "title": "Categories",
             "description": "Categories to split documents into."
@@ -47400,6 +47416,16 @@
       },
       "SpreadsheetParsingConfig": {
         "properties": {
+          "tier": {
+            "type": "string",
+            "enum": [
+              "cost_effective",
+              "agentic"
+            ],
+            "title": "Tier",
+            "description": "Spreadsheet extraction tier. `cost_effective` uses the rule-based/ML-only pipeline; `agentic` uses the full pipeline.",
+            "default": "agentic"
+          },
           "sheet_names": {
             "anyOf": [
               {
@@ -47436,13 +47462,13 @@
           "generate_additional_metadata": {
             "type": "boolean",
             "title": "Generate Additional Metadata",
-            "description": "Whether to generate additional metadata (title, description) for each extracted region.",
+            "description": "Deprecated: controlled by `tier`. Whether to generate additional metadata (title, description) for each extracted region. Honored only on `agentic`.",
             "default": true
           },
           "use_experimental_processing": {
             "type": "boolean",
             "title": "Use Experimental Processing",
-            "description": "Enables experimental processing. Accuracy may be impacted.",
+            "description": "Deprecated: controlled by `tier`. Enables experimental processing. Honored only on `agentic`.",
             "default": false
           },
           "flatten_hierarchical_tables": {
@@ -47458,7 +47484,7 @@
               "weak"
             ],
             "title": "Table Merge Sensitivity",
-            "description": "Influences how likely similar-looking regions are merged into a single table. Useful for spreadsheets that either have sparse tables (strong merging) or many distinct tables close together (weak merging).",
+            "description": "Deprecated: controlled by `tier`. Influences how likely similar-looking regions are merged into a single table. Honored only on `agentic`.",
             "default": "strong"
           },
           "specialization": {
@@ -47471,7 +47497,7 @@
               }
             ],
             "title": "Specialization",
-            "description": "Optional specialization mode for domain-specific extraction. Supported values: 'financial-standard', 'financial-enhanced', 'financial-precise'. Default None uses the general-purpose pipeline."
+            "description": "Deprecated: controlled by `tier`. Optional specialization mode for domain-specific extraction. Supported values: 'financial-standard', 'financial-enhanced', 'financial-precise'. Default None uses the general-purpose pipeline. Honored only on `agentic`."
           }
         },
         "type": "object",
@@ -47489,6 +47515,16 @@
       },
       "SpreadsheetV1Parameters": {
         "properties": {
+          "tier": {
+            "type": "string",
+            "enum": [
+              "cost_effective",
+              "agentic"
+            ],
+            "title": "Tier",
+            "description": "Spreadsheet extraction tier. `cost_effective` uses the rule-based/ML-only pipeline; `agentic` uses the full pipeline.",
+            "default": "agentic"
+          },
           "sheet_names": {
             "anyOf": [
               {
@@ -47525,13 +47561,13 @@
           "generate_additional_metadata": {
             "type": "boolean",
             "title": "Generate Additional Metadata",
-            "description": "Whether to generate additional metadata (title, description) for each extracted region.",
+            "description": "Deprecated: controlled by `tier`. Whether to generate additional metadata (title, description) for each extracted region. Honored only on `agentic`.",
             "default": true
           },
           "use_experimental_processing": {
             "type": "boolean",
             "title": "Use Experimental Processing",
-            "description": "Enables experimental processing. Accuracy may be impacted.",
+            "description": "Deprecated: controlled by `tier`. Enables experimental processing. Honored only on `agentic`.",
             "default": false
           },
           "flatten_hierarchical_tables": {
@@ -47547,7 +47583,7 @@
               "weak"
             ],
             "title": "Table Merge Sensitivity",
-            "description": "Influences how likely similar-looking regions are merged into a single table. Useful for spreadsheets that either have sparse tables (strong merging) or many distinct tables close together (weak merging).",
+            "description": "Deprecated: controlled by `tier`. Influences how likely similar-looking regions are merged into a single table. Honored only on `agentic`.",
             "default": "strong"
           },
           "specialization": {
@@ -47560,7 +47596,7 @@
               }
             ],
             "title": "Specialization",
-            "description": "Optional specialization mode for domain-specific extraction. Supported values: 'financial-standard', 'financial-enhanced', 'financial-precise'. Default None uses the general-purpose pipeline."
+            "description": "Deprecated: controlled by `tier`. Optional specialization mode for domain-specific extraction. Supported values: 'financial-standard', 'financial-enhanced', 'financial-precise'. Default None uses the general-purpose pipeline. Honored only on `agentic`."
           },
           "product_type": {
             "type": "string",
@@ -48463,6 +48499,7 @@
               "confidence_score_high",
               "extraction_num_pages",
               "extraction_num_pages_parsed",
+              "spreadsheet_regions_extracted",
               "pages_split",
               "pages_classified",
               "pages_verified",

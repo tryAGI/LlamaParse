@@ -123,6 +123,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        SpreadsheetRegionsExtracted,
+        /// <summary>
+        /// 
+        /// </summary>
         StoredFileCount,
         /// <summary>
         /// 
@@ -170,6 +174,7 @@ namespace LlamaParse
                 UsageMetricEventType.PreciseBboxExtraction => "precise_bbox_extraction",
                 UsageMetricEventType.SetTotalIndexes => "set_total_indexes",
                 UsageMetricEventType.SetTotalPagesIndexed => "set_total_pages_indexed",
+                UsageMetricEventType.SpreadsheetRegionsExtracted => "spreadsheet_regions_extracted",
                 UsageMetricEventType.StoredFileCount => "stored_file_count",
                 UsageMetricEventType.StoredFileMb => "stored_file_mb",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -210,6 +215,7 @@ namespace LlamaParse
                 "precise_bbox_extraction" => UsageMetricEventType.PreciseBboxExtraction,
                 "set_total_indexes" => UsageMetricEventType.SetTotalIndexes,
                 "set_total_pages_indexed" => UsageMetricEventType.SetTotalPagesIndexed,
+                "spreadsheet_regions_extracted" => UsageMetricEventType.SpreadsheetRegionsExtracted,
                 "stored_file_count" => UsageMetricEventType.StoredFileCount,
                 "stored_file_mb" => UsageMetricEventType.StoredFileMb,
                 _ => null,
