@@ -69,6 +69,9 @@ namespace LlamaParse
         /// <param name="configuration">
         /// Inline configuration
         /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </param>
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
         /// </param>
@@ -85,6 +88,7 @@ namespace LlamaParse
             string? session = default,
             string? configurationId = default,
             global::LlamaParse.SpreadsheetParsingConfig? configuration = default,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds = default,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

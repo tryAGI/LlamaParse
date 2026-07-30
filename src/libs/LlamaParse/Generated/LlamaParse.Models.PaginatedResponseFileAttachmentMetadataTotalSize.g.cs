@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Parse tier to use before extraction. Defaults to the extract tier if not specified. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
+    /// The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only.
     /// </summary>
-    public sealed partial class ExtractConfigurationParseTier
+    public sealed partial class PaginatedResponseFileAttachmentMetadataTotalSize
     {
 
         /// <summary>

@@ -15,6 +15,12 @@ namespace LlamaParse
         public string? TransactionId { get; set; }
 
         /// <summary>
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configuration_ids")]
+        public global::System.Collections.Generic.IList<string>? WebhookConfigurationIds { get; set; }
+
+        /// <summary>
         /// Outbound webhook endpoints to notify on job status changes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configurations")]
@@ -54,6 +60,9 @@ namespace LlamaParse
         /// <param name="transactionId">
         /// Idempotency key scoped to the project. Reusing a key returns the original job; the new request body is ignored.
         /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </param>
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
         /// </param>
@@ -69,11 +78,13 @@ namespace LlamaParse
         public SplitCreateRequest(
             string fileInput,
             string? transactionId,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations,
             string? configurationId,
             global::LlamaParse.SplitConfiguration? configuration)
         {
             this.TransactionId = transactionId;
+            this.WebhookConfigurationIds = webhookConfigurationIds;
             this.WebhookConfigurations = webhookConfigurations;
             this.ConfigurationId = configurationId;
             this.Configuration = configuration;

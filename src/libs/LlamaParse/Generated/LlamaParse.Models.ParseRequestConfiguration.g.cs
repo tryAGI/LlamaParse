@@ -17,6 +17,12 @@ namespace LlamaParse
         public global::System.Collections.Generic.Dictionary<string, string>? UserMetadata { get; set; }
 
         /// <summary>
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configuration_ids")]
+        public global::System.Collections.Generic.IList<string>? WebhookConfigurationIds { get; set; }
+
+        /// <summary>
         /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
@@ -67,12 +73,6 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configurations")]
         public global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? WebhookConfigurations { get; set; }
-
-        /// <summary>
-        /// IDs of saved webhook configurations to notify for this job.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configuration_ids")]
-        public global::System.Collections.Generic.IList<string>? WebhookConfigurationIds { get; set; }
 
         /// <summary>
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
@@ -158,6 +158,9 @@ namespace LlamaParse
         /// <param name="userMetadata">
         /// Arbitrary key/value tags to attach to this job. Returned when retrieving the job. Not searchable. Limits apply to the number of entries and the length of keys and values; oversized metadata is rejected.
         /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </param>
         /// <param name="clientName">
         /// Identifier for the client/application making the request. Used for analytics and debugging. Example: 'my-app-v2'
         /// </param>
@@ -172,9 +175,6 @@ namespace LlamaParse
         /// </param>
         /// <param name="webhookConfigurations">
         /// Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services
-        /// </param>
-        /// <param name="webhookConfigurationIds">
-        /// IDs of saved webhook configurations to notify for this job.
         /// </param>
         /// <param name="inputOptions">
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
@@ -213,12 +213,12 @@ namespace LlamaParse
             global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string> tier,
             global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationVersion?, string> version,
             global::System.Collections.Generic.Dictionary<string, string>? userMetadata,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
             string? clientName,
             global::LlamaParse.LlamaParseProcessingOptions? processingOptions,
             global::LlamaParse.LlamaParseFastOptions? fastOptions,
             global::LlamaParse.LlamaParseAgenticOptions? agenticOptions,
             global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? webhookConfigurations,
-            global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
             global::LlamaParse.LlamaParseInputOptions? inputOptions,
             global::LlamaParse.LlamaParseCropBox? cropBox,
             global::LlamaParse.LlamaParsePageRanges? pageRanges,
@@ -231,6 +231,7 @@ namespace LlamaParse
             string? httpProxy)
         {
             this.UserMetadata = userMetadata;
+            this.WebhookConfigurationIds = webhookConfigurationIds;
             this.Tier = tier;
             this.Version = version;
             this.ClientName = clientName;
@@ -238,7 +239,6 @@ namespace LlamaParse
             this.FastOptions = fastOptions;
             this.AgenticOptions = agenticOptions;
             this.WebhookConfigurations = webhookConfigurations;
-            this.WebhookConfigurationIds = webhookConfigurationIds;
             this.InputOptions = inputOptions;
             this.CropBox = cropBox;
             this.PageRanges = pageRanges;

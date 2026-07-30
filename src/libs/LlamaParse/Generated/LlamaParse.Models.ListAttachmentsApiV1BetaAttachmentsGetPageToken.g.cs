@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Parse tier to use before extraction. Defaults to the extract tier if not specified. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
+    /// 
     /// </summary>
-    public sealed partial class ExtractConfigurationParseTier
+    public sealed partial class ListAttachmentsApiV1BetaAttachmentsGetPageToken
     {
 
         /// <summary>

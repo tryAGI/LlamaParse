@@ -52,6 +52,9 @@ namespace LlamaParse
         /// <param name="transactionId">
         /// Idempotency key scoped to the project. Reusing a key returns the original job; the new request body is ignored.
         /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </param>
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
         /// </param>
@@ -73,6 +76,7 @@ namespace LlamaParse
             global::System.Guid? organizationId = default,
             string? session = default,
             string? transactionId = default,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds = default,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,
             string? configurationId = default,
             global::LlamaParse.SplitConfiguration? configuration = default,

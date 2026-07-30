@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Saved parse configuration ID to control how the document is parsed before extraction
+    /// Saved parse configuration ID to control how the document is parsed before extraction. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
     /// </summary>
     public sealed partial class ExtractV2ParametersParseConfigId
     {
