@@ -26,6 +26,12 @@ namespace LlamaParse
         public global::LlamaParse.SpreadsheetParsingConfig? Configuration { get; set; }
 
         /// <summary>
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configuration_ids")]
+        public global::System.Collections.Generic.IList<string>? WebhookConfigurationIds { get; set; }
+
+        /// <summary>
         /// Outbound webhook endpoints to notify on job status changes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configurations")]
@@ -63,6 +69,9 @@ namespace LlamaParse
         /// <param name="configuration">
         /// Inline configuration
         /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </param>
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
         /// </param>
@@ -73,10 +82,12 @@ namespace LlamaParse
             global::System.Guid fileId,
             string? configurationId,
             global::LlamaParse.SpreadsheetParsingConfig? configuration,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations)
         {
             this.ConfigurationId = configurationId;
             this.Configuration = configuration;
+            this.WebhookConfigurationIds = webhookConfigurationIds;
             this.WebhookConfigurations = webhookConfigurations;
             this.FileId = fileId;
         }

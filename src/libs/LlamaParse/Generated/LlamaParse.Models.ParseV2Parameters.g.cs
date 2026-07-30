@@ -12,6 +12,12 @@ namespace LlamaParse
     public sealed partial class ParseV2Parameters
     {
         /// <summary>
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configuration_ids")]
+        public global::System.Collections.Generic.IList<string>? WebhookConfigurationIds { get; set; }
+
+        /// <summary>
         /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
@@ -62,12 +68,6 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configurations")]
         public global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? WebhookConfigurations { get; set; }
-
-        /// <summary>
-        /// IDs of saved webhook configurations to notify for this job.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configuration_ids")]
-        public global::System.Collections.Generic.IList<string>? WebhookConfigurationIds { get; set; }
 
         /// <summary>
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
@@ -133,6 +133,9 @@ namespace LlamaParse
         /// - `agentic_plus`: `2026-07-08`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </param>
         /// <param name="clientName">
         /// Identifier for the client/application making the request. Used for analytics and debugging. Example: 'my-app-v2'
         /// </param>
@@ -147,9 +150,6 @@ namespace LlamaParse
         /// </param>
         /// <param name="webhookConfigurations">
         /// Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services
-        /// </param>
-        /// <param name="webhookConfigurationIds">
-        /// IDs of saved webhook configurations to notify for this job.
         /// </param>
         /// <param name="inputOptions">
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
@@ -178,12 +178,12 @@ namespace LlamaParse
         public ParseV2Parameters(
             global::LlamaParse.ParseV2ParametersTier tier,
             global::LlamaParse.AnyOf<global::LlamaParse.ParseV2ParametersVersion?, string> version,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
             string? clientName,
             global::LlamaParse.LlamaParseProcessingOptions? processingOptions,
             global::LlamaParse.LlamaParseFastOptions? fastOptions,
             global::LlamaParse.LlamaParseAgenticOptions? agenticOptions,
             global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? webhookConfigurations,
-            global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
             global::LlamaParse.LlamaParseInputOptions? inputOptions,
             global::LlamaParse.LlamaParseCropBox? cropBox,
             global::LlamaParse.LlamaParsePageRanges? pageRanges,
@@ -192,6 +192,7 @@ namespace LlamaParse
             global::LlamaParse.LlamaParseProcessingControl? processingControl,
             string productType = "parse_v2")
         {
+            this.WebhookConfigurationIds = webhookConfigurationIds;
             this.Tier = tier;
             this.Version = version;
             this.ClientName = clientName;
@@ -199,7 +200,6 @@ namespace LlamaParse
             this.FastOptions = fastOptions;
             this.AgenticOptions = agenticOptions;
             this.WebhookConfigurations = webhookConfigurations;
-            this.WebhookConfigurationIds = webhookConfigurationIds;
             this.InputOptions = inputOptions;
             this.CropBox = cropBox;
             this.PageRanges = pageRanges;

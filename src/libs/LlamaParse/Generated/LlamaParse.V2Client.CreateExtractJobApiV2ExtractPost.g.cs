@@ -553,6 +553,9 @@ namespace LlamaParse
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </param>
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
         /// </param>
@@ -573,6 +576,7 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds = default,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,
             string? configurationId = default,
             global::LlamaParse.ExtractConfiguration? configuration = default,
@@ -581,6 +585,7 @@ namespace LlamaParse
         {
             var __request = new global::LlamaParse.ExtractV2JobCreate
             {
+                WebhookConfigurationIds = webhookConfigurationIds,
                 WebhookConfigurations = webhookConfigurations,
                 ConfigurationId = configurationId,
                 Configuration = configuration,

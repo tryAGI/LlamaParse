@@ -14640,6 +14640,251 @@
         }
       }
     },
+    "/api/v1/beta/attachments": {
+      "get": {
+        "tags": [
+          "Beta",
+          "File Attachments",
+          "Attachments"
+        ],
+        "summary": "List Attachments",
+        "description": "List the attachments associated with a file (e.g. per-page screenshots).",
+        "operationId": "list_attachments_api_v1_beta_attachments_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "File UUID or directory file ID (dfl-...).",
+              "title": "Source Id"
+            },
+            "description": "File UUID or directory file ID (dfl-...)."
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page Size"
+            }
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page Token"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedResponse_FileAttachmentMetadata_"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/beta/attachments/{attachment_name}": {
+      "get": {
+        "tags": [
+          "Beta",
+          "File Attachments",
+          "Attachments"
+        ],
+        "summary": "Get Attachment",
+        "description": "Return a presigned download URL for a specific attachment.",
+        "operationId": "get_attachment_api_v1_beta_attachments__attachment_name__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "attachment_name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Attachment Name"
+            }
+          },
+          {
+            "name": "source_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "File UUID or directory file ID (dfl-...).",
+              "title": "Source Id"
+            },
+            "description": "File UUID or directory file ID (dfl-...)."
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresignedUrl"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/beta/sheets/jobs": {
       "post": {
         "tags": [
@@ -27645,6 +27890,28 @@
       },
       "ClassifyV2JobCreateRequest": {
         "properties": {
+          "webhook_configuration_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "maxItems": 4
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configuration Ids",
+            "description": "IDs of saved webhook configurations to notify for this job.",
+            "examples": [
+              [
+                "whc-...",
+                "whc-..."
+              ]
+            ]
+          },
           "webhook_configurations": {
             "anyOf": [
               {
@@ -32381,13 +32648,13 @@
           "cite_sources": {
             "type": "boolean",
             "title": "Cite Sources",
-            "description": "Include citations in results",
+            "description": "Include citations in results. Returned under `extract_metadata` (auto-included when set). Text-level on `turbo` (no bounding boxes).",
             "default": false
           },
           "confidence_scores": {
             "type": "boolean",
             "title": "Confidence Scores",
-            "description": "Include confidence scores in results",
+            "description": "Include confidence scores in results. Returned under `extract_metadata` (auto-included when set).",
             "default": false
           },
           "parse_tier": {
@@ -32400,7 +32667,7 @@
               }
             ],
             "title": "Parse Tier",
-            "description": "Parse tier to use before extraction. Defaults to the extract tier if not specified.",
+            "description": "Parse tier to use before extraction. Defaults to the extract tier if not specified. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.",
             "examples": [
               "fast",
               "cost_effective"
@@ -32416,7 +32683,7 @@
               }
             ],
             "title": "Parse Config Id",
-            "description": "Saved parse configuration ID to control how the document is parsed before extraction",
+            "description": "Saved parse configuration ID to control how the document is parsed before extraction. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.",
             "examples": [
               "cfg-11111111-2222-3333-4444-555555555555"
             ]
@@ -33724,6 +33991,28 @@
       },
       "ExtractV2JobCreate": {
         "properties": {
+          "webhook_configuration_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "maxItems": 4
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configuration Ids",
+            "description": "IDs of saved webhook configurations to notify for this job.",
+            "examples": [
+              [
+                "whc-...",
+                "whc-..."
+              ]
+            ]
+          },
           "webhook_configurations": {
             "anyOf": [
               {
@@ -34010,13 +34299,13 @@
           "cite_sources": {
             "type": "boolean",
             "title": "Cite Sources",
-            "description": "Include citations in results",
+            "description": "Include citations in results. Returned under `extract_metadata` (auto-included when set). Text-level on `turbo` (no bounding boxes).",
             "default": false
           },
           "confidence_scores": {
             "type": "boolean",
             "title": "Confidence Scores",
-            "description": "Include confidence scores in results",
+            "description": "Include confidence scores in results. Returned under `extract_metadata` (auto-included when set).",
             "default": false
           },
           "parse_tier": {
@@ -34029,7 +34318,7 @@
               }
             ],
             "title": "Parse Tier",
-            "description": "Parse tier to use before extraction. Defaults to the extract tier if not specified.",
+            "description": "Parse tier to use before extraction. Defaults to the extract tier if not specified. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.",
             "examples": [
               "fast",
               "cost_effective"
@@ -34045,7 +34334,7 @@
               }
             ],
             "title": "Parse Config Id",
-            "description": "Saved parse configuration ID to control how the document is parsed before extraction",
+            "description": "Saved parse configuration ID to control how the document is parsed before extraction. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.",
             "examples": [
               "cfg-11111111-2222-3333-4444-555555555555"
             ]
@@ -34864,6 +35153,41 @@
         ],
         "title": "File",
         "description": "Schema for a file."
+      },
+      "FileAttachmentMetadata": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "Name of the attachment"
+          },
+          "size": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Size",
+            "description": "Size of the attachment in bytes"
+          },
+          "last_modified": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Modified",
+            "description": "When the attachment was last modified"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "size"
+        ],
+        "title": "FileAttachmentMetadata",
+        "description": "Metadata for a single file attachment."
       },
       "FileClassification": {
         "properties": {
@@ -41928,6 +42252,47 @@
         ],
         "title": "PaginatedResponse[ClassifyJob]"
       },
+      "PaginatedResponse_FileAttachmentMetadata_": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/FileAttachmentMetadata"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "PaginatedResponse[FileAttachmentMetadata]"
+      },
       "PaginatedResponse_SpreadsheetJob_": {
         "properties": {
           "items": {
@@ -42195,6 +42560,28 @@
               }
             ]
           },
+          "webhook_configuration_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "maxItems": 4
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configuration Ids",
+            "description": "IDs of saved webhook configurations to notify for this job.",
+            "examples": [
+              [
+                "whc-...",
+                "whc-..."
+              ]
+            ]
+          },
           "tier": {
             "anyOf": [
               {
@@ -42279,28 +42666,6 @@
             "type": "array",
             "title": "Webhook Configurations",
             "description": "Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services"
-          },
-          "webhook_configuration_ids": {
-            "anyOf": [
-              {
-                "items": {
-                  "type": "string"
-                },
-                "type": "array",
-                "maxItems": 4
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Webhook Configuration Ids",
-            "description": "IDs of saved webhook configurations to notify for this job.",
-            "examples": [
-              [
-                "whc-...",
-                "whc-..."
-              ]
-            ]
           },
           "input_options": {
             "$ref": "#/components/schemas/LlamaParseInputOptions",
@@ -42540,6 +42905,28 @@
       },
       "ParseV2Parameters": {
         "properties": {
+          "webhook_configuration_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "maxItems": 4
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configuration Ids",
+            "description": "IDs of saved webhook configurations to notify for this job.",
+            "examples": [
+              [
+                "whc-...",
+                "whc-..."
+              ]
+            ]
+          },
           "tier": {
             "type": "string",
             "enum": [
@@ -42616,28 +43003,6 @@
             "type": "array",
             "title": "Webhook Configurations",
             "description": "Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services"
-          },
-          "webhook_configuration_ids": {
-            "anyOf": [
-              {
-                "items": {
-                  "type": "string"
-                },
-                "type": "array",
-                "maxItems": 4
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Webhook Configuration Ids",
-            "description": "IDs of saved webhook configurations to notify for this job.",
-            "examples": [
-              [
-                "whc-...",
-                "whc-..."
-              ]
-            ]
           },
           "input_options": {
             "$ref": "#/components/schemas/LlamaParseInputOptions",
@@ -46622,6 +46987,28 @@
               "tx-unique-idempotency-key"
             ]
           },
+          "webhook_configuration_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "maxItems": 4
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configuration Ids",
+            "description": "IDs of saved webhook configurations to notify for this job.",
+            "examples": [
+              [
+                "whc-...",
+                "whc-..."
+              ]
+            ]
+          },
           "webhook_configurations": {
             "anyOf": [
               {
@@ -47353,6 +47740,28 @@
               }
             ],
             "description": "Inline configuration"
+          },
+          "webhook_configuration_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "maxItems": 4
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configuration Ids",
+            "description": "IDs of saved webhook configurations to notify for this job.",
+            "examples": [
+              [
+                "whc-...",
+                "whc-..."
+              ]
+            ]
           },
           "webhook_configurations": {
             "anyOf": [

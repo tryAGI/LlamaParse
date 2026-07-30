@@ -57,27 +57,27 @@ namespace LlamaParse
         public string? SystemPrompt { get; set; }
 
         /// <summary>
-        /// Include citations in results<br/>
+        /// Include citations in results. Returned under `extract_metadata` (auto-included when set). Text-level on `turbo` (no bounding boxes).<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cite_sources")]
         public bool? CiteSources { get; set; }
 
         /// <summary>
-        /// Include confidence scores in results<br/>
+        /// Include confidence scores in results. Returned under `extract_metadata` (auto-included when set).<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence_scores")]
         public bool? ConfidenceScores { get; set; }
 
         /// <summary>
-        /// Parse tier to use before extraction. Defaults to the extract tier if not specified.
+        /// Parse tier to use before extraction. Defaults to the extract tier if not specified. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_tier")]
         public string? ParseTier { get; set; }
 
         /// <summary>
-        /// Saved parse configuration ID to control how the document is parsed before extraction
+        /// Saved parse configuration ID to control how the document is parsed before extraction. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_config_id")]
         public string? ParseConfigId { get; set; }
@@ -116,18 +116,18 @@ namespace LlamaParse
         /// Custom system prompt to guide extraction behavior
         /// </param>
         /// <param name="citeSources">
-        /// Include citations in results<br/>
+        /// Include citations in results. Returned under `extract_metadata` (auto-included when set). Text-level on `turbo` (no bounding boxes).<br/>
         /// Default Value: false
         /// </param>
         /// <param name="confidenceScores">
-        /// Include confidence scores in results<br/>
+        /// Include confidence scores in results. Returned under `extract_metadata` (auto-included when set).<br/>
         /// Default Value: false
         /// </param>
         /// <param name="parseTier">
-        /// Parse tier to use before extraction. Defaults to the extract tier if not specified.
+        /// Parse tier to use before extraction. Defaults to the extract tier if not specified. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
         /// </param>
         /// <param name="parseConfigId">
-        /// Saved parse configuration ID to control how the document is parsed before extraction
+        /// Saved parse configuration ID to control how the document is parsed before extraction. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
