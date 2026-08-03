@@ -19,7 +19,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseFileAttachmentMetadata> ListAttachmentsApiV1BetaAttachmentsGetAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.FileAttachmentListResponse> ListAttachmentsApiV1BetaAttachmentsGetAsync(
             string sourceId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
@@ -43,7 +43,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseFileAttachmentMetadata>> ListAttachmentsApiV1BetaAttachmentsGetAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.FileAttachmentListResponse>> ListAttachmentsApiV1BetaAttachmentsGetAsResponseAsync(
             string sourceId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,

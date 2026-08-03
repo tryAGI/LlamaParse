@@ -63,6 +63,12 @@ namespace LlamaParse
         public bool? AnnotateLinks { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("annotate_revisions")]
+        public bool? AnnotateRevisions { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("adaptive_long_table")]
@@ -800,6 +806,7 @@ namespace LlamaParse
         /// <param name="annotateLinks">
         /// Default Value: false
         /// </param>
+        /// <param name="annotateRevisions"></param>
         /// <param name="adaptiveLongTable">
         /// Default Value: false
         /// </param>
@@ -1065,6 +1072,7 @@ namespace LlamaParse
             string? parsingInstruction,
             bool? disableOcr,
             bool? annotateLinks,
+            bool? annotateRevisions,
             bool? adaptiveLongTable,
             bool? compactMarkdownTable,
             bool? disableReconstruction,
@@ -1192,6 +1200,7 @@ namespace LlamaParse
             this.ParsingInstruction = parsingInstruction;
             this.DisableOcr = disableOcr;
             this.AnnotateLinks = annotateLinks;
+            this.AnnotateRevisions = annotateRevisions;
             this.AdaptiveLongTable = adaptiveLongTable;
             this.CompactMarkdownTable = compactMarkdownTable;
             this.DisableReconstruction = disableReconstruction;

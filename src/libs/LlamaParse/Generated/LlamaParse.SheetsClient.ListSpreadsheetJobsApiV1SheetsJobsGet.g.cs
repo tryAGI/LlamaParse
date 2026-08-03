@@ -91,7 +91,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseSpreadsheetJob> ListSpreadsheetJobsApiV1SheetsJobsGetAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.SpreadsheetJobQueryResponse> ListSpreadsheetJobsApiV1SheetsJobsGetAsync(
             bool? includeResults = default,
             global::LlamaParse.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
@@ -154,7 +154,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseSpreadsheetJob>> ListSpreadsheetJobsApiV1SheetsJobsGetAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SpreadsheetJobQueryResponse>> ListSpreadsheetJobsApiV1SheetsJobsGetAsResponseAsync(
             bool? includeResults = default,
             global::LlamaParse.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
@@ -523,9 +523,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.PaginatedResponseSpreadsheetJob.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.SpreadsheetJobQueryResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseSpreadsheetJob>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SpreadsheetJobQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -555,9 +555,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.PaginatedResponseSpreadsheetJob.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.SpreadsheetJobQueryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseSpreadsheetJob>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SpreadsheetJobQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

@@ -61,7 +61,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseClassifyJob> ListClassifyJobsApiV1ClassifierJobsGetAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.ClassifyJobListResponse> ListClassifyJobsApiV1ClassifierJobsGetAsync(
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,
@@ -94,7 +94,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseClassifyJob>> ListClassifyJobsApiV1ClassifierJobsGetAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyJobListResponse>> ListClassifyJobsApiV1ClassifierJobsGetAsResponseAsync(
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,
@@ -439,9 +439,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.PaginatedResponseClassifyJob.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.ClassifyJobListResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseClassifyJob>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyJobListResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -471,9 +471,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.PaginatedResponseClassifyJob.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.ClassifyJobListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseClassifyJob>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyJobListResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

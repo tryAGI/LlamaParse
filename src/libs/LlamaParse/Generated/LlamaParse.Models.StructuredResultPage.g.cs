@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    /// Successfully parsed page in structured items output.
     /// </summary>
     public sealed partial class StructuredResultPage
     {
@@ -37,6 +37,12 @@ namespace LlamaParse
         public required double PageHeight { get; set; }
 
         /// <summary>
+        /// Extracted revisions and comments on the page
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("revisions")]
+        public global::System.Collections.Generic.IList<global::LlamaParse.Revision>? Revisions { get; set; }
+
+        /// <summary>
         /// Success indicator
         /// </summary>
         /// <default>true</default>
@@ -64,6 +70,9 @@ namespace LlamaParse
         /// <param name="pageHeight">
         /// Height of the page in points
         /// </param>
+        /// <param name="revisions">
+        /// Extracted revisions and comments on the page
+        /// </param>
         /// <param name="success">
         /// Success indicator
         /// </param>
@@ -75,12 +84,14 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem7> items,
             double pageWidth,
             double pageHeight,
+            global::System.Collections.Generic.IList<global::LlamaParse.Revision>? revisions,
             bool success = true)
         {
             this.PageNumber = pageNumber;
             this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
             this.PageWidth = pageWidth;
             this.PageHeight = pageHeight;
+            this.Revisions = revisions;
             this.Success = success;
         }
 

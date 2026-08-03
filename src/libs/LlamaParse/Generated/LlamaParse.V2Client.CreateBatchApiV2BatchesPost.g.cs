@@ -49,7 +49,16 @@ namespace LlamaParse
 
         /// <summary>
         /// Create Batch<br/>
-        /// Create a batch over a source directory and start processing asynchronously.
+        /// Create a batch over a source directory and start processing asynchronously.<br/>
+        /// To be notified as the batch progresses, pass `webhook_configurations` with<br/>
+        /// inline endpoints and/or `webhook_configuration_ids` referencing saved<br/>
+        /// configurations. Batches emit `batch.pending` on create, `batch.running`<br/>
+        /// once processing starts, and a terminal `batch.success` or `batch.error`.<br/>
+        /// `batch.success` means the batch finished mapping every source file to a<br/>
+        /// job — individual files may still have failed, so read `results` (with<br/>
+        /// `expand=results`) for per-file outcomes.<br/>
+        /// Delivery order across events is not guaranteed; key on the `status` field<br/>
+        /// in the payload rather than arrival order.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -81,7 +90,16 @@ namespace LlamaParse
         }
         /// <summary>
         /// Create Batch<br/>
-        /// Create a batch over a source directory and start processing asynchronously.
+        /// Create a batch over a source directory and start processing asynchronously.<br/>
+        /// To be notified as the batch progresses, pass `webhook_configurations` with<br/>
+        /// inline endpoints and/or `webhook_configuration_ids` referencing saved<br/>
+        /// configurations. Batches emit `batch.pending` on create, `batch.running`<br/>
+        /// once processing starts, and a terminal `batch.success` or `batch.error`.<br/>
+        /// `batch.success` means the batch finished mapping every source file to a<br/>
+        /// job — individual files may still have failed, so read `results` (with<br/>
+        /// `expand=results`) for per-file outcomes.<br/>
+        /// Delivery order across events is not guaranteed; key on the `status` field<br/>
+        /// in the payload rather than arrival order.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -515,11 +533,26 @@ namespace LlamaParse
         }
         /// <summary>
         /// Create Batch<br/>
-        /// Create a batch over a source directory and start processing asynchronously.
+        /// Create a batch over a source directory and start processing asynchronously.<br/>
+        /// To be notified as the batch progresses, pass `webhook_configurations` with<br/>
+        /// inline endpoints and/or `webhook_configuration_ids` referencing saved<br/>
+        /// configurations. Batches emit `batch.pending` on create, `batch.running`<br/>
+        /// once processing starts, and a terminal `batch.success` or `batch.error`.<br/>
+        /// `batch.success` means the batch finished mapping every source file to a<br/>
+        /// job — individual files may still have failed, so read `results` (with<br/>
+        /// `expand=results`) for per-file outcomes.<br/>
+        /// Delivery order across events is not guaranteed; key on the `status` field<br/>
+        /// in the payload rather than arrival order.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </param>
+        /// <param name="webhookConfigurations">
+        /// Outbound webhook endpoints to notify on job status changes
+        /// </param>
         /// <param name="sourceDirectoryId">
         /// Directory whose files should be processed.
         /// </param>
@@ -535,11 +568,15 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds = default,
+            global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LlamaParse.BatchCreateRequest
             {
+                WebhookConfigurationIds = webhookConfigurationIds,
+                WebhookConfigurations = webhookConfigurations,
                 SourceDirectoryId = sourceDirectoryId,
                 Config = config,
             };

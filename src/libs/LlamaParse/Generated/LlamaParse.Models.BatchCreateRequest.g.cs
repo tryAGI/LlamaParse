@@ -22,6 +22,18 @@ namespace LlamaParse
     public sealed partial class BatchCreateRequest
     {
         /// <summary>
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configuration_ids")]
+        public global::System.Collections.Generic.IList<string>? WebhookConfigurationIds { get; set; }
+
+        /// <summary>
+        /// Outbound webhook endpoints to notify on job status changes
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configurations")]
+        public global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? WebhookConfigurations { get; set; }
+
+        /// <summary>
         /// Directory whose files should be processed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_directory_id")]
@@ -50,13 +62,23 @@ namespace LlamaParse
         /// <param name="config">
         /// Batch configuration snapshot to apply to this source directory.
         /// </param>
+        /// <param name="webhookConfigurationIds">
+        /// IDs of saved webhook configurations to notify for this job.
+        /// </param>
+        /// <param name="webhookConfigurations">
+        /// Outbound webhook endpoints to notify on job status changes
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BatchCreateRequest(
             string sourceDirectoryId,
-            global::LlamaParse.BatchConfiguration config)
+            global::LlamaParse.BatchConfiguration config,
+            global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
+            global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations)
         {
+            this.WebhookConfigurationIds = webhookConfigurationIds;
+            this.WebhookConfigurations = webhookConfigurations;
             this.SourceDirectoryId = sourceDirectoryId ?? throw new global::System.ArgumentNullException(nameof(sourceDirectoryId));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
         }

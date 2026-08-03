@@ -34,7 +34,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseSpreadsheetJob> ListSpreadsheetJobsApiV1SheetsJobsGetAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.SpreadsheetJobQueryResponse> ListSpreadsheetJobsApiV1SheetsJobsGetAsync(
             bool? includeResults = default,
             global::LlamaParse.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
@@ -78,7 +78,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseSpreadsheetJob>> ListSpreadsheetJobsApiV1SheetsJobsGetAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SpreadsheetJobQueryResponse>> ListSpreadsheetJobsApiV1SheetsJobsGetAsResponseAsync(
             bool? includeResults = default,
             global::LlamaParse.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,

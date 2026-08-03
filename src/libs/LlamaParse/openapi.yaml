@@ -7844,7 +7844,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PaginatedResponse_ClassifyJob_"
+                  "$ref": "#/components/schemas/ClassifyJobListResponse"
                 }
               }
             }
@@ -10158,7 +10158,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PaginatedResponse_SpreadsheetJob_"
+                  "$ref": "#/components/schemas/SpreadsheetJobQueryResponse"
                 }
               }
             }
@@ -13664,7 +13664,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PaginatedResponse_AgentData_"
+                  "$ref": "#/components/schemas/AgentDataSearchResponse"
                 }
               }
             }
@@ -13764,7 +13764,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PaginatedResponse_AggregateGroup_"
+                  "$ref": "#/components/schemas/AgentDataAggregateResponse"
                 }
               }
             }
@@ -14756,7 +14756,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PaginatedResponse_FileAttachmentMetadata_"
+                  "$ref": "#/components/schemas/FileAttachmentListResponse"
                 }
               }
             }
@@ -15201,7 +15201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PaginatedResponse_SpreadsheetJob_"
+                  "$ref": "#/components/schemas/SpreadsheetJobQueryResponse"
                 }
               }
             }
@@ -21985,7 +21985,7 @@
           "Batches"
         ],
         "summary": "Create Batch",
-        "description": "Create a batch over a source directory and start processing asynchronously.",
+        "description": "Create a batch over a source directory and start processing asynchronously.\n\nTo be notified as the batch progresses, pass `webhook_configurations` with\ninline endpoints and/or `webhook_configuration_ids` referencing saved\nconfigurations. Batches emit `batch.pending` on create, `batch.running`\nonce processing starts, and a terminal `batch.success` or `batch.error`.\n\n`batch.success` means the batch finished mapping every source file to a\njob — individual files may still have failed, so read `results` (with\n`expand=results`) for per-file outcomes.\n\nDelivery order across events is not guaranteed; key on the `status` field\nin the payload rather than arrival order.",
         "operationId": "create_batch_api_v2_batches_post",
         "security": [
           {
@@ -22514,6 +22514,48 @@
         "title": "AgentData",
         "description": "API Result for a single agent data item"
       },
+      "AgentDataAggregateResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/AggregateGroup"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "AgentDataAggregateResponse",
+        "description": "Paginated agent data aggregation groups."
+      },
       "AgentDataCreate": {
         "properties": {
           "deployment_name": {
@@ -22538,6 +22580,48 @@
         ],
         "title": "AgentDataCreate",
         "description": "API request model for creating agent data"
+      },
+      "AgentDataSearchResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/AgentData"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "AgentDataSearchResponse",
+        "description": "Paginated agent data search results."
       },
       "AgentDataUpdate": {
         "properties": {
@@ -23930,6 +24014,43 @@
       },
       "BatchCreateRequest": {
         "properties": {
+          "webhook_configuration_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "maxItems": 4
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configuration Ids",
+            "description": "IDs of saved webhook configurations to notify for this job.",
+            "examples": [
+              [
+                "whc-...",
+                "whc-..."
+              ]
+            ]
+          },
+          "webhook_configurations": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/WebhookConfiguration"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Configurations",
+            "description": "Outbound webhook endpoints to notify on job status changes"
+          },
           "source_directory_id": {
             "type": "string",
             "title": "Source Directory Id",
@@ -24666,6 +24787,17 @@
             ],
             "title": "Annotate Links",
             "default": false
+          },
+          "annotate_revisions": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Annotate Revisions"
           },
           "adaptive_long_table": {
             "anyOf": [
@@ -26668,6 +26800,18 @@
             "title": "Annotate Links",
             "default": false
           },
+          "annotate_revisions": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Annotate Revisions",
+            "description": "Extract Word-style revisions and comments into structured page output."
+          },
           "auto_mode": {
             "type": "boolean",
             "title": "Auto Mode",
@@ -27758,6 +27902,48 @@
         ],
         "title": "ClassifyJobCreate",
         "description": "A classify job."
+      },
+      "ClassifyJobListResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ClassifyJob"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "ClassifyJobListResponse",
+        "description": "Paginated list of classify jobs."
       },
       "ClassifyJobResults": {
         "properties": {
@@ -32657,6 +32843,36 @@
             "description": "Include confidence scores in results. Returned under `extract_metadata` (auto-included when set).",
             "default": false
           },
+          "spreadsheet_mode": {
+            "type": "boolean",
+            "title": "Spreadsheet Mode",
+            "description": "Beta. When true, extract structured data directly from a spreadsheet workbook (.xlsx/.xls/.csv) — the agent reads cells straight from the workbook instead of the standard document path. Off by default (spreadsheets keep the standard path). Requires the agentic_plus tier. Billed on the standard per-page extract rate, against a page count derived from workbook size. Citations and confidence scores are not available in this mode.",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "sheet_names": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sheet Names",
+            "description": "Optional worksheet names to extract when spreadsheet_mode is on. Overrides target_pages for spreadsheets; omit to extract every sheet. Names are matched exactly (case-sensitive) — pass them as a list, e.g. [\"Sheet 1\", \"My Sheet\"].",
+            "examples": [
+              [
+                "Sheet 1",
+                "Q4 Summary"
+              ]
+            ]
+          },
           "parse_tier": {
             "anyOf": [
               {
@@ -34308,6 +34524,36 @@
             "description": "Include confidence scores in results. Returned under `extract_metadata` (auto-included when set).",
             "default": false
           },
+          "spreadsheet_mode": {
+            "type": "boolean",
+            "title": "Spreadsheet Mode",
+            "description": "Beta. When true, extract structured data directly from a spreadsheet workbook (.xlsx/.xls/.csv) — the agent reads cells straight from the workbook instead of the standard document path. Off by default (spreadsheets keep the standard path). Requires the agentic_plus tier. Billed on the standard per-page extract rate, against a page count derived from workbook size. Citations and confidence scores are not available in this mode.",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "sheet_names": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sheet Names",
+            "description": "Optional worksheet names to extract when spreadsheet_mode is on. Overrides target_pages for spreadsheets; omit to extract every sheet. Names are matched exactly (case-sensitive) — pass them as a list, e.g. [\"Sheet 1\", \"My Sheet\"].",
+            "examples": [
+              [
+                "Sheet 1",
+                "Q4 Summary"
+              ]
+            ]
+          },
           "parse_tier": {
             "anyOf": [
               {
@@ -35153,6 +35399,48 @@
         ],
         "title": "File",
         "description": "Schema for a file."
+      },
+      "FileAttachmentListResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/FileAttachmentMetadata"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "FileAttachmentListResponse",
+        "description": "Paginated list of file attachments."
       },
       "FileAttachmentMetadata": {
         "properties": {
@@ -36177,152 +36465,6 @@
         ],
         "title": "FilterOperator",
         "description": "Vector store filter operator."
-      },
-      "FilterType_Union_int__float__": {
-        "properties": {
-          "operator": {
-            "type": "string",
-            "enum": [
-              "eq",
-              "ne",
-              "gt",
-              "lt",
-              "gte",
-              "lte",
-              "in",
-              "nin"
-            ],
-            "title": "Operator"
-          },
-          "value": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "items": {
-                  "anyOf": [
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "number"
-                    }
-                  ]
-                },
-                "type": "array"
-              }
-            ],
-            "title": "Value"
-          }
-        },
-        "type": "object",
-        "required": [
-          "operator",
-          "value"
-        ],
-        "title": "FilterType[Union[int, float]]"
-      },
-      "FilterType_Union_str__int__bool__float__": {
-        "properties": {
-          "operator": {
-            "type": "string",
-            "enum": [
-              "eq",
-              "ne",
-              "gt",
-              "lt",
-              "gte",
-              "lte",
-              "in",
-              "nin"
-            ],
-            "title": "Operator"
-          },
-          "value": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "integer"
-              },
-              {
-                "type": "boolean"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "items": {
-                  "anyOf": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "type": "number"
-                    }
-                  ]
-                },
-                "type": "array"
-              }
-            ],
-            "title": "Value"
-          }
-        },
-        "type": "object",
-        "required": [
-          "operator",
-          "value"
-        ],
-        "title": "FilterType[Union[str, int, bool, float]]"
-      },
-      "FilterType_str_": {
-        "properties": {
-          "operator": {
-            "type": "string",
-            "enum": [
-              "eq",
-              "ne",
-              "gt",
-              "lt",
-              "gte",
-              "lte",
-              "in",
-              "nin"
-            ],
-            "title": "Operator"
-          },
-          "value": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "items": {
-                  "type": "string"
-                },
-                "type": "array"
-              }
-            ],
-            "title": "Value"
-          }
-        },
-        "type": "object",
-        "required": [
-          "operator",
-          "value"
-        ],
-        "title": "FilterType[str]"
       },
       "FooterItem": {
         "properties": {
@@ -38732,6 +38874,18 @@
             "title": "Annotate Links",
             "description": "Add link annotations to markdown output in the format [text](url). When false, only the link text is included"
           },
+          "annotate_revisions": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Annotate Revisions",
+            "description": "Extract Word-style revisions and comments into structured page output"
+          },
           "tables": {
             "$ref": "#/components/schemas/LlamaParseTables",
             "description": "Table formatting options including markdown vs HTML format and merging behavior"
@@ -38968,6 +39122,17 @@
             ],
             "title": "Annotate Links",
             "default": false
+          },
+          "annotate_revisions": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Annotate Revisions"
           },
           "adaptive_long_table": {
             "anyOf": [
@@ -41413,7 +41578,7 @@
           "parsed_directory_file_id": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/FilterType_str_"
+                "$ref": "#/components/schemas/StringFilter"
               },
               {
                 "type": "null"
@@ -41459,6 +41624,55 @@
         },
         "type": "object",
         "title": "NoneSegmentationConfig"
+      },
+      "NumericRangeFilter": {
+        "properties": {
+          "operator": {
+            "type": "string",
+            "enum": [
+              "eq",
+              "ne",
+              "gt",
+              "lt",
+              "gte",
+              "lte",
+              "in",
+              "nin"
+            ],
+            "title": "Operator"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "number"
+                    }
+                  ]
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "type": "object",
+        "required": [
+          "operator",
+          "value"
+        ],
+        "title": "NumericRangeFilter",
+        "description": "One bound of a numeric range filter on a metadata field."
       },
       "ObjectType": {
         "type": "string",
@@ -42128,211 +42342,6 @@
         ],
         "title": "PaginatedListPipelineFilesResponse",
         "description": "Paginated list of pipeline files."
-      },
-      "PaginatedResponse_AgentData_": {
-        "properties": {
-          "items": {
-            "items": {
-              "$ref": "#/components/schemas/AgentData"
-            },
-            "type": "array",
-            "title": "Items",
-            "description": "The list of items."
-          },
-          "next_page_token": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Next Page Token",
-            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
-          },
-          "total_size": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Total Size",
-            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
-          }
-        },
-        "type": "object",
-        "required": [
-          "items"
-        ],
-        "title": "PaginatedResponse[AgentData]"
-      },
-      "PaginatedResponse_AggregateGroup_": {
-        "properties": {
-          "items": {
-            "items": {
-              "$ref": "#/components/schemas/AggregateGroup"
-            },
-            "type": "array",
-            "title": "Items",
-            "description": "The list of items."
-          },
-          "next_page_token": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Next Page Token",
-            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
-          },
-          "total_size": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Total Size",
-            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
-          }
-        },
-        "type": "object",
-        "required": [
-          "items"
-        ],
-        "title": "PaginatedResponse[AggregateGroup]"
-      },
-      "PaginatedResponse_ClassifyJob_": {
-        "properties": {
-          "items": {
-            "items": {
-              "$ref": "#/components/schemas/ClassifyJob"
-            },
-            "type": "array",
-            "title": "Items",
-            "description": "The list of items."
-          },
-          "next_page_token": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Next Page Token",
-            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
-          },
-          "total_size": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Total Size",
-            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
-          }
-        },
-        "type": "object",
-        "required": [
-          "items"
-        ],
-        "title": "PaginatedResponse[ClassifyJob]"
-      },
-      "PaginatedResponse_FileAttachmentMetadata_": {
-        "properties": {
-          "items": {
-            "items": {
-              "$ref": "#/components/schemas/FileAttachmentMetadata"
-            },
-            "type": "array",
-            "title": "Items",
-            "description": "The list of items."
-          },
-          "next_page_token": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Next Page Token",
-            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
-          },
-          "total_size": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Total Size",
-            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
-          }
-        },
-        "type": "object",
-        "required": [
-          "items"
-        ],
-        "title": "PaginatedResponse[FileAttachmentMetadata]"
-      },
-      "PaginatedResponse_SpreadsheetJob_": {
-        "properties": {
-          "items": {
-            "items": {
-              "$ref": "#/components/schemas/SpreadsheetJob"
-            },
-            "type": "array",
-            "title": "Items",
-            "description": "The list of items."
-          },
-          "next_page_token": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Next Page Token",
-            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
-          },
-          "total_size": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Total Size",
-            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
-          }
-        },
-        "type": "object",
-        "required": [
-          "items"
-        ],
-        "title": "PaginatedResponse[SpreadsheetJob]"
       },
       "ParseConcernItem": {
         "properties": {
@@ -46258,11 +46267,11 @@
                 "additionalProperties": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/FilterType_Union_str__int__bool__float__"
+                      "$ref": "#/components/schemas/ValueFilter"
                     },
                     {
                       "items": {
-                        "$ref": "#/components/schemas/FilterType_Union_int__float__"
+                        "$ref": "#/components/schemas/NumericRangeFilter"
                       },
                       "type": "array"
                     },
@@ -46557,6 +46566,183 @@
           "pipelines"
         ],
         "title": "RetrieverUpdate"
+      },
+      "Revision": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "comment",
+              "deleted",
+              "inserted",
+              "formatted",
+              "moved_from",
+              "moved_to"
+            ],
+            "title": "Type",
+            "description": "Type of revision"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target",
+            "description": "Best available target text in the page content"
+          },
+          "content": {
+            "type": "string",
+            "title": "Content",
+            "description": "Revision or comment content"
+          },
+          "author": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Author",
+            "description": "Revision author, when available"
+          },
+          "target_bbox": {
+            "$ref": "#/components/schemas/RevisionBBox",
+            "description": "Union bounding box of the target spans"
+          },
+          "revision_bbox": {
+            "$ref": "#/components/schemas/RevisionBBox",
+            "description": "Bounding box of the printed revision balloon"
+          },
+          "target_spans": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/RevisionTargetSpan"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Spans",
+            "description": "Disconnected target spans, when present"
+          },
+          "start_index": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start Index",
+            "description": "Inclusive start offset in final page markdown"
+          },
+          "end_index": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End Index",
+            "description": "Exclusive end offset in final page markdown"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "target",
+          "content",
+          "target_bbox",
+          "revision_bbox"
+        ],
+        "title": "Revision",
+        "description": "One extracted document revision linked to page content."
+      },
+      "RevisionBBox": {
+        "properties": {
+          "x": {
+            "type": "number",
+            "title": "X",
+            "description": "X coordinate of the bounding box"
+          },
+          "y": {
+            "type": "number",
+            "title": "Y",
+            "description": "Y coordinate of the bounding box"
+          },
+          "w": {
+            "type": "number",
+            "title": "W",
+            "description": "Width of the bounding box"
+          },
+          "h": {
+            "type": "number",
+            "title": "H",
+            "description": "Height of the bounding box"
+          }
+        },
+        "type": "object",
+        "required": [
+          "x",
+          "y",
+          "w",
+          "h"
+        ],
+        "title": "RevisionBBox",
+        "description": "Bounding box for a revision target or printed balloon."
+      },
+      "RevisionTargetSpan": {
+        "properties": {
+          "target": {
+            "type": "string",
+            "title": "Target",
+            "description": "Text covered by this target span"
+          },
+          "target_bbox": {
+            "$ref": "#/components/schemas/RevisionBBox",
+            "description": "Bounding box of this target span"
+          },
+          "start_index": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start Index",
+            "description": "Inclusive start offset in final page markdown"
+          },
+          "end_index": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End Index",
+            "description": "Exclusive end offset in final page markdown"
+          }
+        },
+        "type": "object",
+        "required": [
+          "target",
+          "target_bbox"
+        ],
+        "title": "RevisionTargetSpan",
+        "description": "One contiguous target span linked to a document revision."
       },
       "SearchRequest": {
         "properties": {
@@ -47826,6 +48012,48 @@
         "title": "SpreadsheetJobParameters",
         "description": "Job-time parameters returned on a spreadsheet job response."
       },
+      "SpreadsheetJobQueryResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SpreadsheetJob"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "SpreadsheetJobQueryResponse",
+        "description": "Response schema for paginated spreadsheet job queries."
+      },
       "SpreadsheetParsingConfig": {
         "properties": {
           "tier": {
@@ -48170,6 +48398,45 @@
         ],
         "title": "StopEvent"
       },
+      "StringFilter": {
+        "properties": {
+          "operator": {
+            "type": "string",
+            "enum": [
+              "eq",
+              "ne",
+              "gt",
+              "lt",
+              "gte",
+              "lte",
+              "in",
+              "nin"
+            ],
+            "title": "Operator"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "type": "object",
+        "required": [
+          "operator",
+          "value"
+        ],
+        "title": "StringFilter",
+        "description": "Filter on a string field."
+      },
       "StructuredResult": {
         "properties": {
           "pages": {
@@ -48261,6 +48528,21 @@
             "title": "Page Height",
             "description": "Height of the page in points"
           },
+          "revisions": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/Revision"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revisions",
+            "description": "Extracted revisions and comments on the page"
+          },
           "success": {
             "type": "boolean",
             "const": true,
@@ -48276,7 +48558,8 @@
           "page_height",
           "success"
         ],
-        "title": "StructuredResultPage"
+        "title": "StructuredResultPage",
+        "description": "Successfully parsed page in structured items output."
       },
       "SupportedLLMModelNames": {
         "type": "string",
@@ -49177,6 +49460,67 @@
         ],
         "title": "ValidationError"
       },
+      "ValueFilter": {
+        "properties": {
+          "operator": {
+            "type": "string",
+            "enum": [
+              "eq",
+              "ne",
+              "gt",
+              "lt",
+              "gte",
+              "lte",
+              "in",
+              "nin"
+            ],
+            "title": "Operator"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "number"
+                    }
+                  ]
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "type": "object",
+        "required": [
+          "operator",
+          "value"
+        ],
+        "title": "ValueFilter",
+        "description": "Filter on a single metadata field value."
+      },
       "VertexAIEmbeddingConfig": {
         "properties": {
           "type": {
@@ -49398,6 +49742,11 @@
                     "split.success",
                     "split.error",
                     "split.cancelled",
+                    "batch.pending",
+                    "batch.running",
+                    "batch.success",
+                    "batch.error",
+                    "batch.cancelled",
                     "unmapped_event"
                   ]
                 },
@@ -49545,6 +49894,11 @@
                     "split.success",
                     "split.error",
                     "split.cancelled",
+                    "batch.pending",
+                    "batch.running",
+                    "batch.success",
+                    "batch.error",
+                    "batch.cancelled",
                     "unmapped_event"
                   ]
                 },
@@ -49659,6 +50013,11 @@
                     "split.success",
                     "split.error",
                     "split.cancelled",
+                    "batch.pending",
+                    "batch.running",
+                    "batch.success",
+                    "batch.error",
+                    "batch.cancelled",
                     "unmapped_event"
                   ]
                 },
@@ -49777,6 +50136,11 @@
                     "split.success",
                     "split.error",
                     "split.cancelled",
+                    "batch.pending",
+                    "batch.running",
+                    "batch.success",
+                    "batch.error",
+                    "batch.cancelled",
                     "unmapped_event"
                   ]
                 },

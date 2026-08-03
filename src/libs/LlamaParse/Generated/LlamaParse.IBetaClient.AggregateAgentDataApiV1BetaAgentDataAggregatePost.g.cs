@@ -15,7 +15,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseAggregateGroup> AggregateAgentDataApiV1BetaAgentDataAggregatePostAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AgentDataAggregateResponse> AggregateAgentDataApiV1BetaAgentDataAggregatePostAsync(
 
             global::LlamaParse.AggregateRequest request,
             global::System.Guid? projectId = default,
@@ -34,7 +34,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseAggregateGroup>> AggregateAgentDataApiV1BetaAgentDataAggregatePostAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.AgentDataAggregateResponse>> AggregateAgentDataApiV1BetaAgentDataAggregatePostAsResponseAsync(
 
             global::LlamaParse.AggregateRequest request,
             global::System.Guid? projectId = default,
@@ -86,7 +86,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseAggregateGroup> AggregateAgentDataApiV1BetaAgentDataAggregatePostAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AgentDataAggregateResponse> AggregateAgentDataApiV1BetaAgentDataAggregatePostAsync(
             string deploymentName,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,

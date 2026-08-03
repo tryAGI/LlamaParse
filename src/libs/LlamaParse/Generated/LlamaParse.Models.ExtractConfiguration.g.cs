@@ -71,6 +71,19 @@ namespace LlamaParse
         public bool? ConfidenceScores { get; set; }
 
         /// <summary>
+        /// Beta. When true, extract structured data directly from a spreadsheet workbook (.xlsx/.xls/.csv) — the agent reads cells straight from the workbook instead of the standard document path. Off by default (spreadsheets keep the standard path). Requires the agentic_plus tier. Billed on the standard per-page extract rate, against a page count derived from workbook size. Citations and confidence scores are not available in this mode.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spreadsheet_mode")]
+        public bool? SpreadsheetMode { get; set; }
+
+        /// <summary>
+        /// Optional worksheet names to extract when spreadsheet_mode is on. Overrides target_pages for spreadsheets; omit to extract every sheet. Names are matched exactly (case-sensitive) — pass them as a list, e.g. ["Sheet 1", "My Sheet"].
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sheet_names")]
+        public global::System.Collections.Generic.IList<string>? SheetNames { get; set; }
+
+        /// <summary>
         /// Parse tier to use before extraction. Defaults to the extract tier if not specified. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_tier")]
@@ -123,6 +136,13 @@ namespace LlamaParse
         /// Include confidence scores in results. Returned under `extract_metadata` (auto-included when set).<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="spreadsheetMode">
+        /// Beta. When true, extract structured data directly from a spreadsheet workbook (.xlsx/.xls/.csv) — the agent reads cells straight from the workbook instead of the standard document path. Off by default (spreadsheets keep the standard path). Requires the agentic_plus tier. Billed on the standard per-page extract rate, against a page count derived from workbook size. Citations and confidence scores are not available in this mode.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="sheetNames">
+        /// Optional worksheet names to extract when spreadsheet_mode is on. Overrides target_pages for spreadsheets; omit to extract every sheet. Names are matched exactly (case-sensitive) — pass them as a list, e.g. ["Sheet 1", "My Sheet"].
+        /// </param>
         /// <param name="parseTier">
         /// Parse tier to use before extraction. Defaults to the extract tier if not specified. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
         /// </param>
@@ -142,6 +162,8 @@ namespace LlamaParse
             string? systemPrompt,
             bool? citeSources,
             bool? confidenceScores,
+            bool? spreadsheetMode,
+            global::System.Collections.Generic.IList<string>? sheetNames,
             string? parseTier,
             string? parseConfigId)
         {
@@ -154,6 +176,8 @@ namespace LlamaParse
             this.SystemPrompt = systemPrompt;
             this.CiteSources = citeSources;
             this.ConfidenceScores = confidenceScores;
+            this.SpreadsheetMode = spreadsheetMode;
+            this.SheetNames = sheetNames;
             this.ParseTier = parseTier;
             this.ParseConfigId = parseConfigId;
         }

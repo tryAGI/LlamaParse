@@ -56,6 +56,9 @@ namespace LlamaParse
         /// <param name="annotateLinks">
         /// Default Value: false
         /// </param>
+        /// <param name="annotateRevisions">
+        /// Extract Word-style revisions and comments into structured page output.
+        /// </param>
         /// <param name="autoMode">
         /// Default Value: false
         /// </param>
@@ -292,6 +295,7 @@ namespace LlamaParse
             string? filename = default,
             bool? adaptiveLongTable = default,
             bool? annotateLinks = default,
+            bool? annotateRevisions = default,
             bool? autoMode = default,
             bool? autoModeTriggerOnImageInPage = default,
             bool? autoModeTriggerOnTableInPage = default,

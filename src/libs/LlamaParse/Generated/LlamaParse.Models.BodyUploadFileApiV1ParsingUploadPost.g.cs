@@ -35,6 +35,12 @@ namespace LlamaParse
         public bool? AnnotateLinks { get; set; }
 
         /// <summary>
+        /// Extract Word-style revisions and comments into structured page output.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("annotate_revisions")]
+        public bool? AnnotateRevisions { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_mode")]
@@ -712,6 +718,9 @@ namespace LlamaParse
         /// <param name="annotateLinks">
         /// Default Value: false
         /// </param>
+        /// <param name="annotateRevisions">
+        /// Extract Word-style revisions and comments into structured page output.
+        /// </param>
         /// <param name="autoMode">
         /// Default Value: false
         /// </param>
@@ -945,6 +954,7 @@ namespace LlamaParse
             string? filename,
             bool? adaptiveLongTable,
             bool? annotateLinks,
+            bool? annotateRevisions,
             bool? autoMode,
             bool? autoModeTriggerOnImageInPage,
             bool? autoModeTriggerOnTableInPage,
@@ -1059,6 +1069,7 @@ namespace LlamaParse
             this.Filename = filename;
             this.AdaptiveLongTable = adaptiveLongTable;
             this.AnnotateLinks = annotateLinks;
+            this.AnnotateRevisions = annotateRevisions;
             this.AutoMode = autoMode;
             this.AutoModeTriggerOnImageInPage = autoModeTriggerOnImageInPage;
             this.AutoModeTriggerOnTableInPage = autoModeTriggerOnTableInPage;

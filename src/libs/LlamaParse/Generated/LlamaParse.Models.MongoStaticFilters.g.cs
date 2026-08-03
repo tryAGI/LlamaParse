@@ -12,7 +12,7 @@ namespace LlamaParse
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parsed_directory_file_id")]
-        public global::LlamaParse.FilterTypeStr? ParsedDirectoryFileId { get; set; }
+        public global::LlamaParse.StringFilter? ParsedDirectoryFileId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MongoStaticFilters(
-            global::LlamaParse.FilterTypeStr? parsedDirectoryFileId)
+            global::LlamaParse.StringFilter? parsedDirectoryFileId)
         {
             this.ParsedDirectoryFileId = parsedDirectoryFileId;
         }

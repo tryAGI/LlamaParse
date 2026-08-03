@@ -15,6 +15,12 @@ namespace LlamaParse
         public bool? AnnotateLinks { get; set; }
 
         /// <summary>
+        /// Extract Word-style revisions and comments into structured page output
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("annotate_revisions")]
+        public bool? AnnotateRevisions { get; set; }
+
+        /// <summary>
         /// Table formatting options including markdown vs HTML format and merging behavior
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tables")]
@@ -38,6 +44,9 @@ namespace LlamaParse
         /// <param name="annotateLinks">
         /// Add link annotations to markdown output in the format [text](url). When false, only the link text is included
         /// </param>
+        /// <param name="annotateRevisions">
+        /// Extract Word-style revisions and comments into structured page output
+        /// </param>
         /// <param name="tables">
         /// Table formatting options including markdown vs HTML format and merging behavior
         /// </param>
@@ -49,10 +58,12 @@ namespace LlamaParse
 #endif
         public LlamaParseMarkdownOptions(
             bool? annotateLinks,
+            bool? annotateRevisions,
             global::LlamaParse.LlamaParseTables? tables,
             bool? inlineImages)
         {
             this.AnnotateLinks = annotateLinks;
+            this.AnnotateRevisions = annotateRevisions;
             this.Tables = tables;
             this.InlineImages = inlineImages;
         }

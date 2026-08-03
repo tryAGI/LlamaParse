@@ -15,7 +15,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseAgentData> SearchAgentDataApiV1BetaAgentDataSearchPostAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AgentDataSearchResponse> SearchAgentDataApiV1BetaAgentDataSearchPostAsync(
 
             global::LlamaParse.SearchRequest request,
             global::System.Guid? projectId = default,
@@ -34,7 +34,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseAgentData>> SearchAgentDataApiV1BetaAgentDataSearchPostAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.AgentDataSearchResponse>> SearchAgentDataApiV1BetaAgentDataSearchPostAsResponseAsync(
 
             global::LlamaParse.SearchRequest request,
             global::System.Guid? projectId = default,
@@ -79,7 +79,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseAgentData> SearchAgentDataApiV1BetaAgentDataSearchPostAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AgentDataSearchResponse> SearchAgentDataApiV1BetaAgentDataSearchPostAsync(
             string deploymentName,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,

@@ -11,6 +11,26 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        BatchCancelled,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchError,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchPending,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchRunning,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchSuccess,
+        /// <summary>
+        /// 
+        /// </summary>
         ClassifyCancelled,
         /// <summary>
         /// 
@@ -134,6 +154,11 @@ namespace LlamaParse
         {
             return value switch
             {
+                WebhookConfigCreateRequestWebhookEventsVariant1Item.BatchCancelled => "batch.cancelled",
+                WebhookConfigCreateRequestWebhookEventsVariant1Item.BatchError => "batch.error",
+                WebhookConfigCreateRequestWebhookEventsVariant1Item.BatchPending => "batch.pending",
+                WebhookConfigCreateRequestWebhookEventsVariant1Item.BatchRunning => "batch.running",
+                WebhookConfigCreateRequestWebhookEventsVariant1Item.BatchSuccess => "batch.success",
                 WebhookConfigCreateRequestWebhookEventsVariant1Item.ClassifyCancelled => "classify.cancelled",
                 WebhookConfigCreateRequestWebhookEventsVariant1Item.ClassifyError => "classify.error",
                 WebhookConfigCreateRequestWebhookEventsVariant1Item.ClassifyPartialSuccess => "classify.partial_success",
@@ -172,6 +197,11 @@ namespace LlamaParse
         {
             return value switch
             {
+                "batch.cancelled" => WebhookConfigCreateRequestWebhookEventsVariant1Item.BatchCancelled,
+                "batch.error" => WebhookConfigCreateRequestWebhookEventsVariant1Item.BatchError,
+                "batch.pending" => WebhookConfigCreateRequestWebhookEventsVariant1Item.BatchPending,
+                "batch.running" => WebhookConfigCreateRequestWebhookEventsVariant1Item.BatchRunning,
+                "batch.success" => WebhookConfigCreateRequestWebhookEventsVariant1Item.BatchSuccess,
                 "classify.cancelled" => WebhookConfigCreateRequestWebhookEventsVariant1Item.ClassifyCancelled,
                 "classify.error" => WebhookConfigCreateRequestWebhookEventsVariant1Item.ClassifyError,
                 "classify.partial_success" => WebhookConfigCreateRequestWebhookEventsVariant1Item.ClassifyPartialSuccess,
