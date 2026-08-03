@@ -16,7 +16,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseClassifyJob> ListClassifyJobsApiV1ClassifierJobsGetAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.ClassifyJobListResponse> ListClassifyJobsApiV1ClassifierJobsGetAsync(
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,
@@ -36,7 +36,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseClassifyJob>> ListClassifyJobsApiV1ClassifierJobsGetAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyJobListResponse>> ListClassifyJobsApiV1ClassifierJobsGetAsResponseAsync(
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,

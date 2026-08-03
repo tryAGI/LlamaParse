@@ -265,6 +265,14 @@ namespace LlamaParse
                                     name: "\"annotate_links\"");
 
                             }
+                            if (request.AnnotateRevisions != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AnnotateRevisions, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"annotate_revisions\"");
+
+                            }
                             if (request.AutoMode != default)
                             {
 
@@ -1488,6 +1496,9 @@ namespace LlamaParse
         /// <param name="annotateLinks">
         /// Default Value: false
         /// </param>
+        /// <param name="annotateRevisions">
+        /// Extract Word-style revisions and comments into structured page output.
+        /// </param>
         /// <param name="autoMode">
         /// Default Value: false
         /// </param>
@@ -1724,6 +1735,7 @@ namespace LlamaParse
             string? filename = default,
             bool? adaptiveLongTable = default,
             bool? annotateLinks = default,
+            bool? annotateRevisions = default,
             bool? autoMode = default,
             bool? autoModeTriggerOnImageInPage = default,
             bool? autoModeTriggerOnTableInPage = default,
@@ -1842,6 +1854,7 @@ namespace LlamaParse
                 Filename = filename,
                 AdaptiveLongTable = adaptiveLongTable,
                 AnnotateLinks = annotateLinks,
+                AnnotateRevisions = annotateRevisions,
                 AutoMode = autoMode,
                 AutoModeTriggerOnImageInPage = autoModeTriggerOnImageInPage,
                 AutoModeTriggerOnTableInPage = autoModeTriggerOnTableInPage,

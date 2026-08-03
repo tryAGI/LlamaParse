@@ -58,7 +58,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseAgentData> SearchAgentDataApiV1BetaAgentDataSearchPostAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AgentDataSearchResponse> SearchAgentDataApiV1BetaAgentDataSearchPostAsync(
 
             global::LlamaParse.SearchRequest request,
             global::System.Guid? projectId = default,
@@ -90,7 +90,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseAgentData>> SearchAgentDataApiV1BetaAgentDataSearchPostAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.AgentDataSearchResponse>> SearchAgentDataApiV1BetaAgentDataSearchPostAsResponseAsync(
 
             global::LlamaParse.SearchRequest request,
             global::System.Guid? projectId = default,
@@ -439,9 +439,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.PaginatedResponseAgentData.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.AgentDataSearchResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseAgentData>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.AgentDataSearchResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -471,9 +471,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.PaginatedResponseAgentData.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.AgentDataSearchResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PaginatedResponseAgentData>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.AgentDataSearchResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -550,7 +550,7 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.PaginatedResponseAgentData> SearchAgentDataApiV1BetaAgentDataSearchPostAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AgentDataSearchResponse> SearchAgentDataApiV1BetaAgentDataSearchPostAsync(
             string deploymentName,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
