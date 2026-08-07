@@ -3,10 +3,10 @@
 namespace LlamaParse.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class LlamaParseOutputOptionsImagesToSaveItemJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItem>
+    public sealed class LlamaParseOutputOptionsImagesToSaveVariant1ItemNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item?>
     {
         /// <inheritdoc />
-        public override global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItem Read(
+        public override global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace LlamaParse.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItemExtensions.ToEnum(stringValue) ?? default;
+                        return global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1ItemExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace LlamaParse.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItem)numValue;
+                    return (global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItem);
+                    return default(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace LlamaParse.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItem value,
+            global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItemExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1ItemExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

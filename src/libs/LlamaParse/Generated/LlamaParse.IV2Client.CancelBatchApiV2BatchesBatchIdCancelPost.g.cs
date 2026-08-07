@@ -5,52 +5,42 @@ namespace LlamaParse
     public partial interface IV2Client
     {
         /// <summary>
-        /// Get Extract Job<br/>
-        /// Get a single extraction job by ID.<br/>
-        /// Returns the job status and results when complete.<br/>
-        /// Use `expand=configuration` to include the full configuration used,<br/>
-        /// `expand=extract_metadata` for per-field metadata, and<br/>
-        /// `expand=usage` for credits billed against the job.
+        /// Cancel Batch<br/>
+        /// Cancel a running batch.<br/>
+        /// Returns immediately; the batch reaches `CANCELLED` once processing stops.<br/>
+        /// Files that already finished keep their results. A batch in a terminal<br/>
+        /// status cannot be cancelled.
         /// </summary>
-        /// <param name="jobId"></param>
-        /// <param name="expand">
-        /// Additional fields to include: configuration, extract_metadata, usage
-        /// </param>
+        /// <param name="batchId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.ExtractV2Job> GetExtractJobApiV2ExtractJobIdGetAsync(
-            string jobId,
-            global::System.Collections.Generic.IList<string>? expand = default,
+        global::System.Threading.Tasks.Task<global::LlamaParse.BatchResponse> CancelBatchApiV2BatchesBatchIdCancelPostAsync(
+            string batchId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Extract Job<br/>
-        /// Get a single extraction job by ID.<br/>
-        /// Returns the job status and results when complete.<br/>
-        /// Use `expand=configuration` to include the full configuration used,<br/>
-        /// `expand=extract_metadata` for per-field metadata, and<br/>
-        /// `expand=usage` for credits billed against the job.
+        /// Cancel Batch<br/>
+        /// Cancel a running batch.<br/>
+        /// Returns immediately; the batch reaches `CANCELLED` once processing stops.<br/>
+        /// Files that already finished keep their results. A batch in a terminal<br/>
+        /// status cannot be cancelled.
         /// </summary>
-        /// <param name="jobId"></param>
-        /// <param name="expand">
-        /// Additional fields to include: configuration, extract_metadata, usage
-        /// </param>
+        /// <param name="batchId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ExtractV2Job>> GetExtractJobApiV2ExtractJobIdGetAsResponseAsync(
-            string jobId,
-            global::System.Collections.Generic.IList<string>? expand = default,
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.BatchResponse>> CancelBatchApiV2BatchesBatchIdCancelPostAsResponseAsync(
+            string batchId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,

@@ -54,11 +54,12 @@ namespace LlamaParse
         /// Get a single extraction job by ID.<br/>
         /// Returns the job status and results when complete.<br/>
         /// Use `expand=configuration` to include the full configuration used,<br/>
-        /// and `expand=extract_metadata` for per-field metadata.
+        /// `expand=extract_metadata` for per-field metadata, and<br/>
+        /// `expand=usage` for credits billed against the job.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="expand">
-        /// Additional fields to include: configuration, extract_metadata
+        /// Additional fields to include: configuration, extract_metadata, usage
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -92,11 +93,12 @@ namespace LlamaParse
         /// Get a single extraction job by ID.<br/>
         /// Returns the job status and results when complete.<br/>
         /// Use `expand=configuration` to include the full configuration used,<br/>
-        /// and `expand=extract_metadata` for per-field metadata.
+        /// `expand=extract_metadata` for per-field metadata, and<br/>
+        /// `expand=usage` for credits billed against the job.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="expand">
-        /// Additional fields to include: configuration, extract_metadata
+        /// Additional fields to include: configuration, extract_metadata, usage
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>

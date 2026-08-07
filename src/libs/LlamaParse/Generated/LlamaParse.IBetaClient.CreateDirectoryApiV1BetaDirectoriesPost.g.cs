@@ -59,6 +59,9 @@ namespace LlamaParse
         /// Directory type. Use 'ephemeral' for batch processing with automatic cleanup.<br/>
         /// Default Value: user
         /// </param>
+        /// <param name="connectorSubscriptionId">
+        /// Connector Subscription whose files sync into this directory. Omit for manual uploads.
+        /// </param>
         /// <param name="systemMetadata">
         /// Reserved system-managed metadata.
         /// </param>
@@ -72,6 +75,7 @@ namespace LlamaParse
             string? session = default,
             string? description = default,
             global::LlamaParse.DirectoryCreateRequestType? type = default,
+            string? connectorSubscriptionId = default,
             object? systemMetadata = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

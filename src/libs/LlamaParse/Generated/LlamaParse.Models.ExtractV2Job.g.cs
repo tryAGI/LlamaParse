@@ -79,6 +79,12 @@ namespace LlamaParse
         public global::LlamaParse.ExtractV2JobMetadata2? Metadata { get; set; }
 
         /// <summary>
+        /// Usage recorded against this job. Requires `expand=usage`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        public global::LlamaParse.ExtractUsage? Usage { get; set; }
+
+        /// <summary>
         /// Creation timestamp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
@@ -142,6 +148,9 @@ namespace LlamaParse
         /// <param name="metadata">
         /// Custom metadata - limited to enterprise plans.
         /// </param>
+        /// <param name="usage">
+        /// Usage recorded against this job. Requires `expand=usage`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -157,7 +166,8 @@ namespace LlamaParse
             string? errorMessage,
             global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? extractResult,
             global::LlamaParse.ExtractJobMetadata? extractMetadata,
-            global::LlamaParse.ExtractV2JobMetadata2? metadata)
+            global::LlamaParse.ExtractV2JobMetadata2? metadata,
+            global::LlamaParse.ExtractUsage? usage)
         {
             this.FileInput = fileInput ?? throw new global::System.ArgumentNullException(nameof(fileInput));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -169,6 +179,7 @@ namespace LlamaParse
             this.ExtractResult = extractResult;
             this.ExtractMetadata = extractMetadata;
             this.Metadata = metadata;
+            this.Usage = usage;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }

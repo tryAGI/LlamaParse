@@ -6,7 +6,7 @@ namespace LlamaParse
     /// <summary>
     /// 
     /// </summary>
-    public enum LlamaParseOutputOptionsImagesToSaveItem
+    public enum LlamaParseOutputOptionsImagesToSaveVariant1Item
     {
         /// <summary>
         /// 
@@ -25,31 +25,31 @@ namespace LlamaParse
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class LlamaParseOutputOptionsImagesToSaveItemExtensions
+    public static class LlamaParseOutputOptionsImagesToSaveVariant1ItemExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this LlamaParseOutputOptionsImagesToSaveItem value)
+        public static string ToValueString(this LlamaParseOutputOptionsImagesToSaveVariant1Item value)
         {
             return value switch
             {
-                LlamaParseOutputOptionsImagesToSaveItem.Embedded => "embedded",
-                LlamaParseOutputOptionsImagesToSaveItem.Layout => "layout",
-                LlamaParseOutputOptionsImagesToSaveItem.Screenshot => "screenshot",
+                LlamaParseOutputOptionsImagesToSaveVariant1Item.Embedded => "embedded",
+                LlamaParseOutputOptionsImagesToSaveVariant1Item.Layout => "layout",
+                LlamaParseOutputOptionsImagesToSaveVariant1Item.Screenshot => "screenshot",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static LlamaParseOutputOptionsImagesToSaveItem? ToEnum(string value)
+        public static LlamaParseOutputOptionsImagesToSaveVariant1Item? ToEnum(string value)
         {
             return value switch
             {
-                "embedded" => LlamaParseOutputOptionsImagesToSaveItem.Embedded,
-                "layout" => LlamaParseOutputOptionsImagesToSaveItem.Layout,
-                "screenshot" => LlamaParseOutputOptionsImagesToSaveItem.Screenshot,
+                "embedded" => LlamaParseOutputOptionsImagesToSaveVariant1Item.Embedded,
+                "layout" => LlamaParseOutputOptionsImagesToSaveVariant1Item.Layout,
+                "screenshot" => LlamaParseOutputOptionsImagesToSaveVariant1Item.Screenshot,
                 _ => null,
             };
         }
