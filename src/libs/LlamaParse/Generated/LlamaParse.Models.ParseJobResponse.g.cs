@@ -67,6 +67,12 @@ namespace LlamaParse
         public string? Tier { get; set; }
 
         /// <summary>
+        /// Usage recorded against this job. Requires `expand=usage`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        public global::LlamaParse.JobUsage? Usage { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -102,6 +108,9 @@ namespace LlamaParse
         /// <param name="tier">
         /// Parsing tier used for this job
         /// </param>
+        /// <param name="usage">
+        /// Usage recorded against this job. Requires `expand=usage`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -114,7 +123,8 @@ namespace LlamaParse
             global::System.DateTime? updatedAt,
             string? errorMessage,
             string? name,
-            string? tier)
+            string? tier,
+            global::LlamaParse.JobUsage? usage)
         {
             this.UserMetadata = userMetadata;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -125,6 +135,7 @@ namespace LlamaParse
             this.ErrorMessage = errorMessage;
             this.Name = name;
             this.Tier = tier;
+            this.Usage = usage;
         }
 
         /// <summary>

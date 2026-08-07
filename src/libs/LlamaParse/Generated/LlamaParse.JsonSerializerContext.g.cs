@@ -221,9 +221,9 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.JobNameMappingNullableJsonConverter),
 
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveItemJsonConverter),
+            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemJsonConverter),
 
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveItemNullableJsonConverter),
+            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemNullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeJsonConverter),
 
@@ -1086,6 +1086,8 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.DirectoryResponseType2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.DirectoryUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.DocumentChunkMode), TypeInfoPropertyName = "DocumentChunkMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.DocumentCountByStatusResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EmbeddingModelConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EmbeddingConfig), TypeInfoPropertyName = "EmbeddingConfig2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.GeminiEmbeddingConfig))]
@@ -1136,6 +1138,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ExtractSchemaValidateResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ExtractStatelessRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ExtractUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ExtractV2Job))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ExtractV2JobMetadata2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ExtractV2JobCreate))]
@@ -1155,7 +1158,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.FileAttachmentMetadata>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileAttachmentMetadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileCountByStatusResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileFilter))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileFindEntry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileFindParams))]
@@ -1255,6 +1257,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.JobStateTransitions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.JobDataPointResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.JobDataPoint>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.JobUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SupportedLLMModelNames), TypeInfoPropertyName = "SupportedLLMModelNames2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<global::LlamaParse.TextItem, global::LlamaParse.ListItem>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.TextItem, global::LlamaParse.ListItem>), TypeInfoPropertyName = "AnyOfTextItemListItem2")]
@@ -1276,8 +1279,8 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseOutputOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseSpatialTextOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseTablesAsSpreadsheetOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItem), TypeInfoPropertyName = "LlamaParseOutputOptionsImagesToSaveItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item), TypeInfoPropertyName = "LlamaParseOutputOptionsImagesToSaveVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseOutputOptionsGranularBboxe>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseOutputOptionsGranularBboxe), TypeInfoPropertyName = "LlamaParseOutputOptionsGranularBboxe2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParsePageRanges))]
@@ -1344,9 +1347,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ParseJobResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseJobResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseJobResponseStatus), TypeInfoPropertyName = "ParseJobResponseStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseRequestConfiguration))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string>), TypeInfoPropertyName = "AnyOfParseRequestConfigurationTierString2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseRequestConfigurationTier), TypeInfoPropertyName = "ParseRequestConfigurationTier2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1566,9 +1566,9 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.JobNameMappingNullableJsonConverter),
 
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveItemJsonConverter),
+            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemJsonConverter),
 
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveItemNullableJsonConverter),
+            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemNullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeJsonConverter),
 
@@ -2200,6 +2200,9 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>?), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_d9f8945237261e89")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>?), TypeInfoPropertyName = "CloudBoxDataSource_ee99e0e6ec633008")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>?), TypeInfoPropertyName = "CloudBoxDataSource_object_dfe1806971be6576")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseRequestConfiguration))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string>), TypeInfoPropertyName = "AnyOfParseRequestConfigurationTierString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseRequestConfigurationTier), TypeInfoPropertyName = "ParseRequestConfigurationTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationVersion?, string>), TypeInfoPropertyName = "AnyOfParseRequestConfigurationVersionString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseRequestConfigurationVersion), TypeInfoPropertyName = "ParseRequestConfigurationVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseResultResponse))]
@@ -2509,7 +2512,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.JobNameMapping?), TypeInfoPropertyName = "NullableJobNameMapping2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SupportedLLMModelNames?), TypeInfoPropertyName = "NullableSupportedLLMModelNames2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.TextItem, global::LlamaParse.ListItem>?), TypeInfoPropertyName = "NullableAnyOfTextItemListItem2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItem?), TypeInfoPropertyName = "NullableLlamaParseOutputOptionsImagesToSaveItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item?), TypeInfoPropertyName = "NullableLlamaParseOutputOptionsImagesToSaveVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseOutputOptionsGranularBboxe?), TypeInfoPropertyName = "NullableLlamaParseOutputOptionsGranularBboxe2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseParametersImagesToSaveVariant1Item?), TypeInfoPropertyName = "NullableLlamaParseParametersImagesToSaveVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.LlamaParseSupportedFileExtensions?), TypeInfoPropertyName = "NullableLlamaParseSupportedFileExtensions2")]
@@ -2644,7 +2647,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ProcessingResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.JobDataPoint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.TextItem, global::LlamaParse.ListItem>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.LlamaParseOutputOptionsImagesToSaveItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.LlamaParseOutputOptionsGranularBboxe>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.LlamaParseParametersImagesToSaveVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AutoModeConfigurationEntry>))]
@@ -2689,9 +2692,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.Revision>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::LlamaParse.AnyOf<string, int?, double?, object>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<string, int?, double?, object>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ParseConcernItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.RelatedNodeInfo, global::System.Collections.Generic.List<global::LlamaParse.RelatedNodeInfo>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.RelatedNodeInfo>))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -2911,9 +2911,9 @@ namespace LlamaParse
 
             typeof(global::LlamaParse.JsonConverters.JobNameMappingNullableJsonConverter),
 
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveItemJsonConverter),
+            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemJsonConverter),
 
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveItemNullableJsonConverter),
+            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemNullableJsonConverter),
 
             typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeJsonConverter),
 
@@ -3545,6 +3545,9 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>?), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_d9f8945237261e89")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>?), TypeInfoPropertyName = "CloudBoxDataSource_ee99e0e6ec633008")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>?), TypeInfoPropertyName = "CloudBoxDataSource_object_dfe1806971be6576")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ParseConcernItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.RelatedNodeInfo, global::System.Collections.Generic.List<global::LlamaParse.RelatedNodeInfo>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.RelatedNodeInfo>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.TextResultPage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.UsageMetricAggregateResponseGroupByItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.UsageMetricAggregateBucket>))]
@@ -3727,8 +3730,8 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.JobNameMappingJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.JobNameMappingNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveItemNullableJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemJsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeNullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseParametersPriority2JsonConverter());

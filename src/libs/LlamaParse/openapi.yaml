@@ -5191,6 +5191,116 @@
         }
       }
     },
+    "/api/v1/pipelines/{pipeline_id}/documents/status-counts": {
+      "get": {
+        "tags": [
+          "Pipelines"
+        ],
+        "summary": "Get Pipeline Document Status Counts",
+        "description": "Count the documents in a pipeline, grouped by ingestion status.\n\nCounts reflect each document's last recorded status rather than a freshly computed one, so a document that changed status in the last few moments may still be counted under its previous one. Use `GET /pipelines/{pipeline_id}/documents/{document_id}/status` when a single document's status has to be up to the moment.",
+        "operationId": "get_pipeline_document_status_counts_api_v1_pipelines__pipeline_id__documents_status_counts_get",
+        "deprecated": true,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "pipeline_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "file_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "File Id"
+            }
+          },
+          {
+            "name": "data_source_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Data Source Id"
+            }
+          },
+          {
+            "name": "only_direct_upload",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Only Direct Upload"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentCountByStatusResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/pipelines/{pipeline_id}/documents/{document_id}": {
       "get": {
         "tags": [
@@ -19974,7 +20084,7 @@
           "Parse"
         ],
         "summary": "Get Parse Job",
-        "description": "Retrieve a parse job with optional expanded content.\n\nBy default returns job metadata only. Use `expand` to include\nparsed content:\n\n- `text` — plain text output\n- `markdown` — markdown output\n- `items` — structured page-by-page output\n- `job_metadata` — usage and processing details\n\nContent metadata fields (e.g. `text_content_metadata`) return\npresigned URLs for downloading large results.",
+        "description": "Retrieve a parse job with optional expanded content.\n\nBy default returns job metadata only. Use `expand` to include\nparsed content:\n\n- `text` — plain text output\n- `markdown` — markdown output\n- `items` — structured page-by-page output\n- `job_metadata` — processing details\n- `usage` — credits billed against the job\n\nContent metadata fields (e.g. `text_content_metadata`) return\npresigned URLs for downloading large results.",
         "operationId": "get_parse_job_api_v2_parse__job_id__get",
         "security": [
           {
@@ -20000,10 +20110,10 @@
               "items": {
                 "type": "string"
               },
-              "description": "Fields to include: text, markdown, items, metadata, forms, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, forms_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs.",
+              "description": "Fields to include: text, markdown, items, metadata, forms, job_metadata, usage, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, forms_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs.",
               "title": "Expand"
             },
-            "description": "Fields to include: text, markdown, items, metadata, forms, job_metadata, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, forms_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs."
+            "description": "Fields to include: text, markdown, items, metadata, forms, job_metadata, usage, text_content_metadata, markdown_content_metadata, items_content_metadata, metadata_content_metadata, forms_content_metadata, raw_words_content_metadata, xlsx_content_metadata, output_pdf_content_metadata, images_content_metadata. Metadata fields include presigned URLs."
           },
           {
             "name": "image_filenames",
@@ -21298,7 +21408,7 @@
           "Extract"
         ],
         "summary": "Get Extract Job",
-        "description": "Get a single extraction job by ID.\n\nReturns the job status and results when complete.\nUse `expand=configuration` to include the full configuration used,\nand `expand=extract_metadata` for per-field metadata.",
+        "description": "Get a single extraction job by ID.\n\nReturns the job status and results when complete.\nUse `expand=configuration` to include the full configuration used,\n`expand=extract_metadata` for per-field metadata, and\n`expand=usage` for credits billed against the job.",
         "operationId": "get_extract_job_api_v2_extract__job_id__get",
         "security": [
           {
@@ -21324,10 +21434,10 @@
               "items": {
                 "type": "string"
               },
-              "description": "Additional fields to include: configuration, extract_metadata",
+              "description": "Additional fields to include: configuration, extract_metadata, usage",
               "title": "Expand"
             },
-            "description": "Additional fields to include: configuration, extract_metadata"
+            "description": "Additional fields to include: configuration, extract_metadata, usage"
           },
           {
             "name": "project_id",
@@ -22316,6 +22426,105 @@
               "title": "Expand"
             },
             "description": "Fields to expand. Supported value: results."
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/batches/{batch_id}/cancel": {
+      "post": {
+        "tags": [
+          "V2",
+          "Batches"
+        ],
+        "summary": "Cancel Batch",
+        "description": "Cancel a running batch.\n\nReturns immediately; the batch reaches `CANCELLED` once processing stops.\nFiles that already finished keep their results. A batch in a terminal\nstatus cannot be cancelled.",
+        "operationId": "cancel_batch_api_v2_batches__batch_id__cancel_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "batch_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Batch Id"
+            }
           },
           {
             "name": "project_id",
@@ -31617,6 +31826,21 @@
               "ephemeral"
             ]
           },
+          "connector_subscription_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Connector Subscription Id",
+            "description": "Connector Subscription whose files sync into this directory. Omit for manual uploads.",
+            "examples": [
+              "csub-abc123"
+            ]
+          },
           "system_metadata": {
             "anyOf": [
               {
@@ -32116,6 +32340,69 @@
         ],
         "title": "DocumentChunkMode",
         "description": "How to chunk documents."
+      },
+      "DocumentCountByStatusResponse": {
+        "properties": {
+          "counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Counts",
+            "description": "Number of documents per ingestion status; every status is present."
+          },
+          "total_count": {
+            "type": "integer",
+            "title": "Total Count",
+            "description": "Total number of documents counted."
+          },
+          "pipeline_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Pipeline Id",
+            "description": "ID of the pipeline the documents belong to."
+          },
+          "file_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "File Id",
+            "description": "File the counts were restricted to."
+          },
+          "data_source_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data Source Id",
+            "description": "Data source the counts were restricted to."
+          },
+          "only_direct_upload": {
+            "type": "boolean",
+            "title": "Only Direct Upload",
+            "description": "Whether only directly uploaded documents were counted.",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "counts",
+          "total_count",
+          "pipeline_id"
+        ],
+        "title": "DocumentCountByStatusResponse",
+        "description": "Counts of the documents in a pipeline, grouped by ingestion status."
       },
       "ElementSegmentationConfig": {
         "properties": {
@@ -34014,6 +34301,58 @@
         "title": "ExtractTarget",
         "description": "Defines the extraction target scope."
       },
+      "ExtractUsage": {
+        "properties": {
+          "credits": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Credits",
+            "description": "Total credits billed against this job. Null until billing has recorded it.",
+            "examples": [
+              30.0
+            ]
+          },
+          "extract_credits": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Extract Credits",
+            "description": "Credits billed for the extraction itself",
+            "examples": [
+              45.0
+            ]
+          },
+          "parse_credits": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parse Credits",
+            "description": "Credits billed against the parse job backing this extract job",
+            "examples": [
+              30.0
+            ]
+          }
+        },
+        "type": "object",
+        "title": "ExtractUsage",
+        "description": "Usage recorded against an extract job.\n\nA parse job can back several extract jobs, so each of them reports that\nsame parse cost in its total."
+      },
       "ExtractV2Job": {
         "properties": {
           "file_input": {
@@ -34179,6 +34518,17 @@
               }
             ],
             "description": "Custom metadata - limited to enterprise plans."
+          },
+          "usage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ExtractUsage"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Usage recorded against this job. Requires `expand=usage`."
           },
           "created_at": {
             "type": "string",
@@ -38370,6 +38720,28 @@
         "title": "JobStateTransitions",
         "description": "State transition timestamps extracted from job_metadata.\n\nMatches the shape of StateTransitionTimestamps from job_latency/base.py\nwith the addition of pending_at. The frontend derives queue latency,\nprocessing time, etc. from these timestamps."
       },
+      "JobUsage": {
+        "properties": {
+          "credits": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Credits",
+            "description": "Total credits billed against this job. Null until billing has recorded it.",
+            "examples": [
+              30.0
+            ]
+          }
+        },
+        "type": "object",
+        "title": "JobUsage",
+        "description": "Usage recorded against a job."
+      },
       "LLMParameters": {
         "properties": {
           "model_name": {
@@ -38958,17 +39330,24 @@
             "description": "Extract the printed page number as it appears in the document (e.g., 'Page 5 of 10', 'v', 'A-3'). Useful for referencing original page numbers"
           },
           "images_to_save": {
-            "items": {
-              "type": "string",
-              "enum": [
-                "screenshot",
-                "embedded",
-                "layout"
-              ]
-            },
-            "type": "array",
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "screenshot",
+                    "embedded",
+                    "layout"
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Images To Save",
-            "description": "Image categories to extract and save. Options: 'screenshot' (full page renders useful for visual QA), 'embedded' (images found within the document), 'layout' (cropped regions from layout detection like figures and diagrams). Empty list saves no images"
+            "description": "Image categories to save: 'screenshot' (full page renders), 'embedded' (images found within the document), 'layout' (cropped figures and diagrams). Defaults to saving 'layout' when the output links to cropped images; pass [] to save none"
           },
           "additional_outputs": {
             "items": {
@@ -39004,6 +39383,18 @@
                 "cell"
               ]
             ]
+          },
+          "save_output_pdf": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Save Output Pdf",
+            "description": "Save a PDF copy of the parsed document, retrievable via `expand=output_pdf_content_metadata`. Not produced for spreadsheet, plain-text, or audio inputs"
           }
         },
         "additionalProperties": false,
@@ -42526,6 +42917,17 @@
               "agentic",
               "agentic_plus"
             ]
+          },
+          "usage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/JobUsage"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Usage recorded against this job. Requires `expand=usage`."
           }
         },
         "type": "object",

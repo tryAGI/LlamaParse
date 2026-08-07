@@ -3,11 +3,11 @@
 
 namespace LlamaParse
 {
-    public partial class BetaClient
+    public partial class V2Client
     {
 
 
-        private static readonly global::LlamaParse.EndPointSecurityRequirement s_CreateDirectoryApiV1BetaDirectoriesPostSecurityRequirement0 =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_CancelBatchApiV2BatchesBatchIdCancelPostSecurityRequirement0 =
             new global::LlamaParse.EndPointSecurityRequirement
             {
                 Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
@@ -21,55 +21,56 @@ namespace LlamaParse
                     },
                 },
             };
-        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_CreateDirectoryApiV1BetaDirectoriesPostSecurityRequirements =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_CancelBatchApiV2BatchesBatchIdCancelPostSecurityRequirements =
             new global::LlamaParse.EndPointSecurityRequirement[]
-            {                s_CreateDirectoryApiV1BetaDirectoriesPostSecurityRequirement0,
+            {                s_CancelBatchApiV2BatchesBatchIdCancelPostSecurityRequirement0,
             };
-        partial void PrepareCreateDirectoryApiV1BetaDirectoriesPostArguments(
+        partial void PrepareCancelBatchApiV2BatchesBatchIdCancelPostArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string batchId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
-            ref string? session,
-            global::LlamaParse.DirectoryCreateRequest request);
-        partial void PrepareCreateDirectoryApiV1BetaDirectoriesPostRequest(
+            ref string? session);
+        partial void PrepareCancelBatchApiV2BatchesBatchIdCancelPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string batchId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
-            string? session,
-            global::LlamaParse.DirectoryCreateRequest request);
-        partial void ProcessCreateDirectoryApiV1BetaDirectoriesPostResponse(
+            string? session);
+        partial void ProcessCancelBatchApiV2BatchesBatchIdCancelPostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateDirectoryApiV1BetaDirectoriesPostResponseContent(
+        partial void ProcessCancelBatchApiV2BatchesBatchIdCancelPostResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Directory<br/>
-        /// Create a new directory within the specified project.
+        /// Cancel Batch<br/>
+        /// Cancel a running batch.<br/>
+        /// Returns immediately; the batch reaches `CANCELLED` once processing stops.<br/>
+        /// Files that already finished keep their results. A batch in a terminal<br/>
+        /// status cannot be cancelled.
         /// </summary>
+        /// <param name="batchId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
-        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryResponse> CreateDirectoryApiV1BetaDirectoriesPostAsync(
-
-            global::LlamaParse.DirectoryCreateRequest request,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.BatchResponse> CancelBatchApiV2BatchesBatchIdCancelPostAsync(
+            string batchId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateDirectoryApiV1BetaDirectoriesPostAsResponseAsync(
-
-                request: request,
+            var __response = await CancelBatchApiV2BatchesBatchIdCancelPostAsResponseAsync(
+                batchId: batchId,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -80,41 +81,41 @@ namespace LlamaParse
             return __response.Body;
         }
         /// <summary>
-        /// Create Directory<br/>
-        /// Create a new directory within the specified project.
+        /// Cancel Batch<br/>
+        /// Cancel a running batch.<br/>
+        /// Returns immediately; the batch reaches `CANCELLED` once processing stops.<br/>
+        /// Files that already finished keep their results. A batch in a terminal<br/>
+        /// status cannot be cancelled.
         /// </summary>
+        /// <param name="batchId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
-        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DirectoryResponse>> CreateDirectoryApiV1BetaDirectoriesPostAsResponseAsync(
-
-            global::LlamaParse.DirectoryCreateRequest request,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.BatchResponse>> CancelBatchApiV2BatchesBatchIdCancelPostAsResponseAsync(
+            string batchId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateDirectoryApiV1BetaDirectoriesPostArguments(
+            PrepareCancelBatchApiV2BatchesBatchIdCancelPostArguments(
                 httpClient: HttpClient,
+                batchId: ref batchId,
                 projectId: projectId,
                 organizationId: organizationId,
-                session: ref session,
-                request: request);
+                session: ref session);
 
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateDirectoryApiV1BetaDirectoriesPostSecurityRequirements,
-                operationName: "CreateDirectoryApiV1BetaDirectoriesPostAsync");
+                securityRequirements: s_CancelBatchApiV2BatchesBatchIdCancelPostSecurityRequirements,
+                operationName: "CancelBatchApiV2BatchesBatchIdCancelPostAsync");
 
             using var __timeoutCancellationTokenSource = global::LlamaParse.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -134,7 +135,7 @@ namespace LlamaParse
             {
 
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: "/api/v1/beta/directories",
+                                path: $"/api/v2/batches/{batchId}/cancel",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("project_id", projectId?.ToString())
@@ -181,12 +182,6 @@ namespace LlamaParse
                             {
                                 __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
                             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::LlamaParse.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -195,13 +190,13 @@ namespace LlamaParse
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateDirectoryApiV1BetaDirectoriesPostRequest(
+                PrepareCancelBatchApiV2BatchesBatchIdCancelPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    batchId: batchId!,
                     projectId: projectId,
                     organizationId: organizationId,
-                    session: session,
-                    request: request);
+                    session: session);
 
                 return __httpRequest;
             }
@@ -218,9 +213,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDirectoryApiV1BetaDirectoriesPost",
-                                methodName: "CreateDirectoryApiV1BetaDirectoriesPostAsync",
-                                pathTemplate: "\"/api/v1/beta/directories\"",
+                                operationId: "CancelBatchApiV2BatchesBatchIdCancelPost",
+                                methodName: "CancelBatchApiV2BatchesBatchIdCancelPostAsync",
+                                pathTemplate: "$\"/api/v2/batches/{batchId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -252,9 +247,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDirectoryApiV1BetaDirectoriesPost",
-                                methodName: "CreateDirectoryApiV1BetaDirectoriesPostAsync",
-                                pathTemplate: "\"/api/v1/beta/directories\"",
+                                operationId: "CancelBatchApiV2BatchesBatchIdCancelPost",
+                                methodName: "CancelBatchApiV2BatchesBatchIdCancelPostAsync",
+                                pathTemplate: "$\"/api/v2/batches/{batchId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -293,9 +288,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDirectoryApiV1BetaDirectoriesPost",
-                                methodName: "CreateDirectoryApiV1BetaDirectoriesPostAsync",
-                                pathTemplate: "\"/api/v1/beta/directories\"",
+                                operationId: "CancelBatchApiV2BatchesBatchIdCancelPost",
+                                methodName: "CancelBatchApiV2BatchesBatchIdCancelPostAsync",
+                                pathTemplate: "$\"/api/v2/batches/{batchId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -333,7 +328,7 @@ namespace LlamaParse
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateDirectoryApiV1BetaDirectoriesPostResponse(
+                ProcessCancelBatchApiV2BatchesBatchIdCancelPostResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -341,9 +336,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDirectoryApiV1BetaDirectoriesPost",
-                                methodName: "CreateDirectoryApiV1BetaDirectoriesPostAsync",
-                                pathTemplate: "\"/api/v1/beta/directories\"",
+                                operationId: "CancelBatchApiV2BatchesBatchIdCancelPost",
+                                methodName: "CancelBatchApiV2BatchesBatchIdCancelPostAsync",
+                                pathTemplate: "$\"/api/v2/batches/{batchId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -363,9 +358,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDirectoryApiV1BetaDirectoriesPost",
-                                methodName: "CreateDirectoryApiV1BetaDirectoriesPostAsync",
-                                pathTemplate: "\"/api/v1/beta/directories\"",
+                                operationId: "CancelBatchApiV2BatchesBatchIdCancelPost",
+                                methodName: "CancelBatchApiV2BatchesBatchIdCancelPostAsync",
+                                pathTemplate: "$\"/api/v2/batches/{batchId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -430,7 +425,7 @@ namespace LlamaParse
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateDirectoryApiV1BetaDirectoriesPostResponseContent(
+                                ProcessCancelBatchApiV2BatchesBatchIdCancelPostResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -439,9 +434,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.DirectoryResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.BatchResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DirectoryResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.BatchResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -471,9 +466,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.DirectoryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.BatchResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DirectoryResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.BatchResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -512,61 +507,6 @@ namespace LlamaParse
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Create Directory<br/>
-        /// Create a new directory within the specified project.
-        /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="organizationId"></param>
-        /// <param name="session"></param>
-        /// <param name="name">
-        /// Human-readable name for the directory.
-        /// </param>
-        /// <param name="description">
-        /// Optional description shown to users.
-        /// </param>
-        /// <param name="type">
-        /// Directory type. Use 'ephemeral' for batch processing with automatic cleanup.<br/>
-        /// Default Value: user
-        /// </param>
-        /// <param name="connectorSubscriptionId">
-        /// Connector Subscription whose files sync into this directory. Omit for manual uploads.
-        /// </param>
-        /// <param name="systemMetadata">
-        /// Reserved system-managed metadata.
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryResponse> CreateDirectoryApiV1BetaDirectoriesPostAsync(
-            string name,
-            global::System.Guid? projectId = default,
-            global::System.Guid? organizationId = default,
-            string? session = default,
-            string? description = default,
-            global::LlamaParse.DirectoryCreateRequestType? type = default,
-            string? connectorSubscriptionId = default,
-            object? systemMetadata = default,
-            global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LlamaParse.DirectoryCreateRequest
-            {
-                Name = name,
-                Description = description,
-                Type = type,
-                ConnectorSubscriptionId = connectorSubscriptionId,
-                SystemMetadata = systemMetadata,
-            };
-
-            return await CreateDirectoryApiV1BetaDirectoriesPostAsync(
-                projectId: projectId,
-                organizationId: organizationId,
-                session: session,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

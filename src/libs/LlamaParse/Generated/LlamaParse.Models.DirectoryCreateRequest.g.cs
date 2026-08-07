@@ -30,6 +30,12 @@ namespace LlamaParse
         public global::LlamaParse.DirectoryCreateRequestType? Type { get; set; }
 
         /// <summary>
+        /// Connector Subscription whose files sync into this directory. Omit for manual uploads.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("connector_subscription_id")]
+        public string? ConnectorSubscriptionId { get; set; }
+
+        /// <summary>
         /// Reserved system-managed metadata.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_metadata")]
@@ -54,6 +60,9 @@ namespace LlamaParse
         /// Directory type. Use 'ephemeral' for batch processing with automatic cleanup.<br/>
         /// Default Value: user
         /// </param>
+        /// <param name="connectorSubscriptionId">
+        /// Connector Subscription whose files sync into this directory. Omit for manual uploads.
+        /// </param>
         /// <param name="systemMetadata">
         /// Reserved system-managed metadata.
         /// </param>
@@ -64,11 +73,13 @@ namespace LlamaParse
             string name,
             string? description,
             global::LlamaParse.DirectoryCreateRequestType? type,
+            string? connectorSubscriptionId,
             object? systemMetadata)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Type = type;
+            this.ConnectorSubscriptionId = connectorSubscriptionId;
             this.SystemMetadata = systemMetadata;
         }
 
