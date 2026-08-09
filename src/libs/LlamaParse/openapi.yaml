@@ -23689,8 +23689,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-08-08",
                   "2026-07-24",
-                  "2026-07-23",
                   "2026-07-08",
                   "2026-06-15"
                 ],
@@ -23704,7 +23704,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-07-23`\n- `agentic`: `2026-07-24`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-08`\n- `agentic`: `2026-07-24`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -43018,8 +43018,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-08-08",
                   "2026-07-24",
-                  "2026-07-23",
                   "2026-07-08",
                   "2026-06-15"
                 ],
@@ -43030,7 +43030,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-07-23`\n- `agentic`: `2026-07-24`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-08`\n- `agentic`: `2026-07-24`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -43355,8 +43355,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-08-08",
                   "2026-07-24",
-                  "2026-07-23",
                   "2026-07-08",
                   "2026-06-15"
                 ],
@@ -43367,7 +43367,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-07-23`\n- `agentic`: `2026-07-24`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-08`\n- `agentic`: `2026-07-24`\n- `agentic_plus`: `2026-07-08`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -43482,6 +43482,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-08-08",
                 "2026-07-23",
                 "2026-06-26",
                 "2026-06-18",
@@ -49580,22 +49581,21 @@
             "enum": [
               "pages_indexed",
               "pages_embedded",
-              "pages_parsed",
               "set_total_pages_indexed",
               "set_total_indexes",
+              "pages_parsed",
               "layout_extracted",
+              "audio_seconds_parsed",
               "layout_aware_parsing",
               "layout_aware_chart_extraction",
               "chart_parsing_agentic",
               "chart_parsing_plus",
               "chart_parsing_efficient",
-              "image_classified",
               "precise_bbox_extraction",
-              "audio_seconds_parsed",
+              "image_classified",
               "form_parsing_pages",
               "confidence_score_high",
               "extraction_num_pages",
-              "extraction_num_pages_parsed",
               "spreadsheet_regions_extracted",
               "pages_split",
               "pages_classified",
@@ -49608,7 +49608,8 @@
               "directory_files_exported",
               "directory_pages_exported",
               "chat_message_sent",
-              "index_retrieve_query"
+              "index_retrieve_query",
+              "extraction_num_pages_parsed"
             ],
             "title": "Event Type",
             "description": "The event type that is emitted"
