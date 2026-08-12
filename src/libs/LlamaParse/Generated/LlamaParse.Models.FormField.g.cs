@@ -55,6 +55,12 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<global::LlamaParse.ValueItemsVariant1Item>? ValueItems { get; set; }
 
         /// <summary>
+        /// Bounding boxes of the field's fillable area on the page.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bbox")]
+        public global::System.Collections.Generic.IList<global::LlamaParse.BBox>? Bbox { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -85,6 +91,9 @@ namespace LlamaParse
         /// <param name="valueItems">
         /// Options of a single_select/multi_select group (only on select fields)
         /// </param>
+        /// <param name="bbox">
+        /// Bounding boxes of the field's fillable area on the page.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -95,7 +104,8 @@ namespace LlamaParse
             string? label,
             global::LlamaParse.AnyOf<string, bool?, object>? value,
             bool? isEmpty,
-            global::System.Collections.Generic.IList<global::LlamaParse.ValueItemsVariant1Item>? valueItems)
+            global::System.Collections.Generic.IList<global::LlamaParse.ValueItemsVariant1Item>? valueItems,
+            global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
         {
             this.Type = type;
             this.Field = field;
@@ -104,6 +114,7 @@ namespace LlamaParse
             this.Value = value;
             this.IsEmpty = isEmpty;
             this.ValueItems = valueItems;
+            this.Bbox = bbox;
         }
 
         /// <summary>

@@ -16,6 +16,18 @@ namespace LlamaParse
         public required int PageNumber { get; set; }
 
         /// <summary>
+        /// Width of the page in points
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("page_width")]
+        public double? PageWidth { get; set; }
+
+        /// <summary>
+        /// Height of the page in points
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("page_height")]
+        public double? PageHeight { get; set; }
+
+        /// <summary>
         /// Forms detected on the page
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("forms")]
@@ -44,6 +56,12 @@ namespace LlamaParse
         /// <param name="forms">
         /// Forms detected on the page
         /// </param>
+        /// <param name="pageWidth">
+        /// Width of the page in points
+        /// </param>
+        /// <param name="pageHeight">
+        /// Height of the page in points
+        /// </param>
         /// <param name="success">
         /// Success indicator
         /// </param>
@@ -53,9 +71,13 @@ namespace LlamaParse
         public FormsResultPage(
             int pageNumber,
             global::System.Collections.Generic.IList<global::LlamaParse.Form> forms,
+            double? pageWidth,
+            double? pageHeight,
             bool success = true)
         {
             this.PageNumber = pageNumber;
+            this.PageWidth = pageWidth;
+            this.PageHeight = pageHeight;
             this.Forms = forms ?? throw new global::System.ArgumentNullException(nameof(forms));
             this.Success = success;
         }

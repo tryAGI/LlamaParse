@@ -54,6 +54,12 @@ namespace LlamaParse
         public global::LlamaParse.DirectoryResponseType2? Type { get; set; }
 
         /// <summary>
+        /// Connector Subscription whose files sync into this directory. Null for a directory populated by manual uploads.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("connector_subscription_id")]
+        public string? ConnectorSubscriptionId { get; set; }
+
+        /// <summary>
         /// When this directory expires and is eligible for cleanup.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
@@ -101,6 +107,9 @@ namespace LlamaParse
         /// <param name="type">
         /// Directory type: 'user', 'index', or 'ephemeral'.
         /// </param>
+        /// <param name="connectorSubscriptionId">
+        /// Connector Subscription whose files sync into this directory. Null for a directory populated by manual uploads.
+        /// </param>
         /// <param name="expiresAt">
         /// When this directory expires and is eligible for cleanup.
         /// </param>
@@ -121,6 +130,7 @@ namespace LlamaParse
             global::System.DateTime? updatedAt,
             string? description,
             global::LlamaParse.DirectoryResponseType2? type,
+            string? connectorSubscriptionId,
             global::System.DateTime? expiresAt,
             object? systemMetadata,
             global::System.DateTime? deletedAt)
@@ -132,6 +142,7 @@ namespace LlamaParse
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Type = type;
+            this.ConnectorSubscriptionId = connectorSubscriptionId;
             this.ExpiresAt = expiresAt;
             this.SystemMetadata = systemMetadata;
             this.DeletedAt = deletedAt;
