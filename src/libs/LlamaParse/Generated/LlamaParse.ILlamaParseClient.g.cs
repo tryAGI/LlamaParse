@@ -47,6 +47,11 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        public AlphaClient Alpha { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaClient Beta { get; }
 
         /// <summary>

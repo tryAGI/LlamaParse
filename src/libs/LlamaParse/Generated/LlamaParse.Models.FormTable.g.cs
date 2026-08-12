@@ -41,6 +41,12 @@ namespace LlamaParse
         public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems, object>>> Rows { get; set; }
 
         /// <summary>
+        /// Bounding boxes of the table's fillable regions on the page.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bbox")]
+        public global::System.Collections.Generic.IList<global::LlamaParse.BBox>? Bbox { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -65,6 +71,9 @@ namespace LlamaParse
         /// <param name="columns">
         /// Printed column headers in order, if any
         /// </param>
+        /// <param name="bbox">
+        /// Bounding boxes of the table's fillable regions on the page.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,13 +82,15 @@ namespace LlamaParse
             string? type,
             string? id,
             string? label,
-            global::System.Collections.Generic.IList<string>? columns)
+            global::System.Collections.Generic.IList<string>? columns,
+            global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
         {
             this.Type = type;
             this.Id = id;
             this.Label = label;
             this.Columns = columns;
             this.Rows = rows ?? throw new global::System.ArgumentNullException(nameof(rows));
+            this.Bbox = bbox;
         }
 
         /// <summary>

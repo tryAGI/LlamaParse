@@ -36,6 +36,13 @@ namespace LlamaParse
         public string? Version { get; set; }
 
         /// <summary>
+        /// Disable reuse and storage of Extract results<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disable_cache")]
+        public bool? DisableCache { get; set; }
+
+        /// <summary>
         /// JSON Schema defining the fields to extract. Validate with the /schema/validate endpoint first.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_schema")]
@@ -121,6 +128,10 @@ namespace LlamaParse
         /// Use 'latest' for the latest release for the selected tier or a date string (YYYY-MM-DD format) to pin to the nearest release at or before that date. Job responses always report the concrete resolved version the job runs, fixed at job creation; saved configurations keep the value as provided.<br/>
         /// Default Value: latest
         /// </param>
+        /// <param name="disableCache">
+        /// Disable reuse and storage of Extract results<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="extractionTarget">
         /// Granularity of extraction: per_doc returns one object per document, per_page returns one object per page, per_table_row returns one object per table row<br/>
         /// Default Value: per_doc
@@ -158,6 +169,7 @@ namespace LlamaParse
             int? maxPages,
             global::LlamaParse.ExtractConfigurationTier? tier,
             string? version,
+            bool? disableCache,
             global::LlamaParse.ExtractConfigurationExtractionTarget? extractionTarget,
             string? systemPrompt,
             bool? citeSources,
@@ -171,6 +183,7 @@ namespace LlamaParse
             this.MaxPages = maxPages;
             this.Tier = tier;
             this.Version = version;
+            this.DisableCache = disableCache;
             this.DataSchema = dataSchema ?? throw new global::System.ArgumentNullException(nameof(dataSchema));
             this.ExtractionTarget = extractionTarget;
             this.SystemPrompt = systemPrompt;
