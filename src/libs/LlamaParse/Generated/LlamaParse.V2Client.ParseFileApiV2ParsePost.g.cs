@@ -568,6 +568,9 @@ namespace LlamaParse
         /// - `agentic_plus`: `2026-07-08`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
+        /// <param name="preset">
+        /// Named preset for specialized document parsing
+        /// </param>
         /// <param name="clientName">
         /// Identifier for the client/application making the request. Used for analytics and debugging. Example: 'my-app-v2'
         /// </param>
@@ -624,6 +627,7 @@ namespace LlamaParse
             string? session = default,
             global::System.Collections.Generic.Dictionary<string, string>? userMetadata = default,
             global::System.Collections.Generic.IList<string>? webhookConfigurationIds = default,
+            string? preset = default,
             string? clientName = default,
             global::LlamaParse.LlamaParseProcessingOptions? processingOptions = default,
             global::LlamaParse.LlamaParseFastOptions? fastOptions = default,
@@ -648,6 +652,7 @@ namespace LlamaParse
                 WebhookConfigurationIds = webhookConfigurationIds,
                 Tier = tier,
                 Version = version,
+                Preset = preset,
                 ClientName = clientName,
                 ProcessingOptions = processingOptions,
                 FastOptions = fastOptions,
