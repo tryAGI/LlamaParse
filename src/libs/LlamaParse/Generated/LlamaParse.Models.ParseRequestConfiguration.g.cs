@@ -45,6 +45,12 @@ namespace LlamaParse
         public required global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationVersion?, string> Version { get; set; }
 
         /// <summary>
+        /// Named preset for specialized document parsing
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("preset")]
+        public string? Preset { get; set; }
+
+        /// <summary>
         /// Identifier for the client/application making the request. Used for analytics and debugging. Example: 'my-app-v2'
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_name")]
@@ -161,6 +167,9 @@ namespace LlamaParse
         /// <param name="webhookConfigurationIds">
         /// IDs of saved webhook configurations to notify for this job.
         /// </param>
+        /// <param name="preset">
+        /// Named preset for specialized document parsing
+        /// </param>
         /// <param name="clientName">
         /// Identifier for the client/application making the request. Used for analytics and debugging. Example: 'my-app-v2'
         /// </param>
@@ -214,6 +223,7 @@ namespace LlamaParse
             global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationVersion?, string> version,
             global::System.Collections.Generic.Dictionary<string, string>? userMetadata,
             global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
+            string? preset,
             string? clientName,
             global::LlamaParse.LlamaParseProcessingOptions? processingOptions,
             global::LlamaParse.LlamaParseFastOptions? fastOptions,
@@ -234,6 +244,7 @@ namespace LlamaParse
             this.WebhookConfigurationIds = webhookConfigurationIds;
             this.Tier = tier;
             this.Version = version;
+            this.Preset = preset;
             this.ClientName = clientName;
             this.ProcessingOptions = processingOptions;
             this.FastOptions = fastOptions;
