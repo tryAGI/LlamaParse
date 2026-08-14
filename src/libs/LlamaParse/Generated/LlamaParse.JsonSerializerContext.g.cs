@@ -13,861 +13,6 @@ namespace LlamaParse
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfTier2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfTier2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfSpecializedChartParsing2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfSpecializedChartParsing2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchFileStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchFileStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigPriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigPriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BoxAuthMechanismJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BoxAuthMechanismNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseDocumentInputTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseDocumentInputTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CloudJiraDataSourceV2ApiVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CloudJiraDataSourceV2ApiVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CompositeRetrievalModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CompositeRetrievalModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSinkNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSinkNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSourceNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSourceNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationCreateRequestParametersDiscriminatorProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationCreateRequestParametersDiscriminatorProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseParametersDiscriminatorProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseParametersDiscriminatorProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryCreateRequestTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryCreateRequestTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryResponseType2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryResponseType2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DocumentChunkModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DocumentChunkModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigEmbeddingConfigDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigEmbeddingConfigDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigPriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigPriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationExtractionTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationExtractionTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobCreatePriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobCreatePriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModelsJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModelsNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractStateJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractStateNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersExtractionTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersExtractionTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FailPageModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FailPageModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterConditionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterConditionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FooterItemItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FooterItemItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormJsonItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormJsonItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldFieldJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldFieldNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldValueItemsVariant1ItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldValueItemsVariant1ItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormSectionItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormSectionItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormTableCellItemsItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormTableCellItemsItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.HeaderItemItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.HeaderItemItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ImageMetadataCategory2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ImageMetadataCategory2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.JobNameMappingJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.JobNameMappingNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersPriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersPriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsForms2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsForms2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ManagedIngestionStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ManagedIngestionStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MessageRoleJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MessageRoleNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NodeRelationshipJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NodeRelationshipNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NumericRangeFilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NumericRangeFilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ObjectTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ObjectTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorDistanceMethodJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorDistanceMethodNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorVectorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorVectorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseJobResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseJobResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsePlanLevelJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsePlanLevelNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParserLanguagesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParserLanguagesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsingModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsingModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PartitionNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PartitionNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineEmbeddingConfigDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineEmbeddingConfigDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineDataSourceStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineDataSourceStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileResponseStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileResponseStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineUpdateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineUpdateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PoolingJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PoolingNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PublicModelNameJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PublicModelNameNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ReRankerTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ReRankerTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RetrievalModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RetrievalModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RevisionTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RevisionTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SparseModelTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SparseModelTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StatusEnumJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StatusEnumNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StringFilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StringFilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StructuredResultPageItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StructuredResultPageItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SupportedLLMModelNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SupportedLLMModelNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricEventTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricEventTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricAggregateResponseGroupByItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricAggregateResponseGroupByItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ValueFilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ValueFilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyConfigurationTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyConfigurationTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseDocumentInputTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseDocumentInputTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyResultVerdictJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyResultVerdictNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VertexEmbeddingModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VertexEmbeddingModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigurationWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigurationWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicyJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicyNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1SplitJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1SplitJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListParseJobsApiV2ParseGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListParseJobsApiV2ParseGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListVerifyJobsApiAlphaVerifyGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListVerifyJobsApiAlphaVerifyGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParametersJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.Parameters2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParametersVariant1JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfig2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigVariant1JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.JsonItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ValueItemsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem3JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem4JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem5JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MetadataScalarValueJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MetadataValueJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfig3JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigVariant12JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigVariant13JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EventsItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem7JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.NoneSegmentationConfig, global::LlamaParse.PageSegmentationConfig, global::LlamaParse.ElementSegmentationConfig>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.NoneChunkingConfig, global::LlamaParse.CharacterChunkingConfig, global::LlamaParse.TokenChunkingConfig, global::LlamaParse.SentenceChunkingConfig, global::LlamaParse.SemanticChunkingConfig>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoModeParsingConfVersion?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.BatchParseJobRecordCreate, global::LlamaParse.ClassifyJob>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ExtractModels?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::LlamaParse.FormTableCellItems, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.TextItem, global::LlamaParse.ListItem>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.MarkdownResultPage, global::LlamaParse.FailedMarkdownPage>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, double?, string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.MetadataFilter, global::LlamaParse.MetadataFilters>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, double?, global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<int?, double?>>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, double?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseRequestConfigurationTier?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseRequestConfigurationVersion?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseV2ParametersVersion?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.BatchParseJobRecordCreate, global::LlamaParse.ClassifyJob>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ObjectType?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ValueFilter, global::System.Collections.Generic.IList<global::LlamaParse.NumericRangeFilter>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.StructuredResultPage, global::LlamaParse.FailedStructuredPage>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?, double?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.RelatedNodeInfo, global::System.Collections.Generic.IList<global::LlamaParse.RelatedNodeInfo>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?, bool?, double?, global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<string, int?, bool?, double?>>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?, bool?, double?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore>), TypeInfoPropertyName = "CloudAstraDBVectorStore_7213cc45d352cf78")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_3f7470369807d660")]
@@ -1380,861 +525,6 @@ namespace LlamaParse
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfTier2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfTier2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfSpecializedChartParsing2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfSpecializedChartParsing2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchFileStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchFileStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigPriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigPriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BoxAuthMechanismJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BoxAuthMechanismNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseDocumentInputTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseDocumentInputTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CloudJiraDataSourceV2ApiVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CloudJiraDataSourceV2ApiVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CompositeRetrievalModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CompositeRetrievalModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSinkNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSinkNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSourceNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSourceNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationCreateRequestParametersDiscriminatorProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationCreateRequestParametersDiscriminatorProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseParametersDiscriminatorProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseParametersDiscriminatorProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryCreateRequestTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryCreateRequestTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryResponseType2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryResponseType2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DocumentChunkModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DocumentChunkModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigEmbeddingConfigDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigEmbeddingConfigDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigPriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigPriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationExtractionTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationExtractionTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobCreatePriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobCreatePriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModelsJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModelsNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractStateJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractStateNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersExtractionTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersExtractionTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FailPageModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FailPageModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterConditionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterConditionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FooterItemItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FooterItemItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormJsonItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormJsonItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldFieldJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldFieldNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldValueItemsVariant1ItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldValueItemsVariant1ItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormSectionItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormSectionItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormTableCellItemsItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormTableCellItemsItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.HeaderItemItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.HeaderItemItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ImageMetadataCategory2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ImageMetadataCategory2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.JobNameMappingJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.JobNameMappingNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersPriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersPriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsForms2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsForms2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ManagedIngestionStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ManagedIngestionStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MessageRoleJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MessageRoleNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NodeRelationshipJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NodeRelationshipNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NumericRangeFilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NumericRangeFilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ObjectTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ObjectTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorDistanceMethodJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorDistanceMethodNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorVectorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorVectorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseJobResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseJobResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsePlanLevelJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsePlanLevelNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParserLanguagesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParserLanguagesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsingModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsingModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PartitionNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PartitionNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineEmbeddingConfigDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineEmbeddingConfigDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineDataSourceStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineDataSourceStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileResponseStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileResponseStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineUpdateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineUpdateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PoolingJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PoolingNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PublicModelNameJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PublicModelNameNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ReRankerTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ReRankerTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RetrievalModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RetrievalModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RevisionTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RevisionTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SparseModelTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SparseModelTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StatusEnumJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StatusEnumNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StringFilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StringFilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StructuredResultPageItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StructuredResultPageItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SupportedLLMModelNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SupportedLLMModelNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricEventTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricEventTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricAggregateResponseGroupByItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricAggregateResponseGroupByItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ValueFilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ValueFilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyConfigurationTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyConfigurationTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseDocumentInputTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseDocumentInputTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyResultVerdictJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyResultVerdictNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VertexEmbeddingModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VertexEmbeddingModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigurationWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigurationWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicyJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicyNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1SplitJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1SplitJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListParseJobsApiV2ParseGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListParseJobsApiV2ParseGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListVerifyJobsApiAlphaVerifyGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListVerifyJobsApiAlphaVerifyGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParametersJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.Parameters2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParametersVariant1JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfig2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigVariant1JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.JsonItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ValueItemsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem3JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem4JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem5JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MetadataScalarValueJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MetadataValueJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfig3JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigVariant12JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigVariant13JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EventsItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem7JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.NoneSegmentationConfig, global::LlamaParse.PageSegmentationConfig, global::LlamaParse.ElementSegmentationConfig>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.NoneChunkingConfig, global::LlamaParse.CharacterChunkingConfig, global::LlamaParse.TokenChunkingConfig, global::LlamaParse.SentenceChunkingConfig, global::LlamaParse.SemanticChunkingConfig>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoModeParsingConfVersion?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.BatchParseJobRecordCreate, global::LlamaParse.ClassifyJob>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ExtractModels?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::LlamaParse.FormTableCellItems, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.TextItem, global::LlamaParse.ListItem>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.MarkdownResultPage, global::LlamaParse.FailedMarkdownPage>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, double?, string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.MetadataFilter, global::LlamaParse.MetadataFilters>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, double?, global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<int?, double?>>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, double?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseRequestConfigurationTier?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseRequestConfigurationVersion?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseV2ParametersVersion?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.BatchParseJobRecordCreate, global::LlamaParse.ClassifyJob>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ObjectType?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ValueFilter, global::System.Collections.Generic.IList<global::LlamaParse.NumericRangeFilter>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.StructuredResultPage, global::LlamaParse.FailedStructuredPage>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?, double?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.RelatedNodeInfo, global::System.Collections.Generic.IList<global::LlamaParse.RelatedNodeInfo>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?, bool?, double?, global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<string, int?, bool?, double?>>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?, bool?, double?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore>), TypeInfoPropertyName = "CloudAstraDBVectorStore_7213cc45d352cf78")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_3f7470369807d660")]
@@ -2747,861 +1037,6 @@ namespace LlamaParse
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfTier2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfTier2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfSpecializedChartParsing2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AutoModeParsingConfSpecializedChartParsing2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchFileStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchFileStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchJobTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigPriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigPriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BatchResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BoxAuthMechanismJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.BoxAuthMechanismNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseDocumentInputTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseDocumentInputTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CloudJiraDataSourceV2ApiVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CloudJiraDataSourceV2ApiVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CompositeRetrievalModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.CompositeRetrievalModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSinkNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSinkNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSourceNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurableDataSourceNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationCreateRequestParametersDiscriminatorProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationCreateRequestParametersDiscriminatorProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseParametersDiscriminatorProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationResponseParametersDiscriminatorProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryCreateRequestTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryCreateRequestTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryResponseType2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DirectoryResponseType2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DocumentChunkModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.DocumentChunkModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigEmbeddingConfigDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigEmbeddingConfigDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigPriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigPriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationExtractionTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractConfigurationExtractionTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobCreatePriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractJobCreatePriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModelsJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractModelsNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractStateJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractStateNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersExtractionTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ExtractV2ParametersExtractionTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FailPageModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FailPageModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterConditionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterConditionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FooterItemItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FooterItemItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormJsonItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormJsonItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldFieldJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldFieldNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldValueItemsVariant1ItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormFieldValueItemsVariant1ItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormSectionItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormSectionItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormTableCellItemsItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.FormTableCellItemsItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.HeaderItemItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.HeaderItemItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ImageMetadataCategory2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ImageMetadataCategory2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.JobNameMappingJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.JobNameMappingNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersPriority2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersPriority2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsForms2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsForms2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ManagedIngestionStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ManagedIngestionStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MessageRoleJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MessageRoleNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NodeRelationshipJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NodeRelationshipNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NumericRangeFilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.NumericRangeFilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ObjectTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ObjectTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorDistanceMethodJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorDistanceMethodNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorVectorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PGVectorVectorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseJobResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseJobResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsePlanLevelJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsePlanLevelNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseRequestConfigurationVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersVersionJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseV2ParametersVersionNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParserLanguagesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParserLanguagesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsingModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParsingModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PartitionNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PartitionNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineEmbeddingConfigDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineEmbeddingConfigDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineDataSourceStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineDataSourceStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileResponseStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineFileResponseStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineUpdateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PipelineUpdateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PoolingJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PoolingNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PublicModelNameJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PublicModelNameNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ReRankerTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ReRankerTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RetrievalModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RetrievalModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RevisionTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.RevisionTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SparseModelTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SparseModelTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetResultTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StatusEnumJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StatusEnumNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StringFilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StringFilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StructuredResultPageItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.StructuredResultPageItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SupportedLLMModelNamesJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.SupportedLLMModelNamesNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricEventTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricEventTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricAggregateResponseGroupByItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.UsageMetricAggregateResponseGroupByItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ValueFilterOperatorJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ValueFilterOperatorNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyConfigurationTierJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyConfigurationTierNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseStatusJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseStatusNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseDocumentInputTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyJobResponseDocumentInputTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyResultVerdictJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VerifyResultVerdictNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VertexEmbeddingModeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.VertexEmbeddingModeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookOutputFormat2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookOutputFormat2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigurationWebhookEventsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.WebhookConfigurationWebhookEventsVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicyJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicyNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1SplitJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1SplitJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemNullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListParseJobsApiV2ParseGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListParseJobsApiV2ParseGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListVerifyJobsApiAlphaVerifyGetStatus2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ListVerifyJobsApiAlphaVerifyGetStatus2NullableJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParametersJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.Parameters2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ParametersVariant1JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfig2JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigVariant1JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.JsonItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ValueItemsVariant1ItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem3JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem4JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem5JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MetadataScalarValueJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.MetadataValueJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfig3JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigVariant12JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EmbeddingConfigVariant13JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.EventsItemJsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.ItemsItem7JsonConverter),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.NoneSegmentationConfig, global::LlamaParse.PageSegmentationConfig, global::LlamaParse.ElementSegmentationConfig>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.NoneChunkingConfig, global::LlamaParse.CharacterChunkingConfig, global::LlamaParse.TokenChunkingConfig, global::LlamaParse.SentenceChunkingConfig, global::LlamaParse.SemanticChunkingConfig>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoModeParsingConfVersion?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.BatchParseJobRecordCreate, global::LlamaParse.ClassifyJob>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ExtractModels?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::LlamaParse.FormTableCellItems, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.TextItem, global::LlamaParse.ListItem>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.MarkdownResultPage, global::LlamaParse.FailedMarkdownPage>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, double?, string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.MetadataFilter, global::LlamaParse.MetadataFilters>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, double?, global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<int?, double?>>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, double?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseRequestConfigurationTier?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseRequestConfigurationVersion?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ParseV2ParametersVersion?, string>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.BatchParseJobRecordCreate, global::LlamaParse.ClassifyJob>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ObjectType?, string, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ValueFilter, global::System.Collections.Generic.IList<global::LlamaParse.NumericRangeFilter>, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.StructuredResultPage, global::LlamaParse.FailedStructuredPage>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?, double?, object>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.RelatedNodeInfo, global::System.Collections.Generic.IList<global::LlamaParse.RelatedNodeInfo>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?, bool?, double?, global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<string, int?, bool?, double?>>>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, int?, bool?, double?>),
-
-            typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>),
-
-            typeof(global::LlamaParse.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore>), TypeInfoPropertyName = "CloudAstraDBVectorStore_7213cc45d352cf78")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_3f7470369807d660")]
@@ -3693,13 +1128,7 @@ namespace LlamaParse
     /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
-        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
-            SourceGenerationContextChunk0.Default,
-
-            SourceGenerationContextChunk1.Default,
-
-            SourceGenerationContextChunk2.Default
-            );
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
@@ -3729,286 +1158,6 @@ namespace LlamaParse
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 TypeInfoResolver = Resolver,
             };
-            options.Converters.Add(new global::LlamaParse.JsonConverters.AutoModeParsingConfTier2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.AutoModeParsingConfTier2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.AutoModeParsingConfVersionJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.AutoModeParsingConfVersionNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.AutoModeParsingConfSpecializedChartParsing2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.AutoModeParsingConfSpecializedChartParsing2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchFileStatusJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchFileStatusNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchJobStatusJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchJobStatusNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchJobTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchJobTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchParseJobConfigPriority2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchParseJobConfigPriority2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchResponseStatusJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BatchResponseStatusNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BoxAuthMechanismJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.BoxAuthMechanismNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ClassifyModeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ClassifyModeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ClassifyV2JobResponseStatusJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ClassifyV2JobResponseStatusNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ClassifyV2JobResponseDocumentInputTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ClassifyV2JobResponseDocumentInputTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.CloudJiraDataSourceV2ApiVersionJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.CloudJiraDataSourceV2ApiVersionNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.CompositeRetrievalModeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.CompositeRetrievalModeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurableDataSinkNamesJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurableDataSinkNamesNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurableDataSourceNamesJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurableDataSourceNamesNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurationCreateRequestParametersDiscriminatorProductTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurationCreateRequestParametersDiscriminatorProductTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurationResponseProductTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurationResponseProductTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurationResponseParametersDiscriminatorProductTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurationResponseParametersDiscriminatorProductTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.DirectoryCreateRequestTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.DirectoryCreateRequestTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.DirectoryResponseType2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.DirectoryResponseType2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.DocumentChunkModeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.DocumentChunkModeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.EmbeddingModelConfigEmbeddingConfigDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.EmbeddingModelConfigEmbeddingConfigDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractConfigPriority2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractConfigPriority2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractConfigurationTierJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractConfigurationTierNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractConfigurationExtractionTargetJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractConfigurationExtractionTargetNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractJobStatusJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractJobStatusNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractJobCreatePriority2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractJobCreatePriority2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractModeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractModeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractModelsJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractModelsNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractStateJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractStateNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractTargetJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractTargetNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractV2ParametersTierJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractV2ParametersTierNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractV2ParametersExtractionTargetJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ExtractV2ParametersExtractionTargetNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FailPageModeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FailPageModeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FilterConditionJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FilterConditionNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FilterOperatorJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FilterOperatorNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FooterItemItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FooterItemItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FormJsonItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FormJsonItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FormFieldFieldJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FormFieldFieldNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FormFieldValueItemsVariant1ItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FormFieldValueItemsVariant1ItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FormSectionItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FormSectionItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FormTableCellItemsItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.FormTableCellItemsItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.HeaderItemItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.HeaderItemItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ImageMetadataCategory2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ImageMetadataCategory2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.JobNameMappingJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.JobNameMappingNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseParametersPriority2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseParametersPriority2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsForms2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsForms2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ManagedIngestionStatusJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ManagedIngestionStatusNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.MessageRoleJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.MessageRoleNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.NodeRelationshipJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.NodeRelationshipNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.NumericRangeFilterOperatorJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.NumericRangeFilterOperatorNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ObjectTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ObjectTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PGVectorDistanceMethodJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PGVectorDistanceMethodNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PGVectorVectorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PGVectorVectorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseJobResponseStatusJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseJobResponseStatusNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParsePlanLevelJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParsePlanLevelNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseRequestConfigurationTierJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseRequestConfigurationTierNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseRequestConfigurationVersionJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseRequestConfigurationVersionNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseV2ParametersTierJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseV2ParametersTierNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseV2ParametersVersionJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseV2ParametersVersionNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParserLanguagesJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParserLanguagesNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParsingModeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParsingModeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PartitionNamesJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PartitionNamesNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineEmbeddingConfigDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineEmbeddingConfigDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineDataSourceStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineDataSourceStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineFileStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineFileStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineFileResponseStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineFileResponseStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineUpdateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PipelineUpdateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PoolingJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PoolingNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PublicModelNameJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PublicModelNameNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ReRankerTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ReRankerTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.RetrievalModeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.RetrievalModeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.RevisionTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.RevisionTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SparseModelTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SparseModelTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetJobStatusJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetResultTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetResultTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.StatusEnumJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.StatusEnumNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.StringFilterOperatorJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.StringFilterOperatorNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.StructuredResultPageItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.StructuredResultPageItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SupportedLLMModelNamesJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.SupportedLLMModelNamesNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.UsageMetricEventTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.UsageMetricEventTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.UsageMetricAggregateResponseGroupByItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.UsageMetricAggregateResponseGroupByItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ValueFilterOperatorJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ValueFilterOperatorNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.VerifyConfigurationTierJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.VerifyConfigurationTierNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.VerifyJobResponseStatusJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.VerifyJobResponseStatusNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.VerifyJobResponseDocumentInputTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.VerifyJobResponseDocumentInputTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.VerifyResultVerdictJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.VerifyResultVerdictNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.VertexEmbeddingModeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.VertexEmbeddingModeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookEventsVariant1ItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookEventsVariant1ItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookOutputFormat2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookOutputFormat2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookEventsVariant1ItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookEventsVariant1ItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookOutputFormat2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookOutputFormat2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookEventsVariant1ItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookEventsVariant1ItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookOutputFormat2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookOutputFormat2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigurationWebhookEventsVariant1ItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.WebhookConfigurationWebhookEventsVariant1ItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1ItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1ItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicyJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicyNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListSplitJobsApiV1SplitJobsGetStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListSplitJobsApiV1SplitJobsGetStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemNullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListParseJobsApiV2ParseGetStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListParseJobsApiV2ParseGetStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2NullableJsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListVerifyJobsApiAlphaVerifyGetStatus2JsonConverter());
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ListVerifyJobsApiAlphaVerifyGetStatus2NullableJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ParametersJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.Parameters2JsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ParametersVariant1JsonConverter());
@@ -4158,7 +1307,2032 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>());
             options.Converters.Add(new global::LlamaParse.JsonConverters.UnixTimestampJsonConverter());
 
+            options.Converters.Add(new LazyEnumJsonConverterFactory());
+
             return options;
+        }
+
+
+        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
+        {
+            public override bool CanConvert(global::System.Type typeToConvert)
+            {
+                return
+                    typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfTier2)
+
+                    || typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfTier2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfVersion)
+
+                    || typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfVersion?)
+
+                    || typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfSpecializedChartParsing2)
+
+                    || typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfSpecializedChartParsing2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchFileStatus)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchFileStatus?)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchJobStatus)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchJobStatus?)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchJobType)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchJobType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchParseJobConfigPriority2)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchParseJobConfigPriority2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchParseJobConfigImagesToSaveVariant1Item)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchParseJobConfigImagesToSaveVariant1Item?)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchResponseStatus)
+
+                    || typeToConvert == typeof(global::LlamaParse.BatchResponseStatus?)
+
+                    || typeToConvert == typeof(global::LlamaParse.BoxAuthMechanism)
+
+                    || typeToConvert == typeof(global::LlamaParse.BoxAuthMechanism?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ClassifyMode)
+
+                    || typeToConvert == typeof(global::LlamaParse.ClassifyMode?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ClassifyV2JobResponseStatus)
+
+                    || typeToConvert == typeof(global::LlamaParse.ClassifyV2JobResponseStatus?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ClassifyV2JobResponseDocumentInputType)
+
+                    || typeToConvert == typeof(global::LlamaParse.ClassifyV2JobResponseDocumentInputType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.CloudJiraDataSourceV2ApiVersion)
+
+                    || typeToConvert == typeof(global::LlamaParse.CloudJiraDataSourceV2ApiVersion?)
+
+                    || typeToConvert == typeof(global::LlamaParse.CompositeRetrievalMode)
+
+                    || typeToConvert == typeof(global::LlamaParse.CompositeRetrievalMode?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurableDataSinkNames)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurableDataSinkNames?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurableDataSourceNames)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurableDataSourceNames?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurationResponseProductType)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurationResponseProductType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductType)
+
+                    || typeToConvert == typeof(global::LlamaParse.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.DataSourceReaderVersionMetadataReaderVersion2)
+
+                    || typeToConvert == typeof(global::LlamaParse.DataSourceReaderVersionMetadataReaderVersion2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.DirectoryCreateRequestType)
+
+                    || typeToConvert == typeof(global::LlamaParse.DirectoryCreateRequestType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.DirectoryResponseType2)
+
+                    || typeToConvert == typeof(global::LlamaParse.DirectoryResponseType2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.DocumentChunkMode)
+
+                    || typeToConvert == typeof(global::LlamaParse.DocumentChunkMode?)
+
+                    || typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigEmbeddingConfigDiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigEmbeddingConfigDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractConfigPriority2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractConfigPriority2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractConfigurationTier)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractConfigurationTier?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractConfigurationExtractionTarget)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractConfigurationExtractionTarget?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractJobStatus)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractJobStatus?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractJobCreatePriority2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractJobCreatePriority2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractMode)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractMode?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractModels)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractModels?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractState)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractState?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractTarget)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractTarget?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractV2ParametersTier)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractV2ParametersTier?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractV2ParametersExtractionTarget)
+
+                    || typeToConvert == typeof(global::LlamaParse.ExtractV2ParametersExtractionTarget?)
+
+                    || typeToConvert == typeof(global::LlamaParse.FailPageMode)
+
+                    || typeToConvert == typeof(global::LlamaParse.FailPageMode?)
+
+                    || typeToConvert == typeof(global::LlamaParse.FilterCondition)
+
+                    || typeToConvert == typeof(global::LlamaParse.FilterCondition?)
+
+                    || typeToConvert == typeof(global::LlamaParse.FilterOperator)
+
+                    || typeToConvert == typeof(global::LlamaParse.FilterOperator?)
+
+                    || typeToConvert == typeof(global::LlamaParse.FooterItemItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.FooterItemItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.FormJsonItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.FormJsonItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.FormFieldField)
+
+                    || typeToConvert == typeof(global::LlamaParse.FormFieldField?)
+
+                    || typeToConvert == typeof(global::LlamaParse.FormFieldValueItemsVariant1ItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.FormFieldValueItemsVariant1ItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.FormSectionItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.FormSectionItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.FormTableCellItemsItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.FormTableCellItemsItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.HeaderItemItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.HeaderItemItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ImageMetadataCategory2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ImageMetadataCategory2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.IndexCreateRequestVectorTarget)
+
+                    || typeToConvert == typeof(global::LlamaParse.IndexCreateRequestVectorTarget?)
+
+                    || typeToConvert == typeof(global::LlamaParse.JobNameMapping)
+
+                    || typeToConvert == typeof(global::LlamaParse.JobNameMapping?)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item?)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseOutputOptionsGranularBboxe)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseOutputOptionsGranularBboxe?)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseParametersPriority2)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseParametersPriority2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseParametersImagesToSaveVariant1Item)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseParametersImagesToSaveVariant1Item?)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseProcessingOptionsSpecializedChartParsing2)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseProcessingOptionsSpecializedChartParsing2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseProcessingOptionsForms2)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseProcessingOptionsForms2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseSupportedFileExtensions)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseSupportedFileExtensions?)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat2)
+
+                    || typeToConvert == typeof(global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ManagedIngestionStatus)
+
+                    || typeToConvert == typeof(global::LlamaParse.ManagedIngestionStatus?)
+
+                    || typeToConvert == typeof(global::LlamaParse.MessageRole)
+
+                    || typeToConvert == typeof(global::LlamaParse.MessageRole?)
+
+                    || typeToConvert == typeof(global::LlamaParse.NodeRelationship)
+
+                    || typeToConvert == typeof(global::LlamaParse.NodeRelationship?)
+
+                    || typeToConvert == typeof(global::LlamaParse.NumericRangeFilterOperator)
+
+                    || typeToConvert == typeof(global::LlamaParse.NumericRangeFilterOperator?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ObjectType)
+
+                    || typeToConvert == typeof(global::LlamaParse.ObjectType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PGVectorDistanceMethod)
+
+                    || typeToConvert == typeof(global::LlamaParse.PGVectorDistanceMethod?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PGVectorVectorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.PGVectorVectorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseJobResponseStatus)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseJobResponseStatus?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParsePlanLevel)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParsePlanLevel?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseRequestConfigurationTier)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseRequestConfigurationTier?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseRequestConfigurationVersion)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseRequestConfigurationVersion?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseV2ParametersTier)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseV2ParametersTier?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseV2ParametersVersion)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseV2ParametersVersion?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseFastItem)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseFastItem?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseCostEffectiveItem)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseCostEffectiveItem?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseAgenticItem)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseAgenticItem?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseAgenticPlu)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseAgenticPlu?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParserLanguages)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParserLanguages?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParsingMode)
+
+                    || typeToConvert == typeof(global::LlamaParse.ParsingMode?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PartitionNames)
+
+                    || typeToConvert == typeof(global::LlamaParse.PartitionNames?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineEmbeddingConfigDiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineEmbeddingConfigDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineCreateEmbeddingConfigVariant1DiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineCreateEmbeddingConfigVariant1DiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineDataSourceStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineDataSourceStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineFileStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineFileStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineFileResponseStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineFileResponseStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineType)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.Pooling)
+
+                    || typeToConvert == typeof(global::LlamaParse.Pooling?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PublicModelName)
+
+                    || typeToConvert == typeof(global::LlamaParse.PublicModelName?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ReRankerType)
+
+                    || typeToConvert == typeof(global::LlamaParse.ReRankerType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.RetrievalMode)
+
+                    || typeToConvert == typeof(global::LlamaParse.RetrievalMode?)
+
+                    || typeToConvert == typeof(global::LlamaParse.RevisionType)
+
+                    || typeToConvert == typeof(global::LlamaParse.RevisionType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SessionDetailEventDiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.SessionDetailEventDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SparseModelType)
+
+                    || typeToConvert == typeof(global::LlamaParse.SparseModelType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetJobStatus)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetJobStatus?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetParsingConfigTier)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetParsingConfigTier?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetParsingConfigTableMergeSensitivity)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetParsingConfigTableMergeSensitivity?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetResultType)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetResultType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetV1ParametersTier)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetV1ParametersTier?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity)
+
+                    || typeToConvert == typeof(global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity?)
+
+                    || typeToConvert == typeof(global::LlamaParse.StatusEnum)
+
+                    || typeToConvert == typeof(global::LlamaParse.StatusEnum?)
+
+                    || typeToConvert == typeof(global::LlamaParse.StringFilterOperator)
+
+                    || typeToConvert == typeof(global::LlamaParse.StringFilterOperator?)
+
+                    || typeToConvert == typeof(global::LlamaParse.StructuredResultPageItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::LlamaParse.StructuredResultPageItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SupportedLLMModelNames)
+
+                    || typeToConvert == typeof(global::LlamaParse.SupportedLLMModelNames?)
+
+                    || typeToConvert == typeof(global::LlamaParse.UsageMetricEventType)
+
+                    || typeToConvert == typeof(global::LlamaParse.UsageMetricEventType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.UsageMetricAggregateResponseGroupByItem)
+
+                    || typeToConvert == typeof(global::LlamaParse.UsageMetricAggregateResponseGroupByItem?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ValueFilterOperator)
+
+                    || typeToConvert == typeof(global::LlamaParse.ValueFilterOperator?)
+
+                    || typeToConvert == typeof(global::LlamaParse.VerifyConfigurationTier)
+
+                    || typeToConvert == typeof(global::LlamaParse.VerifyConfigurationTier?)
+
+                    || typeToConvert == typeof(global::LlamaParse.VerifyJobResponseStatus)
+
+                    || typeToConvert == typeof(global::LlamaParse.VerifyJobResponseStatus?)
+
+                    || typeToConvert == typeof(global::LlamaParse.VerifyJobResponseDocumentInputType)
+
+                    || typeToConvert == typeof(global::LlamaParse.VerifyJobResponseDocumentInputType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.VerifyResultVerdict)
+
+                    || typeToConvert == typeof(global::LlamaParse.VerifyResultVerdict?)
+
+                    || typeToConvert == typeof(global::LlamaParse.VertexEmbeddingMode)
+
+                    || typeToConvert == typeof(global::LlamaParse.VertexEmbeddingMode?)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigCreateRequestWebhookEventsVariant1Item)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigCreateRequestWebhookEventsVariant1Item?)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigCreateRequestWebhookOutputFormat2)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigCreateRequestWebhookOutputFormat2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item?)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseWebhookOutputFormat2)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseWebhookOutputFormat2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigUpdateRequestWebhookEventsVariant1Item)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigUpdateRequestWebhookEventsVariant1Item?)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigUpdateRequestWebhookOutputFormat2)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigUpdateRequestWebhookOutputFormat2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy?)
+
+                    || typeToConvert == typeof(global::LlamaParse.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicy)
+
+                    || typeToConvert == typeof(global::LlamaParse.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicy?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListSplitJobsApiV1SplitJobsGetStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListSplitJobsApiV1SplitJobsGetStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItem)
+
+                    || typeToConvert == typeof(global::LlamaParse.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItem?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListParseJobsApiV2ParseGetStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListParseJobsApiV2ParseGetStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListClassifyJobsApiV2ClassifyGetStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListClassifyJobsApiV2ClassifyGetStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListBatchesApiV2BatchesGetStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListBatchesApiV2BatchesGetStatus2?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListVerifyJobsApiAlphaVerifyGetStatus2)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListVerifyJobsApiAlphaVerifyGetStatus2?);
+            }
+
+            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
+                global::System.Type typeToConvert,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfTier2))
+                {
+                    return new global::LlamaParse.JsonConverters.AutoModeParsingConfTier2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfTier2?))
+                {
+                    return new global::LlamaParse.JsonConverters.AutoModeParsingConfTier2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfVersion))
+                {
+                    return new global::LlamaParse.JsonConverters.AutoModeParsingConfVersionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfVersion?))
+                {
+                    return new global::LlamaParse.JsonConverters.AutoModeParsingConfVersionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfSpecializedChartParsing2))
+                {
+                    return new global::LlamaParse.JsonConverters.AutoModeParsingConfSpecializedChartParsing2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfSpecializedChartParsing2?))
+                {
+                    return new global::LlamaParse.JsonConverters.AutoModeParsingConfSpecializedChartParsing2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchFileStatus))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchFileStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchFileStatus?))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchFileStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchJobStatus))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchJobStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchJobStatus?))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchJobStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchJobType))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchJobTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchJobType?))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchJobTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchParseJobConfigPriority2))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchParseJobConfigPriority2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchParseJobConfigPriority2?))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchParseJobConfigPriority2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchParseJobConfigImagesToSaveVariant1Item))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchParseJobConfigImagesToSaveVariant1Item?))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchResponseStatus))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BatchResponseStatus?))
+                {
+                    return new global::LlamaParse.JsonConverters.BatchResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BoxAuthMechanism))
+                {
+                    return new global::LlamaParse.JsonConverters.BoxAuthMechanismJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.BoxAuthMechanism?))
+                {
+                    return new global::LlamaParse.JsonConverters.BoxAuthMechanismNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ClassifyMode))
+                {
+                    return new global::LlamaParse.JsonConverters.ClassifyModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ClassifyMode?))
+                {
+                    return new global::LlamaParse.JsonConverters.ClassifyModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ClassifyV2JobResponseStatus))
+                {
+                    return new global::LlamaParse.JsonConverters.ClassifyV2JobResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ClassifyV2JobResponseStatus?))
+                {
+                    return new global::LlamaParse.JsonConverters.ClassifyV2JobResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ClassifyV2JobResponseDocumentInputType))
+                {
+                    return new global::LlamaParse.JsonConverters.ClassifyV2JobResponseDocumentInputTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ClassifyV2JobResponseDocumentInputType?))
+                {
+                    return new global::LlamaParse.JsonConverters.ClassifyV2JobResponseDocumentInputTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.CloudJiraDataSourceV2ApiVersion))
+                {
+                    return new global::LlamaParse.JsonConverters.CloudJiraDataSourceV2ApiVersionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.CloudJiraDataSourceV2ApiVersion?))
+                {
+                    return new global::LlamaParse.JsonConverters.CloudJiraDataSourceV2ApiVersionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.CompositeRetrievalMode))
+                {
+                    return new global::LlamaParse.JsonConverters.CompositeRetrievalModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.CompositeRetrievalMode?))
+                {
+                    return new global::LlamaParse.JsonConverters.CompositeRetrievalModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurableDataSinkNames))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurableDataSinkNamesJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurableDataSinkNames?))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurableDataSinkNamesNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurableDataSourceNames))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurableDataSourceNamesJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurableDataSourceNames?))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurableDataSourceNamesNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurationCreateRequestParametersDiscriminatorProductTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType?))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurationCreateRequestParametersDiscriminatorProductTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurationResponseProductType))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurationResponseProductTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurationResponseProductType?))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurationResponseProductTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurationResponseParametersDiscriminatorProductTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType?))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurationResponseParametersDiscriminatorProductTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductType))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductType?))
+                {
+                    return new global::LlamaParse.JsonConverters.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.DataSourceReaderVersionMetadataReaderVersion2))
+                {
+                    return new global::LlamaParse.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.DataSourceReaderVersionMetadataReaderVersion2?))
+                {
+                    return new global::LlamaParse.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.DirectoryCreateRequestType))
+                {
+                    return new global::LlamaParse.JsonConverters.DirectoryCreateRequestTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.DirectoryCreateRequestType?))
+                {
+                    return new global::LlamaParse.JsonConverters.DirectoryCreateRequestTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.DirectoryResponseType2))
+                {
+                    return new global::LlamaParse.JsonConverters.DirectoryResponseType2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.DirectoryResponseType2?))
+                {
+                    return new global::LlamaParse.JsonConverters.DirectoryResponseType2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.DocumentChunkMode))
+                {
+                    return new global::LlamaParse.JsonConverters.DocumentChunkModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.DocumentChunkMode?))
+                {
+                    return new global::LlamaParse.JsonConverters.DocumentChunkModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigEmbeddingConfigDiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.EmbeddingModelConfigEmbeddingConfigDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigEmbeddingConfigDiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.EmbeddingModelConfigEmbeddingConfigDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.EmbeddingModelConfigCreateEmbeddingConfigDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractConfigPriority2))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractConfigPriority2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractConfigPriority2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractConfigPriority2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractConfigurationTier))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractConfigurationTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractConfigurationTier?))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractConfigurationTierNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractConfigurationExtractionTarget))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractConfigurationExtractionTargetJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractConfigurationExtractionTarget?))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractConfigurationExtractionTargetNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractJobStatus))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractJobStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractJobStatus?))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractJobStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractJobCreatePriority2))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractJobCreatePriority2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractJobCreatePriority2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractJobCreatePriority2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractMode))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractMode?))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractModels))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractModelsJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractModels?))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractModelsNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractState))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractState?))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractTarget))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractTargetJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractTarget?))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractTargetNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractV2ParametersTier))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractV2ParametersTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractV2ParametersTier?))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractV2ParametersTierNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractV2ParametersExtractionTarget))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractV2ParametersExtractionTargetJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ExtractV2ParametersExtractionTarget?))
+                {
+                    return new global::LlamaParse.JsonConverters.ExtractV2ParametersExtractionTargetNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FailPageMode))
+                {
+                    return new global::LlamaParse.JsonConverters.FailPageModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FailPageMode?))
+                {
+                    return new global::LlamaParse.JsonConverters.FailPageModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FilterCondition))
+                {
+                    return new global::LlamaParse.JsonConverters.FilterConditionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FilterCondition?))
+                {
+                    return new global::LlamaParse.JsonConverters.FilterConditionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FilterOperator))
+                {
+                    return new global::LlamaParse.JsonConverters.FilterOperatorJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FilterOperator?))
+                {
+                    return new global::LlamaParse.JsonConverters.FilterOperatorNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FooterItemItemDiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.FooterItemItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FooterItemItemDiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.FooterItemItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FormJsonItemDiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.FormJsonItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FormJsonItemDiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.FormJsonItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FormFieldField))
+                {
+                    return new global::LlamaParse.JsonConverters.FormFieldFieldJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FormFieldField?))
+                {
+                    return new global::LlamaParse.JsonConverters.FormFieldFieldNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FormFieldValueItemsVariant1ItemDiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.FormFieldValueItemsVariant1ItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FormFieldValueItemsVariant1ItemDiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.FormFieldValueItemsVariant1ItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FormSectionItemDiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.FormSectionItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FormSectionItemDiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.FormSectionItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FormTableCellItemsItemDiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.FormTableCellItemsItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.FormTableCellItemsItemDiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.FormTableCellItemsItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.HeaderItemItemDiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.HeaderItemItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.HeaderItemItemDiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.HeaderItemItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ImageMetadataCategory2))
+                {
+                    return new global::LlamaParse.JsonConverters.ImageMetadataCategory2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ImageMetadataCategory2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ImageMetadataCategory2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.IndexCreateRequestVectorTarget))
+                {
+                    return new global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.IndexCreateRequestVectorTarget?))
+                {
+                    return new global::LlamaParse.JsonConverters.IndexCreateRequestVectorTargetNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.JobNameMapping))
+                {
+                    return new global::LlamaParse.JsonConverters.JobNameMappingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.JobNameMapping?))
+                {
+                    return new global::LlamaParse.JsonConverters.JobNameMappingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item?))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsImagesToSaveVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseOutputOptionsGranularBboxe))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseOutputOptionsGranularBboxe?))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseOutputOptionsGranularBboxeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseParametersPriority2))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseParametersPriority2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseParametersPriority2?))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseParametersPriority2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseParametersImagesToSaveVariant1Item))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseParametersImagesToSaveVariant1Item?))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseProcessingOptionsSpecializedChartParsing2))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseProcessingOptionsSpecializedChartParsing2?))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseProcessingOptionsForms2))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsForms2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseProcessingOptionsForms2?))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseProcessingOptionsForms2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseSupportedFileExtensions))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseSupportedFileExtensions?))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseSupportedFileExtensionsNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat2))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat2?))
+                {
+                    return new global::LlamaParse.JsonConverters.LlamaParseWebhookConfigurationWebhookOutputFormat2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ManagedIngestionStatus))
+                {
+                    return new global::LlamaParse.JsonConverters.ManagedIngestionStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ManagedIngestionStatus?))
+                {
+                    return new global::LlamaParse.JsonConverters.ManagedIngestionStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.MessageRole))
+                {
+                    return new global::LlamaParse.JsonConverters.MessageRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.MessageRole?))
+                {
+                    return new global::LlamaParse.JsonConverters.MessageRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.NodeRelationship))
+                {
+                    return new global::LlamaParse.JsonConverters.NodeRelationshipJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.NodeRelationship?))
+                {
+                    return new global::LlamaParse.JsonConverters.NodeRelationshipNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.NumericRangeFilterOperator))
+                {
+                    return new global::LlamaParse.JsonConverters.NumericRangeFilterOperatorJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.NumericRangeFilterOperator?))
+                {
+                    return new global::LlamaParse.JsonConverters.NumericRangeFilterOperatorNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ObjectType))
+                {
+                    return new global::LlamaParse.JsonConverters.ObjectTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ObjectType?))
+                {
+                    return new global::LlamaParse.JsonConverters.ObjectTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PGVectorDistanceMethod))
+                {
+                    return new global::LlamaParse.JsonConverters.PGVectorDistanceMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PGVectorDistanceMethod?))
+                {
+                    return new global::LlamaParse.JsonConverters.PGVectorDistanceMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PGVectorVectorType))
+                {
+                    return new global::LlamaParse.JsonConverters.PGVectorVectorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PGVectorVectorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.PGVectorVectorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseJobResponseStatus))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseJobResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseJobResponseStatus?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseJobResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParsePlanLevel))
+                {
+                    return new global::LlamaParse.JsonConverters.ParsePlanLevelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParsePlanLevel?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParsePlanLevelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseRequestConfigurationTier))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseRequestConfigurationTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseRequestConfigurationTier?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseRequestConfigurationTierNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseRequestConfigurationVersion))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseRequestConfigurationVersionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseRequestConfigurationVersion?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseRequestConfigurationVersionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseV2ParametersTier))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseV2ParametersTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseV2ParametersTier?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseV2ParametersTierNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseV2ParametersVersion))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseV2ParametersVersionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseV2ParametersVersion?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseV2ParametersVersionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseFastItem))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseFastItem?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseVersionsResponseFastItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseCostEffectiveItem))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseCostEffectiveItem?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseVersionsResponseCostEffectiveItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseAgenticItem))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseAgenticItem?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseAgenticPlu))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParseVersionsResponseAgenticPlu?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParseVersionsResponseAgenticPluNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParserLanguages))
+                {
+                    return new global::LlamaParse.JsonConverters.ParserLanguagesJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParserLanguages?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParserLanguagesNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParsingMode))
+                {
+                    return new global::LlamaParse.JsonConverters.ParsingModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ParsingMode?))
+                {
+                    return new global::LlamaParse.JsonConverters.ParsingModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PartitionNames))
+                {
+                    return new global::LlamaParse.JsonConverters.PartitionNamesJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PartitionNames?))
+                {
+                    return new global::LlamaParse.JsonConverters.PartitionNamesNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineEmbeddingConfigDiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineEmbeddingConfigDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineEmbeddingConfigDiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineEmbeddingConfigDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineCreateEmbeddingConfigVariant1DiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineCreateEmbeddingConfigVariant1DiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineDataSourceStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineDataSourceStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineDataSourceStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineDataSourceStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineFileStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineFileStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineFileStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineFileStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineFileResponseStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineFileResponseStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineFileResponseStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineFileResponseStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineType))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineType?))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineUpdateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.PipelineUpdateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.Pooling))
+                {
+                    return new global::LlamaParse.JsonConverters.PoolingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.Pooling?))
+                {
+                    return new global::LlamaParse.JsonConverters.PoolingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PublicModelName))
+                {
+                    return new global::LlamaParse.JsonConverters.PublicModelNameJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PublicModelName?))
+                {
+                    return new global::LlamaParse.JsonConverters.PublicModelNameNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ReRankerType))
+                {
+                    return new global::LlamaParse.JsonConverters.ReRankerTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ReRankerType?))
+                {
+                    return new global::LlamaParse.JsonConverters.ReRankerTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.RetrievalMode))
+                {
+                    return new global::LlamaParse.JsonConverters.RetrievalModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.RetrievalMode?))
+                {
+                    return new global::LlamaParse.JsonConverters.RetrievalModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.RevisionType))
+                {
+                    return new global::LlamaParse.JsonConverters.RevisionTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.RevisionType?))
+                {
+                    return new global::LlamaParse.JsonConverters.RevisionTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SessionDetailEventDiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SessionDetailEventDiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SparseModelType))
+                {
+                    return new global::LlamaParse.JsonConverters.SparseModelTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SparseModelType?))
+                {
+                    return new global::LlamaParse.JsonConverters.SparseModelTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType?))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized?))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetJobStatus))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetJobStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetJobStatus?))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetJobStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetParsingConfigTier))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetParsingConfigTier?))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTierNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetParsingConfigTableMergeSensitivity))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetParsingConfigTableMergeSensitivity?))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetResultType))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetResultTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetResultType?))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetResultTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetV1ParametersTier))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetV1ParametersTier?))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTierNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity?))
+                {
+                    return new global::LlamaParse.JsonConverters.SpreadsheetV1ParametersTableMergeSensitivityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.StatusEnum))
+                {
+                    return new global::LlamaParse.JsonConverters.StatusEnumJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.StatusEnum?))
+                {
+                    return new global::LlamaParse.JsonConverters.StatusEnumNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.StringFilterOperator))
+                {
+                    return new global::LlamaParse.JsonConverters.StringFilterOperatorJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.StringFilterOperator?))
+                {
+                    return new global::LlamaParse.JsonConverters.StringFilterOperatorNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.StructuredResultPageItemDiscriminatorType))
+                {
+                    return new global::LlamaParse.JsonConverters.StructuredResultPageItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.StructuredResultPageItemDiscriminatorType?))
+                {
+                    return new global::LlamaParse.JsonConverters.StructuredResultPageItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SupportedLLMModelNames))
+                {
+                    return new global::LlamaParse.JsonConverters.SupportedLLMModelNamesJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SupportedLLMModelNames?))
+                {
+                    return new global::LlamaParse.JsonConverters.SupportedLLMModelNamesNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.UsageMetricEventType))
+                {
+                    return new global::LlamaParse.JsonConverters.UsageMetricEventTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.UsageMetricEventType?))
+                {
+                    return new global::LlamaParse.JsonConverters.UsageMetricEventTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.UsageMetricAggregateResponseGroupByItem))
+                {
+                    return new global::LlamaParse.JsonConverters.UsageMetricAggregateResponseGroupByItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.UsageMetricAggregateResponseGroupByItem?))
+                {
+                    return new global::LlamaParse.JsonConverters.UsageMetricAggregateResponseGroupByItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ValueFilterOperator))
+                {
+                    return new global::LlamaParse.JsonConverters.ValueFilterOperatorJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ValueFilterOperator?))
+                {
+                    return new global::LlamaParse.JsonConverters.ValueFilterOperatorNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.VerifyConfigurationTier))
+                {
+                    return new global::LlamaParse.JsonConverters.VerifyConfigurationTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.VerifyConfigurationTier?))
+                {
+                    return new global::LlamaParse.JsonConverters.VerifyConfigurationTierNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.VerifyJobResponseStatus))
+                {
+                    return new global::LlamaParse.JsonConverters.VerifyJobResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.VerifyJobResponseStatus?))
+                {
+                    return new global::LlamaParse.JsonConverters.VerifyJobResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.VerifyJobResponseDocumentInputType))
+                {
+                    return new global::LlamaParse.JsonConverters.VerifyJobResponseDocumentInputTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.VerifyJobResponseDocumentInputType?))
+                {
+                    return new global::LlamaParse.JsonConverters.VerifyJobResponseDocumentInputTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.VerifyResultVerdict))
+                {
+                    return new global::LlamaParse.JsonConverters.VerifyResultVerdictJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.VerifyResultVerdict?))
+                {
+                    return new global::LlamaParse.JsonConverters.VerifyResultVerdictNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.VertexEmbeddingMode))
+                {
+                    return new global::LlamaParse.JsonConverters.VertexEmbeddingModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.VertexEmbeddingMode?))
+                {
+                    return new global::LlamaParse.JsonConverters.VertexEmbeddingModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigCreateRequestWebhookEventsVariant1Item))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookEventsVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigCreateRequestWebhookEventsVariant1Item?))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookEventsVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigCreateRequestWebhookOutputFormat2))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookOutputFormat2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigCreateRequestWebhookOutputFormat2?))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookOutputFormat2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookEventsVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item?))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookEventsVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseWebhookOutputFormat2))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookOutputFormat2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseWebhookOutputFormat2?))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookOutputFormat2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigUpdateRequestWebhookEventsVariant1Item))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookEventsVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigUpdateRequestWebhookEventsVariant1Item?))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookEventsVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigUpdateRequestWebhookOutputFormat2))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookOutputFormat2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigUpdateRequestWebhookOutputFormat2?))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigUpdateRequestWebhookOutputFormat2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigurationWebhookEventsVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item?))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigurationWebhookEventsVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType))
+                {
+                    return new global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item))
+                {
+                    return new global::LlamaParse.JsonConverters.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy))
+                {
+                    return new global::LlamaParse.JsonConverters.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicyJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicyNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicy))
+                {
+                    return new global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicy?))
+                {
+                    return new global::LlamaParse.JsonConverters.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicyNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1SheetsJobsGetStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListSplitJobsApiV1SplitJobsGetStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.ListSplitJobsApiV1SplitJobsGetStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListSplitJobsApiV1SplitJobsGetStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListSplitJobsApiV1SplitJobsGetStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItem))
+                {
+                    return new global::LlamaParse.JsonConverters.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItem?))
+                {
+                    return new global::LlamaParse.JsonConverters.AggregateUsageMetricsApiV1BetaUsageMetricsAggregateGetGroupByItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListSpreadsheetJobsApiV1BetaSheetsJobsGetStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2))
+                {
+                    return new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetType2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item))
+                {
+                    return new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item))
+                {
+                    return new global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item))
+                {
+                    return new global::LlamaParse.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListParseJobsApiV2ParseGetStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.ListParseJobsApiV2ParseGetStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListParseJobsApiV2ParseGetStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListParseJobsApiV2ParseGetStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListClassifyJobsApiV2ClassifyGetStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListClassifyJobsApiV2ClassifyGetStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListBatchesApiV2BatchesGetStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListBatchesApiV2BatchesGetStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListBatchesApiV2BatchesGetStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListVerifyJobsApiAlphaVerifyGetStatus2))
+                {
+                    return new global::LlamaParse.JsonConverters.ListVerifyJobsApiAlphaVerifyGetStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListVerifyJobsApiAlphaVerifyGetStatus2?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListVerifyJobsApiAlphaVerifyGetStatus2NullableJsonConverter();
+                }
+                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
+            }
+        }
+
+        private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            private readonly object _gate = new();
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[3];
+
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                for (var index = 0; index < _resolvers.Length; index++)
+                {
+                    var typeInfo = GetResolver(index).GetTypeInfo(type, options);
+                    if (typeInfo is not null)
+                    {
+                        return typeInfo;
+                    }
+                }
+
+                return null;
+            }
+
+            private global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver GetResolver(int index)
+            {
+                var resolver = global::System.Threading.Volatile.Read(ref _resolvers[index]);
+                if (resolver is not null)
+                {
+                    return resolver;
+                }
+
+                lock (_gate)
+                {
+                    return _resolvers[index] ??= CreateResolver(index);
+                }
+            }
+
+            private static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver CreateResolver(int index)
+            {
+                return index switch
+                {
+                    0 => new SourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
+
+                    1 => new SourceGenerationContextChunk1(new global::System.Text.Json.JsonSerializerOptions()),
+
+                    2 => new SourceGenerationContextChunk2(new global::System.Text.Json.JsonSerializerOptions()),
+                    _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
+                };
+            }
         }
     }
 }
