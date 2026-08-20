@@ -11,6 +11,10 @@ namespace LlamaParse
         /// <summary>
         /// 
         /// </summary>
+        Cancelled,
+        /// <summary>
+        /// 
+        /// </summary>
         Completed,
         /// <summary>
         /// 
@@ -38,6 +42,7 @@ namespace LlamaParse
         {
             return value switch
             {
+                ListClassifyJobsApiV2ClassifyGetStatus2.Cancelled => "CANCELLED",
                 ListClassifyJobsApiV2ClassifyGetStatus2.Completed => "COMPLETED",
                 ListClassifyJobsApiV2ClassifyGetStatus2.Failed => "FAILED",
                 ListClassifyJobsApiV2ClassifyGetStatus2.Pending => "PENDING",
@@ -52,6 +57,7 @@ namespace LlamaParse
         {
             return value switch
             {
+                "CANCELLED" => ListClassifyJobsApiV2ClassifyGetStatus2.Cancelled,
                 "COMPLETED" => ListClassifyJobsApiV2ClassifyGetStatus2.Completed,
                 "FAILED" => ListClassifyJobsApiV2ClassifyGetStatus2.Failed,
                 "PENDING" => ListClassifyJobsApiV2ClassifyGetStatus2.Pending,

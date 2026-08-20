@@ -50,7 +50,7 @@ namespace LlamaParse
         public required string UserId { get; set; }
 
         /// <summary>
-        /// Current job status: PENDING, RUNNING, COMPLETED, or FAILED
+        /// Current job status: PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.ClassifyV2JobResponseStatusJsonConverter))]
@@ -124,7 +124,7 @@ namespace LlamaParse
         /// User who created this job
         /// </param>
         /// <param name="status">
-        /// Current job status: PENDING, RUNNING, COMPLETED, or FAILED
+        /// Current job status: PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
         /// </param>
         /// <param name="documentInputType">
         /// Whether the input was a file or parse job (FILE or PARSE_JOB)

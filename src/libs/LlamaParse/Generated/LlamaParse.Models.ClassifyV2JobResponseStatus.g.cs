@@ -4,24 +4,28 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Current job status: PENDING, RUNNING, COMPLETED, or FAILED
+    /// Current job status: PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
     /// </summary>
     public enum ClassifyV2JobResponseStatus
     {
         /// <summary>
-        /// PENDING, RUNNING, COMPLETED, or FAILED
+        /// PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
+        /// </summary>
+        Cancelled,
+        /// <summary>
+        /// PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
         /// </summary>
         Completed,
         /// <summary>
-        /// PENDING, RUNNING, COMPLETED, or FAILED
+        /// PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
         /// </summary>
         Failed,
         /// <summary>
-        /// PENDING, RUNNING, COMPLETED, or FAILED
+        /// PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
         /// </summary>
         Pending,
         /// <summary>
-        /// PENDING, RUNNING, COMPLETED, or FAILED
+        /// PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
         /// </summary>
         Running,
     }
@@ -38,6 +42,7 @@ namespace LlamaParse
         {
             return value switch
             {
+                ClassifyV2JobResponseStatus.Cancelled => "CANCELLED",
                 ClassifyV2JobResponseStatus.Completed => "COMPLETED",
                 ClassifyV2JobResponseStatus.Failed => "FAILED",
                 ClassifyV2JobResponseStatus.Pending => "PENDING",
@@ -52,6 +57,7 @@ namespace LlamaParse
         {
             return value switch
             {
+                "CANCELLED" => ClassifyV2JobResponseStatus.Cancelled,
                 "COMPLETED" => ClassifyV2JobResponseStatus.Completed,
                 "FAILED" => ClassifyV2JobResponseStatus.Failed,
                 "PENDING" => ClassifyV2JobResponseStatus.Pending,
