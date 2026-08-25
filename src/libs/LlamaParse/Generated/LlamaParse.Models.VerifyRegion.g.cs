@@ -63,6 +63,13 @@ namespace LlamaParse
         public string? ReviewNote { get; set; }
 
         /// <summary>
+        /// Whether this region is part of the small set of decisive evidence behind the verdict — the boxes a reviewer should look at first<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("primary")]
+        public bool? Primary { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -95,6 +102,10 @@ namespace LlamaParse
         /// <param name="reviewNote">
         /// Free-form review note for this region
         /// </param>
+        /// <param name="primary">
+        /// Whether this region is part of the small set of decisive evidence behind the verdict — the boxes a reviewer should look at first<br/>
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -106,7 +117,8 @@ namespace LlamaParse
             string detail,
             int page,
             string? review,
-            string? reviewNote)
+            string? reviewNote,
+            bool? primary)
         {
             this.Bbox = bbox ?? throw new global::System.ArgumentNullException(nameof(bbox));
             this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
@@ -116,6 +128,7 @@ namespace LlamaParse
             this.Page = page;
             this.Review = review;
             this.ReviewNote = reviewNote;
+            this.Primary = primary;
         }
 
         /// <summary>

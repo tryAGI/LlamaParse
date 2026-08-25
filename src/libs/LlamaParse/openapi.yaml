@@ -51157,6 +51157,12 @@
             "title": "Review Note",
             "description": "Free-form review note for this region",
             "default": ""
+          },
+          "primary": {
+            "type": "boolean",
+            "title": "Primary",
+            "description": "Whether this region is part of the small set of decisive evidence behind the verdict — the boxes a reviewer should look at first",
+            "default": false
           }
         },
         "type": "object",
@@ -51407,6 +51413,18 @@
             "type": "string",
             "title": "Explanation",
             "description": "Human-readable explanation of what makes this region suspect"
+          },
+          "primary": {
+            "type": "boolean",
+            "title": "Primary",
+            "description": "Whether this region is part of the small set of decisive evidence behind the verdict — the boxes a reviewer should look at first",
+            "default": false
+          },
+          "review": {
+            "type": "string",
+            "title": "Review",
+            "description": "Automated reviewer verdict for this region (confirmed, dismissed, unsure, or empty). A dismissed region can still be surfaced when it is the only place to look; this label says how to read it",
+            "default": ""
           }
         },
         "type": "object",
