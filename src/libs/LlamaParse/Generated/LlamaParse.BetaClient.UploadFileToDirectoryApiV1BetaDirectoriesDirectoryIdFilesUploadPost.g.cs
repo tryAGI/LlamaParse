@@ -191,34 +191,6 @@ namespace LlamaParse
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(directoryId ?? string.Empty),
-                                name: "\"directory_id\"");
-
-                            if (projectId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(projectId.ToString() ?? string.Empty),
-                                    name: "\"project_id\"");
-
-                            }
-                            if (organizationId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(organizationId.ToString() ?? string.Empty),
-                                    name: "\"organization_id\"");
-
-                            }
-                            if (session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
-                                    name: "\"session\"");
-
-                            }
                             var __contentUploadFile = new global::System.Net.Http.ByteArrayContent(request.UploadFile ?? global::System.Array.Empty<byte>());
                             __contentUploadFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.UploadFilename is null
@@ -801,34 +773,6 @@ namespace LlamaParse
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(directoryId ?? string.Empty),
-                                name: "\"directory_id\"");
-
-                            if (projectId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(projectId.ToString() ?? string.Empty),
-                                    name: "\"project_id\"");
-
-                            }
-                            if (organizationId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(organizationId.ToString() ?? string.Empty),
-                                    name: "\"organization_id\"");
-
-                            }
-                            if (session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
-                                    name: "\"session\"");
-
-                            }
                             var __contentUploadFile = new global::System.Net.Http.StreamContent(uploadFile);
                             __contentUploadFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.UploadFilename is null
@@ -1350,34 +1294,6 @@ namespace LlamaParse
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(directoryId ?? string.Empty),
-                                name: "\"directory_id\"");
-
-                            if (projectId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(projectId.ToString() ?? string.Empty),
-                                    name: "\"project_id\"");
-
-                            }
-                            if (organizationId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(organizationId.ToString() ?? string.Empty),
-                                    name: "\"organization_id\"");
-
-                            }
-                            if (session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
-                                    name: "\"session\"");
-
-                            }
                             var __contentUploadFile = new global::System.Net.Http.StreamContent(uploadFile);
                             __contentUploadFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.UploadFilename is null

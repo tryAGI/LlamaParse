@@ -54,6 +54,19 @@ namespace LlamaParse
         public required string Explanation { get; set; }
 
         /// <summary>
+        /// Whether this region is part of the small set of decisive evidence behind the verdict — the boxes a reviewer should look at first<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("primary")]
+        public bool? Primary { get; set; }
+
+        /// <summary>
+        /// Automated reviewer verdict for this region (confirmed, dismissed, unsure, or empty). A dismissed region can still be surfaced when it is the only place to look; this label says how to read it
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("review")]
+        public string? Review { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -80,6 +93,13 @@ namespace LlamaParse
         /// <param name="explanation">
         /// Human-readable explanation of what makes this region suspect
         /// </param>
+        /// <param name="primary">
+        /// Whether this region is part of the small set of decisive evidence behind the verdict — the boxes a reviewer should look at first<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="review">
+        /// Automated reviewer verdict for this region (confirmed, dismissed, unsure, or empty). A dismissed region can still be surfaced when it is the only place to look; this label says how to read it
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,7 +109,9 @@ namespace LlamaParse
             double score,
             string kind,
             string source,
-            string explanation)
+            string explanation,
+            bool? primary,
+            string? review)
         {
             this.Page = page;
             this.Bbox = bbox ?? throw new global::System.ArgumentNullException(nameof(bbox));
@@ -97,6 +119,8 @@ namespace LlamaParse
             this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
             this.Explanation = explanation ?? throw new global::System.ArgumentNullException(nameof(explanation));
+            this.Primary = primary;
+            this.Review = review;
         }
 
         /// <summary>
