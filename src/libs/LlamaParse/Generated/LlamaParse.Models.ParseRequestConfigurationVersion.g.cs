@@ -4,20 +4,20 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ParseRequestConfigurationVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x20260615,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x20260819,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Latest,
     }

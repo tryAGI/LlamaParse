@@ -20,7 +20,7 @@ namespace LlamaParse.JsonConverters
                     {
                         return global::LlamaParse.AutoModeParsingConfVersionExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

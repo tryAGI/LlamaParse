@@ -4,20 +4,20 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DataSourceReaderVersionMetadataReaderVersion2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x10,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x20,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x21,
     }

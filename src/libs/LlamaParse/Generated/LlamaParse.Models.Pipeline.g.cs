@@ -28,14 +28,14 @@ namespace LlamaParse
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -68,7 +68,7 @@ namespace LlamaParse
         public global::System.Guid? ManagedPipelineId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_config")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.EmbeddingConfig3JsonConverter))]

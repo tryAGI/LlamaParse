@@ -20,7 +20,7 @@ namespace LlamaParse.JsonConverters
                     {
                         return global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

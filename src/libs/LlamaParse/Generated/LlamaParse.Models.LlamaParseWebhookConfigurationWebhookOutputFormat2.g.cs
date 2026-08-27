@@ -4,16 +4,16 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LlamaParseWebhookConfigurationWebhookOutputFormat2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Json,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         String,
     }

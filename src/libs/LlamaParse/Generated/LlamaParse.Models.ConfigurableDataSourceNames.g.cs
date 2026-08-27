@@ -4,52 +4,52 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ConfigurableDataSourceNames
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureStorageBlob,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Box,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Confluence,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GoogleDrive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jira,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JiraV2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MicrosoftOnedrive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MicrosoftSharepoint,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotionPage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         S3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Slack,
     }

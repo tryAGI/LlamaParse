@@ -9,27 +9,27 @@ namespace LlamaParse
     public enum RevisionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Comment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Formatted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inserted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MovedFrom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MovedTo,
     }

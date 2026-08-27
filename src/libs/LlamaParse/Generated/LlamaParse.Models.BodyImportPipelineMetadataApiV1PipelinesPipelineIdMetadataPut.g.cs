@@ -4,19 +4,19 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BodyImportPipelineMetadataApiV1PipelinesPipelineIdMetadataPut
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upload_file")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] UploadFile { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upload_filename")]
         [global::System.Text.Json.Serialization.JsonRequired]

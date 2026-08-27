@@ -4,24 +4,24 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ParseRequestConfigurationTier
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Agentic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgenticPlus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CostEffective,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fast,
     }

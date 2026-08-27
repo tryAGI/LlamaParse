@@ -9,47 +9,47 @@ namespace LlamaParse
     public enum ExtractModels
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini20Flash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini25Flash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini25FlashLite,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini25Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt41,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt41Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt41Nano,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt4o,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt4oMini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt5Mini,
     }

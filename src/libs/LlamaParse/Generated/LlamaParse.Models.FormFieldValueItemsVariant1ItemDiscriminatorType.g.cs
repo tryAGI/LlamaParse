@@ -4,20 +4,20 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FormFieldValueItemsVariant1ItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Field,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Section,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Table,
     }

@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class MetadataFilters
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,20 +9,20 @@ namespace LlamaParse
     public sealed partial class AggregateGroup
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object GroupKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("count")]
         public int? Count { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_item")]
         public object? FirstItem { get; set; }

@@ -39,13 +39,13 @@ namespace LlamaParse
         public object? ResourceInfo { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("languages")]
         public global::System.Collections.Generic.IList<global::LlamaParse.ParserLanguages>? Languages { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parsing_instruction")]
         public string? ParsingInstruction { get; set; }
@@ -63,7 +63,7 @@ namespace LlamaParse
         public bool? AnnotateLinks { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotate_revisions")]
         public bool? AnnotateRevisions { get; set; }
@@ -159,7 +159,7 @@ namespace LlamaParse
         public bool? Gpt4oMode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gpt4o_api_key")]
         public string? Gpt4oApiKey { get; set; }
@@ -183,7 +183,7 @@ namespace LlamaParse
         public bool? HighResOcr { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence_score_effort")]
         public string? ConfidenceScoreEffort { get; set; }
@@ -255,43 +255,43 @@ namespace LlamaParse
         public bool? GuessXlsxSheetName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_separator")]
         public string? PageSeparator { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bounding_box")]
         public string? BoundingBox { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bbox_top")]
         public double? BboxTop { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bbox_right")]
         public double? BboxRight { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bbox_bottom")]
         public double? BboxBottom { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bbox_left")]
         public double? BboxLeft { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_pages")]
         public string? TargetPages { get; set; }
@@ -303,43 +303,43 @@ namespace LlamaParse
         public bool? UseVendorMultimodalModel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vendor_multimodal_model_name")]
         public string? VendorMultimodalModelName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vendor_multimodal_api_key")]
         public string? VendorMultimodalApiKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_prefix")]
         public string? PagePrefix { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_suffix")]
         public string? PageSuffix { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_url")]
         public string? WebhookUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preset")]
         public string? Preset { get; set; }
@@ -369,7 +369,7 @@ namespace LlamaParse
         public bool? ContinuousMode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_s3_path")]
         public string? InputS3Path { get; set; }
@@ -393,43 +393,43 @@ namespace LlamaParse
         public string? OutputS3Region { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         public string? ProjectId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("azure_openai_deployment_name")]
         public string? AzureOpenaiDeploymentName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("azure_openai_endpoint")]
         public string? AzureOpenaiEndpoint { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("azure_openai_api_version")]
         public string? AzureOpenaiApiVersion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("azure_openai_key")]
         public string? AzureOpenaiKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_url")]
         public string? InputUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("http_proxy")]
         public string? HttpProxy { get; set; }
@@ -441,13 +441,13 @@ namespace LlamaParse
         public bool? AutoMode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_mode_trigger_on_regexp_in_page")]
         public string? AutoModeTriggerOnRegexpInPage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_mode_trigger_on_text_in_page")]
         public string? AutoModeTriggerOnTextInPage { get; set; }
@@ -465,7 +465,7 @@ namespace LlamaParse
         public bool? AutoModeTriggerOnImageInPage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_mode_configuration_json")]
         public string? AutoModeConfigurationJson { get; set; }
@@ -477,25 +477,25 @@ namespace LlamaParse
         public bool? StructuredOutput { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("structured_output_json_schema")]
         public string? StructuredOutputJsonSchema { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("structured_output_json_schema_name")]
         public string? StructuredOutputJsonSchemaName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_pages")]
         public int? MaxPages { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_pages_enforced")]
         public int? MaxPagesEnforced { get; set; }
@@ -507,19 +507,19 @@ namespace LlamaParse
         public bool? ExtractCharts { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("formatting_instruction")]
         public string? FormattingInstruction { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("complemental_formatting_instruction")]
         public string? ComplementalFormattingInstruction { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_guideline_instruction")]
         public string? ContentGuidelineInstruction { get; set; }
@@ -549,13 +549,13 @@ namespace LlamaParse
         public bool? InlineImagesInMarkdown { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("job_timeout_in_seconds")]
         public double? JobTimeoutInSeconds { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("job_timeout_extra_time_per_page_in_seconds")]
         public double? JobTimeoutExtraTimePerPageInSeconds { get; set; }
@@ -591,7 +591,7 @@ namespace LlamaParse
         public bool? SaveImages { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images_to_save")]
         public global::System.Collections.Generic.IList<global::LlamaParse.BatchParseJobConfigImagesToSaveVariant1Item>? ImagesToSave { get; set; }
@@ -609,25 +609,25 @@ namespace LlamaParse
         public bool? HideFooters { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_header_prefix")]
         public string? PageHeaderPrefix { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_header_suffix")]
         public string? PageHeaderSuffix { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_footer_prefix")]
         public string? PageFooterPrefix { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_footer_suffix")]
         public string? PageFooterSuffix { get; set; }
@@ -663,25 +663,25 @@ namespace LlamaParse
         public bool? InternalIsScreenshotJob { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_mode")]
         public global::LlamaParse.ParsingMode? ParseMode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_prompt")]
         public string? SystemPrompt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_prompt_append")]
         public string? SystemPromptAppend { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_prompt")]
         public string? UserPrompt { get; set; }
@@ -699,19 +699,19 @@ namespace LlamaParse
         public global::LlamaParse.FailPageMode? ReplaceFailedPageMode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("replace_failed_page_with_error_message_prefix")]
         public string? ReplaceFailedPageWithErrorMessagePrefix { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("replace_failed_page_with_error_message_suffix")]
         public string? ReplaceFailedPageWithErrorMessageSuffix { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("markdown_table_multiline_header_separator")]
         public string? MarkdownTableMultilineHeaderSeparator { get; set; }
@@ -729,13 +729,13 @@ namespace LlamaParse
         public bool? PresentationSkipEmbeddedData { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
         public string? Tier { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         public string? Version { get; set; }
@@ -747,7 +747,7 @@ namespace LlamaParse
         public bool? ExtractPrintedPageNumber { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_cost_optimizer")]
         public bool? EnableCostOptimizer { get; set; }

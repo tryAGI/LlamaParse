@@ -9,15 +9,15 @@ namespace LlamaParse
     public enum FilterCondition
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         And,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Not,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Or,
     }

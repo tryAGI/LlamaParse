@@ -9,103 +9,103 @@ namespace LlamaParse
     public enum PublicModelName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicHaiku35,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicHaiku45,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicSonnet35,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicSonnet35V2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicSonnet37,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicSonnet40,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicSonnet45,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini20Flash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini20FlashLite,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini25Flash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini25FlashLite,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini25Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini30Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini31Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt41,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt41Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt41Nano,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt4o,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt4oMini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt5Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt5Nano,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiTextEmbedding3Large,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiTextEmbedding3Small,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiWhisper1,
     }

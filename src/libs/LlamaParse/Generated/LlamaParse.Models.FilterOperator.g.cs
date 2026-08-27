@@ -9,59 +9,59 @@ namespace LlamaParse
     public enum FilterOperator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Neq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lte,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gte,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Any,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         In,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsEmpty,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextMatch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextMatchInsensitive,
     }

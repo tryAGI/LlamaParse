@@ -5,17 +5,17 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EventsItem : global::System.IEquatable<EventsItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.SessionDetailEventDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.ThinkingDeltaEvent? ThinkingDelta { get; init; }
@@ -24,7 +24,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkingDelta))]
@@ -32,7 +32,7 @@ namespace LlamaParse
         public bool IsThinkingDelta => ThinkingDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickThinkingDelta(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.ThinkingDeltaEvent PickThinkingDelta() => IsThinkingDelta
             ? ThinkingDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.TextDeltaEvent? TextDelta { get; init; }
@@ -61,7 +61,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextDelta))]
@@ -69,7 +69,7 @@ namespace LlamaParse
         public bool IsTextDelta => TextDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextDelta(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.TextDeltaEvent PickTextDelta() => IsTextDelta
             ? TextDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.ThinkingEvent? Thinking { get; init; }
@@ -98,7 +98,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
@@ -106,7 +106,7 @@ namespace LlamaParse
         public bool IsThinking => Thinking != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickThinking(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.ThinkingEvent PickThinking() => IsThinking
             ? Thinking!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.TextEvent? Text { get; init; }
@@ -135,7 +135,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -143,7 +143,7 @@ namespace LlamaParse
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.TextEvent PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.ToolCallEvent? ToolCall { get; init; }
@@ -172,7 +172,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCall))]
@@ -180,7 +180,7 @@ namespace LlamaParse
         public bool IsToolCall => ToolCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolCall(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.ToolCallEvent PickToolCall() => IsToolCall
             ? ToolCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.ToolResultEvent? ToolResult { get; init; }
@@ -209,7 +209,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
@@ -217,7 +217,7 @@ namespace LlamaParse
         public bool IsToolResult => ToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolResult(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.ToolResultEvent PickToolResult() => IsToolResult
             ? ToolResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.StopEvent? Stop { get; init; }
@@ -246,7 +246,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stop))]
@@ -254,7 +254,7 @@ namespace LlamaParse
         public bool IsStop => Stop != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStop(
 #if NET6_0_OR_GREATER
@@ -267,14 +267,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.StopEvent PickStop() => IsStop
             ? Stop!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stop' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.UserInputEvent? UserInput { get; init; }
@@ -283,7 +283,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserInput))]
@@ -291,7 +291,7 @@ namespace LlamaParse
         public bool IsUserInput => UserInput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUserInput(
 #if NET6_0_OR_GREATER
@@ -304,23 +304,23 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.UserInputEvent PickUserInput() => IsUserInput
             ? UserInput!
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserInput' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EventsItem(global::LlamaParse.ThinkingDeltaEvent value) => new EventsItem((global::LlamaParse.ThinkingDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.ThinkingDeltaEvent?(EventsItem @this) => @this.ThinkingDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EventsItem(global::LlamaParse.ThinkingDeltaEvent? value)
         {
@@ -328,22 +328,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EventsItem FromThinkingDelta(global::LlamaParse.ThinkingDeltaEvent? value) => new EventsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EventsItem(global::LlamaParse.TextDeltaEvent value) => new EventsItem((global::LlamaParse.TextDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.TextDeltaEvent?(EventsItem @this) => @this.TextDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EventsItem(global::LlamaParse.TextDeltaEvent? value)
         {
@@ -351,22 +351,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EventsItem FromTextDelta(global::LlamaParse.TextDeltaEvent? value) => new EventsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EventsItem(global::LlamaParse.ThinkingEvent value) => new EventsItem((global::LlamaParse.ThinkingEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.ThinkingEvent?(EventsItem @this) => @this.Thinking;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EventsItem(global::LlamaParse.ThinkingEvent? value)
         {
@@ -374,22 +374,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EventsItem FromThinking(global::LlamaParse.ThinkingEvent? value) => new EventsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EventsItem(global::LlamaParse.TextEvent value) => new EventsItem((global::LlamaParse.TextEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.TextEvent?(EventsItem @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EventsItem(global::LlamaParse.TextEvent? value)
         {
@@ -397,22 +397,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EventsItem FromText(global::LlamaParse.TextEvent? value) => new EventsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EventsItem(global::LlamaParse.ToolCallEvent value) => new EventsItem((global::LlamaParse.ToolCallEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.ToolCallEvent?(EventsItem @this) => @this.ToolCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EventsItem(global::LlamaParse.ToolCallEvent? value)
         {
@@ -420,22 +420,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EventsItem FromToolCall(global::LlamaParse.ToolCallEvent? value) => new EventsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EventsItem(global::LlamaParse.ToolResultEvent value) => new EventsItem((global::LlamaParse.ToolResultEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.ToolResultEvent?(EventsItem @this) => @this.ToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EventsItem(global::LlamaParse.ToolResultEvent? value)
         {
@@ -443,22 +443,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EventsItem FromToolResult(global::LlamaParse.ToolResultEvent? value) => new EventsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EventsItem(global::LlamaParse.StopEvent value) => new EventsItem((global::LlamaParse.StopEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.StopEvent?(EventsItem @this) => @this.Stop;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EventsItem(global::LlamaParse.StopEvent? value)
         {
@@ -466,22 +466,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EventsItem FromStop(global::LlamaParse.StopEvent? value) => new EventsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EventsItem(global::LlamaParse.UserInputEvent value) => new EventsItem((global::LlamaParse.UserInputEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.UserInputEvent?(EventsItem @this) => @this.UserInput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EventsItem(global::LlamaParse.UserInputEvent? value)
         {
@@ -489,12 +489,12 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EventsItem FromUserInput(global::LlamaParse.UserInputEvent? value) => new EventsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EventsItem(
             global::LlamaParse.SessionDetailEventDiscriminatorType? type,
@@ -521,7 +521,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             UserInput as object ??
@@ -531,11 +531,11 @@ namespace LlamaParse
             Text as object ??
             Thinking as object ??
             TextDelta as object ??
-            ThinkingDelta as object 
+            ThinkingDelta as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ThinkingDelta?.ToString() ??
@@ -545,11 +545,11 @@ namespace LlamaParse
             ToolCall?.ToString() ??
             ToolResult?.ToString() ??
             Stop?.ToString() ??
-            UserInput?.ToString() 
+            UserInput?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -557,7 +557,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::LlamaParse.ThinkingDeltaEvent, TResult>? thinkingDelta = null,
@@ -612,7 +612,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::LlamaParse.ThinkingDeltaEvent>? thinkingDelta = null,
@@ -672,7 +672,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::LlamaParse.ThinkingDeltaEvent>? thinkingDelta = null,
@@ -725,7 +725,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -758,7 +758,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EventsItem other)
         {
@@ -770,12 +770,12 @@ namespace LlamaParse
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.ToolCallEvent?>.Default.Equals(ToolCall, other.ToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.ToolResultEvent?>.Default.Equals(ToolResult, other.ToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.StopEvent?>.Default.Equals(Stop, other.Stop) &&
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.UserInputEvent?>.Default.Equals(UserInput, other.UserInput) 
+                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.UserInputEvent?>.Default.Equals(UserInput, other.UserInput)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EventsItem obj1, EventsItem obj2)
         {
@@ -783,7 +783,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EventsItem obj1, EventsItem obj2)
         {
@@ -791,7 +791,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

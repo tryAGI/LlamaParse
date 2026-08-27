@@ -9,11 +9,11 @@ namespace LlamaParse
     public enum ClassifyMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Multimodal,
     }

@@ -10,11 +10,11 @@ namespace LlamaParse
     public enum SpreadsheetV1ParametersTableMergeSensitivity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Strong,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Weak,
     }

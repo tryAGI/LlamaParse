@@ -9,27 +9,27 @@ namespace LlamaParse
     public enum ManagedIngestionStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PartialSuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

@@ -9,15 +9,15 @@ namespace LlamaParse
     public enum ClassifyV2JobResponseDocumentInputType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParseJobId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Url,
     }

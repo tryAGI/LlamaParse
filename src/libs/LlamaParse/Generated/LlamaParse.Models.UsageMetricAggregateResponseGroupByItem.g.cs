@@ -4,24 +4,24 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UsageMetricAggregateResponseGroupByItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Day,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EventType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProjectId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tier,
     }

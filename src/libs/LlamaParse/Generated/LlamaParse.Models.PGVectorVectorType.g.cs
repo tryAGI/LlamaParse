@@ -11,15 +11,15 @@ namespace LlamaParse
     public enum PGVectorVectorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HalfVec,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SparseVec,
         /// <summary>

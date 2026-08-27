@@ -10,7 +10,7 @@ namespace LlamaParse
     public sealed partial class LlamaParseClient : global::LlamaParse.ILlamaParseClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.cloud.llamaindex.ai/";
 
@@ -37,7 +37,7 @@ namespace LlamaParse
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::LlamaParse.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -47,7 +47,7 @@ namespace LlamaParse
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaClient Beta => new BetaClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -56,7 +56,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -65,7 +65,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClassifierClient Classifier => new ClassifierClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -74,7 +74,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataSinksClient DataSinks => new DataSinksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -83,7 +83,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataSourcesClient DataSources => new DataSourcesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -92,7 +92,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingModelConfigsClient EmbeddingModelConfigs => new EmbeddingModelConfigsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -101,7 +101,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IndexesClient Indexes => new IndexesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -110,7 +110,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JobDashboardClient JobDashboard => new JobDashboardClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -119,7 +119,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LlamaExtractClient LlamaExtract => new LlamaExtractClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -128,7 +128,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -137,7 +137,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PageFiguresClient PageFigures => new PageFiguresClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -146,7 +146,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PageScreenshotsClient PageScreenshots => new PageScreenshotsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -155,7 +155,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ParsingClient Parsing => new ParsingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -164,7 +164,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectsClient Projects => new ProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -173,7 +173,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RetrievalClient Retrieval => new RetrievalClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -182,7 +182,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RetrieversClient Retrievers => new RetrieversClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -191,7 +191,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SplitClient Split => new SplitClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -200,7 +200,7 @@ namespace LlamaParse
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public V2Client V2 => new V2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

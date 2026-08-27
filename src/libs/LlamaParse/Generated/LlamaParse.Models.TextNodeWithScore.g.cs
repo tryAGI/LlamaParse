@@ -17,7 +17,7 @@ namespace LlamaParse
         public required global::LlamaParse.TextNode Node { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
         public double? Score { get; set; }

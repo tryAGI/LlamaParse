@@ -15,23 +15,23 @@ namespace LlamaParse
     public enum NodeRelationship
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x5,
     }

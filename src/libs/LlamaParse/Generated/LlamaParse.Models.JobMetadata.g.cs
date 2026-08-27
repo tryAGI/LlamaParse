@@ -4,18 +4,18 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class JobMetadata
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_input_tokens")]
         public int? TotalInputTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_output_tokens")]
         public int? TotalOutputTokens { get; set; }
@@ -39,13 +39,13 @@ namespace LlamaParse
         public bool? IsError { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public string? Error { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("export_config_ids")]
         public global::System.Collections.Generic.IList<string>? ExportConfigIds { get; set; }

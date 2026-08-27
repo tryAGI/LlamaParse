@@ -4,16 +4,16 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BoxAuthMechanism
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ccg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeveloperToken,
     }

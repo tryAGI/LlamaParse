@@ -9,15 +9,15 @@ namespace LlamaParse
     public enum FailPageMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BlankPage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorMessage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RawText,
     }

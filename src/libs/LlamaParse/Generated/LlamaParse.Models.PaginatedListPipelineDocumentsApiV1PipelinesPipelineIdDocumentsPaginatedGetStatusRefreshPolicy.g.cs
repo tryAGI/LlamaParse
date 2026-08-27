@@ -9,11 +9,11 @@ namespace LlamaParse
     public enum PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cached,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ttl,
     }

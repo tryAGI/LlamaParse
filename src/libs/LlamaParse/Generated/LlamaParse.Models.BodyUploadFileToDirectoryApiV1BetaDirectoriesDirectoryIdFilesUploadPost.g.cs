@@ -4,38 +4,38 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BodyUploadFileToDirectoryApiV1BetaDirectoriesDirectoryIdFilesUploadPost
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upload_file")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] UploadFile { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upload_filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string UploadFilename { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unique_id")]
         public string? UniqueId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         public string? DisplayName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_file_id")]
         public string? ExternalFileId { get; set; }

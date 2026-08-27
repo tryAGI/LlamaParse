@@ -5,17 +5,17 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ItemsItem : global::System.IEquatable<ItemsItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.FooterItemItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.TextItem? Text { get; init; }
@@ -24,7 +24,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace LlamaParse
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.TextItem PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.HeadingItem? Heading { get; init; }
@@ -61,7 +61,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Heading))]
@@ -69,7 +69,7 @@ namespace LlamaParse
         public bool IsHeading => Heading != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHeading(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.HeadingItem PickHeading() => IsHeading
             ? Heading!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Heading' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.ListItem? List { get; init; }
@@ -98,7 +98,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(List))]
@@ -106,7 +106,7 @@ namespace LlamaParse
         public bool IsList => List != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickList(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.ListItem PickList() => IsList
             ? List!
             : throw new global::System.InvalidOperationException($"Expected union variant 'List' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.CodeItem? Code { get; init; }
@@ -135,7 +135,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Code))]
@@ -143,7 +143,7 @@ namespace LlamaParse
         public bool IsCode => Code != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCode(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.CodeItem PickCode() => IsCode
             ? Code!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.TableItem? Table { get; init; }
@@ -172,7 +172,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Table))]
@@ -180,7 +180,7 @@ namespace LlamaParse
         public bool IsTable => Table != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTable(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.TableItem PickTable() => IsTable
             ? Table!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.ImageItem? Image { get; init; }
@@ -209,7 +209,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
@@ -217,7 +217,7 @@ namespace LlamaParse
         public bool IsImage => Image != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImage(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.ImageItem PickImage() => IsImage
             ? Image!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LlamaParse.LinkItem? Link { get; init; }
@@ -246,7 +246,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Link))]
@@ -254,7 +254,7 @@ namespace LlamaParse
         public bool IsLink => Link != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLink(
 #if NET6_0_OR_GREATER
@@ -267,23 +267,23 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.LinkItem PickLink() => IsLink
             ? Link!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Link' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem(global::LlamaParse.TextItem value) => new ItemsItem((global::LlamaParse.TextItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.TextItem?(ItemsItem @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(global::LlamaParse.TextItem? value)
         {
@@ -291,22 +291,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem FromText(global::LlamaParse.TextItem? value) => new ItemsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem(global::LlamaParse.HeadingItem value) => new ItemsItem((global::LlamaParse.HeadingItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.HeadingItem?(ItemsItem @this) => @this.Heading;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(global::LlamaParse.HeadingItem? value)
         {
@@ -314,22 +314,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem FromHeading(global::LlamaParse.HeadingItem? value) => new ItemsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem(global::LlamaParse.ListItem value) => new ItemsItem((global::LlamaParse.ListItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.ListItem?(ItemsItem @this) => @this.List;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(global::LlamaParse.ListItem? value)
         {
@@ -337,22 +337,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem FromList(global::LlamaParse.ListItem? value) => new ItemsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem(global::LlamaParse.CodeItem value) => new ItemsItem((global::LlamaParse.CodeItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.CodeItem?(ItemsItem @this) => @this.Code;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(global::LlamaParse.CodeItem? value)
         {
@@ -360,22 +360,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem FromCode(global::LlamaParse.CodeItem? value) => new ItemsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem(global::LlamaParse.TableItem value) => new ItemsItem((global::LlamaParse.TableItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.TableItem?(ItemsItem @this) => @this.Table;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(global::LlamaParse.TableItem? value)
         {
@@ -383,22 +383,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem FromTable(global::LlamaParse.TableItem? value) => new ItemsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem(global::LlamaParse.ImageItem value) => new ItemsItem((global::LlamaParse.ImageItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.ImageItem?(ItemsItem @this) => @this.Image;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(global::LlamaParse.ImageItem? value)
         {
@@ -406,22 +406,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem FromImage(global::LlamaParse.ImageItem? value) => new ItemsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem(global::LlamaParse.LinkItem value) => new ItemsItem((global::LlamaParse.LinkItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.LinkItem?(ItemsItem @this) => @this.Link;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(global::LlamaParse.LinkItem? value)
         {
@@ -429,12 +429,12 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem FromLink(global::LlamaParse.LinkItem? value) => new ItemsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(
             global::LlamaParse.FooterItemItemDiscriminatorType? type,
@@ -459,7 +459,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Link as object ??
@@ -468,11 +468,11 @@ namespace LlamaParse
             Code as object ??
             List as object ??
             Heading as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
@@ -481,11 +481,11 @@ namespace LlamaParse
             Code?.ToString() ??
             Table?.ToString() ??
             Image?.ToString() ??
-            Link?.ToString() 
+            Link?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -493,7 +493,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::LlamaParse.TextItem, TResult>? text = null,
@@ -543,7 +543,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::LlamaParse.TextItem>? text = null,
@@ -597,7 +597,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::LlamaParse.TextItem>? text = null,
@@ -645,7 +645,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -676,7 +676,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ItemsItem other)
         {
@@ -687,12 +687,12 @@ namespace LlamaParse
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.CodeItem?>.Default.Equals(Code, other.Code) &&
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.TableItem?>.Default.Equals(Table, other.Table) &&
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.ImageItem?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.LinkItem?>.Default.Equals(Link, other.Link) 
+                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.LinkItem?>.Default.Equals(Link, other.Link)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ItemsItem obj1, ItemsItem obj2)
         {
@@ -700,7 +700,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ItemsItem obj1, ItemsItem obj2)
         {
@@ -708,7 +708,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

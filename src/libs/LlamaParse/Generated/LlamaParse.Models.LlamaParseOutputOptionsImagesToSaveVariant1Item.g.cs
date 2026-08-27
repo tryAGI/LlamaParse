@@ -4,20 +4,20 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LlamaParseOutputOptionsImagesToSaveVariant1Item
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Embedded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Layout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Screenshot,
     }

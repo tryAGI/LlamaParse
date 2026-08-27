@@ -4,19 +4,19 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CompositeRetrievedTextNodeWithScore
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::LlamaParse.CompositeRetrievedTextNode Node { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
         public double? Score { get; set; }

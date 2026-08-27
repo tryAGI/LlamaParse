@@ -4,36 +4,36 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ConfigurableDataSinkNames
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AstraDb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureaiSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Milvus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MongodbAtlas,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pinecone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Postgres,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Qdrant,
     }

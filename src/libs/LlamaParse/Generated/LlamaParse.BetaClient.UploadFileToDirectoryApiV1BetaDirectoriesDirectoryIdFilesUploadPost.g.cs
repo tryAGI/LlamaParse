@@ -177,7 +177,7 @@ namespace LlamaParse
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __session = session;
                             if (__session is not null)
@@ -759,7 +759,7 @@ namespace LlamaParse
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __session = session;
                             if (__session is not null)
@@ -1280,7 +1280,7 @@ namespace LlamaParse
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __session = session;
                             if (__session is not null)

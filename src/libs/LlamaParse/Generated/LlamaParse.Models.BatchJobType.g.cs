@@ -9,15 +9,15 @@ namespace LlamaParse
     public enum BatchJobType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Classify,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Extract,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Parse,
     }

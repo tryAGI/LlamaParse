@@ -4,40 +4,40 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum NumericRangeFilterOperator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gte,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         In,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lte,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ne,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nin,
     }

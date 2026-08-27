@@ -9,11 +9,11 @@ namespace LlamaParse
     public enum ParsePlanLevel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Premium,
     }

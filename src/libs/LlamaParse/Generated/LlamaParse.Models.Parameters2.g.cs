@@ -10,7 +10,7 @@ namespace LlamaParse
     public readonly partial struct Parameters2 : global::System.IEquatable<Parameters2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType? ProductType { get; }
 
@@ -24,7 +24,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SplitV1))]
@@ -32,7 +32,7 @@ namespace LlamaParse
         public bool IsSplitV1 => SplitV1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSplitV1(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.SplitV1Parameters PickSplitV1() => IsSplitV1
             ? SplitV1!
@@ -61,7 +61,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExtractV2))]
@@ -69,7 +69,7 @@ namespace LlamaParse
         public bool IsExtractV2 => ExtractV2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickExtractV2(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.ExtractV2Parameters PickExtractV2() => IsExtractV2
             ? ExtractV2!
@@ -98,7 +98,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClassifyV2))]
@@ -106,7 +106,7 @@ namespace LlamaParse
         public bool IsClassifyV2 => ClassifyV2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClassifyV2(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.ClassifyV2Parameters PickClassifyV2() => IsClassifyV2
             ? ClassifyV2!
@@ -138,7 +138,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ParseV2))]
@@ -146,7 +146,7 @@ namespace LlamaParse
         public bool IsParseV2 => ParseV2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickParseV2(
 #if NET6_0_OR_GREATER
@@ -159,7 +159,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.ParseV2Parameters PickParseV2() => IsParseV2
             ? ParseV2!
@@ -175,7 +175,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpreadsheetV1))]
@@ -183,7 +183,7 @@ namespace LlamaParse
         public bool IsSpreadsheetV1 => SpreadsheetV1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpreadsheetV1(
 #if NET6_0_OR_GREATER
@@ -196,7 +196,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.SpreadsheetV1Parameters PickSpreadsheetV1() => IsSpreadsheetV1
             ? SpreadsheetV1!
@@ -213,7 +213,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Unknown))]
@@ -221,7 +221,7 @@ namespace LlamaParse
         public bool IsUnknown => Unknown != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUnknown(
 #if NET6_0_OR_GREATER
@@ -234,23 +234,23 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.UntypedParameters PickUnknown() => IsUnknown
             ? Unknown!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Unknown' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Parameters2(global::LlamaParse.SplitV1Parameters value) => new Parameters2((global::LlamaParse.SplitV1Parameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.SplitV1Parameters?(Parameters2 @this) => @this.SplitV1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Parameters2(global::LlamaParse.SplitV1Parameters? value)
         {
@@ -258,22 +258,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Parameters2 FromSplitV1(global::LlamaParse.SplitV1Parameters? value) => new Parameters2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Parameters2(global::LlamaParse.ExtractV2Parameters value) => new Parameters2((global::LlamaParse.ExtractV2Parameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.ExtractV2Parameters?(Parameters2 @this) => @this.ExtractV2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Parameters2(global::LlamaParse.ExtractV2Parameters? value)
         {
@@ -281,22 +281,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Parameters2 FromExtractV2(global::LlamaParse.ExtractV2Parameters? value) => new Parameters2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Parameters2(global::LlamaParse.ClassifyV2Parameters value) => new Parameters2((global::LlamaParse.ClassifyV2Parameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.ClassifyV2Parameters?(Parameters2 @this) => @this.ClassifyV2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Parameters2(global::LlamaParse.ClassifyV2Parameters? value)
         {
@@ -304,22 +304,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Parameters2 FromClassifyV2(global::LlamaParse.ClassifyV2Parameters? value) => new Parameters2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Parameters2(global::LlamaParse.ParseV2Parameters value) => new Parameters2((global::LlamaParse.ParseV2Parameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.ParseV2Parameters?(Parameters2 @this) => @this.ParseV2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Parameters2(global::LlamaParse.ParseV2Parameters? value)
         {
@@ -327,22 +327,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Parameters2 FromParseV2(global::LlamaParse.ParseV2Parameters? value) => new Parameters2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Parameters2(global::LlamaParse.SpreadsheetV1Parameters value) => new Parameters2((global::LlamaParse.SpreadsheetV1Parameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.SpreadsheetV1Parameters?(Parameters2 @this) => @this.SpreadsheetV1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Parameters2(global::LlamaParse.SpreadsheetV1Parameters? value)
         {
@@ -350,22 +350,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Parameters2 FromSpreadsheetV1(global::LlamaParse.SpreadsheetV1Parameters? value) => new Parameters2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Parameters2(global::LlamaParse.UntypedParameters value) => new Parameters2((global::LlamaParse.UntypedParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.UntypedParameters?(Parameters2 @this) => @this.Unknown;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Parameters2(global::LlamaParse.UntypedParameters? value)
         {
@@ -373,12 +373,12 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Parameters2 FromUnknown(global::LlamaParse.UntypedParameters? value) => new Parameters2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Parameters2(
             global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType? productType,
@@ -401,7 +401,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Unknown as object ??
@@ -409,11 +409,11 @@ namespace LlamaParse
             ParseV2 as object ??
             ClassifyV2 as object ??
             ExtractV2 as object ??
-            SplitV1 as object 
+            SplitV1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SplitV1?.ToString() ??
@@ -421,11 +421,11 @@ namespace LlamaParse
             ClassifyV2?.ToString() ??
             ParseV2?.ToString() ??
             SpreadsheetV1?.ToString() ??
-            Unknown?.ToString() 
+            Unknown?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -433,7 +433,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::LlamaParse.SplitV1Parameters, TResult>? splitV1 = null,
@@ -478,7 +478,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::LlamaParse.SplitV1Parameters>? splitV1 = null,
@@ -526,7 +526,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::LlamaParse.SplitV1Parameters>? splitV1 = null,
@@ -569,7 +569,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -598,7 +598,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Parameters2 other)
         {
@@ -608,12 +608,12 @@ namespace LlamaParse
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.ClassifyV2Parameters?>.Default.Equals(ClassifyV2, other.ClassifyV2) &&
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.ParseV2Parameters?>.Default.Equals(ParseV2, other.ParseV2) &&
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.SpreadsheetV1Parameters?>.Default.Equals(SpreadsheetV1, other.SpreadsheetV1) &&
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.UntypedParameters?>.Default.Equals(Unknown, other.Unknown) 
+                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.UntypedParameters?>.Default.Equals(Unknown, other.Unknown)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Parameters2 obj1, Parameters2 obj2)
         {
@@ -621,7 +621,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Parameters2 obj1, Parameters2 obj2)
         {
@@ -629,7 +629,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,31 +9,31 @@ namespace LlamaParse
     public enum JobNameMapping
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DataSource,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileUpdater,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ingestion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ManagedIngestion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MetadataUpdate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Parse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transform,
     }

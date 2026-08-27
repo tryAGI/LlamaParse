@@ -4,36 +4,36 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureEmbedding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BedrockEmbedding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CohereEmbedding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GeminiEmbedding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HuggingfaceApiEmbedding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiEmbedding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VertexaiEmbedding,
     }

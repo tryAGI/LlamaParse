@@ -35,7 +35,7 @@ namespace LlamaParse
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.ConfigurableDataSourceNamesJsonConverter))]
@@ -63,7 +63,7 @@ namespace LlamaParse
         public global::LlamaParse.DataSourceReaderVersionMetadata? VersionMetadata { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

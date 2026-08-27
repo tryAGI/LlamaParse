@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class NumericRangeFilter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operator")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.NumericRangeFilterOperatorJsonConverter))]
@@ -17,7 +17,7 @@ namespace LlamaParse
         public required global::LlamaParse.NumericRangeFilterOperator Operator { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, double?, global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<int?, double?>>>))]

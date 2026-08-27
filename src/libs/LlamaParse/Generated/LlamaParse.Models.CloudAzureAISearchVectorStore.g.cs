@@ -21,50 +21,50 @@ namespace LlamaParse
         public string? SearchServiceApiKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_service_endpoint")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SearchServiceEndpoint { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_service_api_version")]
         public string? SearchServiceApiVersion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index_name")]
         public string? IndexName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filterable_metadata_field_keys")]
         public object? FilterableMetadataFieldKeys { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_dimension")]
         public int? EmbeddingDimension { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_id")]
         public string? ClientId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         public string? ClientSecret { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         public string? TenantId { get; set; }

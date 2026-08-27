@@ -9,31 +9,31 @@ namespace LlamaParse
     public enum PartitionNames
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DataSourceIdPartition,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvalDatasetIdPartition,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtractionSchemaIdPartition,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileIdPartition,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileParsingIdPartition,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PipelineFileIdPartition,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PipelineIdPartition,
     }

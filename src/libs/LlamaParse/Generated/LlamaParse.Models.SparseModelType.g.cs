@@ -12,15 +12,15 @@ namespace LlamaParse
     public enum SparseModelType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bm25,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Splade,
     }

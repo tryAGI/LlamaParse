@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class AgentDataCreate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deployment_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,7 +22,7 @@ namespace LlamaParse
         public string? Collection { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]

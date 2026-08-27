@@ -9,14 +9,14 @@ namespace LlamaParse
     public sealed partial class ImageAttachmentRef
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SourceId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attachment_name")]
         [global::System.Text.Json.Serialization.JsonRequired]

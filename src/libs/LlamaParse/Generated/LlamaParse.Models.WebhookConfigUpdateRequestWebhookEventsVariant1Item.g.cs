@@ -4,140 +4,140 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WebhookConfigUpdateRequestWebhookEventsVariant1Item
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchCancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchPending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchRunning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchSuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClassifyCancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClassifyError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClassifyPartialSuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClassifyPending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClassifyRunning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClassifySuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtractCancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtractError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtractPartialSuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtractPending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtractSuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParseCancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParseError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParsePartialSuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParsePending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParseRunning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParseSuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SheetsCancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SheetsError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SheetsPartialSuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SheetsPending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SheetsSuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SplitCancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SplitError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SplitPending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SplitProcessing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SplitSuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnmappedEvent,
     }

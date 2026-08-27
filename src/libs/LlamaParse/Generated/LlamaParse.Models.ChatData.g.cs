@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChatData
     {
@@ -15,7 +15,7 @@ namespace LlamaParse
         public global::LlamaParse.PresetRetrievalParams? RetrievalParameters { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_parameters")]
         public global::LlamaParse.LLMParameters? LlmParameters { get; set; }

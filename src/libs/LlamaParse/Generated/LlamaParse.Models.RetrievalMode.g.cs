@@ -4,24 +4,24 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RetrievalMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AutoRouted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chunks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FilesViaContent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FilesViaMetadata,
     }

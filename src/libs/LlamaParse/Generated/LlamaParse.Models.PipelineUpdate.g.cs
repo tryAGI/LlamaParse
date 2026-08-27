@@ -11,7 +11,7 @@ namespace LlamaParse
     public sealed partial class PipelineUpdate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_config")]
         public global::LlamaParse.EmbeddingConfigVariant13? EmbeddingConfig { get; set; }
@@ -73,7 +73,7 @@ namespace LlamaParse
         public global::LlamaParse.PipelineMetadataConfig2? MetadataConfig { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }

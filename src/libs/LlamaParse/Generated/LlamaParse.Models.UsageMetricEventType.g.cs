@@ -9,127 +9,127 @@ namespace LlamaParse
     public enum UsageMetricEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioSecondsParsed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChartParsingAgentic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChartParsingEfficient,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChartParsingPlus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatMessageSent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConfidenceScoreHigh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DirectoryCountSnapshot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DirectoryFileCountSnapshot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DirectoryFilesExported,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DirectoryFilesIngested,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DirectoryPagesExported,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtractionNumPages,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtractionNumPagesParsed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FormParsingPages,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageClassified,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IndexRetrieveQuery,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LayoutAwareChartExtraction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LayoutAwareParsing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LayoutExtracted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PagesClassified,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PagesEmbedded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PagesIndexed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PagesParsed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PagesSplit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PagesVerified,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreciseBboxExtraction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SetTotalIndexes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SetTotalPagesIndexed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpreadsheetRegionsExtracted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StoredFileCount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StoredFileMb,
     }

@@ -9,19 +9,19 @@ namespace LlamaParse
     public enum ExtractMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Balanced,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Multimodal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Premium,
     }

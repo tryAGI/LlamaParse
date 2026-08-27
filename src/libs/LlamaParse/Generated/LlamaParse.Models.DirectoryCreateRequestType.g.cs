@@ -10,11 +10,11 @@ namespace LlamaParse
     public enum DirectoryCreateRequestType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ephemeral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

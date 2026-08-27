@@ -4,20 +4,20 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FormJsonItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Field,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Section,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Table,
     }
