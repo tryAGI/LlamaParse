@@ -5,12 +5,12 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ItemsItem4 : global::System.IEquatable<ItemsItem4>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.FormTableCellItemsItemDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Section))]
@@ -32,7 +32,7 @@ namespace LlamaParse
         public bool IsSection => Section != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSection(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.FormSection PickSection() => IsSection
             ? Section!
@@ -61,7 +61,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Field))]
@@ -69,7 +69,7 @@ namespace LlamaParse
         public bool IsField => Field != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickField(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.FormField PickField() => IsField
             ? Field!
@@ -98,7 +98,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Table))]
@@ -106,7 +106,7 @@ namespace LlamaParse
         public bool IsTable => Table != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTable(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LlamaParse.FormTable PickTable() => IsTable
             ? Table!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem4(global::LlamaParse.FormSection value) => new ItemsItem4((global::LlamaParse.FormSection?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.FormSection?(ItemsItem4 @this) => @this.Section;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem4(global::LlamaParse.FormSection? value)
         {
@@ -143,22 +143,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem4 FromSection(global::LlamaParse.FormSection? value) => new ItemsItem4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem4(global::LlamaParse.FormField value) => new ItemsItem4((global::LlamaParse.FormField?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.FormField?(ItemsItem4 @this) => @this.Field;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem4(global::LlamaParse.FormField? value)
         {
@@ -166,22 +166,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem4 FromField(global::LlamaParse.FormField? value) => new ItemsItem4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem4(global::LlamaParse.FormTable value) => new ItemsItem4((global::LlamaParse.FormTable?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LlamaParse.FormTable?(ItemsItem4 @this) => @this.Table;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem4(global::LlamaParse.FormTable? value)
         {
@@ -189,12 +189,12 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem4 FromTable(global::LlamaParse.FormTable? value) => new ItemsItem4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem4(
             global::LlamaParse.FormTableCellItemsItemDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Table as object ??
             Field as object ??
-            Section as object 
+            Section as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Section?.ToString() ??
             Field?.ToString() ??
-            Table?.ToString() 
+            Table?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::LlamaParse.FormSection, TResult>? section = null,
@@ -267,7 +267,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::LlamaParse.FormSection>? section = null,
@@ -297,7 +297,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::LlamaParse.FormSection>? section = null,
@@ -325,7 +325,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ItemsItem4 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormSection?>.Default.Equals(Section, other.Section) &&
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormField?>.Default.Equals(Field, other.Field) &&
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormTable?>.Default.Equals(Table, other.Table) 
+                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormTable?>.Default.Equals(Table, other.Table)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ItemsItem4 obj1, ItemsItem4 obj2)
         {
@@ -368,7 +368,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ItemsItem4 obj1, ItemsItem4 obj2)
         {
@@ -376,7 +376,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

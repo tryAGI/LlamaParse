@@ -4,12 +4,12 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class MongoStaticFilters
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parsed_directory_file_id")]
         public global::LlamaParse.StringFilter? ParsedDirectoryFileId { get; set; }

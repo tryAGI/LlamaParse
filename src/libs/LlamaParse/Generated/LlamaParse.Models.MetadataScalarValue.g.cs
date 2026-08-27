@@ -5,12 +5,12 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MetadataScalarValue : global::System.IEquatable<MetadataScalarValue>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? MetadataScalarValueVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MetadataScalarValueVariant1))]
@@ -27,7 +27,7 @@ namespace LlamaParse
         public bool IsMetadataScalarValueVariant1 => MetadataScalarValueVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMetadataScalarValueVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickMetadataScalarValueVariant1() => IsMetadataScalarValueVariant1
             ? MetadataScalarValueVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public int? MetadataScalarValueVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MetadataScalarValueVariant2))]
@@ -64,7 +64,7 @@ namespace LlamaParse
         public bool IsMetadataScalarValueVariant2 => MetadataScalarValueVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMetadataScalarValueVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int PickMetadataScalarValueVariant2() => IsMetadataScalarValueVariant2
             ? MetadataScalarValueVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public double? MetadataScalarValueVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MetadataScalarValueVariant3))]
@@ -101,7 +101,7 @@ namespace LlamaParse
         public bool IsMetadataScalarValueVariant3 => MetadataScalarValueVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMetadataScalarValueVariant3(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double PickMetadataScalarValueVariant3() => IsMetadataScalarValueVariant3
             ? MetadataScalarValueVariant3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public bool? MetadataScalarValueVariant4 { get; init; }
@@ -130,7 +130,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MetadataScalarValueVariant4))]
@@ -138,7 +138,7 @@ namespace LlamaParse
         public bool IsMetadataScalarValueVariant4 => MetadataScalarValueVariant4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMetadataScalarValueVariant4(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool PickMetadataScalarValueVariant4() => IsMetadataScalarValueVariant4
             ? MetadataScalarValueVariant4!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant4' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? MetadataScalarValueVariant5 { get; init; }
@@ -167,7 +167,7 @@ namespace LlamaParse
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MetadataScalarValueVariant5))]
@@ -175,7 +175,7 @@ namespace LlamaParse
         public bool IsMetadataScalarValueVariant5 => MetadataScalarValueVariant5 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMetadataScalarValueVariant5(
 #if NET6_0_OR_GREATER
@@ -188,23 +188,23 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickMetadataScalarValueVariant5() => IsMetadataScalarValueVariant5
             ? MetadataScalarValueVariant5!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant5' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MetadataScalarValue(string value) => new MetadataScalarValue((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(MetadataScalarValue @this) => @this.MetadataScalarValueVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MetadataScalarValue(string? value)
         {
@@ -212,22 +212,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MetadataScalarValue FromMetadataScalarValueVariant1(string? value) => new MetadataScalarValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MetadataScalarValue(int value) => new MetadataScalarValue((int?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator int?(MetadataScalarValue @this) => @this.MetadataScalarValueVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MetadataScalarValue(int? value)
         {
@@ -235,22 +235,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MetadataScalarValue FromMetadataScalarValueVariant2(int? value) => new MetadataScalarValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MetadataScalarValue(double value) => new MetadataScalarValue((double?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator double?(MetadataScalarValue @this) => @this.MetadataScalarValueVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MetadataScalarValue(double? value)
         {
@@ -258,22 +258,22 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MetadataScalarValue FromMetadataScalarValueVariant3(double? value) => new MetadataScalarValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MetadataScalarValue(bool value) => new MetadataScalarValue((bool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator bool?(MetadataScalarValue @this) => @this.MetadataScalarValueVariant4;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MetadataScalarValue(bool? value)
         {
@@ -281,12 +281,12 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MetadataScalarValue FromMetadataScalarValueVariant4(bool? value) => new MetadataScalarValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MetadataScalarValue(
             string? metadataScalarValueVariant1,
@@ -304,29 +304,29 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MetadataScalarValueVariant5 as object ??
             MetadataScalarValueVariant4 as object ??
             MetadataScalarValueVariant3 as object ??
             MetadataScalarValueVariant2 as object ??
-            MetadataScalarValueVariant1 as object 
+            MetadataScalarValueVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MetadataScalarValueVariant1?.ToString() ??
             MetadataScalarValueVariant2?.ToString() ??
             MetadataScalarValueVariant3?.ToString() ??
             MetadataScalarValueVariant4?.ToString().ToLowerInvariant() ??
-            MetadataScalarValueVariant5?.ToString() 
+            MetadataScalarValueVariant5?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -334,7 +334,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? metadataScalarValueVariant1 = null,
@@ -374,7 +374,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? metadataScalarValueVariant1 = null,
@@ -416,7 +416,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? metadataScalarValueVariant1 = null,
@@ -454,7 +454,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -481,7 +481,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MetadataScalarValue other)
         {
@@ -490,12 +490,12 @@ namespace LlamaParse
                 global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(MetadataScalarValueVariant2, other.MetadataScalarValueVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(MetadataScalarValueVariant3, other.MetadataScalarValueVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(MetadataScalarValueVariant4, other.MetadataScalarValueVariant4) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(MetadataScalarValueVariant5, other.MetadataScalarValueVariant5) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(MetadataScalarValueVariant5, other.MetadataScalarValueVariant5)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MetadataScalarValue obj1, MetadataScalarValue obj2)
         {
@@ -503,7 +503,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MetadataScalarValue obj1, MetadataScalarValue obj2)
         {
@@ -511,7 +511,7 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

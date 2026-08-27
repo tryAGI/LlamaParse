@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class PageFigureNodeWithScore
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node")]
         [global::System.Text.Json.Serialization.JsonRequired]

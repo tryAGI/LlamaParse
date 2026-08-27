@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class DeleteResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_count")]
         [global::System.Text.Json.Serialization.JsonRequired]

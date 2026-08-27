@@ -29,33 +29,33 @@ namespace LlamaParse
         public string? MongodbUri { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("db_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DbName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collection_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CollectionName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_index_name")]
         public string? VectorIndexName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fulltext_index_name")]
         public string? FulltextIndexName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_dimension")]
         public int? EmbeddingDimension { get; set; }

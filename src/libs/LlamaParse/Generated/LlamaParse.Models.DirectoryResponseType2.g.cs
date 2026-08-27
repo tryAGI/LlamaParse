@@ -4,20 +4,20 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DirectoryResponseType2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ephemeral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Index,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

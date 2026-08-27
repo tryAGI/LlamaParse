@@ -23,14 +23,14 @@ namespace LlamaParse
         public bool? SupportsNestedMetadataFilters { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collection_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CollectionName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -49,7 +49,7 @@ namespace LlamaParse
         public int? MaxRetries { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_kwargs")]
         public object? ClientKwargs { get; set; }

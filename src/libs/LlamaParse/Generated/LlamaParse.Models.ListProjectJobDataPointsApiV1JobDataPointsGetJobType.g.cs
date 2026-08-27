@@ -9,15 +9,15 @@ namespace LlamaParse
     public enum ListProjectJobDataPointsApiV1JobDataPointsGetJobType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Classify,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Extract,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Parse,
     }

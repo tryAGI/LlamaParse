@@ -17,7 +17,7 @@ namespace LlamaParse
         public required global::LlamaParse.StatusEnum Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effective_at")]
         public global::System.DateTime? EffectiveAt { get; set; }

@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class Project
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]

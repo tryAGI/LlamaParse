@@ -9,591 +9,591 @@ namespace LlamaParse
     public enum LlamaParseSupportedFileExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Abw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Awt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Azw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Azw3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Azw4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bmp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cb7,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cbc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cbr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cbz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cgm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Csv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cwk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dbf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Djvu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Doc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Docm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Docx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dotm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dotx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Epub,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Et,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fb2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fbz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fodg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fodp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fodt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fopd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Heic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Heif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Htm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Html,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Htmlz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hwp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Key,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lrf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lwp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         M4a,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mcw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Md,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mobi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mpga,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mwd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Numbers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Odf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Odg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Odp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Odt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Otg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Otp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ots,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ott,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pages,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pbd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pdb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pdf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pml,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Potm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Potx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ppt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pptm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pptx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Psw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Qpw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rtf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sda,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sdd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sdp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sdw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sgl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Slk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Snb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Std,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sti,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Svg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sxc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sxd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sxg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sxi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sxm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sxw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sylk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tcr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tiff,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tsv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Txtz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uof,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uos,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uos1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uos2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vdx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vsd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vsdm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vsdx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wav,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wb1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wb2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wb3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wk1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wk2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wk3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wk4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wpd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wps,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wpt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wq1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wq2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wri,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xhtm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xlr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xls,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xlsb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xlsm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xlsx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xlw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xml,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Yxmd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zabw,
     }

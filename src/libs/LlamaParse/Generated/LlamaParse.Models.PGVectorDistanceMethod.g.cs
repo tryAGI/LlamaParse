@@ -11,27 +11,27 @@ namespace LlamaParse
     public enum PGVectorDistanceMethod
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cosine,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hamming,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ip,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jaccard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         L1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         L2,
     }

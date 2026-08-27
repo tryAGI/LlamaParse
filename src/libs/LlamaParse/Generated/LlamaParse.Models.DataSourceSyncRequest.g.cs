@@ -15,7 +15,7 @@ namespace LlamaParse
     public sealed partial class DataSourceSyncRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pipeline_file_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? PipelineFileIds { get; set; }

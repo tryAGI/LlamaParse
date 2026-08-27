@@ -9,15 +9,15 @@ namespace LlamaParse
     public enum Pooling
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cls,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Last,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mean,
     }

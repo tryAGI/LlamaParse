@@ -10,11 +10,11 @@ namespace LlamaParse
     public enum CloudJiraDataSourceV2ApiVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x3,
     }

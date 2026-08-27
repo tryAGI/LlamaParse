@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetFilePageScreenshotApiV1FilesIdPageScreenshotsPageIndexGetResponse
     {

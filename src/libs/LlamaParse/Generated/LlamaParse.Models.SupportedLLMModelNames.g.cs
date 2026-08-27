@@ -4,60 +4,60 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SupportedLLMModelNames
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureOpenaiGpt4o,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureOpenaiGpt4oMini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureOpenaiGpt41,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureOpenaiGpt41Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureOpenaiGpt41Nano,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BedrockClaude35SonnetV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BedrockClaude35SonnetV2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Claude45Sonnet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4o,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41Nano,
     }

@@ -39,98 +39,98 @@ namespace LlamaParse
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaClient Beta { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatClient Chat { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClassifierClient Classifier { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataSinksClient DataSinks { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataSourcesClient DataSources { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingModelConfigsClient EmbeddingModelConfigs { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IndexesClient Indexes { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JobDashboardClient JobDashboard { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LlamaExtractClient LlamaExtract { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrganizationsClient Organizations { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PageFiguresClient PageFigures { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PageScreenshotsClient PageScreenshots { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ParsingClient Parsing { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectsClient Projects { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RetrievalClient Retrieval { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RetrieversClient Retrievers { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SplitClient Split { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public V2Client V2 { get; }
 

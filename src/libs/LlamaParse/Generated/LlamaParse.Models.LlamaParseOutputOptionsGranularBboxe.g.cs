@@ -4,20 +4,20 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LlamaParseOutputOptionsGranularBboxe
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cell,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Line,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Word,
     }

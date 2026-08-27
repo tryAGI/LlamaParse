@@ -9,11 +9,11 @@ namespace LlamaParse
     public enum ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cached,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ttl,
     }

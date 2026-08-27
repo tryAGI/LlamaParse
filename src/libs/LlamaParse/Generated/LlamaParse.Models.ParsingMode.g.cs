@@ -9,35 +9,35 @@ namespace LlamaParse
     public enum ParsingMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParseDocumentWithAgent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParseDocumentWithLlm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParseDocumentWithLvm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParsePageWithAgent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParsePageWithLayoutAgent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParsePageWithLlm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParsePageWithLvm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParsePageWithoutLlm,
     }

@@ -9,15 +9,15 @@ namespace LlamaParse
     public enum ExtractTarget
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PerDoc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PerPage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PerTableRow,
     }

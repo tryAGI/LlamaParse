@@ -10,23 +10,23 @@ namespace LlamaParse
     public enum VertexEmbeddingMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Classification,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Clustering,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Retrieval,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Similarity,
     }

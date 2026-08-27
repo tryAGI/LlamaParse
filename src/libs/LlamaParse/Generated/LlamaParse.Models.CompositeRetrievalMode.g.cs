@@ -9,11 +9,11 @@ namespace LlamaParse
     public enum CompositeRetrievalMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Full,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Routing,
     }

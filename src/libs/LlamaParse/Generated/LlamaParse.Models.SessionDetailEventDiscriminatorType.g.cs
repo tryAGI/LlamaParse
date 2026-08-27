@@ -4,40 +4,40 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SessionDetailEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thinking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThinkingDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserInput,
     }

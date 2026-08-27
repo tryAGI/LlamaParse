@@ -4,32 +4,32 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ConfigurationResponseParametersDiscriminatorProductType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClassifyV2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtractV2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParseV2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SplitV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpreadsheetV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown,
     }

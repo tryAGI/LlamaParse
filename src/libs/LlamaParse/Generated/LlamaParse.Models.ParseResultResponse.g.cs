@@ -77,7 +77,7 @@ namespace LlamaParse
         public object? JobMetadata { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("raw_parameters")]
         public object? RawParameters { get; set; }

@@ -4,20 +4,20 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ephemeral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Index,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

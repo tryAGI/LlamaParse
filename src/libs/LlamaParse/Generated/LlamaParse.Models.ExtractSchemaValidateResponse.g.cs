@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class ExtractSchemaValidateResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]

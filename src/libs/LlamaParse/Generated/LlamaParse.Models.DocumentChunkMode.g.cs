@@ -9,11 +9,11 @@ namespace LlamaParse
     public enum DocumentChunkMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Page,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Section,
     }

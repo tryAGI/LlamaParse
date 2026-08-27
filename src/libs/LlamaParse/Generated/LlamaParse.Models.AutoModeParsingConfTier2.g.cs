@@ -4,24 +4,24 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AutoModeParsingConfTier2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Agentic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgenticPlus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CostEffective,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fast,
     }

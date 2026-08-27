@@ -9,11 +9,11 @@ namespace LlamaParse
     public enum PipelineType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Managed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Playground,
     }

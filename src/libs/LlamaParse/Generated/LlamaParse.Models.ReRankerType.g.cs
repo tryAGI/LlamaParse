@@ -9,27 +9,27 @@ namespace LlamaParse
     public enum ReRankerType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bedrock,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cohere,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Llm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Score,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SystemDefault,
     }

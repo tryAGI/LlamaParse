@@ -10,11 +10,11 @@ namespace LlamaParse
     public enum IndexCreateRequestVectorTarget
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
     }

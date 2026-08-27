@@ -4,20 +4,20 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ImageMetadataCategory2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Embedded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Layout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Screenshot,
     }

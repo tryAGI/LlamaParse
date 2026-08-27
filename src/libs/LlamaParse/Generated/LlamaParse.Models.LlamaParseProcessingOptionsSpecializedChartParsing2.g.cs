@@ -4,20 +4,20 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LlamaParseProcessingOptionsSpecializedChartParsing2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Agentic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgenticPlus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Efficient,
     }

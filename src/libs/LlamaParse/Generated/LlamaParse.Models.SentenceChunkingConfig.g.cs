@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SentenceChunkingConfig
     {
@@ -27,13 +27,13 @@ namespace LlamaParse
         public string? Mode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("separator")]
         public string? Separator { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("paragraph_separator")]
         public string? ParagraphSeparator { get; set; }

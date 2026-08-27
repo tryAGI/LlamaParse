@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TokenChunkingConfig
     {
@@ -27,7 +27,7 @@ namespace LlamaParse
         public string? Mode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("separator")]
         public string? Separator { get; set; }

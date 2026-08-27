@@ -10,11 +10,11 @@ namespace LlamaParse
     public enum SpreadsheetV1ParametersTier
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Agentic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CostEffective,
     }
