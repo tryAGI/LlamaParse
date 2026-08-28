@@ -233,6 +233,14 @@ namespace LlamaParse
                                     name: "\"adaptive_long_table\"");
 
                             }
+                            if (request.AnnotateLineNumbers != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AnnotateLineNumbers, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"annotate_line_numbers\"");
+
+                            }
                             if (request.AnnotateLinks != default)
                             {
 
@@ -1469,6 +1477,9 @@ namespace LlamaParse
         /// <param name="adaptiveLongTable">
         /// Default Value: false
         /// </param>
+        /// <param name="annotateLineNumbers">
+        /// Detect printed gutter line numbers and return their Markdown offsets.
+        /// </param>
         /// <param name="annotateLinks">
         /// Default Value: false
         /// </param>
@@ -1710,6 +1721,7 @@ namespace LlamaParse
             byte[]? file = default,
             string? filename = default,
             bool? adaptiveLongTable = default,
+            bool? annotateLineNumbers = default,
             bool? annotateLinks = default,
             bool? annotateRevisions = default,
             bool? autoMode = default,
@@ -1829,6 +1841,7 @@ namespace LlamaParse
                 File = file,
                 Filename = filename,
                 AdaptiveLongTable = adaptiveLongTable,
+                AnnotateLineNumbers = annotateLineNumbers,
                 AnnotateLinks = annotateLinks,
                 AnnotateRevisions = annotateRevisions,
                 AutoMode = autoMode,

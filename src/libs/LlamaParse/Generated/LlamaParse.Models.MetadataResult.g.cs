@@ -16,6 +16,12 @@ namespace LlamaParse
         public required global::System.Collections.Generic.IList<global::LlamaParse.MetadataResultPage> Pages { get; set; }
 
         /// <summary>
+        /// Document-level metadata information
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document")]
+        public global::LlamaParse.MetadataResultDocument2? Document { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -27,13 +33,18 @@ namespace LlamaParse
         /// <param name="pages">
         /// List of page metadata entries
         /// </param>
+        /// <param name="document">
+        /// Document-level metadata information
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MetadataResult(
-            global::System.Collections.Generic.IList<global::LlamaParse.MetadataResultPage> pages)
+            global::System.Collections.Generic.IList<global::LlamaParse.MetadataResultPage> pages,
+            global::LlamaParse.MetadataResultDocument2? document)
         {
             this.Pages = pages ?? throw new global::System.ArgumentNullException(nameof(pages));
+            this.Document = document;
         }
 
         /// <summary>

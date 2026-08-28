@@ -51,6 +51,12 @@ namespace LlamaParse
         public bool? AnnotateRevisions { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("annotate_line_numbers")]
+        public bool? AnnotateLineNumbers { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("adaptive_long_table")]
@@ -758,6 +764,7 @@ namespace LlamaParse
         /// Default Value: false
         /// </param>
         /// <param name="annotateRevisions"></param>
+        /// <param name="annotateLineNumbers"></param>
         /// <param name="adaptiveLongTable">
         /// Default Value: false
         /// </param>
@@ -1003,6 +1010,7 @@ namespace LlamaParse
             bool? disableOcr,
             bool? annotateLinks,
             bool? annotateRevisions,
+            bool? annotateLineNumbers,
             bool? adaptiveLongTable,
             bool? compactMarkdownTable,
             bool? disableReconstruction,
@@ -1125,6 +1133,7 @@ namespace LlamaParse
             this.DisableOcr = disableOcr;
             this.AnnotateLinks = annotateLinks;
             this.AnnotateRevisions = annotateRevisions;
+            this.AnnotateLineNumbers = annotateLineNumbers;
             this.AdaptiveLongTable = adaptiveLongTable;
             this.CompactMarkdownTable = compactMarkdownTable;
             this.DisableReconstruction = disableReconstruction;

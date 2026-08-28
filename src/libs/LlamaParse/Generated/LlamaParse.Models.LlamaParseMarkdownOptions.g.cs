@@ -21,6 +21,12 @@ namespace LlamaParse
         public bool? AnnotateRevisions { get; set; }
 
         /// <summary>
+        /// Detect printed gutter line numbers and return their Markdown offsets
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("annotate_line_numbers")]
+        public bool? AnnotateLineNumbers { get; set; }
+
+        /// <summary>
         /// Table formatting options including markdown vs HTML format and merging behavior
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tables")]
@@ -47,6 +53,9 @@ namespace LlamaParse
         /// <param name="annotateRevisions">
         /// Extract Word-style revisions and comments into structured page output
         /// </param>
+        /// <param name="annotateLineNumbers">
+        /// Detect printed gutter line numbers and return their Markdown offsets
+        /// </param>
         /// <param name="tables">
         /// Table formatting options including markdown vs HTML format and merging behavior
         /// </param>
@@ -59,11 +68,13 @@ namespace LlamaParse
         public LlamaParseMarkdownOptions(
             bool? annotateLinks,
             bool? annotateRevisions,
+            bool? annotateLineNumbers,
             global::LlamaParse.LlamaParseTables? tables,
             bool? inlineImages)
         {
             this.AnnotateLinks = annotateLinks;
             this.AnnotateRevisions = annotateRevisions;
+            this.AnnotateLineNumbers = annotateLineNumbers;
             this.Tables = tables;
             this.InlineImages = inlineImages;
         }

@@ -35,6 +35,12 @@ namespace LlamaParse
         public string? Footer { get; set; }
 
         /// <summary>
+        /// Printed line numbers linked to final page markdown
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("line_numbers")]
+        public global::System.Collections.Generic.IList<global::LlamaParse.MarkdownLineNumberAnnotation>? LineNumbers { get; set; }
+
+        /// <summary>
         /// Success indicator
         /// </summary>
         /// <default>true</default>
@@ -62,6 +68,9 @@ namespace LlamaParse
         /// <param name="footer">
         /// Footer of the page in markdown
         /// </param>
+        /// <param name="lineNumbers">
+        /// Printed line numbers linked to final page markdown
+        /// </param>
         /// <param name="success">
         /// Success indicator
         /// </param>
@@ -73,12 +82,14 @@ namespace LlamaParse
             string markdown,
             string? header,
             string? footer,
+            global::System.Collections.Generic.IList<global::LlamaParse.MarkdownLineNumberAnnotation>? lineNumbers,
             bool success = true)
         {
             this.PageNumber = pageNumber;
             this.Markdown = markdown ?? throw new global::System.ArgumentNullException(nameof(markdown));
             this.Header = header;
             this.Footer = footer;
+            this.LineNumbers = lineNumbers;
             this.Success = success;
         }
 
