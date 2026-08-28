@@ -53,6 +53,9 @@ namespace LlamaParse
         /// <param name="adaptiveLongTable">
         /// Default Value: false
         /// </param>
+        /// <param name="annotateLineNumbers">
+        /// Detect printed gutter line numbers and return their Markdown offsets.
+        /// </param>
         /// <param name="annotateLinks">
         /// Default Value: false
         /// </param>
@@ -294,6 +297,7 @@ namespace LlamaParse
             byte[]? file = default,
             string? filename = default,
             bool? adaptiveLongTable = default,
+            bool? annotateLineNumbers = default,
             bool? annotateLinks = default,
             bool? annotateRevisions = default,
             bool? autoMode = default,

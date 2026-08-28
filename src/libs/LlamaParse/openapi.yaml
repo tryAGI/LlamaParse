@@ -23643,6 +23643,17 @@
             ],
             "title": "Annotate Revisions"
           },
+          "annotate_line_numbers": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Annotate Line Numbers"
+          },
           "adaptive_long_table": {
             "anyOf": [
               {
@@ -25638,6 +25649,18 @@
             "type": "boolean",
             "title": "Adaptive Long Table",
             "default": false
+          },
+          "annotate_line_numbers": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Annotate Line Numbers",
+            "description": "Detect printed gutter line numbers and return their Markdown offsets."
           },
           "annotate_links": {
             "type": "boolean",
@@ -31686,15 +31709,17 @@
             "enum": [
               "cost_effective",
               "agentic",
-              "agentic_plus"
+              "agentic_plus",
+              "turbo"
             ],
             "title": "Tier",
-            "description": "Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)",
+            "description": "Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)",
             "default": "cost_effective",
             "examples": [
               "cost_effective",
               "agentic",
-              "agentic_plus"
+              "agentic_plus",
+              "turbo"
             ]
           },
           "version": {
@@ -33439,15 +33464,17 @@
             "enum": [
               "cost_effective",
               "agentic",
-              "agentic_plus"
+              "agentic_plus",
+              "turbo"
             ],
             "title": "Tier",
-            "description": "Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)",
+            "description": "Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)",
             "default": "cost_effective",
             "examples": [
               "cost_effective",
               "agentic",
-              "agentic_plus"
+              "agentic_plus",
+              "turbo"
             ]
           },
           "version": {
@@ -37925,6 +37952,18 @@
             "title": "Annotate Revisions",
             "description": "Extract Word-style revisions and comments into structured page output"
           },
+          "annotate_line_numbers": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Annotate Line Numbers",
+            "description": "Detect printed gutter line numbers and return their Markdown offsets"
+          },
           "tables": {
             "$ref": "#/components/schemas/LlamaParseTables",
             "description": "Table formatting options including markdown vs HTML format and merging behavior"
@@ -38191,6 +38230,17 @@
               }
             ],
             "title": "Annotate Revisions"
+          },
+          "annotate_line_numbers": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Annotate Line Numbers"
           },
           "adaptive_long_table": {
             "anyOf": [
@@ -40269,6 +40319,35 @@
         "type": "object",
         "title": "ManagedOpenAIEmbeddingConfig"
       },
+      "MarkdownLineNumberAnnotation": {
+        "properties": {
+          "line_number": {
+            "type": "string",
+            "title": "Line Number",
+            "description": "Printed source line number"
+          },
+          "start_index": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Start Index",
+            "description": "Zero-based inclusive UTF-16 code-unit offset in final page markdown"
+          },
+          "end_index": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "End Index",
+            "description": "Zero-based exclusive UTF-16 code-unit offset in final page markdown"
+          }
+        },
+        "type": "object",
+        "required": [
+          "line_number",
+          "start_index",
+          "end_index"
+        ],
+        "title": "MarkdownLineNumberAnnotation",
+        "description": "Source line number linked to final page markdown."
+      },
       "MarkdownResult": {
         "properties": {
           "pages": {
@@ -40328,6 +40407,21 @@
             ],
             "title": "Footer",
             "description": "Footer of the page in markdown"
+          },
+          "line_numbers": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/MarkdownLineNumberAnnotation"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Line Numbers",
+            "description": "Printed line numbers linked to final page markdown"
           },
           "success": {
             "type": "boolean",
@@ -40494,6 +40588,17 @@
             "type": "array",
             "title": "Pages",
             "description": "List of page metadata entries"
+          },
+          "document": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MetadataResultDocument"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Document-level metadata information"
           }
         },
         "type": "object",
@@ -40502,6 +40607,63 @@
         ],
         "title": "MetadataResult",
         "description": "Result containing metadata (page level and general) for the parsed document."
+      },
+      "MetadataResultDocument": {
+        "properties": {
+          "confidence": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence",
+            "description": "Mean confidence score across pages scored by the high-effort confidence judge (0-1)"
+          },
+          "confidence_breakdown": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MetadataResultDocumentConfidenceBreakdown"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Worst-page confidence and scoring coverage for the document"
+          }
+        },
+        "type": "object",
+        "title": "MetadataResultDocument",
+        "description": "Document-level metadata information."
+      },
+      "MetadataResultDocumentConfidenceBreakdown": {
+        "properties": {
+          "min_page_score": {
+            "type": "number",
+            "title": "Min Page Score",
+            "description": "Lowest confidence score among pages scored by the high-effort confidence judge"
+          },
+          "scored_pages": {
+            "type": "integer",
+            "title": "Scored Pages",
+            "description": "Number of pages successfully scored by the high-effort confidence judge"
+          },
+          "total_pages": {
+            "type": "integer",
+            "title": "Total Pages",
+            "description": "Total number of pages in the parsed document"
+          }
+        },
+        "type": "object",
+        "required": [
+          "min_page_score",
+          "scored_pages",
+          "total_pages"
+        ],
+        "title": "MetadataResultDocumentConfidenceBreakdown",
+        "description": "Coverage and worst-page details for document confidence."
       },
       "MetadataResultPage": {
         "properties": {

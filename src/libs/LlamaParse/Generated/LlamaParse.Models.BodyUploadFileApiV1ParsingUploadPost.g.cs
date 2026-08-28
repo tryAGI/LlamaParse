@@ -29,6 +29,12 @@ namespace LlamaParse
         public bool? AdaptiveLongTable { get; set; }
 
         /// <summary>
+        /// Detect printed gutter line numbers and return their Markdown offsets.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("annotate_line_numbers")]
+        public bool? AnnotateLineNumbers { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotate_links")]
@@ -715,6 +721,9 @@ namespace LlamaParse
         /// <param name="adaptiveLongTable">
         /// Default Value: false
         /// </param>
+        /// <param name="annotateLineNumbers">
+        /// Detect printed gutter line numbers and return their Markdown offsets.
+        /// </param>
         /// <param name="annotateLinks">
         /// Default Value: false
         /// </param>
@@ -953,6 +962,7 @@ namespace LlamaParse
             byte[]? file,
             string? filename,
             bool? adaptiveLongTable,
+            bool? annotateLineNumbers,
             bool? annotateLinks,
             bool? annotateRevisions,
             bool? autoMode,
@@ -1068,6 +1078,7 @@ namespace LlamaParse
             this.File = file;
             this.Filename = filename;
             this.AdaptiveLongTable = adaptiveLongTable;
+            this.AnnotateLineNumbers = annotateLineNumbers;
             this.AnnotateLinks = annotateLinks;
             this.AnnotateRevisions = annotateRevisions;
             this.AutoMode = autoMode;

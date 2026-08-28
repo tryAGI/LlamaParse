@@ -4,23 +4,27 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)<br/>
+    /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)<br/>
     /// Default Value: cost_effective
     /// </summary>
     public enum ExtractV2ParametersTier
     {
         /// <summary>
-        /// cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)
+        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)
         /// </summary>
         Agentic,
         /// <summary>
-        /// cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)
+        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)
         /// </summary>
         AgenticPlus,
         /// <summary>
-        /// cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus (50 credits/page)
+        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)
         /// </summary>
         CostEffective,
+        /// <summary>
+        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)
+        /// </summary>
+        Turbo,
     }
 
     /// <summary>
@@ -38,6 +42,7 @@ namespace LlamaParse
                 ExtractV2ParametersTier.Agentic => "agentic",
                 ExtractV2ParametersTier.AgenticPlus => "agentic_plus",
                 ExtractV2ParametersTier.CostEffective => "cost_effective",
+                ExtractV2ParametersTier.Turbo => "turbo",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,6 +56,7 @@ namespace LlamaParse
                 "agentic" => ExtractV2ParametersTier.Agentic,
                 "agentic_plus" => ExtractV2ParametersTier.AgenticPlus,
                 "cost_effective" => ExtractV2ParametersTier.CostEffective,
+                "turbo" => ExtractV2ParametersTier.Turbo,
                 _ => null,
             };
         }
