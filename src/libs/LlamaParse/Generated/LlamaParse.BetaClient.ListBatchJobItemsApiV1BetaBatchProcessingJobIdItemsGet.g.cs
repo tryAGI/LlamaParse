@@ -28,7 +28,7 @@ namespace LlamaParse
         partial void PrepareListBatchJobItemsApiV1BetaBatchProcessingJobIdItemsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string jobId,
-            global::LlamaParse.BatchFileStatus? status,
+            ref global::LlamaParse.BatchFileStatus? status,
             ref int? limit,
             ref int? offset,
             global::System.Guid? projectId,
@@ -142,7 +142,7 @@ namespace LlamaParse
             PrepareListBatchJobItemsApiV1BetaBatchProcessingJobIdItemsGetArguments(
                 httpClient: HttpClient,
                 jobId: ref jobId,
-                status: status,
+                status: ref status,
                 limit: ref limit,
                 offset: ref offset,
                 projectId: projectId,

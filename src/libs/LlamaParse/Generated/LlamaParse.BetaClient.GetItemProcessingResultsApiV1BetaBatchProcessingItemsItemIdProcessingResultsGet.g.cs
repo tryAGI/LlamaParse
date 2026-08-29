@@ -28,7 +28,7 @@ namespace LlamaParse
         partial void PrepareGetItemProcessingResultsApiV1BetaBatchProcessingItemsItemIdProcessingResultsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string itemId,
-            global::LlamaParse.BatchJobType? jobType,
+            ref global::LlamaParse.BatchJobType? jobType,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
@@ -118,7 +118,7 @@ namespace LlamaParse
             PrepareGetItemProcessingResultsApiV1BetaBatchProcessingItemsItemIdProcessingResultsGetArguments(
                 httpClient: HttpClient,
                 itemId: ref itemId,
-                jobType: jobType,
+                jobType: ref jobType,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
