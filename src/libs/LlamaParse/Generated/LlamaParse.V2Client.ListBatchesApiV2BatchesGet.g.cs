@@ -33,7 +33,7 @@ namespace LlamaParse
             ref string? pageToken,
             global::System.DateTime? createdAtOnOrAfter,
             global::System.DateTime? createdAtOnOrBefore,
-            global::LlamaParse.ListBatchesApiV2BatchesGetStatus2? status,
+            ref global::LlamaParse.ListBatchesApiV2BatchesGetStatus2? status,
             ref string? sourceDirectoryId,
             ref string? session);
         partial void PrepareListBatchesApiV2BatchesGetRequest(
@@ -141,7 +141,7 @@ namespace LlamaParse
                 pageToken: ref pageToken,
                 createdAtOnOrAfter: createdAtOnOrAfter,
                 createdAtOnOrBefore: createdAtOnOrBefore,
-                status: status,
+                status: ref status,
                 sourceDirectoryId: ref sourceDirectoryId,
                 session: ref session);
 

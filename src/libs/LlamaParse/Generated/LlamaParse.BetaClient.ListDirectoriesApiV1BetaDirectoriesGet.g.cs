@@ -28,7 +28,7 @@ namespace LlamaParse
         partial void PrepareListDirectoriesApiV1BetaDirectoriesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? name,
-            global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type,
+            ref global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type,
             global::System.Collections.Generic.IList<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item>? types,
             ref bool? includeDeleted,
             global::System.Guid? projectId,
@@ -152,7 +152,7 @@ namespace LlamaParse
             PrepareListDirectoriesApiV1BetaDirectoriesGetArguments(
                 httpClient: HttpClient,
                 name: ref name,
-                type: type,
+                type: ref type,
                 types: types,
                 includeDeleted: ref includeDeleted,
                 projectId: projectId,

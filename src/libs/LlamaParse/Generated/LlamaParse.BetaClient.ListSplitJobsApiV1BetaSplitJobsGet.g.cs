@@ -27,7 +27,7 @@ namespace LlamaParse
             };
         partial void PrepareListSplitJobsApiV1BetaSplitJobsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status,
+            ref global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
@@ -151,7 +151,7 @@ namespace LlamaParse
                 client: HttpClient);
             PrepareListSplitJobsApiV1BetaSplitJobsGetArguments(
                 httpClient: HttpClient,
-                status: status,
+                status: ref status,
                 jobIds: jobIds,
                 projectId: projectId,
                 organizationId: organizationId,

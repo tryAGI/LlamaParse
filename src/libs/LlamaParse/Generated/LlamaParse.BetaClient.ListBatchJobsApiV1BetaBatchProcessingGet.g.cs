@@ -28,8 +28,8 @@ namespace LlamaParse
         partial void PrepareListBatchJobsApiV1BetaBatchProcessingGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? directoryId,
-            global::LlamaParse.BatchJobType? jobType,
-            global::LlamaParse.BatchJobStatus? status,
+            ref global::LlamaParse.BatchJobType? jobType,
+            ref global::LlamaParse.BatchJobStatus? status,
             ref int? limit,
             ref int? offset,
             global::System.Guid? projectId,
@@ -157,8 +157,8 @@ namespace LlamaParse
             PrepareListBatchJobsApiV1BetaBatchProcessingGetArguments(
                 httpClient: HttpClient,
                 directoryId: ref directoryId,
-                jobType: jobType,
-                status: status,
+                jobType: ref jobType,
+                status: ref status,
                 limit: ref limit,
                 offset: ref offset,
                 projectId: projectId,
