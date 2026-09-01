@@ -56,7 +56,7 @@ namespace LlamaParse
         /// Natural-language query to retrieve relevant chunks.
         /// </param>
         /// <param name="topK">
-        /// Maximum number of results to return.
+        /// Maximum number of results to return. Values above 500 are capped at 500.
         /// </param>
         /// <param name="numCandidates">
         /// Number of candidates for approximate nearest neighbor search.

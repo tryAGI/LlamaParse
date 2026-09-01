@@ -28,12 +28,14 @@ namespace LlamaParse
         partial void PrepareRunBatchJobsApiV1ExtractionJobsBatchPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? fromUi,
+            global::System.Guid? projectId,
             ref string? session,
             global::LlamaParse.ExtractJobCreateBatch request);
         partial void PrepareRunBatchJobsApiV1ExtractionJobsBatchPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? fromUi,
+            global::System.Guid? projectId,
             string? session,
             global::LlamaParse.ExtractJobCreateBatch request);
         partial void ProcessRunBatchJobsApiV1ExtractionJobsBatchPostResponse(
@@ -51,6 +53,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -60,6 +63,7 @@ namespace LlamaParse
 
             global::LlamaParse.ExtractJobCreateBatch request,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -68,6 +72,7 @@ namespace LlamaParse
 
                 request: request,
                 fromUi: fromUi,
+                projectId: projectId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -81,6 +86,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -90,6 +96,7 @@ namespace LlamaParse
 
             global::LlamaParse.ExtractJobCreateBatch request,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -101,6 +108,7 @@ namespace LlamaParse
             PrepareRunBatchJobsApiV1ExtractionJobsBatchPostArguments(
                 httpClient: HttpClient,
                 fromUi: ref fromUi,
+                projectId: projectId,
                 session: ref session,
                 request: request);
 
@@ -132,6 +140,7 @@ namespace LlamaParse
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("from_ui", fromUi?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("project_id", projectId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -192,6 +201,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     fromUi: fromUi,
+                    projectId: projectId,
                     session: session,
                     request: request);
 
@@ -511,6 +521,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
@@ -534,6 +545,7 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
             global::System.Collections.Generic.IList<global::System.Guid> fileIds,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,
             global::LlamaParse.AnyOf<object, string, object>? dataSchemaOverride = default,
@@ -552,6 +564,7 @@ namespace LlamaParse
 
             return await RunBatchJobsApiV1ExtractionJobsBatchPostAsync(
                 fromUi: fromUi,
+                projectId: projectId,
                 session: session,
                 request: __request,
                 requestOptions: requestOptions,

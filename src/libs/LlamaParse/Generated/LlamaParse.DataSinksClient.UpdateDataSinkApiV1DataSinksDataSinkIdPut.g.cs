@@ -28,12 +28,14 @@ namespace LlamaParse
         partial void PrepareUpdateDataSinkApiV1DataSinksDataSinkIdPutArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid dataSinkId,
+            global::System.Guid? projectId,
             ref string? session,
             global::LlamaParse.DataSinkUpdate request);
         partial void PrepareUpdateDataSinkApiV1DataSinksDataSinkIdPutRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid dataSinkId,
+            global::System.Guid? projectId,
             string? session,
             global::LlamaParse.DataSinkUpdate request);
         partial void ProcessUpdateDataSinkApiV1DataSinksDataSinkIdPutResponse(
@@ -50,6 +52,7 @@ namespace LlamaParse
         /// Update a data sink by ID.
         /// </summary>
         /// <param name="dataSinkId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -59,6 +62,7 @@ namespace LlamaParse
             global::System.Guid dataSinkId,
 
             global::LlamaParse.DataSinkUpdate request,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -67,6 +71,7 @@ namespace LlamaParse
                 dataSinkId: dataSinkId,
 
                 request: request,
+                projectId: projectId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -79,6 +84,7 @@ namespace LlamaParse
         /// Update a data sink by ID.
         /// </summary>
         /// <param name="dataSinkId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -88,6 +94,7 @@ namespace LlamaParse
             global::System.Guid dataSinkId,
 
             global::LlamaParse.DataSinkUpdate request,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -99,6 +106,7 @@ namespace LlamaParse
             PrepareUpdateDataSinkApiV1DataSinksDataSinkIdPutArguments(
                 httpClient: HttpClient,
                 dataSinkId: ref dataSinkId,
+                projectId: projectId,
                 session: ref session,
                 request: request);
 
@@ -128,6 +136,9 @@ namespace LlamaParse
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
                                 path: $"/api/v1/data-sinks/{dataSinkId}",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("project_id", projectId?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -187,6 +198,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     dataSinkId: dataSinkId!,
+                    projectId: projectId,
                     session: session,
                     request: request);
 
@@ -505,6 +517,7 @@ namespace LlamaParse
         /// Update a data sink by ID.
         /// </summary>
         /// <param name="dataSinkId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="name">
         /// The name of the data sink.
@@ -519,6 +532,7 @@ namespace LlamaParse
         public async global::System.Threading.Tasks.Task<global::LlamaParse.DataSink> UpdateDataSinkApiV1DataSinksDataSinkIdPutAsync(
             global::System.Guid dataSinkId,
             global::LlamaParse.ConfigurableDataSinkNames sinkType,
+            global::System.Guid? projectId = default,
             string? session = default,
             string? name = default,
             global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>? component = default,
@@ -534,6 +548,7 @@ namespace LlamaParse
 
             return await UpdateDataSinkApiV1DataSinksDataSinkIdPutAsync(
                 dataSinkId: dataSinkId,
+                projectId: projectId,
                 session: session,
                 request: __request,
                 requestOptions: requestOptions,

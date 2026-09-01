@@ -28,11 +28,13 @@ namespace LlamaParse
         partial void PrepareGetJobApiV1ExtractionJobsJobIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid jobId,
+            global::System.Guid? projectId,
             ref string? session);
         partial void PrepareGetJobApiV1ExtractionJobsJobIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid jobId,
+            global::System.Guid? projectId,
             string? session);
         partial void ProcessGetJobApiV1ExtractionJobsJobIdGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,18 +49,21 @@ namespace LlamaParse
         /// Get Job
         /// </summary>
         /// <param name="jobId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.ExtractJob> GetJobApiV1ExtractionJobsJobIdGetAsync(
             global::System.Guid jobId,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetJobApiV1ExtractionJobsJobIdGetAsResponseAsync(
                 jobId: jobId,
+                projectId: projectId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -70,12 +75,14 @@ namespace LlamaParse
         /// Get Job
         /// </summary>
         /// <param name="jobId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ExtractJob>> GetJobApiV1ExtractionJobsJobIdGetAsResponseAsync(
             global::System.Guid jobId,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -85,6 +92,7 @@ namespace LlamaParse
             PrepareGetJobApiV1ExtractionJobsJobIdGetArguments(
                 httpClient: HttpClient,
                 jobId: ref jobId,
+                projectId: projectId,
                 session: ref session);
 
 
@@ -113,6 +121,9 @@ namespace LlamaParse
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
                                 path: $"/api/v1/extraction/jobs/{jobId}",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("project_id", projectId?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -166,6 +177,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     jobId: jobId!,
+                    projectId: projectId,
                     session: session);
 
                 return __httpRequest;

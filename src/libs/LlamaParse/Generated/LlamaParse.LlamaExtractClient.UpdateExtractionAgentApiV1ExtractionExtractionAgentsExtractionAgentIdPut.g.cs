@@ -28,12 +28,14 @@ namespace LlamaParse
         partial void PrepareUpdateExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdPutArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid extractionAgentId,
+            global::System.Guid? projectId,
             ref string? session,
             global::LlamaParse.ExtractAgentUpdate request);
         partial void PrepareUpdateExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdPutRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid extractionAgentId,
+            global::System.Guid? projectId,
             string? session,
             global::LlamaParse.ExtractAgentUpdate request);
         partial void ProcessUpdateExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdPutResponse(
@@ -49,6 +51,7 @@ namespace LlamaParse
         /// Update Extraction Agent
         /// </summary>
         /// <param name="extractionAgentId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -58,6 +61,7 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
 
             global::LlamaParse.ExtractAgentUpdate request,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -66,6 +70,7 @@ namespace LlamaParse
                 extractionAgentId: extractionAgentId,
 
                 request: request,
+                projectId: projectId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -77,6 +82,7 @@ namespace LlamaParse
         /// Update Extraction Agent
         /// </summary>
         /// <param name="extractionAgentId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -86,6 +92,7 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
 
             global::LlamaParse.ExtractAgentUpdate request,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -97,6 +104,7 @@ namespace LlamaParse
             PrepareUpdateExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdPutArguments(
                 httpClient: HttpClient,
                 extractionAgentId: ref extractionAgentId,
+                projectId: projectId,
                 session: ref session,
                 request: request);
 
@@ -126,6 +134,9 @@ namespace LlamaParse
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
                                 path: $"/api/v1/extraction/extraction-agents/{extractionAgentId}",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("project_id", projectId?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -185,6 +196,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     extractionAgentId: extractionAgentId!,
+                    projectId: projectId,
                     session: session,
                     request: request);
 
@@ -502,6 +514,7 @@ namespace LlamaParse
         /// Update Extraction Agent
         /// </summary>
         /// <param name="extractionAgentId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="dataSchema">
         /// The schema of the data
@@ -516,6 +529,7 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
             global::LlamaParse.AnyOf<object, string> dataSchema,
             global::LlamaParse.ExtractConfig config,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -528,6 +542,7 @@ namespace LlamaParse
 
             return await UpdateExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdPutAsync(
                 extractionAgentId: extractionAgentId,
+                projectId: projectId,
                 session: session,
                 request: __request,
                 requestOptions: requestOptions,

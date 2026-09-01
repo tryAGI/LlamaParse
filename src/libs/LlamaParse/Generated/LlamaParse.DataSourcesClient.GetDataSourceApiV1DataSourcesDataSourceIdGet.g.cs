@@ -28,11 +28,13 @@ namespace LlamaParse
         partial void PrepareGetDataSourceApiV1DataSourcesDataSourceIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid dataSourceId,
+            global::System.Guid? projectId,
             ref string? session);
         partial void PrepareGetDataSourceApiV1DataSourcesDataSourceIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid dataSourceId,
+            global::System.Guid? projectId,
             string? session);
         partial void ProcessGetDataSourceApiV1DataSourcesDataSourceIdGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -48,18 +50,21 @@ namespace LlamaParse
         /// Get a data source by ID.
         /// </summary>
         /// <param name="dataSourceId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.DataSource> GetDataSourceApiV1DataSourcesDataSourceIdGetAsync(
             global::System.Guid dataSourceId,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetDataSourceApiV1DataSourcesDataSourceIdGetAsResponseAsync(
                 dataSourceId: dataSourceId,
+                projectId: projectId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -72,12 +77,14 @@ namespace LlamaParse
         /// Get a data source by ID.
         /// </summary>
         /// <param name="dataSourceId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DataSource>> GetDataSourceApiV1DataSourcesDataSourceIdGetAsResponseAsync(
             global::System.Guid dataSourceId,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -87,6 +94,7 @@ namespace LlamaParse
             PrepareGetDataSourceApiV1DataSourcesDataSourceIdGetArguments(
                 httpClient: HttpClient,
                 dataSourceId: ref dataSourceId,
+                projectId: projectId,
                 session: ref session);
 
 
@@ -115,6 +123,9 @@ namespace LlamaParse
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
                                 path: $"/api/v1/data-sources/{dataSourceId}",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("project_id", projectId?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -168,6 +179,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     dataSourceId: dataSourceId!,
+                    projectId: projectId,
                     session: session);
 
                 return __httpRequest;

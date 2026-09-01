@@ -220,6 +220,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -280,6 +297,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Data Sink Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -353,6 +387,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Data Sink Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -604,6 +655,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -664,6 +732,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Data Source Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -737,6 +822,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Data Source Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -2465,7 +2567,7 @@
           "Pipelines"
         ],
         "summary": "Search Pipelines",
-        "description": "Search for pipelines by name, type, or project.",
+        "description": "Search for pipelines by name, type, or project.\n\nDeprecated: use `GET /api/v2/pipelines`, which is paginated.",
         "operationId": "search_pipelines_api_v1_pipelines_get",
         "deprecated": true,
         "security": [
@@ -2823,6 +2925,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -2884,6 +3003,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -2958,6 +3094,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -3036,6 +3189,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -3099,6 +3269,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -3168,6 +3355,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -3233,6 +3437,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -3289,6 +3510,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -3468,6 +3706,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -3531,6 +3786,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -3608,6 +3880,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -3673,6 +3962,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -3770,6 +4076,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -3853,6 +4176,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -3946,6 +4286,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -4092,7 +4449,9 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "maximum": 1000,
+                  "minimum": 0
                 },
                 {
                   "type": "null"
@@ -4108,7 +4467,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 0
                 },
                 {
                   "type": "null"
@@ -4131,6 +4491,23 @@
                 }
               ],
               "title": "Order By"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -4227,6 +4604,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -4303,6 +4697,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -4366,6 +4777,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -4463,6 +4891,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -4547,6 +4992,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -4603,6 +5065,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -4684,6 +5163,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -4740,6 +5236,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -4841,6 +5354,7 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "maximum": 1000,
               "minimum": 0,
               "default": 10,
               "title": "Limit"
@@ -4912,6 +5426,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -4977,6 +5508,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -5080,6 +5628,7 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "maximum": 1000,
               "minimum": 0,
               "default": 10,
               "title": "Limit"
@@ -5148,6 +5697,23 @@
               "type": "string",
               "default": "cached",
               "title": "Status Refresh Policy"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -5261,6 +5827,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -5333,6 +5916,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -5409,6 +6009,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -5474,6 +6091,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -5552,6 +6186,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -5622,6 +6273,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Pipeline Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -7750,430 +8418,6 @@
         }
       }
     },
-    "/api/v1/classifier/jobs": {
-      "post": {
-        "tags": [
-          "Classifier",
-          "Beta",
-          "Classifier"
-        ],
-        "summary": "Create Classify Job",
-        "description": "Create a classify job. Experimental: not production-ready and subject to change.",
-        "operationId": "create_classify_job_api_v1_classifier_jobs_post",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClassifyJobCreate"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClassifyJob"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Classifier",
-          "Beta",
-          "Classifier"
-        ],
-        "summary": "List Classify Jobs",
-        "description": "List classify jobs. Experimental: not production-ready and subject to change.",
-        "operationId": "list_classify_jobs_api_v1_classifier_jobs_get",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Page Size"
-            }
-          },
-          {
-            "name": "page_token",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Page Token"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClassifyJobListResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/classifier/jobs/{classify_job_id}": {
-      "get": {
-        "tags": [
-          "Classifier",
-          "Beta",
-          "Classifier"
-        ],
-        "summary": "Get Classify Job",
-        "description": "Get a classify job. Experimental: not production-ready and subject to change.",
-        "operationId": "get_classify_job_api_v1_classifier_jobs__classify_job_id__get",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "classify_job_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid",
-              "title": "Classify Job Id"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClassifyJob"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/classifier/jobs/{classify_job_id}/results": {
-      "get": {
-        "tags": [
-          "Classifier",
-          "Beta",
-          "Classifier"
-        ],
-        "summary": "Get Classification Job Results",
-        "description": "Get the results of a classify job. Experimental: not production-ready and subject to change.",
-        "operationId": "get_classification_job_results_api_v1_classifier_jobs__classify_job_id__results_get",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "classify_job_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid",
-              "title": "Classify Job Id"
-            }
-          },
-          {
-            "name": "project_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Project Id"
-            }
-          },
-          {
-            "name": "organization_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Organization Id"
-            }
-          },
-          {
-            "name": "session",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Session"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClassifyJobResults"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/v1/extraction/jobs": {
       "get": {
         "tags": [
@@ -8187,6 +8431,23 @@
           }
         ],
         "parameters": [
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
           {
             "name": "extraction_agent_id",
             "in": "query",
@@ -8264,6 +8525,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -8338,6 +8616,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -8399,6 +8694,23 @@
               "type": "boolean",
               "default": false,
               "title": "From Ui"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -8473,6 +8785,23 @@
               "type": "boolean",
               "default": false,
               "title": "From Ui"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -8667,6 +8996,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "maximum": 1000,
+              "minimum": 0,
               "default": 25,
               "title": "Limit"
             }
@@ -8706,6 +9037,23 @@
               "title": "Run Id"
             },
             "description": "Filter by run ID"
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
           },
           {
             "name": "session",
@@ -8769,6 +9117,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Extraction Agent Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -9784,6 +10149,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -9846,6 +10228,23 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
@@ -9903,6 +10302,23 @@
               "type": "string",
               "format": "uuid",
               "title": "Extraction Agent Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
             }
           },
           {
@@ -12347,7 +12763,9 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "maximum": 1000,
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -13439,10 +13857,10 @@
                   "type": "null"
                 }
               ],
-              "description": "A comma-separated list of fields to order by, sorted in ascending order. Use 'field_name desc' to specify descending order.",
+              "description": "Order the results. One of 'name' (ascending), 'id' (ascending) or 'created_at' (descending). An explicit asc/desc modifier and multi-field ordering are not supported; anything else is rejected.",
               "title": "Order By"
             },
-            "description": "A comma-separated list of fields to order by, sorted in ascending order. Use 'field_name desc' to specify descending order."
+            "description": "Order the results. One of 'name' (ascending), 'id' (ascending) or 'created_at' (descending). An explicit asc/desc modifier and multi-field ordering are not supported; anything else is rejected."
           },
           {
             "name": "expand",
@@ -16013,7 +16431,9 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "maximum": 1000,
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -18502,7 +18922,9 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "maximum": 1000,
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -19840,7 +20262,9 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "maximum": 1000,
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -20328,6 +20752,164 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ExtractV2Job"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/pipelines": {
+      "get": {
+        "tags": [
+          "V2",
+          "Pipelines"
+        ],
+        "summary": "List Pipelines",
+        "description": "List the pipelines in a project, newest first.",
+        "operationId": "list_pipelines_api_v2_pipelines_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Name"
+            }
+          },
+          {
+            "name": "pipeline_type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "MANAGED",
+                    "PLAYGROUND"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Pipeline Type"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page Size"
+            }
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page Token"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PipelineQueryResponse"
                 }
               }
             }
@@ -22585,10 +23167,10 @@
           },
           "chunk_overlap": {
             "type": "integer",
+            "minimum": 0.0,
             "title": "Chunk Overlap",
             "description": "Chunk overlap for the transformation.",
-            "default": 200,
-            "gte": 0
+            "default": 200
           }
         },
         "type": "object",
@@ -25553,7 +26135,8 @@
           "max_pages": {
             "anyOf": [
               {
-                "type": "integer"
+                "type": "integer",
+                "minimum": 1.0
               },
               {
                 "type": "null"
@@ -25724,18 +26307,26 @@
           },
           "bbox_bottom": {
             "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
             "title": "Bbox Bottom"
           },
           "bbox_left": {
             "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
             "title": "Bbox Left"
           },
           "bbox_right": {
             "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
             "title": "Bbox Right"
           },
           "bbox_top": {
             "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
             "title": "Bbox Top"
           },
           "compact_markdown_table": {
@@ -25874,7 +26465,8 @@
           "max_pages": {
             "anyOf": [
               {
-                "type": "integer"
+                "type": "integer",
+                "minimum": 1.0
               },
               {
                 "type": "null"
@@ -26306,9 +26898,9 @@
           },
           "chunk_overlap": {
             "type": "integer",
+            "minimum": 0.0,
             "title": "Chunk Overlap",
-            "default": 200,
-            "gte": 0
+            "default": 200
           },
           "mode": {
             "type": "string",
@@ -26533,42 +27125,6 @@
         "title": "ChatSessionSummary",
         "description": "Summary of a chat session, including its title and last run metadata."
       },
-      "ClassificationResult": {
-        "properties": {
-          "reasoning": {
-            "type": "string",
-            "title": "Reasoning",
-            "description": "Step-by-step explanation of why this classification was chosen and the confidence score assigned"
-          },
-          "confidence": {
-            "type": "number",
-            "maximum": 1.0,
-            "minimum": 0.0,
-            "title": "Confidence",
-            "description": "Confidence score of the classification (0.0-1.0)"
-          },
-          "type": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Type",
-            "description": "The document type that best matches, or null if no match."
-          }
-        },
-        "type": "object",
-        "required": [
-          "reasoning",
-          "confidence",
-          "type"
-        ],
-        "title": "ClassificationResult",
-        "description": "Result of classifying a single file."
-      },
       "ClassifierRule": {
         "properties": {
           "type": {
@@ -26717,142 +27273,6 @@
         ],
         "title": "ClassifyJob",
         "description": "A classify job."
-      },
-      "ClassifyJobCreate": {
-        "properties": {
-          "rules": {
-            "items": {
-              "$ref": "#/components/schemas/ClassifierRule"
-            },
-            "type": "array",
-            "minItems": 1,
-            "title": "Rules",
-            "description": "The rules to classify the files"
-          },
-          "mode": {
-            "$ref": "#/components/schemas/ClassifyMode",
-            "description": "The classification mode to use",
-            "default": "FAST"
-          },
-          "file_ids": {
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "type": "array",
-            "maxItems": 500,
-            "minItems": 1,
-            "title": "File Ids",
-            "description": "The IDs of the files to classify"
-          },
-          "parsing_configuration": {
-            "$ref": "#/components/schemas/ClassifyParsingConfiguration",
-            "description": "The configuration for the parsing job",
-            "default": {
-              "lang": "en",
-              "max_pages": 5
-            }
-          },
-          "webhook_configurations": {
-            "items": {
-              "$ref": "#/components/schemas/LlamaParseWebhookConfiguration"
-            },
-            "type": "array",
-            "title": "Webhook Configurations",
-            "description": "List of webhook configurations for notifications"
-          }
-        },
-        "type": "object",
-        "required": [
-          "rules",
-          "file_ids"
-        ],
-        "title": "ClassifyJobCreate",
-        "description": "A classify job."
-      },
-      "ClassifyJobListResponse": {
-        "properties": {
-          "items": {
-            "items": {
-              "$ref": "#/components/schemas/ClassifyJob"
-            },
-            "type": "array",
-            "title": "Items",
-            "description": "The list of items."
-          },
-          "next_page_token": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Next Page Token",
-            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
-          },
-          "total_size": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Total Size",
-            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
-          }
-        },
-        "type": "object",
-        "required": [
-          "items"
-        ],
-        "title": "ClassifyJobListResponse",
-        "description": "Paginated list of classify jobs."
-      },
-      "ClassifyJobResults": {
-        "properties": {
-          "items": {
-            "items": {
-              "$ref": "#/components/schemas/FileClassification"
-            },
-            "type": "array",
-            "title": "Items",
-            "description": "The list of items."
-          },
-          "next_page_token": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Next Page Token",
-            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
-          },
-          "total_size": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Total Size",
-            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
-          }
-        },
-        "type": "object",
-        "required": [
-          "items"
-        ],
-        "title": "ClassifyJobResults",
-        "description": "Response model for the classify endpoint following AIP-132 pagination standard."
       },
       "ClassifyMode": {
         "type": "string",
@@ -30455,6 +30875,7 @@
         "properties": {
           "name": {
             "type": "string",
+            "maxLength": 3000,
             "minLength": 1,
             "title": "Name",
             "description": "Human-readable name for the directory."
@@ -30980,6 +31401,7 @@
             "anyOf": [
               {
                 "type": "string",
+                "maxLength": 3000,
                 "minLength": 1
               },
               {
@@ -31713,7 +32135,7 @@
               "turbo"
             ],
             "title": "Tier",
-            "description": "Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)",
+            "description": "Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)",
             "default": "cost_effective",
             "examples": [
               "cost_effective",
@@ -31848,7 +32270,13 @@
           "parse_tier": {
             "anyOf": [
               {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "fast",
+                  "cost_effective",
+                  "agentic",
+                  "agentic_plus"
+                ]
               },
               {
                 "type": "null"
@@ -33468,7 +33896,7 @@
               "turbo"
             ],
             "title": "Tier",
-            "description": "Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)",
+            "description": "Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)",
             "default": "cost_effective",
             "examples": [
               "cost_effective",
@@ -33603,7 +34031,13 @@
           "parse_tier": {
             "anyOf": [
               {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "fast",
+                  "cost_effective",
+                  "agentic",
+                  "agentic_plus"
+                ]
               },
               {
                 "type": "null"
@@ -34466,79 +34900,6 @@
         ],
         "title": "FileAttachmentMetadata",
         "description": "Metadata for a single file attachment."
-      },
-      "FileClassification": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "title": "Id",
-            "description": "Unique identifier"
-          },
-          "created_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Created At",
-            "description": "Creation datetime"
-          },
-          "updated_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Updated At",
-            "description": "Update datetime"
-          },
-          "classify_job_id": {
-            "type": "string",
-            "format": "uuid",
-            "title": "Classify Job Id",
-            "description": "The ID of the classify job"
-          },
-          "file_id": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "File Id",
-            "description": "The ID of the classified file"
-          },
-          "result": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ClassificationResult"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "The classification result"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "classify_job_id"
-        ],
-        "title": "FileClassification",
-        "description": "A file classification."
       },
       "FileCountByStatusResponse": {
         "properties": {
@@ -44221,6 +44582,127 @@
         "type": "object",
         "title": "PipelineMetadataConfig"
       },
+      "PipelineQueryResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/PipelineResponse"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "PipelineQueryResponse",
+        "description": "A page of pipelines."
+      },
+      "PipelineResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The pipeline's unique identifier."
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At",
+            "description": "Creation datetime"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At",
+            "description": "Update datetime"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "The pipeline's display name."
+          },
+          "project_id": {
+            "type": "string",
+            "title": "Project Id",
+            "description": "The project the pipeline belongs to."
+          },
+          "pipeline_type": {
+            "type": "string",
+            "enum": [
+              "MANAGED",
+              "PLAYGROUND"
+            ],
+            "title": "Pipeline Type",
+            "description": "The pipeline's type."
+          },
+          "status": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "CREATED",
+                  "DELETING"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status",
+            "description": "The pipeline's current status."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "project_id",
+          "pipeline_type"
+        ],
+        "title": "PipelineResponse",
+        "description": "A pipeline in a project."
+      },
       "PipelineType": {
         "type": "string",
         "enum": [
@@ -45092,7 +45574,8 @@
           "top_n": {
             "anyOf": [
               {
-                "type": "integer"
+                "type": "integer",
+                "minimum": 1.0
               },
               {
                 "type": "null"
@@ -45422,14 +45905,15 @@
           "top_k": {
             "anyOf": [
               {
-                "type": "integer"
+                "type": "integer",
+                "minimum": 1.0
               },
               {
                 "type": "null"
               }
             ],
             "title": "Top K",
-            "description": "Maximum number of results to return.",
+            "description": "Maximum number of results to return. Values above 500 are capped at 500.",
             "examples": [
               10
             ]
@@ -45437,7 +45921,8 @@
           "num_candidates": {
             "anyOf": [
               {
-                "type": "integer"
+                "type": "integer",
+                "minimum": 1.0
               },
               {
                 "type": "null"
@@ -46101,9 +46586,9 @@
           },
           "chunk_overlap": {
             "type": "integer",
+            "minimum": 0.0,
             "title": "Chunk Overlap",
-            "default": 200,
-            "gte": 0
+            "default": 200
           },
           "mode": {
             "type": "string",
@@ -47835,9 +48320,9 @@
           },
           "chunk_overlap": {
             "type": "integer",
+            "minimum": 0.0,
             "title": "Chunk Overlap",
-            "default": 200,
-            "gte": 0
+            "default": 200
           },
           "mode": {
             "type": "string",
@@ -48567,14 +49052,15 @@
                     "unmapped_event"
                   ]
                 },
-                "type": "array"
+                "type": "array",
+                "minItems": 1
               },
               {
                 "type": "null"
               }
             ],
             "title": "Webhook Events",
-            "description": "Events to subscribe to. If null, all events are delivered.",
+            "description": "Events to subscribe to. If null, all events are delivered. An empty list subscribes to nothing and is rejected.",
             "examples": [
               [
                 "parse.success",
@@ -48838,14 +49324,15 @@
                     "unmapped_event"
                   ]
                 },
-                "type": "array"
+                "type": "array",
+                "minItems": 1
               },
               {
                 "type": "null"
               }
             ],
             "title": "Webhook Events",
-            "description": "Updated event subscriptions."
+            "description": "Updated event subscriptions. Omit to leave unchanged; [] is rejected."
           },
           "webhook_output_format": {
             "anyOf": [

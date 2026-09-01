@@ -10,6 +10,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,6 +20,7 @@ namespace LlamaParse
 
             global::LlamaParse.BodyRunJobOnFileApiV1ExtractionJobsFilePost request,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,6 +30,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -37,6 +40,7 @@ namespace LlamaParse
 
             global::LlamaParse.BodyRunJobOnFileApiV1ExtractionJobsFilePost request,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -46,6 +50,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="extractionAgentId">
         /// The id of the extraction agent
@@ -70,6 +75,7 @@ namespace LlamaParse
             byte[] file,
             string filename,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             string? dataSchemaOverride = default,
             string? configOverride = default,
@@ -82,6 +88,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="extractionAgentId">
         /// The id of the extraction agent
@@ -106,6 +113,7 @@ namespace LlamaParse
             global::System.IO.Stream file,
             string filename,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             string? dataSchemaOverride = default,
             string? configOverride = default,
@@ -117,6 +125,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="extractionAgentId">
         /// The id of the extraction agent
@@ -141,6 +150,7 @@ namespace LlamaParse
             global::System.IO.Stream file,
             string filename,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             string? dataSchemaOverride = default,
             string? configOverride = default,

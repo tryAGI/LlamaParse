@@ -27,11 +27,13 @@ namespace LlamaParse
             };
         partial void PrepareListJobsApiV1ExtractionJobsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
+            global::System.Guid? projectId,
             ref global::System.Guid extractionAgentId,
             ref string? session);
         partial void PrepareListJobsApiV1ExtractionJobsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Guid? projectId,
             global::System.Guid extractionAgentId,
             string? session);
         partial void ProcessListJobsApiV1ExtractionJobsGetResponse(
@@ -46,6 +48,7 @@ namespace LlamaParse
         /// <summary>
         /// List Jobs
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="extractionAgentId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -53,12 +56,14 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LlamaParse.ExtractJob>> ListJobsApiV1ExtractionJobsGetAsync(
             global::System.Guid extractionAgentId,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListJobsApiV1ExtractionJobsGetAsResponseAsync(
                 extractionAgentId: extractionAgentId,
+                projectId: projectId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -69,6 +74,7 @@ namespace LlamaParse
         /// <summary>
         /// List Jobs
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="extractionAgentId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -76,6 +82,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.ExtractJob>>> ListJobsApiV1ExtractionJobsGetAsResponseAsync(
             global::System.Guid extractionAgentId,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -84,6 +91,7 @@ namespace LlamaParse
                 client: HttpClient);
             PrepareListJobsApiV1ExtractionJobsGetArguments(
                 httpClient: HttpClient,
+                projectId: projectId,
                 extractionAgentId: ref extractionAgentId,
                 session: ref session);
 
@@ -114,6 +122,7 @@ namespace LlamaParse
                                 path: "/api/v1/extraction/jobs",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddRequiredParameter("extraction_agent_id", extractionAgentId.ToString()!)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -168,6 +177,7 @@ namespace LlamaParse
                 PrepareListJobsApiV1ExtractionJobsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    projectId: projectId,
                     extractionAgentId: extractionAgentId!,
                     session: session);
 

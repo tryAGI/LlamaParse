@@ -4,16 +4,16 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Paginated list of classify jobs.
+    /// A page of pipelines.
     /// </summary>
-    public sealed partial class ClassifyJobListResponse
+    public sealed partial class PipelineQueryResponse
     {
         /// <summary>
         /// The list of items.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LlamaParse.ClassifyJob> Items { get; set; }
+        public required global::System.Collections.Generic.IList<global::LlamaParse.PipelineResponse> Items { get; set; }
 
         /// <summary>
         /// A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages.
@@ -34,7 +34,7 @@ namespace LlamaParse
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ClassifyJobListResponse" /> class.
+        /// Initializes a new instance of the <see cref="PipelineQueryResponse" /> class.
         /// </summary>
         /// <param name="items">
         /// The list of items.
@@ -48,8 +48,8 @@ namespace LlamaParse
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public ClassifyJobListResponse(
-            global::System.Collections.Generic.IList<global::LlamaParse.ClassifyJob> items,
+        public PipelineQueryResponse(
+            global::System.Collections.Generic.IList<global::LlamaParse.PipelineResponse> items,
             string? nextPageToken,
             int? totalSize)
         {
@@ -59,9 +59,9 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ClassifyJobListResponse" /> class.
+        /// Initializes a new instance of the <see cref="PipelineQueryResponse" /> class.
         /// </summary>
-        public ClassifyJobListResponse()
+        public PipelineQueryResponse()
         {
         }
 

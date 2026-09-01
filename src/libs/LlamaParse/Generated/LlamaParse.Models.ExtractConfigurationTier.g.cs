@@ -4,25 +4,25 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)<br/>
+    /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)<br/>
     /// Default Value: cost_effective
     /// </summary>
     public enum ExtractConfigurationTier
     {
         /// <summary>
-        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)
+        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)
         /// </summary>
         Agentic,
         /// <summary>
-        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)
+        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)
         /// </summary>
         AgenticPlus,
         /// <summary>
-        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)
+        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)
         /// </summary>
         CostEffective,
         /// <summary>
-        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)
+        /// cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)
         /// </summary>
         Turbo,
     }

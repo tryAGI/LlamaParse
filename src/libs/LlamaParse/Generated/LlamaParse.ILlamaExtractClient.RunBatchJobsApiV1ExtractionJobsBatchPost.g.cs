@@ -10,6 +10,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,6 +20,7 @@ namespace LlamaParse
 
             global::LlamaParse.ExtractJobCreateBatch request,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,6 +30,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -37,6 +40,7 @@ namespace LlamaParse
 
             global::LlamaParse.ExtractJobCreateBatch request,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -46,6 +50,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
@@ -69,6 +74,7 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
             global::System.Collections.Generic.IList<global::System.Guid> fileIds,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,
             global::LlamaParse.AnyOf<object, string, object>? dataSchemaOverride = default,

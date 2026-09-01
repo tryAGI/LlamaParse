@@ -10,6 +10,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,6 +20,7 @@ namespace LlamaParse
 
             global::LlamaParse.ExtractJobCreate request,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,6 +30,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -37,6 +40,7 @@ namespace LlamaParse
 
             global::LlamaParse.ExtractJobCreate request,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -46,6 +50,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="priority">
         /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
@@ -72,6 +77,7 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
             global::System.Guid fileId,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.ExtractJobCreatePriority2? priority = default,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,

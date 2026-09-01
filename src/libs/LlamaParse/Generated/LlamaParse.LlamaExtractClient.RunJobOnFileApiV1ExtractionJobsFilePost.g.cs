@@ -28,12 +28,14 @@ namespace LlamaParse
         partial void PrepareRunJobOnFileApiV1ExtractionJobsFilePostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? fromUi,
+            global::System.Guid? projectId,
             ref string? session,
             global::LlamaParse.BodyRunJobOnFileApiV1ExtractionJobsFilePost request);
         partial void PrepareRunJobOnFileApiV1ExtractionJobsFilePostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? fromUi,
+            global::System.Guid? projectId,
             string? session,
             global::LlamaParse.BodyRunJobOnFileApiV1ExtractionJobsFilePost request);
         partial void ProcessRunJobOnFileApiV1ExtractionJobsFilePostResponse(
@@ -51,6 +53,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -60,6 +63,7 @@ namespace LlamaParse
 
             global::LlamaParse.BodyRunJobOnFileApiV1ExtractionJobsFilePost request,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -68,6 +72,7 @@ namespace LlamaParse
 
                 request: request,
                 fromUi: fromUi,
+                projectId: projectId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -81,6 +86,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -90,6 +96,7 @@ namespace LlamaParse
 
             global::LlamaParse.BodyRunJobOnFileApiV1ExtractionJobsFilePost request,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -101,6 +108,7 @@ namespace LlamaParse
             PrepareRunJobOnFileApiV1ExtractionJobsFilePostArguments(
                 httpClient: HttpClient,
                 fromUi: ref fromUi,
+                projectId: projectId,
                 session: ref session,
                 request: request);
 
@@ -132,6 +140,7 @@ namespace LlamaParse
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("from_ui", fromUi?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("project_id", projectId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -249,6 +258,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     fromUi: fromUi,
+                    projectId: projectId,
                     session: session,
                     request: request);
 
@@ -568,6 +578,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="extractionAgentId">
         /// The id of the extraction agent
@@ -592,6 +603,7 @@ namespace LlamaParse
             byte[] file,
             string filename,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             string? dataSchemaOverride = default,
             string? configOverride = default,
@@ -609,6 +621,7 @@ namespace LlamaParse
 
             return await RunJobOnFileApiV1ExtractionJobsFilePostAsync(
                 fromUi: fromUi,
+                projectId: projectId,
                 session: session,
                 request: __request,
                 requestOptions: requestOptions,
@@ -621,6 +634,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="extractionAgentId">
         /// The id of the extraction agent
@@ -645,6 +659,7 @@ namespace LlamaParse
             global::System.IO.Stream file,
             string filename,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             string? dataSchemaOverride = default,
             string? configOverride = default,
@@ -666,6 +681,7 @@ namespace LlamaParse
             PrepareRunJobOnFileApiV1ExtractionJobsFilePostArguments(
                 httpClient: HttpClient,
                 fromUi: ref fromUi,
+                projectId: projectId,
                 session: ref session,
                 request: request);
 
@@ -697,6 +713,7 @@ namespace LlamaParse
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("from_ui", fromUi?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("project_id", projectId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -814,6 +831,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     fromUi: fromUi,
+                    projectId: projectId,
                     session: session,
                     request: request);
 
@@ -1125,6 +1143,7 @@ namespace LlamaParse
         /// <param name="fromUi">
         /// Default Value: false
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="extractionAgentId">
         /// The id of the extraction agent
@@ -1149,6 +1168,7 @@ namespace LlamaParse
             global::System.IO.Stream file,
             string filename,
             bool? fromUi = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             string? dataSchemaOverride = default,
             string? configOverride = default,
@@ -1170,6 +1190,7 @@ namespace LlamaParse
             PrepareRunJobOnFileApiV1ExtractionJobsFilePostArguments(
                 httpClient: HttpClient,
                 fromUi: ref fromUi,
+                projectId: projectId,
                 session: ref session,
                 request: request);
 
@@ -1201,6 +1222,7 @@ namespace LlamaParse
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("from_ui", fromUi?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("project_id", projectId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -1318,6 +1340,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     fromUi: fromUi,
+                    projectId: projectId,
                     session: session,
                     request: request);
 

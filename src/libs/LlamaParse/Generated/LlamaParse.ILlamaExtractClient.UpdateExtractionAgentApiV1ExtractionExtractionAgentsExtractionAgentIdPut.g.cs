@@ -8,6 +8,7 @@ namespace LlamaParse
         /// Update Extraction Agent
         /// </summary>
         /// <param name="extractionAgentId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,6 +18,7 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
 
             global::LlamaParse.ExtractAgentUpdate request,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -24,6 +26,7 @@ namespace LlamaParse
         /// Update Extraction Agent
         /// </summary>
         /// <param name="extractionAgentId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -33,6 +36,7 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
 
             global::LlamaParse.ExtractAgentUpdate request,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -40,6 +44,7 @@ namespace LlamaParse
         /// Update Extraction Agent
         /// </summary>
         /// <param name="extractionAgentId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="dataSchema">
         /// The schema of the data
@@ -54,6 +59,7 @@ namespace LlamaParse
             global::System.Guid extractionAgentId,
             global::LlamaParse.AnyOf<object, string> dataSchema,
             global::LlamaParse.ExtractConfig config,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -30,7 +30,7 @@ namespace LlamaParse
         public global::System.Collections.Generic.Dictionary<string, string>? WebhookHeaders { get; set; }
 
         /// <summary>
-        /// Events to subscribe to. If null, all events are delivered.
+        /// Events to subscribe to. If null, all events are delivered. An empty list subscribes to nothing and is rejected.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_events")]
         public global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigCreateRequestWebhookEventsVariant1Item>? WebhookEvents { get; set; }
@@ -60,7 +60,7 @@ namespace LlamaParse
         /// Custom HTTP headers sent with each webhook request.
         /// </param>
         /// <param name="webhookEvents">
-        /// Events to subscribe to. If null, all events are delivered.
+        /// Events to subscribe to. If null, all events are delivered. An empty list subscribes to nothing and is rejected.
         /// </param>
         /// <param name="webhookOutputFormat">
         /// Response format sent to the webhook: 'string' (default) or 'json'.

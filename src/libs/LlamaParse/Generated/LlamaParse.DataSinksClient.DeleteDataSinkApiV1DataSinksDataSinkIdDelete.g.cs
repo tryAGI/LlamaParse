@@ -28,11 +28,13 @@ namespace LlamaParse
         partial void PrepareDeleteDataSinkApiV1DataSinksDataSinkIdDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid dataSinkId,
+            global::System.Guid? projectId,
             ref string? session);
         partial void PrepareDeleteDataSinkApiV1DataSinksDataSinkIdDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid dataSinkId,
+            global::System.Guid? projectId,
             string? session);
         partial void ProcessDeleteDataSinkApiV1DataSinksDataSinkIdDeleteResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -43,18 +45,21 @@ namespace LlamaParse
         /// Delete a data sink by ID.
         /// </summary>
         /// <param name="dataSinkId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task DeleteDataSinkApiV1DataSinksDataSinkIdDeleteAsync(
             global::System.Guid dataSinkId,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             await DeleteDataSinkApiV1DataSinksDataSinkIdDeleteAsResponseAsync(
                 dataSinkId: dataSinkId,
+                projectId: projectId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -65,12 +70,14 @@ namespace LlamaParse
         /// Delete a data sink by ID.
         /// </summary>
         /// <param name="dataSinkId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse> DeleteDataSinkApiV1DataSinksDataSinkIdDeleteAsResponseAsync(
             global::System.Guid dataSinkId,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -80,6 +87,7 @@ namespace LlamaParse
             PrepareDeleteDataSinkApiV1DataSinksDataSinkIdDeleteArguments(
                 httpClient: HttpClient,
                 dataSinkId: ref dataSinkId,
+                projectId: projectId,
                 session: ref session);
 
 
@@ -108,6 +116,9 @@ namespace LlamaParse
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
                                 path: $"/api/v1/data-sinks/{dataSinkId}",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("project_id", projectId?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -161,6 +172,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     dataSinkId: dataSinkId!,
+                    projectId: projectId,
                     session: session);
 
                 return __httpRequest;

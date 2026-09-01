@@ -59,7 +59,7 @@ namespace LlamaParse
         /// Custom HTTP headers sent with each webhook request.
         /// </param>
         /// <param name="webhookEvents">
-        /// Events to subscribe to. If null, all events are delivered.
+        /// Events to subscribe to. If null, all events are delivered. An empty list subscribes to nothing and is rejected.
         /// </param>
         /// <param name="webhookOutputFormat">
         /// Response format sent to the webhook: 'string' (default) or 'json'.
