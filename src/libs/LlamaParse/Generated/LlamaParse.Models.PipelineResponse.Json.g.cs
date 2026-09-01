@@ -2,7 +2,7 @@
 
 namespace LlamaParse
 {
-    public sealed partial class FileClassificationResult
+    public sealed partial class PipelineResponse
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace LlamaParse
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LlamaParse.FileClassificationResult? FromJson(
+        public static global::LlamaParse.PipelineResponse? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LlamaParse.FileClassificationResult),
-                jsonSerializerContext) as global::LlamaParse.FileClassificationResult;
+                typeof(global::LlamaParse.PipelineResponse),
+                jsonSerializerContext) as global::LlamaParse.PipelineResponse;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::LlamaParse.FileClassificationResult? FromJson(
+        public static global::LlamaParse.PipelineResponse? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LlamaParse.FileClassificationResult? FromJson(
+        public static global::LlamaParse.PipelineResponse? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace LlamaParse
                     global::LlamaParse.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.FileClassificationResult>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.PipelineResponse>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace LlamaParse
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LlamaParse.FileClassificationResult?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::LlamaParse.PipelineResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LlamaParse.FileClassificationResult),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LlamaParse.FileClassificationResult;
+                typeof(global::LlamaParse.PipelineResponse),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LlamaParse.PipelineResponse;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.FileClassificationResult?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.PipelineResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.FileClassificationResult?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.PipelineResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace LlamaParse
                     global::LlamaParse.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LlamaParse.FileClassificationResult?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LlamaParse.PipelineResponse?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

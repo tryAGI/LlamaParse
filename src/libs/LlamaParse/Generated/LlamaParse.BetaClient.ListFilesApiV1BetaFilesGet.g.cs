@@ -81,7 +81,7 @@ namespace LlamaParse
         /// Filter by external file ID.
         /// </param>
         /// <param name="orderBy">
-        /// A comma-separated list of fields to order by, sorted in ascending order. Use 'field_name desc' to specify descending order.
+        /// Order the results. One of 'name' (ascending), 'id' (ascending) or 'created_at' (descending). An explicit asc/desc modifier and multi-field ordering are not supported; anything else is rejected.
         /// </param>
         /// <param name="expand">
         /// Fields to expand on each file.
@@ -145,7 +145,7 @@ namespace LlamaParse
         /// Filter by external file ID.
         /// </param>
         /// <param name="orderBy">
-        /// A comma-separated list of fields to order by, sorted in ascending order. Use 'field_name desc' to specify descending order.
+        /// Order the results. One of 'name' (ascending), 'id' (ascending) or 'created_at' (descending). An explicit asc/desc modifier and multi-field ordering are not supported; anything else is rejected.
         /// </param>
         /// <param name="expand">
         /// Fields to expand on each file.

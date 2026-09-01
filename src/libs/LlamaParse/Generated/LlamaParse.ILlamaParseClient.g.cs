@@ -57,11 +57,6 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public ClassifierClient Classifier { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
         public DataSinksClient DataSinks { get; }
 
         /// <summary>

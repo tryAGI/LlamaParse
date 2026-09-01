@@ -67,15 +67,6 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public ClassifierClient Classifier => new ClassifierClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
         public DataSinksClient DataSinks => new DataSinksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,

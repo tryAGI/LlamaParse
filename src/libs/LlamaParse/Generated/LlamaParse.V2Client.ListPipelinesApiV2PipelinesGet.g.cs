@@ -3,11 +3,11 @@
 
 namespace LlamaParse
 {
-    public partial class ClassifierClient
+    public partial class V2Client
     {
 
 
-        private static readonly global::LlamaParse.EndPointSecurityRequirement s_GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetSecurityRequirement0 =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_ListPipelinesApiV2PipelinesGetSecurityRequirement0 =
             new global::LlamaParse.EndPointSecurityRequirement
             {
                 Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
@@ -21,55 +21,70 @@ namespace LlamaParse
                     },
                 },
             };
-        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetSecurityRequirements =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_ListPipelinesApiV2PipelinesGetSecurityRequirements =
             new global::LlamaParse.EndPointSecurityRequirement[]
-            {                s_GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetSecurityRequirement0,
+            {                s_ListPipelinesApiV2PipelinesGetSecurityRequirement0,
             };
-        partial void PrepareGetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetArguments(
+        partial void PrepareListPipelinesApiV2PipelinesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid classifyJobId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
+            ref string? name,
+            ref global::LlamaParse.ListPipelinesApiV2PipelinesGetPipelineType2? pipelineType,
+            int? pageSize,
+            ref string? pageToken,
             ref string? session);
-        partial void PrepareGetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetRequest(
+        partial void PrepareListPipelinesApiV2PipelinesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid classifyJobId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
+            string? name,
+            global::LlamaParse.ListPipelinesApiV2PipelinesGetPipelineType2? pipelineType,
+            int? pageSize,
+            string? pageToken,
             string? session);
-        partial void ProcessGetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetResponse(
+        partial void ProcessListPipelinesApiV2PipelinesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetResponseContent(
+        partial void ProcessListPipelinesApiV2PipelinesGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get Classification Job Results<br/>
-        /// Get the results of a classify job. Experimental: not production-ready and subject to change.
+        /// List Pipelines<br/>
+        /// List the pipelines in a project, newest first.
         /// </summary>
-        /// <param name="classifyJobId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
+        /// <param name="name"></param>
+        /// <param name="pipelineType"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="pageToken"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.ClassifyJobResults> GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetAsync(
-            global::System.Guid classifyJobId,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.PipelineQueryResponse> ListPipelinesApiV2PipelinesGetAsync(
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
+            string? name = default,
+            global::LlamaParse.ListPipelinesApiV2PipelinesGetPipelineType2? pipelineType = default,
+            int? pageSize = default,
+            string? pageToken = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetAsResponseAsync(
-                classifyJobId: classifyJobId,
+            var __response = await ListPipelinesApiV2PipelinesGetAsResponseAsync(
                 projectId: projectId,
                 organizationId: organizationId,
+                name: name,
+                pipelineType: pipelineType,
+                pageSize: pageSize,
+                pageToken: pageToken,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -78,38 +93,47 @@ namespace LlamaParse
             return __response.Body;
         }
         /// <summary>
-        /// Get Classification Job Results<br/>
-        /// Get the results of a classify job. Experimental: not production-ready and subject to change.
+        /// List Pipelines<br/>
+        /// List the pipelines in a project, newest first.
         /// </summary>
-        /// <param name="classifyJobId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
+        /// <param name="name"></param>
+        /// <param name="pipelineType"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="pageToken"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyJobResults>> GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetAsResponseAsync(
-            global::System.Guid classifyJobId,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PipelineQueryResponse>> ListPipelinesApiV2PipelinesGetAsResponseAsync(
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
+            string? name = default,
+            global::LlamaParse.ListPipelinesApiV2PipelinesGetPipelineType2? pipelineType = default,
+            int? pageSize = default,
+            string? pageToken = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetArguments(
+            PrepareListPipelinesApiV2PipelinesGetArguments(
                 httpClient: HttpClient,
-                classifyJobId: ref classifyJobId,
                 projectId: projectId,
                 organizationId: organizationId,
+                name: ref name,
+                pipelineType: ref pipelineType,
+                pageSize: pageSize,
+                pageToken: ref pageToken,
                 session: ref session);
 
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetSecurityRequirements,
-                operationName: "GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetAsync");
+                securityRequirements: s_ListPipelinesApiV2PipelinesGetSecurityRequirements,
+                operationName: "ListPipelinesApiV2PipelinesGetAsync");
 
             using var __timeoutCancellationTokenSource = global::LlamaParse.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -129,11 +153,15 @@ namespace LlamaParse
             {
 
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: $"/api/v1/classifier/jobs/{classifyJobId}/results",
+                                path: "/api/v2/pipelines",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
+                                .AddOptionalParameter("name", name)
+                                .AddOptionalParameter("pipeline_type", pipelineType?.ToString())
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("page_token", pageToken)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -184,12 +212,15 @@ namespace LlamaParse
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetRequest(
+                PrepareListPipelinesApiV2PipelinesGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    classifyJobId: classifyJobId!,
                     projectId: projectId,
                     organizationId: organizationId,
+                    name: name,
+                    pipelineType: pipelineType,
+                    pageSize: pageSize,
+                    pageToken: pageToken,
                     session: session);
 
                 return __httpRequest;
@@ -207,9 +238,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGet",
-                                methodName: "GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetAsync",
-                                pathTemplate: "$\"/api/v1/classifier/jobs/{classifyJobId}/results\"",
+                                operationId: "ListPipelinesApiV2PipelinesGet",
+                                methodName: "ListPipelinesApiV2PipelinesGetAsync",
+                                pathTemplate: "\"/api/v2/pipelines\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -241,9 +272,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGet",
-                                methodName: "GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetAsync",
-                                pathTemplate: "$\"/api/v1/classifier/jobs/{classifyJobId}/results\"",
+                                operationId: "ListPipelinesApiV2PipelinesGet",
+                                methodName: "ListPipelinesApiV2PipelinesGetAsync",
+                                pathTemplate: "\"/api/v2/pipelines\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,9 +313,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGet",
-                                methodName: "GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetAsync",
-                                pathTemplate: "$\"/api/v1/classifier/jobs/{classifyJobId}/results\"",
+                                operationId: "ListPipelinesApiV2PipelinesGet",
+                                methodName: "ListPipelinesApiV2PipelinesGetAsync",
+                                pathTemplate: "\"/api/v2/pipelines\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -322,7 +353,7 @@ namespace LlamaParse
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetResponse(
+                ProcessListPipelinesApiV2PipelinesGetResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -330,9 +361,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGet",
-                                methodName: "GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetAsync",
-                                pathTemplate: "$\"/api/v1/classifier/jobs/{classifyJobId}/results\"",
+                                operationId: "ListPipelinesApiV2PipelinesGet",
+                                methodName: "ListPipelinesApiV2PipelinesGetAsync",
+                                pathTemplate: "\"/api/v2/pipelines\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -352,9 +383,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGet",
-                                methodName: "GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetAsync",
-                                pathTemplate: "$\"/api/v1/classifier/jobs/{classifyJobId}/results\"",
+                                operationId: "ListPipelinesApiV2PipelinesGet",
+                                methodName: "ListPipelinesApiV2PipelinesGetAsync",
+                                pathTemplate: "\"/api/v2/pipelines\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -419,7 +450,7 @@ namespace LlamaParse
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetResponseContent(
+                                ProcessListPipelinesApiV2PipelinesGetResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -428,9 +459,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.ClassifyJobResults.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.PipelineQueryResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyJobResults>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PipelineQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -460,9 +491,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.ClassifyJobResults.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.PipelineQueryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyJobResults>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.PipelineQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

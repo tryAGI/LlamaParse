@@ -540,7 +540,7 @@ namespace LlamaParse
         /// Updated headers.
         /// </param>
         /// <param name="webhookEvents">
-        /// Updated event subscriptions.
+        /// Updated event subscriptions. Omit to leave unchanged; [] is rejected.
         /// </param>
         /// <param name="webhookOutputFormat">
         /// Updated output format.

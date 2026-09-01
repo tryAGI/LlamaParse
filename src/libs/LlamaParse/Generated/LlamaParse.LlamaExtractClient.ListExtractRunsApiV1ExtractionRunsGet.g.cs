@@ -32,6 +32,7 @@ namespace LlamaParse
             ref int? limit,
             ref string? status,
             ref string? runId,
+            global::System.Guid? projectId,
             ref string? session);
         partial void PrepareListExtractRunsApiV1ExtractionRunsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -41,6 +42,7 @@ namespace LlamaParse
             int? limit,
             string? status,
             string? runId,
+            global::System.Guid? projectId,
             string? session);
         partial void ProcessListExtractRunsApiV1ExtractionRunsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -67,6 +69,7 @@ namespace LlamaParse
         /// <param name="runId">
         /// Filter by run ID
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -77,6 +80,7 @@ namespace LlamaParse
             int? limit = default,
             string? status = default,
             string? runId = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -87,6 +91,7 @@ namespace LlamaParse
                 limit: limit,
                 status: status,
                 runId: runId,
+                projectId: projectId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -110,6 +115,7 @@ namespace LlamaParse
         /// <param name="runId">
         /// Filter by run ID
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -120,6 +126,7 @@ namespace LlamaParse
             int? limit = default,
             string? status = default,
             string? runId = default,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -133,6 +140,7 @@ namespace LlamaParse
                 limit: ref limit,
                 status: ref status,
                 runId: ref runId,
+                projectId: projectId,
                 session: ref session);
 
 
@@ -167,6 +175,7 @@ namespace LlamaParse
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("status", status)
                                 .AddOptionalParameter("run_id", runId)
+                                .AddOptionalParameter("project_id", projectId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -225,6 +234,7 @@ namespace LlamaParse
                     limit: limit,
                     status: status,
                     runId: runId,
+                    projectId: projectId,
                     session: session);
 
                 return __httpRequest;

@@ -27,7 +27,7 @@ namespace LlamaParse
         public global::System.Collections.Generic.Dictionary<string, string>? WebhookHeaders { get; set; }
 
         /// <summary>
-        /// Updated event subscriptions.
+        /// Updated event subscriptions. Omit to leave unchanged; [] is rejected.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_events")]
         public global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigUpdateRequestWebhookEventsVariant1Item>? WebhookEvents { get; set; }
@@ -57,7 +57,7 @@ namespace LlamaParse
         /// Updated headers.
         /// </param>
         /// <param name="webhookEvents">
-        /// Updated event subscriptions.
+        /// Updated event subscriptions. Omit to leave unchanged; [] is rejected.
         /// </param>
         /// <param name="webhookOutputFormat">
         /// Updated output format.

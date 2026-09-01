@@ -23,7 +23,7 @@ namespace LlamaParse
         public required string Query { get; set; }
 
         /// <summary>
-        /// Maximum number of results to return.
+        /// Maximum number of results to return. Values above 500 are capped at 500.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_k")]
         public int? TopK { get; set; }
@@ -86,7 +86,7 @@ namespace LlamaParse
         /// Natural-language query to retrieve relevant chunks.
         /// </param>
         /// <param name="topK">
-        /// Maximum number of results to return.
+        /// Maximum number of results to return. Values above 500 are capped at 500.
         /// </param>
         /// <param name="numCandidates">
         /// Number of candidates for approximate nearest neighbor search.

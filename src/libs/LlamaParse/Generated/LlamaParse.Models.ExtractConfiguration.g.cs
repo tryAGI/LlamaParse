@@ -21,7 +21,7 @@ namespace LlamaParse
         public int? MaxPages { get; set; }
 
         /// <summary>
-        /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)<br/>
+        /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)<br/>
         /// Default Value: cost_effective
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
@@ -94,7 +94,7 @@ namespace LlamaParse
         /// Parse tier to use before extraction. Defaults to the extract tier if not specified. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_tier")]
-        public string? ParseTier { get; set; }
+        public global::LlamaParse.ExtractConfigurationParseTier2? ParseTier { get; set; }
 
         /// <summary>
         /// Saved parse configuration ID to control how the document is parsed before extraction. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
@@ -121,7 +121,7 @@ namespace LlamaParse
         /// Maximum number of pages to process. Omit for no limit.
         /// </param>
         /// <param name="tier">
-        /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)<br/>
+        /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)<br/>
         /// Default Value: cost_effective
         /// </param>
         /// <param name="version">
@@ -176,7 +176,7 @@ namespace LlamaParse
             bool? confidenceScores,
             bool? spreadsheetMode,
             global::System.Collections.Generic.IList<string>? sheetNames,
-            string? parseTier,
+            global::LlamaParse.ExtractConfigurationParseTier2? parseTier,
             string? parseConfigId)
         {
             this.TargetPages = targetPages;

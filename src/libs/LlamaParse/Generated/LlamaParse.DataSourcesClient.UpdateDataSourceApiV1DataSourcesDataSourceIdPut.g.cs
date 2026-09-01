@@ -28,12 +28,14 @@ namespace LlamaParse
         partial void PrepareUpdateDataSourceApiV1DataSourcesDataSourceIdPutArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid dataSourceId,
+            global::System.Guid? projectId,
             ref string? session,
             global::LlamaParse.DataSourceUpdate request);
         partial void PrepareUpdateDataSourceApiV1DataSourcesDataSourceIdPutRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid dataSourceId,
+            global::System.Guid? projectId,
             string? session,
             global::LlamaParse.DataSourceUpdate request);
         partial void ProcessUpdateDataSourceApiV1DataSourcesDataSourceIdPutResponse(
@@ -50,6 +52,7 @@ namespace LlamaParse
         /// Update a data source by ID.
         /// </summary>
         /// <param name="dataSourceId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -59,6 +62,7 @@ namespace LlamaParse
             global::System.Guid dataSourceId,
 
             global::LlamaParse.DataSourceUpdate request,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -67,6 +71,7 @@ namespace LlamaParse
                 dataSourceId: dataSourceId,
 
                 request: request,
+                projectId: projectId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -79,6 +84,7 @@ namespace LlamaParse
         /// Update a data source by ID.
         /// </summary>
         /// <param name="dataSourceId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -88,6 +94,7 @@ namespace LlamaParse
             global::System.Guid dataSourceId,
 
             global::LlamaParse.DataSourceUpdate request,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -99,6 +106,7 @@ namespace LlamaParse
             PrepareUpdateDataSourceApiV1DataSourcesDataSourceIdPutArguments(
                 httpClient: HttpClient,
                 dataSourceId: ref dataSourceId,
+                projectId: projectId,
                 session: ref session,
                 request: request);
 
@@ -128,6 +136,9 @@ namespace LlamaParse
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
                                 path: $"/api/v1/data-sources/{dataSourceId}",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("project_id", projectId?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -187,6 +198,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     dataSourceId: dataSourceId!,
+                    projectId: projectId,
                     session: session,
                     request: request);
 
@@ -505,6 +517,7 @@ namespace LlamaParse
         /// Update a data source by ID.
         /// </summary>
         /// <param name="dataSourceId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="name">
         /// The name of the data source.
@@ -522,6 +535,7 @@ namespace LlamaParse
         public async global::System.Threading.Tasks.Task<global::LlamaParse.DataSource> UpdateDataSourceApiV1DataSourcesDataSourceIdPutAsync(
             global::System.Guid dataSourceId,
             global::LlamaParse.ConfigurableDataSourceNames sourceType,
+            global::System.Guid? projectId = default,
             string? session = default,
             string? name = default,
             object? customMetadata = default,
@@ -539,6 +553,7 @@ namespace LlamaParse
 
             return await UpdateDataSourceApiV1DataSourcesDataSourceIdPutAsync(
                 dataSourceId: dataSourceId,
+                projectId: projectId,
                 session: session,
                 request: __request,
                 requestOptions: requestOptions,

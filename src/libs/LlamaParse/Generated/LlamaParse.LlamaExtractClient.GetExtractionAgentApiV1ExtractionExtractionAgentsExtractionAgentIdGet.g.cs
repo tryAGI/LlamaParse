@@ -28,11 +28,13 @@ namespace LlamaParse
         partial void PrepareGetExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid extractionAgentId,
+            global::System.Guid? projectId,
             ref string? session);
         partial void PrepareGetExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid extractionAgentId,
+            global::System.Guid? projectId,
             string? session);
         partial void ProcessGetExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,18 +49,21 @@ namespace LlamaParse
         /// Get Extraction Agent
         /// </summary>
         /// <param name="extractionAgentId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.ExtractAgent> GetExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdGetAsync(
             global::System.Guid extractionAgentId,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdGetAsResponseAsync(
                 extractionAgentId: extractionAgentId,
+                projectId: projectId,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -70,12 +75,14 @@ namespace LlamaParse
         /// Get Extraction Agent
         /// </summary>
         /// <param name="extractionAgentId"></param>
+        /// <param name="projectId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ExtractAgent>> GetExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdGetAsResponseAsync(
             global::System.Guid extractionAgentId,
+            global::System.Guid? projectId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -85,6 +92,7 @@ namespace LlamaParse
             PrepareGetExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdGetArguments(
                 httpClient: HttpClient,
                 extractionAgentId: ref extractionAgentId,
+                projectId: projectId,
                 session: ref session);
 
 
@@ -113,6 +121,9 @@ namespace LlamaParse
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
                                 path: $"/api/v1/extraction/extraction-agents/{extractionAgentId}",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("project_id", projectId?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -166,6 +177,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     extractionAgentId: extractionAgentId!,
+                    projectId: projectId,
                     session: session);
 
                 return __httpRequest;
