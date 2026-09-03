@@ -41,7 +41,7 @@ namespace LlamaParse
 
         /// <summary>
         /// List Parse Versions<br/>
-        /// List the parse versions accepted by each tier.
+        /// List the parse versions accepted by each tier and what `latest` resolves to.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -59,7 +59,7 @@ namespace LlamaParse
         }
         /// <summary>
         /// List Parse Versions<br/>
-        /// List the parse versions accepted by each tier.
+        /// List the parse versions accepted by each tier and what `latest` resolves to.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
