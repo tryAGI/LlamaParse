@@ -37,6 +37,13 @@ namespace LlamaParse
         public required global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseAgenticPlu> AgenticPlus { get; set; }
 
         /// <summary>
+        /// Version `latest` currently resolves to, per tier
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("latest")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LlamaParse.ParseLatestVersions Latest { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -57,6 +64,9 @@ namespace LlamaParse
         /// <param name="agenticPlus">
         /// Versions for the agentic_plus tier
         /// </param>
+        /// <param name="latest">
+        /// Version `latest` currently resolves to, per tier
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -64,12 +74,14 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseFastItem> fast,
             global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseCostEffectiveItem> costEffective,
             global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseAgenticItem> agentic,
-            global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseAgenticPlu> agenticPlus)
+            global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseAgenticPlu> agenticPlus,
+            global::LlamaParse.ParseLatestVersions latest)
         {
             this.Fast = fast ?? throw new global::System.ArgumentNullException(nameof(fast));
             this.CostEffective = costEffective ?? throw new global::System.ArgumentNullException(nameof(costEffective));
             this.Agentic = agentic ?? throw new global::System.ArgumentNullException(nameof(agentic));
             this.AgenticPlus = agenticPlus ?? throw new global::System.ArgumentNullException(nameof(agenticPlus));
+            this.Latest = latest ?? throw new global::System.ArgumentNullException(nameof(latest));
         }
 
         /// <summary>

@@ -19119,7 +19119,7 @@
           "Parse"
         ],
         "summary": "List Parse Versions",
-        "description": "List the parse versions accepted by each tier.",
+        "description": "List the parse versions accepted by each tier and what `latest` resolves to.",
         "operationId": "list_parse_versions_api_v2_parse_versions_get",
         "responses": {
           "200": {
@@ -42129,6 +42129,39 @@
         "title": "ParseJobResponse",
         "description": "A parse job."
       },
+      "ParseLatestVersions": {
+        "properties": {
+          "fast": {
+            "type": "string",
+            "title": "Fast",
+            "description": "Version `latest` resolves to for the fast tier"
+          },
+          "cost_effective": {
+            "type": "string",
+            "title": "Cost Effective",
+            "description": "Version `latest` resolves to for the cost_effective tier"
+          },
+          "agentic": {
+            "type": "string",
+            "title": "Agentic",
+            "description": "Version `latest` resolves to for the agentic tier"
+          },
+          "agentic_plus": {
+            "type": "string",
+            "title": "Agentic Plus",
+            "description": "Version `latest` resolves to for the agentic_plus tier"
+          }
+        },
+        "type": "object",
+        "required": [
+          "fast",
+          "cost_effective",
+          "agentic",
+          "agentic_plus"
+        ],
+        "title": "ParseLatestVersions",
+        "description": "Dated version each tier runs when a request pins `latest`."
+      },
       "ParsePlanLevel": {
         "type": "string",
         "enum": [
@@ -42794,6 +42827,10 @@
             "type": "array",
             "title": "Agentic Plus",
             "description": "Versions for the agentic_plus tier"
+          },
+          "latest": {
+            "$ref": "#/components/schemas/ParseLatestVersions",
+            "description": "Version `latest` currently resolves to, per tier"
           }
         },
         "type": "object",
@@ -42801,7 +42838,8 @@
           "fast",
           "cost_effective",
           "agentic",
-          "agentic_plus"
+          "agentic_plus",
+          "latest"
         ],
         "title": "ParseVersionsResponse",
         "description": "Versions accepted by the parse API, grouped by tier."
@@ -47418,6 +47456,29 @@
             "title": "Allow Uncategorized",
             "description": "Controls handling of pages that don't match any category. 'include': pages can be grouped as 'uncategorized' and included in results. 'forbid': all pages must be assigned to a defined category. 'omit': pages can be classified as 'uncategorized' but are excluded from results.",
             "default": "include"
+          },
+          "min_pages_per_split": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Min Pages Per Split",
+            "description": "Minimum pages per segment. Shorter segments are merged into an adjacent segment; 1 disables merging.",
+            "default": 1
+          },
+          "custom_instructions": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 5000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Custom Instructions",
+            "description": "Free-form guidance for where segment boundaries are placed.",
+            "examples": [
+              "Start a new segment at every signature page."
+            ]
           }
         },
         "type": "object",
