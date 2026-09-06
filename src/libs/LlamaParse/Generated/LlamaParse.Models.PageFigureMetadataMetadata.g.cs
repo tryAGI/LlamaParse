@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Metadata for the figure
+    ///
     /// </summary>
     public sealed partial class PageFigureMetadataMetadata
     {

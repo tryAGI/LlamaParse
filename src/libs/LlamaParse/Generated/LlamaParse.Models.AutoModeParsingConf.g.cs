@@ -15,7 +15,7 @@ namespace LlamaParse
         /// Override the parsing tier for matched pages. Must be paired with version
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        public global::LlamaParse.AutoModeParsingConfTier2? Tier { get; set; }
+        public global::LlamaParse.AutoModeParsingConfTier? Tier { get; set; }
 
         /// <summary>
         /// Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.<br/>
@@ -70,7 +70,7 @@ namespace LlamaParse
         /// Enable specialized chart parsing with the specified mode
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("specialized_chart_parsing")]
-        public global::LlamaParse.AutoModeParsingConfSpecializedChartParsing2? SpecializedChartParsing { get; set; }
+        public global::LlamaParse.AutoModeParsingConfSpecializedChartParsing? SpecializedChartParsing { get; set; }
 
         /// <summary>
         /// Whether to use high resolution OCR
@@ -163,7 +163,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AutoModeParsingConf(
-            global::LlamaParse.AutoModeParsingConfTier2? tier,
+            global::LlamaParse.AutoModeParsingConfTier? tier,
             global::LlamaParse.AnyOf<global::LlamaParse.AutoModeParsingConfVersion?, string, object>? version,
             string? customPrompt,
             global::LlamaParse.AutoModeIgnoreOptions? ignore,
@@ -171,7 +171,7 @@ namespace LlamaParse
             bool? outlinedTableExtraction,
             bool? adaptiveLongTable,
             bool? extractLayout,
-            global::LlamaParse.AutoModeParsingConfSpecializedChartParsing2? specializedChartParsing,
+            global::LlamaParse.AutoModeParsingConfSpecializedChartParsing? specializedChartParsing,
             bool? highResOcr,
             string? language,
             global::LlamaParse.AutoModeCropBox? cropBox,

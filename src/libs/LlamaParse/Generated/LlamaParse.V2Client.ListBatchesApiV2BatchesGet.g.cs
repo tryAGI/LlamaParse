@@ -33,7 +33,7 @@ namespace LlamaParse
             ref string? pageToken,
             global::System.DateTime? createdAtOnOrAfter,
             global::System.DateTime? createdAtOnOrBefore,
-            ref global::LlamaParse.ListBatchesApiV2BatchesGetStatus2? status,
+            ref global::LlamaParse.ListBatchesApiV2BatchesGetStatus? status,
             ref string? sourceDirectoryId,
             ref string? session);
         partial void PrepareListBatchesApiV2BatchesGetRequest(
@@ -45,7 +45,7 @@ namespace LlamaParse
             string? pageToken,
             global::System.DateTime? createdAtOnOrAfter,
             global::System.DateTime? createdAtOnOrBefore,
-            global::LlamaParse.ListBatchesApiV2BatchesGetStatus2? status,
+            global::LlamaParse.ListBatchesApiV2BatchesGetStatus? status,
             string? sourceDirectoryId,
             string? session);
         partial void ProcessListBatchesApiV2BatchesGetResponse(
@@ -80,7 +80,7 @@ namespace LlamaParse
             string? pageToken = default,
             global::System.DateTime? createdAtOnOrAfter = default,
             global::System.DateTime? createdAtOnOrBefore = default,
-            global::LlamaParse.ListBatchesApiV2BatchesGetStatus2? status = default,
+            global::LlamaParse.ListBatchesApiV2BatchesGetStatus? status = default,
             string? sourceDirectoryId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
@@ -125,7 +125,7 @@ namespace LlamaParse
             string? pageToken = default,
             global::System.DateTime? createdAtOnOrAfter = default,
             global::System.DateTime? createdAtOnOrBefore = default,
-            global::LlamaParse.ListBatchesApiV2BatchesGetStatus2? status = default,
+            global::LlamaParse.ListBatchesApiV2BatchesGetStatus? status = default,
             string? sourceDirectoryId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,

@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// The custom metadata to attach to the documents.
+    ///
     /// </summary>
     public sealed partial class BatchParseJobConfigCustomMetadata
     {

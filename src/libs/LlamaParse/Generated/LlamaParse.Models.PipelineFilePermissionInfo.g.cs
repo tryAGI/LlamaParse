@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Permission information for the file.
+    ///
     /// </summary>
     public sealed partial class PipelineFilePermissionInfo
     {

@@ -12,7 +12,7 @@ namespace LlamaParse
         /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("priority")]
-        public global::LlamaParse.ExtractJobCreatePriority2? Priority { get; set; }
+        public global::LlamaParse.ExtractJobCreatePriority? Priority { get; set; }
 
         /// <summary>
         /// Outbound webhook endpoints to notify on job status changes
@@ -80,7 +80,7 @@ namespace LlamaParse
         public ExtractJobCreate(
             global::System.Guid extractionAgentId,
             global::System.Guid fileId,
-            global::LlamaParse.ExtractJobCreatePriority2? priority,
+            global::LlamaParse.ExtractJobCreatePriority? priority,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations,
             global::LlamaParse.AnyOf<object, string, object>? dataSchemaOverride,
             global::LlamaParse.ExtractConfig? configOverride)

@@ -557,7 +557,7 @@ namespace LlamaParse
             string? webhookSigningSecret = default,
             global::System.Collections.Generic.Dictionary<string, string>? webhookHeaders = default,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigUpdateRequestWebhookEventsVariant1Item>? webhookEvents = default,
-            global::LlamaParse.WebhookConfigUpdateRequestWebhookOutputFormat2? webhookOutputFormat = default,
+            global::LlamaParse.WebhookConfigUpdateRequestWebhookOutputFormat? webhookOutputFormat = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

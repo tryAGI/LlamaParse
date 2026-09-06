@@ -106,7 +106,7 @@ namespace LlamaParse
         /// The status of the data source in the pipeline.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::LlamaParse.PipelineDataSourceStatus2? Status { get; set; }
+        public global::LlamaParse.PipelineDataSourceStatus? Status { get; set; }
 
         /// <summary>
         /// The last time the status was updated.
@@ -185,7 +185,7 @@ namespace LlamaParse
             global::LlamaParse.DataSourceReaderVersionMetadata? versionMetadata,
             double? syncInterval,
             string? syncScheduleSetBy,
-            global::LlamaParse.PipelineDataSourceStatus2? status,
+            global::LlamaParse.PipelineDataSourceStatus? status,
             global::System.DateTime? statusUpdatedAt)
         {
             this.Id = id;

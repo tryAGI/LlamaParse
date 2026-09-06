@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Metadata for the screenshot
+    ///
     /// </summary>
     public sealed partial class PageScreenshotMetadataMetadata
     {

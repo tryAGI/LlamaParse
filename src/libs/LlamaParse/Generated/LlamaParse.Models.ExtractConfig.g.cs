@@ -14,7 +14,7 @@ namespace LlamaParse
         /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("priority")]
-        public global::LlamaParse.ExtractConfigPriority2? Priority { get; set; }
+        public global::LlamaParse.ExtractConfigPriority? Priority { get; set; }
 
         /// <summary>
         /// The extraction target specified.<br/>
@@ -188,7 +188,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExtractConfig(
-            global::LlamaParse.ExtractConfigPriority2? priority,
+            global::LlamaParse.ExtractConfigPriority? priority,
             global::LlamaParse.ExtractTarget? extractionTarget,
             global::LlamaParse.ExtractMode? extractionMode,
             global::LlamaParse.PublicModelName? parseModel,

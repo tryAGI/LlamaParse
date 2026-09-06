@@ -71,7 +71,7 @@ namespace LlamaParse
         /// Response format sent to the webhook.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_output_format")]
-        public global::LlamaParse.WebhookConfigResponseWebhookOutputFormat2? WebhookOutputFormat { get; set; }
+        public global::LlamaParse.WebhookConfigResponseWebhookOutputFormat? WebhookOutputFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -124,7 +124,7 @@ namespace LlamaParse
             global::System.DateTime? updatedAt,
             global::System.Collections.Generic.Dictionary<string, string>? webhookHeaders,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item>? webhookEvents,
-            global::LlamaParse.WebhookConfigResponseWebhookOutputFormat2? webhookOutputFormat,
+            global::LlamaParse.WebhookConfigResponseWebhookOutputFormat? webhookOutputFormat,
             string tenantType = "project")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

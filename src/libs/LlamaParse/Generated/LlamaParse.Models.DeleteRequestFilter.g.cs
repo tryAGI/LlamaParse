@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Optional filters to select which items to delete
+    ///
     /// </summary>
     public sealed partial class DeleteRequestFilter
     {

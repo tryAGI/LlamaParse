@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Reserved system-managed metadata.
+    ///
     /// </summary>
     public sealed partial class DirectoryCreateRequestSystemMetadata
     {

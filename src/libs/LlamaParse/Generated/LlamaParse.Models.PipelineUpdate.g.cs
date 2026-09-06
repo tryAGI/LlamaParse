@@ -70,7 +70,7 @@ namespace LlamaParse
         /// Metadata configuration for the pipeline.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata_config")]
-        public global::LlamaParse.PipelineMetadataConfig2? MetadataConfig { get; set; }
+        public global::LlamaParse.PipelineMetadataConfig? MetadataConfig { get; set; }
 
         /// <summary>
         ///
@@ -134,7 +134,7 @@ namespace LlamaParse
             global::LlamaParse.DataSinkCreate? dataSink,
             global::LlamaParse.PresetRetrievalParams? presetRetrievalParameters,
             string? status,
-            global::LlamaParse.PipelineMetadataConfig2? metadataConfig,
+            global::LlamaParse.PipelineMetadataConfig? metadataConfig,
             string? name,
             global::System.Guid? managedPipelineId)
         {

@@ -53,7 +53,7 @@ namespace LlamaParse
         /// The pipeline's current status.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::LlamaParse.PipelineResponseStatus2? Status { get; set; }
+        public global::LlamaParse.PipelineResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -95,7 +95,7 @@ namespace LlamaParse
             global::LlamaParse.PipelineResponsePipelineType pipelineType,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
-            global::LlamaParse.PipelineResponseStatus2? status)
+            global::LlamaParse.PipelineResponseStatus? status)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;

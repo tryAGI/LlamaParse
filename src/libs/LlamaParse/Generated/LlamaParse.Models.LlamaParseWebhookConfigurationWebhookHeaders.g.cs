@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Custom HTTP headers to include in webhook requests. Use for authentication tokens or custom routing. Example: {'Authorization': 'Bearer xyz'}
+    ///
     /// </summary>
     public sealed partial class LlamaParseWebhookConfigurationWebhookHeaders
     {

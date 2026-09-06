@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Optional schema to validate, refine, or extend
+    ///
     /// </summary>
     public sealed partial class ExtractV2SchemaGenerateRequestDataSchema
     {

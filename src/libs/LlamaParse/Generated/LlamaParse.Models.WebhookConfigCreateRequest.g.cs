@@ -39,7 +39,7 @@ namespace LlamaParse
         /// Response format sent to the webhook: 'string' (default) or 'json'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_output_format")]
-        public global::LlamaParse.WebhookConfigCreateRequestWebhookOutputFormat2? WebhookOutputFormat { get; set; }
+        public global::LlamaParse.WebhookConfigCreateRequestWebhookOutputFormat? WebhookOutputFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,7 +73,7 @@ namespace LlamaParse
             string? webhookSigningSecret,
             global::System.Collections.Generic.Dictionary<string, string>? webhookHeaders,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigCreateRequestWebhookEventsVariant1Item>? webhookEvents,
-            global::LlamaParse.WebhookConfigCreateRequestWebhookOutputFormat2? webhookOutputFormat)
+            global::LlamaParse.WebhookConfigCreateRequestWebhookOutputFormat? webhookOutputFormat)
         {
             this.WebhookUrl = webhookUrl ?? throw new global::System.ArgumentNullException(nameof(webhookUrl));
             this.WebhookSigningSecret = webhookSigningSecret;

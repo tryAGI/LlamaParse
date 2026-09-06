@@ -29,7 +29,7 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobQueryResponse> ListSplitJobsApiV1SplitJobsGetAsync(
-            global::LlamaParse.ListSplitJobsApiV1SplitJobsGetStatus2? status = default,
+            global::LlamaParse.ListSplitJobsApiV1SplitJobsGetStatus? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
@@ -65,7 +65,7 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobQueryResponse>> ListSplitJobsApiV1SplitJobsGetAsResponseAsync(
-            global::LlamaParse.ListSplitJobsApiV1SplitJobsGetStatus2? status = default,
+            global::LlamaParse.ListSplitJobsApiV1SplitJobsGetStatus? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,

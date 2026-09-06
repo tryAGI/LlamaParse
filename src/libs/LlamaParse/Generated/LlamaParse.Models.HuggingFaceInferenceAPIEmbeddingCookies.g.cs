@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Additional cookies to send to the server.
+    ///
     /// </summary>
     public sealed partial class HuggingFaceInferenceAPIEmbeddingCookies
     {

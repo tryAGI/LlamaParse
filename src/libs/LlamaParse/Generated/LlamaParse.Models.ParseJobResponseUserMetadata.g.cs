@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Key/value tags associated with this job.
+    ///
     /// </summary>
     public sealed partial class ParseJobResponseUserMetadata
     {

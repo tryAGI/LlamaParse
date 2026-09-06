@@ -47,13 +47,13 @@ namespace LlamaParse
         /// Image category: 'screenshot' (full page), 'embedded' (images in document), or 'layout' (cropped from layout detection)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category")]
-        public global::LlamaParse.ImageMetadataCategory2? Category { get; set; }
+        public global::LlamaParse.ImageMetadataCategory? Category { get; set; }
 
         /// <summary>
         /// Bounding box of the image on its page
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bbox")]
-        public global::LlamaParse.ImageMetadataBBox2? Bbox { get; set; }
+        public global::LlamaParse.ImageMetadataBBox? Bbox { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -90,8 +90,8 @@ namespace LlamaParse
             string filename,
             string? contentType,
             string? presignedUrl,
-            global::LlamaParse.ImageMetadataCategory2? category,
-            global::LlamaParse.ImageMetadataBBox2? bbox)
+            global::LlamaParse.ImageMetadataCategory? category,
+            global::LlamaParse.ImageMetadataBBox? bbox)
         {
             this.Index = index;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));

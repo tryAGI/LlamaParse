@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Resource information for the file.
+    ///
     /// </summary>
     public sealed partial class PipelineFileResourceInfo
     {
