@@ -104,7 +104,7 @@ namespace LlamaParse
         /// Status of the pipeline file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::LlamaParse.PipelineFileStatus2? Status { get; set; }
+        public global::LlamaParse.PipelineFileStatus? Status { get; set; }
 
         /// <summary>
         /// The last time the status was updated.
@@ -209,7 +209,7 @@ namespace LlamaParse
             global::System.Guid? dataSourceId,
             object? configHash,
             int? indexedPageCount,
-            global::LlamaParse.PipelineFileStatus2? status,
+            global::LlamaParse.PipelineFileStatus? status,
             global::System.DateTime? statusUpdatedAt,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt)

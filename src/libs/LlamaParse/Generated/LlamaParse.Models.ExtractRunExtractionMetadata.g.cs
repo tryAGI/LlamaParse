@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// The metadata extracted from the file
+    ///
     /// </summary>
     public sealed partial class ExtractRunExtractionMetadata
     {

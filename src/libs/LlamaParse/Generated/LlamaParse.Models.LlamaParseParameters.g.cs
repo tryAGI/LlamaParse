@@ -18,7 +18,7 @@ namespace LlamaParse
         /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("priority")]
-        public global::LlamaParse.LlamaParseParametersPriority2? Priority { get; set; }
+        public global::LlamaParse.LlamaParseParametersPriority? Priority { get; set; }
 
         /// <summary>
         ///
@@ -1004,7 +1004,7 @@ namespace LlamaParse
 #endif
         public LlamaParseParameters(
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations,
-            global::LlamaParse.LlamaParseParametersPriority2? priority,
+            global::LlamaParse.LlamaParseParametersPriority? priority,
             global::System.Collections.Generic.IList<global::LlamaParse.ParserLanguages>? languages,
             string? parsingInstruction,
             bool? disableOcr,

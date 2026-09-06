@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Additional headers to send to the server. By default only the authorization and user-agent headers are sent. Values in this dictionary will override the default values.
+    ///
     /// </summary>
     public sealed partial class HuggingFaceInferenceAPIEmbeddingHeaders
     {

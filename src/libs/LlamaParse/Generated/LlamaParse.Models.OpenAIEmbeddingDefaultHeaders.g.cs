@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// The default headers for API requests.
+    ///
     /// </summary>
     public sealed partial class OpenAIEmbeddingDefaultHeaders
     {

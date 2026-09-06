@@ -79,7 +79,7 @@ namespace LlamaParse
             bool? fromUi = default,
             global::System.Guid? projectId = default,
             string? session = default,
-            global::LlamaParse.ExtractJobCreatePriority2? priority = default,
+            global::LlamaParse.ExtractJobCreatePriority? priority = default,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,
             global::LlamaParse.AnyOf<object, string, object>? dataSchemaOverride = default,
             global::LlamaParse.ExtractConfig? configOverride = default,

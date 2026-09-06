@@ -24,7 +24,7 @@ namespace LlamaParse
         /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("priority")]
-        public global::LlamaParse.BatchParseJobConfigPriority2? Priority { get; set; }
+        public global::LlamaParse.BatchParseJobConfigPriority? Priority { get; set; }
 
         /// <summary>
         /// The custom metadata to attach to the documents.
@@ -1072,7 +1072,7 @@ namespace LlamaParse
 #endif
         public BatchParseJobConfig(
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations,
-            global::LlamaParse.BatchParseJobConfigPriority2? priority,
+            global::LlamaParse.BatchParseJobConfigPriority? priority,
             object? customMetadata,
             object? resourceInfo,
             global::System.Collections.Generic.IList<global::LlamaParse.ParserLanguages>? languages,

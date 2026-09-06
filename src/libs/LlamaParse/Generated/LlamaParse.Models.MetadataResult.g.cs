@@ -19,7 +19,7 @@ namespace LlamaParse
         /// Document-level metadata information
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document")]
-        public global::LlamaParse.MetadataResultDocument2? Document { get; set; }
+        public global::LlamaParse.MetadataResultDocument? Document { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,7 @@ namespace LlamaParse
 #endif
         public MetadataResult(
             global::System.Collections.Generic.IList<global::LlamaParse.MetadataResultPage> pages,
-            global::LlamaParse.MetadataResultDocument2? document)
+            global::LlamaParse.MetadataResultDocument? document)
         {
             this.Pages = pages ?? throw new global::System.ArgumentNullException(nameof(pages));
             this.Document = document;

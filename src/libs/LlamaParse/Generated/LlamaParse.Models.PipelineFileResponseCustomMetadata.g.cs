@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Custom metadata for the file.
+    ///
     /// </summary>
     public sealed partial class PipelineFileResponseCustomMetadata
     {

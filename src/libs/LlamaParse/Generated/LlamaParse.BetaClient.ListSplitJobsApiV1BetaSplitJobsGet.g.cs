@@ -27,7 +27,7 @@ namespace LlamaParse
             };
         partial void PrepareListSplitJobsApiV1BetaSplitJobsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status,
+            ref global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus? status,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
@@ -39,7 +39,7 @@ namespace LlamaParse
         partial void PrepareListSplitJobsApiV1BetaSplitJobsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status,
+            global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus? status,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
@@ -82,7 +82,7 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.SplitJobQueryResponseBeta> ListSplitJobsApiV1BetaSplitJobsGetAsync(
-            global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status = default,
+            global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
@@ -135,7 +135,7 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.SplitJobQueryResponseBeta>> ListSplitJobsApiV1BetaSplitJobsGetAsResponseAsync(
-            global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status = default,
+            global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,

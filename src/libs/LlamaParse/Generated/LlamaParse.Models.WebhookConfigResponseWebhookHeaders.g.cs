@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Custom HTTP headers sent with each request.
+    ///
     /// </summary>
     public sealed partial class WebhookConfigResponseWebhookHeaders
     {

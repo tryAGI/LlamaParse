@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Updated headers.
+    ///
     /// </summary>
     public sealed partial class WebhookConfigUpdateRequestWebhookHeaders
     {

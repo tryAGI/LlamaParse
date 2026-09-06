@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// The service account key JSON to use for authentication.
+    /// A dictionary containing secret values
     /// </summary>
     public sealed partial class CloudGoogleDriveDataSourceServiceAccountKey
     {

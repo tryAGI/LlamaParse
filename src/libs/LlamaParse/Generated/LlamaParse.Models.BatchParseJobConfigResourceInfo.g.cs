@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// The resource info about the file
+    ///
     /// </summary>
     public sealed partial class BatchParseJobConfigResourceInfo
     {

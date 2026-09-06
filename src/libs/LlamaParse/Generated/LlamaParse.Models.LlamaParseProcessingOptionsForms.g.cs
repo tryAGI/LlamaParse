@@ -4,16 +4,48 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Beta: set to 'enrich' to run an additional AI form-analysis pass on pages detected as forms, producing a structured tree of the form's sections, fields, and fillable grids. Retrieve the result with expand=forms. 'default' (the default) applies standard parsing with no extra pass. Not available on the fast tier
+    ///
     /// </summary>
-    public sealed partial class LlamaParseProcessingOptionsForms
+    public enum LlamaParseProcessingOptionsForms
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Default,
+        /// <summary>
+        ///
+        /// </summary>
+        Enrich,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class LlamaParseProcessingOptionsFormsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this LlamaParseProcessingOptionsForms value)
+        {
+            return value switch
+            {
+                LlamaParseProcessingOptionsForms.Default => "default",
+                LlamaParseProcessingOptionsForms.Enrich => "enrich",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static LlamaParseProcessingOptionsForms? ToEnum(string value)
+        {
+            return value switch
+            {
+                "default" => LlamaParseProcessingOptionsForms.Default,
+                "enrich" => LlamaParseProcessingOptionsForms.Enrich,
+                _ => null,
+            };
+        }
     }
 }

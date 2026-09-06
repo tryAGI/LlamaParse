@@ -51,7 +51,7 @@ namespace LlamaParse
         /// Directory type: 'user', 'index', or 'ephemeral'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public global::LlamaParse.DirectoryResponseType2? Type { get; set; }
+        public global::LlamaParse.DirectoryResponseType? Type { get; set; }
 
         /// <summary>
         /// Connector Subscription whose files sync into this directory. Null for a directory populated by manual uploads.
@@ -129,7 +129,7 @@ namespace LlamaParse
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
             string? description,
-            global::LlamaParse.DirectoryResponseType2? type,
+            global::LlamaParse.DirectoryResponseType? type,
             string? connectorSubscriptionId,
             global::System.DateTime? expiresAt,
             object? systemMetadata,

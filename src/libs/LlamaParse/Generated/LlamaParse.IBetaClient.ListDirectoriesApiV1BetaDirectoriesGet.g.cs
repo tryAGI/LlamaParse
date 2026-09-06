@@ -30,7 +30,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.DirectoryQueryResponse> ListDirectoriesApiV1BetaDirectoriesGetAsync(
             string? name = default,
-            global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type = default,
+            global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType? type = default,
             global::System.Collections.Generic.IList<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item>? types = default,
             bool? includeDeleted = default,
             global::System.Guid? projectId = default,
@@ -66,7 +66,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DirectoryQueryResponse>> ListDirectoriesApiV1BetaDirectoriesGetAsResponseAsync(
             string? name = default,
-            global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType2? type = default,
+            global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType? type = default,
             global::System.Collections.Generic.IList<global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item>? types = default,
             bool? includeDeleted = default,
             global::System.Guid? projectId = default,

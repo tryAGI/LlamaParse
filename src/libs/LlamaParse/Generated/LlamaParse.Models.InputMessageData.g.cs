@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Additional data to be stored with the message.
+    ///
     /// </summary>
     public sealed partial class InputMessageData
     {

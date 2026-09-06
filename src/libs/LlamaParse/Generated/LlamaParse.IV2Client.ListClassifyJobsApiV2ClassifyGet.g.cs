@@ -40,7 +40,7 @@ namespace LlamaParse
         global::System.Threading.Tasks.Task<global::LlamaParse.ClassifyV2JobQueryResponse> ListClassifyJobsApiV2ClassifyGetAsync(
             int? pageSize = default,
             string? pageToken = default,
-            global::LlamaParse.ListClassifyJobsApiV2ClassifyGetStatus2? status = default,
+            global::LlamaParse.ListClassifyJobsApiV2ClassifyGetStatus? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
@@ -86,7 +86,7 @@ namespace LlamaParse
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyV2JobQueryResponse>> ListClassifyJobsApiV2ClassifyGetAsResponseAsync(
             int? pageSize = default,
             string? pageToken = default,
-            global::LlamaParse.ListClassifyJobsApiV2ClassifyGetStatus2? status = default,
+            global::LlamaParse.ListClassifyJobsApiV2ClassifyGetStatus? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,

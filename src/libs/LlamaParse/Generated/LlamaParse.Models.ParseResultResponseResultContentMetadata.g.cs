@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Metadata including size, existence, and presigned URLs for result files
+    ///
     /// </summary>
     public sealed partial class ParseResultResponseResultContentMetadata
     {

@@ -116,13 +116,13 @@ namespace LlamaParse
         /// Status of the pipeline.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::LlamaParse.PipelineStatus2? Status { get; set; }
+        public global::LlamaParse.PipelineStatus? Status { get; set; }
 
         /// <summary>
         /// Metadata configuration for the pipeline.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata_config")]
-        public global::LlamaParse.PipelineMetadataConfig2? MetadataConfig { get; set; }
+        public global::LlamaParse.PipelineMetadataConfig? MetadataConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -202,8 +202,8 @@ namespace LlamaParse
             global::LlamaParse.PresetRetrievalParams? presetRetrievalParameters,
             global::LlamaParse.LlamaParseParameters? llamaParseParameters,
             global::LlamaParse.DataSink? dataSink,
-            global::LlamaParse.PipelineStatus2? status,
-            global::LlamaParse.PipelineMetadataConfig2? metadataConfig)
+            global::LlamaParse.PipelineStatus? status,
+            global::LlamaParse.PipelineMetadataConfig? metadataConfig)
         {
             this.Id = id;
             this.CreatedAt = createdAt;

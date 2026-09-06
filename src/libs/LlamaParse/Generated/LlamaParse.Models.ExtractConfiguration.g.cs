@@ -94,7 +94,7 @@ namespace LlamaParse
         /// Parse tier to use before extraction. Defaults to the extract tier if not specified. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_tier")]
-        public global::LlamaParse.ExtractConfigurationParseTier2? ParseTier { get; set; }
+        public global::LlamaParse.ExtractConfigurationParseTier? ParseTier { get; set; }
 
         /// <summary>
         /// Saved parse configuration ID to control how the document is parsed before extraction. Turbo extract does not support parse configuration or produce a parse output; use another tier if your workflow requires parsed text.
@@ -176,7 +176,7 @@ namespace LlamaParse
             bool? confidenceScores,
             bool? spreadsheetMode,
             global::System.Collections.Generic.IList<string>? sheetNames,
-            global::LlamaParse.ExtractConfigurationParseTier2? parseTier,
+            global::LlamaParse.ExtractConfigurationParseTier? parseTier,
             string? parseConfigId)
         {
             this.TargetPages = targetPages;

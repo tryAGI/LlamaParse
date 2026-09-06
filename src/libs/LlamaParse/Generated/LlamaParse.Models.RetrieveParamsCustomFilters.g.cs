@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Filters on user-defined metadata fields.
+    ///
     /// </summary>
     public sealed partial class RetrieveParamsCustomFilters
     {

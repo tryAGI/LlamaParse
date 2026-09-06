@@ -12,7 +12,7 @@ namespace LlamaParse
         /// The version of the reader to use for this data source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reader_version")]
-        public global::LlamaParse.DataSourceReaderVersionMetadataReaderVersion2? ReaderVersion { get; set; }
+        public global::LlamaParse.DataSourceReaderVersionMetadataReaderVersion? ReaderVersion { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DataSourceReaderVersionMetadata(
-            global::LlamaParse.DataSourceReaderVersionMetadataReaderVersion2? readerVersion)
+            global::LlamaParse.DataSourceReaderVersionMetadataReaderVersion? readerVersion)
         {
             this.ReaderVersion = readerVersion;
         }

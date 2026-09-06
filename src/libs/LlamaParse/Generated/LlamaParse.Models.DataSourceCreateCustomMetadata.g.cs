@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Custom metadata that will be present on all data loaded from the data source
+    ///
     /// </summary>
     public sealed partial class DataSourceCreateCustomMetadata
     {

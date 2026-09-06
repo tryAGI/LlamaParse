@@ -38,7 +38,7 @@ namespace LlamaParse
         /// Format of the webhook payload body. 'string' (default) sends the payload as a JSON-encoded string; 'json' sends it as a JSON object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_output_format")]
-        public global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat2? WebhookOutputFormat { get; set; }
+        public global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat? WebhookOutputFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,7 +72,7 @@ namespace LlamaParse
             object? webhookHeaders,
             string? webhookSigningSecret,
             global::System.Collections.Generic.IList<string>? webhookEvents,
-            global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat2? webhookOutputFormat)
+            global::LlamaParse.LlamaParseWebhookConfigurationWebhookOutputFormat? webhookOutputFormat)
         {
             this.WebhookUrl = webhookUrl;
             this.WebhookHeaders = webhookHeaders;

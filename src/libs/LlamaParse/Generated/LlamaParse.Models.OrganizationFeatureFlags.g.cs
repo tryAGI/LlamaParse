@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Feature flags for the organization.
+    ///
     /// </summary>
     public sealed partial class OrganizationFeatureFlags
     {

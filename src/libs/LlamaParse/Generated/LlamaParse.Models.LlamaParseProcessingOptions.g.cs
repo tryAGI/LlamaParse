@@ -45,7 +45,7 @@ namespace LlamaParse
         /// Enable AI-powered chart analysis. Modes: 'efficient' (fast, lower cost), 'agentic' (balanced), 'agentic_plus' (highest accuracy). Automatically enables extract_layout and precise_bounding_box when set
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("specialized_chart_parsing")]
-        public global::LlamaParse.LlamaParseProcessingOptionsSpecializedChartParsing2? SpecializedChartParsing { get; set; }
+        public global::LlamaParse.LlamaParseProcessingOptionsSpecializedChartParsing? SpecializedChartParsing { get; set; }
 
         /// <summary>
         /// Cost optimization settings. Only available with 'agentic' or 'agentic_plus' tiers
@@ -63,7 +63,7 @@ namespace LlamaParse
         /// Beta: set to 'enrich' to run an additional AI form-analysis pass on pages detected as forms, producing a structured tree of the form's sections, fields, and fillable grids. Retrieve the result with expand=forms. 'default' (the default) applies standard parsing with no extra pass. Not available on the fast tier
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("forms")]
-        public global::LlamaParse.LlamaParseProcessingOptionsForms2? Forms { get; set; }
+        public global::LlamaParse.LlamaParseProcessingOptionsForms? Forms { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -110,10 +110,10 @@ namespace LlamaParse
             bool? aggressiveTableExtraction,
             string? confidenceScoreEffort,
             bool? disableHeuristics,
-            global::LlamaParse.LlamaParseProcessingOptionsSpecializedChartParsing2? specializedChartParsing,
+            global::LlamaParse.LlamaParseProcessingOptionsSpecializedChartParsing? specializedChartParsing,
             global::LlamaParse.LlamaParseCostOptimizerParameters? costOptimizer,
             global::System.Collections.Generic.IList<global::LlamaParse.AutoModeConfigurationEntry>? autoModeConfiguration,
-            global::LlamaParse.LlamaParseProcessingOptionsForms2? forms)
+            global::LlamaParse.LlamaParseProcessingOptionsForms? forms)
         {
             this.Ignore = ignore;
             this.OcrParameters = ocrParameters;

@@ -76,7 +76,7 @@ namespace LlamaParse
         /// Custom metadata - limited to enterprise plans.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::LlamaParse.ExtractV2JobMetadata2? Metadata { get; set; }
+        public global::LlamaParse.ExtractV2JobMetadata? Metadata { get; set; }
 
         /// <summary>
         /// Usage recorded against this job. Requires `expand=usage`.
@@ -166,7 +166,7 @@ namespace LlamaParse
             string? errorMessage,
             global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? extractResult,
             global::LlamaParse.ExtractJobMetadata? extractMetadata,
-            global::LlamaParse.ExtractV2JobMetadata2? metadata,
+            global::LlamaParse.ExtractV2JobMetadata? metadata,
             global::LlamaParse.ExtractUsage? usage)
         {
             this.FileInput = fileInput ?? throw new global::System.ArgumentNullException(nameof(fileInput));

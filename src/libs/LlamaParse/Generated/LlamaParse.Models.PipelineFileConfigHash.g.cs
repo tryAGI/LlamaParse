@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Hashes for the configuration of the pipeline.
+    ///
     /// </summary>
     public sealed partial class PipelineFileConfigHash
     {

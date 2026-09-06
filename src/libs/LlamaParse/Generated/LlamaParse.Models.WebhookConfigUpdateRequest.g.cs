@@ -36,7 +36,7 @@ namespace LlamaParse
         /// Updated output format.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_output_format")]
-        public global::LlamaParse.WebhookConfigUpdateRequestWebhookOutputFormat2? WebhookOutputFormat { get; set; }
+        public global::LlamaParse.WebhookConfigUpdateRequestWebhookOutputFormat? WebhookOutputFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,7 +70,7 @@ namespace LlamaParse
             string? webhookSigningSecret,
             global::System.Collections.Generic.Dictionary<string, string>? webhookHeaders,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigUpdateRequestWebhookEventsVariant1Item>? webhookEvents,
-            global::LlamaParse.WebhookConfigUpdateRequestWebhookOutputFormat2? webhookOutputFormat)
+            global::LlamaParse.WebhookConfigUpdateRequestWebhookOutputFormat? webhookOutputFormat)
         {
             this.WebhookUrl = webhookUrl;
             this.WebhookSigningSecret = webhookSigningSecret;
