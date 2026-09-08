@@ -19264,6 +19264,103 @@
             }
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "V2",
+          "Parse"
+        ],
+        "summary": "Delete Parse Job",
+        "description": "Delete a parse job and its results.\n\nThe job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel a job that is still running before deleting it.\n\nReturns the identifiers of the deleted job.",
+        "operationId": "delete_parse_job_api_v2_parse__job_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParseJobDeleteResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/v2/parse/{job_id}/cancel": {
@@ -22908,6 +23005,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-07",
                   "2026-08-19",
                   "2026-06-15"
                 ],
@@ -22921,7 +23019,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-08-19`\n- `agentic_plus`: `2026-08-19`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-07`\n- `agentic_plus`: `2026-08-19`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -41944,6 +42042,33 @@
         ],
         "title": "ParseConcernItem"
       },
+      "ParseJobDeleteResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "Identifier of the deleted parse job",
+            "examples": [
+              "pjb-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+            ]
+          },
+          "project_id": {
+            "type": "string",
+            "title": "Project Id",
+            "description": "Project the deleted job belonged to",
+            "examples": [
+              "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "project_id"
+        ],
+        "title": "ParseJobDeleteResponse",
+        "description": "Confirmation that a parse job was deleted.\n\nA deleted job can no longer be fetched, so the response echoes back what it\nwas rather than pointing at it. Returning the identifiers instead of an\nempty body lets a caller assert on the delete it just made without a\nfollow-up request."
+      },
       "ParseJobQueryResponse": {
         "properties": {
           "items": {
@@ -42241,6 +42366,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-07",
                   "2026-08-19",
                   "2026-06-15"
                 ],
@@ -42251,7 +42377,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-08-19`\n- `agentic_plus`: `2026-08-19`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-07`\n- `agentic_plus`: `2026-08-19`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -42576,6 +42702,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-07",
                   "2026-08-19",
                   "2026-06-15"
                 ],
@@ -42586,7 +42713,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-08-19`\n- `agentic_plus`: `2026-08-19`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-07`\n- `agentic_plus`: `2026-08-19`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -42727,6 +42854,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-09-07",
                 "2026-08-19",
                 "2026-07-24",
                 "2026-07-23",
