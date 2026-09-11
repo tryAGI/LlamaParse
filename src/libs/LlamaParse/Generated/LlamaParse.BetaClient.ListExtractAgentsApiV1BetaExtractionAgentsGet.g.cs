@@ -3,11 +3,11 @@
 
 namespace LlamaParse
 {
-    public partial class LlamaExtractClient
+    public partial class BetaClient
     {
 
 
-        private static readonly global::LlamaParse.EndPointSecurityRequirement s_ListExtractionAgentsApiV1ExtractionExtractionAgentsGetSecurityRequirement0 =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_ListExtractAgentsApiV1BetaExtractionAgentsGetSecurityRequirement0 =
             new global::LlamaParse.EndPointSecurityRequirement
             {
                 Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
@@ -21,38 +21,50 @@ namespace LlamaParse
                     },
                 },
             };
-        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_ListExtractionAgentsApiV1ExtractionExtractionAgentsGetSecurityRequirements =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_ListExtractAgentsApiV1BetaExtractionAgentsGetSecurityRequirements =
             new global::LlamaParse.EndPointSecurityRequirement[]
-            {                s_ListExtractionAgentsApiV1ExtractionExtractionAgentsGetSecurityRequirement0,
+            {                s_ListExtractAgentsApiV1BetaExtractionAgentsGetSecurityRequirement0,
             };
-        partial void PrepareListExtractionAgentsApiV1ExtractionExtractionAgentsGetArguments(
+        partial void PrepareListExtractAgentsApiV1BetaExtractionAgentsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? includeDefault,
+            ref int? pageSize,
+            ref string? pageToken,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
-        partial void PrepareListExtractionAgentsApiV1ExtractionExtractionAgentsGetRequest(
+        partial void PrepareListExtractAgentsApiV1BetaExtractionAgentsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? includeDefault,
+            int? pageSize,
+            string? pageToken,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
-        partial void ProcessListExtractionAgentsApiV1ExtractionExtractionAgentsGetResponse(
+        partial void ProcessListExtractAgentsApiV1BetaExtractionAgentsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListExtractionAgentsApiV1ExtractionExtractionAgentsGetResponseContent(
+        partial void ProcessListExtractAgentsApiV1BetaExtractionAgentsGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List Extraction Agents
+        /// List Extract Agents<br/>
+        /// List the extraction agents in a project, newest first.
         /// </summary>
         /// <param name="includeDefault">
         /// Whether to include default agents in the results<br/>
         /// Default Value: false
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of items per page<br/>
+        /// Default Value: 50
+        /// </param>
+        /// <param name="pageToken">
+        /// Cursor from the previous page's `next_page_token`.
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -60,16 +72,20 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LlamaParse.ExtractAgent>> ListExtractionAgentsApiV1ExtractionExtractionAgentsGetAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.ExtractAgentQueryResponse> ListExtractAgentsApiV1BetaExtractionAgentsGetAsync(
             bool? includeDefault = default,
+            int? pageSize = default,
+            string? pageToken = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ListExtractionAgentsApiV1ExtractionExtractionAgentsGetAsResponseAsync(
+            var __response = await ListExtractAgentsApiV1BetaExtractionAgentsGetAsResponseAsync(
                 includeDefault: includeDefault,
+                pageSize: pageSize,
+                pageToken: pageToken,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -80,11 +96,19 @@ namespace LlamaParse
             return __response.Body;
         }
         /// <summary>
-        /// List Extraction Agents
+        /// List Extract Agents<br/>
+        /// List the extraction agents in a project, newest first.
         /// </summary>
         /// <param name="includeDefault">
         /// Whether to include default agents in the results<br/>
         /// Default Value: false
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of items per page<br/>
+        /// Default Value: 50
+        /// </param>
+        /// <param name="pageToken">
+        /// Cursor from the previous page's `next_page_token`.
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -92,8 +116,10 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.ExtractAgent>>> ListExtractionAgentsApiV1ExtractionExtractionAgentsGetAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ExtractAgentQueryResponse>> ListExtractAgentsApiV1BetaExtractionAgentsGetAsResponseAsync(
             bool? includeDefault = default,
+            int? pageSize = default,
+            string? pageToken = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -102,9 +128,11 @@ namespace LlamaParse
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListExtractionAgentsApiV1ExtractionExtractionAgentsGetArguments(
+            PrepareListExtractAgentsApiV1BetaExtractionAgentsGetArguments(
                 httpClient: HttpClient,
                 includeDefault: ref includeDefault,
+                pageSize: ref pageSize,
+                pageToken: ref pageToken,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -112,8 +140,8 @@ namespace LlamaParse
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListExtractionAgentsApiV1ExtractionExtractionAgentsGetSecurityRequirements,
-                operationName: "ListExtractionAgentsApiV1ExtractionExtractionAgentsGetAsync");
+                securityRequirements: s_ListExtractAgentsApiV1BetaExtractionAgentsGetSecurityRequirements,
+                operationName: "ListExtractAgentsApiV1BetaExtractionAgentsGetAsync");
 
             using var __timeoutCancellationTokenSource = global::LlamaParse.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -133,10 +161,12 @@ namespace LlamaParse
             {
 
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: "/api/v1/extraction/extraction-agents",
+                                path: "/api/v1/beta/extraction-agents",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("include_default", includeDefault?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("page_token", pageToken)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -189,10 +219,12 @@ namespace LlamaParse
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListExtractionAgentsApiV1ExtractionExtractionAgentsGetRequest(
+                PrepareListExtractAgentsApiV1BetaExtractionAgentsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     includeDefault: includeDefault,
+                    pageSize: pageSize,
+                    pageToken: pageToken,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -212,9 +244,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListExtractionAgentsApiV1ExtractionExtractionAgentsGet",
-                                methodName: "ListExtractionAgentsApiV1ExtractionExtractionAgentsGetAsync",
-                                pathTemplate: "\"/api/v1/extraction/extraction-agents\"",
+                                operationId: "ListExtractAgentsApiV1BetaExtractionAgentsGet",
+                                methodName: "ListExtractAgentsApiV1BetaExtractionAgentsGetAsync",
+                                pathTemplate: "\"/api/v1/beta/extraction-agents\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -246,9 +278,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListExtractionAgentsApiV1ExtractionExtractionAgentsGet",
-                                methodName: "ListExtractionAgentsApiV1ExtractionExtractionAgentsGetAsync",
-                                pathTemplate: "\"/api/v1/extraction/extraction-agents\"",
+                                operationId: "ListExtractAgentsApiV1BetaExtractionAgentsGet",
+                                methodName: "ListExtractAgentsApiV1BetaExtractionAgentsGetAsync",
+                                pathTemplate: "\"/api/v1/beta/extraction-agents\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -287,9 +319,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListExtractionAgentsApiV1ExtractionExtractionAgentsGet",
-                                methodName: "ListExtractionAgentsApiV1ExtractionExtractionAgentsGetAsync",
-                                pathTemplate: "\"/api/v1/extraction/extraction-agents\"",
+                                operationId: "ListExtractAgentsApiV1BetaExtractionAgentsGet",
+                                methodName: "ListExtractAgentsApiV1BetaExtractionAgentsGetAsync",
+                                pathTemplate: "\"/api/v1/beta/extraction-agents\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -327,7 +359,7 @@ namespace LlamaParse
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListExtractionAgentsApiV1ExtractionExtractionAgentsGetResponse(
+                ProcessListExtractAgentsApiV1BetaExtractionAgentsGetResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -335,9 +367,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListExtractionAgentsApiV1ExtractionExtractionAgentsGet",
-                                methodName: "ListExtractionAgentsApiV1ExtractionExtractionAgentsGetAsync",
-                                pathTemplate: "\"/api/v1/extraction/extraction-agents\"",
+                                operationId: "ListExtractAgentsApiV1BetaExtractionAgentsGet",
+                                methodName: "ListExtractAgentsApiV1BetaExtractionAgentsGetAsync",
+                                pathTemplate: "\"/api/v1/beta/extraction-agents\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -357,9 +389,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListExtractionAgentsApiV1ExtractionExtractionAgentsGet",
-                                methodName: "ListExtractionAgentsApiV1ExtractionExtractionAgentsGetAsync",
-                                pathTemplate: "\"/api/v1/extraction/extraction-agents\"",
+                                operationId: "ListExtractAgentsApiV1BetaExtractionAgentsGet",
+                                methodName: "ListExtractAgentsApiV1BetaExtractionAgentsGetAsync",
+                                pathTemplate: "\"/api/v1/beta/extraction-agents\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -424,7 +456,7 @@ namespace LlamaParse
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListExtractionAgentsApiV1ExtractionExtractionAgentsGetResponseContent(
+                                ProcessListExtractAgentsApiV1BetaExtractionAgentsGetResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -433,9 +465,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LlamaParse.ExtractAgent>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LlamaParse.ExtractAgent>), JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.ExtractAgentQueryResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.ExtractAgent>>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ExtractAgentQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -465,9 +497,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LlamaParse.ExtractAgent>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LlamaParse.ExtractAgent>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.ExtractAgentQueryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.ExtractAgent>>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ExtractAgentQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

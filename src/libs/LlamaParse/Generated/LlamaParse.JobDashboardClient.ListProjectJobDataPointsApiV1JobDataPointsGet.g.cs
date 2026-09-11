@@ -212,7 +212,7 @@ namespace LlamaParse
                             __pathBuilder
                                 .AddRequiredParameter("job_type", jobType.ToValueString())
                                 .AddOptionalParameter("hours", hours?.ToString())
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status, delimiter: ",", explode: true)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
                                 .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())

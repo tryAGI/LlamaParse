@@ -28,6 +28,12 @@ namespace LlamaParse
         public double? PageHeight { get; set; }
 
         /// <summary>
+        /// Form types detected on the page (e.g. 'w2', 'other'), or null if not a form
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("detected_form_types")]
+        public global::System.Collections.Generic.IList<string>? DetectedFormTypes { get; set; }
+
+        /// <summary>
         /// Forms detected on the page
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("forms")]
@@ -62,6 +68,9 @@ namespace LlamaParse
         /// <param name="pageHeight">
         /// Height of the page in points
         /// </param>
+        /// <param name="detectedFormTypes">
+        /// Form types detected on the page (e.g. 'w2', 'other'), or null if not a form
+        /// </param>
         /// <param name="success">
         /// Success indicator
         /// </param>
@@ -73,11 +82,13 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.Form> forms,
             double? pageWidth,
             double? pageHeight,
+            global::System.Collections.Generic.IList<string>? detectedFormTypes,
             bool success = true)
         {
             this.PageNumber = pageNumber;
             this.PageWidth = pageWidth;
             this.PageHeight = pageHeight;
+            this.DetectedFormTypes = detectedFormTypes;
             this.Forms = forms ?? throw new global::System.ArgumentNullException(nameof(forms));
             this.Success = success;
         }

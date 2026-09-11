@@ -144,7 +144,7 @@ namespace LlamaParse
                                 path: $"/api/v2/batches/{batchId}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("expand", expand?.ToString())
+                                .AddOptionalParameter("expand", expand, delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;

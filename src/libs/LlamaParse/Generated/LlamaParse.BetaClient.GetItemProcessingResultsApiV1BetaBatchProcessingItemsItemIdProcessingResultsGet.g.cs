@@ -150,7 +150,7 @@ namespace LlamaParse
                                 path: $"/api/v1/beta/batch-processing/items/{itemId}/processing-results",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("job_type", jobType?.ToString())
+                                .AddOptionalParameter("job_type", jobType?.ToValueString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;

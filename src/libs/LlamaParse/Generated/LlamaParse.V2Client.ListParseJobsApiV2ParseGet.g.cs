@@ -204,8 +204,8 @@ namespace LlamaParse
                             __pathBuilder
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
-                                .AddOptionalParameter("status", status?.ToString())
-                                .AddOptionalParameter("job_ids", jobIds?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
+                                .AddOptionalParameter("job_ids", jobIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())

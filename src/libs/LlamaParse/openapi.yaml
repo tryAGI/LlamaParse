@@ -11,8 +11,9 @@
           "Data Sinks"
         ],
         "summary": "List Data Sinks",
-        "description": "List data sinks for a given project.",
+        "description": "List a project's data sinks. Returns at most the first 50.\n\nDeprecated: use `GET /api/v1/beta/data-sinks`, which is paginated.",
         "operationId": "list_data_sinks_api_v1_data_sinks_get",
+        "deprecated": true,
         "security": [
           {
             "HTTPBearer": []
@@ -9676,7 +9677,9 @@
           "LlamaExtract"
         ],
         "summary": "List Extraction Agents",
+        "description": "List a project's extraction agents. Returns at most 1000 agents.\n\nDeprecated: use `GET /api/v1/beta/extraction-agents`, which is paginated.",
         "operationId": "list_extraction_agents_api_v1_extraction_extraction_agents_get",
+        "deprecated": true,
         "security": [
           {
             "HTTPBearer": []
@@ -14474,6 +14477,274 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PresignedUrl"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/beta/data-sinks": {
+      "get": {
+        "tags": [
+          "Beta",
+          "Data Sinks"
+        ],
+        "summary": "List Data Sinks",
+        "description": "List the data sinks in a project, newest first.",
+        "operationId": "list_data_sinks_api_v1_beta_data_sinks_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "description": "Number of items per page",
+              "default": 50,
+              "title": "Page Size"
+            },
+            "description": "Number of items per page"
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Cursor from the previous page's `next_page_token`.",
+              "title": "Page Token"
+            },
+            "description": "Cursor from the previous page's `next_page_token`."
+          },
+          {
+            "name": "include_total",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Return `total_size`, a count of every row matching the filter. It is a second query on every page, so it is off unless asked for.",
+              "default": false,
+              "title": "Include Total"
+            },
+            "description": "Return `total_size`, a count of every row matching the filter. It is a second query on every page, so it is off unless asked for."
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSinkQueryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/beta/extraction-agents": {
+      "get": {
+        "tags": [
+          "Beta",
+          "LlamaExtract"
+        ],
+        "summary": "List Extract Agents",
+        "description": "List the extraction agents in a project, newest first.",
+        "operationId": "list_extract_agents_api_v1_beta_extraction_agents_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "include_default",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Whether to include default agents in the results",
+              "default": false,
+              "title": "Include Default"
+            },
+            "description": "Whether to include default agents in the results"
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "description": "Number of items per page",
+              "default": 50,
+              "title": "Page Size"
+            },
+            "description": "Number of items per page"
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Cursor from the previous page's `next_page_token`.",
+              "title": "Page Token"
+            },
+            "description": "Cursor from the previous page's `next_page_token`."
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractAgentQueryResponse"
                 }
               }
             }
@@ -23005,6 +23276,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-11",
                   "2026-09-09",
                   "2026-08-19",
                   "2026-06-15"
@@ -23019,7 +23291,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-09`\n- `agentic_plus`: `2026-08-19`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-09`\n- `agentic_plus`: `2026-09-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -30406,6 +30678,48 @@
         "title": "DataSinkCreate",
         "description": "Schema for creating a data sink."
       },
+      "DataSinkQueryResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/DataSink"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "DataSinkQueryResponse",
+        "description": "Paginated list of data sinks."
+      },
       "DataSinkUpdate": {
         "properties": {
           "name": {
@@ -31989,6 +32303,48 @@
         ],
         "title": "ExtractAgentCreate",
         "description": "Settings for creating an extraction agent."
+      },
+      "ExtractAgentQueryResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ExtractAgent"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "ExtractAgentQueryResponse",
+        "description": "Paginated list of extraction agents."
       },
       "ExtractAgentUpdate": {
         "properties": {
@@ -36037,6 +36393,17 @@
       },
       "FormField": {
         "properties": {
+          "grounding": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormFieldGrounding"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Optional source-backed grounding for enriched Forms text"
+          },
           "type": {
             "type": "string",
             "const": "field",
@@ -36163,6 +36530,46 @@
         "title": "FormField",
         "description": "One labeled form entry: a text input, checkbox, select group, or signature line."
       },
+      "FormFieldGrounding": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormTextGrounding"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Printed identifier grounding"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormTextGrounding"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Printed label grounding"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormTextGrounding"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "String value grounding"
+          }
+        },
+        "type": "object",
+        "title": "FormFieldGrounding",
+        "description": "Optional grounding for a field's printed text; boolean states have no text spans."
+      },
       "FormListItem": {
         "properties": {
           "type": {
@@ -36237,6 +36644,17 @@
       },
       "FormSection": {
         "properties": {
+          "grounding": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormSectionGrounding"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Optional source-backed grounding for enriched Forms text"
+          },
           "type": {
             "type": "string",
             "const": "section",
@@ -36302,8 +36720,48 @@
         "title": "FormSection",
         "description": "A grouping of form content, in the form's reading order."
       },
+      "FormSectionGrounding": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormTextGrounding"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Printed identifier grounding"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormTextGrounding"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Printed label grounding"
+          }
+        },
+        "type": "object",
+        "title": "FormSectionGrounding",
+        "description": "Optional grounding for printed identifiers and headings."
+      },
       "FormTable": {
         "properties": {
+          "grounding": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormTableGrounding"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Optional source-backed grounding for enriched Forms text"
+          },
           "type": {
             "type": "string",
             "const": "table",
@@ -36430,6 +36888,86 @@
         "title": "FormTableCellItems",
         "description": "A table cell holding its own form nodes (e.g. a checkbox column)."
       },
+      "FormTableGrounding": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormTextGrounding"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Printed identifier grounding"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormTextGrounding"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Printed label grounding"
+          },
+          "columns": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/FormTextGrounding"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Columns",
+            "description": "Column text grounding in source order; blank slots have empty lines"
+          },
+          "rows": {
+            "anyOf": [
+              {
+                "items": {
+                  "items": {
+                    "$ref": "#/components/schemas/FormTextGrounding"
+                  },
+                  "type": "array"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows",
+            "description": "Scalar cell text grounding aligned with rows; blank and structured slots have empty lines. Structured children carry their own grounding."
+          }
+        },
+        "type": "object",
+        "title": "FormTableGrounding",
+        "description": "Scalar text grounding aligned with the table's columns and ragged rows."
+      },
+      "FormTextGrounding": {
+        "properties": {
+          "lines": {
+            "items": {
+              "$ref": "#/components/schemas/GroundedLine"
+            },
+            "type": "array",
+            "title": "Lines",
+            "description": "Supported lines. Word requests include supported words; gaps are valid. Boxes use final page coordinates and optional local rotation r."
+          }
+        },
+        "type": "object",
+        "required": [
+          "lines"
+        ],
+        "title": "FormTextGrounding",
+        "description": "Supported text with half-open UTF-8 byte spans into the complete property string."
+      },
       "FormsResult": {
         "properties": {
           "pages": {
@@ -36485,6 +37023,21 @@
             ],
             "title": "Page Height",
             "description": "Height of the page in points"
+          },
+          "detected_form_types": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Detected Form Types",
+            "description": "Form types detected on the page (e.g. 'w2', 'other'), or null if not a form"
           },
           "forms": {
             "items": {
@@ -36637,6 +37190,81 @@
         },
         "type": "object",
         "title": "GeminiEmbeddingConfig"
+      },
+      "GroundedLine": {
+        "properties": {
+          "span": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Span",
+            "description": "`[start, end)` UTF-8 byte span in the complete source property string"
+          },
+          "bbox": {
+            "$ref": "#/components/schemas/BBox",
+            "description": "Line bounding box"
+          },
+          "words": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/GroundedWord"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Words",
+            "description": "Per-word grounding within the line, when available"
+          }
+        },
+        "type": "object",
+        "required": [
+          "span",
+          "bbox"
+        ],
+        "title": "GroundedLine",
+        "description": "One grounded line of text with an optional per-word breakdown."
+      },
+      "GroundedWord": {
+        "properties": {
+          "span": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Span",
+            "description": "`[start, end)` UTF-8 byte span in the complete source property string"
+          },
+          "bbox": {
+            "$ref": "#/components/schemas/BBox",
+            "description": "Word bounding box"
+          }
+        },
+        "type": "object",
+        "required": [
+          "span",
+          "bbox"
+        ],
+        "title": "GroundedWord",
+        "description": "One grounded word: a `[start, end)` span in the source text and its bbox."
       },
       "HTTPValidationError": {
         "properties": {
@@ -42366,6 +42994,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-11",
                   "2026-09-09",
                   "2026-08-19",
                   "2026-06-15"
@@ -42377,7 +43006,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-09`\n- `agentic_plus`: `2026-08-19`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-09`\n- `agentic_plus`: `2026-09-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -42702,6 +43331,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-11",
                   "2026-09-09",
                   "2026-08-19",
                   "2026-06-15"
@@ -42713,7 +43343,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-09`\n- `agentic_plus`: `2026-08-19`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-09`\n- `agentic_plus`: `2026-09-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -42910,6 +43540,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-09-11",
                 "2026-08-19",
                 "2026-07-08",
                 "2026-06-18",

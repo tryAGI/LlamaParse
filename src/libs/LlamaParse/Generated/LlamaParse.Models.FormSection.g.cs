@@ -9,6 +9,12 @@ namespace LlamaParse
     public sealed partial class FormSection
     {
         /// <summary>
+        /// Optional source-backed grounding for enriched Forms text
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("grounding")]
+        public global::LlamaParse.FormSectionGrounding? Grounding { get; set; }
+
+        /// <summary>
         /// Form section node<br/>
         /// Default Value: section
         /// </summary>
@@ -46,6 +52,9 @@ namespace LlamaParse
         /// <param name="items">
         /// Child form nodes in reading order
         /// </param>
+        /// <param name="grounding">
+        /// Optional source-backed grounding for enriched Forms text
+        /// </param>
         /// <param name="type">
         /// Form section node<br/>
         /// Default Value: section
@@ -61,10 +70,12 @@ namespace LlamaParse
 #endif
         public FormSection(
             global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem3> items,
+            global::LlamaParse.FormSectionGrounding? grounding,
             string? type,
             string? id,
             string? label)
         {
+            this.Grounding = grounding;
             this.Type = type;
             this.Id = id;
             this.Label = label;

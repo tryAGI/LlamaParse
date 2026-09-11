@@ -159,7 +159,7 @@ namespace LlamaParse
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("pipeline_type", pipelineType?.ToString())
+                                .AddOptionalParameter("pipeline_type", pipelineType?.ToValueString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
                                 ;

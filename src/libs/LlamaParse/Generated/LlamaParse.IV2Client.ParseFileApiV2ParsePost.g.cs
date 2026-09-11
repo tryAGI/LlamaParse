@@ -94,7 +94,7 @@ namespace LlamaParse
         /// - `fast`: `2026-06-15`<br/>
         /// - `cost_effective`: `2026-08-19`<br/>
         /// - `agentic`: `2026-09-09`<br/>
-        /// - `agentic_plus`: `2026-08-19`<br/>
+        /// - `agentic_plus`: `2026-09-11`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="clientName">
