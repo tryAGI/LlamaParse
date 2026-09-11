@@ -9,6 +9,12 @@ namespace LlamaParse
     public sealed partial class FormTable
     {
         /// <summary>
+        /// Optional source-backed grounding for enriched Forms text
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("grounding")]
+        public global::LlamaParse.FormTableGrounding? Grounding { get; set; }
+
+        /// <summary>
         /// Form table node<br/>
         /// Default Value: table
         /// </summary>
@@ -58,6 +64,9 @@ namespace LlamaParse
         /// <param name="rows">
         /// Table cells: a verbatim string, null for a printed-but-blank cell, or an object holding the cell's own form nodes
         /// </param>
+        /// <param name="grounding">
+        /// Optional source-backed grounding for enriched Forms text
+        /// </param>
         /// <param name="type">
         /// Form table node<br/>
         /// Default Value: table
@@ -79,12 +88,14 @@ namespace LlamaParse
 #endif
         public FormTable(
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems, object>>> rows,
+            global::LlamaParse.FormTableGrounding? grounding,
             string? type,
             string? id,
             string? label,
             global::System.Collections.Generic.IList<string>? columns,
             global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
         {
+            this.Grounding = grounding;
             this.Type = type;
             this.Id = id;
             this.Label = label;

@@ -189,8 +189,8 @@ namespace LlamaParse
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("type", type?.ToString())
-                                .AddOptionalParameter("types", types?.ToString())
+                                .AddOptionalParameter("type", type?.ToValueString())
+                                .AddOptionalParameter("types", types, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("include_deleted", includeDeleted?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())

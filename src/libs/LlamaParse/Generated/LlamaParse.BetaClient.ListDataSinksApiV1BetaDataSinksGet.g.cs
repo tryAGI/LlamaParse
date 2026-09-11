@@ -3,11 +3,11 @@
 
 namespace LlamaParse
 {
-    public partial class DataSinksClient
+    public partial class BetaClient
     {
 
 
-        private static readonly global::LlamaParse.EndPointSecurityRequirement s_ListDataSinksApiV1DataSinksGetSecurityRequirement0 =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_ListDataSinksApiV1BetaDataSinksGetSecurityRequirement0 =
             new global::LlamaParse.EndPointSecurityRequirement
             {
                 Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
@@ -21,48 +21,71 @@ namespace LlamaParse
                     },
                 },
             };
-        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_ListDataSinksApiV1DataSinksGetSecurityRequirements =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_ListDataSinksApiV1BetaDataSinksGetSecurityRequirements =
             new global::LlamaParse.EndPointSecurityRequirement[]
-            {                s_ListDataSinksApiV1DataSinksGetSecurityRequirement0,
+            {                s_ListDataSinksApiV1BetaDataSinksGetSecurityRequirement0,
             };
-        partial void PrepareListDataSinksApiV1DataSinksGetArguments(
+        partial void PrepareListDataSinksApiV1BetaDataSinksGetArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref int? pageSize,
+            ref string? pageToken,
+            ref bool? includeTotal,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
-        partial void PrepareListDataSinksApiV1DataSinksGetRequest(
+        partial void PrepareListDataSinksApiV1BetaDataSinksGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? pageSize,
+            string? pageToken,
+            bool? includeTotal,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
-        partial void ProcessListDataSinksApiV1DataSinksGetResponse(
+        partial void ProcessListDataSinksApiV1BetaDataSinksGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListDataSinksApiV1DataSinksGetResponseContent(
+        partial void ProcessListDataSinksApiV1BetaDataSinksGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
         /// List Data Sinks<br/>
-        /// List data sinks for a given project.
+        /// List the data sinks in a project, newest first.
         /// </summary>
+        /// <param name="pageSize">
+        /// Number of items per page<br/>
+        /// Default Value: 50
+        /// </param>
+        /// <param name="pageToken">
+        /// Cursor from the previous page's `next_page_token`.
+        /// </param>
+        /// <param name="includeTotal">
+        /// Return `total_size`, a count of every row matching the filter. It is a second query on every page, so it is off unless asked for.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LlamaParse.DataSink>> ListDataSinksApiV1DataSinksGetAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.DataSinkQueryResponse> ListDataSinksApiV1BetaDataSinksGetAsync(
+            int? pageSize = default,
+            string? pageToken = default,
+            bool? includeTotal = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ListDataSinksApiV1DataSinksGetAsResponseAsync(
+            var __response = await ListDataSinksApiV1BetaDataSinksGetAsResponseAsync(
+                pageSize: pageSize,
+                pageToken: pageToken,
+                includeTotal: includeTotal,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -74,15 +97,29 @@ namespace LlamaParse
         }
         /// <summary>
         /// List Data Sinks<br/>
-        /// List data sinks for a given project.
+        /// List the data sinks in a project, newest first.
         /// </summary>
+        /// <param name="pageSize">
+        /// Number of items per page<br/>
+        /// Default Value: 50
+        /// </param>
+        /// <param name="pageToken">
+        /// Cursor from the previous page's `next_page_token`.
+        /// </param>
+        /// <param name="includeTotal">
+        /// Return `total_size`, a count of every row matching the filter. It is a second query on every page, so it is off unless asked for.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.DataSink>>> ListDataSinksApiV1DataSinksGetAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DataSinkQueryResponse>> ListDataSinksApiV1BetaDataSinksGetAsResponseAsync(
+            int? pageSize = default,
+            string? pageToken = default,
+            bool? includeTotal = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -91,8 +128,11 @@ namespace LlamaParse
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListDataSinksApiV1DataSinksGetArguments(
+            PrepareListDataSinksApiV1BetaDataSinksGetArguments(
                 httpClient: HttpClient,
+                pageSize: ref pageSize,
+                pageToken: ref pageToken,
+                includeTotal: ref includeTotal,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -100,8 +140,8 @@ namespace LlamaParse
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListDataSinksApiV1DataSinksGetSecurityRequirements,
-                operationName: "ListDataSinksApiV1DataSinksGetAsync");
+                securityRequirements: s_ListDataSinksApiV1BetaDataSinksGetSecurityRequirements,
+                operationName: "ListDataSinksApiV1BetaDataSinksGetAsync");
 
             using var __timeoutCancellationTokenSource = global::LlamaParse.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -121,9 +161,12 @@ namespace LlamaParse
             {
 
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: "/api/v1/data-sinks",
+                                path: "/api/v1/beta/data-sinks",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("page_token", pageToken)
+                                .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -176,9 +219,12 @@ namespace LlamaParse
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListDataSinksApiV1DataSinksGetRequest(
+                PrepareListDataSinksApiV1BetaDataSinksGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    pageSize: pageSize,
+                    pageToken: pageToken,
+                    includeTotal: includeTotal,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -198,9 +244,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListDataSinksApiV1DataSinksGet",
-                                methodName: "ListDataSinksApiV1DataSinksGetAsync",
-                                pathTemplate: "\"/api/v1/data-sinks\"",
+                                operationId: "ListDataSinksApiV1BetaDataSinksGet",
+                                methodName: "ListDataSinksApiV1BetaDataSinksGetAsync",
+                                pathTemplate: "\"/api/v1/beta/data-sinks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -232,9 +278,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListDataSinksApiV1DataSinksGet",
-                                methodName: "ListDataSinksApiV1DataSinksGetAsync",
-                                pathTemplate: "\"/api/v1/data-sinks\"",
+                                operationId: "ListDataSinksApiV1BetaDataSinksGet",
+                                methodName: "ListDataSinksApiV1BetaDataSinksGetAsync",
+                                pathTemplate: "\"/api/v1/beta/data-sinks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -273,9 +319,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListDataSinksApiV1DataSinksGet",
-                                methodName: "ListDataSinksApiV1DataSinksGetAsync",
-                                pathTemplate: "\"/api/v1/data-sinks\"",
+                                operationId: "ListDataSinksApiV1BetaDataSinksGet",
+                                methodName: "ListDataSinksApiV1BetaDataSinksGetAsync",
+                                pathTemplate: "\"/api/v1/beta/data-sinks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -313,7 +359,7 @@ namespace LlamaParse
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListDataSinksApiV1DataSinksGetResponse(
+                ProcessListDataSinksApiV1BetaDataSinksGetResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -321,9 +367,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListDataSinksApiV1DataSinksGet",
-                                methodName: "ListDataSinksApiV1DataSinksGetAsync",
-                                pathTemplate: "\"/api/v1/data-sinks\"",
+                                operationId: "ListDataSinksApiV1BetaDataSinksGet",
+                                methodName: "ListDataSinksApiV1BetaDataSinksGetAsync",
+                                pathTemplate: "\"/api/v1/beta/data-sinks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -343,9 +389,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListDataSinksApiV1DataSinksGet",
-                                methodName: "ListDataSinksApiV1DataSinksGetAsync",
-                                pathTemplate: "\"/api/v1/data-sinks\"",
+                                operationId: "ListDataSinksApiV1BetaDataSinksGet",
+                                methodName: "ListDataSinksApiV1BetaDataSinksGetAsync",
+                                pathTemplate: "\"/api/v1/beta/data-sinks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -410,7 +456,7 @@ namespace LlamaParse
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListDataSinksApiV1DataSinksGetResponseContent(
+                                ProcessListDataSinksApiV1BetaDataSinksGetResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -419,9 +465,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LlamaParse.DataSink>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LlamaParse.DataSink>), JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.DataSinkQueryResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.DataSink>>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DataSinkQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -451,9 +497,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LlamaParse.DataSink>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LlamaParse.DataSink>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.DataSinkQueryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.DataSink>>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.DataSinkQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

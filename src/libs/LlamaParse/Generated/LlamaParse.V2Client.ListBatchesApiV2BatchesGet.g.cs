@@ -178,7 +178,7 @@ namespace LlamaParse
                                 .AddOptionalParameter("page_token", pageToken)
                                 .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
                                 .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("source_directory_id", sourceDirectoryId)
                                 ;
                             var __path = __pathBuilder.ToString();

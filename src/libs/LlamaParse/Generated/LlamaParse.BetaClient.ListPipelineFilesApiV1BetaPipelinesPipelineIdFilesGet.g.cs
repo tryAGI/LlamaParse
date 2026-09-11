@@ -194,7 +194,7 @@ namespace LlamaParse
                             __pathBuilder
                                 .AddOptionalParameter("data_source_id", dataSourceId?.ToString())
                                 .AddOptionalParameter("file_name_contains", fileNameContains)
-                                .AddOptionalParameter("statuses", statuses?.ToString())
+                                .AddOptionalParameter("statuses", statuses, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
                                 .AddOptionalParameter("project_id", projectId?.ToString())

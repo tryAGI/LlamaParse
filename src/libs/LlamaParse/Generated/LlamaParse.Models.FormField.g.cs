@@ -9,6 +9,12 @@ namespace LlamaParse
     public sealed partial class FormField
     {
         /// <summary>
+        /// Optional source-backed grounding for enriched Forms text
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("grounding")]
+        public global::LlamaParse.FormFieldGrounding? Grounding { get; set; }
+
+        /// <summary>
         /// Form field node<br/>
         /// Default Value: field
         /// </summary>
@@ -72,6 +78,9 @@ namespace LlamaParse
         /// <param name="field">
         /// Kind of entry: text (any free-text input), checkbox, single_select, multi_select, or signature
         /// </param>
+        /// <param name="grounding">
+        /// Optional source-backed grounding for enriched Forms text
+        /// </param>
         /// <param name="type">
         /// Form field node<br/>
         /// Default Value: field
@@ -99,6 +108,7 @@ namespace LlamaParse
 #endif
         public FormField(
             global::LlamaParse.FormFieldField field,
+            global::LlamaParse.FormFieldGrounding? grounding,
             string? type,
             string? id,
             string? label,
@@ -107,6 +117,7 @@ namespace LlamaParse
             global::System.Collections.Generic.IList<global::LlamaParse.ValueItemsVariant1Item>? valueItems,
             global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
         {
+            this.Grounding = grounding;
             this.Type = type;
             this.Field = field;
             this.Id = id;
