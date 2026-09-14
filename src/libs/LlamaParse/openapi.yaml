@@ -17226,6 +17226,7 @@
         "summary": "List Webhook Configs",
         "description": "List the webhook configurations for the current project, newest first.",
         "operationId": "list_webhook_configs_api_v1_beta_webhook_configs_get",
+        "deprecated": true,
         "security": [
           {
             "HTTPBearer": []
@@ -21295,6 +21296,140 @@
         }
       }
     },
+    "/api/v2/webhook-configs": {
+      "get": {
+        "tags": [
+          "V2",
+          "Webhook Configs"
+        ],
+        "summary": "Query Webhook Configs",
+        "description": "List the webhook configurations for the current project, newest first.",
+        "operationId": "query_webhook_configs_api_v2_webhook_configs_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "description": "Number of items per page",
+              "default": 50,
+              "title": "Page Size"
+            },
+            "description": "Number of items per page"
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Cursor from the previous page's `next_page_token`.",
+              "title": "Page Token"
+            },
+            "description": "Cursor from the previous page's `next_page_token`."
+          },
+          {
+            "name": "include_total",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Return `total_size`, a count of every row matching the filter. It is a second query on every page, so it is off unless asked for.",
+              "default": false,
+              "title": "Include Total"
+            },
+            "description": "Return `total_size`, a count of every row matching the filter. It is a second query on every page, so it is off unless asked for."
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookConfigQueryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v2/projects": {
       "get": {
         "tags": [
@@ -23276,8 +23411,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-13",
                   "2026-09-11",
-                  "2026-09-09",
                   "2026-08-19",
                   "2026-06-15"
                 ],
@@ -23291,7 +23426,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-09`\n- `agentic_plus`: `2026-09-11`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-13`\n- `agentic_plus`: `2026-09-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -42994,8 +43129,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-13",
                   "2026-09-11",
-                  "2026-09-09",
                   "2026-08-19",
                   "2026-06-15"
                 ],
@@ -43006,7 +43141,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-09`\n- `agentic_plus`: `2026-09-11`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-13`\n- `agentic_plus`: `2026-09-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -43331,8 +43466,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-13",
                   "2026-09-11",
-                  "2026-09-09",
                   "2026-08-19",
                   "2026-06-15"
                 ],
@@ -43343,7 +43478,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-09`\n- `agentic_plus`: `2026-09-11`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-13`\n- `agentic_plus`: `2026-09-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -43484,6 +43619,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-09-13",
                 "2026-09-09",
                 "2026-09-07",
                 "2026-08-19",
@@ -49915,6 +50051,48 @@
         ],
         "title": "WebhookConfigCreateRequest",
         "description": "Request to create a stored webhook configuration.\n\nThe owning tenant is taken from the request context (e.g. the project in the\npath), not the body."
+      },
+      "WebhookConfigQueryResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/WebhookConfigResponse"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "WebhookConfigQueryResponse",
+        "description": "A page of webhook configurations."
       },
       "WebhookConfigResponse": {
         "properties": {
