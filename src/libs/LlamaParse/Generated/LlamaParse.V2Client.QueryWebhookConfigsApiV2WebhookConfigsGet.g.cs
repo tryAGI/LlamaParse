@@ -3,11 +3,11 @@
 
 namespace LlamaParse
 {
-    public partial class BetaClient
+    public partial class V2Client
     {
 
 
-        private static readonly global::LlamaParse.EndPointSecurityRequirement s_ListWebhookConfigsApiV1BetaWebhookConfigsGetSecurityRequirement0 =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_QueryWebhookConfigsApiV2WebhookConfigsGetSecurityRequirement0 =
             new global::LlamaParse.EndPointSecurityRequirement
             {
                 Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
@@ -21,50 +21,73 @@ namespace LlamaParse
                     },
                 },
             };
-        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_ListWebhookConfigsApiV1BetaWebhookConfigsGetSecurityRequirements =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_QueryWebhookConfigsApiV2WebhookConfigsGetSecurityRequirements =
             new global::LlamaParse.EndPointSecurityRequirement[]
-            {                s_ListWebhookConfigsApiV1BetaWebhookConfigsGetSecurityRequirement0,
+            {                s_QueryWebhookConfigsApiV2WebhookConfigsGetSecurityRequirement0,
             };
-        partial void PrepareListWebhookConfigsApiV1BetaWebhookConfigsGetArguments(
+        partial void PrepareQueryWebhookConfigsApiV2WebhookConfigsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
+            ref int? pageSize,
+            ref string? pageToken,
+            ref bool? includeTotal,
             ref string? session);
-        partial void PrepareListWebhookConfigsApiV1BetaWebhookConfigsGetRequest(
+        partial void PrepareQueryWebhookConfigsApiV2WebhookConfigsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
+            int? pageSize,
+            string? pageToken,
+            bool? includeTotal,
             string? session);
-        partial void ProcessListWebhookConfigsApiV1BetaWebhookConfigsGetResponse(
+        partial void ProcessQueryWebhookConfigsApiV2WebhookConfigsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListWebhookConfigsApiV1BetaWebhookConfigsGetResponseContent(
+        partial void ProcessQueryWebhookConfigsApiV2WebhookConfigsGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List Webhook Configs<br/>
+        /// Query Webhook Configs<br/>
         /// List the webhook configurations for the current project, newest first.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
+        /// <param name="pageSize">
+        /// Number of items per page<br/>
+        /// Default Value: 50
+        /// </param>
+        /// <param name="pageToken">
+        /// Cursor from the previous page's `next_page_token`.
+        /// </param>
+        /// <param name="includeTotal">
+        /// Return `total_size`, a count of every row matching the filter. It is a second query on every page, so it is off unless asked for.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponse>> ListWebhookConfigsApiV1BetaWebhookConfigsGetAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.WebhookConfigQueryResponse> QueryWebhookConfigsApiV2WebhookConfigsGetAsync(
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
+            int? pageSize = default,
+            string? pageToken = default,
+            bool? includeTotal = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ListWebhookConfigsApiV1BetaWebhookConfigsGetAsResponseAsync(
+            var __response = await QueryWebhookConfigsApiV2WebhookConfigsGetAsResponseAsync(
                 projectId: projectId,
                 organizationId: organizationId,
+                pageSize: pageSize,
+                pageToken: pageToken,
+                includeTotal: includeTotal,
                 session: session,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -73,35 +96,52 @@ namespace LlamaParse
             return __response.Body;
         }
         /// <summary>
-        /// List Webhook Configs<br/>
+        /// Query Webhook Configs<br/>
         /// List the webhook configurations for the current project, newest first.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
+        /// <param name="pageSize">
+        /// Number of items per page<br/>
+        /// Default Value: 50
+        /// </param>
+        /// <param name="pageToken">
+        /// Cursor from the previous page's `next_page_token`.
+        /// </param>
+        /// <param name="includeTotal">
+        /// Return `total_size`, a count of every row matching the filter. It is a second query on every page, so it is off unless asked for.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponse>>> ListWebhookConfigsApiV1BetaWebhookConfigsGetAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.WebhookConfigQueryResponse>> QueryWebhookConfigsApiV2WebhookConfigsGetAsResponseAsync(
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
+            int? pageSize = default,
+            string? pageToken = default,
+            bool? includeTotal = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListWebhookConfigsApiV1BetaWebhookConfigsGetArguments(
+            PrepareQueryWebhookConfigsApiV2WebhookConfigsGetArguments(
                 httpClient: HttpClient,
                 projectId: projectId,
                 organizationId: organizationId,
+                pageSize: ref pageSize,
+                pageToken: ref pageToken,
+                includeTotal: ref includeTotal,
                 session: ref session);
 
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListWebhookConfigsApiV1BetaWebhookConfigsGetSecurityRequirements,
-                operationName: "ListWebhookConfigsApiV1BetaWebhookConfigsGetAsync");
+                securityRequirements: s_QueryWebhookConfigsApiV2WebhookConfigsGetSecurityRequirements,
+                operationName: "QueryWebhookConfigsApiV2WebhookConfigsGetAsync");
 
             using var __timeoutCancellationTokenSource = global::LlamaParse.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -121,11 +161,14 @@ namespace LlamaParse
             {
 
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: "/api/v1/beta/webhook-configs",
+                                path: "/api/v2/webhook-configs",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("page_token", pageToken)
+                                .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LlamaParse.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -176,11 +219,14 @@ namespace LlamaParse
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListWebhookConfigsApiV1BetaWebhookConfigsGetRequest(
+                PrepareQueryWebhookConfigsApiV2WebhookConfigsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     projectId: projectId,
                     organizationId: organizationId,
+                    pageSize: pageSize,
+                    pageToken: pageToken,
+                    includeTotal: includeTotal,
                     session: session);
 
                 return __httpRequest;
@@ -198,9 +244,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListWebhookConfigsApiV1BetaWebhookConfigsGet",
-                                methodName: "ListWebhookConfigsApiV1BetaWebhookConfigsGetAsync",
-                                pathTemplate: "\"/api/v1/beta/webhook-configs\"",
+                                operationId: "QueryWebhookConfigsApiV2WebhookConfigsGet",
+                                methodName: "QueryWebhookConfigsApiV2WebhookConfigsGetAsync",
+                                pathTemplate: "\"/api/v2/webhook-configs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -232,9 +278,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListWebhookConfigsApiV1BetaWebhookConfigsGet",
-                                methodName: "ListWebhookConfigsApiV1BetaWebhookConfigsGetAsync",
-                                pathTemplate: "\"/api/v1/beta/webhook-configs\"",
+                                operationId: "QueryWebhookConfigsApiV2WebhookConfigsGet",
+                                methodName: "QueryWebhookConfigsApiV2WebhookConfigsGetAsync",
+                                pathTemplate: "\"/api/v2/webhook-configs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -273,9 +319,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListWebhookConfigsApiV1BetaWebhookConfigsGet",
-                                methodName: "ListWebhookConfigsApiV1BetaWebhookConfigsGetAsync",
-                                pathTemplate: "\"/api/v1/beta/webhook-configs\"",
+                                operationId: "QueryWebhookConfigsApiV2WebhookConfigsGet",
+                                methodName: "QueryWebhookConfigsApiV2WebhookConfigsGetAsync",
+                                pathTemplate: "\"/api/v2/webhook-configs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -313,7 +359,7 @@ namespace LlamaParse
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListWebhookConfigsApiV1BetaWebhookConfigsGetResponse(
+                ProcessQueryWebhookConfigsApiV2WebhookConfigsGetResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -321,9 +367,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListWebhookConfigsApiV1BetaWebhookConfigsGet",
-                                methodName: "ListWebhookConfigsApiV1BetaWebhookConfigsGetAsync",
-                                pathTemplate: "\"/api/v1/beta/webhook-configs\"",
+                                operationId: "QueryWebhookConfigsApiV2WebhookConfigsGet",
+                                methodName: "QueryWebhookConfigsApiV2WebhookConfigsGetAsync",
+                                pathTemplate: "\"/api/v2/webhook-configs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -343,9 +389,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListWebhookConfigsApiV1BetaWebhookConfigsGet",
-                                methodName: "ListWebhookConfigsApiV1BetaWebhookConfigsGetAsync",
-                                pathTemplate: "\"/api/v1/beta/webhook-configs\"",
+                                operationId: "QueryWebhookConfigsApiV2WebhookConfigsGet",
+                                methodName: "QueryWebhookConfigsApiV2WebhookConfigsGetAsync",
+                                pathTemplate: "\"/api/v2/webhook-configs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -410,7 +456,7 @@ namespace LlamaParse
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListWebhookConfigsApiV1BetaWebhookConfigsGetResponseContent(
+                                ProcessQueryWebhookConfigsApiV2WebhookConfigsGetResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -419,9 +465,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponse>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponse>), JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.WebhookConfigQueryResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponse>>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.WebhookConfigQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -451,9 +497,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponse>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponse>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.WebhookConfigQueryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponse>>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.WebhookConfigQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
