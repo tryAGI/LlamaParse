@@ -103,15 +103,6 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public JobDashboardClient JobDashboard => new JobDashboardClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
         public LlamaExtractClient LlamaExtract => new LlamaExtractClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,

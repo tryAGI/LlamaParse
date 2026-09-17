@@ -3,11 +3,11 @@
 
 namespace LlamaParse
 {
-    public partial class RetrieversClient
+    public partial class V2Client
     {
 
 
-        private static readonly global::LlamaParse.EndPointSecurityRequirement s_ListRetrieversApiV1RetrieversGetSecurityRequirement0 =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_DeleteClassifyJobApiV2ClassifyJobIdDeleteSecurityRequirement0 =
             new global::LlamaParse.EndPointSecurityRequirement
             {
                 Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
@@ -21,53 +21,55 @@ namespace LlamaParse
                     },
                 },
             };
-        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_ListRetrieversApiV1RetrieversGetSecurityRequirements =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_DeleteClassifyJobApiV2ClassifyJobIdDeleteSecurityRequirements =
             new global::LlamaParse.EndPointSecurityRequirement[]
-            {                s_ListRetrieversApiV1RetrieversGetSecurityRequirement0,
+            {                s_DeleteClassifyJobApiV2ClassifyJobIdDeleteSecurityRequirement0,
             };
-        partial void PrepareListRetrieversApiV1RetrieversGetArguments(
+        partial void PrepareDeleteClassifyJobApiV2ClassifyJobIdDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? name,
+            ref string jobId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
-        partial void PrepareListRetrieversApiV1RetrieversGetRequest(
+        partial void PrepareDeleteClassifyJobApiV2ClassifyJobIdDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? name,
+            string jobId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
-        partial void ProcessListRetrieversApiV1RetrieversGetResponse(
+        partial void ProcessDeleteClassifyJobApiV2ClassifyJobIdDeleteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListRetrieversApiV1RetrieversGetResponseContent(
+        partial void ProcessDeleteClassifyJobApiV2ClassifyJobIdDeleteResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List Retrievers<br/>
-        /// List Retrievers for a project.
+        /// Delete Classify Job<br/>
+        /// Delete a classify job and its result.<br/>
+        /// The job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel a job that is still running before deleting it.<br/>
+        /// Returns the identifiers of the deleted job.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="jobId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LlamaParse.Retriever>> ListRetrieversApiV1RetrieversGetAsync(
-            string? name = default,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.ClassifyV2JobDeleteResponse> DeleteClassifyJobApiV2ClassifyJobIdDeleteAsync(
+            string jobId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ListRetrieversApiV1RetrieversGetAsResponseAsync(
-                name: name,
+            var __response = await DeleteClassifyJobApiV2ClassifyJobIdDeleteAsResponseAsync(
+                jobId: jobId,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -78,18 +80,20 @@ namespace LlamaParse
             return __response.Body;
         }
         /// <summary>
-        /// List Retrievers<br/>
-        /// List Retrievers for a project.
+        /// Delete Classify Job<br/>
+        /// Delete a classify job and its result.<br/>
+        /// The job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel a job that is still running before deleting it.<br/>
+        /// Returns the identifiers of the deleted job.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="jobId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.Retriever>>> ListRetrieversApiV1RetrieversGetAsResponseAsync(
-            string? name = default,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyV2JobDeleteResponse>> DeleteClassifyJobApiV2ClassifyJobIdDeleteAsResponseAsync(
+            string jobId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -98,9 +102,9 @@ namespace LlamaParse
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListRetrieversApiV1RetrieversGetArguments(
+            PrepareDeleteClassifyJobApiV2ClassifyJobIdDeleteArguments(
                 httpClient: HttpClient,
-                name: ref name,
+                jobId: ref jobId,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -108,8 +112,8 @@ namespace LlamaParse
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListRetrieversApiV1RetrieversGetSecurityRequirements,
-                operationName: "ListRetrieversApiV1RetrieversGetAsync");
+                securityRequirements: s_DeleteClassifyJobApiV2ClassifyJobIdDeleteSecurityRequirements,
+                operationName: "DeleteClassifyJobApiV2ClassifyJobIdDeleteAsync");
 
             using var __timeoutCancellationTokenSource = global::LlamaParse.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -129,10 +133,9 @@ namespace LlamaParse
             {
 
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: "/api/v1/retrievers",
+                                path: $"/api/v2/classify/{jobId}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -142,7 +145,7 @@ namespace LlamaParse
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Get,
+                    method: global::System.Net.Http.HttpMethod.Delete,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -185,10 +188,10 @@ namespace LlamaParse
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListRetrieversApiV1RetrieversGetRequest(
+                PrepareDeleteClassifyJobApiV2ClassifyJobIdDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    name: name,
+                    jobId: jobId!,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -208,10 +211,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRetrieversApiV1RetrieversGet",
-                                methodName: "ListRetrieversApiV1RetrieversGetAsync",
-                                pathTemplate: "\"/api/v1/retrievers\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteClassifyJobApiV2ClassifyJobIdDelete",
+                                methodName: "DeleteClassifyJobApiV2ClassifyJobIdDeleteAsync",
+                                pathTemplate: "$\"/api/v2/classify/{jobId}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -242,10 +245,10 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRetrieversApiV1RetrieversGet",
-                                methodName: "ListRetrieversApiV1RetrieversGetAsync",
-                                pathTemplate: "\"/api/v1/retrievers\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteClassifyJobApiV2ClassifyJobIdDelete",
+                                methodName: "DeleteClassifyJobApiV2ClassifyJobIdDeleteAsync",
+                                pathTemplate: "$\"/api/v2/classify/{jobId}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -283,10 +286,10 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRetrieversApiV1RetrieversGet",
-                                methodName: "ListRetrieversApiV1RetrieversGetAsync",
-                                pathTemplate: "\"/api/v1/retrievers\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteClassifyJobApiV2ClassifyJobIdDelete",
+                                methodName: "DeleteClassifyJobApiV2ClassifyJobIdDeleteAsync",
+                                pathTemplate: "$\"/api/v2/classify/{jobId}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -323,7 +326,7 @@ namespace LlamaParse
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListRetrieversApiV1RetrieversGetResponse(
+                ProcessDeleteClassifyJobApiV2ClassifyJobIdDeleteResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -331,10 +334,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRetrieversApiV1RetrieversGet",
-                                methodName: "ListRetrieversApiV1RetrieversGetAsync",
-                                pathTemplate: "\"/api/v1/retrievers\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteClassifyJobApiV2ClassifyJobIdDelete",
+                                methodName: "DeleteClassifyJobApiV2ClassifyJobIdDeleteAsync",
+                                pathTemplate: "$\"/api/v2/classify/{jobId}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -353,10 +356,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRetrieversApiV1RetrieversGet",
-                                methodName: "ListRetrieversApiV1RetrieversGetAsync",
-                                pathTemplate: "\"/api/v1/retrievers\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteClassifyJobApiV2ClassifyJobIdDelete",
+                                methodName: "DeleteClassifyJobApiV2ClassifyJobIdDeleteAsync",
+                                pathTemplate: "$\"/api/v2/classify/{jobId}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -420,7 +423,7 @@ namespace LlamaParse
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListRetrieversApiV1RetrieversGetResponseContent(
+                                ProcessDeleteClassifyJobApiV2ClassifyJobIdDeleteResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -429,9 +432,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LlamaParse.Retriever>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LlamaParse.Retriever>), JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.ClassifyV2JobDeleteResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.Retriever>>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyV2JobDeleteResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -461,9 +464,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LlamaParse.Retriever>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LlamaParse.Retriever>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.ClassifyV2JobDeleteResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LlamaParse.Retriever>>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyV2JobDeleteResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

@@ -6,7 +6,12 @@ namespace LlamaParse
     {
         /// <summary>
         /// Create Split Job<br/>
-        /// Create a document split job.
+        /// Create a split job.<br/>
+        /// ## Document input<br/>
+        /// Set `file_input` to a file ID or a completed parse job ID (`pjb-...`). Supplying a parse job reuses its output instead of reading the document again.<br/>
+        /// ## Parse settings<br/>
+        /// `configuration.parse_tier` and `configuration.parse_config_id` control how the document is read before splitting; both are ignored when a parse job is supplied. A parse configuration restricted to a page subset (`target_pages` or `max_pages`) is rejected, since split results always number pages relative to the full document.<br/>
+        /// The job runs asynchronously. Poll `GET /split/jobs/{split_job_id}` or register a webhook to monitor completion.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -25,7 +30,12 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Split Job<br/>
-        /// Create a document split job.
+        /// Create a split job.<br/>
+        /// ## Document input<br/>
+        /// Set `file_input` to a file ID or a completed parse job ID (`pjb-...`). Supplying a parse job reuses its output instead of reading the document again.<br/>
+        /// ## Parse settings<br/>
+        /// `configuration.parse_tier` and `configuration.parse_config_id` control how the document is read before splitting; both are ignored when a parse job is supplied. A parse configuration restricted to a page subset (`target_pages` or `max_pages`) is rejected, since split results always number pages relative to the full document.<br/>
+        /// The job runs asynchronously. Poll `GET /split/jobs/{split_job_id}` or register a webhook to monitor completion.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -44,7 +54,12 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Split Job<br/>
-        /// Create a document split job.
+        /// Create a split job.<br/>
+        /// ## Document input<br/>
+        /// Set `file_input` to a file ID or a completed parse job ID (`pjb-...`). Supplying a parse job reuses its output instead of reading the document again.<br/>
+        /// ## Parse settings<br/>
+        /// `configuration.parse_tier` and `configuration.parse_config_id` control how the document is read before splitting; both are ignored when a parse job is supplied. A parse configuration restricted to a page subset (`target_pages` or `max_pages`) is rejected, since split results always number pages relative to the full document.<br/>
+        /// The job runs asynchronously. Poll `GET /split/jobs/{split_job_id}` or register a webhook to monitor completion.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>

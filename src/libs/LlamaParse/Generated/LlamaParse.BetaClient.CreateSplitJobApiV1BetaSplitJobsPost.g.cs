@@ -537,7 +537,7 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
-            global::LlamaParse.SplitConfiguration? configuration = default,
+            global::LlamaParse.SplitConfigurationBeta? configuration = default,
             string? configurationId = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

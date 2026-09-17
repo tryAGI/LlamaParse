@@ -2,49 +2,43 @@
 
 namespace LlamaParse
 {
-    public partial interface IBetaClient
+    public partial interface IV2Client
     {
         /// <summary>
-        /// Get Webhook Config<br/>
-        /// Get a single webhook configuration by ID.
+        /// Delete Classify Job<br/>
+        /// Delete a classify job and its result.<br/>
+        /// The job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel a job that is still running before deleting it.<br/>
+        /// Returns the identifiers of the deleted job.
         /// </summary>
-        /// <param name="configId"></param>
-        /// <param name="tenantType">
-        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
-        /// Default Value: project
-        /// </param>
+        /// <param name="jobId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.WebhookConfigResponse> GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetAsync(
-            string configId,
-            global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType? tenantType = default,
+        global::System.Threading.Tasks.Task<global::LlamaParse.ClassifyV2JobDeleteResponse> DeleteClassifyJobApiV2ClassifyJobIdDeleteAsync(
+            string jobId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Webhook Config<br/>
-        /// Get a single webhook configuration by ID.
+        /// Delete Classify Job<br/>
+        /// Delete a classify job and its result.<br/>
+        /// The job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel a job that is still running before deleting it.<br/>
+        /// Returns the identifiers of the deleted job.
         /// </summary>
-        /// <param name="configId"></param>
-        /// <param name="tenantType">
-        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
-        /// Default Value: project
-        /// </param>
+        /// <param name="jobId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.WebhookConfigResponse>> GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetAsResponseAsync(
-            string configId,
-            global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType? tenantType = default,
+        global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyV2JobDeleteResponse>> DeleteClassifyJobApiV2ClassifyJobIdDeleteAsResponseAsync(
+            string jobId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,

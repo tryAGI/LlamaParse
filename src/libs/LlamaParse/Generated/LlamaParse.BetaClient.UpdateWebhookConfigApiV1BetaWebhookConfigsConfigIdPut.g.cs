@@ -28,6 +28,7 @@ namespace LlamaParse
         partial void PrepareUpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string configId,
+            ref global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType? tenantType,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session,
@@ -36,6 +37,7 @@ namespace LlamaParse
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string configId,
+            global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType? tenantType,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session,
@@ -54,6 +56,10 @@ namespace LlamaParse
         /// Update a webhook configuration. Only fields present in the request change.
         /// </summary>
         /// <param name="configId"></param>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -65,6 +71,7 @@ namespace LlamaParse
             string configId,
 
             global::LlamaParse.WebhookConfigUpdateRequest request,
+            global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -75,6 +82,7 @@ namespace LlamaParse
                 configId: configId,
 
                 request: request,
+                tenantType: tenantType,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -89,6 +97,10 @@ namespace LlamaParse
         /// Update a webhook configuration. Only fields present in the request change.
         /// </summary>
         /// <param name="configId"></param>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -100,6 +112,7 @@ namespace LlamaParse
             string configId,
 
             global::LlamaParse.WebhookConfigUpdateRequest request,
+            global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -113,6 +126,7 @@ namespace LlamaParse
             PrepareUpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutArguments(
                 httpClient: HttpClient,
                 configId: ref configId,
+                tenantType: ref tenantType,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session,
@@ -145,6 +159,7 @@ namespace LlamaParse
                                 path: $"/api/v1/beta/webhook-configs/{configId}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("tenant_type", tenantType?.ToValueString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -207,6 +222,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     configId: configId!,
+                    tenantType: tenantType,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session,
@@ -527,6 +543,10 @@ namespace LlamaParse
         /// Update a webhook configuration. Only fields present in the request change.
         /// </summary>
         /// <param name="configId"></param>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -550,6 +570,7 @@ namespace LlamaParse
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.WebhookConfigResponse> UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutAsync(
             string configId,
+            global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -572,6 +593,7 @@ namespace LlamaParse
 
             return await UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutAsync(
                 configId: configId,
+                tenantType: tenantType,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,

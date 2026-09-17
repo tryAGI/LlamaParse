@@ -8,6 +8,10 @@ namespace LlamaParse
         /// Create Webhook Config<br/>
         /// Create a reusable webhook configuration for the current project.
         /// </summary>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -18,6 +22,7 @@ namespace LlamaParse
         global::System.Threading.Tasks.Task<global::LlamaParse.WebhookConfigResponse> CreateWebhookConfigApiV1BetaWebhookConfigsPostAsync(
 
             global::LlamaParse.WebhookConfigCreateRequest request,
+            global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -27,6 +32,10 @@ namespace LlamaParse
         /// Create Webhook Config<br/>
         /// Create a reusable webhook configuration for the current project.
         /// </summary>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -37,6 +46,7 @@ namespace LlamaParse
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.WebhookConfigResponse>> CreateWebhookConfigApiV1BetaWebhookConfigsPostAsResponseAsync(
 
             global::LlamaParse.WebhookConfigCreateRequest request,
+            global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -46,6 +56,10 @@ namespace LlamaParse
         /// Create Webhook Config<br/>
         /// Create a reusable webhook configuration for the current project.
         /// </summary>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -69,6 +83,7 @@ namespace LlamaParse
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.WebhookConfigResponse> CreateWebhookConfigApiV1BetaWebhookConfigsPostAsync(
             string webhookUrl,
+            global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,

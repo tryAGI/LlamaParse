@@ -2,7 +2,7 @@
 
 namespace LlamaParse
 {
-    public sealed partial class JobDataPoint
+    public sealed partial class ClassifyV2JobDeleteResponse
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace LlamaParse
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LlamaParse.JobDataPoint? FromJson(
+        public static global::LlamaParse.ClassifyV2JobDeleteResponse? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LlamaParse.JobDataPoint),
-                jsonSerializerContext) as global::LlamaParse.JobDataPoint;
+                typeof(global::LlamaParse.ClassifyV2JobDeleteResponse),
+                jsonSerializerContext) as global::LlamaParse.ClassifyV2JobDeleteResponse;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::LlamaParse.JobDataPoint? FromJson(
+        public static global::LlamaParse.ClassifyV2JobDeleteResponse? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LlamaParse.JobDataPoint? FromJson(
+        public static global::LlamaParse.ClassifyV2JobDeleteResponse? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace LlamaParse
                     global::LlamaParse.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.JobDataPoint>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LlamaParse.ClassifyV2JobDeleteResponse>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace LlamaParse
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LlamaParse.JobDataPoint?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::LlamaParse.ClassifyV2JobDeleteResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LlamaParse.JobDataPoint),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LlamaParse.JobDataPoint;
+                typeof(global::LlamaParse.ClassifyV2JobDeleteResponse),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LlamaParse.ClassifyV2JobDeleteResponse;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.JobDataPoint?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.ClassifyV2JobDeleteResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.JobDataPoint?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LlamaParse.ClassifyV2JobDeleteResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace LlamaParse
                     global::LlamaParse.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LlamaParse.JobDataPoint?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LlamaParse.ClassifyV2JobDeleteResponse?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

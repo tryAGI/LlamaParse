@@ -27,6 +27,7 @@ namespace LlamaParse
             };
         partial void PrepareCreateWebhookConfigApiV1BetaWebhookConfigsPostArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType? tenantType,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session,
@@ -34,6 +35,7 @@ namespace LlamaParse
         partial void PrepareCreateWebhookConfigApiV1BetaWebhookConfigsPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType? tenantType,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session,
@@ -51,6 +53,10 @@ namespace LlamaParse
         /// Create Webhook Config<br/>
         /// Create a reusable webhook configuration for the current project.
         /// </summary>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -61,6 +67,7 @@ namespace LlamaParse
         public async global::System.Threading.Tasks.Task<global::LlamaParse.WebhookConfigResponse> CreateWebhookConfigApiV1BetaWebhookConfigsPostAsync(
 
             global::LlamaParse.WebhookConfigCreateRequest request,
+            global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -70,6 +77,7 @@ namespace LlamaParse
             var __response = await CreateWebhookConfigApiV1BetaWebhookConfigsPostAsResponseAsync(
 
                 request: request,
+                tenantType: tenantType,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -83,6 +91,10 @@ namespace LlamaParse
         /// Create Webhook Config<br/>
         /// Create a reusable webhook configuration for the current project.
         /// </summary>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -93,6 +105,7 @@ namespace LlamaParse
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.WebhookConfigResponse>> CreateWebhookConfigApiV1BetaWebhookConfigsPostAsResponseAsync(
 
             global::LlamaParse.WebhookConfigCreateRequest request,
+            global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -105,6 +118,7 @@ namespace LlamaParse
                 client: HttpClient);
             PrepareCreateWebhookConfigApiV1BetaWebhookConfigsPostArguments(
                 httpClient: HttpClient,
+                tenantType: ref tenantType,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session,
@@ -137,6 +151,7 @@ namespace LlamaParse
                                 path: "/api/v1/beta/webhook-configs",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("tenant_type", tenantType?.ToValueString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -198,6 +213,7 @@ namespace LlamaParse
                 PrepareCreateWebhookConfigApiV1BetaWebhookConfigsPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    tenantType: tenantType,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session,
@@ -517,6 +533,10 @@ namespace LlamaParse
         /// Create Webhook Config<br/>
         /// Create a reusable webhook configuration for the current project.
         /// </summary>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -540,6 +560,7 @@ namespace LlamaParse
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.WebhookConfigResponse> CreateWebhookConfigApiV1BetaWebhookConfigsPostAsync(
             string webhookUrl,
+            global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -560,6 +581,7 @@ namespace LlamaParse
             };
 
             return await CreateWebhookConfigApiV1BetaWebhookConfigsPostAsync(
+                tenantType: tenantType,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,

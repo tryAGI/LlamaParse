@@ -27,6 +27,7 @@ namespace LlamaParse
             };
         partial void PrepareQueryWebhookConfigsApiV2WebhookConfigsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType? tenantType,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref int? pageSize,
@@ -36,6 +37,7 @@ namespace LlamaParse
         partial void PrepareQueryWebhookConfigsApiV2WebhookConfigsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType? tenantType,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             int? pageSize,
@@ -55,6 +57,10 @@ namespace LlamaParse
         /// Query Webhook Configs<br/>
         /// List the webhook configurations for the current project, newest first.
         /// </summary>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="pageSize">
@@ -73,6 +79,7 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.WebhookConfigQueryResponse> QueryWebhookConfigsApiV2WebhookConfigsGetAsync(
+            global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,
@@ -83,6 +90,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await QueryWebhookConfigsApiV2WebhookConfigsGetAsResponseAsync(
+                tenantType: tenantType,
                 projectId: projectId,
                 organizationId: organizationId,
                 pageSize: pageSize,
@@ -99,6 +107,10 @@ namespace LlamaParse
         /// Query Webhook Configs<br/>
         /// List the webhook configurations for the current project, newest first.
         /// </summary>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="pageSize">
@@ -117,6 +129,7 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.WebhookConfigQueryResponse>> QueryWebhookConfigsApiV2WebhookConfigsGetAsResponseAsync(
+            global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,
@@ -130,6 +143,7 @@ namespace LlamaParse
                 client: HttpClient);
             PrepareQueryWebhookConfigsApiV2WebhookConfigsGetArguments(
                 httpClient: HttpClient,
+                tenantType: ref tenantType,
                 projectId: projectId,
                 organizationId: organizationId,
                 pageSize: ref pageSize,
@@ -164,6 +178,7 @@ namespace LlamaParse
                                 path: "/api/v2/webhook-configs",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("tenant_type", tenantType?.ToValueString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
@@ -222,6 +237,7 @@ namespace LlamaParse
                 PrepareQueryWebhookConfigsApiV2WebhookConfigsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    tenantType: tenantType,
                     projectId: projectId,
                     organizationId: organizationId,
                     pageSize: pageSize,

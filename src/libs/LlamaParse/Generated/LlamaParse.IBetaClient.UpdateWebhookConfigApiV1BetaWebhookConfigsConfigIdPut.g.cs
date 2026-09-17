@@ -9,6 +9,10 @@ namespace LlamaParse
         /// Update a webhook configuration. Only fields present in the request change.
         /// </summary>
         /// <param name="configId"></param>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -20,6 +24,7 @@ namespace LlamaParse
             string configId,
 
             global::LlamaParse.WebhookConfigUpdateRequest request,
+            global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -30,6 +35,10 @@ namespace LlamaParse
         /// Update a webhook configuration. Only fields present in the request change.
         /// </summary>
         /// <param name="configId"></param>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -41,6 +50,7 @@ namespace LlamaParse
             string configId,
 
             global::LlamaParse.WebhookConfigUpdateRequest request,
+            global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -51,6 +61,10 @@ namespace LlamaParse
         /// Update a webhook configuration. Only fields present in the request change.
         /// </summary>
         /// <param name="configId"></param>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -74,6 +88,7 @@ namespace LlamaParse
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.WebhookConfigResponse> UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutAsync(
             string configId,
+            global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,

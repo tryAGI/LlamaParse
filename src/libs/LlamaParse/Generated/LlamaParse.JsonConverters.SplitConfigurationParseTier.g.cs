@@ -3,10 +3,10 @@
 namespace LlamaParse.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType>
+    public sealed class SplitConfigurationParseTierJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LlamaParse.SplitConfigurationParseTier>
     {
         /// <inheritdoc />
-        public override global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType Read(
+        public override global::LlamaParse.SplitConfigurationParseTier Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace LlamaParse.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::LlamaParse.SplitConfigurationParseTierExtensions.ToEnum(stringValue) ?? default;
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace LlamaParse.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType)numValue;
+                    return (global::LlamaParse.SplitConfigurationParseTier)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType);
+                    return default(global::LlamaParse.SplitConfigurationParseTier);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace LlamaParse.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType value,
+            global::LlamaParse.SplitConfigurationParseTier value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::LlamaParse.SplitConfigurationParseTierExtensions.ToValueString(value));
         }
     }
 }
