@@ -22,6 +22,18 @@ namespace LlamaParse
         public global::LlamaParse.SplitStrategy? SplittingStrategy { get; set; }
 
         /// <summary>
+        /// Parse tier used to read the document before splitting. Defaults to fast. Ignored when a completed parse job is supplied as file_input.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parse_tier")]
+        public global::LlamaParse.SplitV1ParametersParseTier? ParseTier { get; set; }
+
+        /// <summary>
+        /// Saved parse configuration ID controlling how the document is read before splitting. Takes precedence over parse_tier. Configurations restricted to a page subset (target_pages or max_pages) are rejected, since split results always number pages relative to the full document. Ignored when a completed parse job is supplied as file_input.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parse_config_id")]
+        public string? ParseConfigId { get; set; }
+
+        /// <summary>
         /// Product type.
         /// </summary>
         /// <default>"split_v1"</default>
@@ -43,6 +55,12 @@ namespace LlamaParse
         /// <param name="splittingStrategy">
         /// Strategy for splitting documents.
         /// </param>
+        /// <param name="parseTier">
+        /// Parse tier used to read the document before splitting. Defaults to fast. Ignored when a completed parse job is supplied as file_input.
+        /// </param>
+        /// <param name="parseConfigId">
+        /// Saved parse configuration ID controlling how the document is read before splitting. Takes precedence over parse_tier. Configurations restricted to a page subset (target_pages or max_pages) are rejected, since split results always number pages relative to the full document. Ignored when a completed parse job is supplied as file_input.
+        /// </param>
         /// <param name="productType">
         /// Product type.
         /// </param>
@@ -52,10 +70,14 @@ namespace LlamaParse
         public SplitV1Parameters(
             global::System.Collections.Generic.IList<global::LlamaParse.SplitCategory> categories,
             global::LlamaParse.SplitStrategy? splittingStrategy,
+            global::LlamaParse.SplitV1ParametersParseTier? parseTier,
+            string? parseConfigId,
             string productType = "split_v1")
         {
             this.Categories = categories ?? throw new global::System.ArgumentNullException(nameof(categories));
             this.SplittingStrategy = splittingStrategy;
+            this.ParseTier = parseTier;
+            this.ParseConfigId = parseConfigId;
             this.ProductType = productType;
         }
 

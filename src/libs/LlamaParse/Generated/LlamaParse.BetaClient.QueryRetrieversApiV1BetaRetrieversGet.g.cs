@@ -3,11 +3,11 @@
 
 namespace LlamaParse
 {
-    public partial class JobDashboardClient
+    public partial class BetaClient
     {
 
 
-        private static readonly global::LlamaParse.EndPointSecurityRequirement s_ListProjectJobDataPointsApiV1JobDataPointsGetSecurityRequirement0 =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_QueryRetrieversApiV1BetaRetrieversGetSecurityRequirement0 =
             new global::LlamaParse.EndPointSecurityRequirement
             {
                 Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
@@ -21,69 +21,53 @@ namespace LlamaParse
                     },
                 },
             };
-        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_ListProjectJobDataPointsApiV1JobDataPointsGetSecurityRequirements =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_QueryRetrieversApiV1BetaRetrieversGetSecurityRequirements =
             new global::LlamaParse.EndPointSecurityRequirement[]
-            {                s_ListProjectJobDataPointsApiV1JobDataPointsGetSecurityRequirement0,
+            {                s_QueryRetrieversApiV1BetaRetrieversGetSecurityRequirement0,
             };
-        partial void PrepareListProjectJobDataPointsApiV1JobDataPointsGetArguments(
+        partial void PrepareQueryRetrieversApiV1BetaRetrieversGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType jobType,
-            ref int? hours,
-            global::System.Collections.Generic.IList<string>? status,
-            int? pageSize,
+            ref string? name,
+            ref int? pageSize,
             ref string? pageToken,
-            global::System.DateTime? createdAtOnOrAfter,
-            global::System.DateTime? createdAtOnOrBefore,
+            ref bool? includeTotal,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
-        partial void PrepareListProjectJobDataPointsApiV1JobDataPointsGetRequest(
+        partial void PrepareQueryRetrieversApiV1BetaRetrieversGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType jobType,
-            int? hours,
-            global::System.Collections.Generic.IList<string>? status,
+            string? name,
             int? pageSize,
             string? pageToken,
-            global::System.DateTime? createdAtOnOrAfter,
-            global::System.DateTime? createdAtOnOrBefore,
+            bool? includeTotal,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
-        partial void ProcessListProjectJobDataPointsApiV1JobDataPointsGetResponse(
+        partial void ProcessQueryRetrieversApiV1BetaRetrieversGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListProjectJobDataPointsApiV1JobDataPointsGetResponseContent(
+        partial void ProcessQueryRetrieversApiV1BetaRetrieversGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Query project job data points<br/>
-        /// Returns paginated job data points for the current project.
+        /// Query Retrievers<br/>
+        /// List the retrievers in a project, newest first.
         /// </summary>
-        /// <param name="jobType">
-        /// Job type to query.
-        /// </param>
-        /// <param name="hours">
-        /// Hours of history to include.<br/>
-        /// Default Value: 1
-        /// </param>
-        /// <param name="status">
-        /// Filter by status.
-        /// </param>
+        /// <param name="name"></param>
         /// <param name="pageSize">
-        /// Number of items per page.
+        /// Number of items per page<br/>
+        /// Default Value: 50
         /// </param>
         /// <param name="pageToken">
-        /// Cursor token for the next page.
+        /// Cursor from the previous page's `next_page_token`.
         /// </param>
-        /// <param name="createdAtOnOrAfter">
-        /// Include items created at or after this timestamp (inclusive)
-        /// </param>
-        /// <param name="createdAtOnOrBefore">
-        /// Include items created at or before this timestamp (inclusive)
+        /// <param name="includeTotal">
+        /// Return `total_size`, a count of every row matching the filter. It is a second query on every page, so it is off unless asked for.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -91,28 +75,22 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.JobDataPointResponse> ListProjectJobDataPointsApiV1JobDataPointsGetAsync(
-            global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType jobType,
-            int? hours = default,
-            global::System.Collections.Generic.IList<string>? status = default,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.RetrieverQueryResponse> QueryRetrieversApiV1BetaRetrieversGetAsync(
+            string? name = default,
             int? pageSize = default,
             string? pageToken = default,
-            global::System.DateTime? createdAtOnOrAfter = default,
-            global::System.DateTime? createdAtOnOrBefore = default,
+            bool? includeTotal = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ListProjectJobDataPointsApiV1JobDataPointsGetAsResponseAsync(
-                jobType: jobType,
-                hours: hours,
-                status: status,
+            var __response = await QueryRetrieversApiV1BetaRetrieversGetAsResponseAsync(
+                name: name,
                 pageSize: pageSize,
                 pageToken: pageToken,
-                createdAtOnOrAfter: createdAtOnOrAfter,
-                createdAtOnOrBefore: createdAtOnOrBefore,
+                includeTotal: includeTotal,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -123,30 +101,20 @@ namespace LlamaParse
             return __response.Body;
         }
         /// <summary>
-        /// Query project job data points<br/>
-        /// Returns paginated job data points for the current project.
+        /// Query Retrievers<br/>
+        /// List the retrievers in a project, newest first.
         /// </summary>
-        /// <param name="jobType">
-        /// Job type to query.
-        /// </param>
-        /// <param name="hours">
-        /// Hours of history to include.<br/>
-        /// Default Value: 1
-        /// </param>
-        /// <param name="status">
-        /// Filter by status.
-        /// </param>
+        /// <param name="name"></param>
         /// <param name="pageSize">
-        /// Number of items per page.
+        /// Number of items per page<br/>
+        /// Default Value: 50
         /// </param>
         /// <param name="pageToken">
-        /// Cursor token for the next page.
+        /// Cursor from the previous page's `next_page_token`.
         /// </param>
-        /// <param name="createdAtOnOrAfter">
-        /// Include items created at or after this timestamp (inclusive)
-        /// </param>
-        /// <param name="createdAtOnOrBefore">
-        /// Include items created at or before this timestamp (inclusive)
+        /// <param name="includeTotal">
+        /// Return `total_size`, a count of every row matching the filter. It is a second query on every page, so it is off unless asked for.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -154,14 +122,11 @@ namespace LlamaParse
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.JobDataPointResponse>> ListProjectJobDataPointsApiV1JobDataPointsGetAsResponseAsync(
-            global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType jobType,
-            int? hours = default,
-            global::System.Collections.Generic.IList<string>? status = default,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.RetrieverQueryResponse>> QueryRetrieversApiV1BetaRetrieversGetAsResponseAsync(
+            string? name = default,
             int? pageSize = default,
             string? pageToken = default,
-            global::System.DateTime? createdAtOnOrAfter = default,
-            global::System.DateTime? createdAtOnOrBefore = default,
+            bool? includeTotal = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -170,15 +135,12 @@ namespace LlamaParse
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListProjectJobDataPointsApiV1JobDataPointsGetArguments(
+            PrepareQueryRetrieversApiV1BetaRetrieversGetArguments(
                 httpClient: HttpClient,
-                jobType: ref jobType,
-                hours: ref hours,
-                status: status,
-                pageSize: pageSize,
+                name: ref name,
+                pageSize: ref pageSize,
                 pageToken: ref pageToken,
-                createdAtOnOrAfter: createdAtOnOrAfter,
-                createdAtOnOrBefore: createdAtOnOrBefore,
+                includeTotal: ref includeTotal,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -186,8 +148,8 @@ namespace LlamaParse
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListProjectJobDataPointsApiV1JobDataPointsGetSecurityRequirements,
-                operationName: "ListProjectJobDataPointsApiV1JobDataPointsGetAsync");
+                securityRequirements: s_QueryRetrieversApiV1BetaRetrieversGetSecurityRequirements,
+                operationName: "QueryRetrieversApiV1BetaRetrieversGetAsync");
 
             using var __timeoutCancellationTokenSource = global::LlamaParse.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -207,16 +169,13 @@ namespace LlamaParse
             {
 
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: "/api/v1/job-data-points",
+                                path: "/api/v1/beta/retrievers",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("job_type", jobType.ToValueString())
-                                .AddOptionalParameter("hours", hours?.ToString())
-                                .AddOptionalParameter("status", status, delimiter: ",", explode: true)
+                                .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
-                                .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
-                                .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())
+                                .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -269,16 +228,13 @@ namespace LlamaParse
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListProjectJobDataPointsApiV1JobDataPointsGetRequest(
+                PrepareQueryRetrieversApiV1BetaRetrieversGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobType: jobType!,
-                    hours: hours,
-                    status: status,
+                    name: name,
                     pageSize: pageSize,
                     pageToken: pageToken,
-                    createdAtOnOrAfter: createdAtOnOrAfter,
-                    createdAtOnOrBefore: createdAtOnOrBefore,
+                    includeTotal: includeTotal,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -298,9 +254,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListProjectJobDataPointsApiV1JobDataPointsGet",
-                                methodName: "ListProjectJobDataPointsApiV1JobDataPointsGetAsync",
-                                pathTemplate: "\"/api/v1/job-data-points\"",
+                                operationId: "QueryRetrieversApiV1BetaRetrieversGet",
+                                methodName: "QueryRetrieversApiV1BetaRetrieversGetAsync",
+                                pathTemplate: "\"/api/v1/beta/retrievers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -332,9 +288,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListProjectJobDataPointsApiV1JobDataPointsGet",
-                                methodName: "ListProjectJobDataPointsApiV1JobDataPointsGetAsync",
-                                pathTemplate: "\"/api/v1/job-data-points\"",
+                                operationId: "QueryRetrieversApiV1BetaRetrieversGet",
+                                methodName: "QueryRetrieversApiV1BetaRetrieversGetAsync",
+                                pathTemplate: "\"/api/v1/beta/retrievers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -373,9 +329,9 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListProjectJobDataPointsApiV1JobDataPointsGet",
-                                methodName: "ListProjectJobDataPointsApiV1JobDataPointsGetAsync",
-                                pathTemplate: "\"/api/v1/job-data-points\"",
+                                operationId: "QueryRetrieversApiV1BetaRetrieversGet",
+                                methodName: "QueryRetrieversApiV1BetaRetrieversGetAsync",
+                                pathTemplate: "\"/api/v1/beta/retrievers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -413,7 +369,7 @@ namespace LlamaParse
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListProjectJobDataPointsApiV1JobDataPointsGetResponse(
+                ProcessQueryRetrieversApiV1BetaRetrieversGetResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -421,9 +377,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListProjectJobDataPointsApiV1JobDataPointsGet",
-                                methodName: "ListProjectJobDataPointsApiV1JobDataPointsGetAsync",
-                                pathTemplate: "\"/api/v1/job-data-points\"",
+                                operationId: "QueryRetrieversApiV1BetaRetrieversGet",
+                                methodName: "QueryRetrieversApiV1BetaRetrieversGetAsync",
+                                pathTemplate: "\"/api/v1/beta/retrievers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -443,9 +399,9 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListProjectJobDataPointsApiV1JobDataPointsGet",
-                                methodName: "ListProjectJobDataPointsApiV1JobDataPointsGetAsync",
-                                pathTemplate: "\"/api/v1/job-data-points\"",
+                                operationId: "QueryRetrieversApiV1BetaRetrieversGet",
+                                methodName: "QueryRetrieversApiV1BetaRetrieversGetAsync",
+                                pathTemplate: "\"/api/v1/beta/retrievers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -510,7 +466,7 @@ namespace LlamaParse
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListProjectJobDataPointsApiV1JobDataPointsGetResponseContent(
+                                ProcessQueryRetrieversApiV1BetaRetrieversGetResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -519,9 +475,9 @@ namespace LlamaParse
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LlamaParse.JobDataPointResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LlamaParse.RetrieverQueryResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.JobDataPointResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.RetrieverQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -551,9 +507,9 @@ namespace LlamaParse
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LlamaParse.JobDataPointResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LlamaParse.RetrieverQueryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.JobDataPointResponse>(
+                                    return new global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.RetrieverQueryResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LlamaParse.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

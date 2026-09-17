@@ -19,7 +19,7 @@ namespace LlamaParse
         /// Inline split configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration")]
-        public global::LlamaParse.SplitConfiguration? Configuration { get; set; }
+        public global::LlamaParse.SplitConfigurationBeta? Configuration { get; set; }
 
         /// <summary>
         /// Saved split configuration ID.
@@ -50,7 +50,7 @@ namespace LlamaParse
 #endif
         public SplitCreateRequestBeta(
             global::LlamaParse.SplitDocumentInput documentInput,
-            global::LlamaParse.SplitConfiguration? configuration,
+            global::LlamaParse.SplitConfigurationBeta? configuration,
             string? configurationId)
         {
             this.DocumentInput = documentInput ?? throw new global::System.ArgumentNullException(nameof(documentInput));

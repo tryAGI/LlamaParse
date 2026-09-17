@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class SplitDocumentInput
     {
         /// <summary>
-        /// Type of document input. Valid values are: file_id
+        /// The beta `POST /api/v1/beta/split/jobs` endpoint accepts only `file_id`. To use a Parse job as input, call `POST /api/v1/split/jobs` instead, where you can pass the Parse job ID as `file_input`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace LlamaParse
         /// Initializes a new instance of the <see cref="SplitDocumentInput" /> class.
         /// </summary>
         /// <param name="type">
-        /// Type of document input. Valid values are: file_id
+        /// The beta `POST /api/v1/beta/split/jobs` endpoint accepts only `file_id`. To use a Parse job as input, call `POST /api/v1/split/jobs` instead, where you can pass the Parse job ID as `file_input`.
         /// </param>
         /// <param name="value">
         /// Document identifier.

@@ -8,6 +8,10 @@ namespace LlamaParse
         /// Query Webhook Configs<br/>
         /// List the webhook configurations for the current project, newest first.
         /// </summary>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="pageSize">
@@ -26,6 +30,7 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.WebhookConfigQueryResponse> QueryWebhookConfigsApiV2WebhookConfigsGetAsync(
+            global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,
@@ -38,6 +43,10 @@ namespace LlamaParse
         /// Query Webhook Configs<br/>
         /// List the webhook configurations for the current project, newest first.
         /// </summary>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="pageSize">
@@ -56,6 +65,7 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.WebhookConfigQueryResponse>> QueryWebhookConfigsApiV2WebhookConfigsGetAsResponseAsync(
+            global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             int? pageSize = default,

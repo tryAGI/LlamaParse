@@ -30,9 +30,10 @@ namespace LlamaParse
         /// <summary>
         /// Owner tenant type.
         /// </summary>
-        /// <default>"project"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_type")]
-        public string TenantType { get; set; } = "project";
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.WebhookConfigResponseTenantTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LlamaParse.WebhookConfigResponseTenantType TenantType { get; set; }
 
         /// <summary>
         /// Owner tenant ID.
@@ -85,6 +86,9 @@ namespace LlamaParse
         /// <param name="id">
         /// Unique identifier for the webhook configuration.
         /// </param>
+        /// <param name="tenantType">
+        /// Owner tenant type.
+        /// </param>
         /// <param name="tenantId">
         /// Owner tenant ID.
         /// </param>
@@ -109,14 +113,12 @@ namespace LlamaParse
         /// <param name="webhookOutputFormat">
         /// Response format sent to the webhook.
         /// </param>
-        /// <param name="tenantType">
-        /// Owner tenant type.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookConfigResponse(
             string id,
+            global::LlamaParse.WebhookConfigResponseTenantType tenantType,
             string tenantId,
             string webhookUrl,
             bool hasSecret,
@@ -124,8 +126,7 @@ namespace LlamaParse
             global::System.DateTime? updatedAt,
             global::System.Collections.Generic.Dictionary<string, string>? webhookHeaders,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item>? webhookEvents,
-            global::LlamaParse.WebhookConfigResponseWebhookOutputFormat? webhookOutputFormat,
-            string tenantType = "project")
+            global::LlamaParse.WebhookConfigResponseWebhookOutputFormat? webhookOutputFormat)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;

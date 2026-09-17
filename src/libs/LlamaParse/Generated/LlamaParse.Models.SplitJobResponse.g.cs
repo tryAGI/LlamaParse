@@ -82,6 +82,18 @@ namespace LlamaParse
         public global::LlamaParse.SplitStrategy? SplittingStrategy { get; set; }
 
         /// <summary>
+        /// Parse tier requested for this job, if any.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parse_tier")]
+        public string? ParseTier { get; set; }
+
+        /// <summary>
+        /// Saved parse configuration ID requested for this job, if any.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parse_config_id")]
+        public string? ParseConfigId { get; set; }
+
+        /// <summary>
         /// Current job status. Valid values are: pending, processing, completed, failed, cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -145,6 +157,12 @@ namespace LlamaParse
         /// <param name="splittingStrategy">
         /// Strategy used for splitting.
         /// </param>
+        /// <param name="parseTier">
+        /// Parse tier requested for this job, if any.
+        /// </param>
+        /// <param name="parseConfigId">
+        /// Saved parse configuration ID requested for this job, if any.
+        /// </param>
         /// <param name="result">
         /// Split result, available when status is completed.
         /// </param>
@@ -167,6 +185,8 @@ namespace LlamaParse
             string? transactionId,
             string? configurationId,
             global::LlamaParse.SplitStrategy? splittingStrategy,
+            string? parseTier,
+            string? parseConfigId,
             global::LlamaParse.SplitResultResponse? result,
             string? errorMessage)
         {
@@ -181,6 +201,8 @@ namespace LlamaParse
             this.DocumentInputType = documentInputType;
             this.Categories = categories ?? throw new global::System.ArgumentNullException(nameof(categories));
             this.SplittingStrategy = splittingStrategy;
+            this.ParseTier = parseTier;
+            this.ParseConfigId = parseConfigId;
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Result = result;
             this.ErrorMessage = errorMessage;

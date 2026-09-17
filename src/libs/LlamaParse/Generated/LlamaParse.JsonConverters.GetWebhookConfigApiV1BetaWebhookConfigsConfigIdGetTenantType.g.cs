@@ -1,0 +1,53 @@
+#nullable enable
+
+namespace LlamaParse.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType>
+    {
+        /// <inheritdoc />
+        public override global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantTypeExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteStringValue(global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantTypeExtensions.ToValueString(value));
+        }
+    }
+}

@@ -34,6 +34,8 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfiguration))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.SplitCategory>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategy))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationParseTier), TypeInfoPropertyName = "SplitConfigurationParseTier2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationBeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitCreateRequestBeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitDocumentInput))]
@@ -55,6 +57,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListSplitJobsApiV1SplitJobsGetStatus), TypeInfoPropertyName = "ListSplitJobsApiV1SplitJobsGetStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus), TypeInfoPropertyName = "ListSplitJobsApiV1BetaSplitJobsGetStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationParseTier?), TypeInfoPropertyName = "NullableSplitConfigurationParseTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitJobResponseDocumentInputType?), TypeInfoPropertyName = "NullableSplitJobResponseDocumentInputType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized?), TypeInfoPropertyName = "NullableSplitStrategyAllowUncategorized2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
@@ -235,7 +238,11 @@ namespace LlamaParse
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType)
+                    typeToConvert == typeof(global::LlamaParse.SplitConfigurationParseTier)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitConfigurationParseTier?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType)
 
                     || typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType?)
 
@@ -260,6 +267,16 @@ namespace LlamaParse
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
+                if (typeToConvert == typeof(global::LlamaParse.SplitConfigurationParseTier))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitConfigurationParseTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitConfigurationParseTier?))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitConfigurationParseTierNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType))
                 {
                     return new global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeJsonConverter();

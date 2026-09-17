@@ -4,16 +4,16 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Paginated list of job data points.
+    /// A page of retrievers.
     /// </summary>
-    public sealed partial class JobDataPointResponse
+    public sealed partial class RetrieverQueryResponse
     {
         /// <summary>
         /// The list of items.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LlamaParse.JobDataPoint> Items { get; set; }
+        public required global::System.Collections.Generic.IList<global::LlamaParse.Retriever> Items { get; set; }
 
         /// <summary>
         /// A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages.
@@ -34,7 +34,7 @@ namespace LlamaParse
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="JobDataPointResponse" /> class.
+        /// Initializes a new instance of the <see cref="RetrieverQueryResponse" /> class.
         /// </summary>
         /// <param name="items">
         /// The list of items.
@@ -48,8 +48,8 @@ namespace LlamaParse
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public JobDataPointResponse(
-            global::System.Collections.Generic.IList<global::LlamaParse.JobDataPoint> items,
+        public RetrieverQueryResponse(
+            global::System.Collections.Generic.IList<global::LlamaParse.Retriever> items,
             string? nextPageToken,
             int? totalSize)
         {
@@ -59,9 +59,9 @@ namespace LlamaParse
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="JobDataPointResponse" /> class.
+        /// Initializes a new instance of the <see cref="RetrieverQueryResponse" /> class.
         /// </summary>
-        public JobDataPointResponse()
+        public RetrieverQueryResponse()
         {
         }
 

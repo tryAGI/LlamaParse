@@ -28,6 +28,7 @@ namespace LlamaParse
         partial void PrepareGetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string configId,
+            ref global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType? tenantType,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
@@ -35,6 +36,7 @@ namespace LlamaParse
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string configId,
+            global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType? tenantType,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
@@ -52,6 +54,10 @@ namespace LlamaParse
         /// Get a single webhook configuration by ID.
         /// </summary>
         /// <param name="configId"></param>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -60,6 +66,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.WebhookConfigResponse> GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetAsync(
             string configId,
+            global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -68,6 +75,7 @@ namespace LlamaParse
         {
             var __response = await GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetAsResponseAsync(
                 configId: configId,
+                tenantType: tenantType,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -82,6 +90,10 @@ namespace LlamaParse
         /// Get a single webhook configuration by ID.
         /// </summary>
         /// <param name="configId"></param>
+        /// <param name="tenantType">
+        /// Which configurations to address: `project` for ones a job references by ID, or `project_default` for ones every job in the project notifies.<br/>
+        /// Default Value: project
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -90,6 +102,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.WebhookConfigResponse>> GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetAsResponseAsync(
             string configId,
+            global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType? tenantType = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -101,6 +114,7 @@ namespace LlamaParse
             PrepareGetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetArguments(
                 httpClient: HttpClient,
                 configId: ref configId,
+                tenantType: ref tenantType,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -132,6 +146,7 @@ namespace LlamaParse
                                 path: $"/api/v1/beta/webhook-configs/{configId}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("tenant_type", tenantType?.ToValueString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -188,6 +203,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     configId: configId!,
+                    tenantType: tenantType,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);

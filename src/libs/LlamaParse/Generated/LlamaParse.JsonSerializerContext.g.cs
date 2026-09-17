@@ -145,6 +145,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2Rule))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2ParsingConfiguration))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2JobCreateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2JobDeleteResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2JobQueryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ClassifyV2JobResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2JobResponse))]
@@ -428,10 +429,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ItemProcessingResultsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ProcessingResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ProcessingResult))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.JobDataPoint))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.JobStateTransitions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.JobDataPointResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.JobDataPoint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.JobUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SupportedLLMModelNames), TypeInfoPropertyName = "SupportedLLMModelNames2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<global::LlamaParse.TextItem, global::LlamaParse.ListItem>>))]
@@ -514,6 +511,9 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PGVectorDistanceMethod), TypeInfoPropertyName = "PGVectorDistanceMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PGVectorVectorType), TypeInfoPropertyName = "PGVectorVectorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PageFigureMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PageScreenshotMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PaginatedExtractRunsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ExtractRun>))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -534,9 +534,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>?), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_d9f8945237261e89")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>?), TypeInfoPropertyName = "CloudBoxDataSource_ee99e0e6ec633008")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>?), TypeInfoPropertyName = "CloudBoxDataSource_object_dfe1806971be6576")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PageScreenshotMetadata))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PaginatedExtractRunsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ExtractRun>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PaginatedListCloudDocumentsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.CloudDocument>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PaginatedListPipelineFilesResponse))]
@@ -640,6 +637,8 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, double>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Retriever))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrieverCreate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrieverQueryResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.Retriever>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrieverUpdate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Revision))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RevisionType), TypeInfoPropertyName = "RevisionType2")]
@@ -668,6 +667,8 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfiguration))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.SplitCategory>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategy))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationParseTier), TypeInfoPropertyName = "SplitConfigurationParseTier2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationBeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitCreateRequestBeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitDocumentInput))]
@@ -682,6 +683,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.SplitSegmentResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitSegmentResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized), TypeInfoPropertyName = "SplitStrategyAllowUncategorized2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitV1ParametersParseTier), TypeInfoPropertyName = "SplitV1ParametersParseTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTier), TypeInfoPropertyName = "SpreadsheetV1ParametersTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity), TypeInfoPropertyName = "SpreadsheetV1ParametersTableMergeSensitivity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.AttachmentRef>))]
@@ -729,6 +731,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigQueryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigResponseTenantType), TypeInfoPropertyName = "WebhookConfigResponseTenantType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item), TypeInfoPropertyName = "WebhookConfigResponseWebhookEventsVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigResponseWebhookOutputFormat), TypeInfoPropertyName = "WebhookConfigResponseWebhookOutputFormat2")]
@@ -741,7 +744,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.PipelineDataSourceCreate>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.PipelineFileCreate>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.CloudDocumentCreate>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType), TypeInfoPropertyName = "ListProjectJobDataPointsApiV1JobDataPointsGetJobType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item), TypeInfoPropertyName = "ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy), TypeInfoPropertyName = "ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy2")]
@@ -754,6 +756,11 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item), TypeInfoPropertyName = "ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item), TypeInfoPropertyName = "ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType), TypeInfoPropertyName = "CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListWebhookConfigsApiV1BetaWebhookConfigsGetTenantType), TypeInfoPropertyName = "ListWebhookConfigsApiV1BetaWebhookConfigsGetTenantType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType), TypeInfoPropertyName = "GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType), TypeInfoPropertyName = "UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.DeleteWebhookConfigApiV1BetaWebhookConfigsConfigIdDeleteTenantType), TypeInfoPropertyName = "DeleteWebhookConfigApiV1BetaWebhookConfigsConfigIdDeleteTenantType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus), TypeInfoPropertyName = "ListSplitJobsApiV1BetaSplitJobsGetStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item), TypeInfoPropertyName = "ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item2")]
@@ -761,6 +768,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListClassifyJobsApiV2ClassifyGetStatus), TypeInfoPropertyName = "ListClassifyJobsApiV2ClassifyGetStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus), TypeInfoPropertyName = "ListExtractJobsApiV2ExtractGetStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelinesApiV2PipelinesGetPipelineType), TypeInfoPropertyName = "ListPipelinesApiV2PipelinesGetPipelineType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType), TypeInfoPropertyName = "QueryWebhookConfigsApiV2WebhookConfigsGetTenantType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListBatchesApiV2BatchesGetStatus), TypeInfoPropertyName = "ListBatchesApiV2BatchesGetStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.DataSource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.EmbeddingModelConfig>))]
@@ -771,7 +779,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.Pipeline>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.PipelineDataSource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.TextNode>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.Retriever>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseSupportedFileExtensions>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ExtractJob>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.NoneSegmentationConfig, global::LlamaParse.PageSegmentationConfig, global::LlamaParse.ElementSegmentationConfig>?), TypeInfoPropertyName = "NullableAnyOfNoneSegmentationConfigPageSegmentationConfigElementSegmentationConfig2")]
@@ -922,8 +929,10 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EventsItem?), TypeInfoPropertyName = "NullableEventsItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetailEventDiscriminatorType?), TypeInfoPropertyName = "NullableSessionDetailEventDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SparseModelType?), TypeInfoPropertyName = "NullableSparseModelType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationParseTier?), TypeInfoPropertyName = "NullableSplitConfigurationParseTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitJobResponseDocumentInputType?), TypeInfoPropertyName = "NullableSplitJobResponseDocumentInputType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized?), TypeInfoPropertyName = "NullableSplitStrategyAllowUncategorized2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitV1ParametersParseTier?), TypeInfoPropertyName = "NullableSplitV1ParametersParseTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTier?), TypeInfoPropertyName = "NullableSpreadsheetV1ParametersTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity?), TypeInfoPropertyName = "NullableSpreadsheetV1ParametersTableMergeSensitivity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.StringFilterOperator?), TypeInfoPropertyName = "NullableStringFilterOperator2")]
@@ -942,12 +951,12 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.VertexEmbeddingMode?), TypeInfoPropertyName = "NullableVertexEmbeddingMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigCreateRequestWebhookEventsVariant1Item?), TypeInfoPropertyName = "NullableWebhookConfigCreateRequestWebhookEventsVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigCreateRequestWebhookOutputFormat?), TypeInfoPropertyName = "NullableWebhookConfigCreateRequestWebhookOutputFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigResponseTenantType?), TypeInfoPropertyName = "NullableWebhookConfigResponseTenantType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item?), TypeInfoPropertyName = "NullableWebhookConfigResponseWebhookEventsVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigResponseWebhookOutputFormat?), TypeInfoPropertyName = "NullableWebhookConfigResponseWebhookOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigUpdateRequestWebhookEventsVariant1Item?), TypeInfoPropertyName = "NullableWebhookConfigUpdateRequestWebhookEventsVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigUpdateRequestWebhookOutputFormat?), TypeInfoPropertyName = "NullableWebhookConfigUpdateRequestWebhookOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item?), TypeInfoPropertyName = "NullableWebhookConfigurationWebhookEventsVariant1Item2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType?), TypeInfoPropertyName = "NullableListProjectJobDataPointsApiV1JobDataPointsGetJobType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item?), TypeInfoPropertyName = "NullableListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy?), TypeInfoPropertyName = "NullableListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsGetStatusRefreshPolicy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicy?), TypeInfoPropertyName = "NullablePaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetStatusRefreshPolicy2")]
@@ -956,12 +965,18 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetType?), TypeInfoPropertyName = "NullableListDirectoriesApiV1BetaDirectoriesGetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item?), TypeInfoPropertyName = "NullableListDirectoriesApiV1BetaDirectoriesGetTypesVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item?), TypeInfoPropertyName = "NullableListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType?), TypeInfoPropertyName = "NullableCreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListWebhookConfigsApiV1BetaWebhookConfigsGetTenantType?), TypeInfoPropertyName = "NullableListWebhookConfigsApiV1BetaWebhookConfigsGetTenantType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType?), TypeInfoPropertyName = "NullableGetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType?), TypeInfoPropertyName = "NullableUpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.DeleteWebhookConfigApiV1BetaWebhookConfigsConfigIdDeleteTenantType?), TypeInfoPropertyName = "NullableDeleteWebhookConfigApiV1BetaWebhookConfigsConfigIdDeleteTenantType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus?), TypeInfoPropertyName = "NullableListSplitJobsApiV1BetaSplitJobsGetStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item?), TypeInfoPropertyName = "NullableListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListParseJobsApiV2ParseGetStatus?), TypeInfoPropertyName = "NullableListParseJobsApiV2ParseGetStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListClassifyJobsApiV2ClassifyGetStatus?), TypeInfoPropertyName = "NullableListClassifyJobsApiV2ClassifyGetStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListExtractJobsApiV2ExtractGetStatus?), TypeInfoPropertyName = "NullableListExtractJobsApiV2ExtractGetStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListPipelinesApiV2PipelinesGetPipelineType?), TypeInfoPropertyName = "NullableListPipelinesApiV2PipelinesGetPipelineType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType?), TypeInfoPropertyName = "NullableQueryWebhookConfigsApiV2WebhookConfigsGetTenantType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListBatchesApiV2BatchesGetStatus?), TypeInfoPropertyName = "NullableListBatchesApiV2BatchesGetStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AggregateGroup>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AgentData>))]
@@ -1011,21 +1026,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.GroundedLine>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.Form>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<long>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.GroundedWord>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ValidationError>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ItemsItem5>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ImageMetadata>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.IndexProductEntry>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.IndexResponse>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ProcessingResult>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.JobDataPoint>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.TextItem, global::LlamaParse.ListItem>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.LlamaParseOutputOptionsGranularBboxe>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.LlamaParseParametersImagesToSaveVariant1Item>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AutoModeConfigurationEntry>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.IngestionErrorResponse>))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1046,6 +1046,20 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>?), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_d9f8945237261e89")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>?), TypeInfoPropertyName = "CloudBoxDataSource_ee99e0e6ec633008")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>?), TypeInfoPropertyName = "CloudBoxDataSource_object_dfe1806971be6576")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<long>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.GroundedWord>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ValidationError>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ItemsItem5>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ImageMetadata>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.IndexProductEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.IndexResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ProcessingResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.TextItem, global::LlamaParse.ListItem>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.LlamaParseOutputOptionsGranularBboxe>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.LlamaParseParametersImagesToSaveVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AutoModeConfigurationEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.IngestionErrorResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.MarkdownResultPage, global::LlamaParse.FailedMarkdownPage>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.MarkdownLineNumberAnnotation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<int?, double?, string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<double>, global::System.Collections.Generic.List<int>, object>))]
@@ -1072,6 +1086,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.NumericRangeFilter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.RetrievalResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.TextNodeWithScore>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.Retriever>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.RevisionTargetSpan>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.EventsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ChatSessionSummary>))]
@@ -1118,7 +1133,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.Pipeline>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.PipelineDataSource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.TextNode>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.Retriever>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.LlamaParseSupportedFileExtensions>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ExtractJob>))]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
@@ -1719,6 +1733,10 @@ namespace LlamaParse
 
                     || typeToConvert == typeof(global::LlamaParse.SparseModelType?)
 
+                    || typeToConvert == typeof(global::LlamaParse.SplitConfigurationParseTier)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitConfigurationParseTier?)
+
                     || typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType)
 
                     || typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType?)
@@ -1726,6 +1744,10 @@ namespace LlamaParse
                     || typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized)
 
                     || typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitV1ParametersParseTier)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitV1ParametersParseTier?)
 
                     || typeToConvert == typeof(global::LlamaParse.SpreadsheetV1ParametersTier)
 
@@ -1775,6 +1797,10 @@ namespace LlamaParse
 
                     || typeToConvert == typeof(global::LlamaParse.WebhookConfigCreateRequestWebhookOutputFormat?)
 
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseTenantType)
+
+                    || typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseTenantType?)
+
                     || typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item)
 
                     || typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item?)
@@ -1794,10 +1820,6 @@ namespace LlamaParse
                     || typeToConvert == typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item)
 
                     || typeToConvert == typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item?)
-
-                    || typeToConvert == typeof(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType)
-
-                    || typeToConvert == typeof(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType?)
 
                     || typeToConvert == typeof(global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item)
 
@@ -1831,6 +1853,26 @@ namespace LlamaParse
 
                     || typeToConvert == typeof(global::LlamaParse.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1Item?)
 
+                    || typeToConvert == typeof(global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType)
+
+                    || typeToConvert == typeof(global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListWebhookConfigsApiV1BetaWebhookConfigsGetTenantType)
+
+                    || typeToConvert == typeof(global::LlamaParse.ListWebhookConfigsApiV1BetaWebhookConfigsGetTenantType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType)
+
+                    || typeToConvert == typeof(global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType)
+
+                    || typeToConvert == typeof(global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.DeleteWebhookConfigApiV1BetaWebhookConfigsConfigIdDeleteTenantType)
+
+                    || typeToConvert == typeof(global::LlamaParse.DeleteWebhookConfigApiV1BetaWebhookConfigsConfigIdDeleteTenantType?)
+
                     || typeToConvert == typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus)
 
                     || typeToConvert == typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus?)
@@ -1854,6 +1896,10 @@ namespace LlamaParse
                     || typeToConvert == typeof(global::LlamaParse.ListPipelinesApiV2PipelinesGetPipelineType)
 
                     || typeToConvert == typeof(global::LlamaParse.ListPipelinesApiV2PipelinesGetPipelineType?)
+
+                    || typeToConvert == typeof(global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType)
+
+                    || typeToConvert == typeof(global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType?)
 
                     || typeToConvert == typeof(global::LlamaParse.ListBatchesApiV2BatchesGetStatus)
 
@@ -2854,6 +2900,16 @@ namespace LlamaParse
                     return new global::LlamaParse.JsonConverters.SparseModelTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::LlamaParse.SplitConfigurationParseTier))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitConfigurationParseTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitConfigurationParseTier?))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitConfigurationParseTierNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType))
                 {
                     return new global::LlamaParse.JsonConverters.SplitJobResponseDocumentInputTypeJsonConverter();
@@ -2872,6 +2928,16 @@ namespace LlamaParse
                 if (typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized?))
                 {
                     return new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitV1ParametersParseTier))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitV1ParametersParseTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitV1ParametersParseTier?))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitV1ParametersParseTierNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LlamaParse.SpreadsheetV1ParametersTier))
@@ -2994,6 +3060,16 @@ namespace LlamaParse
                     return new global::LlamaParse.JsonConverters.WebhookConfigCreateRequestWebhookOutputFormatNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseTenantType))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigResponseTenantTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseTenantType?))
+                {
+                    return new global::LlamaParse.JsonConverters.WebhookConfigResponseTenantTypeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::LlamaParse.WebhookConfigResponseWebhookEventsVariant1Item))
                 {
                     return new global::LlamaParse.JsonConverters.WebhookConfigResponseWebhookEventsVariant1ItemJsonConverter();
@@ -3042,16 +3118,6 @@ namespace LlamaParse
                 if (typeToConvert == typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item?))
                 {
                     return new global::LlamaParse.JsonConverters.WebhookConfigurationWebhookEventsVariant1ItemNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType))
-                {
-                    return new global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::LlamaParse.ListProjectJobDataPointsApiV1JobDataPointsGetJobType?))
-                {
-                    return new global::LlamaParse.JsonConverters.ListProjectJobDataPointsApiV1JobDataPointsGetJobTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LlamaParse.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2GetStatusesVariant1Item))
@@ -3134,6 +3200,56 @@ namespace LlamaParse
                     return new global::LlamaParse.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType))
+                {
+                    return new global::LlamaParse.JsonConverters.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantType?))
+                {
+                    return new global::LlamaParse.JsonConverters.CreateWebhookConfigApiV1BetaWebhookConfigsPostTenantTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListWebhookConfigsApiV1BetaWebhookConfigsGetTenantType))
+                {
+                    return new global::LlamaParse.JsonConverters.ListWebhookConfigsApiV1BetaWebhookConfigsGetTenantTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ListWebhookConfigsApiV1BetaWebhookConfigsGetTenantType?))
+                {
+                    return new global::LlamaParse.JsonConverters.ListWebhookConfigsApiV1BetaWebhookConfigsGetTenantTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType))
+                {
+                    return new global::LlamaParse.JsonConverters.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantType?))
+                {
+                    return new global::LlamaParse.JsonConverters.GetWebhookConfigApiV1BetaWebhookConfigsConfigIdGetTenantTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType))
+                {
+                    return new global::LlamaParse.JsonConverters.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantType?))
+                {
+                    return new global::LlamaParse.JsonConverters.UpdateWebhookConfigApiV1BetaWebhookConfigsConfigIdPutTenantTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.DeleteWebhookConfigApiV1BetaWebhookConfigsConfigIdDeleteTenantType))
+                {
+                    return new global::LlamaParse.JsonConverters.DeleteWebhookConfigApiV1BetaWebhookConfigsConfigIdDeleteTenantTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.DeleteWebhookConfigApiV1BetaWebhookConfigsConfigIdDeleteTenantType?))
+                {
+                    return new global::LlamaParse.JsonConverters.DeleteWebhookConfigApiV1BetaWebhookConfigsConfigIdDeleteTenantTypeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::LlamaParse.ListSplitJobsApiV1BetaSplitJobsGetStatus))
                 {
                     return new global::LlamaParse.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatusJsonConverter();
@@ -3192,6 +3308,16 @@ namespace LlamaParse
                 if (typeToConvert == typeof(global::LlamaParse.ListPipelinesApiV2PipelinesGetPipelineType?))
                 {
                     return new global::LlamaParse.JsonConverters.ListPipelinesApiV2PipelinesGetPipelineTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType))
+                {
+                    return new global::LlamaParse.JsonConverters.QueryWebhookConfigsApiV2WebhookConfigsGetTenantTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.QueryWebhookConfigsApiV2WebhookConfigsGetTenantType?))
+                {
+                    return new global::LlamaParse.JsonConverters.QueryWebhookConfigsApiV2WebhookConfigsGetTenantTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LlamaParse.ListBatchesApiV2BatchesGetStatus))
