@@ -52,6 +52,9 @@ namespace LlamaParse
         /// <param name="indexIds">
         /// Indexes this session will retrieve from. Once set and the first message has been sent, the source set is locked for the session's lifetime. Leave null to create an unbound session.
         /// </param>
+        /// <param name="sharedAccess">
+        /// What this chat's share link grants: read_only (transcript only) or query (viewers may ask new questions). Null follows the deployment default.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -60,6 +63,7 @@ namespace LlamaParse
             global::System.Guid? organizationId = default,
             string? session = default,
             global::System.Collections.Generic.IList<string>? indexIds = default,
+            global::LlamaParse.SessionCreateSharedAccess? sharedAccess = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

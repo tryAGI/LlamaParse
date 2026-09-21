@@ -35,6 +35,12 @@ namespace LlamaParse
         public string? Error { get; set; }
 
         /// <summary>
+        /// Requested indexes this turn could not query.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("skipped_index_ids")]
+        public global::System.Collections.Generic.IList<string>? SkippedIndexIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -49,6 +55,9 @@ namespace LlamaParse
         /// Default Value: stop
         /// </param>
         /// <param name="error"></param>
+        /// <param name="skippedIndexIds">
+        /// Requested indexes this turn could not query.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -56,12 +65,14 @@ namespace LlamaParse
             global::LlamaParse.Usage usage,
             bool isError,
             string? type,
-            string? error)
+            string? error,
+            global::System.Collections.Generic.IList<string>? skippedIndexIds)
         {
             this.Type = type;
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.IsError = isError;
             this.Error = error;
+            this.SkippedIndexIds = skippedIndexIds;
         }
 
         /// <summary>

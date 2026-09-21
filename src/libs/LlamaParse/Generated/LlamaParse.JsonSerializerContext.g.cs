@@ -134,6 +134,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ChatParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ChatSessionSummary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.JobMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ChatSessionSummarySharedAccess), TypeInfoPropertyName = "ChatSessionSummarySharedAccess2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifierRule))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.StatusEnum), TypeInfoPropertyName = "StatusEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ClassifierRule>))]
@@ -513,7 +514,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PageFigureMetadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PageScreenshotMetadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PaginatedExtractRunsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ExtractRun>))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -534,6 +534,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>?), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_d9f8945237261e89")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>?), TypeInfoPropertyName = "CloudBoxDataSource_ee99e0e6ec633008")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>?), TypeInfoPropertyName = "CloudBoxDataSource_object_dfe1806971be6576")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ExtractRun>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PaginatedListCloudDocumentsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.CloudDocument>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PaginatedListPipelineFilesResponse))]
@@ -647,7 +648,9 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RevisionTargetSpan))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SearchRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionCreate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionCreateSharedAccess), TypeInfoPropertyName = "SessionCreateSharedAccess2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetail))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetailSharedAccess), TypeInfoPropertyName = "SessionDetailSharedAccess2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.EventsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EventsItem), TypeInfoPropertyName = "EventsItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ThinkingDeltaEvent))]
@@ -805,6 +808,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BatchResponseStatus?), TypeInfoPropertyName = "NullableBatchResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.BoxAuthMechanism?), TypeInfoPropertyName = "NullableBoxAuthMechanism2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.MessageRole?), TypeInfoPropertyName = "NullableMessageRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ChatSessionSummarySharedAccess?), TypeInfoPropertyName = "NullableChatSessionSummarySharedAccess2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.StatusEnum?), TypeInfoPropertyName = "NullableStatusEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyMode?), TypeInfoPropertyName = "NullableClassifyMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyV2JobResponseStatus?), TypeInfoPropertyName = "NullableClassifyV2JobResponseStatus2")]
@@ -926,6 +930,8 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.ObjectType?, string, object>?), TypeInfoPropertyName = "NullableAnyOfObjectTypeStringObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.ValueFilter, global::System.Collections.Generic.IList<global::LlamaParse.NumericRangeFilter>, object>?), TypeInfoPropertyName = "NullableAnyOfValueFilterIListNumericRangeFilterObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RevisionType?), TypeInfoPropertyName = "NullableRevisionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionCreateSharedAccess?), TypeInfoPropertyName = "NullableSessionCreateSharedAccess2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetailSharedAccess?), TypeInfoPropertyName = "NullableSessionDetailSharedAccess2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EventsItem?), TypeInfoPropertyName = "NullableEventsItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetailEventDiscriminatorType?), TypeInfoPropertyName = "NullableSessionDetailEventDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SparseModelType?), TypeInfoPropertyName = "NullableSparseModelType2")]
@@ -1020,12 +1026,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ItemsItem3>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems, object>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems, object>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ItemsItem4>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.FormTextGrounding>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::LlamaParse.FormTextGrounding>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.GroundedLine>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.Form>))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1046,6 +1046,12 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudPineconeVectorStore, global::LlamaParse.CloudPostgresVectorStore, global::LlamaParse.CloudQdrantVectorStore, global::LlamaParse.CloudAzureAISearchVectorStore, global::LlamaParse.CloudMongoDBAtlasVectorSearch, global::LlamaParse.CloudMilvusVectorStore, global::LlamaParse.CloudAstraDBVectorStore, object>?), TypeInfoPropertyName = "CloudAstraDBVectorStore_object_d9f8945237261e89")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource>?), TypeInfoPropertyName = "CloudBoxDataSource_ee99e0e6ec633008")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::LlamaParse.CloudS3DataSource, global::LlamaParse.CloudAzStorageBlobDataSource, global::LlamaParse.CloudGoogleDriveDataSource, global::LlamaParse.CloudOneDriveDataSource, global::LlamaParse.CloudSharepointDataSource, global::LlamaParse.CloudSlackDataSource, global::LlamaParse.CloudNotionPageDataSource, global::LlamaParse.CloudConfluenceDataSource, global::LlamaParse.CloudJiraDataSource, global::LlamaParse.CloudJiraDataSourceV2, global::LlamaParse.CloudBoxDataSource, object>?), TypeInfoPropertyName = "CloudBoxDataSource_object_dfe1806971be6576")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ItemsItem4>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.FormTextGrounding>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::LlamaParse.FormTextGrounding>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.GroundedLine>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.Form>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<long>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.GroundedWord>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ValidationError>))]
@@ -1376,6 +1382,10 @@ namespace LlamaParse
                     || typeToConvert == typeof(global::LlamaParse.BoxAuthMechanism)
 
                     || typeToConvert == typeof(global::LlamaParse.BoxAuthMechanism?)
+
+                    || typeToConvert == typeof(global::LlamaParse.ChatSessionSummarySharedAccess)
+
+                    || typeToConvert == typeof(global::LlamaParse.ChatSessionSummarySharedAccess?)
 
                     || typeToConvert == typeof(global::LlamaParse.ClassifyMode)
 
@@ -1725,6 +1735,14 @@ namespace LlamaParse
 
                     || typeToConvert == typeof(global::LlamaParse.RevisionType?)
 
+                    || typeToConvert == typeof(global::LlamaParse.SessionCreateSharedAccess)
+
+                    || typeToConvert == typeof(global::LlamaParse.SessionCreateSharedAccess?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SessionDetailSharedAccess)
+
+                    || typeToConvert == typeof(global::LlamaParse.SessionDetailSharedAccess?)
+
                     || typeToConvert == typeof(global::LlamaParse.SessionDetailEventDiscriminatorType)
 
                     || typeToConvert == typeof(global::LlamaParse.SessionDetailEventDiscriminatorType?)
@@ -2008,6 +2026,16 @@ namespace LlamaParse
                 if (typeToConvert == typeof(global::LlamaParse.BoxAuthMechanism?))
                 {
                     return new global::LlamaParse.JsonConverters.BoxAuthMechanismNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ChatSessionSummarySharedAccess))
+                {
+                    return new global::LlamaParse.JsonConverters.ChatSessionSummarySharedAccessJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ChatSessionSummarySharedAccess?))
+                {
+                    return new global::LlamaParse.JsonConverters.ChatSessionSummarySharedAccessNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LlamaParse.ClassifyMode))
@@ -2878,6 +2906,26 @@ namespace LlamaParse
                 if (typeToConvert == typeof(global::LlamaParse.RevisionType?))
                 {
                     return new global::LlamaParse.JsonConverters.RevisionTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SessionCreateSharedAccess))
+                {
+                    return new global::LlamaParse.JsonConverters.SessionCreateSharedAccessJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SessionCreateSharedAccess?))
+                {
+                    return new global::LlamaParse.JsonConverters.SessionCreateSharedAccessNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SessionDetailSharedAccess))
+                {
+                    return new global::LlamaParse.JsonConverters.SessionDetailSharedAccessJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SessionDetailSharedAccess?))
+                {
+                    return new global::LlamaParse.JsonConverters.SessionDetailSharedAccessNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LlamaParse.SessionDetailEventDiscriminatorType))

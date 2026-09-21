@@ -16,7 +16,7 @@ namespace LlamaParse
         public required string Category { get; set; }
 
         /// <summary>
-        /// 1-indexed page numbers in this split.
+        /// Page numbers in this segment, as numbered by the input document.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pages")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -42,7 +42,7 @@ namespace LlamaParse
         /// Category name this split belongs to.
         /// </param>
         /// <param name="pages">
-        /// 1-indexed page numbers in this split.
+        /// Page numbers in this segment, as numbered by the input document.
         /// </param>
         /// <param name="confidenceCategory">
         /// Categorical confidence level. Valid values are: high, medium, low.
