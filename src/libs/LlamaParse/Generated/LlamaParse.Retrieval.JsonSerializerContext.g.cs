@@ -26,7 +26,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AttachmentRef))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.MetadataDict))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::LlamaParse.MetadataValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileFindEntry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileFindParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FileFindResult))]

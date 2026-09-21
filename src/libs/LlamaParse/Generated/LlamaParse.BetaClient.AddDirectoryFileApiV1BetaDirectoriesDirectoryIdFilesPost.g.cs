@@ -553,7 +553,7 @@ namespace LlamaParse
             string? session = default,
             string? uniqueId = default,
             string? displayName = default,
-            global::LlamaParse.MetadataDict? metadata = default,
+            global::System.Collections.Generic.Dictionary<string, global::LlamaParse.MetadataValue>? metadata = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
