@@ -94,6 +94,12 @@ namespace LlamaParse
         public string? ParseConfigId { get; set; }
 
         /// <summary>
+        /// Page selection requested for this job, if any.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("target_pages")]
+        public string? TargetPages { get; set; }
+
+        /// <summary>
         /// Current job status. Valid values are: pending, processing, completed, failed, cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -163,6 +169,9 @@ namespace LlamaParse
         /// <param name="parseConfigId">
         /// Saved parse configuration ID requested for this job, if any.
         /// </param>
+        /// <param name="targetPages">
+        /// Page selection requested for this job, if any.
+        /// </param>
         /// <param name="result">
         /// Split result, available when status is completed.
         /// </param>
@@ -187,6 +196,7 @@ namespace LlamaParse
             global::LlamaParse.SplitStrategy? splittingStrategy,
             string? parseTier,
             string? parseConfigId,
+            string? targetPages,
             global::LlamaParse.SplitResultResponse? result,
             string? errorMessage)
         {
@@ -203,6 +213,7 @@ namespace LlamaParse
             this.SplittingStrategy = splittingStrategy;
             this.ParseTier = parseTier;
             this.ParseConfigId = parseConfigId;
+            this.TargetPages = targetPages;
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Result = result;
             this.ErrorMessage = errorMessage;

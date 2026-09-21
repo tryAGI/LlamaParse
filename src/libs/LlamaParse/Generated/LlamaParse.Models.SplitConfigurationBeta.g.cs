@@ -22,6 +22,12 @@ namespace LlamaParse
         public global::LlamaParse.SplitStrategy? SplittingStrategy { get; set; }
 
         /// <summary>
+        /// Split version to run. Omit for the current release. Preview versions are selectable by name and never resolved automatically.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("version")]
+        public string? Version { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,15 +42,20 @@ namespace LlamaParse
         /// <param name="splittingStrategy">
         /// Strategy for splitting documents.
         /// </param>
+        /// <param name="version">
+        /// Split version to run. Omit for the current release. Preview versions are selectable by name and never resolved automatically.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SplitConfigurationBeta(
             global::System.Collections.Generic.IList<global::LlamaParse.SplitCategory> categories,
-            global::LlamaParse.SplitStrategy? splittingStrategy)
+            global::LlamaParse.SplitStrategy? splittingStrategy,
+            string? version)
         {
             this.Categories = categories ?? throw new global::System.ArgumentNullException(nameof(categories));
             this.SplittingStrategy = splittingStrategy;
+            this.Version = version;
         }
 
         /// <summary>

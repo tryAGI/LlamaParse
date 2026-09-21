@@ -41,6 +41,14 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<string>? IndexIds { get; set; }
 
         /// <summary>
+        /// What this chat's share link grants: read_only (transcript only) or query (viewers may ask new questions).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shared_access")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.SessionDetailSharedAccessJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LlamaParse.SessionDetailSharedAccess SharedAccess { get; set; }
+
+        /// <summary>
         /// Ordered list of events that make up the conversation history.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
@@ -62,6 +70,9 @@ namespace LlamaParse
         /// <param name="lastUpdatedAt">
         /// ISO-format timestamp showing when the session was last updated.
         /// </param>
+        /// <param name="sharedAccess">
+        /// What this chat's share link grants: read_only (transcript only) or query (viewers may ask new questions).
+        /// </param>
         /// <param name="events">
         /// Ordered list of events that make up the conversation history.
         /// </param>
@@ -80,6 +91,7 @@ namespace LlamaParse
         public SessionDetail(
             string sessionId,
             string lastUpdatedAt,
+            global::LlamaParse.SessionDetailSharedAccess sharedAccess,
             global::System.Collections.Generic.IList<global::LlamaParse.EventsItem> events,
             string? generatedTitle,
             global::LlamaParse.JobMetadata? jobMetadata,
@@ -90,6 +102,7 @@ namespace LlamaParse
             this.LastUpdatedAt = lastUpdatedAt ?? throw new global::System.ArgumentNullException(nameof(lastUpdatedAt));
             this.JobMetadata = jobMetadata;
             this.IndexIds = indexIds;
+            this.SharedAccess = sharedAccess;
             this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
         }
 

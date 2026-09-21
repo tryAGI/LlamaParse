@@ -41,6 +41,14 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<string>? IndexIds { get; set; }
 
         /// <summary>
+        /// What this chat's share link grants: read_only (transcript only) or query (viewers may ask new questions).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shared_access")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.ChatSessionSummarySharedAccessJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LlamaParse.ChatSessionSummarySharedAccess SharedAccess { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,6 +62,9 @@ namespace LlamaParse
         /// </param>
         /// <param name="lastUpdatedAt">
         /// ISO-format timestamp showing when the session was last updated.
+        /// </param>
+        /// <param name="sharedAccess">
+        /// What this chat's share link grants: read_only (transcript only) or query (viewers may ask new questions).
         /// </param>
         /// <param name="generatedTitle">
         /// Auto-generated title derived from the first user message.
@@ -70,6 +81,7 @@ namespace LlamaParse
         public ChatSessionSummary(
             string sessionId,
             string lastUpdatedAt,
+            global::LlamaParse.ChatSessionSummarySharedAccess sharedAccess,
             string? generatedTitle,
             global::LlamaParse.JobMetadata? jobMetadata,
             global::System.Collections.Generic.IList<string>? indexIds)
@@ -79,6 +91,7 @@ namespace LlamaParse
             this.LastUpdatedAt = lastUpdatedAt ?? throw new global::System.ArgumentNullException(nameof(lastUpdatedAt));
             this.JobMetadata = jobMetadata;
             this.IndexIds = indexIds;
+            this.SharedAccess = sharedAccess;
         }
 
         /// <summary>

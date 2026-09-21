@@ -10153,7 +10153,7 @@
           "Split"
         ],
         "summary": "Create Split Job",
-        "description": "Create a split job.\n\n## Document input\n\nSet `file_input` to a file ID or a completed parse job ID (`pjb-...`). Supplying a parse job reuses its output instead of reading the document again.\n\n## Parse settings\n\n`configuration.parse_tier` and `configuration.parse_config_id` control how the document is read before splitting; both are ignored when a parse job is supplied. A parse configuration restricted to a page subset (`target_pages` or `max_pages`) is rejected, since split results always number pages relative to the full document.\n\nThe job runs asynchronously. Poll `GET /split/jobs/{split_job_id}` or register a webhook to monitor completion.",
+        "description": "Create a split job.\n\n## Document input\n\nSet `file_input` to a file ID or a completed parse job ID (`pjb-...`). Supplying a parse job reuses its output instead of reading the document again.\n\n## Page selection\n\n`configuration.target_pages` selects which pages of a supplied parse job to split (1-based; `1-50`, `1,3,5-7`). Pages are read in ascending document order, and each segment's `pages` are the parse job's own page numbers, so segments map straight back to the original document. Requires a parse job as `file_input`; passing it with a file ID returns 400.\n\n## Parse settings\n\n`configuration.parse_tier` and `configuration.parse_config_id` control how the document is read before splitting; both are ignored when a parse job is supplied. A parse configuration restricted to a page subset (`target_pages` or `max_pages`) is rejected, since split results always number pages relative to the full document.\n\nThe job runs asynchronously. Poll `GET /split/jobs/{split_job_id}` or register a webhook to monitor completion.",
         "operationId": "create_split_job_api_v1_split_jobs_post",
         "security": [
           {
@@ -27661,6 +27661,15 @@
             "examples": [
               "What were the main findings in Q3?"
             ]
+          },
+          "require_all_indexes": {
+            "type": "boolean",
+            "title": "Require All Indexes",
+            "description": "Fail the turn if any requested index cannot be queried.",
+            "default": false,
+            "examples": [
+              true
+            ]
           }
         },
         "type": "object",
@@ -27735,12 +27744,25 @@
                 "idx-def456"
               ]
             ]
+          },
+          "shared_access": {
+            "type": "string",
+            "enum": [
+              "read_only",
+              "query"
+            ],
+            "title": "Shared Access",
+            "description": "What this chat's share link grants: read_only (transcript only) or query (viewers may ask new questions).",
+            "examples": [
+              "read_only"
+            ]
           }
         },
         "type": "object",
         "required": [
           "session_id",
-          "last_updated_at"
+          "last_updated_at",
+          "shared_access"
         ],
         "title": "ChatSessionSummary",
         "description": "Summary of a chat session, including its title and last run metadata."
@@ -47524,6 +47546,25 @@
                 "idx-def456"
               ]
             ]
+          },
+          "shared_access": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "read_only",
+                  "query"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Shared Access",
+            "description": "What this chat's share link grants: read_only (transcript only) or query (viewers may ask new questions). Null follows the deployment default.",
+            "examples": [
+              "read_only"
+            ]
           }
         },
         "type": "object",
@@ -47595,6 +47636,18 @@
               ]
             ]
           },
+          "shared_access": {
+            "type": "string",
+            "enum": [
+              "read_only",
+              "query"
+            ],
+            "title": "Shared Access",
+            "description": "What this chat's share link grants: read_only (transcript only) or query (viewers may ask new questions).",
+            "examples": [
+              "read_only"
+            ]
+          },
           "events": {
             "items": {
               "oneOf": [
@@ -47646,6 +47699,7 @@
         "required": [
           "session_id",
           "last_updated_at",
+          "shared_access",
           "events"
         ],
         "title": "SessionDetail",
@@ -47755,6 +47809,22 @@
             "$ref": "#/components/schemas/SplitStrategy",
             "description": "Strategy for splitting documents."
           },
+          "version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version",
+            "description": "Split version to run. Omit for the current release. Preview versions are selectable by name and never resolved automatically.",
+            "examples": [
+              "latest",
+              "jev-preview"
+            ]
+          },
           "parse_tier": {
             "anyOf": [
               {
@@ -47787,9 +47857,25 @@
               }
             ],
             "title": "Parse Config Id",
-            "description": "Saved parse configuration ID controlling how the document is read before splitting. Takes precedence over parse_tier. Configurations restricted to a page subset (target_pages or max_pages) are rejected, since split results always number pages relative to the full document. Ignored when a completed parse job is supplied as file_input.",
+            "description": "Saved parse configuration ID to control how the document is parsed before splitting. Takes precedence over parse_tier. Configurations that restrict pages (`target_pages` or `max_pages` on the parse configuration) are rejected: split results number pages relative to the full document. Ignored when a completed parse job is supplied as file_input.",
             "examples": [
               "cfg-11111111-2222-3333-4444-555555555555"
+            ]
+          },
+          "target_pages": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Pages",
+            "description": "Comma-separated page numbers or ranges to split (1-based). Omit to split all pages. Requires a completed parse job as file_input.",
+            "examples": [
+              "1,3,5-7",
+              "1-3,8-10"
             ]
           }
         },
@@ -47815,6 +47901,22 @@
           "splitting_strategy": {
             "$ref": "#/components/schemas/SplitStrategy",
             "description": "Strategy for splitting documents."
+          },
+          "version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version",
+            "description": "Split version to run. Omit for the current release. Preview versions are selectable by name and never resolved automatically.",
+            "examples": [
+              "latest",
+              "jev-preview"
+            ]
           }
         },
         "type": "object",
@@ -48184,6 +48286,18 @@
             "title": "Parse Config Id",
             "description": "Saved parse configuration ID requested for this job, if any."
           },
+          "target_pages": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Pages",
+            "description": "Page selection requested for this job, if any."
+          },
           "status": {
             "type": "string",
             "title": "Status",
@@ -48365,7 +48479,7 @@
             },
             "type": "array",
             "title": "Pages",
-            "description": "1-indexed page numbers in this split."
+            "description": "Page numbers in this segment, as numbered by the input document."
           },
           "confidence_category": {
             "type": "string",
@@ -48439,6 +48553,22 @@
             "$ref": "#/components/schemas/SplitStrategy",
             "description": "Strategy for splitting documents."
           },
+          "version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version",
+            "description": "Split version to run. Omit for the current release. Preview versions are selectable by name and never resolved automatically.",
+            "examples": [
+              "latest",
+              "jev-preview"
+            ]
+          },
           "parse_tier": {
             "anyOf": [
               {
@@ -48471,9 +48601,25 @@
               }
             ],
             "title": "Parse Config Id",
-            "description": "Saved parse configuration ID controlling how the document is read before splitting. Takes precedence over parse_tier. Configurations restricted to a page subset (target_pages or max_pages) are rejected, since split results always number pages relative to the full document. Ignored when a completed parse job is supplied as file_input.",
+            "description": "Saved parse configuration ID to control how the document is parsed before splitting. Takes precedence over parse_tier. Configurations that restrict pages (`target_pages` or `max_pages` on the parse configuration) are rejected: split results number pages relative to the full document. Ignored when a completed parse job is supplied as file_input.",
             "examples": [
               "cfg-11111111-2222-3333-4444-555555555555"
+            ]
+          },
+          "target_pages": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Pages",
+            "description": "Comma-separated page numbers or ranges to split (1-based). Omit to split all pages. Requires a completed parse job as file_input.",
+            "examples": [
+              "1,3,5-7",
+              "1-3,8-10"
             ]
           },
           "product_type": {
@@ -48726,6 +48872,14 @@
               }
             ],
             "title": "Error"
+          },
+          "skipped_index_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Skipped Index Ids",
+            "description": "Requested indexes this turn could not query."
           }
         },
         "type": "object",

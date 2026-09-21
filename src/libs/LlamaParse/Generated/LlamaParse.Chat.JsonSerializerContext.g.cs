@@ -28,12 +28,15 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ChatParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ChatSessionSummary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.JobMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ChatSessionSummarySharedAccess), TypeInfoPropertyName = "ChatSessionSummarySharedAccess2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.HTTPValidationError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ValidationError>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ValidationError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ImageAttachmentRef))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionCreate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionCreateSharedAccess), TypeInfoPropertyName = "SessionCreateSharedAccess2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetail))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetailSharedAccess), TypeInfoPropertyName = "SessionDetailSharedAccess2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.EventsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EventsItem), TypeInfoPropertyName = "EventsItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ThinkingDeltaEvent))]
@@ -53,6 +56,9 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<string, int?>), TypeInfoPropertyName = "AnyOfStringInt322")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ChatSessionSummarySharedAccess?), TypeInfoPropertyName = "NullableChatSessionSummarySharedAccess2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionCreateSharedAccess?), TypeInfoPropertyName = "NullableSessionCreateSharedAccess2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetailSharedAccess?), TypeInfoPropertyName = "NullableSessionDetailSharedAccess2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EventsItem?), TypeInfoPropertyName = "NullableEventsItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SessionDetailEventDiscriminatorType?), TypeInfoPropertyName = "NullableSessionDetailEventDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
@@ -226,7 +232,19 @@ namespace LlamaParse
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::LlamaParse.SessionDetailEventDiscriminatorType)
+                    typeToConvert == typeof(global::LlamaParse.ChatSessionSummarySharedAccess)
+
+                    || typeToConvert == typeof(global::LlamaParse.ChatSessionSummarySharedAccess?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SessionCreateSharedAccess)
+
+                    || typeToConvert == typeof(global::LlamaParse.SessionCreateSharedAccess?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SessionDetailSharedAccess)
+
+                    || typeToConvert == typeof(global::LlamaParse.SessionDetailSharedAccess?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SessionDetailEventDiscriminatorType)
 
                     || typeToConvert == typeof(global::LlamaParse.SessionDetailEventDiscriminatorType?);
             }
@@ -235,6 +253,36 @@ namespace LlamaParse
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
+                if (typeToConvert == typeof(global::LlamaParse.ChatSessionSummarySharedAccess))
+                {
+                    return new global::LlamaParse.JsonConverters.ChatSessionSummarySharedAccessJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.ChatSessionSummarySharedAccess?))
+                {
+                    return new global::LlamaParse.JsonConverters.ChatSessionSummarySharedAccessNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SessionCreateSharedAccess))
+                {
+                    return new global::LlamaParse.JsonConverters.SessionCreateSharedAccessJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SessionCreateSharedAccess?))
+                {
+                    return new global::LlamaParse.JsonConverters.SessionCreateSharedAccessNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SessionDetailSharedAccess))
+                {
+                    return new global::LlamaParse.JsonConverters.SessionDetailSharedAccessJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SessionDetailSharedAccess?))
+                {
+                    return new global::LlamaParse.JsonConverters.SessionDetailSharedAccessNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::LlamaParse.SessionDetailEventDiscriminatorType))
                 {
                     return new global::LlamaParse.JsonConverters.SessionDetailEventDiscriminatorTypeJsonConverter();

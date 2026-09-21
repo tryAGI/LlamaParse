@@ -15,6 +15,12 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<string>? IndexIds { get; set; }
 
         /// <summary>
+        /// What this chat's share link grants: read_only (transcript only) or query (viewers may ask new questions). Null follows the deployment default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shared_access")]
+        public global::LlamaParse.SessionCreateSharedAccess? SharedAccess { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -26,13 +32,18 @@ namespace LlamaParse
         /// <param name="indexIds">
         /// Indexes this session will retrieve from. Once set and the first message has been sent, the source set is locked for the session's lifetime. Leave null to create an unbound session.
         /// </param>
+        /// <param name="sharedAccess">
+        /// What this chat's share link grants: read_only (transcript only) or query (viewers may ask new questions). Null follows the deployment default.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SessionCreate(
-            global::System.Collections.Generic.IList<string>? indexIds)
+            global::System.Collections.Generic.IList<string>? indexIds,
+            global::LlamaParse.SessionCreateSharedAccess? sharedAccess)
         {
             this.IndexIds = indexIds;
+            this.SharedAccess = sharedAccess;
         }
 
         /// <summary>
