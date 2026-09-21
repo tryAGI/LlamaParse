@@ -877,7 +877,7 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.MetadataDict? Type211 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::LlamaParse.MetadataValue>? Type211 { get; set; }
         /// <summary>
         ///
         /// </summary>
