@@ -14936,7 +14936,7 @@
           "Directories"
         ],
         "summary": "Create Directory",
-        "description": "Create a new directory within the specified project.",
+        "description": "Create a new directory within the specified project.\n\nA connector subscription syncs into at most one directory. Creating a second one for the same\nsubscription returns `409` with the existing directory's id in `detail.directory_id`.",
         "operationId": "create_directory_api_v1_beta_directories_post",
         "security": [
           {
@@ -15012,6 +15012,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DirectoryResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "A directory with this name already exists, or the connector subscription already syncs into a directory. For the latter, 'detail.directory_id' names the existing directory.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectoryConflictResponse"
                 }
               }
             }
@@ -31588,6 +31598,49 @@
         ],
         "title": "DirectRetrievalParams"
       },
+      "DirectoryConflictDetail": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "description": "What conflicted and how to resolve it."
+          },
+          "directory_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Directory Id",
+            "description": "The directory the connector subscription already syncs into. Null for a name conflict.",
+            "examples": [
+              "dir-abc123"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "message"
+        ],
+        "title": "DirectoryConflictDetail",
+        "description": "Why a directory create conflicted."
+      },
+      "DirectoryConflictResponse": {
+        "properties": {
+          "detail": {
+            "$ref": "#/components/schemas/DirectoryConflictDetail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "title": "DirectoryConflictResponse",
+        "description": "Body of the 409 returned when a directory create conflicts."
+      },
       "DirectoryCreateRequest": {
         "properties": {
           "name": {
@@ -47822,7 +47875,7 @@
             "description": "Split version to run. Omit for the current release. Preview versions are selectable by name and never resolved automatically.",
             "examples": [
               "latest",
-              "jev-preview"
+              "turbo-preview"
             ]
           },
           "parse_tier": {
@@ -47915,7 +47968,7 @@
             "description": "Split version to run. Omit for the current release. Preview versions are selectable by name and never resolved automatically.",
             "examples": [
               "latest",
-              "jev-preview"
+              "turbo-preview"
             ]
           }
         },
@@ -48566,7 +48619,7 @@
             "description": "Split version to run. Omit for the current release. Preview versions are selectable by name and never resolved automatically.",
             "examples": [
               "latest",
-              "jev-preview"
+              "turbo-preview"
             ]
           },
           "parse_tier": {
