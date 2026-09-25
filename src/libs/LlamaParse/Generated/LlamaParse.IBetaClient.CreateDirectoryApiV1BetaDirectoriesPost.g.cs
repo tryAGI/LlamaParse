@@ -6,7 +6,9 @@ namespace LlamaParse
     {
         /// <summary>
         /// Create Directory<br/>
-        /// Create a new directory within the specified project.
+        /// Create a new directory within the specified project.<br/>
+        /// A connector subscription syncs into at most one directory. Creating a second one for the same<br/>
+        /// subscription returns `409` with the existing directory's id in `detail.directory_id`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -25,7 +27,9 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Directory<br/>
-        /// Create a new directory within the specified project.
+        /// Create a new directory within the specified project.<br/>
+        /// A connector subscription syncs into at most one directory. Creating a second one for the same<br/>
+        /// subscription returns `409` with the existing directory's id in `detail.directory_id`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
@@ -44,7 +48,9 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Directory<br/>
-        /// Create a new directory within the specified project.
+        /// Create a new directory within the specified project.<br/>
+        /// A connector subscription syncs into at most one directory. Creating a second one for the same<br/>
+        /// subscription returns `409` with the existing directory's id in `detail.directory_id`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
