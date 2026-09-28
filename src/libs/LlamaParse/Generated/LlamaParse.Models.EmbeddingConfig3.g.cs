@@ -47,8 +47,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ManagedOpenAIEmbeddingConfig PickManagedOpenaiEmbedding() => IsManagedOpenaiEmbedding
-            ? ManagedOpenaiEmbedding!
+        public global::LlamaParse.ManagedOpenAIEmbeddingConfig PickManagedOpenaiEmbedding() => ManagedOpenaiEmbedding is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ManagedOpenaiEmbedding' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.AzureOpenAIEmbeddingConfig PickAzureEmbedding1() => IsAzureEmbedding1
-            ? AzureEmbedding1!
+        public global::LlamaParse.AzureOpenAIEmbeddingConfig PickAzureEmbedding1() => AzureEmbedding1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AzureEmbedding1' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.CohereEmbeddingConfig PickCohereEmbedding() => IsCohereEmbedding
-            ? CohereEmbedding!
+        public global::LlamaParse.CohereEmbeddingConfig PickCohereEmbedding() => CohereEmbedding is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CohereEmbedding' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.GeminiEmbeddingConfig PickGeminiEmbedding() => IsGeminiEmbedding
-            ? GeminiEmbedding!
+        public global::LlamaParse.GeminiEmbeddingConfig PickGeminiEmbedding() => GeminiEmbedding is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GeminiEmbedding' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig PickHuggingfaceApiEmbedding() => IsHuggingfaceApiEmbedding
-            ? HuggingfaceApiEmbedding!
+        public global::LlamaParse.HuggingFaceInferenceAPIEmbeddingConfig PickHuggingfaceApiEmbedding() => HuggingfaceApiEmbedding is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HuggingfaceApiEmbedding' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.OpenAIEmbeddingConfig PickAzureEmbedding2() => IsAzureEmbedding2
-            ? AzureEmbedding2!
+        public global::LlamaParse.OpenAIEmbeddingConfig PickAzureEmbedding2() => AzureEmbedding2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AzureEmbedding2' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.VertexAIEmbeddingConfig PickVertexaiEmbedding() => IsVertexaiEmbedding
-            ? VertexaiEmbedding!
+        public global::LlamaParse.VertexAIEmbeddingConfig PickVertexaiEmbedding() => VertexaiEmbedding is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VertexaiEmbedding' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.BedrockEmbeddingConfig PickBedrockEmbedding() => IsBedrockEmbedding
-            ? BedrockEmbedding!
+        public global::LlamaParse.BedrockEmbeddingConfig PickBedrockEmbedding() => BedrockEmbedding is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BedrockEmbedding' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -575,37 +575,37 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsManagedOpenaiEmbedding && managedOpenaiEmbedding != null)
+            if (ManagedOpenaiEmbedding is { } __value0 && managedOpenaiEmbedding != null)
             {
-                return managedOpenaiEmbedding(ManagedOpenaiEmbedding!);
+                return managedOpenaiEmbedding(__value0);
             }
-            else if (IsAzureEmbedding1 && azureEmbedding1 != null)
+            else if (AzureEmbedding1 is { } __value1 && azureEmbedding1 != null)
             {
-                return azureEmbedding1(AzureEmbedding1!);
+                return azureEmbedding1(__value1);
             }
-            else if (IsCohereEmbedding && cohereEmbedding != null)
+            else if (CohereEmbedding is { } __value2 && cohereEmbedding != null)
             {
-                return cohereEmbedding(CohereEmbedding!);
+                return cohereEmbedding(__value2);
             }
-            else if (IsGeminiEmbedding && geminiEmbedding != null)
+            else if (GeminiEmbedding is { } __value3 && geminiEmbedding != null)
             {
-                return geminiEmbedding(GeminiEmbedding!);
+                return geminiEmbedding(__value3);
             }
-            else if (IsHuggingfaceApiEmbedding && huggingfaceApiEmbedding != null)
+            else if (HuggingfaceApiEmbedding is { } __value4 && huggingfaceApiEmbedding != null)
             {
-                return huggingfaceApiEmbedding(HuggingfaceApiEmbedding!);
+                return huggingfaceApiEmbedding(__value4);
             }
-            else if (IsAzureEmbedding2 && azureEmbedding2 != null)
+            else if (AzureEmbedding2 is { } __value5 && azureEmbedding2 != null)
             {
-                return azureEmbedding2(AzureEmbedding2!);
+                return azureEmbedding2(__value5);
             }
-            else if (IsVertexaiEmbedding && vertexaiEmbedding != null)
+            else if (VertexaiEmbedding is { } __value6 && vertexaiEmbedding != null)
             {
-                return vertexaiEmbedding(VertexaiEmbedding!);
+                return vertexaiEmbedding(__value6);
             }
-            else if (IsBedrockEmbedding && bedrockEmbedding != null)
+            else if (BedrockEmbedding is { } __value7 && bedrockEmbedding != null)
             {
-                return bedrockEmbedding(BedrockEmbedding!);
+                return bedrockEmbedding(__value7);
             }
 
             return default(TResult);
@@ -637,37 +637,37 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsManagedOpenaiEmbedding)
+            if (ManagedOpenaiEmbedding is { } __value0)
             {
-                managedOpenaiEmbedding?.Invoke(ManagedOpenaiEmbedding!);
+                managedOpenaiEmbedding?.Invoke(__value0);
             }
-            else if (IsAzureEmbedding1)
+            else if (AzureEmbedding1 is { } __value1)
             {
-                azureEmbedding1?.Invoke(AzureEmbedding1!);
+                azureEmbedding1?.Invoke(__value1);
             }
-            else if (IsCohereEmbedding)
+            else if (CohereEmbedding is { } __value2)
             {
-                cohereEmbedding?.Invoke(CohereEmbedding!);
+                cohereEmbedding?.Invoke(__value2);
             }
-            else if (IsGeminiEmbedding)
+            else if (GeminiEmbedding is { } __value3)
             {
-                geminiEmbedding?.Invoke(GeminiEmbedding!);
+                geminiEmbedding?.Invoke(__value3);
             }
-            else if (IsHuggingfaceApiEmbedding)
+            else if (HuggingfaceApiEmbedding is { } __value4)
             {
-                huggingfaceApiEmbedding?.Invoke(HuggingfaceApiEmbedding!);
+                huggingfaceApiEmbedding?.Invoke(__value4);
             }
-            else if (IsAzureEmbedding2)
+            else if (AzureEmbedding2 is { } __value5)
             {
-                azureEmbedding2?.Invoke(AzureEmbedding2!);
+                azureEmbedding2?.Invoke(__value5);
             }
-            else if (IsVertexaiEmbedding)
+            else if (VertexaiEmbedding is { } __value6)
             {
-                vertexaiEmbedding?.Invoke(VertexaiEmbedding!);
+                vertexaiEmbedding?.Invoke(__value6);
             }
-            else if (IsBedrockEmbedding)
+            else if (BedrockEmbedding is { } __value7)
             {
-                bedrockEmbedding?.Invoke(BedrockEmbedding!);
+                bedrockEmbedding?.Invoke(__value7);
             }
         }
 
@@ -690,37 +690,37 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsManagedOpenaiEmbedding)
+            if (ManagedOpenaiEmbedding is { } __value0)
             {
-                managedOpenaiEmbedding?.Invoke(ManagedOpenaiEmbedding!);
+                managedOpenaiEmbedding?.Invoke(__value0);
             }
-            else if (IsAzureEmbedding1)
+            else if (AzureEmbedding1 is { } __value1)
             {
-                azureEmbedding1?.Invoke(AzureEmbedding1!);
+                azureEmbedding1?.Invoke(__value1);
             }
-            else if (IsCohereEmbedding)
+            else if (CohereEmbedding is { } __value2)
             {
-                cohereEmbedding?.Invoke(CohereEmbedding!);
+                cohereEmbedding?.Invoke(__value2);
             }
-            else if (IsGeminiEmbedding)
+            else if (GeminiEmbedding is { } __value3)
             {
-                geminiEmbedding?.Invoke(GeminiEmbedding!);
+                geminiEmbedding?.Invoke(__value3);
             }
-            else if (IsHuggingfaceApiEmbedding)
+            else if (HuggingfaceApiEmbedding is { } __value4)
             {
-                huggingfaceApiEmbedding?.Invoke(HuggingfaceApiEmbedding!);
+                huggingfaceApiEmbedding?.Invoke(__value4);
             }
-            else if (IsAzureEmbedding2)
+            else if (AzureEmbedding2 is { } __value5)
             {
-                azureEmbedding2?.Invoke(AzureEmbedding2!);
+                azureEmbedding2?.Invoke(__value5);
             }
-            else if (IsVertexaiEmbedding)
+            else if (VertexaiEmbedding is { } __value6)
             {
-                vertexaiEmbedding?.Invoke(VertexaiEmbedding!);
+                vertexaiEmbedding?.Invoke(__value6);
             }
-            else if (IsBedrockEmbedding)
+            else if (BedrockEmbedding is { } __value7)
             {
-                bedrockEmbedding?.Invoke(BedrockEmbedding!);
+                bedrockEmbedding?.Invoke(__value7);
             }
         }
 

@@ -42,8 +42,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public string PickMetadataScalarValueVariant1() => IsMetadataScalarValueVariant1
-            ? MetadataScalarValueVariant1!
+        public string PickMetadataScalarValueVariant1() => MetadataScalarValueVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public int PickMetadataScalarValueVariant2() => IsMetadataScalarValueVariant2
-            ? MetadataScalarValueVariant2!.Value
+        public int PickMetadataScalarValueVariant2() => MetadataScalarValueVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public double PickMetadataScalarValueVariant3() => IsMetadataScalarValueVariant3
-            ? MetadataScalarValueVariant3!.Value
+        public double PickMetadataScalarValueVariant3() => MetadataScalarValueVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public bool PickMetadataScalarValueVariant4() => IsMetadataScalarValueVariant4
-            ? MetadataScalarValueVariant4!.Value
+        public bool PickMetadataScalarValueVariant4() => MetadataScalarValueVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public object PickMetadataScalarValueVariant5() => IsMetadataScalarValueVariant5
-            ? MetadataScalarValueVariant5!
+        public object PickMetadataScalarValueVariant5() => MetadataScalarValueVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant5' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -349,25 +349,25 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsMetadataScalarValueVariant1 && metadataScalarValueVariant1 != null)
+            if (MetadataScalarValueVariant1 is { } __value0 && metadataScalarValueVariant1 != null)
             {
-                return metadataScalarValueVariant1(MetadataScalarValueVariant1!);
+                return metadataScalarValueVariant1(__value0);
             }
-            else if (IsMetadataScalarValueVariant2 && metadataScalarValueVariant2 != null)
+            else if (MetadataScalarValueVariant2 is { } __value1 && metadataScalarValueVariant2 != null)
             {
-                return metadataScalarValueVariant2(MetadataScalarValueVariant2!);
+                return metadataScalarValueVariant2(__value1);
             }
-            else if (IsMetadataScalarValueVariant3 && metadataScalarValueVariant3 != null)
+            else if (MetadataScalarValueVariant3 is { } __value2 && metadataScalarValueVariant3 != null)
             {
-                return metadataScalarValueVariant3(MetadataScalarValueVariant3!);
+                return metadataScalarValueVariant3(__value2);
             }
-            else if (IsMetadataScalarValueVariant4 && metadataScalarValueVariant4 != null)
+            else if (MetadataScalarValueVariant4 is { } __value3 && metadataScalarValueVariant4 != null)
             {
-                return metadataScalarValueVariant4(MetadataScalarValueVariant4!);
+                return metadataScalarValueVariant4(__value3);
             }
-            else if (IsMetadataScalarValueVariant5 && metadataScalarValueVariant5 != null)
+            else if (MetadataScalarValueVariant5 is { } __value4 && metadataScalarValueVariant5 != null)
             {
-                return metadataScalarValueVariant5(MetadataScalarValueVariant5!);
+                return metadataScalarValueVariant5(__value4);
             }
 
             return default(TResult);
@@ -393,25 +393,25 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsMetadataScalarValueVariant1)
+            if (MetadataScalarValueVariant1 is { } __value0)
             {
-                metadataScalarValueVariant1?.Invoke(MetadataScalarValueVariant1!);
+                metadataScalarValueVariant1?.Invoke(__value0);
             }
-            else if (IsMetadataScalarValueVariant2)
+            else if (MetadataScalarValueVariant2 is { } __value1)
             {
-                metadataScalarValueVariant2?.Invoke(MetadataScalarValueVariant2!);
+                metadataScalarValueVariant2?.Invoke(__value1);
             }
-            else if (IsMetadataScalarValueVariant3)
+            else if (MetadataScalarValueVariant3 is { } __value2)
             {
-                metadataScalarValueVariant3?.Invoke(MetadataScalarValueVariant3!);
+                metadataScalarValueVariant3?.Invoke(__value2);
             }
-            else if (IsMetadataScalarValueVariant4)
+            else if (MetadataScalarValueVariant4 is { } __value3)
             {
-                metadataScalarValueVariant4?.Invoke(MetadataScalarValueVariant4!);
+                metadataScalarValueVariant4?.Invoke(__value3);
             }
-            else if (IsMetadataScalarValueVariant5)
+            else if (MetadataScalarValueVariant5 is { } __value4)
             {
-                metadataScalarValueVariant5?.Invoke(MetadataScalarValueVariant5!);
+                metadataScalarValueVariant5?.Invoke(__value4);
             }
         }
 
@@ -431,25 +431,25 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsMetadataScalarValueVariant1)
+            if (MetadataScalarValueVariant1 is { } __value0)
             {
-                metadataScalarValueVariant1?.Invoke(MetadataScalarValueVariant1!);
+                metadataScalarValueVariant1?.Invoke(__value0);
             }
-            else if (IsMetadataScalarValueVariant2)
+            else if (MetadataScalarValueVariant2 is { } __value1)
             {
-                metadataScalarValueVariant2?.Invoke(MetadataScalarValueVariant2!);
+                metadataScalarValueVariant2?.Invoke(__value1);
             }
-            else if (IsMetadataScalarValueVariant3)
+            else if (MetadataScalarValueVariant3 is { } __value2)
             {
-                metadataScalarValueVariant3?.Invoke(MetadataScalarValueVariant3!);
+                metadataScalarValueVariant3?.Invoke(__value2);
             }
-            else if (IsMetadataScalarValueVariant4)
+            else if (MetadataScalarValueVariant4 is { } __value3)
             {
-                metadataScalarValueVariant4?.Invoke(MetadataScalarValueVariant4!);
+                metadataScalarValueVariant4?.Invoke(__value3);
             }
-            else if (IsMetadataScalarValueVariant5)
+            else if (MetadataScalarValueVariant5 is { } __value4)
             {
-                metadataScalarValueVariant5?.Invoke(MetadataScalarValueVariant5!);
+                metadataScalarValueVariant5?.Invoke(__value4);
             }
         }
 

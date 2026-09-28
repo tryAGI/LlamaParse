@@ -47,8 +47,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormSection PickSection() => IsSection
-            ? Section!
+        public global::LlamaParse.FormSection PickSection() => Section is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Section' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormField PickField() => IsField
-            ? Field!
+        public global::LlamaParse.FormField PickField() => Field is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Field' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormTable PickTable() => IsTable
-            ? Table!
+        public global::LlamaParse.FormTable PickTable() => Table is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsSection && section != null)
+            if (Section is { } __value0 && section != null)
             {
-                return section(Section!);
+                return section(__value0);
             }
-            else if (IsField && field != null)
+            else if (Field is { } __value1 && field != null)
             {
-                return field(Field!);
+                return field(__value1);
             }
-            else if (IsTable && table != null)
+            else if (Table is { } __value2 && table != null)
             {
-                return table(Table!);
+                return table(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsSection)
+            if (Section is { } __value0)
             {
-                section?.Invoke(Section!);
+                section?.Invoke(__value0);
             }
-            else if (IsField)
+            else if (Field is { } __value1)
             {
-                field?.Invoke(Field!);
+                field?.Invoke(__value1);
             }
-            else if (IsTable)
+            else if (Table is { } __value2)
             {
-                table?.Invoke(Table!);
+                table?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsSection)
+            if (Section is { } __value0)
             {
-                section?.Invoke(Section!);
+                section?.Invoke(__value0);
             }
-            else if (IsField)
+            else if (Field is { } __value1)
             {
-                field?.Invoke(Field!);
+                field?.Invoke(__value1);
             }
-            else if (IsTable)
+            else if (Table is { } __value2)
             {
-                table?.Invoke(Table!);
+                table?.Invoke(__value2);
             }
         }
 

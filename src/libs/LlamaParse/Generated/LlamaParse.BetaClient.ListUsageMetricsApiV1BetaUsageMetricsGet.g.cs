@@ -265,7 +265,7 @@ namespace LlamaParse
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
                                 .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant())
-                                .AddRequiredParameter("organization_id", organizationId.ToString()!)
+                                .AddRequiredParameter("organization_id", organizationId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("user_id", userId)
                                 .AddOptionalParameter("event_types", eventTypes, delimiter: ",", explode: true)
@@ -331,7 +331,7 @@ namespace LlamaParse
                     pageSize: pageSize,
                     pageToken: pageToken,
                     includeTotal: includeTotal,
-                    organizationId: organizationId!,
+                    organizationId: organizationId,
                     projectId: projectId,
                     userId: userId,
                     eventTypes: eventTypes,
@@ -363,7 +363,7 @@ namespace LlamaParse
                                 pathTemplate: "\"/api/v1/beta/usage-metrics\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -397,7 +397,7 @@ namespace LlamaParse
                                 pathTemplate: "\"/api/v1/beta/usage-metrics\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -438,7 +438,7 @@ namespace LlamaParse
                                 pathTemplate: "\"/api/v1/beta/usage-metrics\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -486,7 +486,7 @@ namespace LlamaParse
                                 pathTemplate: "\"/api/v1/beta/usage-metrics\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -508,7 +508,7 @@ namespace LlamaParse
                                 pathTemplate: "\"/api/v1/beta/usage-metrics\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

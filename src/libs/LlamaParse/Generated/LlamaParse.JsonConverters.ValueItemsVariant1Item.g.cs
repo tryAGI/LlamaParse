@@ -68,19 +68,19 @@ namespace LlamaParse.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.FormSection), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.FormSection?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.FormSection).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Section!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSection(), typeInfo);
             }
             else if (value.IsField)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.FormField), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.FormField?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.FormField).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Field!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickField(), typeInfo);
             }
             else if (value.IsTable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.FormTable), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.FormTable?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.FormTable).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Table!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTable(), typeInfo);
             }
         }
     }

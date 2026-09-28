@@ -42,8 +42,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.MetadataScalarValue PickScalar() => IsScalar
-            ? Scalar!.Value
+        public global::LlamaParse.MetadataScalarValue PickScalar() => Scalar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Scalar' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickList() => IsList
-            ? List!
+        public global::System.Collections.Generic.IList<string> PickList() => List is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'List' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsScalar && scalar != null)
+            if (Scalar is { } __value0 && scalar != null)
             {
-                return scalar(Scalar!);
+                return scalar(__value0);
             }
-            else if (IsList && list != null)
+            else if (List is { } __value1 && list != null)
             {
-                return list(List!);
+                return list(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsScalar)
+            if (Scalar is { } __value0)
             {
-                scalar?.Invoke(Scalar!);
+                scalar?.Invoke(__value0);
             }
-            else if (IsList)
+            else if (List is { } __value1)
             {
-                list?.Invoke(List!);
+                list?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsScalar)
+            if (Scalar is { } __value0)
             {
-                scalar?.Invoke(Scalar!);
+                scalar?.Invoke(__value0);
             }
-            else if (IsList)
+            else if (List is { } __value1)
             {
-                list?.Invoke(List!);
+                list?.Invoke(__value1);
             }
         }
 

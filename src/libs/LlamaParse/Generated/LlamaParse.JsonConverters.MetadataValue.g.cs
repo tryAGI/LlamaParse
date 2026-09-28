@@ -149,13 +149,13 @@ namespace LlamaParse.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.MetadataScalarValue), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.MetadataScalarValue> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.MetadataScalarValue).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Scalar!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickScalar(), typeInfo);
             }
             else if (value.IsList)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<string>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<string>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<string>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.List!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickList(), typeInfo);
             }
         }
     }
