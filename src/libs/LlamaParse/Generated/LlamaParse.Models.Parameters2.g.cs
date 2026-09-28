@@ -47,8 +47,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitV1Parameters PickSplitV1() => IsSplitV1
-            ? SplitV1!
+        public global::LlamaParse.SplitV1Parameters PickSplitV1() => SplitV1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SplitV1' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ExtractV2Parameters PickExtractV2() => IsExtractV2
-            ? ExtractV2!
+        public global::LlamaParse.ExtractV2Parameters PickExtractV2() => ExtractV2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExtractV2' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ClassifyV2Parameters PickClassifyV2() => IsClassifyV2
-            ? ClassifyV2!
+        public global::LlamaParse.ClassifyV2Parameters PickClassifyV2() => ClassifyV2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClassifyV2' but the value was {ToString()}.");
 
         /// <summary>
@@ -161,8 +161,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseV2Parameters PickParseV2() => IsParseV2
-            ? ParseV2!
+        public global::LlamaParse.ParseV2Parameters PickParseV2() => ParseV2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ParseV2' but the value was {ToString()}.");
 
         /// <summary>
@@ -198,8 +198,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SpreadsheetV1Parameters PickSpreadsheetV1() => IsSpreadsheetV1
-            ? SpreadsheetV1!
+        public global::LlamaParse.SpreadsheetV1Parameters PickSpreadsheetV1() => SpreadsheetV1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpreadsheetV1' but the value was {ToString()}.");
 
         /// <summary>
@@ -236,8 +236,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.UntypedParameters PickUnknown() => IsUnknown
-            ? Unknown!
+        public global::LlamaParse.UntypedParameters PickUnknown() => Unknown is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Unknown' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -449,29 +449,29 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsSplitV1 && splitV1 != null)
+            if (SplitV1 is { } __value0 && splitV1 != null)
             {
-                return splitV1(SplitV1!);
+                return splitV1(__value0);
             }
-            else if (IsExtractV2 && extractV2 != null)
+            else if (ExtractV2 is { } __value1 && extractV2 != null)
             {
-                return extractV2(ExtractV2!);
+                return extractV2(__value1);
             }
-            else if (IsClassifyV2 && classifyV2 != null)
+            else if (ClassifyV2 is { } __value2 && classifyV2 != null)
             {
-                return classifyV2(ClassifyV2!);
+                return classifyV2(__value2);
             }
-            else if (IsParseV2 && parseV2 != null)
+            else if (ParseV2 is { } __value3 && parseV2 != null)
             {
-                return parseV2(ParseV2!);
+                return parseV2(__value3);
             }
-            else if (IsSpreadsheetV1 && spreadsheetV1 != null)
+            else if (SpreadsheetV1 is { } __value4 && spreadsheetV1 != null)
             {
-                return spreadsheetV1(SpreadsheetV1!);
+                return spreadsheetV1(__value4);
             }
-            else if (IsUnknown && unknown != null)
+            else if (Unknown is { } __value5 && unknown != null)
             {
-                return unknown(Unknown!);
+                return unknown(__value5);
             }
 
             return default(TResult);
@@ -499,29 +499,29 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsSplitV1)
+            if (SplitV1 is { } __value0)
             {
-                splitV1?.Invoke(SplitV1!);
+                splitV1?.Invoke(__value0);
             }
-            else if (IsExtractV2)
+            else if (ExtractV2 is { } __value1)
             {
-                extractV2?.Invoke(ExtractV2!);
+                extractV2?.Invoke(__value1);
             }
-            else if (IsClassifyV2)
+            else if (ClassifyV2 is { } __value2)
             {
-                classifyV2?.Invoke(ClassifyV2!);
+                classifyV2?.Invoke(__value2);
             }
-            else if (IsParseV2)
+            else if (ParseV2 is { } __value3)
             {
-                parseV2?.Invoke(ParseV2!);
+                parseV2?.Invoke(__value3);
             }
-            else if (IsSpreadsheetV1)
+            else if (SpreadsheetV1 is { } __value4)
             {
-                spreadsheetV1?.Invoke(SpreadsheetV1!);
+                spreadsheetV1?.Invoke(__value4);
             }
-            else if (IsUnknown)
+            else if (Unknown is { } __value5)
             {
-                unknown?.Invoke(Unknown!);
+                unknown?.Invoke(__value5);
             }
         }
 
@@ -542,29 +542,29 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsSplitV1)
+            if (SplitV1 is { } __value0)
             {
-                splitV1?.Invoke(SplitV1!);
+                splitV1?.Invoke(__value0);
             }
-            else if (IsExtractV2)
+            else if (ExtractV2 is { } __value1)
             {
-                extractV2?.Invoke(ExtractV2!);
+                extractV2?.Invoke(__value1);
             }
-            else if (IsClassifyV2)
+            else if (ClassifyV2 is { } __value2)
             {
-                classifyV2?.Invoke(ClassifyV2!);
+                classifyV2?.Invoke(__value2);
             }
-            else if (IsParseV2)
+            else if (ParseV2 is { } __value3)
             {
-                parseV2?.Invoke(ParseV2!);
+                parseV2?.Invoke(__value3);
             }
-            else if (IsSpreadsheetV1)
+            else if (SpreadsheetV1 is { } __value4)
             {
-                spreadsheetV1?.Invoke(SpreadsheetV1!);
+                spreadsheetV1?.Invoke(__value4);
             }
-            else if (IsUnknown)
+            else if (Unknown is { } __value5)
             {
-                unknown?.Invoke(Unknown!);
+                unknown?.Invoke(__value5);
             }
         }
 

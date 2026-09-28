@@ -122,7 +122,7 @@ namespace LlamaParse
                                 path: "/api/v1/extraction/runs/latest-from-ui",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("extraction_agent_id", extractionAgentId.ToString()!)
+                                .AddRequiredParameter("extraction_agent_id", extractionAgentId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -177,7 +177,7 @@ namespace LlamaParse
                 PrepareGetLatestRunFromUiApiV1ExtractionRunsLatestFromUiGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    extractionAgentId: extractionAgentId!,
+                    extractionAgentId: extractionAgentId,
                     projectId: projectId,
                     session: session);
 
@@ -201,7 +201,7 @@ namespace LlamaParse
                                 pathTemplate: "\"/api/v1/extraction/runs/latest-from-ui\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -235,7 +235,7 @@ namespace LlamaParse
                                 pathTemplate: "\"/api/v1/extraction/runs/latest-from-ui\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -276,7 +276,7 @@ namespace LlamaParse
                                 pathTemplate: "\"/api/v1/extraction/runs/latest-from-ui\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -324,7 +324,7 @@ namespace LlamaParse
                                 pathTemplate: "\"/api/v1/extraction/runs/latest-from-ui\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -346,7 +346,7 @@ namespace LlamaParse
                                 pathTemplate: "\"/api/v1/extraction/runs/latest-from-ui\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

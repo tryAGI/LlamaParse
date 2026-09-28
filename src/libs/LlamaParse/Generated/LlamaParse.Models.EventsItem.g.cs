@@ -47,8 +47,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ThinkingDeltaEvent PickThinkingDelta() => IsThinkingDelta
-            ? ThinkingDelta!
+        public global::LlamaParse.ThinkingDeltaEvent PickThinkingDelta() => ThinkingDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.TextDeltaEvent PickTextDelta() => IsTextDelta
-            ? TextDelta!
+        public global::LlamaParse.TextDeltaEvent PickTextDelta() => TextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ThinkingEvent PickThinking() => IsThinking
-            ? Thinking!
+        public global::LlamaParse.ThinkingEvent PickThinking() => Thinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.TextEvent PickText() => IsText
-            ? Text!
+        public global::LlamaParse.TextEvent PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ToolCallEvent PickToolCall() => IsToolCall
-            ? ToolCall!
+        public global::LlamaParse.ToolCallEvent PickToolCall() => ToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ToolResultEvent PickToolResult() => IsToolResult
-            ? ToolResult!
+        public global::LlamaParse.ToolResultEvent PickToolResult() => ToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.StopEvent PickStop() => IsStop
-            ? Stop!
+        public global::LlamaParse.StopEvent PickStop() => Stop is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stop' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.UserInputEvent PickUserInput() => IsUserInput
-            ? UserInput!
+        public global::LlamaParse.UserInputEvent PickUserInput() => UserInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserInput' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -575,37 +575,37 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsThinkingDelta && thinkingDelta != null)
+            if (ThinkingDelta is { } __value0 && thinkingDelta != null)
             {
-                return thinkingDelta(ThinkingDelta!);
+                return thinkingDelta(__value0);
             }
-            else if (IsTextDelta && textDelta != null)
+            else if (TextDelta is { } __value1 && textDelta != null)
             {
-                return textDelta(TextDelta!);
+                return textDelta(__value1);
             }
-            else if (IsThinking && thinking != null)
+            else if (Thinking is { } __value2 && thinking != null)
             {
-                return thinking(Thinking!);
+                return thinking(__value2);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value3 && text != null)
             {
-                return text(Text!);
+                return text(__value3);
             }
-            else if (IsToolCall && toolCall != null)
+            else if (ToolCall is { } __value4 && toolCall != null)
             {
-                return toolCall(ToolCall!);
+                return toolCall(__value4);
             }
-            else if (IsToolResult && toolResult != null)
+            else if (ToolResult is { } __value5 && toolResult != null)
             {
-                return toolResult(ToolResult!);
+                return toolResult(__value5);
             }
-            else if (IsStop && stop != null)
+            else if (Stop is { } __value6 && stop != null)
             {
-                return stop(Stop!);
+                return stop(__value6);
             }
-            else if (IsUserInput && userInput != null)
+            else if (UserInput is { } __value7 && userInput != null)
             {
-                return userInput(UserInput!);
+                return userInput(__value7);
             }
 
             return default(TResult);
@@ -637,37 +637,37 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsThinkingDelta)
+            if (ThinkingDelta is { } __value0)
             {
-                thinkingDelta?.Invoke(ThinkingDelta!);
+                thinkingDelta?.Invoke(__value0);
             }
-            else if (IsTextDelta)
+            else if (TextDelta is { } __value1)
             {
-                textDelta?.Invoke(TextDelta!);
+                textDelta?.Invoke(__value1);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value2)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value2);
             }
-            else if (IsText)
+            else if (Text is { } __value3)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value3);
             }
-            else if (IsToolCall)
+            else if (ToolCall is { } __value4)
             {
-                toolCall?.Invoke(ToolCall!);
+                toolCall?.Invoke(__value4);
             }
-            else if (IsToolResult)
+            else if (ToolResult is { } __value5)
             {
-                toolResult?.Invoke(ToolResult!);
+                toolResult?.Invoke(__value5);
             }
-            else if (IsStop)
+            else if (Stop is { } __value6)
             {
-                stop?.Invoke(Stop!);
+                stop?.Invoke(__value6);
             }
-            else if (IsUserInput)
+            else if (UserInput is { } __value7)
             {
-                userInput?.Invoke(UserInput!);
+                userInput?.Invoke(__value7);
             }
         }
 
@@ -690,37 +690,37 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsThinkingDelta)
+            if (ThinkingDelta is { } __value0)
             {
-                thinkingDelta?.Invoke(ThinkingDelta!);
+                thinkingDelta?.Invoke(__value0);
             }
-            else if (IsTextDelta)
+            else if (TextDelta is { } __value1)
             {
-                textDelta?.Invoke(TextDelta!);
+                textDelta?.Invoke(__value1);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value2)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value2);
             }
-            else if (IsText)
+            else if (Text is { } __value3)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value3);
             }
-            else if (IsToolCall)
+            else if (ToolCall is { } __value4)
             {
-                toolCall?.Invoke(ToolCall!);
+                toolCall?.Invoke(__value4);
             }
-            else if (IsToolResult)
+            else if (ToolResult is { } __value5)
             {
-                toolResult?.Invoke(ToolResult!);
+                toolResult?.Invoke(__value5);
             }
-            else if (IsStop)
+            else if (Stop is { } __value6)
             {
-                stop?.Invoke(Stop!);
+                stop?.Invoke(__value6);
             }
-            else if (IsUserInput)
+            else if (UserInput is { } __value7)
             {
-                userInput?.Invoke(UserInput!);
+                userInput?.Invoke(__value7);
             }
         }
 

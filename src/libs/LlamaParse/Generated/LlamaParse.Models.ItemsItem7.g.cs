@@ -47,8 +47,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.TextItem PickText() => IsText
-            ? Text!
+        public global::LlamaParse.TextItem PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.HeadingItem PickHeading() => IsHeading
-            ? Heading!
+        public global::LlamaParse.HeadingItem PickHeading() => Heading is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Heading' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ListItem PickList() => IsList
-            ? List!
+        public global::LlamaParse.ListItem PickList() => List is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'List' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.CodeItem PickCode() => IsCode
-            ? Code!
+        public global::LlamaParse.CodeItem PickCode() => Code is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.TableItem PickTable() => IsTable
-            ? Table!
+        public global::LlamaParse.TableItem PickTable() => Table is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ImageItem PickImage() => IsImage
-            ? Image!
+        public global::LlamaParse.ImageItem PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.LinkItem PickLink() => IsLink
-            ? Link!
+        public global::LlamaParse.LinkItem PickLink() => Link is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Link' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.HeaderItem PickHeader() => IsHeader
-            ? Header!
+        public global::LlamaParse.HeaderItem PickHeader() => Header is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Header' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FooterItem PickFooter() => IsFooter
-            ? Footer!
+        public global::LlamaParse.FooterItem PickFooter() => Footer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Footer' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -640,41 +640,41 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsHeading && heading != null)
+            else if (Heading is { } __value1 && heading != null)
             {
-                return heading(Heading!);
+                return heading(__value1);
             }
-            else if (IsList && list != null)
+            else if (List is { } __value2 && list != null)
             {
-                return list(List!);
+                return list(__value2);
             }
-            else if (IsCode && code != null)
+            else if (Code is { } __value3 && code != null)
             {
-                return code(Code!);
+                return code(__value3);
             }
-            else if (IsTable && table != null)
+            else if (Table is { } __value4 && table != null)
             {
-                return table(Table!);
+                return table(__value4);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value5 && image != null)
             {
-                return image(Image!);
+                return image(__value5);
             }
-            else if (IsLink && link != null)
+            else if (Link is { } __value6 && link != null)
             {
-                return link(Link!);
+                return link(__value6);
             }
-            else if (IsHeader && header != null)
+            else if (Header is { } __value7 && header != null)
             {
-                return header(Header!);
+                return header(__value7);
             }
-            else if (IsFooter && footer != null)
+            else if (Footer is { } __value8 && footer != null)
             {
-                return footer(Footer!);
+                return footer(__value8);
             }
 
             return default(TResult);
@@ -708,41 +708,41 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsHeading)
+            else if (Heading is { } __value1)
             {
-                heading?.Invoke(Heading!);
+                heading?.Invoke(__value1);
             }
-            else if (IsList)
+            else if (List is { } __value2)
             {
-                list?.Invoke(List!);
+                list?.Invoke(__value2);
             }
-            else if (IsCode)
+            else if (Code is { } __value3)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value3);
             }
-            else if (IsTable)
+            else if (Table is { } __value4)
             {
-                table?.Invoke(Table!);
+                table?.Invoke(__value4);
             }
-            else if (IsImage)
+            else if (Image is { } __value5)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value5);
             }
-            else if (IsLink)
+            else if (Link is { } __value6)
             {
-                link?.Invoke(Link!);
+                link?.Invoke(__value6);
             }
-            else if (IsHeader)
+            else if (Header is { } __value7)
             {
-                header?.Invoke(Header!);
+                header?.Invoke(__value7);
             }
-            else if (IsFooter)
+            else if (Footer is { } __value8)
             {
-                footer?.Invoke(Footer!);
+                footer?.Invoke(__value8);
             }
         }
 
@@ -766,41 +766,41 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsHeading)
+            else if (Heading is { } __value1)
             {
-                heading?.Invoke(Heading!);
+                heading?.Invoke(__value1);
             }
-            else if (IsList)
+            else if (List is { } __value2)
             {
-                list?.Invoke(List!);
+                list?.Invoke(__value2);
             }
-            else if (IsCode)
+            else if (Code is { } __value3)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value3);
             }
-            else if (IsTable)
+            else if (Table is { } __value4)
             {
-                table?.Invoke(Table!);
+                table?.Invoke(__value4);
             }
-            else if (IsImage)
+            else if (Image is { } __value5)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value5);
             }
-            else if (IsLink)
+            else if (Link is { } __value6)
             {
-                link?.Invoke(Link!);
+                link?.Invoke(__value6);
             }
-            else if (IsHeader)
+            else if (Header is { } __value7)
             {
-                header?.Invoke(Header!);
+                header?.Invoke(__value7);
             }
-            else if (IsFooter)
+            else if (Footer is { } __value8)
             {
-                footer?.Invoke(Footer!);
+                footer?.Invoke(__value8);
             }
         }
 
