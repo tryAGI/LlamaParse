@@ -40785,6 +40785,21 @@
       },
       "LlamaParsePresentationOptions": {
         "properties": {
+          "include_hidden_slides": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Include Hidden Slides",
+            "description": "Include hidden PPTX slides in the output. Omitted or false skips hidden slides.",
+            "examples": [
+              true
+            ]
+          },
           "out_of_bounds_content": {
             "anyOf": [
               {
