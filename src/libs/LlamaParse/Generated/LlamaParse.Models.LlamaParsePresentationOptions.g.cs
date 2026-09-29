@@ -9,6 +9,12 @@ namespace LlamaParse
     public sealed partial class LlamaParsePresentationOptions
     {
         /// <summary>
+        /// Include hidden PPTX slides in the output. Omitted or false skips hidden slides.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_hidden_slides")]
+        public bool? IncludeHiddenSlides { get; set; }
+
+        /// <summary>
         /// Extract content positioned outside the visible slide area. Some presentations have hidden notes or content that extends beyond slide boundaries
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("out_of_bounds_content")]
@@ -29,6 +35,9 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="LlamaParsePresentationOptions" /> class.
         /// </summary>
+        /// <param name="includeHiddenSlides">
+        /// Include hidden PPTX slides in the output. Omitted or false skips hidden slides.
+        /// </param>
         /// <param name="outOfBoundsContent">
         /// Extract content positioned outside the visible slide area. Some presentations have hidden notes or content that extends beyond slide boundaries
         /// </param>
@@ -39,9 +48,11 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LlamaParsePresentationOptions(
+            bool? includeHiddenSlides,
             bool? outOfBoundsContent,
             bool? skipEmbeddedData)
         {
+            this.IncludeHiddenSlides = includeHiddenSlides;
             this.OutOfBoundsContent = outOfBoundsContent;
             this.SkipEmbeddedData = skipEmbeddedData;
         }
