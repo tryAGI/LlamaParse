@@ -23536,8 +23536,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-09-24",
-                  "2026-08-19",
+                  "2026-09-28",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -23550,7 +23549,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-24`\n- `agentic_plus`: `2026-09-24`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-09-28`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -39246,6 +39245,26 @@
             "title": "Extract Printed Page Number",
             "description": "Extract the printed page number as it appears in the document (e.g., 'Page 5 of 10', 'v', 'A-3'). Useful for referencing original page numbers"
           },
+          "watermark_handling": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "move_to_end",
+                  "move_to_start",
+                  "remove"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Watermark Handling",
+            "description": "What to do with watermark text stamped across the page (e.g., 'CONFIDENTIAL', 'DRAFT'): 'move_to_end' (default) keeps it as the last block of the page's markdown, 'move_to_start' as the first block, and 'remove' drops it. The text output follows the same choice where the watermark is a line of its own in the PDF text layer. In every mode the detected text is reported in the page's `watermark` metadata. Requires version 2026-09-28 or later on the cost_effective, agentic, and agentic_plus tiers; ignored otherwise",
+            "examples": [
+              "remove"
+            ]
+          },
           "images_to_save": {
             "anyOf": [
               {
@@ -41946,6 +41965,18 @@
             "title": "Printed Page Number",
             "description": "Printed page number as it appears in the document"
           },
+          "watermark": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Watermark",
+            "description": "Watermark text detected on the page (e.g., 'CONFIDENTIAL'). Only reported on version 2026-09-28 or later of the cost_effective, agentic, and agentic_plus tiers"
+          },
           "original_orientation_angle": {
             "anyOf": [
               {
@@ -43133,8 +43164,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-09-24",
-                  "2026-08-19",
+                  "2026-09-28",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -43144,7 +43174,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-24`\n- `agentic_plus`: `2026-09-24`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-09-28`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -43469,8 +43499,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-09-24",
-                  "2026-08-19",
+                  "2026-09-28",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -43480,7 +43509,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-08-19`\n- `agentic`: `2026-09-24`\n- `agentic_plus`: `2026-09-24`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-09-28`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -43595,6 +43624,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-09-28",
                 "2026-08-19",
                 "2026-08-11",
                 "2026-08-08",
@@ -43621,6 +43651,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-09-28",
                 "2026-09-24",
                 "2026-09-13",
                 "2026-09-09",
@@ -43679,6 +43710,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-09-28",
                 "2026-09-24",
                 "2026-09-11",
                 "2026-08-19",
