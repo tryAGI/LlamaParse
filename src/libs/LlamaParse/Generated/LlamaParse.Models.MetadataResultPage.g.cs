@@ -40,6 +40,12 @@ namespace LlamaParse
         public string? PrintedPageNumber { get; set; }
 
         /// <summary>
+        /// Watermark text detected on the page (e.g., 'CONFIDENTIAL'). Only reported on version 2026-09-28 or later of the cost_effective, agentic, and agentic_plus tiers
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("watermark")]
+        public string? Watermark { get; set; }
+
+        /// <summary>
         /// Original orientation angle of the page in degrees
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_orientation_angle")]
@@ -81,6 +87,9 @@ namespace LlamaParse
         /// <param name="printedPageNumber">
         /// Printed page number as it appears in the document
         /// </param>
+        /// <param name="watermark">
+        /// Watermark text detected on the page (e.g., 'CONFIDENTIAL'). Only reported on version 2026-09-28 or later of the cost_effective, agentic, and agentic_plus tiers
+        /// </param>
         /// <param name="originalOrientationAngle">
         /// Original orientation angle of the page in degrees
         /// </param>
@@ -99,6 +108,7 @@ namespace LlamaParse
             string? speakerNotes,
             string? slideSectionName,
             string? printedPageNumber,
+            string? watermark,
             int? originalOrientationAngle,
             bool? costOptimized,
             bool? triggeredAutoMode)
@@ -108,6 +118,7 @@ namespace LlamaParse
             this.SpeakerNotes = speakerNotes;
             this.SlideSectionName = slideSectionName;
             this.PrintedPageNumber = printedPageNumber;
+            this.Watermark = watermark;
             this.OriginalOrientationAngle = originalOrientationAngle;
             this.CostOptimized = costOptimized;
             this.TriggeredAutoMode = triggeredAutoMode;

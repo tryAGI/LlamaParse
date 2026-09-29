@@ -34,6 +34,12 @@ namespace LlamaParse
         public bool? ExtractPrintedPageNumber { get; set; }
 
         /// <summary>
+        /// What to do with watermark text stamped across the page (e.g., 'CONFIDENTIAL', 'DRAFT'): 'move_to_end' (default) keeps it as the last block of the page's markdown, 'move_to_start' as the first block, and 'remove' drops it. The text output follows the same choice where the watermark is a line of its own in the PDF text layer. In every mode the detected text is reported in the page's `watermark` metadata. Requires version 2026-09-28 or later on the cost_effective, agentic, and agentic_plus tiers; ignored otherwise
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("watermark_handling")]
+        public global::LlamaParse.LlamaParseOutputOptionsWatermarkHandling? WatermarkHandling { get; set; }
+
+        /// <summary>
         /// Image categories to save: 'screenshot' (full page renders), 'embedded' (images found within the document), 'layout' (cropped figures and diagrams). Defaults to saving 'layout' when the output links to cropped images; pass [] to save none
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images_to_save")]
@@ -78,6 +84,9 @@ namespace LlamaParse
         /// <param name="extractPrintedPageNumber">
         /// Extract the printed page number as it appears in the document (e.g., 'Page 5 of 10', 'v', 'A-3'). Useful for referencing original page numbers
         /// </param>
+        /// <param name="watermarkHandling">
+        /// What to do with watermark text stamped across the page (e.g., 'CONFIDENTIAL', 'DRAFT'): 'move_to_end' (default) keeps it as the last block of the page's markdown, 'move_to_start' as the first block, and 'remove' drops it. The text output follows the same choice where the watermark is a line of its own in the PDF text layer. In every mode the detected text is reported in the page's `watermark` metadata. Requires version 2026-09-28 or later on the cost_effective, agentic, and agentic_plus tiers; ignored otherwise
+        /// </param>
         /// <param name="imagesToSave">
         /// Image categories to save: 'screenshot' (full page renders), 'embedded' (images found within the document), 'layout' (cropped figures and diagrams). Defaults to saving 'layout' when the output links to cropped images; pass [] to save none
         /// </param>
@@ -98,6 +107,7 @@ namespace LlamaParse
             global::LlamaParse.LlamaParseSpatialTextOptions? spatialText,
             global::LlamaParse.LlamaParseTablesAsSpreadsheetOptions? tablesAsSpreadsheet,
             bool? extractPrintedPageNumber,
+            global::LlamaParse.LlamaParseOutputOptionsWatermarkHandling? watermarkHandling,
             global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseOutputOptionsImagesToSaveVariant1Item>? imagesToSave,
             global::System.Collections.Generic.IList<string>? additionalOutputs,
             global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseOutputOptionsGranularBboxe>? granularBboxes,
@@ -107,6 +117,7 @@ namespace LlamaParse
             this.SpatialText = spatialText;
             this.TablesAsSpreadsheet = tablesAsSpreadsheet;
             this.ExtractPrintedPageNumber = extractPrintedPageNumber;
+            this.WatermarkHandling = watermarkHandling;
             this.ImagesToSave = imagesToSave;
             this.AdditionalOutputs = additionalOutputs;
             this.GranularBboxes = granularBboxes;
