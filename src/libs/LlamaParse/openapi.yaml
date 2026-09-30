@@ -23536,6 +23536,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-29",
                   "2026-09-28",
                   "2026-06-15"
                 ],
@@ -23549,7 +23550,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-09-28`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-09-29`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -43164,6 +43165,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-29",
                   "2026-09-28",
                   "2026-06-15"
                 ],
@@ -43174,7 +43176,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-09-28`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-09-29`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -43499,6 +43501,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-09-29",
                   "2026-09-28",
                   "2026-06-15"
                 ],
@@ -43509,7 +43512,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-09-28`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-09-29`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -43651,6 +43654,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-09-29",
                 "2026-09-28",
                 "2026-09-24",
                 "2026-09-13",
