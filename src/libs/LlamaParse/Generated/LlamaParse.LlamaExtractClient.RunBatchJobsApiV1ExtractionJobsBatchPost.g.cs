@@ -548,7 +548,7 @@ namespace LlamaParse
             global::System.Guid? projectId = default,
             string? session = default,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,
-            global::LlamaParse.AnyOf<object, string, object>? dataSchemaOverride = default,
+            global::LlamaParse.AnyOf<object, string>? dataSchemaOverride = default,
             global::LlamaParse.ExtractConfig? configOverride = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

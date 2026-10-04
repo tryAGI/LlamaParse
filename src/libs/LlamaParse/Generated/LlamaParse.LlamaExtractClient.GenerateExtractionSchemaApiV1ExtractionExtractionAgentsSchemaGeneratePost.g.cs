@@ -538,7 +538,7 @@ namespace LlamaParse
             string? session = default,
             string? prompt = default,
             global::System.Guid? fileId = default,
-            global::LlamaParse.AnyOf<object, string, object>? dataSchema = default,
+            global::LlamaParse.AnyOf<object, string>? dataSchema = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

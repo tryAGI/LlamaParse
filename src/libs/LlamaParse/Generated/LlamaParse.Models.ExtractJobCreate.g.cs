@@ -38,8 +38,8 @@ namespace LlamaParse
         /// The data schema to override the extraction agent's data schema with
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_schema_override")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>))]
-        public global::LlamaParse.AnyOf<object, string, object>? DataSchemaOverride { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>))]
+        public global::LlamaParse.AnyOf<object, string>? DataSchemaOverride { get; set; }
 
         /// <summary>
         /// The config to override the extraction agent's config with
@@ -82,7 +82,7 @@ namespace LlamaParse
             global::System.Guid fileId,
             global::LlamaParse.ExtractJobCreatePriority? priority,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations,
-            global::LlamaParse.AnyOf<object, string, object>? dataSchemaOverride,
+            global::LlamaParse.AnyOf<object, string>? dataSchemaOverride,
             global::LlamaParse.ExtractConfig? configOverride)
         {
             this.Priority = priority;

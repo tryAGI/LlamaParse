@@ -42,8 +42,8 @@ namespace LlamaParse
         /// The extract model to use for data extraction. If not provided, uses the default for the extraction mode.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extract_model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ExtractModels?, string, object>))]
-        public global::LlamaParse.AnyOf<global::LlamaParse.ExtractModels?, string, object>? ExtractModel { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ExtractModels?, string>))]
+        public global::LlamaParse.AnyOf<global::LlamaParse.ExtractModels?, string>? ExtractModel { get; set; }
 
         /// <summary>
         /// DEPRECATED: Whether to use fast mode for multimodal extraction.<br/>
@@ -192,7 +192,7 @@ namespace LlamaParse
             global::LlamaParse.ExtractTarget? extractionTarget,
             global::LlamaParse.ExtractMode? extractionMode,
             global::LlamaParse.PublicModelName? parseModel,
-            global::LlamaParse.AnyOf<global::LlamaParse.ExtractModels?, string, object>? extractModel,
+            global::LlamaParse.AnyOf<global::LlamaParse.ExtractModels?, string>? extractModel,
             bool? multimodalFastMode,
             string? systemPrompt,
             bool? useReasoning,

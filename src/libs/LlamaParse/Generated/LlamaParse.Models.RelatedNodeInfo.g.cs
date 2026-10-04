@@ -19,8 +19,8 @@ namespace LlamaParse
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ObjectType?, string, object>))]
-        public global::LlamaParse.AnyOf<global::LlamaParse.ObjectType?, string, object>? NodeType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.ObjectType?, string>))]
+        public global::LlamaParse.AnyOf<global::LlamaParse.ObjectType?, string>? NodeType { get; set; }
 
         /// <summary>
         ///
@@ -61,7 +61,7 @@ namespace LlamaParse
 #endif
         public RelatedNodeInfo(
             string nodeId,
-            global::LlamaParse.AnyOf<global::LlamaParse.ObjectType?, string, object>? nodeType,
+            global::LlamaParse.AnyOf<global::LlamaParse.ObjectType?, string>? nodeType,
             object? metadata,
             string? hash,
             string? className)

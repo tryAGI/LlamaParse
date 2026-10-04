@@ -58,8 +58,8 @@ namespace LlamaParse
         /// Threshold for full page image detection (0.0-1.0, default 0.8)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_page_image_in_page_threshold")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, string, object>))]
-        public global::LlamaParse.AnyOf<double?, string, object>? FullPageImageInPageThreshold { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, string>))]
+        public global::LlamaParse.AnyOf<double?, string>? FullPageImageInPageThreshold { get; set; }
 
         /// <summary>
         /// Regex pattern to match against filename
@@ -89,141 +89,141 @@ namespace LlamaParse
         /// Trigger if page has more than N characters
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_longer_than_n_chars")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageLongerThanNChars { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageLongerThanNChars { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N characters
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_shorter_than_n_chars")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageShorterThanNChars { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageShorterThanNChars { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_words")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtLeastNWords { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtLeastNWords { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_words")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtMostNWords { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtMostNWords { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N lines
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_lines")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtLeastNLines { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtLeastNLines { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N lines
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_lines")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtMostNLines { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtMostNLines { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N images
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_images")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtLeastNImages { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtLeastNImages { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N images
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_images")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtMostNImages { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtMostNImages { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N tables
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_tables")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtLeastNTables { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtLeastNTables { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N tables
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_tables")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtMostNTables { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtMostNTables { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N links
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_links")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtLeastNLinks { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtLeastNLinks { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N links
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_links")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtMostNLinks { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtMostNLinks { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N charts
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_charts")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtLeastNCharts { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtLeastNCharts { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N charts
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_charts")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtMostNCharts { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtMostNCharts { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N layout elements
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_layout_elements")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtLeastNLayoutElements { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtLeastNLayoutElements { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N layout elements
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_layout_elements")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtMostNLayoutElements { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtMostNLayoutElements { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N% numeric words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_percent_numbers")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtLeastNPercentNumbers { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtLeastNPercentNumbers { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N% numeric words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_percent_numbers")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtMostNPercentNumbers { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtMostNPercentNumbers { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N numeric words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_numbers")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtLeastNNumbers { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtLeastNNumbers { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N numeric words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_numbers")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::LlamaParse.AnyOf<int?, string, object>? PageContainsAtMostNNumbers { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LlamaParse.AnyOf<int?, string>? PageContainsAtMostNNumbers { get; set; }
 
         /// <summary>
         /// Regex pattern to match in page content
@@ -247,8 +247,8 @@ namespace LlamaParse
         /// Confidence threshold for layout element detection
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("layout_element_in_page_confidence_threshold")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, string, object>))]
-        public global::LlamaParse.AnyOf<double?, string, object>? LayoutElementInPageConfidenceThreshold { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, string>))]
+        public global::LlamaParse.AnyOf<double?, string>? LayoutElementInPageConfidenceThreshold { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -378,35 +378,35 @@ namespace LlamaParse
             bool? tableInPage,
             bool? imageInPage,
             bool? fullPageImageInPage,
-            global::LlamaParse.AnyOf<double?, string, object>? fullPageImageInPageThreshold,
+            global::LlamaParse.AnyOf<double?, string>? fullPageImageInPageThreshold,
             string? filenameRegexp,
             string? filenameRegexpMode,
             string? filenameMatchGlob,
             global::System.Collections.Generic.IList<string>? filenameMatchGlobList,
-            global::LlamaParse.AnyOf<int?, string, object>? pageLongerThanNChars,
-            global::LlamaParse.AnyOf<int?, string, object>? pageShorterThanNChars,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtLeastNWords,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtMostNWords,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtLeastNLines,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtMostNLines,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtLeastNImages,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtMostNImages,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtLeastNTables,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtMostNTables,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtLeastNLinks,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtMostNLinks,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtLeastNCharts,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtMostNCharts,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtLeastNLayoutElements,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtMostNLayoutElements,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtLeastNPercentNumbers,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtMostNPercentNumbers,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtLeastNNumbers,
-            global::LlamaParse.AnyOf<int?, string, object>? pageContainsAtMostNNumbers,
+            global::LlamaParse.AnyOf<int?, string>? pageLongerThanNChars,
+            global::LlamaParse.AnyOf<int?, string>? pageShorterThanNChars,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNWords,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNWords,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNLines,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNLines,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNImages,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNImages,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNTables,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNTables,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNLinks,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNLinks,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNCharts,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNCharts,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNLayoutElements,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNLayoutElements,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNPercentNumbers,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNPercentNumbers,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNNumbers,
+            global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNNumbers,
             string? regexpInPage,
             string? regexpInPageMode,
             string? layoutElementInPage,
-            global::LlamaParse.AnyOf<double?, string, object>? layoutElementInPageConfidenceThreshold)
+            global::LlamaParse.AnyOf<double?, string>? layoutElementInPageConfidenceThreshold)
         {
             this.ParsingConf = parsingConf ?? throw new global::System.ArgumentNullException(nameof(parsingConf));
             this.TriggerMode = triggerMode;

@@ -12,55 +12,55 @@ namespace LlamaParse
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eq")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>))]
-        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? Eq { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?>))]
+        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? Eq { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ne")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>))]
-        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? Ne { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?>))]
+        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? Ne { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gt")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>))]
-        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? Gt { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?>))]
+        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? Gt { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gte")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>))]
-        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? Gte { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?>))]
+        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? Gte { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lt")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>))]
-        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? Lt { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?>))]
+        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? Lt { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lte")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?, object>))]
-        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? Lte { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, int?, string, global::System.DateTime?>))]
+        public global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? Lte { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("includes")]
-        public global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>>? Includes { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>?>? Includes { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("excludes")]
-        public global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>>? Excludes { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>?>? Excludes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -83,14 +83,14 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FilterOperation(
-            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? eq,
-            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? ne,
-            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? gt,
-            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? gte,
-            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? lt,
-            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>? lte,
-            global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>>? includes,
-            global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?, object>>? excludes)
+            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? eq,
+            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? ne,
+            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? gt,
+            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? gte,
+            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? lt,
+            global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>? lte,
+            global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>?>? includes,
+            global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<double?, int?, string, global::System.DateTime?>?>? excludes)
         {
             this.Eq = eq;
             this.Ne = ne;

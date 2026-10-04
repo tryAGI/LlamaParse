@@ -27,8 +27,8 @@ namespace LlamaParse
         /// Full list: `GET /api/v2/parse/versions`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoModeParsingConfVersion?, string, object>))]
-        public global::LlamaParse.AnyOf<global::LlamaParse.AutoModeParsingConfVersion?, string, object>? Version { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoModeParsingConfVersion?, string>))]
+        public global::LlamaParse.AnyOf<global::LlamaParse.AutoModeParsingConfVersion?, string>? Version { get; set; }
 
         /// <summary>
         /// Custom AI instructions for matched pages. Overrides the base custom_prompt
@@ -164,7 +164,7 @@ namespace LlamaParse
 #endif
         public AutoModeParsingConf(
             global::LlamaParse.AutoModeParsingConfTier? tier,
-            global::LlamaParse.AnyOf<global::LlamaParse.AutoModeParsingConfVersion?, string, object>? version,
+            global::LlamaParse.AnyOf<global::LlamaParse.AutoModeParsingConfVersion?, string>? version,
             string? customPrompt,
             global::LlamaParse.AutoModeIgnoreOptions? ignore,
             bool? aggressiveTableExtraction,
