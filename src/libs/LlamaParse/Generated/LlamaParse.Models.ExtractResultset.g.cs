@@ -26,9 +26,8 @@ namespace LlamaParse
         /// The data extracted from the file
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>, object> Data { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>))]
+        public global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>>? Data { get; set; }
 
         /// <summary>
         /// The metadata extracted from the file
@@ -52,11 +51,11 @@ namespace LlamaParse
         /// <param name="extractionAgentId">
         /// The id of the extraction agent
         /// </param>
-        /// <param name="data">
-        /// The data extracted from the file
-        /// </param>
         /// <param name="extractionMetadata">
         /// The metadata extracted from the file
+        /// </param>
+        /// <param name="data">
+        /// The data extracted from the file
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -64,8 +63,8 @@ namespace LlamaParse
         public ExtractResultset(
             global::System.Guid runId,
             global::System.Guid extractionAgentId,
-            global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>, object> data,
-            object extractionMetadata)
+            object extractionMetadata,
+            global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>>? data)
         {
             this.RunId = runId;
             this.ExtractionAgentId = extractionAgentId;

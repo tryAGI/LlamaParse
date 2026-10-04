@@ -24,8 +24,8 @@ namespace LlamaParse
         /// Optional schema to validate, refine, or extend during generation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_schema")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string, object>))]
-        public global::LlamaParse.AnyOf<object, string, object>? DataSchema { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, string>))]
+        public global::LlamaParse.AnyOf<object, string>? DataSchema { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,7 +51,7 @@ namespace LlamaParse
         public ExtractSchemaGenerateRequest(
             string? prompt,
             global::System.Guid? fileId,
-            global::LlamaParse.AnyOf<object, string, object>? dataSchema)
+            global::LlamaParse.AnyOf<object, string>? dataSchema)
         {
             this.Prompt = prompt;
             this.FileId = fileId;

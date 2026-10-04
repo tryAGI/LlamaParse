@@ -94,8 +94,8 @@ namespace LlamaParse
         /// The data extracted from the file
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>))]
-        public global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Data { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>))]
+        public global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>>? Data { get; set; }
 
         /// <summary>
         /// The metadata extracted from the file
@@ -177,7 +177,7 @@ namespace LlamaParse
             global::System.Guid? fileId,
             string? error,
             global::System.Guid? jobId,
-            global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? data,
+            global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>>? data,
             object? extractionMetadata)
         {
             this.Id = id;

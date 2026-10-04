@@ -156,43 +156,6 @@ namespace LlamaParse
         public bool PickMetadataScalarValueVariant4() => MetadataScalarValueVariant4 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant4' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? MetadataScalarValueVariant5 { get; init; }
-#else
-        public object? MetadataScalarValueVariant5 { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MetadataScalarValueVariant5))]
-#endif
-        public bool IsMetadataScalarValueVariant5 => MetadataScalarValueVariant5 != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickMetadataScalarValueVariant5(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = MetadataScalarValueVariant5;
-            return IsMetadataScalarValueVariant5;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public object PickMetadataScalarValueVariant5() => MetadataScalarValueVariant5 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'MetadataScalarValueVariant5' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -292,22 +255,19 @@ namespace LlamaParse
             string? metadataScalarValueVariant1,
             int? metadataScalarValueVariant2,
             double? metadataScalarValueVariant3,
-            bool? metadataScalarValueVariant4,
-            object? metadataScalarValueVariant5
+            bool? metadataScalarValueVariant4
             )
         {
             MetadataScalarValueVariant1 = metadataScalarValueVariant1;
             MetadataScalarValueVariant2 = metadataScalarValueVariant2;
             MetadataScalarValueVariant3 = metadataScalarValueVariant3;
             MetadataScalarValueVariant4 = metadataScalarValueVariant4;
-            MetadataScalarValueVariant5 = metadataScalarValueVariant5;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            MetadataScalarValueVariant5 as object ??
             MetadataScalarValueVariant4 as object ??
             MetadataScalarValueVariant3 as object ??
             MetadataScalarValueVariant2 as object ??
@@ -321,8 +281,7 @@ namespace LlamaParse
             MetadataScalarValueVariant1?.ToString() ??
             MetadataScalarValueVariant2?.ToString() ??
             MetadataScalarValueVariant3?.ToString() ??
-            MetadataScalarValueVariant4?.ToString().ToLowerInvariant() ??
-            MetadataScalarValueVariant5?.ToString()
+            MetadataScalarValueVariant4?.ToString().ToLowerInvariant()
             ;
 
         /// <summary>
@@ -330,7 +289,7 @@ namespace LlamaParse
         /// </summary>
         public bool Validate()
         {
-            return IsMetadataScalarValueVariant1 || IsMetadataScalarValueVariant2 || IsMetadataScalarValueVariant3 || IsMetadataScalarValueVariant4 || IsMetadataScalarValueVariant5;
+            return IsMetadataScalarValueVariant1 || IsMetadataScalarValueVariant2 || IsMetadataScalarValueVariant3 || IsMetadataScalarValueVariant4;
         }
 
         /// <summary>
@@ -341,7 +300,6 @@ namespace LlamaParse
             global::System.Func<int?, TResult>? metadataScalarValueVariant2 = null,
             global::System.Func<double?, TResult>? metadataScalarValueVariant3 = null,
             global::System.Func<bool?, TResult>? metadataScalarValueVariant4 = null,
-            global::System.Func<object, TResult>? metadataScalarValueVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -365,10 +323,6 @@ namespace LlamaParse
             {
                 return metadataScalarValueVariant4(__value3);
             }
-            else if (MetadataScalarValueVariant5 is { } __value4 && metadataScalarValueVariant5 != null)
-            {
-                return metadataScalarValueVariant5(__value4);
-            }
 
             return default(TResult);
         }
@@ -384,8 +338,6 @@ namespace LlamaParse
             global::System.Action<double?>? metadataScalarValueVariant3 = null,
 
             global::System.Action<bool?>? metadataScalarValueVariant4 = null,
-
-            global::System.Action<object>? metadataScalarValueVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -408,10 +360,6 @@ namespace LlamaParse
             else if (MetadataScalarValueVariant4 is { } __value3)
             {
                 metadataScalarValueVariant4?.Invoke(__value3);
-            }
-            else if (MetadataScalarValueVariant5 is { } __value4)
-            {
-                metadataScalarValueVariant5?.Invoke(__value4);
             }
         }
 
@@ -423,7 +371,6 @@ namespace LlamaParse
             global::System.Action<int?>? metadataScalarValueVariant2 = null,
             global::System.Action<double?>? metadataScalarValueVariant3 = null,
             global::System.Action<bool?>? metadataScalarValueVariant4 = null,
-            global::System.Action<object>? metadataScalarValueVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -446,10 +393,6 @@ namespace LlamaParse
             else if (MetadataScalarValueVariant4 is { } __value3)
             {
                 metadataScalarValueVariant4?.Invoke(__value3);
-            }
-            else if (MetadataScalarValueVariant5 is { } __value4)
-            {
-                metadataScalarValueVariant5?.Invoke(__value4);
             }
         }
 
@@ -468,8 +411,6 @@ namespace LlamaParse
                 typeof(double),
                 MetadataScalarValueVariant4,
                 typeof(bool),
-                MetadataScalarValueVariant5,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -489,8 +430,7 @@ namespace LlamaParse
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(MetadataScalarValueVariant1, other.MetadataScalarValueVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(MetadataScalarValueVariant2, other.MetadataScalarValueVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(MetadataScalarValueVariant3, other.MetadataScalarValueVariant3) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(MetadataScalarValueVariant4, other.MetadataScalarValueVariant4) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(MetadataScalarValueVariant5, other.MetadataScalarValueVariant5)
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(MetadataScalarValueVariant4, other.MetadataScalarValueVariant4)
                 ;
         }
 

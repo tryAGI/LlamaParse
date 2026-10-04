@@ -45,8 +45,8 @@ namespace LlamaParse
         /// Entered content: verbatim text for text fields, or a boolean for checkbox (checked) and signature (signed). Absent on blank text fields and on select groups
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, bool?, object>))]
-        public global::LlamaParse.AnyOf<string, bool?, object>? Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<string, bool?>))]
+        public global::LlamaParse.AnyOf<string, bool?>? Value { get; set; }
 
         /// <summary>
         /// True for a printed-but-blank text field (mutually exclusive with value)
@@ -112,7 +112,7 @@ namespace LlamaParse
             string? type,
             string? id,
             string? label,
-            global::LlamaParse.AnyOf<string, bool?, object>? value,
+            global::LlamaParse.AnyOf<string, bool?>? value,
             bool? isEmpty,
             global::System.Collections.Generic.IList<global::LlamaParse.ValueItemsVariant1Item>? valueItems,
             global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)

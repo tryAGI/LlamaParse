@@ -18,8 +18,8 @@ namespace LlamaParse
         /// Configuration for the transformation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transform_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig, object>))]
-        public global::LlamaParse.AnyOf<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig, object>? TransformConfig { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.AnyOfJsonConverter<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>))]
+        public global::LlamaParse.AnyOf<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>? TransformConfig { get; set; }
 
         /// <summary>
         /// Configuration for the sparse model used in hybrid search.
@@ -141,7 +141,7 @@ namespace LlamaParse
         public PipelineCreate(
             string name,
             global::LlamaParse.EmbeddingConfigVariant12? embeddingConfig,
-            global::LlamaParse.AnyOf<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig, object>? transformConfig,
+            global::LlamaParse.AnyOf<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>? transformConfig,
             global::LlamaParse.SparseModelConfig? sparseModelConfig,
             global::System.Guid? dataSinkId,
             global::System.Guid? embeddingModelConfigId,
