@@ -89,6 +89,12 @@ namespace LlamaParse
         public global::System.DateTime? LastExportedAt { get; set; }
 
         /// <summary>
+        /// Whether a sync is running. Set only when getting a single index.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sync_in_progress")]
+        public bool? SyncInProgress { get; set; }
+
+        /// <summary>
         /// Build state and diagnostic info.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -139,6 +145,9 @@ namespace LlamaParse
         /// <param name="lastExportedAt">
         /// Last export time.
         /// </param>
+        /// <param name="syncInProgress">
+        /// Whether a sync is running. Set only when getting a single index.
+        /// </param>
         /// <param name="metadata">
         /// Build state and diagnostic info.
         /// </param>
@@ -158,6 +167,7 @@ namespace LlamaParse
             string? description,
             global::System.DateTime? lastSyncedAt,
             global::System.DateTime? lastExportedAt,
+            bool? syncInProgress,
             global::LlamaParse.IndexMetadata? metadata)
         {
             this.Id = id;
@@ -172,6 +182,7 @@ namespace LlamaParse
             this.ExportConfigId = exportConfigId ?? throw new global::System.ArgumentNullException(nameof(exportConfigId));
             this.LastSyncedAt = lastSyncedAt;
             this.LastExportedAt = lastExportedAt;
+            this.SyncInProgress = syncInProgress;
             this.Metadata = metadata;
         }
 

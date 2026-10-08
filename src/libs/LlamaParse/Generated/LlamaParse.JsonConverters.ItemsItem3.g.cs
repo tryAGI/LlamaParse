@@ -42,6 +42,13 @@ namespace LlamaParse.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.FormTable)}");
                 table = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::LlamaParse.FormText? text = default;
+            if (discriminator?.Type == global::LlamaParse.FormSectionItemDiscriminatorType.Text)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.FormText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.FormText> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.FormText)}");
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::LlamaParse.ItemsItem3(
                 discriminator?.Type,
@@ -49,7 +56,9 @@ namespace LlamaParse.JsonConverters
 
                 field,
 
-                table
+                table,
+
+                text
                 );
 
             return __value;
@@ -81,6 +90,12 @@ namespace LlamaParse.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.FormTable), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.FormTable?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.FormTable).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTable(), typeInfo);
+            }
+            else if (value.IsText)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.FormText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.FormText?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LlamaParse.FormText).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
         }
     }

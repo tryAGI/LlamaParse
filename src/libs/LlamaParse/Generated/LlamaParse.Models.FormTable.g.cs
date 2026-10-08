@@ -53,6 +53,12 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<global::LlamaParse.BBox>? Bbox { get; set; }
 
         /// <summary>
+        /// HTML representation of the table, as a regular table item has.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("html")]
+        public string? Html { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -83,6 +89,9 @@ namespace LlamaParse
         /// <param name="bbox">
         /// Bounding boxes of the table's fillable regions on the page.
         /// </param>
+        /// <param name="html">
+        /// HTML representation of the table, as a regular table item has.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -93,7 +102,8 @@ namespace LlamaParse
             string? id,
             string? label,
             global::System.Collections.Generic.IList<string>? columns,
-            global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
+            global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox,
+            string? html)
         {
             this.Grounding = grounding;
             this.Type = type;
@@ -102,6 +112,7 @@ namespace LlamaParse
             this.Columns = columns;
             this.Rows = rows ?? throw new global::System.ArgumentNullException(nameof(rows));
             this.Bbox = bbox;
+            this.Html = html;
         }
 
         /// <summary>
