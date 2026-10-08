@@ -20,6 +20,10 @@ namespace LlamaParse
         ///
         /// </summary>
         Table,
+        /// <summary>
+        ///
+        /// </summary>
+        Text,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace LlamaParse
                 FormSectionItemDiscriminatorType.Field => "field",
                 FormSectionItemDiscriminatorType.Section => "section",
                 FormSectionItemDiscriminatorType.Table => "table",
+                FormSectionItemDiscriminatorType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace LlamaParse
                 "field" => FormSectionItemDiscriminatorType.Field,
                 "section" => FormSectionItemDiscriminatorType.Section,
                 "table" => FormSectionItemDiscriminatorType.Table,
+                "text" => FormSectionItemDiscriminatorType.Text,
                 _ => null,
             };
         }

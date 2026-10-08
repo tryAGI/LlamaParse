@@ -3,11 +3,11 @@
 
 namespace LlamaParse
 {
-    public partial class V2Client
+    public partial class IndexesClient
     {
 
 
-        private static readonly global::LlamaParse.EndPointSecurityRequirement s_DeleteExtractJobApiV2ExtractJobIdDeleteSecurityRequirement0 =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement s_CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostSecurityRequirement0 =
             new global::LlamaParse.EndPointSecurityRequirement
             {
                 Authorizations = new global::LlamaParse.EndPointAuthorizationRequirement[]
@@ -21,60 +21,53 @@ namespace LlamaParse
                     },
                 },
             };
-        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_DeleteExtractJobApiV2ExtractJobIdDeleteSecurityRequirements =
+        private static readonly global::LlamaParse.EndPointSecurityRequirement[] s_CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostSecurityRequirements =
             new global::LlamaParse.EndPointSecurityRequirement[]
-            {                s_DeleteExtractJobApiV2ExtractJobIdDeleteSecurityRequirement0,
+            {                s_CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostSecurityRequirement0,
             };
-        partial void PrepareDeleteExtractJobApiV2ExtractJobIdDeleteArguments(
+        partial void PrepareCancelIndexSyncApiV1IndexesIndexIdSyncCancelPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string jobId,
-            ref bool? force,
+            ref string indexId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
-        partial void PrepareDeleteExtractJobApiV2ExtractJobIdDeleteRequest(
+        partial void PrepareCancelIndexSyncApiV1IndexesIndexIdSyncCancelPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string jobId,
-            bool? force,
+            string indexId,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
-        partial void ProcessDeleteExtractJobApiV2ExtractJobIdDeleteResponse(
+        partial void ProcessCancelIndexSyncApiV1IndexesIndexIdSyncCancelPostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessDeleteExtractJobApiV2ExtractJobIdDeleteResponseContent(
+        partial void ProcessCancelIndexSyncApiV1IndexesIndexIdSyncCancelPostResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Delete Extract Job<br/>
-        /// Delete an extraction job and its results. A non-terminal job is refused; cancel it first, or pass force=true to delete a job whose workflow is gone.
+        /// Cancel Index Sync<br/>
+        /// Cancel the running sync for an index. Returns 409 if no sync is running.
         /// </summary>
-        /// <param name="jobId"></param>
-        /// <param name="force">
-        /// Default Value: false
-        /// </param>
+        /// <param name="indexId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> DeleteExtractJobApiV2ExtractJobIdDeleteAsync(
-            string jobId,
-            bool? force = default,
+        public async global::System.Threading.Tasks.Task<string> CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostAsync(
+            string indexId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await DeleteExtractJobApiV2ExtractJobIdDeleteAsResponseAsync(
-                jobId: jobId,
-                force: force,
+            var __response = await CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostAsResponseAsync(
+                indexId: indexId,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -85,22 +78,18 @@ namespace LlamaParse
             return __response.Body;
         }
         /// <summary>
-        /// Delete Extract Job<br/>
-        /// Delete an extraction job and its results. A non-terminal job is refused; cancel it first, or pass force=true to delete a job whose workflow is gone.
+        /// Cancel Index Sync<br/>
+        /// Cancel the running sync for an index. Returns 409 if no sync is running.
         /// </summary>
-        /// <param name="jobId"></param>
-        /// <param name="force">
-        /// Default Value: false
-        /// </param>
+        /// <param name="indexId"></param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LlamaParse.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<string>> DeleteExtractJobApiV2ExtractJobIdDeleteAsResponseAsync(
-            string jobId,
-            bool? force = default,
+        public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<string>> CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostAsResponseAsync(
+            string indexId,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -109,10 +98,9 @@ namespace LlamaParse
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareDeleteExtractJobApiV2ExtractJobIdDeleteArguments(
+            PrepareCancelIndexSyncApiV1IndexesIndexIdSyncCancelPostArguments(
                 httpClient: HttpClient,
-                jobId: ref jobId,
-                force: ref force,
+                indexId: ref indexId,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -120,8 +108,8 @@ namespace LlamaParse
 
             var __authorizations = global::LlamaParse.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_DeleteExtractJobApiV2ExtractJobIdDeleteSecurityRequirements,
-                operationName: "DeleteExtractJobApiV2ExtractJobIdDeleteAsync");
+                securityRequirements: s_CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostSecurityRequirements,
+                operationName: "CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostAsync");
 
             using var __timeoutCancellationTokenSource = global::LlamaParse.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -141,10 +129,9 @@ namespace LlamaParse
             {
 
                             var __pathBuilder = new global::LlamaParse.PathBuilder(
-                                path: $"/api/v2/extract/{jobId}",
+                                path: $"/api/v1/indexes/{indexId}/sync/cancel",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("force", force?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -154,7 +141,7 @@ namespace LlamaParse
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Delete,
+                    method: global::System.Net.Http.HttpMethod.Post,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -197,11 +184,10 @@ namespace LlamaParse
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareDeleteExtractJobApiV2ExtractJobIdDeleteRequest(
+                PrepareCancelIndexSyncApiV1IndexesIndexIdSyncCancelPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobId: jobId,
-                    force: force,
+                    indexId: indexId,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -221,10 +207,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteExtractJobApiV2ExtractJobIdDelete",
-                                methodName: "DeleteExtractJobApiV2ExtractJobIdDeleteAsync",
-                                pathTemplate: "$\"/api/v2/extract/{jobId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "CancelIndexSyncApiV1IndexesIndexIdSyncCancelPost",
+                                methodName: "CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostAsync",
+                                pathTemplate: "$\"/api/v1/indexes/{indexId}/sync/cancel\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -255,10 +241,10 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteExtractJobApiV2ExtractJobIdDelete",
-                                methodName: "DeleteExtractJobApiV2ExtractJobIdDeleteAsync",
-                                pathTemplate: "$\"/api/v2/extract/{jobId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "CancelIndexSyncApiV1IndexesIndexIdSyncCancelPost",
+                                methodName: "CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostAsync",
+                                pathTemplate: "$\"/api/v1/indexes/{indexId}/sync/cancel\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -296,10 +282,10 @@ namespace LlamaParse
                         await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteExtractJobApiV2ExtractJobIdDelete",
-                                methodName: "DeleteExtractJobApiV2ExtractJobIdDeleteAsync",
-                                pathTemplate: "$\"/api/v2/extract/{jobId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "CancelIndexSyncApiV1IndexesIndexIdSyncCancelPost",
+                                methodName: "CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostAsync",
+                                pathTemplate: "$\"/api/v1/indexes/{indexId}/sync/cancel\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -336,7 +322,7 @@ namespace LlamaParse
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessDeleteExtractJobApiV2ExtractJobIdDeleteResponse(
+                ProcessCancelIndexSyncApiV1IndexesIndexIdSyncCancelPostResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -344,10 +330,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteExtractJobApiV2ExtractJobIdDelete",
-                                methodName: "DeleteExtractJobApiV2ExtractJobIdDeleteAsync",
-                                pathTemplate: "$\"/api/v2/extract/{jobId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "CancelIndexSyncApiV1IndexesIndexIdSyncCancelPost",
+                                methodName: "CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostAsync",
+                                pathTemplate: "$\"/api/v1/indexes/{indexId}/sync/cancel\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -366,10 +352,10 @@ namespace LlamaParse
                     await global::LlamaParse.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LlamaParse.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteExtractJobApiV2ExtractJobIdDelete",
-                                methodName: "DeleteExtractJobApiV2ExtractJobIdDeleteAsync",
-                                pathTemplate: "$\"/api/v2/extract/{jobId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "CancelIndexSyncApiV1IndexesIndexIdSyncCancelPost",
+                                methodName: "CancelIndexSyncApiV1IndexesIndexIdSyncCancelPostAsync",
+                                pathTemplate: "$\"/api/v1/indexes/{indexId}/sync/cancel\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -433,7 +419,7 @@ namespace LlamaParse
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessDeleteExtractJobApiV2ExtractJobIdDeleteResponseContent(
+                                ProcessCancelIndexSyncApiV1IndexesIndexIdSyncCancelPostResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);

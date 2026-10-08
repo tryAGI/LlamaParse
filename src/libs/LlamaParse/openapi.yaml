@@ -12260,6 +12260,102 @@
         }
       }
     },
+    "/api/v1/indexes/{index_id}/sync/cancel": {
+      "post": {
+        "tags": [
+          "Indexes"
+        ],
+        "summary": "Cancel Index Sync",
+        "description": "Cancel the running sync for an index. Returns 409 if no sync is running.",
+        "operationId": "cancel_index_sync_api_v1_indexes__index_id__sync_cancel_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "index_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Index Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/beta/usage-metrics/aggregate": {
       "get": {
         "tags": [
@@ -21058,7 +21154,7 @@
           "Extract"
         ],
         "summary": "Delete Extract Job",
-        "description": "Delete an extraction job and its results.",
+        "description": "Delete an extraction job and its results. A non-terminal job is refused; cancel it first, or pass force=true to delete a job whose workflow is gone.",
         "operationId": "delete_extract_job_api_v2_extract__job_id__delete",
         "security": [
           {
@@ -21073,6 +21169,16 @@
             "schema": {
               "type": "string",
               "title": "Job Id"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Force"
             }
           },
           {
@@ -36722,6 +36828,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/FormTable"
+                },
+                {
+                  "$ref": "#/components/schemas/FormText"
                 }
               ],
               "discriminator": {
@@ -36729,7 +36838,8 @@
                 "mapping": {
                   "field": "#/components/schemas/FormField",
                   "section": "#/components/schemas/FormSection",
-                  "table": "#/components/schemas/FormTable"
+                  "table": "#/components/schemas/FormTable",
+                  "text": "#/components/schemas/FormText"
                 }
               }
             },
@@ -36846,6 +36956,9 @@
                     },
                     {
                       "$ref": "#/components/schemas/FormTable"
+                    },
+                    {
+                      "$ref": "#/components/schemas/FormText"
                     }
                   ],
                   "discriminator": {
@@ -36853,7 +36966,8 @@
                     "mapping": {
                       "field": "#/components/schemas/FormField",
                       "section": "#/components/schemas/FormSection",
-                      "table": "#/components/schemas/FormTable"
+                      "table": "#/components/schemas/FormTable",
+                      "text": "#/components/schemas/FormText"
                     }
                   }
                 },
@@ -37056,6 +37170,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/FormTable"
+                },
+                {
+                  "$ref": "#/components/schemas/FormText"
                 }
               ],
               "discriminator": {
@@ -37063,7 +37180,8 @@
                 "mapping": {
                   "field": "#/components/schemas/FormField",
                   "section": "#/components/schemas/FormSection",
-                  "table": "#/components/schemas/FormTable"
+                  "table": "#/components/schemas/FormTable",
+                  "text": "#/components/schemas/FormText"
                 }
               }
             },
@@ -37202,6 +37320,18 @@
             ],
             "title": "Bbox",
             "description": "Bounding boxes of the table's fillable regions on the page."
+          },
+          "html": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Html",
+            "description": "HTML representation of the table, as a regular table item has."
           }
         },
         "type": "object",
@@ -37224,6 +37354,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/FormTable"
+                },
+                {
+                  "$ref": "#/components/schemas/FormText"
                 }
               ],
               "discriminator": {
@@ -37231,7 +37364,8 @@
                 "mapping": {
                   "field": "#/components/schemas/FormField",
                   "section": "#/components/schemas/FormSection",
-                  "table": "#/components/schemas/FormTable"
+                  "table": "#/components/schemas/FormTable",
+                  "text": "#/components/schemas/FormText"
                 }
               }
             },
@@ -37308,6 +37442,54 @@
         "type": "object",
         "title": "FormTableGrounding",
         "description": "Scalar text grounding aligned with the table's columns and ragged rows."
+      },
+      "FormText": {
+        "properties": {
+          "grounding": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormFieldGrounding"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Optional source-backed grounding for the printed text"
+          },
+          "type": {
+            "type": "string",
+            "const": "text",
+            "title": "Type",
+            "description": "Form text node",
+            "default": "text"
+          },
+          "value": {
+            "type": "string",
+            "title": "Value",
+            "description": "The printed text, verbatim"
+          },
+          "bbox": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/BBox"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bbox",
+            "description": "Bounding boxes of the text on the page, if attributed."
+          }
+        },
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "title": "FormText",
+        "description": "Printed text that is not part of a field, section heading or table: a title, an\ninstruction, a note. With it the form JSON holds every printed word of its region."
       },
       "FormTextGrounding": {
         "properties": {
@@ -38429,6 +38611,18 @@
             ],
             "title": "Last Exported At",
             "description": "Last export time."
+          },
+          "sync_in_progress": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sync In Progress",
+            "description": "Whether a sync is running. Set only when getting a single index."
           },
           "metadata": {
             "$ref": "#/components/schemas/IndexMetadata",
@@ -47977,7 +48171,7 @@
               }
             ],
             "title": "Target Pages",
-            "description": "Comma-separated page numbers or ranges to split (1-based). Omit to split all pages. Requires a completed parse job as file_input.",
+            "description": "Comma-separated page numbers or ranges to split (1-based). Pages are split in the order listed. Omit to split all pages. Requires a completed parse job as file_input.",
             "examples": [
               "1,3,5-7",
               "1-3,8-10"
@@ -48721,7 +48915,7 @@
               }
             ],
             "title": "Target Pages",
-            "description": "Comma-separated page numbers or ranges to split (1-based). Omit to split all pages. Requires a completed parse job as file_input.",
+            "description": "Comma-separated page numbers or ranges to split (1-based). Pages are split in the order listed. Omit to split all pages. Requires a completed parse job as file_input.",
             "examples": [
               "1,3,5-7",
               "1-3,8-10"

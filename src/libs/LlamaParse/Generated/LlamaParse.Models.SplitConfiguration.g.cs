@@ -40,7 +40,7 @@ namespace LlamaParse
         public string? ParseConfigId { get; set; }
 
         /// <summary>
-        /// Comma-separated page numbers or ranges to split (1-based). Omit to split all pages. Requires a completed parse job as file_input.
+        /// Comma-separated page numbers or ranges to split (1-based). Pages are split in the order listed. Omit to split all pages. Requires a completed parse job as file_input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_pages")]
         public string? TargetPages { get; set; }
@@ -70,7 +70,7 @@ namespace LlamaParse
         /// Saved parse configuration ID to control how the document is parsed before splitting. Takes precedence over parse_tier. Configurations that restrict pages (`target_pages` or `max_pages` on the parse configuration) are rejected: split results number pages relative to the full document. Ignored when a completed parse job is supplied as file_input.
         /// </param>
         /// <param name="targetPages">
-        /// Comma-separated page numbers or ranges to split (1-based). Omit to split all pages. Requires a completed parse job as file_input.
+        /// Comma-separated page numbers or ranges to split (1-based). Pages are split in the order listed. Omit to split all pages. Requires a completed parse job as file_input.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

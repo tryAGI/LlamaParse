@@ -124,6 +124,44 @@ namespace LlamaParse
         public global::LlamaParse.FormTable PickTable() => Table is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Printed text that is not part of a field, section heading or table: a title, an<br/>
+        /// instruction, a note. With it the form JSON holds every printed word of its region.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::LlamaParse.FormText? Text { get; init; }
+#else
+        public global::LlamaParse.FormText? Text { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LlamaParse.FormText? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::LlamaParse.FormText PickText() => Text is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -196,11 +234,35 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator ValueItemsVariant1Item(global::LlamaParse.FormText value) => new ValueItemsVariant1Item((global::LlamaParse.FormText?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::LlamaParse.FormText?(ValueItemsVariant1Item @this) => @this.Text;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ValueItemsVariant1Item(global::LlamaParse.FormText? value)
+        {
+            Text = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ValueItemsVariant1Item FromText(global::LlamaParse.FormText? value) => new ValueItemsVariant1Item(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public ValueItemsVariant1Item(
             global::LlamaParse.FormFieldValueItemsVariant1ItemDiscriminatorType? type,
             global::LlamaParse.FormSection? section,
             global::LlamaParse.FormField? field,
-            global::LlamaParse.FormTable? table
+            global::LlamaParse.FormTable? table,
+            global::LlamaParse.FormText? text
             )
         {
             Type = type;
@@ -208,12 +270,14 @@ namespace LlamaParse
             Section = section;
             Field = field;
             Table = table;
+            Text = text;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Text as object ??
             Table as object ??
             Field as object ??
             Section as object
@@ -225,7 +289,8 @@ namespace LlamaParse
         public override string? ToString() =>
             Section?.ToString() ??
             Field?.ToString() ??
-            Table?.ToString()
+            Table?.ToString() ??
+            Text?.ToString()
             ;
 
         /// <summary>
@@ -233,7 +298,7 @@ namespace LlamaParse
         /// </summary>
         public bool Validate()
         {
-            return IsSection && !IsField && !IsTable || !IsSection && IsField && !IsTable || !IsSection && !IsField && IsTable;
+            return IsSection && !IsField && !IsTable && !IsText || !IsSection && IsField && !IsTable && !IsText || !IsSection && !IsField && IsTable && !IsText || !IsSection && !IsField && !IsTable && IsText;
         }
 
         /// <summary>
@@ -243,6 +308,7 @@ namespace LlamaParse
             global::System.Func<global::LlamaParse.FormSection, TResult>? section = null,
             global::System.Func<global::LlamaParse.FormField, TResult>? field = null,
             global::System.Func<global::LlamaParse.FormTable, TResult>? table = null,
+            global::System.Func<global::LlamaParse.FormText, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -262,6 +328,10 @@ namespace LlamaParse
             {
                 return table(__value2);
             }
+            else if (Text is { } __value3 && text != null)
+            {
+                return text(__value3);
+            }
 
             return default(TResult);
         }
@@ -275,6 +345,8 @@ namespace LlamaParse
             global::System.Action<global::LlamaParse.FormField>? field = null,
 
             global::System.Action<global::LlamaParse.FormTable>? table = null,
+
+            global::System.Action<global::LlamaParse.FormText>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -293,6 +365,10 @@ namespace LlamaParse
             else if (Table is { } __value2)
             {
                 table?.Invoke(__value2);
+            }
+            else if (Text is { } __value3)
+            {
+                text?.Invoke(__value3);
             }
         }
 
@@ -303,6 +379,7 @@ namespace LlamaParse
             global::System.Action<global::LlamaParse.FormSection>? section = null,
             global::System.Action<global::LlamaParse.FormField>? field = null,
             global::System.Action<global::LlamaParse.FormTable>? table = null,
+            global::System.Action<global::LlamaParse.FormText>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -321,6 +398,10 @@ namespace LlamaParse
             else if (Table is { } __value2)
             {
                 table?.Invoke(__value2);
+            }
+            else if (Text is { } __value3)
+            {
+                text?.Invoke(__value3);
             }
         }
 
@@ -337,6 +418,8 @@ namespace LlamaParse
                 typeof(global::LlamaParse.FormField),
                 Table,
                 typeof(global::LlamaParse.FormTable),
+                Text,
+                typeof(global::LlamaParse.FormText),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -355,7 +438,8 @@ namespace LlamaParse
             return
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormSection?>.Default.Equals(Section, other.Section) &&
                 global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormField?>.Default.Equals(Field, other.Field) &&
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormTable?>.Default.Equals(Table, other.Table)
+                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormTable?>.Default.Equals(Table, other.Table) &&
+                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormText?>.Default.Equals(Text, other.Text)
                 ;
         }
 
