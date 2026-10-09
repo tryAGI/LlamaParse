@@ -12001,6 +12001,21 @@
             }
           },
           {
+            "name": "expand",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "const": "sync_in_progress",
+                "type": "string"
+              },
+              "description": "Fields to expand. Supported value: sync_in_progress.",
+              "title": "Expand"
+            },
+            "description": "Fields to expand. Supported value: sync_in_progress."
+          },
+          {
             "name": "project_id",
             "in": "query",
             "required": false,
@@ -38622,7 +38637,7 @@
               }
             ],
             "title": "Sync In Progress",
-            "description": "Whether a sync is running. Set only when getting a single index."
+            "description": "Whether the index is syncing its source or exporting the result. Requires `expand=sync_in_progress`."
           },
           "metadata": {
             "$ref": "#/components/schemas/IndexMetadata",

@@ -28,6 +28,7 @@ namespace LlamaParse
         partial void PrepareGetIndexApiV1IndexesIndexIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string indexId,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
@@ -35,6 +36,7 @@ namespace LlamaParse
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string indexId,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
@@ -52,6 +54,9 @@ namespace LlamaParse
         /// Get an index by ID.
         /// </summary>
         /// <param name="indexId"></param>
+        /// <param name="expand">
+        /// Fields to expand. Supported value: sync_in_progress.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -60,6 +65,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.IndexResponse> GetIndexApiV1IndexesIndexIdGetAsync(
             string indexId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -68,6 +74,7 @@ namespace LlamaParse
         {
             var __response = await GetIndexApiV1IndexesIndexIdGetAsResponseAsync(
                 indexId: indexId,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -82,6 +89,9 @@ namespace LlamaParse
         /// Get an index by ID.
         /// </summary>
         /// <param name="indexId"></param>
+        /// <param name="expand">
+        /// Fields to expand. Supported value: sync_in_progress.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -90,6 +100,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.IndexResponse>> GetIndexApiV1IndexesIndexIdGetAsResponseAsync(
             string indexId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -101,6 +112,7 @@ namespace LlamaParse
             PrepareGetIndexApiV1IndexesIndexIdGetArguments(
                 httpClient: HttpClient,
                 indexId: ref indexId,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -132,6 +144,7 @@ namespace LlamaParse
                                 path: $"/api/v1/indexes/{indexId}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("expand", expand, delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -188,6 +201,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     indexId: indexId,
+                    expand: expand,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);

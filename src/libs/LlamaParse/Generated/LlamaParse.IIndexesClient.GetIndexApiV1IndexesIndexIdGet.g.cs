@@ -9,6 +9,9 @@ namespace LlamaParse
         /// Get an index by ID.
         /// </summary>
         /// <param name="indexId"></param>
+        /// <param name="expand">
+        /// Fields to expand. Supported value: sync_in_progress.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -17,6 +20,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.IndexResponse> GetIndexApiV1IndexesIndexIdGetAsync(
             string indexId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -27,6 +31,9 @@ namespace LlamaParse
         /// Get an index by ID.
         /// </summary>
         /// <param name="indexId"></param>
+        /// <param name="expand">
+        /// Fields to expand. Supported value: sync_in_progress.
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -35,6 +42,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.IndexResponse>> GetIndexApiV1IndexesIndexIdGetAsResponseAsync(
             string indexId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
