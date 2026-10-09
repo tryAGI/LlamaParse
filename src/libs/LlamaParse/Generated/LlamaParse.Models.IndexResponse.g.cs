@@ -89,7 +89,7 @@ namespace LlamaParse
         public global::System.DateTime? LastExportedAt { get; set; }
 
         /// <summary>
-        /// Whether a sync is running. Set only when getting a single index.
+        /// Whether the index is syncing its source or exporting the result. Requires `expand=sync_in_progress`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sync_in_progress")]
         public bool? SyncInProgress { get; set; }
@@ -146,7 +146,7 @@ namespace LlamaParse
         /// Last export time.
         /// </param>
         /// <param name="syncInProgress">
-        /// Whether a sync is running. Set only when getting a single index.
+        /// Whether the index is syncing its source or exporting the result. Requires `expand=sync_in_progress`.
         /// </param>
         /// <param name="metadata">
         /// Build state and diagnostic info.
