@@ -140,6 +140,26 @@ namespace LlamaParse
         ///
         /// </summary>
         UnmappedEvent,
+        /// <summary>
+        ///
+        /// </summary>
+        VerifyCancelled,
+        /// <summary>
+        ///
+        /// </summary>
+        VerifyError,
+        /// <summary>
+        ///
+        /// </summary>
+        VerifyPending,
+        /// <summary>
+        ///
+        /// </summary>
+        VerifyRunning,
+        /// <summary>
+        ///
+        /// </summary>
+        VerifySuccess,
     }
 
     /// <summary>
@@ -187,6 +207,11 @@ namespace LlamaParse
                 WebhookConfigResponseWebhookEventsVariant1Item.SplitProcessing => "split.processing",
                 WebhookConfigResponseWebhookEventsVariant1Item.SplitSuccess => "split.success",
                 WebhookConfigResponseWebhookEventsVariant1Item.UnmappedEvent => "unmapped_event",
+                WebhookConfigResponseWebhookEventsVariant1Item.VerifyCancelled => "verify.cancelled",
+                WebhookConfigResponseWebhookEventsVariant1Item.VerifyError => "verify.error",
+                WebhookConfigResponseWebhookEventsVariant1Item.VerifyPending => "verify.pending",
+                WebhookConfigResponseWebhookEventsVariant1Item.VerifyRunning => "verify.running",
+                WebhookConfigResponseWebhookEventsVariant1Item.VerifySuccess => "verify.success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -230,6 +255,11 @@ namespace LlamaParse
                 "split.processing" => WebhookConfigResponseWebhookEventsVariant1Item.SplitProcessing,
                 "split.success" => WebhookConfigResponseWebhookEventsVariant1Item.SplitSuccess,
                 "unmapped_event" => WebhookConfigResponseWebhookEventsVariant1Item.UnmappedEvent,
+                "verify.cancelled" => WebhookConfigResponseWebhookEventsVariant1Item.VerifyCancelled,
+                "verify.error" => WebhookConfigResponseWebhookEventsVariant1Item.VerifyError,
+                "verify.pending" => WebhookConfigResponseWebhookEventsVariant1Item.VerifyPending,
+                "verify.running" => WebhookConfigResponseWebhookEventsVariant1Item.VerifyRunning,
+                "verify.success" => WebhookConfigResponseWebhookEventsVariant1Item.VerifySuccess,
                 _ => null,
             };
         }
