@@ -51111,11 +51111,11 @@
             "description": "Whether this is hard (conclusive) evidence",
             "default": false
           },
-          "data": {
+          "metadata_tool": {
             "additionalProperties": true,
             "type": "object",
-            "title": "Data",
-            "description": "Tool-specific structured payload"
+            "title": "Metadata Tool",
+            "description": "Raw values from the tool behind this finding; the shape varies by tool"
           }
         },
         "type": "object",
