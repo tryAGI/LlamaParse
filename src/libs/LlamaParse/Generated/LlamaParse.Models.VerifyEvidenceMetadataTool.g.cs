@@ -4,9 +4,9 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Tool-specific structured payload
+    /// Raw values from the tool behind this finding; the shape varies by tool
     /// </summary>
-    public sealed partial class VerifyEvidenceData
+    public sealed partial class VerifyEvidenceMetadataTool
     {
 
         /// <summary>
