@@ -103,6 +103,12 @@ namespace LlamaParse
         public string? ParseJobId { get; set; }
 
         /// <summary>
+        /// Usage recorded against this job. Requires `expand=usage`; null until the job is COMPLETED.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        public global::LlamaParse.ClassifyUsage? Usage { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -153,6 +159,9 @@ namespace LlamaParse
         /// <param name="parseJobId">
         /// Associated parse job ID
         /// </param>
+        /// <param name="usage">
+        /// Usage recorded against this job. Requires `expand=usage`; null until the job is COMPLETED.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -170,7 +179,8 @@ namespace LlamaParse
             string? errorMessage,
             string? configurationId,
             string? transactionId,
-            string? parseJobId)
+            string? parseJobId,
+            global::LlamaParse.ClassifyUsage? usage)
         {
             this.Id = id;
             this.CreatedAt = createdAt;
@@ -186,6 +196,7 @@ namespace LlamaParse
             this.ConfigurationId = configurationId;
             this.TransactionId = transactionId;
             this.ParseJobId = parseJobId;
+            this.Usage = usage;
         }
 
         /// <summary>

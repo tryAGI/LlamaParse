@@ -47,7 +47,7 @@ namespace LlamaParse
         public global::LlamaParse.MetadataResult? Metadata { get; set; }
 
         /// <summary>
-        /// Form analysis result (if requested; jobs with forms=enrich only)
+        /// Beta: form analysis result (if requested; jobs with forms=enrich only)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("forms")]
         public global::LlamaParse.FormsResult? Forms { get; set; }
@@ -110,7 +110,7 @@ namespace LlamaParse
         /// Page-level metadata including confidence scores and presentation data (if requested)
         /// </param>
         /// <param name="forms">
-        /// Form analysis result (if requested; jobs with forms=enrich only)
+        /// Beta: form analysis result (if requested; jobs with forms=enrich only)
         /// </param>
         /// <param name="markdownFull">
         /// Full raw markdown content (if requested)

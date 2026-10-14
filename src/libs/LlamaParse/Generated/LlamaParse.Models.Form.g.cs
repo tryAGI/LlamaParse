@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class Form
     {
         /// <summary>
-        /// Structured representation: an ordered tree of sections, fields, and tables
+        /// Structured representation: an ordered tree of sections, fields, tables, and text
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("json")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace LlamaParse
         /// Initializes a new instance of the <see cref="Form" /> class.
         /// </summary>
         /// <param name="json">
-        /// Structured representation: an ordered tree of sections, fields, and tables
+        /// Structured representation: an ordered tree of sections, fields, tables, and text
         /// </param>
         /// <param name="list">
         /// Flattened list representation of the same content

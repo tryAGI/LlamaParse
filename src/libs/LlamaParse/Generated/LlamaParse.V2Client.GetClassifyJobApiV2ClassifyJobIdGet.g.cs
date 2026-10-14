@@ -28,6 +28,7 @@ namespace LlamaParse
         partial void PrepareGetClassifyJobApiV2ClassifyJobIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string jobId,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
@@ -35,6 +36,7 @@ namespace LlamaParse
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string jobId,
+            global::System.Collections.Generic.IList<string>? expand,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? session);
@@ -52,9 +54,13 @@ namespace LlamaParse
         /// Get a classify job by ID.<br/>
         /// Returns the job status, configuration, and classify result<br/>
         /// when complete. The result includes the matched document type,<br/>
-        /// confidence score, and reasoning.
+        /// confidence score, and reasoning.<br/>
+        /// Use `expand=usage` for credits billed against the job.
         /// </summary>
         /// <param name="jobId"></param>
+        /// <param name="expand">
+        /// Additional fields to include: usage
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -63,6 +69,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.ClassifyV2JobResponse> GetClassifyJobApiV2ClassifyJobIdGetAsync(
             string jobId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -71,6 +78,7 @@ namespace LlamaParse
         {
             var __response = await GetClassifyJobApiV2ClassifyJobIdGetAsResponseAsync(
                 jobId: jobId,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: session,
@@ -85,9 +93,13 @@ namespace LlamaParse
         /// Get a classify job by ID.<br/>
         /// Returns the job status, configuration, and classify result<br/>
         /// when complete. The result includes the matched document type,<br/>
-        /// confidence score, and reasoning.
+        /// confidence score, and reasoning.<br/>
+        /// Use `expand=usage` for credits billed against the job.
         /// </summary>
         /// <param name="jobId"></param>
+        /// <param name="expand">
+        /// Additional fields to include: usage
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -96,6 +108,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyV2JobResponse>> GetClassifyJobApiV2ClassifyJobIdGetAsResponseAsync(
             string jobId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -107,6 +120,7 @@ namespace LlamaParse
             PrepareGetClassifyJobApiV2ClassifyJobIdGetArguments(
                 httpClient: HttpClient,
                 jobId: ref jobId,
+                expand: expand,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);
@@ -138,6 +152,7 @@ namespace LlamaParse
                                 path: $"/api/v2/classify/{jobId}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("expand", expand, delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
@@ -194,6 +209,7 @@ namespace LlamaParse
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     jobId: jobId,
+                    expand: expand,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
