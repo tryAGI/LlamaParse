@@ -20195,7 +20195,7 @@
           "Classify"
         ],
         "summary": "Get Classify Job",
-        "description": "Get a classify job by ID.\n\nReturns the job status, configuration, and classify result\nwhen complete. The result includes the matched document type,\nconfidence score, and reasoning.",
+        "description": "Get a classify job by ID.\n\nReturns the job status, configuration, and classify result\nwhen complete. The result includes the matched document type,\nconfidence score, and reasoning.\nUse `expand=usage` for credits billed against the job.",
         "operationId": "get_classify_job_api_v2_classify__job_id__get",
         "security": [
           {
@@ -20211,6 +20211,20 @@
               "type": "string",
               "title": "Job Id"
             }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Additional fields to include: usage",
+              "title": "Expand"
+            },
+            "description": "Additional fields to include: usage"
           },
           {
             "name": "project_id",
@@ -28731,6 +28745,43 @@
         "title": "ClassifyParsingConfiguration",
         "description": "Parsing configuration for a classify job."
       },
+      "ClassifyUsage": {
+        "properties": {
+          "credits": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Credits",
+            "description": "Total credits billed against this job. Null until billing has recorded it.",
+            "examples": [
+              30.0
+            ]
+          },
+          "parse_credits": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parse Credits",
+            "description": "Credits billed against the parse job Classify ran on the input file",
+            "examples": [
+              3.0
+            ]
+          }
+        },
+        "type": "object",
+        "title": "ClassifyUsage",
+        "description": "Usage recorded against a classify job.\n\nClassify bills through the parse job it runs on a file input, so that parse\njob's credits are the whole total. A job run on a parse job you created bills\nnothing of its own: ``parse_credits`` is null and ``credits`` is 0."
+      },
       "ClassifyV2Configuration": {
         "properties": {
           "rules": {
@@ -29117,6 +29168,17 @@
             ],
             "title": "Parse Job Id",
             "description": "Associated parse job ID"
+          },
+          "usage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ClassifyUsage"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Usage recorded against this job. Requires `expand=usage`; null until the job is COMPLETED."
           }
         },
         "type": "object",
@@ -33805,6 +33867,15 @@
             "description": "Include confidence scores in results. Returned under `extract_metadata` (auto-included when set).",
             "default": false
           },
+          "advanced_citations": {
+            "type": "boolean",
+            "title": "Advanced Citations",
+            "description": "More precise citation bounding boxes. Set to false for faster extraction with less precise boxes.",
+            "default": true,
+            "examples": [
+              false
+            ]
+          },
           "spreadsheet_mode": {
             "type": "boolean",
             "title": "Spreadsheet Mode",
@@ -35566,6 +35637,15 @@
             "title": "Confidence Scores",
             "description": "Include confidence scores in results. Returned under `extract_metadata` (auto-included when set).",
             "default": false
+          },
+          "advanced_citations": {
+            "type": "boolean",
+            "title": "Advanced Citations",
+            "description": "More precise citation bounding boxes. Set to false for faster extraction with less precise boxes.",
+            "default": true,
+            "examples": [
+              false
+            ]
           },
           "spreadsheet_mode": {
             "type": "boolean",
@@ -37495,7 +37575,7 @@
             },
             "type": "array",
             "title": "Json",
-            "description": "Structured representation: an ordered tree of sections, fields, and tables"
+            "description": "Structured representation: an ordered tree of sections, fields, tables, and text"
           },
           "list": {
             "$ref": "#/components/schemas/FormListItem",
@@ -38182,7 +38262,7 @@
           "pages"
         ],
         "title": "FormsResult",
-        "description": "Per-page form analysis results (one entry per page)."
+        "description": "Beta: per-page form analysis results; node types the calling SDK predates are left out."
       },
       "FormsResultPage": {
         "properties": {
@@ -44236,7 +44316,7 @@
                 "type": "null"
               }
             ],
-            "description": "Form analysis result (if requested; jobs with forms=enrich only)"
+            "description": "Beta: form analysis result (if requested; jobs with forms=enrich only)"
           },
           "markdown_full": {
             "anyOf": [
@@ -51111,10 +51191,10 @@
             "description": "Whether this is hard (conclusive) evidence",
             "default": false
           },
-          "metadata_tool": {
+          "metadata": {
             "additionalProperties": true,
             "type": "object",
-            "title": "Metadata Tool",
+            "title": "Metadata",
             "description": "Raw values from the tool behind this finding; the shape varies by tool"
           }
         },
@@ -51540,33 +51620,11 @@
             "description": "Outbound webhook endpoints to notify on job status changes"
           },
           "file_input": {
-            "anyOf": [
-              {
-                "type": "string",
-                "maxLength": 200
-              },
-              {
-                "type": "null"
-              }
-            ],
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
             "title": "File Input",
             "description": "File ID of the document to analyze",
-            "examples": [
-              "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
-            ]
-          },
-          "file_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "File Id",
-            "description": "Deprecated: use file_input instead",
-            "deprecated": true,
             "examples": [
               "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
             ]
@@ -51600,6 +51658,9 @@
           }
         },
         "type": "object",
+        "required": [
+          "file_input"
+        ],
         "title": "VerifyRequest",
         "description": "Request to create a Verify job."
       },

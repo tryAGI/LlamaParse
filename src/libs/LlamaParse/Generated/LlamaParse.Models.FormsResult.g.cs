@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Per-page form analysis results (one entry per page).
+    /// Beta: per-page form analysis results; node types the calling SDK predates are left out.
     /// </summary>
     public sealed partial class FormsResult
     {

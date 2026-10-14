@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace LlamaParse
@@ -26,14 +24,8 @@ namespace LlamaParse
         /// File ID of the document to analyze
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_input")]
-        public string? FileInput { get; set; }
-
-        /// <summary>
-        /// Deprecated: use file_input instead
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public string? FileId { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string FileInput { get; set; }
 
         /// <summary>
         /// Verify configuration (defaults applied when omitted)
@@ -56,14 +48,14 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="VerifyRequest" /> class.
         /// </summary>
+        /// <param name="fileInput">
+        /// File ID of the document to analyze
+        /// </param>
         /// <param name="webhookConfigurationIds">
         /// IDs of saved webhook configurations to notify for this job.
         /// </param>
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
-        /// </param>
-        /// <param name="fileInput">
-        /// File ID of the document to analyze
         /// </param>
         /// <param name="configuration">
         /// Verify configuration (defaults applied when omitted)
@@ -75,15 +67,15 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VerifyRequest(
+            string fileInput,
             global::System.Collections.Generic.IList<string>? webhookConfigurationIds,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations,
-            string? fileInput,
             global::LlamaParse.VerifyConfiguration? configuration,
             string? transactionId)
         {
             this.WebhookConfigurationIds = webhookConfigurationIds;
             this.WebhookConfigurations = webhookConfigurations;
-            this.FileInput = fileInput;
+            this.FileInput = fileInput ?? throw new global::System.ArgumentNullException(nameof(fileInput));
             this.Configuration = configuration;
             this.TransactionId = transactionId;
         }

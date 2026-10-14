@@ -9,9 +9,13 @@ namespace LlamaParse
         /// Get a classify job by ID.<br/>
         /// Returns the job status, configuration, and classify result<br/>
         /// when complete. The result includes the matched document type,<br/>
-        /// confidence score, and reasoning.
+        /// confidence score, and reasoning.<br/>
+        /// Use `expand=usage` for credits billed against the job.
         /// </summary>
         /// <param name="jobId"></param>
+        /// <param name="expand">
+        /// Additional fields to include: usage
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -20,6 +24,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.ClassifyV2JobResponse> GetClassifyJobApiV2ClassifyJobIdGetAsync(
             string jobId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
@@ -30,9 +35,13 @@ namespace LlamaParse
         /// Get a classify job by ID.<br/>
         /// Returns the job status, configuration, and classify result<br/>
         /// when complete. The result includes the matched document type,<br/>
-        /// confidence score, and reasoning.
+        /// confidence score, and reasoning.<br/>
+        /// Use `expand=usage` for credits billed against the job.
         /// </summary>
         /// <param name="jobId"></param>
+        /// <param name="expand">
+        /// Additional fields to include: usage
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
@@ -41,6 +50,7 @@ namespace LlamaParse
         /// <exception cref="global::LlamaParse.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.AutoSDKHttpResponse<global::LlamaParse.ClassifyV2JobResponse>> GetClassifyJobApiV2ClassifyJobIdGetAsResponseAsync(
             string jobId,
+            global::System.Collections.Generic.IList<string>? expand = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,

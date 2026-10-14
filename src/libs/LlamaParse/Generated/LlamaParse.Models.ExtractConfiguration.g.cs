@@ -78,6 +78,13 @@ namespace LlamaParse
         public bool? ConfidenceScores { get; set; }
 
         /// <summary>
+        /// More precise citation bounding boxes. Set to false for faster extraction with less precise boxes.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("advanced_citations")]
+        public bool? AdvancedCitations { get; set; }
+
+        /// <summary>
         /// Beta. When true, extract structured data directly from a spreadsheet workbook (.xlsx/.xls/.csv) — the agent reads cells straight from the workbook instead of the standard document path. Off by default (spreadsheets keep the standard path). Requires the agentic_plus tier. Billed on the standard per-page extract rate, against a page count derived from workbook size. Citations and confidence scores are not available in this mode.<br/>
         /// Default Value: false
         /// </summary>
@@ -147,6 +154,10 @@ namespace LlamaParse
         /// Include confidence scores in results. Returned under `extract_metadata` (auto-included when set).<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="advancedCitations">
+        /// More precise citation bounding boxes. Set to false for faster extraction with less precise boxes.<br/>
+        /// Default Value: true
+        /// </param>
         /// <param name="spreadsheetMode">
         /// Beta. When true, extract structured data directly from a spreadsheet workbook (.xlsx/.xls/.csv) — the agent reads cells straight from the workbook instead of the standard document path. Off by default (spreadsheets keep the standard path). Requires the agentic_plus tier. Billed on the standard per-page extract rate, against a page count derived from workbook size. Citations and confidence scores are not available in this mode.<br/>
         /// Default Value: false
@@ -174,6 +185,7 @@ namespace LlamaParse
             string? systemPrompt,
             bool? citeSources,
             bool? confidenceScores,
+            bool? advancedCitations,
             bool? spreadsheetMode,
             global::System.Collections.Generic.IList<string>? sheetNames,
             global::LlamaParse.ExtractConfigurationParseTier? parseTier,
@@ -189,6 +201,7 @@ namespace LlamaParse
             this.SystemPrompt = systemPrompt;
             this.CiteSources = citeSources;
             this.ConfidenceScores = confidenceScores;
+            this.AdvancedCitations = advancedCitations;
             this.SpreadsheetMode = spreadsheetMode;
             this.SheetNames = sheetNames;
             this.ParseTier = parseTier;

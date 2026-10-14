@@ -53,8 +53,8 @@ namespace LlamaParse
         /// <summary>
         /// Raw values from the tool behind this finding; the shape varies by tool
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata_tool")]
-        public object? MetadataTool { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -84,7 +84,7 @@ namespace LlamaParse
         /// Whether this is hard (conclusive) evidence<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="metadataTool">
+        /// <param name="metadata">
         /// Raw values from the tool behind this finding; the shape varies by tool
         /// </param>
 #if NET7_0_OR_GREATER
@@ -97,7 +97,7 @@ namespace LlamaParse
             string detail,
             double score,
             bool? hard,
-            object? metadataTool)
+            object? metadata)
         {
             this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
             this.Family = family ?? throw new global::System.ArgumentNullException(nameof(family));
@@ -105,7 +105,7 @@ namespace LlamaParse
             this.Detail = detail ?? throw new global::System.ArgumentNullException(nameof(detail));
             this.Score = score;
             this.Hard = hard;
-            this.MetadataTool = metadataTool;
+            this.Metadata = metadata;
         }
 
         /// <summary>

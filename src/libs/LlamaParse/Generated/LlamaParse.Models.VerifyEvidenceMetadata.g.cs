@@ -6,7 +6,7 @@ namespace LlamaParse
     /// <summary>
     /// Raw values from the tool behind this finding; the shape varies by tool
     /// </summary>
-    public sealed partial class VerifyEvidenceMetadataTool
+    public sealed partial class VerifyEvidenceMetadata
     {
 
         /// <summary>

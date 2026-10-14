@@ -1,7 +1,5 @@
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 namespace LlamaParse
 {
     public partial interface IAlphaClient
@@ -88,12 +86,12 @@ namespace LlamaParse
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.VerifyJobResponse> CreateVerifyJobApiAlphaVerifyPostAsync(
+            string fileInput,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
             global::System.Collections.Generic.IList<string>? webhookConfigurationIds = default,
             global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations = default,
-            string? fileInput = default,
             global::LlamaParse.VerifyConfiguration? configuration = default,
             string? transactionId = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
