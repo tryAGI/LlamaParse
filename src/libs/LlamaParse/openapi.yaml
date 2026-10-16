@@ -10551,7 +10551,7 @@
           "Split"
         ],
         "summary": "Delete Split Job",
-        "description": "Delete a split job and its results.",
+        "description": "Delete a split job and its results. A job that is not in a terminal state is refused with 409; cancel it first.",
         "operationId": "delete_split_job_api_v1_split_jobs__split_job_id__delete",
         "security": [
           {
