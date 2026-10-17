@@ -564,7 +564,7 @@ namespace LlamaParse
         /// Current `latest` by tier:<br/>
         /// - `fast`: `2026-06-15`<br/>
         /// - `cost_effective`: `2026-09-28`<br/>
-        /// - `agentic`: `2026-10-15`<br/>
+        /// - `agentic`: `2026-10-16`<br/>
         /// - `agentic_plus`: `2026-09-28`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
