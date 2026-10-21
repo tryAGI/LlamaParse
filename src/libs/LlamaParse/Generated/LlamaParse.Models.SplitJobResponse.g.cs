@@ -100,6 +100,13 @@ namespace LlamaParse
         public string? TargetPages { get; set; }
 
         /// <summary>
+        /// Split version used for this job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("version")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Version { get; set; }
+
+        /// <summary>
         /// Current job status. Valid values are: pending, processing, completed, failed, cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -145,6 +152,9 @@ namespace LlamaParse
         /// <param name="categories">
         /// Categories used for splitting.
         /// </param>
+        /// <param name="version">
+        /// Split version used for this job.
+        /// </param>
         /// <param name="status">
         /// Current job status. Valid values are: pending, processing, completed, failed, cancelled.
         /// </param>
@@ -188,6 +198,7 @@ namespace LlamaParse
             string userId,
             global::LlamaParse.SplitJobResponseDocumentInputType documentInputType,
             global::System.Collections.Generic.IList<global::LlamaParse.SplitCategory> categories,
+            string version,
             string status,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
@@ -214,6 +225,7 @@ namespace LlamaParse
             this.ParseTier = parseTier;
             this.ParseConfigId = parseConfigId;
             this.TargetPages = targetPages;
+            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Result = result;
             this.ErrorMessage = errorMessage;

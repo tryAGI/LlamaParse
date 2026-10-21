@@ -49329,6 +49329,14 @@
             "title": "Target Pages",
             "description": "Page selection requested for this job, if any."
           },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "description": "Split version used for this job.",
+            "examples": [
+              "1.1.0"
+            ]
+          },
           "status": {
             "type": "string",
             "title": "Status",
@@ -49366,6 +49374,7 @@
           "user_id",
           "document_input_type",
           "categories",
+          "version",
           "status"
         ],
         "title": "SplitJobResponse",
