@@ -48853,7 +48853,7 @@
             "description": "Split version to run. Omit for the current release. Preview versions are selectable by name and never resolved automatically.",
             "examples": [
               "latest",
-              "turbo-preview"
+              "1.1.0"
             ]
           },
           "parse_tier": {
@@ -48946,7 +48946,7 @@
             "description": "Split version to run. Omit for the current release. Preview versions are selectable by name and never resolved automatically.",
             "examples": [
               "latest",
-              "turbo-preview"
+              "1.1.0"
             ]
           }
         },
@@ -49606,7 +49606,7 @@
             "description": "Split version to run. Omit for the current release. Preview versions are selectable by name and never resolved automatically.",
             "examples": [
               "latest",
-              "turbo-preview"
+              "1.1.0"
             ]
           },
           "parse_tier": {
