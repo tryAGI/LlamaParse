@@ -24306,6 +24306,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-10-26",
                   "2026-10-16",
                   "2026-09-28",
                   "2026-06-15"
@@ -24320,7 +24321,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-26`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -44091,6 +44092,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-10-26",
                   "2026-10-16",
                   "2026-09-28",
                   "2026-06-15"
@@ -44102,7 +44104,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-26`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -44427,6 +44429,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-10-26",
                   "2026-10-16",
                   "2026-09-28",
                   "2026-06-15"
@@ -44438,7 +44441,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-09-28`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-26`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -44642,6 +44645,8 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-10-26",
+                "2026-10-20",
                 "2026-09-28",
                 "2026-09-24",
                 "2026-09-11",
@@ -45189,8 +45194,9 @@
               }
             ],
             "title": "Embedding Config Hash",
-            "description": "Hash of the embedding config.",
-            "default": ""
+            "description": "Hash of the embedding config. Null in API responses.",
+            "default": "",
+            "deprecated": true
           },
           "parsing_config_hash": {
             "anyOf": [
@@ -45202,8 +45208,9 @@
               }
             ],
             "title": "Parsing Config Hash",
-            "description": "Hash of the llama parse parameters.",
-            "default": ""
+            "description": "Hash of the llama parse parameters. Null in API responses.",
+            "default": "",
+            "deprecated": true
           },
           "transform_config_hash": {
             "anyOf": [
@@ -45940,7 +45947,7 @@
               }
             ],
             "title": "Config Hash",
-            "description": "Hashes for the configuration of the pipeline."
+            "description": "Hashes for the configuration of the pipeline. Every hash but `transform_config_hash` is null."
           },
           "indexed_page_count": {
             "anyOf": [
@@ -50725,6 +50732,7 @@
               "form_parsing_pages",
               "confidence_score_high",
               "extraction_num_pages",
+              "extraction_effort_max_credits",
               "spreadsheet_regions_extracted",
               "pages_split",
               "pages_classified",

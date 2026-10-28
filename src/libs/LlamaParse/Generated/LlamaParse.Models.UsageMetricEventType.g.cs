@@ -55,6 +55,10 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
+        ExtractionEffortMaxCredits,
+        /// <summary>
+        ///
+        /// </summary>
         ExtractionNumPages,
         /// <summary>
         ///
@@ -157,6 +161,7 @@ namespace LlamaParse
                 UsageMetricEventType.DirectoryFilesExported => "directory_files_exported",
                 UsageMetricEventType.DirectoryFilesIngested => "directory_files_ingested",
                 UsageMetricEventType.DirectoryPagesExported => "directory_pages_exported",
+                UsageMetricEventType.ExtractionEffortMaxCredits => "extraction_effort_max_credits",
                 UsageMetricEventType.ExtractionNumPages => "extraction_num_pages",
                 UsageMetricEventType.ExtractionNumPagesParsed => "extraction_num_pages_parsed",
                 UsageMetricEventType.FormParsingPages => "form_parsing_pages",
@@ -198,6 +203,7 @@ namespace LlamaParse
                 "directory_files_exported" => UsageMetricEventType.DirectoryFilesExported,
                 "directory_files_ingested" => UsageMetricEventType.DirectoryFilesIngested,
                 "directory_pages_exported" => UsageMetricEventType.DirectoryPagesExported,
+                "extraction_effort_max_credits" => UsageMetricEventType.ExtractionEffortMaxCredits,
                 "extraction_num_pages" => UsageMetricEventType.ExtractionNumPages,
                 "extraction_num_pages_parsed" => UsageMetricEventType.ExtractionNumPagesParsed,
                 "form_parsing_pages" => UsageMetricEventType.FormParsingPages,

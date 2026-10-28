@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LlamaParse
@@ -9,15 +11,17 @@ namespace LlamaParse
     public sealed partial class PipelineConfigurationHashes
     {
         /// <summary>
-        /// Hash of the embedding config.
+        /// Hash of the embedding config. Null in API responses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_config_hash")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? EmbeddingConfigHash { get; set; }
 
         /// <summary>
-        /// Hash of the llama parse parameters.
+        /// Hash of the llama parse parameters. Null in API responses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parsing_config_hash")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? ParsingConfigHash { get; set; }
 
         /// <summary>
@@ -35,12 +39,6 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="PipelineConfigurationHashes" /> class.
         /// </summary>
-        /// <param name="embeddingConfigHash">
-        /// Hash of the embedding config.
-        /// </param>
-        /// <param name="parsingConfigHash">
-        /// Hash of the llama parse parameters.
-        /// </param>
         /// <param name="transformConfigHash">
         /// Hash of the transform config.
         /// </param>
@@ -48,12 +46,8 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PipelineConfigurationHashes(
-            string? embeddingConfigHash,
-            string? parsingConfigHash,
             string? transformConfigHash)
         {
-            this.EmbeddingConfigHash = embeddingConfigHash;
-            this.ParsingConfigHash = parsingConfigHash;
             this.TransformConfigHash = transformConfigHash;
         }
 

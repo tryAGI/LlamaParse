@@ -89,7 +89,7 @@ namespace LlamaParse
         public global::System.Guid? DataSourceId { get; set; }
 
         /// <summary>
-        /// Hashes for the configuration of the pipeline.
+        /// Hashes for the configuration of the pipeline. Every hash but `transform_config_hash` is null.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config_hash")]
         public object? ConfigHash { get; set; }
@@ -173,7 +173,7 @@ namespace LlamaParse
         /// The ID of the data source that the file belongs to.
         /// </param>
         /// <param name="configHash">
-        /// Hashes for the configuration of the pipeline.
+        /// Hashes for the configuration of the pipeline. Every hash but `transform_config_hash` is null.
         /// </param>
         /// <param name="indexedPageCount">
         /// The number of pages that have been indexed for this file.
