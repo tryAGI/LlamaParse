@@ -38,6 +38,9 @@ namespace LlamaParse
         /// <param name="expand">
         /// Additional fields to include: configuration, extract_metadata
         /// </param>
+        /// <param name="reviewStatus">
+        /// Filter by review status; none is a job without a review
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="configurationId">
@@ -62,6 +65,7 @@ namespace LlamaParse
             string? pageToken = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Collections.Generic.IList<string>? expand = default,
+            global::LlamaParse.ListExtractJobsApiV2ExtractGetReviewStatus? reviewStatus = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? configurationId = default,
@@ -102,6 +106,9 @@ namespace LlamaParse
         /// <param name="expand">
         /// Additional fields to include: configuration, extract_metadata
         /// </param>
+        /// <param name="reviewStatus">
+        /// Filter by review status; none is a job without a review
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="configurationId">
@@ -126,6 +133,7 @@ namespace LlamaParse
             string? pageToken = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Collections.Generic.IList<string>? expand = default,
+            global::LlamaParse.ListExtractJobsApiV2ExtractGetReviewStatus? reviewStatus = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? configurationId = default,

@@ -94,7 +94,7 @@ namespace LlamaParse
         /// - `fast`: `2026-06-15`<br/>
         /// - `cost_effective`: `2026-09-28`<br/>
         /// - `agentic`: `2026-10-16`<br/>
-        /// - `agentic_plus`: `2026-10-26`<br/>
+        /// - `agentic_plus`: `2026-10-28`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="clientName">
@@ -110,7 +110,7 @@ namespace LlamaParse
         /// AI-powered tier configuration (custom prompts). Auto-initialized for cost_effective/agentic/agentic_plus tiers. Cannot be used with fast tier
         /// </param>
         /// <param name="webhookConfigurations">
-        /// Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services
+        /// Webhook endpoints for job notifications. Maximum 10 total, including webhook_configuration_ids.
         /// </param>
         /// <param name="inputOptions">
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type

@@ -37,6 +37,7 @@ namespace LlamaParse
             ref string? pageToken,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.Collections.Generic.IList<string>? expand,
+            ref global::LlamaParse.ListExtractJobsApiV2ExtractGetReviewStatus? reviewStatus,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? configurationId,
@@ -54,6 +55,7 @@ namespace LlamaParse
             string? pageToken,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.Collections.Generic.IList<string>? expand,
+            global::LlamaParse.ListExtractJobsApiV2ExtractGetReviewStatus? reviewStatus,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             string? configurationId,
@@ -101,6 +103,9 @@ namespace LlamaParse
         /// <param name="expand">
         /// Additional fields to include: configuration, extract_metadata
         /// </param>
+        /// <param name="reviewStatus">
+        /// Filter by review status; none is a job without a review
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="configurationId">
@@ -125,6 +130,7 @@ namespace LlamaParse
             string? pageToken = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Collections.Generic.IList<string>? expand = default,
+            global::LlamaParse.ListExtractJobsApiV2ExtractGetReviewStatus? reviewStatus = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? configurationId = default,
@@ -143,6 +149,7 @@ namespace LlamaParse
                 pageToken: pageToken,
                 jobIds: jobIds,
                 expand: expand,
+                reviewStatus: reviewStatus,
                 projectId: projectId,
                 organizationId: organizationId,
                 configurationId: configurationId,
@@ -187,6 +194,9 @@ namespace LlamaParse
         /// <param name="expand">
         /// Additional fields to include: configuration, extract_metadata
         /// </param>
+        /// <param name="reviewStatus">
+        /// Filter by review status; none is a job without a review
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="configurationId">
@@ -211,6 +221,7 @@ namespace LlamaParse
             string? pageToken = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.Collections.Generic.IList<string>? expand = default,
+            global::LlamaParse.ListExtractJobsApiV2ExtractGetReviewStatus? reviewStatus = default,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? configurationId = default,
@@ -232,6 +243,7 @@ namespace LlamaParse
                 pageToken: ref pageToken,
                 jobIds: jobIds,
                 expand: expand,
+                reviewStatus: ref reviewStatus,
                 projectId: projectId,
                 organizationId: organizationId,
                 configurationId: ref configurationId,
@@ -274,6 +286,7 @@ namespace LlamaParse
                                 .AddOptionalParameter("page_token", pageToken)
                                 .AddOptionalParameter("job_ids", jobIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("expand", expand, delimiter: ",", explode: true)
+                                .AddOptionalParameter("review_status", reviewStatus?.ToValueString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("configuration_id", configurationId)
@@ -340,6 +353,7 @@ namespace LlamaParse
                     pageToken: pageToken,
                     jobIds: jobIds,
                     expand: expand,
+                    reviewStatus: reviewStatus,
                     projectId: projectId,
                     organizationId: organizationId,
                     configurationId: configurationId,

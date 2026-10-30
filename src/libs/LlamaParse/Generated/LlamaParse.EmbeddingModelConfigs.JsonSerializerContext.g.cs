@@ -55,6 +55,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EmbeddingConfig3), TypeInfoPropertyName = "EmbeddingConfig32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EmbeddingConfigVariant12))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EmbeddingConfigVariant13))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.EmbeddingConfigVariant14))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<string, int?>), TypeInfoPropertyName = "AnyOfStringInt322")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.VertexTextEmbedding))]
@@ -131,6 +132,7 @@ namespace LlamaParse
             options.Converters.Add(new global::LlamaParse.JsonConverters.EmbeddingConfig3JsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.EmbeddingConfigVariant12JsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.EmbeddingConfigVariant13JsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.EmbeddingConfigVariant14JsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.AnyOfJsonConverter<double?, string>());
             options.Converters.Add(new global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>());
             options.Converters.Add(new global::LlamaParse.JsonConverters.AnyOfJsonConverter<int?, string>());

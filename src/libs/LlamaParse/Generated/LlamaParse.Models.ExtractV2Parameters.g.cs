@@ -21,6 +21,12 @@ namespace LlamaParse
         public int? MaxPages { get; set; }
 
         /// <summary>
+        /// Use 'max' for additional processing effort on agentic_plus. Bills by model usage with the page charge as a minimum. Omit or set to null for the tier's default behavior.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
+        public string? Effort { get; set; }
+
+        /// <summary>
         /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)<br/>
         /// Default Value: cost_effective
         /// </summary>
@@ -85,7 +91,7 @@ namespace LlamaParse
         public bool? AdvancedCitations { get; set; }
 
         /// <summary>
-        /// Beta. When true, extract structured data directly from a spreadsheet workbook (.xlsx/.xls/.csv) — the agent reads cells straight from the workbook instead of the standard document path. Off by default (spreadsheets keep the standard path). Requires the agentic_plus tier. Billed on the standard per-page extract rate, against a page count derived from workbook size. Citations and confidence scores are not available in this mode.<br/>
+        /// Extract structured data directly from spreadsheet cells (.xlsx/.xls/.csv). Billed at the standard per-page Extract rate, with page count derived from workbook size.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spreadsheet_mode")]
@@ -134,6 +140,9 @@ namespace LlamaParse
         /// <param name="maxPages">
         /// Maximum number of pages to process. Omit for no limit.
         /// </param>
+        /// <param name="effort">
+        /// Use 'max' for additional processing effort on agentic_plus. Bills by model usage with the page charge as a minimum. Omit or set to null for the tier's default behavior.
+        /// </param>
         /// <param name="tier">
         /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)<br/>
         /// Default Value: cost_effective
@@ -166,7 +175,7 @@ namespace LlamaParse
         /// Default Value: true
         /// </param>
         /// <param name="spreadsheetMode">
-        /// Beta. When true, extract structured data directly from a spreadsheet workbook (.xlsx/.xls/.csv) — the agent reads cells straight from the workbook instead of the standard document path. Off by default (spreadsheets keep the standard path). Requires the agentic_plus tier. Billed on the standard per-page extract rate, against a page count derived from workbook size. Citations and confidence scores are not available in this mode.<br/>
+        /// Extract structured data directly from spreadsheet cells (.xlsx/.xls/.csv). Billed at the standard per-page Extract rate, with page count derived from workbook size.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="sheetNames">
@@ -188,6 +197,7 @@ namespace LlamaParse
             object dataSchema,
             string? targetPages,
             int? maxPages,
+            string? effort,
             global::LlamaParse.ExtractV2ParametersTier? tier,
             string? version,
             bool? disableCache,
@@ -204,6 +214,7 @@ namespace LlamaParse
         {
             this.TargetPages = targetPages;
             this.MaxPages = maxPages;
+            this.Effort = effort;
             this.Tier = tier;
             this.Version = version;
             this.DisableCache = disableCache;
