@@ -14,7 +14,7 @@ namespace LlamaParse
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_config")]
-        public global::LlamaParse.EmbeddingConfigVariant13? EmbeddingConfig { get; set; }
+        public global::LlamaParse.EmbeddingConfigVariant14? EmbeddingConfig { get; set; }
 
         /// <summary>
         /// Configuration for the transformation.
@@ -126,7 +126,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PipelineUpdate(
-            global::LlamaParse.EmbeddingConfigVariant13? embeddingConfig,
+            global::LlamaParse.EmbeddingConfigVariant14? embeddingConfig,
             global::LlamaParse.AnyOf<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>? transformConfig,
             global::LlamaParse.SparseModelConfig? sparseModelConfig,
             global::System.Guid? dataSinkId,

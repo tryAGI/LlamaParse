@@ -68,14 +68,6 @@ namespace LlamaParse
         public global::System.Guid? ManagedPipelineId { get; set; }
 
         /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("embedding_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.EmbeddingConfig3JsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LlamaParse.EmbeddingConfig3 EmbeddingConfig { get; set; }
-
-        /// <summary>
         /// Configuration for the sparse model used in hybrid search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sparse_model_config")]
@@ -123,6 +115,14 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata_config")]
         public global::LlamaParse.PipelineMetadataConfig? MetadataConfig { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("embedding_config")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.EmbeddingConfig3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LlamaParse.EmbeddingConfig3 EmbeddingConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -214,7 +214,6 @@ namespace LlamaParse
             this.EmbeddingModelConfig = embeddingModelConfig;
             this.PipelineType = pipelineType;
             this.ManagedPipelineId = managedPipelineId;
-            this.EmbeddingConfig = embeddingConfig;
             this.SparseModelConfig = sparseModelConfig;
             this.ConfigHash = configHash;
             this.TransformConfig = transformConfig;
@@ -223,6 +222,7 @@ namespace LlamaParse
             this.DataSink = dataSink;
             this.Status = status;
             this.MetadataConfig = metadataConfig;
+            this.EmbeddingConfig = embeddingConfig;
         }
 
         /// <summary>

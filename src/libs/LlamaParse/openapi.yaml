@@ -2339,7 +2339,7 @@
           "Pipelines"
         ],
         "summary": "Search Pipelines",
-        "description": "Search for pipelines by name, type, or project.\n\nDeprecated: use `GET /api/v2/pipelines`, which is paginated.",
+        "description": "Search for pipelines by name, type, or project.\n\nLegacy pipelines with unavailable embedding configurations return `embedding_config: null`.\n\nUnavailable linked model configurations return `embedding_model_config: null`, retaining their IDs. A stored-config fallback in this list does not repair the pipeline; detail reads and retrieval still require valid configuration.\n\nDeprecated: use `GET /api/v2/pipelines`, which is paginated.",
         "operationId": "search_pipelines_api_v1_pipelines_get",
         "deprecated": true,
         "security": [
@@ -2455,7 +2455,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Pipeline"
+                    "$ref": "#/components/schemas/PipelineListItem"
                   },
                   "title": "Response Search Pipelines Api V1 Pipelines Get"
                 }
@@ -16664,6 +16664,9 @@
               }
             }
           },
+          "400": {
+            "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or deleting or copying look-alike webhooks can cause this."
+          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -17057,6 +17060,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or deleting or copying look-alike webhooks can cause this."
           },
           "422": {
             "description": "Validation Error",
@@ -20932,6 +20938,30 @@
             "description": "Additional fields to include: configuration, extract_metadata"
           },
           {
+            "name": "review_status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "pending",
+                    "approved",
+                    "rejected",
+                    "none"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by review status; none is a job without a review",
+              "title": "Review Status"
+            },
+            "description": "Filter by review status; none is a job without a review"
+          },
+          {
             "name": "project_id",
             "in": "query",
             "required": false,
@@ -24306,7 +24336,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-10-26",
+                  "2026-10-28",
                   "2026-10-16",
                   "2026-09-28",
                   "2026-06-15"
@@ -24321,7 +24351,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-26`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-28`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -33756,6 +33786,22 @@
               10
             ]
           },
+          "effort": {
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "max"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effort",
+            "description": "Use 'max' for additional processing effort on agentic_plus. Bills by model usage with the page charge as a minimum. Omit or set to null for the tier's default behavior.",
+            "examples": [
+              "max"
+            ]
+          },
           "tier": {
             "type": "string",
             "enum": [
@@ -33880,7 +33926,7 @@
           "spreadsheet_mode": {
             "type": "boolean",
             "title": "Spreadsheet Mode",
-            "description": "Beta. When true, extract structured data directly from a spreadsheet workbook (.xlsx/.xls/.csv) — the agent reads cells straight from the workbook instead of the standard document path. Off by default (spreadsheets keep the standard path). Requires the agentic_plus tier. Billed on the standard per-page extract rate, against a page count derived from workbook size. Citations and confidence scores are not available in this mode.",
+            "description": "Extract structured data directly from spreadsheet cells (.xlsx/.xls/.csv). Billed at the standard per-page Extract rate, with page count derived from workbook size.",
             "default": false,
             "examples": [
               true
@@ -35527,6 +35573,22 @@
               10
             ]
           },
+          "effort": {
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "max"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effort",
+            "description": "Use 'max' for additional processing effort on agentic_plus. Bills by model usage with the page charge as a minimum. Omit or set to null for the tier's default behavior.",
+            "examples": [
+              "max"
+            ]
+          },
           "tier": {
             "type": "string",
             "enum": [
@@ -35651,7 +35713,7 @@
           "spreadsheet_mode": {
             "type": "boolean",
             "title": "Spreadsheet Mode",
-            "description": "Beta. When true, extract structured data directly from a spreadsheet workbook (.xlsx/.xls/.csv) — the agent reads cells straight from the workbook instead of the standard document path. Off by default (spreadsheets keep the standard path). Requires the agentic_plus tier. Billed on the standard per-page extract rate, against a page count derived from workbook size. Citations and confidence scores are not available in this mode.",
+            "description": "Extract structured data directly from spreadsheet cells (.xlsx/.xls/.csv). Billed at the standard per-page Extract rate, with page count derived from workbook size.",
             "default": false,
             "examples": [
               true
@@ -44092,7 +44154,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-10-26",
+                  "2026-10-28",
                   "2026-10-16",
                   "2026-09-28",
                   "2026-06-15"
@@ -44104,7 +44166,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-26`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-28`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -44150,7 +44212,7 @@
             },
             "type": "array",
             "title": "Webhook Configurations",
-            "description": "Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services"
+            "description": "Webhook endpoints for job notifications. Maximum 10 total, including webhook_configuration_ids."
           },
           "input_options": {
             "$ref": "#/components/schemas/LlamaParseInputOptions",
@@ -44429,7 +44491,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-10-26",
+                  "2026-10-28",
                   "2026-10-16",
                   "2026-09-28",
                   "2026-06-15"
@@ -44441,7 +44503,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-26`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-28`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -44487,7 +44549,7 @@
             },
             "type": "array",
             "title": "Webhook Configurations",
-            "description": "Webhook endpoints for job status notifications. Multiple webhooks can be configured for different events or services"
+            "description": "Webhook endpoints for job notifications. Maximum 10 total, including webhook_configuration_ids."
           },
           "input_options": {
             "$ref": "#/components/schemas/LlamaParseInputOptions",
@@ -44645,6 +44707,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-10-28",
                 "2026-10-26",
                 "2026-10-20",
                 "2026-09-28",
@@ -45042,48 +45105,6 @@
             "title": "Managed Pipeline Id",
             "description": "The ID of the ManagedPipeline this playground pipeline is linked to."
           },
-          "embedding_config": {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/ManagedOpenAIEmbeddingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/AzureOpenAIEmbeddingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/CohereEmbeddingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/GeminiEmbeddingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/HuggingFaceInferenceAPIEmbeddingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/OpenAIEmbeddingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/VertexAIEmbeddingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/BedrockEmbeddingConfig"
-              }
-            ],
-            "title": "Embedding Config",
-            "discriminator": {
-              "propertyName": "type",
-              "mapping": {
-                "AZURE_EMBEDDING": "#/components/schemas/AzureOpenAIEmbeddingConfig",
-                "BEDROCK_EMBEDDING": "#/components/schemas/BedrockEmbeddingConfig",
-                "COHERE_EMBEDDING": "#/components/schemas/CohereEmbeddingConfig",
-                "GEMINI_EMBEDDING": "#/components/schemas/GeminiEmbeddingConfig",
-                "HUGGINGFACE_API_EMBEDDING": "#/components/schemas/HuggingFaceInferenceAPIEmbeddingConfig",
-                "MANAGED_OPENAI_EMBEDDING": "#/components/schemas/ManagedOpenAIEmbeddingConfig",
-                "OPENAI_EMBEDDING": "#/components/schemas/OpenAIEmbeddingConfig",
-                "VERTEXAI_EMBEDDING": "#/components/schemas/VertexAIEmbeddingConfig"
-              }
-            }
-          },
           "sparse_model_config": {
             "anyOf": [
               {
@@ -45170,6 +45191,48 @@
               }
             ],
             "description": "Metadata configuration for the pipeline."
+          },
+          "embedding_config": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ManagedOpenAIEmbeddingConfig"
+              },
+              {
+                "$ref": "#/components/schemas/AzureOpenAIEmbeddingConfig"
+              },
+              {
+                "$ref": "#/components/schemas/CohereEmbeddingConfig"
+              },
+              {
+                "$ref": "#/components/schemas/GeminiEmbeddingConfig"
+              },
+              {
+                "$ref": "#/components/schemas/HuggingFaceInferenceAPIEmbeddingConfig"
+              },
+              {
+                "$ref": "#/components/schemas/OpenAIEmbeddingConfig"
+              },
+              {
+                "$ref": "#/components/schemas/VertexAIEmbeddingConfig"
+              },
+              {
+                "$ref": "#/components/schemas/BedrockEmbeddingConfig"
+              }
+            ],
+            "title": "Embedding Config",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "AZURE_EMBEDDING": "#/components/schemas/AzureOpenAIEmbeddingConfig",
+                "BEDROCK_EMBEDDING": "#/components/schemas/BedrockEmbeddingConfig",
+                "COHERE_EMBEDDING": "#/components/schemas/CohereEmbeddingConfig",
+                "GEMINI_EMBEDDING": "#/components/schemas/GeminiEmbeddingConfig",
+                "HUGGINGFACE_API_EMBEDDING": "#/components/schemas/HuggingFaceInferenceAPIEmbeddingConfig",
+                "MANAGED_OPENAI_EMBEDDING": "#/components/schemas/ManagedOpenAIEmbeddingConfig",
+                "OPENAI_EMBEDDING": "#/components/schemas/OpenAIEmbeddingConfig",
+                "VERTEXAI_EMBEDDING": "#/components/schemas/VertexAIEmbeddingConfig"
+              }
+            }
           }
         },
         "type": "object",
@@ -46468,6 +46531,239 @@
         "type": "object",
         "title": "PipelineFileUpdate",
         "description": "Request to update a pipeline file."
+      },
+      "PipelineListItem": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier"
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At",
+            "description": "Creation datetime"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At",
+            "description": "Update datetime"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "project_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Project Id"
+          },
+          "embedding_model_config_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Embedding Model Config Id",
+            "description": "The ID of the EmbeddingModelConfig this pipeline is using."
+          },
+          "embedding_model_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EmbeddingModelConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The embedding model configuration for this pipeline."
+          },
+          "pipeline_type": {
+            "$ref": "#/components/schemas/PipelineType",
+            "description": "Type of pipeline. Either PLAYGROUND or MANAGED.",
+            "default": "MANAGED"
+          },
+          "managed_pipeline_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Managed Pipeline Id",
+            "description": "The ID of the ManagedPipeline this playground pipeline is linked to."
+          },
+          "sparse_model_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SparseModelConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Configuration for the sparse model used in hybrid search."
+          },
+          "config_hash": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PipelineConfigurationHashes"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Hashes for the configuration of the pipeline."
+          },
+          "transform_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AutoTransformConfig"
+              },
+              {
+                "$ref": "#/components/schemas/AdvancedModeTransformConfig"
+              }
+            ],
+            "title": "Transform Config",
+            "description": "Configuration for the transformation."
+          },
+          "preset_retrieval_parameters": {
+            "$ref": "#/components/schemas/PresetRetrievalParams",
+            "description": "Preset retrieval parameters for the pipeline."
+          },
+          "llama_parse_parameters": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LlamaParseParameters"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Settings that can be configured for how to use LlamaParse to parse files within a LlamaCloud pipeline."
+          },
+          "data_sink": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DataSink"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The data sink for the pipeline. If None, the pipeline will use the fully managed data sink."
+          },
+          "status": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "CREATED",
+                  "DELETING"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status",
+            "description": "Status of the pipeline."
+          },
+          "metadata_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PipelineMetadataConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Metadata configuration for the pipeline."
+          },
+          "embedding_config": {
+            "anyOf": [
+              {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/ManagedOpenAIEmbeddingConfig"
+                  },
+                  {
+                    "$ref": "#/components/schemas/AzureOpenAIEmbeddingConfig"
+                  },
+                  {
+                    "$ref": "#/components/schemas/CohereEmbeddingConfig"
+                  },
+                  {
+                    "$ref": "#/components/schemas/GeminiEmbeddingConfig"
+                  },
+                  {
+                    "$ref": "#/components/schemas/HuggingFaceInferenceAPIEmbeddingConfig"
+                  },
+                  {
+                    "$ref": "#/components/schemas/OpenAIEmbeddingConfig"
+                  },
+                  {
+                    "$ref": "#/components/schemas/VertexAIEmbeddingConfig"
+                  },
+                  {
+                    "$ref": "#/components/schemas/BedrockEmbeddingConfig"
+                  }
+                ],
+                "discriminator": {
+                  "propertyName": "type",
+                  "mapping": {
+                    "AZURE_EMBEDDING": "#/components/schemas/AzureOpenAIEmbeddingConfig",
+                    "BEDROCK_EMBEDDING": "#/components/schemas/BedrockEmbeddingConfig",
+                    "COHERE_EMBEDDING": "#/components/schemas/CohereEmbeddingConfig",
+                    "GEMINI_EMBEDDING": "#/components/schemas/GeminiEmbeddingConfig",
+                    "HUGGINGFACE_API_EMBEDDING": "#/components/schemas/HuggingFaceInferenceAPIEmbeddingConfig",
+                    "MANAGED_OPENAI_EMBEDDING": "#/components/schemas/ManagedOpenAIEmbeddingConfig",
+                    "OPENAI_EMBEDDING": "#/components/schemas/OpenAIEmbeddingConfig",
+                    "VERTEXAI_EMBEDDING": "#/components/schemas/VertexAIEmbeddingConfig"
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Embedding Config",
+            "description": "Embedding configuration, or null when unavailable for a legacy pipeline."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "project_id",
+          "embedding_config"
+        ],
+        "title": "PipelineListItem",
+        "description": "A pipeline returned by the legacy list endpoint."
       },
       "PipelineMetadataConfig": {
         "properties": {
