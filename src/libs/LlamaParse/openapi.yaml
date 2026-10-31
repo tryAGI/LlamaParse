@@ -16667,6 +16667,9 @@
           "400": {
             "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or deleting or copying look-alike webhooks can cause this."
           },
+          "409": {
+            "description": "The configuration changed after it was read, and the save sent masked credentials back. Reload it and save again."
+          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -17063,6 +17066,9 @@
           },
           "400": {
             "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or deleting or copying look-alike webhooks can cause this."
+          },
+          "409": {
+            "description": "Another configuration of this product already has the new name, or the configuration changed after it was read. Choose another name, or reload it and save again."
           },
           "422": {
             "description": "Validation Error",
@@ -17617,6 +17623,9 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "The webhook configuration changed after it was read, and the update sent masked credentials or a new URL. Reload it and save again."
           },
           "422": {
             "description": "Validation Error",
