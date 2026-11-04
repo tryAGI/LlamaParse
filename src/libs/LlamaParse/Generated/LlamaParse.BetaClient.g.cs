@@ -41,7 +41,7 @@ namespace LlamaParse
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
-            get => JsonSerializerContextProvider?.Value ?? global::LlamaParse.SourceGenerationContext.Default;
+            get => JsonSerializerContextProvider?.Value ?? global::LlamaParse.BetaSourceGenerationContext.Default;
             set => JsonSerializerContextProvider = new(() => value);
         }
 

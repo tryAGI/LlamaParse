@@ -15,6 +15,10 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
+        Char,
+        /// <summary>
+        ///
+        /// </summary>
         Line,
         /// <summary>
         ///
@@ -35,6 +39,7 @@ namespace LlamaParse
             return value switch
             {
                 LlamaParseOutputOptionsGranularBboxe.Cell => "cell",
+                LlamaParseOutputOptionsGranularBboxe.Char => "char",
                 LlamaParseOutputOptionsGranularBboxe.Line => "line",
                 LlamaParseOutputOptionsGranularBboxe.Word => "word",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -48,6 +53,7 @@ namespace LlamaParse
             return value switch
             {
                 "cell" => LlamaParseOutputOptionsGranularBboxe.Cell,
+                "char" => LlamaParseOutputOptionsGranularBboxe.Char,
                 "line" => LlamaParseOutputOptionsGranularBboxe.Line,
                 "word" => LlamaParseOutputOptionsGranularBboxe.Word,
                 _ => null,

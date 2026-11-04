@@ -23,6 +23,12 @@ namespace LlamaParse
         public required global::LlamaParse.BBox Bbox { get; set; }
 
         /// <summary>
+        /// Per-character grounding within the word, present when `granular_bboxes` includes 'char' (Agentic Plus only). Each box is an even split of the word box across the word's characters.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chars")]
+        public global::System.Collections.Generic.IList<global::LlamaParse.GroundedChar>? Chars { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +43,20 @@ namespace LlamaParse
         /// <param name="bbox">
         /// Word bounding box
         /// </param>
+        /// <param name="chars">
+        /// Per-character grounding within the word, present when `granular_bboxes` includes 'char' (Agentic Plus only). Each box is an even split of the word box across the word's characters.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GroundedWord(
             global::System.Collections.Generic.IList<long> span,
-            global::LlamaParse.BBox bbox)
+            global::LlamaParse.BBox bbox,
+            global::System.Collections.Generic.IList<global::LlamaParse.GroundedChar>? chars)
         {
             this.Span = span ?? throw new global::System.ArgumentNullException(nameof(span));
             this.Bbox = bbox ?? throw new global::System.ArgumentNullException(nameof(bbox));
+            this.Chars = chars;
         }
 
         /// <summary>

@@ -16665,7 +16665,7 @@
             }
           },
           "400": {
-            "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or deleting or copying look-alike webhooks can cause this."
+            "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or deleting or copying look-alike webhooks can cause this. A vendor API key also has to be re-entered after a change to the model's vendor, parse mode, tier, version or auto mode."
           },
           "409": {
             "description": "The configuration changed after it was read, and the save sent masked credentials back. Reload it and save again."
@@ -17065,7 +17065,7 @@
             }
           },
           "400": {
-            "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or deleting or copying look-alike webhooks can cause this."
+            "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or deleting or copying look-alike webhooks can cause this. A vendor API key also has to be re-entered after a change to the model's vendor, parse mode, tier, version or auto mode."
           },
           "409": {
             "description": "Another configuration of this product already has the new name, or the configuration changed after it was read. Choose another name, or reload it and save again."
@@ -20783,7 +20783,7 @@
           "Extract"
         ],
         "summary": "List Extract Jobs",
-        "description": "List extraction jobs with optional filtering and pagination.\n\nFilter by `configuration_id`, `status`, `file_input`,\nor creation date range. Results are returned newest-first.\nUse `expand=configuration` to include the full configuration used,\nand `expand=extract_metadata` for per-field metadata.",
+        "description": "List extraction jobs with optional filtering and pagination.\n\nFilter by `configuration_id`, `status`, `file_input`, `review_status`,\nor creation date range. Results are returned newest-first.\n`review_status=pending` lists completed jobs waiting for review,\nunless `status` names another. A review stays pending when its job\nfails or is cancelled, so pass that `status` to list those.\nUse `expand=configuration` to include the full configuration used,\nand `expand=extract_metadata` for per-field metadata.",
         "operationId": "list_extract_jobs_api_v2_extract_get",
         "security": [
           {
@@ -21404,6 +21404,800 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ExtractV2Job"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/extract/{job_id}/review": {
+      "post": {
+        "tags": [
+          "V2",
+          "Extract"
+        ],
+        "summary": "Create Extract Review",
+        "description": "Beta: answers 403 until extract review is enabled for the caller and their organization.\n\nTurn review on for an extract job.\n\nFields read below `confidence_threshold`, and required fields left empty, are\nflagged for a person to check. Every setting has a default, so the body can be\nleft out. A job still running can be named: it waits for review once it\ncompletes. A job that failed, was cancelled, or cannot be reviewed answers 409\nwith `code: job_not_reviewable`; a field in `fields_in_scope` the job's schema\ndoes not have answers 400.\n\nAnswers 201 with the new review, or 200 with the job's existing review, whose\nsettings stay as they are.",
+        "operationId": "create_extract_review_api_v2_extract__job_id__review_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "origin",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "run",
+                    "history"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Where in the app review was turned on.",
+              "title": "Origin"
+            },
+            "description": "Where in the app review was turned on."
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtractReviewCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractReviewResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "V2",
+          "Extract"
+        ],
+        "summary": "Get Extract Review",
+        "description": "Beta: answers 403 until extract review is enabled for the caller and their organization.\n\nGet an extract job's review: its flags, field actions and decision, with the\nresult as the model read it and as reviewed. A job without a review answers 404.",
+        "operationId": "get_extract_review_api_v2_extract__job_id__review_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractReviewResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/extract/{job_id}/review/fields": {
+      "post": {
+        "tags": [
+          "V2",
+          "Extract"
+        ],
+        "summary": "Change Extract Review Fields",
+        "description": "Beta: answers 403 until extract review is enabled for the caller and their organization.\n\nConfirm, correct, clear, restore or undo fields of a completed job.\n\nThe changes apply in order, in one write. A job without a review gets one with\nthe default settings, at revision 0. A path that is not a field of the job, or a\nvalue the field's schema refuses, answers 400 and changes nothing.\nA job that has not completed answers 409 with `code: job_not_reviewable`. A `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.",
+        "operationId": "change_extract_review_fields_api_v2_extract__job_id__review_fields_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtractReviewFieldsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractReviewResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/extract/{job_id}/review/approve": {
+      "post": {
+        "tags": [
+          "V2",
+          "Extract"
+        ],
+        "summary": "Approve Extract Review",
+        "description": "Beta: answers 403 until extract review is enabled for the caller and their organization.\n\nApprove the reviewed result.\n\nWhile flagged fields nobody checked remain, answers 409 with `code: open_flags`\nand their `paths`, unless `sign_off` confirms them as part of approving.\nA job that has not completed answers 409 with `code: job_not_reviewable`. A `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.",
+        "operationId": "approve_extract_review_api_v2_extract__job_id__review_approve_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtractReviewApproveRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractReviewResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/extract/{job_id}/review/reject": {
+      "post": {
+        "tags": [
+          "V2",
+          "Extract"
+        ],
+        "summary": "Reject Extract Review",
+        "description": "Beta: answers 403 until extract review is enabled for the caller and their organization.\n\nReject the result, with a reason. A job that has not completed answers 409 with `code: job_not_reviewable`. A `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.",
+        "operationId": "reject_extract_review_api_v2_extract__job_id__review_reject_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtractReviewRejectRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractReviewResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/extract/{job_id}/review/reopen": {
+      "post": {
+        "tags": [
+          "V2",
+          "Extract"
+        ],
+        "summary": "Reopen Extract Review",
+        "description": "Beta: answers 403 until extract review is enabled for the caller and their organization.\n\nPut an approved or rejected review back to pending. Its field actions stay.\n\nA `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.",
+        "operationId": "reopen_extract_review_api_v2_extract__job_id__review_reopen_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtractReviewRevisionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractReviewResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/extract/{job_id}/review/events": {
+      "get": {
+        "tags": [
+          "V2",
+          "Extract"
+        ],
+        "summary": "List Extract Review Events",
+        "description": "Beta: answers 403 until extract review is enabled for the caller and their organization.\n\nList a review's history, newest first.",
+        "operationId": "list_extract_review_events_api_v2_extract__job_id__review_events_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "description": "Events per page.",
+              "default": 50,
+              "title": "Page Size"
+            },
+            "description": "Events per page."
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Token from the previous page.",
+              "title": "Page Token"
+            },
+            "description": "Token from the previous page."
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Organization Id"
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractReviewEventListResponse"
                 }
               }
             }
@@ -24345,9 +25139,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-10-28",
-                  "2026-10-16",
-                  "2026-09-28",
+                  "2026-11-02",
+                  "2026-10-30",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -24360,7 +25153,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-28`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-10-30`\n- `agentic`: `2026-10-30`\n- `agentic_plus`: `2026-11-02`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -34513,6 +35306,707 @@
         "title": "ExtractResultset",
         "description": "Schema for an extraction resultset."
       },
+      "ExtractReviewApproveRequest": {
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Revision",
+            "description": "The review's revision as the caller last read it.",
+            "examples": [
+              0
+            ]
+          },
+          "sign_off": {
+            "type": "boolean",
+            "title": "Sign Off",
+            "description": "Confirm the flagged fields nobody checked as part of approving.",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "revision"
+        ],
+        "title": "ExtractReviewApproveRequest",
+        "description": "Approve the reviewed result."
+      },
+      "ExtractReviewCreateRequest": {
+        "properties": {
+          "confidence_threshold": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence Threshold",
+            "description": "Fields read below this confidence are flagged.",
+            "default": 0.7,
+            "examples": [
+              0.8
+            ]
+          },
+          "fields_in_scope": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Fields In Scope",
+            "description": "JSON Pointers of the fields the threshold applies to; empty means all.",
+            "examples": [
+              [
+                "/total",
+                "/vendor/name"
+              ]
+            ]
+          },
+          "required_fields": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Required Fields",
+            "description": "JSON Pointers of fields flagged when empty; defaults to the schema's required.",
+            "examples": [
+              [
+                "/vendor/name"
+              ]
+            ]
+          }
+        },
+        "type": "object",
+        "title": "ExtractReviewCreateRequest",
+        "description": "Turn review on for an extract job."
+      },
+      "ExtractReviewCreatedDetail": {
+        "properties": {
+          "origin": {
+            "type": "string",
+            "enum": [
+              "run",
+              "history",
+              "edit",
+              "api"
+            ],
+            "title": "Origin",
+            "description": "Turned on as the job ran, from History, by a first edit, or by the API."
+          },
+          "confidence_threshold": {
+            "type": "number",
+            "title": "Confidence Threshold",
+            "description": "Fields read below this confidence are flagged."
+          },
+          "fields_in_scope": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Fields In Scope",
+            "description": "JSON Pointers of the fields the threshold applies to; empty means all."
+          },
+          "required_fields": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Required Fields",
+            "description": "JSON Pointers of fields flagged when empty."
+          }
+        },
+        "type": "object",
+        "required": [
+          "origin",
+          "confidence_threshold",
+          "fields_in_scope",
+          "required_fields"
+        ],
+        "title": "ExtractReviewCreatedDetail",
+        "description": "What a `created` entry records: where review was turned on, and its settings."
+      },
+      "ExtractReviewEvent": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "Unique identifier of the entry."
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "created",
+              "field_confirmed",
+              "field_corrected",
+              "field_cleared",
+              "field_restored",
+              "field_undone",
+              "flags_signed_off",
+              "approved",
+              "rejected",
+              "reopened"
+            ],
+            "title": "Kind",
+            "description": "What happened."
+          },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Path",
+            "description": "JSON Pointer of the field it changed."
+          },
+          "value_before": {
+            "title": "Value Before",
+            "description": "The field's value before the change."
+          },
+          "value_after": {
+            "title": "Value After",
+            "description": "The field's value after the change."
+          },
+          "detail": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ExtractReviewCreatedDetail"
+              },
+              {
+                "$ref": "#/components/schemas/ExtractReviewRejectedDetail"
+              },
+              {
+                "$ref": "#/components/schemas/ExtractReviewSignedOffDetail"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Detail",
+            "description": "The settings for `created`, the reason for `rejected`, and the fields for `flags_signed_off`; null for the rest."
+          },
+          "actor_id": {
+            "type": "string",
+            "title": "Actor Id",
+            "description": "ID of the user who acted."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At",
+            "description": "When it happened."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "actor_id",
+          "created_at"
+        ],
+        "title": "ExtractReviewEvent",
+        "description": "One entry in a review's history."
+      },
+      "ExtractReviewEventListResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ExtractReviewEvent"
+            },
+            "type": "array",
+            "title": "Items",
+            "description": "The list of items."
+          },
+          "next_page_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page Token",
+            "description": "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."
+          },
+          "total_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Size",
+            "description": "The total number of items available. This is only populated when specifically requested. The value may be an estimate and can be used for display purposes only."
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "ExtractReviewEventListResponse",
+        "description": "A page of a review's history, newest first."
+      },
+      "ExtractReviewFieldAction": {
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "confirm",
+              "correct",
+              "clear"
+            ],
+            "title": "Action",
+            "description": "confirm, correct or clear."
+          },
+          "value": {
+            "title": "Value",
+            "description": "The corrected value, for `correct`."
+          },
+          "actor_id": {
+            "type": "string",
+            "title": "Actor Id",
+            "description": "ID of the user who acted."
+          },
+          "at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "At",
+            "description": "When they acted."
+          }
+        },
+        "type": "object",
+        "required": [
+          "action",
+          "actor_id",
+          "at"
+        ],
+        "title": "ExtractReviewFieldAction",
+        "description": "The latest thing a person did to one field."
+      },
+      "ExtractReviewFieldChange": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "description": "JSON Pointer of the field.",
+            "examples": [
+              "/total"
+            ]
+          },
+          "change": {
+            "type": "string",
+            "enum": [
+              "confirm",
+              "correct",
+              "clear",
+              "restore",
+              "undo"
+            ],
+            "title": "Change",
+            "description": "confirm, correct to `value`, clear, restore the model's value, or undo.",
+            "examples": [
+              "correct"
+            ]
+          },
+          "value": {
+            "title": "Value",
+            "description": "The corrected value, for `correct`.",
+            "examples": [
+              1250.5
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "path",
+          "change"
+        ],
+        "title": "ExtractReviewFieldChange",
+        "description": "One change to one field."
+      },
+      "ExtractReviewFieldsRequest": {
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Revision",
+            "description": "The review's revision as the caller last read it.",
+            "examples": [
+              0
+            ]
+          },
+          "changes": {
+            "items": {
+              "$ref": "#/components/schemas/ExtractReviewFieldChange"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Changes",
+            "description": "Changes to apply, in order."
+          }
+        },
+        "type": "object",
+        "required": [
+          "revision",
+          "changes"
+        ],
+        "title": "ExtractReviewFieldsRequest",
+        "description": "Changes to a job's fields, applied in order. A job without a review gets\none, at revision 0."
+      },
+      "ExtractReviewFlag": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "description": "JSON Pointer of the field."
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "below_threshold",
+              "required_empty"
+            ],
+            "title": "Reason",
+            "description": "below_threshold, or required_empty for a required field left empty."
+          },
+          "confidence": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence",
+            "description": "The field's confidence; for a list, its least confident value."
+          },
+          "cell": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ExtractReviewFlagCell"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Where in a list the least confident value is; null for a single value."
+          },
+          "handled": {
+            "type": "boolean",
+            "title": "Handled",
+            "description": "Whether someone confirmed, corrected or cleared it."
+          }
+        },
+        "type": "object",
+        "required": [
+          "path",
+          "reason",
+          "handled"
+        ],
+        "title": "ExtractReviewFlag",
+        "description": "A field the review asks a person to check."
+      },
+      "ExtractReviewFlagCell": {
+        "properties": {
+          "row": {
+            "type": "integer",
+            "title": "Row",
+            "description": "Index of the row, from 0."
+          },
+          "column": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Column",
+            "description": "Property of the row, when rows are objects."
+          }
+        },
+        "type": "object",
+        "required": [
+          "row"
+        ],
+        "title": "ExtractReviewFlagCell",
+        "description": "Where in a list the least confident value is."
+      },
+      "ExtractReviewRejectRequest": {
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Revision",
+            "description": "The review's revision as the caller last read it.",
+            "examples": [
+              0
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Reason",
+            "description": "Why the result was rejected.",
+            "examples": [
+              "The invoice total does not match the line items."
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "revision",
+          "reason"
+        ],
+        "title": "ExtractReviewRejectRequest",
+        "description": "Reject the result."
+      },
+      "ExtractReviewRejectedDetail": {
+        "properties": {
+          "reason": {
+            "type": "string",
+            "title": "Reason",
+            "description": "Why the result was rejected."
+          }
+        },
+        "type": "object",
+        "required": [
+          "reason"
+        ],
+        "title": "ExtractReviewRejectedDetail",
+        "description": "What a `rejected` entry records."
+      },
+      "ExtractReviewResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "Unique identifier of the review."
+          },
+          "job_id": {
+            "type": "string",
+            "title": "Job Id",
+            "description": "The extract job reviewed."
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "approved",
+              "rejected"
+            ],
+            "title": "Status",
+            "description": "pending until approved or rejected."
+          },
+          "revision": {
+            "type": "integer",
+            "title": "Revision",
+            "description": "Bumped by every change; actions name the one they saw."
+          },
+          "confidence_threshold": {
+            "type": "number",
+            "title": "Confidence Threshold",
+            "description": "Fields read below this confidence are flagged."
+          },
+          "fields_in_scope": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Fields In Scope",
+            "description": "JSON Pointers of the fields the threshold applies to; empty means all."
+          },
+          "required_fields": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Required Fields",
+            "description": "JSON Pointers of fields flagged when empty."
+          },
+          "field_actions": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ExtractReviewFieldAction"
+            },
+            "type": "object",
+            "title": "Field Actions",
+            "description": "The latest action per field, keyed by JSON Pointer."
+          },
+          "flags": {
+            "items": {
+              "$ref": "#/components/schemas/ExtractReviewFlag"
+            },
+            "type": "array",
+            "title": "Flags",
+            "description": "Fields the review asks a person to check."
+          },
+          "open_flags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Open Flags",
+            "description": "JSON Pointers of flagged fields nobody checked."
+          },
+          "original_result": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Original Result",
+            "description": "The result as the model read it."
+          },
+          "reviewed_result": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Reviewed Result",
+            "description": "The result with the field actions."
+          },
+          "source_file_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source File Id",
+            "description": "The file the job read, or the file behind the parse job it read; null for a URL."
+          },
+          "retain_until": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Retain Until",
+            "description": "When the job and its document may be deleted."
+          },
+          "decided_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Decided By",
+            "description": "ID of the user who approved or rejected it."
+          },
+          "decided_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Decided At",
+            "description": "When it was approved or rejected."
+          },
+          "decided_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Decided Reason",
+            "description": "Why it was rejected."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At",
+            "description": "When review was turned on."
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At",
+            "description": "When the review last changed."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "job_id",
+          "status",
+          "revision",
+          "confidence_threshold",
+          "fields_in_scope",
+          "required_fields",
+          "field_actions",
+          "flags",
+          "open_flags",
+          "original_result",
+          "reviewed_result",
+          "source_file_id",
+          "retain_until",
+          "decided_by",
+          "decided_at",
+          "decided_reason",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "ExtractReviewResponse",
+        "description": "An extract job's review: its settings, flags, field actions and decision,\nwith the result as read and as reviewed."
+      },
+      "ExtractReviewRevisionRequest": {
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Revision",
+            "description": "The review's revision as the caller last read it.",
+            "examples": [
+              0
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "revision"
+        ],
+        "title": "ExtractReviewRevisionRequest",
+        "description": "An action on the review as the caller last read it."
+      },
+      "ExtractReviewSignedOffDetail": {
+        "properties": {
+          "paths": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Paths",
+            "description": "JSON Pointers of the flagged fields confirmed as part of approving."
+          }
+        },
+        "type": "object",
+        "required": [
+          "paths"
+        ],
+        "title": "ExtractReviewSignedOffDetail",
+        "description": "What a `flags_signed_off` entry records."
+      },
       "ExtractRun": {
         "properties": {
           "id": {
@@ -38534,6 +40028,36 @@
         "type": "object",
         "title": "GeminiEmbeddingConfig"
       },
+      "GroundedChar": {
+        "properties": {
+          "span": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Span",
+            "description": "`[start, end)` UTF-8 byte span in the complete source property string"
+          },
+          "bbox": {
+            "$ref": "#/components/schemas/BBox",
+            "description": "Character bounding box"
+          }
+        },
+        "type": "object",
+        "required": [
+          "span",
+          "bbox"
+        ],
+        "title": "GroundedChar",
+        "description": "One grounded character: a `[start, end)` span in the source text and its bbox."
+      },
       "GroundedLine": {
         "properties": {
           "span": {
@@ -38599,6 +40123,21 @@
           "bbox": {
             "$ref": "#/components/schemas/BBox",
             "description": "Word bounding box"
+          },
+          "chars": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/GroundedChar"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chars",
+            "description": "Per-character grounding within the word, present when `granular_bboxes` includes 'char' (Agentic Plus only). Each box is an even split of the word box across the word's characters."
           }
         },
         "type": "object",
@@ -40305,12 +41844,13 @@
               "enum": [
                 "cell",
                 "line",
-                "word"
+                "word",
+                "char"
               ]
             },
             "type": "array",
             "title": "Granular Bboxes",
-            "description": "Bounding-box granularity levels to compute for the parse. 'word' computes one bounding box per detected word; 'line' computes one per text line; 'cell' computes one per table cell. Multiple levels can be requested. Empty list (default) disables granular bboxes — only item-level layout boxes are returned on the result. When set, the computed boxes are not inlined on the result items; they are written to a separate `grounded_items` sidecar (JSONL, one row per page) and exposed as `result_content_metadata.grounded_items` (a presigned download URL) on the parse result. Each row matches the `GroundedJsonItem` shape.",
+            "description": "Bounding-box granularity levels to compute for the parse. 'word' computes one bounding box per detected word; 'line' computes one per text line; 'cell' computes one per table cell; 'char' adds one box per character inside each grounded word (`chars` on each word), available on the `agentic_plus` tier only. Multiple levels can be requested. Empty list (default) disables granular bboxes — only item-level layout boxes are returned on the result. When set, the computed boxes are not inlined on the result items; they are written to a separate `grounded_items` sidecar (JSONL, one row per page) and exposed as `result_content_metadata.grounded_items` (a presigned download URL) on the parse result. Each row matches the `GroundedJsonItem` shape.",
             "examples": [
               [
                 "word",
@@ -44163,9 +45703,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-10-28",
-                  "2026-10-16",
-                  "2026-09-28",
+                  "2026-11-02",
+                  "2026-10-30",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -44175,7 +45714,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-28`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-10-30`\n- `agentic`: `2026-10-30`\n- `agentic_plus`: `2026-11-02`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -44500,9 +46039,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-10-28",
-                  "2026-10-16",
-                  "2026-09-28",
+                  "2026-11-02",
+                  "2026-10-30",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -44512,7 +46050,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-09-28`\n- `agentic`: `2026-10-16`\n- `agentic_plus`: `2026-10-28`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-10-30`\n- `agentic`: `2026-10-30`\n- `agentic_plus`: `2026-11-02`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -44627,6 +46165,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-10-30",
                 "2026-09-28",
                 "2026-08-19",
                 "2026-08-11",
@@ -44654,6 +46193,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-10-30",
                 "2026-10-16",
                 "2026-10-15",
                 "2026-09-29",
@@ -44716,6 +46256,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-11-02",
                 "2026-10-28",
                 "2026-10-26",
                 "2026-10-20",
