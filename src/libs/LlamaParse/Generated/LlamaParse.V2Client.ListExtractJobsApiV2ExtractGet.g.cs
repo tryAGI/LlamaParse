@@ -74,8 +74,11 @@ namespace LlamaParse
         /// <summary>
         /// List Extract Jobs<br/>
         /// List extraction jobs with optional filtering and pagination.<br/>
-        /// Filter by `configuration_id`, `status`, `file_input`,<br/>
+        /// Filter by `configuration_id`, `status`, `file_input`, `review_status`,<br/>
         /// or creation date range. Results are returned newest-first.<br/>
+        /// `review_status=pending` lists completed jobs waiting for review,<br/>
+        /// unless `status` names another. A review stays pending when its job<br/>
+        /// fails or is cancelled, so pass that `status` to list those.<br/>
         /// Use `expand=configuration` to include the full configuration used,<br/>
         /// and `expand=extract_metadata` for per-field metadata.
         /// </summary>
@@ -165,8 +168,11 @@ namespace LlamaParse
         /// <summary>
         /// List Extract Jobs<br/>
         /// List extraction jobs with optional filtering and pagination.<br/>
-        /// Filter by `configuration_id`, `status`, `file_input`,<br/>
+        /// Filter by `configuration_id`, `status`, `file_input`, `review_status`,<br/>
         /// or creation date range. Results are returned newest-first.<br/>
+        /// `review_status=pending` lists completed jobs waiting for review,<br/>
+        /// unless `status` names another. A review stays pending when its job<br/>
+        /// fails or is cancelled, so pass that `status` to list those.<br/>
         /// Use `expand=configuration` to include the full configuration used,<br/>
         /// and `expand=extract_metadata` for per-field metadata.
         /// </summary>

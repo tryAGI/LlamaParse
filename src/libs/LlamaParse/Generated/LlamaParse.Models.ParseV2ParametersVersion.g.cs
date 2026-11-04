@@ -15,15 +15,11 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        x20260928,
+        x20261030,
         /// <summary>
         ///
         /// </summary>
-        x20261016,
-        /// <summary>
-        ///
-        /// </summary>
-        x20261028,
+        x20261102,
         /// <summary>
         ///
         /// </summary>
@@ -43,9 +39,8 @@ namespace LlamaParse
             return value switch
             {
                 ParseV2ParametersVersion.x20260615 => "2026-06-15",
-                ParseV2ParametersVersion.x20260928 => "2026-09-28",
-                ParseV2ParametersVersion.x20261016 => "2026-10-16",
-                ParseV2ParametersVersion.x20261028 => "2026-10-28",
+                ParseV2ParametersVersion.x20261030 => "2026-10-30",
+                ParseV2ParametersVersion.x20261102 => "2026-11-02",
                 ParseV2ParametersVersion.Latest => "latest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +53,8 @@ namespace LlamaParse
             return value switch
             {
                 "2026-06-15" => ParseV2ParametersVersion.x20260615,
-                "2026-09-28" => ParseV2ParametersVersion.x20260928,
-                "2026-10-16" => ParseV2ParametersVersion.x20261016,
-                "2026-10-28" => ParseV2ParametersVersion.x20261028,
+                "2026-10-30" => ParseV2ParametersVersion.x20261030,
+                "2026-11-02" => ParseV2ParametersVersion.x20261102,
                 "latest" => ParseV2ParametersVersion.Latest,
                 _ => null,
             };
