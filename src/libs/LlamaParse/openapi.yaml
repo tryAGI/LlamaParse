@@ -21428,7 +21428,7 @@
           "Extract"
         ],
         "summary": "Create Extract Review",
-        "description": "Beta: answers 403 until extract review is enabled for the caller and their organization.\n\nTurn review on for an extract job.\n\nFields read below `confidence_threshold`, and required fields left empty, are\nflagged for a person to check. Every setting has a default, so the body can be\nleft out. A job still running can be named: it waits for review once it\ncompletes. A job that failed, was cancelled, or cannot be reviewed answers 409\nwith `code: job_not_reviewable`; a field in `fields_in_scope` the job's schema\ndoes not have answers 400.\n\nAnswers 201 with the new review, or 200 with the job's existing review, whose\nsettings stay as they are.",
+        "description": "Beta: answers 403 until extract review is enabled for the caller and their organization.\n\nTurn review on for an extract job.\n\nFields read below `confidence_threshold`, and required fields left empty, are\nflagged for a person to check. Every setting has a default, so the body can be\nleft out. A job still running can be named: it waits for review once it\ncompletes. A job that failed or was cancelled without a review, or that cannot\nbe reviewed, answers 409 with `code: job_not_reviewable`; a field in\n`fields_in_scope` the job's schema does not have answers 400.\n\nAnswers 201 with the new review, or 200 with the job's existing review, whose\nsettings stay as they are.",
         "operationId": "create_extract_review_api_v2_extract__job_id__review_post",
         "security": [
           {
@@ -21873,7 +21873,7 @@
           "Extract"
         ],
         "summary": "Reject Extract Review",
-        "description": "Beta: answers 403 until extract review is enabled for the caller and their organization.\n\nReject the result, with a reason. A job that has not completed answers 409 with `code: job_not_reviewable`. A `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.",
+        "description": "Beta: answers 403 until extract review is enabled for the caller and their organization.\n\nReject the result, with a reason. A job that failed or was cancelled can be rejected,\nwhich closes a review turned on while it ran. A job still queued or running answers\n409 with `code: job_not_reviewable`. A `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.",
         "operationId": "reject_extract_review_api_v2_extract__job_id__review_reject_post",
         "security": [
           {

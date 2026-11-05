@@ -52,7 +52,9 @@ namespace LlamaParse
         /// <summary>
         /// Reject Extract Review<br/>
         /// Beta: answers 403 until extract review is enabled for the caller and their organization.<br/>
-        /// Reject the result, with a reason. A job that has not completed answers 409 with `code: job_not_reviewable`. A `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.
+        /// Reject the result, with a reason. A job that failed or was cancelled can be rejected,<br/>
+        /// which closes a review turned on while it ran. A job still queued or running answers<br/>
+        /// 409 with `code: job_not_reviewable`. A `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="projectId"></param>
@@ -88,7 +90,9 @@ namespace LlamaParse
         /// <summary>
         /// Reject Extract Review<br/>
         /// Beta: answers 403 until extract review is enabled for the caller and their organization.<br/>
-        /// Reject the result, with a reason. A job that has not completed answers 409 with `code: job_not_reviewable`. A `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.
+        /// Reject the result, with a reason. A job that failed or was cancelled can be rejected,<br/>
+        /// which closes a review turned on while it ran. A job still queued or running answers<br/>
+        /// 409 with `code: job_not_reviewable`. A `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="projectId"></param>
@@ -527,7 +531,9 @@ namespace LlamaParse
         /// <summary>
         /// Reject Extract Review<br/>
         /// Beta: answers 403 until extract review is enabled for the caller and their organization.<br/>
-        /// Reject the result, with a reason. A job that has not completed answers 409 with `code: job_not_reviewable`. A `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.
+        /// Reject the result, with a reason. A job that failed or was cancelled can be rejected,<br/>
+        /// which closes a review turned on while it ran. A job still queued or running answers<br/>
+        /// 409 with `code: job_not_reviewable`. A `revision` other than the review's latest answers 409 with `code: stale_revision` and the latest `revision`.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="projectId"></param>
