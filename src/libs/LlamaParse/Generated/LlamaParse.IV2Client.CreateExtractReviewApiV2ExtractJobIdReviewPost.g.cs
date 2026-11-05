@@ -11,9 +11,9 @@ namespace LlamaParse
         /// Fields read below `confidence_threshold`, and required fields left empty, are<br/>
         /// flagged for a person to check. Every setting has a default, so the body can be<br/>
         /// left out. A job still running can be named: it waits for review once it<br/>
-        /// completes. A job that failed, was cancelled, or cannot be reviewed answers 409<br/>
-        /// with `code: job_not_reviewable`; a field in `fields_in_scope` the job's schema<br/>
-        /// does not have answers 400.<br/>
+        /// completes. A job that failed or was cancelled without a review, or that cannot<br/>
+        /// be reviewed, answers 409 with `code: job_not_reviewable`; a field in<br/>
+        /// `fields_in_scope` the job's schema does not have answers 400.<br/>
         /// Answers 201 with the new review, or 200 with the job's existing review, whose<br/>
         /// settings stay as they are.
         /// </summary>
@@ -45,9 +45,9 @@ namespace LlamaParse
         /// Fields read below `confidence_threshold`, and required fields left empty, are<br/>
         /// flagged for a person to check. Every setting has a default, so the body can be<br/>
         /// left out. A job still running can be named: it waits for review once it<br/>
-        /// completes. A job that failed, was cancelled, or cannot be reviewed answers 409<br/>
-        /// with `code: job_not_reviewable`; a field in `fields_in_scope` the job's schema<br/>
-        /// does not have answers 400.<br/>
+        /// completes. A job that failed or was cancelled without a review, or that cannot<br/>
+        /// be reviewed, answers 409 with `code: job_not_reviewable`; a field in<br/>
+        /// `fields_in_scope` the job's schema does not have answers 400.<br/>
         /// Answers 201 with the new review, or 200 with the job's existing review, whose<br/>
         /// settings stay as they are.
         /// </summary>
@@ -79,9 +79,9 @@ namespace LlamaParse
         /// Fields read below `confidence_threshold`, and required fields left empty, are<br/>
         /// flagged for a person to check. Every setting has a default, so the body can be<br/>
         /// left out. A job still running can be named: it waits for review once it<br/>
-        /// completes. A job that failed, was cancelled, or cannot be reviewed answers 409<br/>
-        /// with `code: job_not_reviewable`; a field in `fields_in_scope` the job's schema<br/>
-        /// does not have answers 400.<br/>
+        /// completes. A job that failed or was cancelled without a review, or that cannot<br/>
+        /// be reviewed, answers 409 with `code: job_not_reviewable`; a field in<br/>
+        /// `fields_in_scope` the job's schema does not have answers 400.<br/>
         /// Answers 201 with the new review, or 200 with the job's existing review, whose<br/>
         /// settings stay as they are.
         /// </summary>
