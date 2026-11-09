@@ -29,9 +29,9 @@ namespace LlamaParse
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
         /// - `fast`: `2026-06-15`<br/>
-        /// - `cost_effective`: `2026-10-30`<br/>
-        /// - `agentic`: `2026-10-30`<br/>
-        /// - `agentic_plus`: `2026-11-02`<br/>
+        /// - `cost_effective`: `2026-11-05`<br/>
+        /// - `agentic`: `2026-11-05`<br/>
+        /// - `agentic_plus`: `2026-11-07`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
@@ -67,7 +67,7 @@ namespace LlamaParse
         /// Webhook endpoints for job notifications. Maximum 10 total, including webhook_configuration_ids.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configurations")]
-        public global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? WebhookConfigurations { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.StoredParseWebhookConfiguration>? WebhookConfigurations { get; set; }
 
         /// <summary>
         /// Format-specific options (HTML, PDF, spreadsheet, presentation). Applied based on detected input file type
@@ -128,9 +128,9 @@ namespace LlamaParse
         /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.<br/>
         /// Current `latest` by tier:<br/>
         /// - `fast`: `2026-06-15`<br/>
-        /// - `cost_effective`: `2026-10-30`<br/>
-        /// - `agentic`: `2026-10-30`<br/>
-        /// - `agentic_plus`: `2026-11-02`<br/>
+        /// - `cost_effective`: `2026-11-05`<br/>
+        /// - `agentic`: `2026-11-05`<br/>
+        /// - `agentic_plus`: `2026-11-07`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="webhookConfigurationIds">
@@ -183,7 +183,7 @@ namespace LlamaParse
             global::LlamaParse.LlamaParseProcessingOptions? processingOptions,
             global::LlamaParse.LlamaParseFastOptions? fastOptions,
             global::LlamaParse.LlamaParseAgenticOptions? agenticOptions,
-            global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? webhookConfigurations,
+            global::System.Collections.Generic.IList<global::LlamaParse.StoredParseWebhookConfiguration>? webhookConfigurations,
             global::LlamaParse.LlamaParseInputOptions? inputOptions,
             global::LlamaParse.LlamaParseCropBox? cropBox,
             global::LlamaParse.LlamaParsePageRanges? pageRanges,

@@ -46,7 +46,8 @@ namespace LlamaParse
 
         /// <summary>
         /// Delete Directory File<br/>
-        /// Delete a directory file by `directory_file_id`; to resolve from `unique_id`, list with a filter first.
+        /// Delete a directory file by `directory_file_id`; to resolve from `unique_id`, list with a filter first.<br/>
+        /// The uploaded file is deleted with it unless another directory or index still uses it.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>
@@ -77,7 +78,8 @@ namespace LlamaParse
         }
         /// <summary>
         /// Delete Directory File<br/>
-        /// Delete a directory file by `directory_file_id`; to resolve from `unique_id`, list with a filter first.
+        /// Delete a directory file by `directory_file_id`; to resolve from `unique_id`, list with a filter first.<br/>
+        /// The uploaded file is deleted with it unless another directory or index still uses it.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="directoryFileId"></param>

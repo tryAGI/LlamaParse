@@ -71,6 +71,10 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
+        ExtractRunning,
+        /// <summary>
+        ///
+        /// </summary>
         ExtractSuccess,
         /// <summary>
         ///
@@ -189,6 +193,7 @@ namespace LlamaParse
                 WebhookConfigResponseWebhookEventsVariant1Item.ExtractError => "extract.error",
                 WebhookConfigResponseWebhookEventsVariant1Item.ExtractPartialSuccess => "extract.partial_success",
                 WebhookConfigResponseWebhookEventsVariant1Item.ExtractPending => "extract.pending",
+                WebhookConfigResponseWebhookEventsVariant1Item.ExtractRunning => "extract.running",
                 WebhookConfigResponseWebhookEventsVariant1Item.ExtractSuccess => "extract.success",
                 WebhookConfigResponseWebhookEventsVariant1Item.ParseCancelled => "parse.cancelled",
                 WebhookConfigResponseWebhookEventsVariant1Item.ParseError => "parse.error",
@@ -237,6 +242,7 @@ namespace LlamaParse
                 "extract.error" => WebhookConfigResponseWebhookEventsVariant1Item.ExtractError,
                 "extract.partial_success" => WebhookConfigResponseWebhookEventsVariant1Item.ExtractPartialSuccess,
                 "extract.pending" => WebhookConfigResponseWebhookEventsVariant1Item.ExtractPending,
+                "extract.running" => WebhookConfigResponseWebhookEventsVariant1Item.ExtractRunning,
                 "extract.success" => WebhookConfigResponseWebhookEventsVariant1Item.ExtractSuccess,
                 "parse.cancelled" => WebhookConfigResponseWebhookEventsVariant1Item.ParseCancelled,
                 "parse.error" => WebhookConfigResponseWebhookEventsVariant1Item.ParseError,

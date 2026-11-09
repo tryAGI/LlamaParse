@@ -6,7 +6,7 @@ namespace LlamaParse
     {
         /// <summary>
         /// Delete Directory<br/>
-        /// Permanently delete a directory.
+        /// Permanently delete a directory, and the files in it that no other directory or index uses.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>
@@ -24,7 +24,7 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete Directory<br/>
-        /// Permanently delete a directory.
+        /// Permanently delete a directory, and the files in it that no other directory or index uses.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>

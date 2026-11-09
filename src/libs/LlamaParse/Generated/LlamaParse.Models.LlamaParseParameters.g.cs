@@ -12,7 +12,7 @@ namespace LlamaParse
         /// Outbound webhook endpoints to notify on job status changes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_configurations")]
-        public global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? WebhookConfigurations { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.StoredWebhookConfiguration>? WebhookConfigurations { get; set; }
 
         /// <summary>
         /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
@@ -1003,7 +1003,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LlamaParseParameters(
-            global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfiguration>? webhookConfigurations,
+            global::System.Collections.Generic.IList<global::LlamaParse.StoredWebhookConfiguration>? webhookConfigurations,
             global::LlamaParse.LlamaParseParametersPriority? priority,
             global::System.Collections.Generic.IList<global::LlamaParse.ParserLanguages>? languages,
             string? parsingInstruction,
