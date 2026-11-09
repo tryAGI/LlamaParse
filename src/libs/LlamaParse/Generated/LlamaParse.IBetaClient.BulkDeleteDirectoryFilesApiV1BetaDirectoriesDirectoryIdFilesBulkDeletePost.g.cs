@@ -6,7 +6,8 @@ namespace LlamaParse
     {
         /// <summary>
         /// Bulk Delete Directory Files<br/>
-        /// Delete up to 100 files from the specified directory; all must belong to it.
+        /// Delete up to 100 files from the specified directory; all must belong to it.<br/>
+        /// Each uploaded file is deleted with it unless another directory or index still uses it.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>
@@ -27,7 +28,8 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Bulk Delete Directory Files<br/>
-        /// Delete up to 100 files from the specified directory; all must belong to it.
+        /// Delete up to 100 files from the specified directory; all must belong to it.<br/>
+        /// Each uploaded file is deleted with it unless another directory or index still uses it.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>
@@ -48,7 +50,8 @@ namespace LlamaParse
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Bulk Delete Directory Files<br/>
-        /// Delete up to 100 files from the specified directory; all must belong to it.
+        /// Delete up to 100 files from the specified directory; all must belong to it.<br/>
+        /// Each uploaded file is deleted with it unless another directory or index still uses it.
         /// </summary>
         /// <param name="directoryId"></param>
         /// <param name="projectId"></param>

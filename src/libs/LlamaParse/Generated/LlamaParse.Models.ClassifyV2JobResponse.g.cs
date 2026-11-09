@@ -103,7 +103,7 @@ namespace LlamaParse
         public string? ParseJobId { get; set; }
 
         /// <summary>
-        /// Usage recorded against this job. Requires `expand=usage`; null until the job is COMPLETED.
+        /// Usage recorded against this job. Requires `expand=usage`; null while the job is running.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::LlamaParse.ClassifyUsage? Usage { get; set; }
@@ -160,7 +160,7 @@ namespace LlamaParse
         /// Associated parse job ID
         /// </param>
         /// <param name="usage">
-        /// Usage recorded against this job. Requires `expand=usage`; null until the job is COMPLETED.
+        /// Usage recorded against this job. Requires `expand=usage`; null while the job is running.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

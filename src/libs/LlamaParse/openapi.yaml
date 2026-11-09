@@ -15559,7 +15559,7 @@
           "Directories"
         ],
         "summary": "Delete Directory",
-        "description": "Permanently delete a directory.",
+        "description": "Permanently delete a directory, and the files in it that no other directory or index uses.",
         "operationId": "delete_directory_api_v1_beta_directories__directory_id__delete",
         "security": [
           {
@@ -16380,7 +16380,7 @@
           "Directory Files"
         ],
         "summary": "Delete Directory File",
-        "description": "Delete a directory file by `directory_file_id`; to resolve from `unique_id`, list with a filter first.",
+        "description": "Delete a directory file by `directory_file_id`; to resolve from `unique_id`, list with a filter first.\n\nThe uploaded file is deleted with it unless another directory or index still uses it.",
         "operationId": "delete_directory_file_api_v1_beta_directories__directory_id__files__directory_file_id__delete",
         "security": [
           {
@@ -16481,7 +16481,7 @@
           "Directory Files"
         ],
         "summary": "Bulk Delete Directory Files",
-        "description": "Delete up to 100 files from the specified directory; all must belong to it.",
+        "description": "Delete up to 100 files from the specified directory; all must belong to it.\n\nEach uploaded file is deleted with it unless another directory or index still uses it.",
         "operationId": "bulk_delete_directory_files_api_v1_beta_directories__directory_id__files_bulk_delete_post",
         "security": [
           {
@@ -16665,7 +16665,7 @@
             }
           },
           "400": {
-            "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or deleting or copying look-alike webhooks can cause this. A vendor API key also has to be re-entered after a change to the model's vendor, parse mode, tier, version or auto mode."
+            "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or copying a webhook can cause this, as can deleting look-alike webhooks from a save that leaves out their id. A vendor API key also has to be re-entered after a change to the model's vendor, parse mode, tier, version or auto mode."
           },
           "409": {
             "description": "The configuration changed after it was read, and the save sent masked credentials back. Reload it and save again."
@@ -17065,7 +17065,7 @@
             }
           },
           "400": {
-            "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or deleting or copying look-alike webhooks can cause this. A vendor API key also has to be re-entered after a change to the model's vendor, parse mode, tier, version or auto mode."
+            "description": "A masked credential (**********) could not be matched to a saved value. Re-enter the fields named in the error. Changing a webhook URL or copying a webhook can cause this, as can deleting look-alike webhooks from a save that leaves out their id. A vendor API key also has to be re-entered after a change to the model's vendor, parse mode, tier, version or auto mode."
           },
           "409": {
             "description": "Another configuration of this product already has the new name, or the configuration changed after it was read. Choose another name, or reload it and save again."
@@ -25139,8 +25139,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-11-02",
-                  "2026-10-30",
+                  "2026-11-07",
+                  "2026-11-05",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -25153,7 +25153,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-10-30`\n- `agentic`: `2026-10-30`\n- `agentic_plus`: `2026-11-02`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-05`\n- `agentic`: `2026-11-05`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -30011,7 +30011,7 @@
                 "type": "null"
               }
             ],
-            "description": "Usage recorded against this job. Requires `expand=usage`; null until the job is COMPLETED."
+            "description": "Usage recorded against this job. Requires `expand=usage`; null while the job is running."
           }
         },
         "type": "object",
@@ -41916,7 +41916,7 @@
             "anyOf": [
               {
                 "items": {
-                  "$ref": "#/components/schemas/WebhookConfiguration"
+                  "$ref": "#/components/schemas/StoredWebhookConfiguration"
                 },
                 "type": "array"
               },
@@ -45703,8 +45703,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-11-02",
-                  "2026-10-30",
+                  "2026-11-07",
+                  "2026-11-05",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -45714,7 +45714,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-10-30`\n- `agentic`: `2026-10-30`\n- `agentic_plus`: `2026-11-02`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-05`\n- `agentic`: `2026-11-05`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46039,8 +46039,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-11-02",
-                  "2026-10-30",
+                  "2026-11-07",
+                  "2026-11-05",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -46050,7 +46050,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-10-30`\n- `agentic`: `2026-10-30`\n- `agentic_plus`: `2026-11-02`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-05`\n- `agentic`: `2026-11-05`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46092,7 +46092,7 @@
           },
           "webhook_configurations": {
             "items": {
-              "$ref": "#/components/schemas/LlamaParseWebhookConfiguration"
+              "$ref": "#/components/schemas/StoredParseWebhookConfiguration"
             },
             "type": "array",
             "title": "Webhook Configurations",
@@ -46165,6 +46165,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-11-05",
                 "2026-10-30",
                 "2026-09-28",
                 "2026-08-19",
@@ -46193,6 +46194,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-11-05",
                 "2026-10-30",
                 "2026-10-16",
                 "2026-10-15",
@@ -46256,6 +46258,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-11-07",
                 "2026-11-02",
                 "2026-10-28",
                 "2026-10-26",
@@ -51783,6 +51786,256 @@
         ],
         "title": "StopEvent"
       },
+      "StoredParseWebhookConfiguration": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id",
+            "description": "Webhook ID, set by the server. Send it back unchanged so a masked credential keeps this webhook's saved value.",
+            "examples": [
+              "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6"
+            ]
+          },
+          "webhook_url": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^https?:"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Url",
+            "description": "HTTPS URL to receive webhook POST requests. Must be publicly accessible"
+          },
+          "webhook_headers": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Headers",
+            "description": "Custom HTTP headers to include in webhook requests. Use for authentication tokens or custom routing. Example: {'Authorization': 'Bearer xyz'}"
+          },
+          "webhook_signing_secret": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Signing Secret",
+            "description": "Shared signing secret used to sign webhook deliveries. When set, each request includes an HMAC-SHA256 signature of the request body in the 'LC-Signature' header (value 'sha256=<hex>'). Recompute the HMAC over the raw request body with this secret to verify the delivery is authentic."
+          },
+          "webhook_events": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Events",
+            "description": "Events that trigger this webhook. Options: 'parse.success' (job completed), 'parse.error' (job failed), 'parse.partial_success' (some pages failed), 'parse.pending', 'parse.running', 'parse.cancelled'. If not specified, webhook fires for all events",
+            "examples": [
+              [
+                "parse.success",
+                "parse.error"
+              ]
+            ]
+          },
+          "webhook_output_format": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "string",
+                  "json"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Output Format",
+            "description": "Format of the webhook payload body. 'string' (default) sends the payload as a JSON-encoded string; 'json' sends it as a JSON object.",
+            "examples": [
+              "json"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "StoredParseWebhookConfiguration",
+        "description": "A webhook endpoint kept in a saved Parse configuration."
+      },
+      "StoredWebhookConfiguration": {
+        "properties": {
+          "webhook_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Url",
+            "description": "URL to receive webhook POST notifications",
+            "examples": [
+              "https://example.com/webhooks/llamacloud"
+            ]
+          },
+          "webhook_headers": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Headers",
+            "description": "Custom HTTP headers sent with each webhook request (e.g. auth tokens)",
+            "examples": [
+              {
+                "Authorization": "Bearer sk-..."
+              }
+            ]
+          },
+          "webhook_signing_secret": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Signing Secret",
+            "description": "Shared signing secret used to sign webhook deliveries. When set, each request includes an HMAC-SHA256 signature of the request body in the 'LC-Signature' header (value 'sha256=<hex>'). Recompute the HMAC over the raw request body with this secret to verify the delivery is authentic.",
+            "examples": [
+              "whsec_..."
+            ]
+          },
+          "webhook_events": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "extract.pending",
+                    "extract.running",
+                    "extract.success",
+                    "extract.error",
+                    "extract.partial_success",
+                    "extract.cancelled",
+                    "parse.pending",
+                    "parse.running",
+                    "parse.success",
+                    "parse.error",
+                    "parse.partial_success",
+                    "parse.cancelled",
+                    "classify.pending",
+                    "classify.running",
+                    "classify.success",
+                    "classify.error",
+                    "classify.partial_success",
+                    "classify.cancelled",
+                    "sheets.pending",
+                    "sheets.success",
+                    "sheets.error",
+                    "sheets.partial_success",
+                    "sheets.cancelled",
+                    "split.pending",
+                    "split.processing",
+                    "split.success",
+                    "split.error",
+                    "split.cancelled",
+                    "batch.pending",
+                    "batch.running",
+                    "batch.success",
+                    "batch.error",
+                    "batch.cancelled",
+                    "verify.pending",
+                    "verify.running",
+                    "verify.success",
+                    "verify.error",
+                    "verify.cancelled",
+                    "unmapped_event"
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Events",
+            "description": "Events to subscribe to (e.g. 'parse.success', 'extract.error'). If null, all events are delivered.",
+            "examples": [
+              [
+                "parse.success",
+                "parse.error"
+              ]
+            ]
+          },
+          "webhook_output_format": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Webhook Output Format",
+            "description": "Response format sent to the webhook: 'string' (default) or 'json'",
+            "examples": [
+              "json"
+            ]
+          },
+          "id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id",
+            "description": "Webhook ID, set by the server. Send it back unchanged so a masked credential keeps this webhook's saved value.",
+            "examples": [
+              "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6"
+            ]
+          }
+        },
+        "type": "object",
+        "title": "StoredWebhookConfiguration",
+        "description": "A webhook endpoint kept in a saved configuration or pipeline."
+      },
       "StringFilter": {
         "properties": {
           "operator": {
@@ -53905,6 +54158,7 @@
                   "type": "string",
                   "enum": [
                     "extract.pending",
+                    "extract.running",
                     "extract.success",
                     "extract.error",
                     "extract.partial_success",
@@ -54108,6 +54362,7 @@
                   "type": "string",
                   "enum": [
                     "extract.pending",
+                    "extract.running",
                     "extract.success",
                     "extract.error",
                     "extract.partial_success",
@@ -54232,6 +54487,7 @@
                   "type": "string",
                   "enum": [
                     "extract.pending",
+                    "extract.running",
                     "extract.success",
                     "extract.error",
                     "extract.partial_success",
@@ -54361,6 +54617,7 @@
                   "type": "string",
                   "enum": [
                     "extract.pending",
+                    "extract.running",
                     "extract.success",
                     "extract.error",
                     "extract.partial_success",
