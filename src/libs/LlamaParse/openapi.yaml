@@ -25139,8 +25139,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-09",
                   "2026-11-07",
-                  "2026-11-05",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -25153,7 +25153,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-05`\n- `agentic`: `2026-11-05`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -34599,7 +34599,7 @@
               }
             ],
             "title": "Effort",
-            "description": "Use 'max' for additional processing effort on agentic_plus. Bills by model usage with the page charge as a minimum. Omit or set to null for the tier's default behavior.",
+            "description": "Use 'max' for additional processing effort on agentic_plus. Priced by the processing each document needs, with the page price as the minimum. Omit or set to null for the tier's default behavior.",
             "examples": [
               "max"
             ]
@@ -37087,7 +37087,7 @@
               }
             ],
             "title": "Effort",
-            "description": "Use 'max' for additional processing effort on agentic_plus. Bills by model usage with the page charge as a minimum. Omit or set to null for the tier's default behavior.",
+            "description": "Use 'max' for additional processing effort on agentic_plus. Priced by the processing each document needs, with the page price as the minimum. Omit or set to null for the tier's default behavior.",
             "examples": [
               "max"
             ]
@@ -45703,8 +45703,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-09",
                   "2026-11-07",
-                  "2026-11-05",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -45714,7 +45714,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-05`\n- `agentic`: `2026-11-05`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46039,8 +46039,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-09",
                   "2026-11-07",
-                  "2026-11-05",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -46050,7 +46050,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-05`\n- `agentic`: `2026-11-05`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46165,6 +46165,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-11-09",
                 "2026-11-05",
                 "2026-10-30",
                 "2026-09-28",
@@ -46194,6 +46195,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-11-09",
                 "2026-11-05",
                 "2026-10-30",
                 "2026-10-16",

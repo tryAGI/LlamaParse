@@ -21,7 +21,7 @@ namespace LlamaParse
         public int? MaxPages { get; set; }
 
         /// <summary>
-        /// Use 'max' for additional processing effort on agentic_plus. Bills by model usage with the page charge as a minimum. Omit or set to null for the tier's default behavior.
+        /// Use 'max' for additional processing effort on agentic_plus. Priced by the processing each document needs, with the page price as the minimum. Omit or set to null for the tier's default behavior.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
         public string? Effort { get; set; }
@@ -141,7 +141,7 @@ namespace LlamaParse
         /// Maximum number of pages to process. Omit for no limit.
         /// </param>
         /// <param name="effort">
-        /// Use 'max' for additional processing effort on agentic_plus. Bills by model usage with the page charge as a minimum. Omit or set to null for the tier's default behavior.
+        /// Use 'max' for additional processing effort on agentic_plus. Priced by the processing each document needs, with the page price as the minimum. Omit or set to null for the tier's default behavior.
         /// </param>
         /// <param name="tier">
         /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus (50 credits/page), or turbo (35 credits/page)<br/>
