@@ -38,6 +38,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<double?, string>), TypeInfoPropertyName = "AnyOfDoubleString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<int?, string>), TypeInfoPropertyName = "AnyOfInt32String2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AutoModeConfigurationEntryMinComplexity), TypeInfoPropertyName = "AutoModeConfigurationEntryMinComplexity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AutoModeCropBox))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AutoModeIgnoreOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AutoModeParsingConfTier), TypeInfoPropertyName = "AutoModeParsingConfTier2")]
@@ -297,6 +298,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<double?, string>?), TypeInfoPropertyName = "NullableAnyOfDoubleString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<int?, string>?), TypeInfoPropertyName = "NullableAnyOfInt32String2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AutoModeConfigurationEntryMinComplexity?), TypeInfoPropertyName = "NullableAutoModeConfigurationEntryMinComplexity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AutoModeParsingConfTier?), TypeInfoPropertyName = "NullableAutoModeParsingConfTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.AutoModeParsingConfVersion?, string>?), TypeInfoPropertyName = "NullableAnyOfAutoModeParsingConfVersionString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AutoModeParsingConfVersion?), TypeInfoPropertyName = "NullableAutoModeParsingConfVersion2")]
@@ -612,7 +614,11 @@ namespace LlamaParse
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfTier)
+                    typeToConvert == typeof(global::LlamaParse.AutoModeConfigurationEntryMinComplexity)
+
+                    || typeToConvert == typeof(global::LlamaParse.AutoModeConfigurationEntryMinComplexity?)
+
+                    || typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfTier)
 
                     || typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfTier?)
 
@@ -889,6 +895,16 @@ namespace LlamaParse
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
+                if (typeToConvert == typeof(global::LlamaParse.AutoModeConfigurationEntryMinComplexity))
+                {
+                    return new global::LlamaParse.JsonConverters.AutoModeConfigurationEntryMinComplexityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.AutoModeConfigurationEntryMinComplexity?))
+                {
+                    return new global::LlamaParse.JsonConverters.AutoModeConfigurationEntryMinComplexityNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::LlamaParse.AutoModeParsingConfTier))
                 {
                     return new global::LlamaParse.JsonConverters.AutoModeParsingConfTierJsonConverter();
