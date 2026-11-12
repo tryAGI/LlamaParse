@@ -19681,7 +19681,7 @@
           "Parse"
         ],
         "summary": "Delete Parse Job",
-        "description": "Delete a parse job and its results.\n\nThe job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel a job that is still running before deleting it.\n\nReturns the identifiers of the deleted job.",
+        "description": "Delete a parse job and its results.\n\nThe job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel a job that is still running before deleting it.\n\nA job that a document in Evaluate reads its ground truth from can't be deleted. It is kept until the document is removed from Evaluate or the project is deleted.\n\nReturns the identifiers of the deleted job.",
         "operationId": "delete_parse_job_api_v2_parse__job_id__delete",
         "security": [
           {
@@ -19756,6 +19756,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParseJobDeleteResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The job is still running, or a document in Evaluate reads its ground truth from it. `detail.reason` says which.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParseJobDeleteConflictResponse"
                 }
               }
             }
@@ -24984,6 +24994,22 @@
             ],
             "title": "Layout Element In Page Confidence Threshold",
             "description": "Confidence threshold for layout element detection"
+          },
+          "min_complexity": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "high",
+                  "medium"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min Complexity",
+            "description": "Trigger on pages at least this complex. high: pages whose tables look wrong. medium: also pages that are mostly scanned text."
           }
         },
         "additionalProperties": false,
@@ -25139,8 +25165,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-11",
                   "2026-11-09",
-                  "2026-11-07",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -25153,7 +25179,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -45379,6 +45405,44 @@
         ],
         "title": "ParseConcernItem"
       },
+      "ParseJobDeleteConflictDetail": {
+        "properties": {
+          "reason": {
+            "type": "string",
+            "enum": [
+              "job_running",
+              "held_by_evaluate"
+            ],
+            "title": "Reason",
+            "description": "`job_running`: cancel the job, then delete it. `held_by_evaluate`: a document in Evaluate reads its ground truth from the job; remove the document from Evaluate, or delete the project."
+          },
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "description": "The same, in words, naming the job's status where it helps."
+          }
+        },
+        "type": "object",
+        "required": [
+          "reason",
+          "message"
+        ],
+        "title": "ParseJobDeleteConflictDetail",
+        "description": "Why a parse job could not be deleted, and what to do about it."
+      },
+      "ParseJobDeleteConflictResponse": {
+        "properties": {
+          "detail": {
+            "$ref": "#/components/schemas/ParseJobDeleteConflictDetail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "title": "ParseJobDeleteConflictResponse",
+        "description": "Body of the 409 returned when a parse job can't be deleted."
+      },
       "ParseJobDeleteResponse": {
         "properties": {
           "id": {
@@ -45703,8 +45767,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-11",
                   "2026-11-09",
-                  "2026-11-07",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -45714,7 +45778,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46039,8 +46103,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-11",
                   "2026-11-09",
-                  "2026-11-07",
                   "2026-06-15"
                 ],
                 "x-enum-order-preserved": true
@@ -46050,7 +46114,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-07`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46260,6 +46324,8 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-11-11",
+                "2026-11-10",
                 "2026-11-07",
                 "2026-11-02",
                 "2026-10-28",

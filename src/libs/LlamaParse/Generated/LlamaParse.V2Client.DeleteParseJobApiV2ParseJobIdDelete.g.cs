@@ -51,6 +51,7 @@ namespace LlamaParse
         /// Delete Parse Job<br/>
         /// Delete a parse job and its results.<br/>
         /// The job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel a job that is still running before deleting it.<br/>
+        /// A job that a document in Evaluate reads its ground truth from can't be deleted. It is kept until the document is removed from Evaluate or the project is deleted.<br/>
         /// Returns the identifiers of the deleted job.
         /// </summary>
         /// <param name="jobId"></param>
@@ -83,6 +84,7 @@ namespace LlamaParse
         /// Delete Parse Job<br/>
         /// Delete a parse job and its results.<br/>
         /// The job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel a job that is still running before deleting it.<br/>
+        /// A job that a document in Evaluate reads its ground truth from can't be deleted. It is kept until the document is removed from Evaluate or the project is deleted.<br/>
         /// Returns the identifiers of the deleted job.
         /// </summary>
         /// <param name="jobId"></param>
@@ -373,6 +375,43 @@ namespace LlamaParse
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // The job is still running, or a document in Evaluate reads its ground truth from it. `detail.reason` says which.
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::LlamaParse.ParseJobDeleteConflictResponse? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::LlamaParse.ParseJobDeleteConflictResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::LlamaParse.ParseJobDeleteConflictResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::LlamaParse.ApiException<global::LlamaParse.ParseJobDeleteConflictResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Validation Error
                             if ((int)__response.StatusCode == 422)
                             {

@@ -251,6 +251,12 @@ namespace LlamaParse
         public global::LlamaParse.AnyOf<double?, string>? LayoutElementInPageConfidenceThreshold { get; set; }
 
         /// <summary>
+        /// Trigger on pages at least this complex. high: pages whose tables look wrong. medium: also pages that are mostly scanned text.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("min_complexity")]
+        public global::LlamaParse.AutoModeConfigurationEntryMinComplexity? MinComplexity { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -367,6 +373,9 @@ namespace LlamaParse
         /// <param name="layoutElementInPageConfidenceThreshold">
         /// Confidence threshold for layout element detection
         /// </param>
+        /// <param name="minComplexity">
+        /// Trigger on pages at least this complex. high: pages whose tables look wrong. medium: also pages that are mostly scanned text.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -406,7 +415,8 @@ namespace LlamaParse
             string? regexpInPage,
             string? regexpInPageMode,
             string? layoutElementInPage,
-            global::LlamaParse.AnyOf<double?, string>? layoutElementInPageConfidenceThreshold)
+            global::LlamaParse.AnyOf<double?, string>? layoutElementInPageConfidenceThreshold,
+            global::LlamaParse.AutoModeConfigurationEntryMinComplexity? minComplexity)
         {
             this.ParsingConf = parsingConf ?? throw new global::System.ArgumentNullException(nameof(parsingConf));
             this.TriggerMode = triggerMode;
@@ -444,6 +454,7 @@ namespace LlamaParse
             this.RegexpInPageMode = regexpInPageMode;
             this.LayoutElementInPage = layoutElementInPage;
             this.LayoutElementInPageConfidenceThreshold = layoutElementInPageConfidenceThreshold;
+            this.MinComplexity = minComplexity;
         }
 
         /// <summary>
