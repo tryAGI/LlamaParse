@@ -17,47 +17,47 @@ namespace LlamaParse.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ConfigurationCreateRequestParametersDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ConfigurationCreateRequestParametersDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.ConfigurationCreateRequestParametersDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ConfigurationResponseParametersDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ConfigurationResponseParametersDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.ConfigurationResponseParametersDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::LlamaParse.SplitV1Parameters? splitV1 = default;
-            if (discriminator?.ProductType == global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType.SplitV1)
+            if (discriminator?.ProductType == global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType.SplitV1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.SplitV1Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.SplitV1Parameters> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.SplitV1Parameters)}");
                 splitV1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.ExtractV2Parameters? extractV2 = default;
-            if (discriminator?.ProductType == global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType.ExtractV2)
+            if (discriminator?.ProductType == global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType.ExtractV2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ExtractV2Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ExtractV2Parameters> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.ExtractV2Parameters)}");
                 extractV2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.ClassifyV2Parameters? classifyV2 = default;
-            if (discriminator?.ProductType == global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType.ClassifyV2)
+            if (discriminator?.ProductType == global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType.ClassifyV2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ClassifyV2Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ClassifyV2Parameters> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.ClassifyV2Parameters)}");
                 classifyV2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.ParseV2Parameters? parseV2 = default;
-            if (discriminator?.ProductType == global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType.ParseV2)
+            if (discriminator?.ProductType == global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType.ParseV2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.ParseV2Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.ParseV2Parameters> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.ParseV2Parameters)}");
                 parseV2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.SpreadsheetV1Parameters? spreadsheetV1 = default;
-            if (discriminator?.ProductType == global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType.SpreadsheetV1)
+            if (discriminator?.ProductType == global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType.SpreadsheetV1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.SpreadsheetV1Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.SpreadsheetV1Parameters> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.SpreadsheetV1Parameters)}");
                 spreadsheetV1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LlamaParse.UntypedParameters? unknown = default;
-            if (discriminator?.ProductType == global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType.Unknown)
+            if (discriminator?.ProductType == global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType.Unknown)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LlamaParse.UntypedParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LlamaParse.UntypedParameters> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LlamaParse.UntypedParameters)}");

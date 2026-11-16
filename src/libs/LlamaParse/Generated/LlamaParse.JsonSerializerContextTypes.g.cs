@@ -726,7 +726,7 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.Parameters? Type172 { get; set; }
+        public global::LlamaParse.Parameters2? Type172 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -774,7 +774,7 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.Parameters2? Type184 { get; set; }
+        public global::LlamaParse.Parameters? Type184 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1010,7 +1010,7 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.EmbeddingConfigVariant1? Type243 { get; set; }
+        public global::LlamaParse.EmbeddingConfigVariant14? Type243 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1594,11 +1594,11 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem4>? Type389 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem5>? Type389 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ItemsItem4? Type390 { get; set; }
+        public global::LlamaParse.ItemsItem5? Type390 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1686,11 +1686,11 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem5>? Type412 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem2>? Type412 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ItemsItem5? Type413 { get; set; }
+        public global::LlamaParse.ItemsItem2? Type413 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2366,7 +2366,7 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.EmbeddingConfigVariant12? Type582 { get; set; }
+        public global::LlamaParse.EmbeddingConfigVariant1? Type582 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2466,7 +2466,7 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.EmbeddingConfigVariant14? Type607 { get; set; }
+        public global::LlamaParse.EmbeddingConfigVariant12? Type607 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2830,11 +2830,11 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem7>? Type698 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem6>? Type698 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ItemsItem7? Type699 { get; set; }
+        public global::LlamaParse.ItemsItem6? Type699 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3479,7 +3479,7 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.ItemsItem4>? ListType46 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.ItemsItem5>? ListType46 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3519,7 +3519,7 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.ItemsItem5>? ListType56 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.ItemsItem2>? ListType56 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3723,7 +3723,7 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.ItemsItem7>? ListType107 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.ItemsItem6>? ListType107 { get; set; }
         /// <summary>
         ///
         /// </summary>

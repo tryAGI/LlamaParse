@@ -19,9 +19,9 @@ namespace LlamaParse
         /// Product-specific configuration parameters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.ParametersJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.Parameters2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LlamaParse.Parameters Parameters { get; set; }
+        public required global::LlamaParse.Parameters2 Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace LlamaParse
 #endif
         public ConfigurationCreateRequest(
             string name,
-            global::LlamaParse.Parameters parameters)
+            global::LlamaParse.Parameters2 parameters)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters;

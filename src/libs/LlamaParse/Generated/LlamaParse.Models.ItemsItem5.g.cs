@@ -12,163 +12,89 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.HeaderItemItemDiscriminatorType? Type { get; }
+        public global::LlamaParse.FormTableCellItemsItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        ///
+        /// A grouping of form content, in the form's reading order.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::LlamaParse.TextItem? Text { get; init; }
+        public global::LlamaParse.FormSection? Section { get; init; }
 #else
-        public global::LlamaParse.TextItem? Text { get; }
+        public global::LlamaParse.FormSection? Section { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Section))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsSection => Section != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickText(
+        public bool TryPickSection(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::LlamaParse.TextItem? value)
+            out global::LlamaParse.FormSection? value)
         {
-            value = Text;
-            return IsText;
+            value = Section;
+            return IsSection;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.TextItem PickText() => Text is { } value
+        public global::LlamaParse.FormSection PickSection() => Section is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Section' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// One labeled form entry: a text input, checkbox, select group, or signature line.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::LlamaParse.HeadingItem? Heading { get; init; }
+        public global::LlamaParse.FormField? Field { get; init; }
 #else
-        public global::LlamaParse.HeadingItem? Heading { get; }
+        public global::LlamaParse.FormField? Field { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Heading))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Field))]
 #endif
-        public bool IsHeading => Heading != null;
+        public bool IsField => Field != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickHeading(
+        public bool TryPickField(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::LlamaParse.HeadingItem? value)
+            out global::LlamaParse.FormField? value)
         {
-            value = Heading;
-            return IsHeading;
+            value = Field;
+            return IsField;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.HeadingItem PickHeading() => Heading is { } value
+        public global::LlamaParse.FormField PickField() => Field is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Heading' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Field' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// A fillable grid printed on the form: repeating records or a row-by-column matrix.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::LlamaParse.ListItem? List { get; init; }
+        public global::LlamaParse.FormTable? Table { get; init; }
 #else
-        public global::LlamaParse.ListItem? List { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(List))]
-#endif
-        public bool IsList => List != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickList(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::LlamaParse.ListItem? value)
-        {
-            value = List;
-            return IsList;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::LlamaParse.ListItem PickList() => List is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'List' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::LlamaParse.CodeItem? Code { get; init; }
-#else
-        public global::LlamaParse.CodeItem? Code { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Code))]
-#endif
-        public bool IsCode => Code != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickCode(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::LlamaParse.CodeItem? value)
-        {
-            value = Code;
-            return IsCode;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::LlamaParse.CodeItem PickCode() => Code is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::LlamaParse.TableItem? Table { get; init; }
-#else
-        public global::LlamaParse.TableItem? Table { get; }
+        public global::LlamaParse.FormTable? Table { get; }
 #endif
 
         /// <summary>
@@ -186,7 +112,7 @@ namespace LlamaParse
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::LlamaParse.TableItem? value)
+            out global::LlamaParse.FormTable? value)
         {
             value = Table;
             return IsTable;
@@ -195,189 +121,107 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.TableItem PickTable() => Table is { } value
+        public global::LlamaParse.FormTable PickTable() => Table is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Printed text that is not part of a field, section heading or table: a title, an<br/>
+        /// instruction, a note. With it the form JSON holds every printed word of its region.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::LlamaParse.ImageItem? Image { get; init; }
+        public global::LlamaParse.FormText? Text { get; init; }
 #else
-        public global::LlamaParse.ImageItem? Image { get; }
+        public global::LlamaParse.FormText? Text { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsImage => Image != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickImage(
+        public bool TryPickText(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::LlamaParse.ImageItem? value)
+            out global::LlamaParse.FormText? value)
         {
-            value = Image;
-            return IsImage;
+            value = Text;
+            return IsText;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ImageItem PickImage() => Image is { } value
+        public global::LlamaParse.FormText PickText() => Text is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ItemsItem5(global::LlamaParse.FormSection value) => new ItemsItem5((global::LlamaParse.FormSection?)value);
 
         /// <summary>
         ///
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::LlamaParse.LinkItem? Link { get; init; }
-#else
-        public global::LlamaParse.LinkItem? Link { get; }
-#endif
+        public static implicit operator global::LlamaParse.FormSection?(ItemsItem5 @this) => @this.Section;
 
         /// <summary>
         ///
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Link))]
-#endif
-        public bool IsLink => Link != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickLink(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::LlamaParse.LinkItem? value)
+        public ItemsItem5(global::LlamaParse.FormSection? value)
         {
-            value = Link;
-            return IsLink;
+            Section = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.LinkItem PickLink() => Link is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Link' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ItemsItem5(global::LlamaParse.TextItem value) => new ItemsItem5((global::LlamaParse.TextItem?)value);
+        public static ItemsItem5 FromSection(global::LlamaParse.FormSection? value) => new ItemsItem5(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::LlamaParse.TextItem?(ItemsItem5 @this) => @this.Text;
+        public static implicit operator ItemsItem5(global::LlamaParse.FormField value) => new ItemsItem5((global::LlamaParse.FormField?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public ItemsItem5(global::LlamaParse.TextItem? value)
+        public static implicit operator global::LlamaParse.FormField?(ItemsItem5 @this) => @this.Field;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ItemsItem5(global::LlamaParse.FormField? value)
         {
-            Text = value;
+            Field = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ItemsItem5 FromText(global::LlamaParse.TextItem? value) => new ItemsItem5(value);
+        public static ItemsItem5 FromField(global::LlamaParse.FormField? value) => new ItemsItem5(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ItemsItem5(global::LlamaParse.HeadingItem value) => new ItemsItem5((global::LlamaParse.HeadingItem?)value);
+        public static implicit operator ItemsItem5(global::LlamaParse.FormTable value) => new ItemsItem5((global::LlamaParse.FormTable?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::LlamaParse.HeadingItem?(ItemsItem5 @this) => @this.Heading;
+        public static implicit operator global::LlamaParse.FormTable?(ItemsItem5 @this) => @this.Table;
 
         /// <summary>
         ///
         /// </summary>
-        public ItemsItem5(global::LlamaParse.HeadingItem? value)
-        {
-            Heading = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static ItemsItem5 FromHeading(global::LlamaParse.HeadingItem? value) => new ItemsItem5(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ItemsItem5(global::LlamaParse.ListItem value) => new ItemsItem5((global::LlamaParse.ListItem?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::LlamaParse.ListItem?(ItemsItem5 @this) => @this.List;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ItemsItem5(global::LlamaParse.ListItem? value)
-        {
-            List = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static ItemsItem5 FromList(global::LlamaParse.ListItem? value) => new ItemsItem5(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ItemsItem5(global::LlamaParse.CodeItem value) => new ItemsItem5((global::LlamaParse.CodeItem?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::LlamaParse.CodeItem?(ItemsItem5 @this) => @this.Code;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ItemsItem5(global::LlamaParse.CodeItem? value)
-        {
-            Code = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static ItemsItem5 FromCode(global::LlamaParse.CodeItem? value) => new ItemsItem5(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ItemsItem5(global::LlamaParse.TableItem value) => new ItemsItem5((global::LlamaParse.TableItem?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::LlamaParse.TableItem?(ItemsItem5 @this) => @this.Table;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ItemsItem5(global::LlamaParse.TableItem? value)
+        public ItemsItem5(global::LlamaParse.FormTable? value)
         {
             Table = value;
         }
@@ -385,103 +229,68 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public static ItemsItem5 FromTable(global::LlamaParse.TableItem? value) => new ItemsItem5(value);
+        public static ItemsItem5 FromTable(global::LlamaParse.FormTable? value) => new ItemsItem5(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ItemsItem5(global::LlamaParse.ImageItem value) => new ItemsItem5((global::LlamaParse.ImageItem?)value);
+        public static implicit operator ItemsItem5(global::LlamaParse.FormText value) => new ItemsItem5((global::LlamaParse.FormText?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::LlamaParse.ImageItem?(ItemsItem5 @this) => @this.Image;
+        public static implicit operator global::LlamaParse.FormText?(ItemsItem5 @this) => @this.Text;
 
         /// <summary>
         ///
         /// </summary>
-        public ItemsItem5(global::LlamaParse.ImageItem? value)
+        public ItemsItem5(global::LlamaParse.FormText? value)
         {
-            Image = value;
+            Text = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ItemsItem5 FromImage(global::LlamaParse.ImageItem? value) => new ItemsItem5(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ItemsItem5(global::LlamaParse.LinkItem value) => new ItemsItem5((global::LlamaParse.LinkItem?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::LlamaParse.LinkItem?(ItemsItem5 @this) => @this.Link;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ItemsItem5(global::LlamaParse.LinkItem? value)
-        {
-            Link = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static ItemsItem5 FromLink(global::LlamaParse.LinkItem? value) => new ItemsItem5(value);
+        public static ItemsItem5 FromText(global::LlamaParse.FormText? value) => new ItemsItem5(value);
 
         /// <summary>
         ///
         /// </summary>
         public ItemsItem5(
-            global::LlamaParse.HeaderItemItemDiscriminatorType? type,
-            global::LlamaParse.TextItem? text,
-            global::LlamaParse.HeadingItem? heading,
-            global::LlamaParse.ListItem? list,
-            global::LlamaParse.CodeItem? code,
-            global::LlamaParse.TableItem? table,
-            global::LlamaParse.ImageItem? image,
-            global::LlamaParse.LinkItem? link
+            global::LlamaParse.FormTableCellItemsItemDiscriminatorType? type,
+            global::LlamaParse.FormSection? section,
+            global::LlamaParse.FormField? field,
+            global::LlamaParse.FormTable? table,
+            global::LlamaParse.FormText? text
             )
         {
             Type = type;
 
-            Text = text;
-            Heading = heading;
-            List = list;
-            Code = code;
+            Section = section;
+            Field = field;
             Table = table;
-            Image = image;
-            Link = link;
+            Text = text;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            Link as object ??
-            Image as object ??
+            Text as object ??
             Table as object ??
-            Code as object ??
-            List as object ??
-            Heading as object ??
-            Text as object
+            Field as object ??
+            Section as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() ??
-            Heading?.ToString() ??
-            List?.ToString() ??
-            Code?.ToString() ??
+            Section?.ToString() ??
+            Field?.ToString() ??
             Table?.ToString() ??
-            Image?.ToString() ??
-            Link?.ToString()
+            Text?.ToString()
             ;
 
         /// <summary>
@@ -489,20 +298,17 @@ namespace LlamaParse
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsHeading && !IsList && !IsCode && !IsTable && !IsImage && !IsLink || !IsText && IsHeading && !IsList && !IsCode && !IsTable && !IsImage && !IsLink || !IsText && !IsHeading && IsList && !IsCode && !IsTable && !IsImage && !IsLink || !IsText && !IsHeading && !IsList && IsCode && !IsTable && !IsImage && !IsLink || !IsText && !IsHeading && !IsList && !IsCode && IsTable && !IsImage && !IsLink || !IsText && !IsHeading && !IsList && !IsCode && !IsTable && IsImage && !IsLink || !IsText && !IsHeading && !IsList && !IsCode && !IsTable && !IsImage && IsLink;
+            return IsSection && !IsField && !IsTable && !IsText || !IsSection && IsField && !IsTable && !IsText || !IsSection && !IsField && IsTable && !IsText || !IsSection && !IsField && !IsTable && IsText;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LlamaParse.TextItem, TResult>? text = null,
-            global::System.Func<global::LlamaParse.HeadingItem, TResult>? heading = null,
-            global::System.Func<global::LlamaParse.ListItem, TResult>? list = null,
-            global::System.Func<global::LlamaParse.CodeItem, TResult>? code = null,
-            global::System.Func<global::LlamaParse.TableItem, TResult>? table = null,
-            global::System.Func<global::LlamaParse.ImageItem, TResult>? image = null,
-            global::System.Func<global::LlamaParse.LinkItem, TResult>? link = null,
+            global::System.Func<global::LlamaParse.FormSection, TResult>? section = null,
+            global::System.Func<global::LlamaParse.FormField, TResult>? field = null,
+            global::System.Func<global::LlamaParse.FormTable, TResult>? table = null,
+            global::System.Func<global::LlamaParse.FormText, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -510,33 +316,21 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (Text is { } __value0 && text != null)
+            if (Section is { } __value0 && section != null)
             {
-                return text(__value0);
+                return section(__value0);
             }
-            else if (Heading is { } __value1 && heading != null)
+            else if (Field is { } __value1 && field != null)
             {
-                return heading(__value1);
+                return field(__value1);
             }
-            else if (List is { } __value2 && list != null)
+            else if (Table is { } __value2 && table != null)
             {
-                return list(__value2);
+                return table(__value2);
             }
-            else if (Code is { } __value3 && code != null)
+            else if (Text is { } __value3 && text != null)
             {
-                return code(__value3);
-            }
-            else if (Table is { } __value4 && table != null)
-            {
-                return table(__value4);
-            }
-            else if (Image is { } __value5 && image != null)
-            {
-                return image(__value5);
-            }
-            else if (Link is { } __value6 && link != null)
-            {
-                return link(__value6);
+                return text(__value3);
             }
 
             return default(TResult);
@@ -546,19 +340,13 @@ namespace LlamaParse
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::LlamaParse.TextItem>? text = null,
+            global::System.Action<global::LlamaParse.FormSection>? section = null,
 
-            global::System.Action<global::LlamaParse.HeadingItem>? heading = null,
+            global::System.Action<global::LlamaParse.FormField>? field = null,
 
-            global::System.Action<global::LlamaParse.ListItem>? list = null,
+            global::System.Action<global::LlamaParse.FormTable>? table = null,
 
-            global::System.Action<global::LlamaParse.CodeItem>? code = null,
-
-            global::System.Action<global::LlamaParse.TableItem>? table = null,
-
-            global::System.Action<global::LlamaParse.ImageItem>? image = null,
-
-            global::System.Action<global::LlamaParse.LinkItem>? link = null,
+            global::System.Action<global::LlamaParse.FormText>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -566,33 +354,21 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (Text is { } __value0)
+            if (Section is { } __value0)
             {
-                text?.Invoke(__value0);
+                section?.Invoke(__value0);
             }
-            else if (Heading is { } __value1)
+            else if (Field is { } __value1)
             {
-                heading?.Invoke(__value1);
+                field?.Invoke(__value1);
             }
-            else if (List is { } __value2)
+            else if (Table is { } __value2)
             {
-                list?.Invoke(__value2);
+                table?.Invoke(__value2);
             }
-            else if (Code is { } __value3)
+            else if (Text is { } __value3)
             {
-                code?.Invoke(__value3);
-            }
-            else if (Table is { } __value4)
-            {
-                table?.Invoke(__value4);
-            }
-            else if (Image is { } __value5)
-            {
-                image?.Invoke(__value5);
-            }
-            else if (Link is { } __value6)
-            {
-                link?.Invoke(__value6);
+                text?.Invoke(__value3);
             }
         }
 
@@ -600,13 +376,10 @@ namespace LlamaParse
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::LlamaParse.TextItem>? text = null,
-            global::System.Action<global::LlamaParse.HeadingItem>? heading = null,
-            global::System.Action<global::LlamaParse.ListItem>? list = null,
-            global::System.Action<global::LlamaParse.CodeItem>? code = null,
-            global::System.Action<global::LlamaParse.TableItem>? table = null,
-            global::System.Action<global::LlamaParse.ImageItem>? image = null,
-            global::System.Action<global::LlamaParse.LinkItem>? link = null,
+            global::System.Action<global::LlamaParse.FormSection>? section = null,
+            global::System.Action<global::LlamaParse.FormField>? field = null,
+            global::System.Action<global::LlamaParse.FormTable>? table = null,
+            global::System.Action<global::LlamaParse.FormText>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -614,33 +387,21 @@ namespace LlamaParse
                 Validate();
             }
 
-            if (Text is { } __value0)
+            if (Section is { } __value0)
             {
-                text?.Invoke(__value0);
+                section?.Invoke(__value0);
             }
-            else if (Heading is { } __value1)
+            else if (Field is { } __value1)
             {
-                heading?.Invoke(__value1);
+                field?.Invoke(__value1);
             }
-            else if (List is { } __value2)
+            else if (Table is { } __value2)
             {
-                list?.Invoke(__value2);
+                table?.Invoke(__value2);
             }
-            else if (Code is { } __value3)
+            else if (Text is { } __value3)
             {
-                code?.Invoke(__value3);
-            }
-            else if (Table is { } __value4)
-            {
-                table?.Invoke(__value4);
-            }
-            else if (Image is { } __value5)
-            {
-                image?.Invoke(__value5);
-            }
-            else if (Link is { } __value6)
-            {
-                link?.Invoke(__value6);
+                text?.Invoke(__value3);
             }
         }
 
@@ -651,20 +412,14 @@ namespace LlamaParse
         {
             var fields = new object?[]
             {
-                Text,
-                typeof(global::LlamaParse.TextItem),
-                Heading,
-                typeof(global::LlamaParse.HeadingItem),
-                List,
-                typeof(global::LlamaParse.ListItem),
-                Code,
-                typeof(global::LlamaParse.CodeItem),
+                Section,
+                typeof(global::LlamaParse.FormSection),
+                Field,
+                typeof(global::LlamaParse.FormField),
                 Table,
-                typeof(global::LlamaParse.TableItem),
-                Image,
-                typeof(global::LlamaParse.ImageItem),
-                Link,
-                typeof(global::LlamaParse.LinkItem),
+                typeof(global::LlamaParse.FormTable),
+                Text,
+                typeof(global::LlamaParse.FormText),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -681,13 +436,10 @@ namespace LlamaParse
         public bool Equals(ItemsItem5 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.TextItem?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.HeadingItem?>.Default.Equals(Heading, other.Heading) &&
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.ListItem?>.Default.Equals(List, other.List) &&
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.CodeItem?>.Default.Equals(Code, other.Code) &&
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.TableItem?>.Default.Equals(Table, other.Table) &&
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.ImageItem?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.LinkItem?>.Default.Equals(Link, other.Link)
+                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormSection?>.Default.Equals(Section, other.Section) &&
+                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormField?>.Default.Equals(Field, other.Field) &&
+                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormTable?>.Default.Equals(Table, other.Table) &&
+                global::System.Collections.Generic.EqualityComparer<global::LlamaParse.FormText?>.Default.Equals(Text, other.Text)
                 ;
         }
 

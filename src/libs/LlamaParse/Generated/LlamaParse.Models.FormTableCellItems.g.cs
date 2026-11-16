@@ -13,7 +13,7 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem4> Items { get; set; }
+        public required global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem5> Items { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace LlamaParse
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FormTableCellItems(
-            global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem4> items)
+            global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem5> items)
         {
             this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
         }

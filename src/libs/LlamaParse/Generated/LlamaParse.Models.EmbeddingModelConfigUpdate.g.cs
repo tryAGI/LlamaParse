@@ -18,7 +18,7 @@ namespace LlamaParse
         /// The embedding configuration for the embedding model config.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_config")]
-        public global::LlamaParse.EmbeddingConfigVariant1? EmbeddingConfig { get; set; }
+        public global::LlamaParse.EmbeddingConfigVariant14? EmbeddingConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace LlamaParse
 #endif
         public EmbeddingModelConfigUpdate(
             string? name,
-            global::LlamaParse.EmbeddingConfigVariant1? embeddingConfig)
+            global::LlamaParse.EmbeddingConfigVariant14? embeddingConfig)
         {
             this.Name = name;
             this.EmbeddingConfig = embeddingConfig;

@@ -69,7 +69,7 @@ namespace LlamaParse
             global::System.Guid? organizationId = default,
             string? session = default,
             string? name = default,
-            global::LlamaParse.EmbeddingConfigVariant1? embeddingConfig = default,
+            global::LlamaParse.EmbeddingConfigVariant14? embeddingConfig = default,
             global::LlamaParse.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
