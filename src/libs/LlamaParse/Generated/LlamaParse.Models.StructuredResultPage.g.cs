@@ -20,7 +20,7 @@ namespace LlamaParse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem7> Items { get; set; }
+        public required global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem6> Items { get; set; }
 
         /// <summary>
         /// Width of the page in points
@@ -81,7 +81,7 @@ namespace LlamaParse
 #endif
         public StructuredResultPage(
             int pageNumber,
-            global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem7> items,
+            global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem6> items,
             double pageWidth,
             double pageHeight,
             global::System.Collections.Generic.IList<global::LlamaParse.Revision>? revisions,

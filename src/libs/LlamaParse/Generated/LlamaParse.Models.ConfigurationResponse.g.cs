@@ -53,9 +53,9 @@ namespace LlamaParse
         /// Product-specific configuration parameters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.Parameters2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.ParametersJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LlamaParse.Parameters2 Parameters { get; set; }
+        public required global::LlamaParse.Parameters Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -95,7 +95,7 @@ namespace LlamaParse
             string name,
             global::LlamaParse.ConfigurationResponseProductType productType,
             string version,
-            global::LlamaParse.Parameters2 parameters,
+            global::LlamaParse.Parameters parameters,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt)
         {

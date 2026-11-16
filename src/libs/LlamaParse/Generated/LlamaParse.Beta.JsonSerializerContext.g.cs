@@ -99,7 +99,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.CloudQdrantVectorStore))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurableDataSinkNames), TypeInfoPropertyName = "ConfigurableDataSinkNames2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurationCreateRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Parameters), TypeInfoPropertyName = "Parameters2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Parameters2), TypeInfoPropertyName = "Parameters22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitV1Parameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ExtractV2Parameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseV2Parameters))]
@@ -111,7 +111,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.ConfigurationResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurationResponseProductType), TypeInfoPropertyName = "ConfigurationResponseProductType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Parameters2), TypeInfoPropertyName = "Parameters22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Parameters), TypeInfoPropertyName = "Parameters2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurationResponseParametersDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType), TypeInfoPropertyName = "ConfigurationResponseParametersDiscriminatorProductType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurationUpdateRequest))]
@@ -317,10 +317,10 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.StatusEnum?), TypeInfoPropertyName = "NullableStatusEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ClassifyMode?), TypeInfoPropertyName = "NullableClassifyMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurableDataSinkNames?), TypeInfoPropertyName = "NullableConfigurableDataSinkNames2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Parameters?), TypeInfoPropertyName = "NullableParameters2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Parameters2?), TypeInfoPropertyName = "NullableParameters22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType?), TypeInfoPropertyName = "NullableConfigurationCreateRequestParametersDiscriminatorProductType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurationResponseProductType?), TypeInfoPropertyName = "NullableConfigurationResponseProductType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Parameters2?), TypeInfoPropertyName = "NullableParameters22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.Parameters?), TypeInfoPropertyName = "NullableParameters2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType?), TypeInfoPropertyName = "NullableConfigurationResponseParametersDiscriminatorProductType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductType?), TypeInfoPropertyName = "NullableConfigurationUpdateRequestParametersVariant1DiscriminatorProductType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<object, global::System.Collections.Generic.IList<object>, string, int?, double?, bool?>?), TypeInfoPropertyName = "NullableAnyOfObjectIListObjectStringInt32DoubleBoolean2")]
@@ -479,8 +479,8 @@ namespace LlamaParse
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            options.Converters.Add(new global::LlamaParse.JsonConverters.ParametersJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.Parameters2JsonConverter());
+            options.Converters.Add(new global::LlamaParse.JsonConverters.ParametersJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.ParametersVariant1JsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.MetadataScalarValueJsonConverter());
             options.Converters.Add(new global::LlamaParse.JsonConverters.MetadataValueJsonConverter());

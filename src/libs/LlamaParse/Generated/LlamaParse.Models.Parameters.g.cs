@@ -12,7 +12,7 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType? ProductType { get; }
+        public global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType? ProductType { get; }
 
         /// <summary>
         /// Typed parameters for a *split v1* product configuration.
@@ -381,7 +381,7 @@ namespace LlamaParse
         ///
         /// </summary>
         public Parameters(
-            global::LlamaParse.ConfigurationCreateRequestParametersDiscriminatorProductType? productType,
+            global::LlamaParse.ConfigurationResponseParametersDiscriminatorProductType? productType,
             global::LlamaParse.SplitV1Parameters? splitV1,
             global::LlamaParse.ExtractV2Parameters? extractV2,
             global::LlamaParse.ClassifyV2Parameters? classifyV2,

@@ -12,7 +12,7 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType? Type { get; }
+        public global::LlamaParse.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -437,7 +437,7 @@ namespace LlamaParse
         ///
         /// </summary>
         public EmbeddingConfigVariant14(
-            global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType? type,
+            global::LlamaParse.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorType? type,
             global::LlamaParse.AzureOpenAIEmbeddingConfig? azureEmbedding,
             global::LlamaParse.CohereEmbeddingConfig? cohereEmbedding,
             global::LlamaParse.GeminiEmbeddingConfig? geminiEmbedding,

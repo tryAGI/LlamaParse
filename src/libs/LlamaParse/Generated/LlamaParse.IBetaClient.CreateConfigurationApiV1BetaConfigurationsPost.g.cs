@@ -60,7 +60,7 @@ namespace LlamaParse
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LlamaParse.ConfigurationResponse> CreateConfigurationApiV1BetaConfigurationsPostAsync(
             string name,
-            global::LlamaParse.Parameters parameters,
+            global::LlamaParse.Parameters2 parameters,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
