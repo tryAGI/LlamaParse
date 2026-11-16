@@ -4,7 +4,7 @@
 namespace LlamaParse
 {
     /// <summary>
-    /// Turned on as the job ran, from History, by a first edit, or by the API.
+    /// Turned on as the job ran, from History, by a first edit, by the API, or by the configuration's review policy as the job completed.
     /// </summary>
     public enum ExtractReviewCreatedDetailOrigin
     {
@@ -20,6 +20,10 @@ namespace LlamaParse
         ///
         /// </summary>
         History,
+        /// <summary>
+        ///
+        /// </summary>
+        Policy,
         /// <summary>
         ///
         /// </summary>
@@ -41,6 +45,7 @@ namespace LlamaParse
                 ExtractReviewCreatedDetailOrigin.Api => "api",
                 ExtractReviewCreatedDetailOrigin.Edit => "edit",
                 ExtractReviewCreatedDetailOrigin.History => "history",
+                ExtractReviewCreatedDetailOrigin.Policy => "policy",
                 ExtractReviewCreatedDetailOrigin.Run => "run",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -55,6 +60,7 @@ namespace LlamaParse
                 "api" => ExtractReviewCreatedDetailOrigin.Api,
                 "edit" => ExtractReviewCreatedDetailOrigin.Edit,
                 "history" => ExtractReviewCreatedDetailOrigin.History,
+                "policy" => ExtractReviewCreatedDetailOrigin.Policy,
                 "run" => ExtractReviewCreatedDetailOrigin.Run,
                 _ => null,
             };

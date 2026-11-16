@@ -49,11 +49,10 @@ namespace LlamaParse
         public global::LlamaParse.AnyOf<global::LlamaParse.ExtractReviewCreatedDetail, global::LlamaParse.ExtractReviewRejectedDetail, global::LlamaParse.ExtractReviewSignedOffDetail>? Detail { get; set; }
 
         /// <summary>
-        /// ID of the user who acted.
+        /// ID of the user who acted; null when a review policy turned review on.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ActorId { get; set; }
+        public string? ActorId { get; set; }
 
         /// <summary>
         /// When it happened.
@@ -77,9 +76,6 @@ namespace LlamaParse
         /// <param name="kind">
         /// What happened.
         /// </param>
-        /// <param name="actorId">
-        /// ID of the user who acted.
-        /// </param>
         /// <param name="createdAt">
         /// When it happened.
         /// </param>
@@ -95,18 +91,21 @@ namespace LlamaParse
         /// <param name="detail">
         /// The settings for `created`, the reason for `rejected`, and the fields for `flags_signed_off`; null for the rest.
         /// </param>
+        /// <param name="actorId">
+        /// ID of the user who acted; null when a review policy turned review on.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExtractReviewEvent(
             string id,
             global::LlamaParse.ExtractReviewEventKind kind,
-            string actorId,
             global::System.DateTime createdAt,
             string? path,
             object? valueBefore,
             object? valueAfter,
-            global::LlamaParse.AnyOf<global::LlamaParse.ExtractReviewCreatedDetail, global::LlamaParse.ExtractReviewRejectedDetail, global::LlamaParse.ExtractReviewSignedOffDetail>? detail)
+            global::LlamaParse.AnyOf<global::LlamaParse.ExtractReviewCreatedDetail, global::LlamaParse.ExtractReviewRejectedDetail, global::LlamaParse.ExtractReviewSignedOffDetail>? detail,
+            string? actorId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Kind = kind;
@@ -114,7 +113,7 @@ namespace LlamaParse
             this.ValueBefore = valueBefore;
             this.ValueAfter = valueAfter;
             this.Detail = detail;
-            this.ActorId = actorId ?? throw new global::System.ArgumentNullException(nameof(actorId));
+            this.ActorId = actorId;
             this.CreatedAt = createdAt;
         }
 

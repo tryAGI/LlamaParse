@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class ExtractReviewCreatedDetail
     {
         /// <summary>
-        /// Turned on as the job ran, from History, by a first edit, or by the API.
+        /// Turned on as the job ran, from History, by a first edit, by the API, or by the configuration's review policy as the job completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("origin")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.ExtractReviewCreatedDetailOriginJsonConverter))]
@@ -47,7 +47,7 @@ namespace LlamaParse
         /// Initializes a new instance of the <see cref="ExtractReviewCreatedDetail" /> class.
         /// </summary>
         /// <param name="origin">
-        /// Turned on as the job ran, from History, by a first edit, or by the API.
+        /// Turned on as the job ran, from History, by a first edit, by the API, or by the configuration's review policy as the job completed.
         /// </param>
         /// <param name="confidenceThreshold">
         /// Fields read below this confidence are flagged.
