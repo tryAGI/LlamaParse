@@ -15,6 +15,10 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
+        Low,
+        /// <summary>
+        ///
+        /// </summary>
         Medium,
     }
 
@@ -31,6 +35,7 @@ namespace LlamaParse
             return value switch
             {
                 AutoModeConfigurationEntryMinComplexity.High => "high",
+                AutoModeConfigurationEntryMinComplexity.Low => "low",
                 AutoModeConfigurationEntryMinComplexity.Medium => "medium",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace LlamaParse
             return value switch
             {
                 "high" => AutoModeConfigurationEntryMinComplexity.High,
+                "low" => AutoModeConfigurationEntryMinComplexity.Low,
                 "medium" => AutoModeConfigurationEntryMinComplexity.Medium,
                 _ => null,
             };

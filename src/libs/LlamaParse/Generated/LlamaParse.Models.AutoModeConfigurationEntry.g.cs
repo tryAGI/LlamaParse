@@ -142,6 +142,18 @@ namespace LlamaParse
         public global::LlamaParse.AnyOf<int?, string>? PageContainsAtMostNImages { get; set; }
 
         /// <summary>
+        /// Match every page when the document has more than N pages
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document_longer_than_n_pages")]
+        public int? DocumentLongerThanNPages { get; set; }
+
+        /// <summary>
+        /// Match every page when the document has fewer than N pages
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document_shorter_than_n_pages")]
+        public int? DocumentShorterThanNPages { get; set; }
+
+        /// <summary>
         /// Trigger if page has more than N tables
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_tables")]
@@ -251,7 +263,7 @@ namespace LlamaParse
         public global::LlamaParse.AnyOf<double?, string>? LayoutElementInPageConfidenceThreshold { get; set; }
 
         /// <summary>
-        /// Trigger on pages at least this complex. high: pages whose tables look wrong. medium: also pages that are mostly scanned text.
+        /// Minimum page complexity that sends a page to the escalation tier. Lower levels escalate more pages: low escalates the most, high only the most complex pages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_complexity")]
         public global::LlamaParse.AutoModeConfigurationEntryMinComplexity? MinComplexity { get; set; }
@@ -325,6 +337,12 @@ namespace LlamaParse
         /// <param name="pageContainsAtMostNImages">
         /// Trigger if page has fewer than N images
         /// </param>
+        /// <param name="documentLongerThanNPages">
+        /// Match every page when the document has more than N pages
+        /// </param>
+        /// <param name="documentShorterThanNPages">
+        /// Match every page when the document has fewer than N pages
+        /// </param>
         /// <param name="pageContainsAtLeastNTables">
         /// Trigger if page has more than N tables
         /// </param>
@@ -374,7 +392,7 @@ namespace LlamaParse
         /// Confidence threshold for layout element detection
         /// </param>
         /// <param name="minComplexity">
-        /// Trigger on pages at least this complex. high: pages whose tables look wrong. medium: also pages that are mostly scanned text.
+        /// Minimum page complexity that sends a page to the escalation tier. Lower levels escalate more pages: low escalates the most, high only the most complex pages.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -400,6 +418,8 @@ namespace LlamaParse
             global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNLines,
             global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNImages,
             global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNImages,
+            int? documentLongerThanNPages,
+            int? documentShorterThanNPages,
             global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNTables,
             global::LlamaParse.AnyOf<int?, string>? pageContainsAtMostNTables,
             global::LlamaParse.AnyOf<int?, string>? pageContainsAtLeastNLinks,
@@ -438,6 +458,8 @@ namespace LlamaParse
             this.PageContainsAtMostNLines = pageContainsAtMostNLines;
             this.PageContainsAtLeastNImages = pageContainsAtLeastNImages;
             this.PageContainsAtMostNImages = pageContainsAtMostNImages;
+            this.DocumentLongerThanNPages = documentLongerThanNPages;
+            this.DocumentShorterThanNPages = documentShorterThanNPages;
             this.PageContainsAtLeastNTables = pageContainsAtLeastNTables;
             this.PageContainsAtMostNTables = pageContainsAtMostNTables;
             this.PageContainsAtLeastNLinks = pageContainsAtLeastNLinks;

@@ -24764,6 +24764,38 @@
             "title": "Page Contains At Most N Images",
             "description": "Trigger if page has fewer than N images"
           },
+          "document_longer_than_n_pages": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Document Longer Than N Pages",
+            "description": "Match every page when the document has more than N pages",
+            "examples": [
+              5
+            ]
+          },
+          "document_shorter_than_n_pages": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Document Shorter Than N Pages",
+            "description": "Match every page when the document has fewer than N pages",
+            "examples": [
+              5
+            ]
+          },
           "page_contains_at_least_n_tables": {
             "anyOf": [
               {
@@ -25000,8 +25032,9 @@
               {
                 "type": "string",
                 "enum": [
-                  "high",
-                  "medium"
+                  "low",
+                  "medium",
+                  "high"
                 ]
               },
               {
@@ -25009,7 +25042,7 @@
               }
             ],
             "title": "Min Complexity",
-            "description": "Trigger on pages at least this complex. high: pages whose tables look wrong. medium: also pages that are mostly scanned text."
+            "description": "Minimum page complexity that sends a page to the escalation tier. Lower levels escalate more pages: low escalates the most, high only the most complex pages."
           }
         },
         "additionalProperties": false,
@@ -25165,9 +25198,9 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-12",
                   "2026-11-11",
-                  "2026-11-09",
-                  "2026-06-15"
+                  "2026-11-09"
                 ],
                 "x-enum-order-preserved": true
               },
@@ -25179,7 +25212,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -35417,10 +35450,11 @@
               "run",
               "history",
               "edit",
-              "api"
+              "api",
+              "policy"
             ],
             "title": "Origin",
-            "description": "Turned on as the job ran, from History, by a first edit, or by the API."
+            "description": "Turned on as the job ran, from History, by a first edit, by the API, or by the configuration's review policy as the job completed."
           },
           "confidence_threshold": {
             "type": "number",
@@ -35517,9 +35551,16 @@
             "description": "The settings for `created`, the reason for `rejected`, and the fields for `flags_signed_off`; null for the rest."
           },
           "actor_id": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Actor Id",
-            "description": "ID of the user who acted."
+            "description": "ID of the user who acted; null when a review policy turned review on."
           },
           "created_at": {
             "type": "string",
@@ -45767,9 +45808,9 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-12",
                   "2026-11-11",
-                  "2026-11-09",
-                  "2026-06-15"
+                  "2026-11-09"
                 ],
                 "x-enum-order-preserved": true
               },
@@ -45778,7 +45819,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46103,9 +46144,9 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-12",
                   "2026-11-11",
-                  "2026-11-09",
-                  "2026-06-15"
+                  "2026-11-09"
                 ],
                 "x-enum-order-preserved": true
               },
@@ -46114,7 +46155,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-06-15`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46216,6 +46257,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-11-12",
                 "2026-06-15",
                 "2025-12-11"
               ],
