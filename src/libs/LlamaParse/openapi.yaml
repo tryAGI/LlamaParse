@@ -25198,8 +25198,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-17",
                   "2026-11-12",
-                  "2026-11-11",
                   "2026-11-09"
                 ],
                 "x-enum-order-preserved": true
@@ -25212,7 +25212,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-17`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -45808,8 +45808,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-17",
                   "2026-11-12",
-                  "2026-11-11",
                   "2026-11-09"
                 ],
                 "x-enum-order-preserved": true
@@ -45819,7 +45819,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-17`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46144,8 +46144,8 @@
                 "type": "string",
                 "enum": [
                   "latest",
+                  "2026-11-17",
                   "2026-11-12",
-                  "2026-11-11",
                   "2026-11-09"
                 ],
                 "x-enum-order-preserved": true
@@ -46155,7 +46155,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-11`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-17`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46366,6 +46366,8 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-11-17",
+                "2026-11-16",
                 "2026-11-11",
                 "2026-11-10",
                 "2026-11-07",
@@ -50923,6 +50925,42 @@
         "title": "SplitConfigurationBeta",
         "description": "Split configuration with categories and splitting strategy."
       },
+      "SplitConfigurationWarning": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "catch_all_category",
+              "missing_description",
+              "near_duplicate_name",
+              "near_duplicate_description"
+            ],
+            "title": "Code",
+            "description": "Rule that produced the warning."
+          },
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "description": "What is ambiguous and how to fix it."
+          },
+          "category_names": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Category Names",
+            "description": "Names of the categories the warning concerns."
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "message",
+          "category_names"
+        ],
+        "title": "SplitConfigurationWarning",
+        "description": "Advisory finding about split categories; the job still runs."
+      },
       "SplitCreateRequest": {
         "properties": {
           "transaction_id": {
@@ -51258,6 +51296,14 @@
           "splitting_strategy": {
             "$ref": "#/components/schemas/SplitStrategy",
             "description": "Strategy used for splitting."
+          },
+          "warnings": {
+            "items": {
+              "$ref": "#/components/schemas/SplitConfigurationWarning"
+            },
+            "type": "array",
+            "title": "Warnings",
+            "description": "Advisory findings about the categories this job uses; empty when none."
           },
           "parse_tier": {
             "anyOf": [

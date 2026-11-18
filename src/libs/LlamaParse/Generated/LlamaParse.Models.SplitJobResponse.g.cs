@@ -82,6 +82,12 @@ namespace LlamaParse
         public global::LlamaParse.SplitStrategy? SplittingStrategy { get; set; }
 
         /// <summary>
+        /// Advisory findings about the categories this job uses; empty when none.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("warnings")]
+        public global::System.Collections.Generic.IList<global::LlamaParse.SplitConfigurationWarning>? Warnings { get; set; }
+
+        /// <summary>
         /// Parse tier requested for this job, if any.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_tier")]
@@ -173,6 +179,9 @@ namespace LlamaParse
         /// <param name="splittingStrategy">
         /// Strategy used for splitting.
         /// </param>
+        /// <param name="warnings">
+        /// Advisory findings about the categories this job uses; empty when none.
+        /// </param>
         /// <param name="parseTier">
         /// Parse tier requested for this job, if any.
         /// </param>
@@ -205,6 +214,7 @@ namespace LlamaParse
             string? transactionId,
             string? configurationId,
             global::LlamaParse.SplitStrategy? splittingStrategy,
+            global::System.Collections.Generic.IList<global::LlamaParse.SplitConfigurationWarning>? warnings,
             string? parseTier,
             string? parseConfigId,
             string? targetPages,
@@ -222,6 +232,7 @@ namespace LlamaParse
             this.DocumentInputType = documentInputType;
             this.Categories = categories ?? throw new global::System.ArgumentNullException(nameof(categories));
             this.SplittingStrategy = splittingStrategy;
+            this.Warnings = warnings;
             this.ParseTier = parseTier;
             this.ParseConfigId = parseConfigId;
             this.TargetPages = targetPages;
