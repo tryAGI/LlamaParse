@@ -32,6 +32,8 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategy))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationParseTier), TypeInfoPropertyName = "SplitConfigurationParseTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationBeta))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationWarning))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationWarningCode), TypeInfoPropertyName = "SplitConfigurationWarningCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitCreateRequestBeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitDocumentInput))]
@@ -42,6 +44,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.SplitJobResponseBeta>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitJobResponseBeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitJobResponseDocumentInputType), TypeInfoPropertyName = "SplitJobResponseDocumentInputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.SplitConfigurationWarning>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitResultResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.SplitSegmentResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitSegmentResponse))]
@@ -56,6 +59,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationParseTier?), TypeInfoPropertyName = "NullableSplitConfigurationParseTier2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationWarningCode?), TypeInfoPropertyName = "NullableSplitConfigurationWarningCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitJobResponseDocumentInputType?), TypeInfoPropertyName = "NullableSplitJobResponseDocumentInputType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized?), TypeInfoPropertyName = "NullableSplitStrategyAllowUncategorized2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
@@ -69,6 +73,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.SplitCategory>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.SplitJobResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.SplitJobResponseBeta>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.SplitConfigurationWarning>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.SplitSegmentResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item>))]
@@ -244,6 +249,10 @@ namespace LlamaParse
 
                     || typeToConvert == typeof(global::LlamaParse.SplitConfigurationParseTier?)
 
+                    || typeToConvert == typeof(global::LlamaParse.SplitConfigurationWarningCode)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitConfigurationWarningCode?)
+
                     || typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType)
 
                     || typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType?)
@@ -277,6 +286,16 @@ namespace LlamaParse
                 if (typeToConvert == typeof(global::LlamaParse.SplitConfigurationParseTier?))
                 {
                     return new global::LlamaParse.JsonConverters.SplitConfigurationParseTierNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitConfigurationWarningCode))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitConfigurationWarningCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitConfigurationWarningCode?))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitConfigurationWarningCodeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LlamaParse.SplitJobResponseDocumentInputType))
