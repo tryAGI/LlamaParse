@@ -9,7 +9,7 @@ namespace LlamaParse
     public sealed partial class SplitConfiguration
     {
         /// <summary>
-        /// Categories to split documents into.
+        /// Categories to split documents into. Names must be unique; 'uncategorized' is reserved unless allow_uncategorized is 'forbid'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("categories")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -55,7 +55,7 @@ namespace LlamaParse
         /// Initializes a new instance of the <see cref="SplitConfiguration" /> class.
         /// </summary>
         /// <param name="categories">
-        /// Categories to split documents into.
+        /// Categories to split documents into. Names must be unique; 'uncategorized' is reserved unless allow_uncategorized is 'forbid'.
         /// </param>
         /// <param name="splittingStrategy">
         /// Strategy for splitting documents.

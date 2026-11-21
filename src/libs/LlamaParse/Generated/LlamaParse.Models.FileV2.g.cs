@@ -29,6 +29,12 @@ namespace LlamaParse
         public string? ExternalFileId { get; set; }
 
         /// <summary>
+        /// Recorded file size in bytes. Null means no size was recorded.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_size")]
+        public long? FileSize { get; set; }
+
+        /// <summary>
         /// File extension (pdf, docx, png, etc.)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_type")]
@@ -86,6 +92,9 @@ namespace LlamaParse
         /// <param name="externalFileId">
         /// Optional ID for correlating with an external system
         /// </param>
+        /// <param name="fileSize">
+        /// Recorded file size in bytes. Null means no size was recorded.
+        /// </param>
         /// <param name="fileType">
         /// File extension (pdf, docx, png, etc.)
         /// </param>
@@ -109,6 +118,7 @@ namespace LlamaParse
             string name,
             global::System.Guid projectId,
             string? externalFileId,
+            long? fileSize,
             string? fileType,
             global::System.DateTime? lastModifiedAt,
             global::System.DateTime? expiresAt,
@@ -118,6 +128,7 @@ namespace LlamaParse
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ExternalFileId = externalFileId;
+            this.FileSize = fileSize;
             this.FileType = fileType;
             this.ProjectId = projectId;
             this.LastModifiedAt = lastModifiedAt;

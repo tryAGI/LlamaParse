@@ -16,7 +16,7 @@ namespace LlamaParse
         public required string Category { get; set; }
 
         /// <summary>
-        /// Page numbers in this segment, as numbered by the input document.
+        /// Page numbers in this segment, as numbered by the input document. For PPTX, hidden slides are skipped unless the parse config or parse job sets `input_options.presentation.include_hidden_slides`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pages")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -42,7 +42,7 @@ namespace LlamaParse
         /// Category name this split belongs to.
         /// </param>
         /// <param name="pages">
-        /// Page numbers in this segment, as numbered by the input document.
+        /// Page numbers in this segment, as numbered by the input document. For PPTX, hidden slides are skipped unless the parse config or parse job sets `input_options.presentation.include_hidden_slides`.
         /// </param>
         /// <param name="confidenceCategory">
         /// Categorical confidence level. Valid values are: high, medium, low.

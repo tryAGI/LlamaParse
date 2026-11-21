@@ -10345,7 +10345,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -11286,7 +11287,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -11911,7 +11913,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -14863,7 +14866,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -15282,7 +15286,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -15914,7 +15919,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -17946,7 +17952,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -19681,7 +19688,7 @@
           "Parse"
         ],
         "summary": "Delete Parse Job",
-        "description": "Delete a parse job and its results.\n\nThe job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel a job that is still running before deleting it.\n\nA job that a document in Evaluate reads its ground truth from can't be deleted. It is kept until the document is removed from Evaluate or the project is deleted.\n\nReturns the identifiers of the deleted job.",
+        "description": "Delete a parse job and its results.\n\nThe job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel a job that is still running before deleting it.\n\nReturns the identifiers of the deleted job.",
         "operationId": "delete_parse_job_api_v2_parse__job_id__delete",
         "security": [
           {
@@ -19761,7 +19768,7 @@
             }
           },
           "409": {
-            "description": "The job is still running, or a document in Evaluate reads its ground truth from it. `detail.reason` says which.",
+            "description": "The job is still running.",
             "content": {
               "application/json": {
                 "schema": {
@@ -22317,7 +22324,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -22587,7 +22595,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -22781,7 +22790,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -23067,7 +23077,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1
                 },
                 {
                   "type": "null"
@@ -25198,7 +25209,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-11-17",
+                  "2026-11-19",
                   "2026-11-12",
                   "2026-11-09"
                 ],
@@ -25212,7 +25223,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-17`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the override tier. Required when `tier` is set. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-19`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "custom_prompt": {
             "anyOf": [
@@ -38799,6 +38810,22 @@
               "ext-12345"
             ]
           },
+          "file_size": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "File Size",
+            "description": "Recorded file size in bytes. Null means no size was recorded.",
+            "examples": [
+              482113
+            ]
+          },
           "file_type": {
             "anyOf": [
               {
@@ -39357,6 +39384,50 @@
             ],
             "title": "Bbox",
             "description": "Bounding boxes of the field's fillable area on the page."
+          },
+          "markdown_span": {
+            "anyOf": [
+              {
+                "prefixItems": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ],
+                "type": "array",
+                "maxItems": 2,
+                "minItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Markdown Span",
+            "description": "`[start, end)` UTF-8 byte offsets of the field's value in its page's `markdown` string, on some Agentic Plus jobs from version 2026-11-19. A checkbox covers its `[x]` or `[ ]`, and a blank table cell covers the whole cell. Absent on other jobs and when the value has no place in the markdown"
+          },
+          "label_markdown_span": {
+            "anyOf": [
+              {
+                "prefixItems": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ],
+                "type": "array",
+                "maxItems": 2,
+                "minItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label Markdown Span",
+            "description": "`[start, end)` UTF-8 byte offsets of the field's printed caption (a table cell's column header) in its page's `markdown` string, on some Agentic Plus jobs from version 2026-11-19. Absent on other jobs and when it has no place in the markdown"
           }
         },
         "type": "object",
@@ -39551,6 +39622,28 @@
             "type": "array",
             "title": "Items",
             "description": "Child form nodes in reading order"
+          },
+          "markdown_span": {
+            "anyOf": [
+              {
+                "prefixItems": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ],
+                "type": "array",
+                "maxItems": 2,
+                "minItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Markdown Span",
+            "description": "`[start, end)` UTF-8 byte offsets of the section heading in its page's `markdown` string, on some Agentic Plus jobs from version 2026-11-19. Absent on other jobs and when it has no place in the markdown"
           }
         },
         "type": "object",
@@ -39695,6 +39788,28 @@
             ],
             "title": "Html",
             "description": "HTML representation of the table, as a regular table item has."
+          },
+          "markdown_span": {
+            "anyOf": [
+              {
+                "prefixItems": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ],
+                "type": "array",
+                "maxItems": 2,
+                "minItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Markdown Span",
+            "description": "`[start, end)` UTF-8 byte offsets of the table caption in its page's `markdown` string, on some Agentic Plus jobs from version 2026-11-19. Absent on other jobs and when it has no place in the markdown"
           }
         },
         "type": "object",
@@ -39863,6 +39978,17 @@
             "type": "array",
             "title": "Lines",
             "description": "Supported lines. Word requests include supported words; gaps are valid. Boxes use final page coordinates and optional local rotation r."
+          },
+          "bbox": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BBox"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Single box around all lines; omitted when no reliable box exists"
           }
         },
         "type": "object",
@@ -45450,12 +45576,9 @@
         "properties": {
           "reason": {
             "type": "string",
-            "enum": [
-              "job_running",
-              "held_by_evaluate"
-            ],
+            "const": "job_running",
             "title": "Reason",
-            "description": "`job_running`: cancel the job, then delete it. `held_by_evaluate`: a document in Evaluate reads its ground truth from the job; remove the document from Evaluate, or delete the project."
+            "description": "`job_running`: cancel the job, then delete it."
           },
           "message": {
             "type": "string",
@@ -45808,7 +45931,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-11-17",
+                  "2026-11-19",
                   "2026-11-12",
                   "2026-11-09"
                 ],
@@ -45819,7 +45942,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-17`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-19`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46144,7 +46267,7 @@
                 "type": "string",
                 "enum": [
                   "latest",
-                  "2026-11-17",
+                  "2026-11-19",
                   "2026-11-12",
                   "2026-11-09"
                 ],
@@ -46155,7 +46278,7 @@
               }
             ],
             "title": "Version",
-            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-17`\n\nFull list: `GET /api/v2/parse/versions`."
+            "description": "Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.\n\nCurrent `latest` by tier:\n- `fast`: `2026-11-12`\n- `cost_effective`: `2026-11-09`\n- `agentic`: `2026-11-09`\n- `agentic_plus`: `2026-11-19`\n\nFull list: `GET /api/v2/parse/versions`."
           },
           "client_name": {
             "anyOf": [
@@ -46366,6 +46489,8 @@
             "items": {
               "type": "string",
               "enum": [
+                "2026-11-19",
+                "2026-11-18",
                 "2026-11-17",
                 "2026-11-16",
                 "2026-11-11",
@@ -50802,7 +50927,7 @@
             "maxItems": 500,
             "minItems": 1,
             "title": "Categories",
-            "description": "Categories to split documents into."
+            "description": "Categories to split documents into. Names must be unique; 'uncategorized' is reserved unless allow_uncategorized is 'forbid'."
           },
           "splitting_strategy": {
             "$ref": "#/components/schemas/SplitStrategy",
@@ -50895,7 +51020,7 @@
             "maxItems": 500,
             "minItems": 1,
             "title": "Categories",
-            "description": "Categories to split documents into."
+            "description": "Categories to split documents into. Names must be unique; 'uncategorized' is reserved unless allow_uncategorized is 'forbid'."
           },
           "splitting_strategy": {
             "$ref": "#/components/schemas/SplitStrategy",
@@ -51459,6 +51584,14 @@
             "title": "Categories",
             "description": "Categories used for splitting."
           },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "description": "Split version used for this job.",
+            "examples": [
+              "1.1.0"
+            ]
+          },
           "status": {
             "type": "string",
             "title": "Status",
@@ -51495,6 +51628,7 @@
           "user_id",
           "document_input",
           "categories",
+          "version",
           "status"
         ],
         "title": "SplitJobResponseBeta",
@@ -51531,7 +51665,7 @@
             },
             "type": "array",
             "title": "Pages",
-            "description": "Page numbers in this segment, as numbered by the input document."
+            "description": "Page numbers in this segment, as numbered by the input document. For PPTX, hidden slides are skipped unless the parse config or parse job sets `input_options.presentation.include_hidden_slides`."
           },
           "confidence_category": {
             "type": "string",
@@ -51583,6 +51717,22 @@
             "examples": [
               "Start a new segment at every signature page."
             ]
+          },
+          "segment_boundary": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "document",
+                  "category"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Segment Boundary",
+            "description": "Where a new segment starts: document at each new document, category wherever the category changes. Unset means document. category requires version 1.3.0 or later."
           }
         },
         "type": "object",
@@ -51599,7 +51749,7 @@
             "maxItems": 500,
             "minItems": 1,
             "title": "Categories",
-            "description": "Categories to split documents into."
+            "description": "Categories to split documents into. Names must be unique; 'uncategorized' is reserved unless allow_uncategorized is 'forbid'."
           },
           "splitting_strategy": {
             "$ref": "#/components/schemas/SplitStrategy",

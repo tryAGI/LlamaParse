@@ -49,6 +49,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.SplitSegmentResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitSegmentResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized), TypeInfoPropertyName = "SplitStrategyAllowUncategorized2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategySegmentBoundary), TypeInfoPropertyName = "SplitStrategySegmentBoundary2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<string, int?>), TypeInfoPropertyName = "AnyOfStringInt322")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item>))]
@@ -62,6 +63,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationWarningCode?), TypeInfoPropertyName = "NullableSplitConfigurationWarningCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitJobResponseDocumentInputType?), TypeInfoPropertyName = "NullableSplitJobResponseDocumentInputType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized?), TypeInfoPropertyName = "NullableSplitStrategyAllowUncategorized2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategySegmentBoundary?), TypeInfoPropertyName = "NullableSplitStrategySegmentBoundary2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item?), TypeInfoPropertyName = "NullableWebhookConfigurationWebhookEventsVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ListSplitJobsApiV1SplitJobsGetStatus?), TypeInfoPropertyName = "NullableListSplitJobsApiV1SplitJobsGetStatus2")]
@@ -261,6 +263,10 @@ namespace LlamaParse
 
                     || typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized?)
 
+                    || typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary?)
+
                     || typeToConvert == typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item)
 
                     || typeToConvert == typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item?)
@@ -316,6 +322,16 @@ namespace LlamaParse
                 if (typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized?))
                 {
                     return new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitStrategySegmentBoundaryJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary?))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitStrategySegmentBoundaryNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LlamaParse.WebhookConfigurationWebhookEventsVariant1Item))

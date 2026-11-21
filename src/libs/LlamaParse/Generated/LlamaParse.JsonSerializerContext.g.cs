@@ -436,6 +436,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ValueItemsVariant1Item), TypeInfoPropertyName = "ValueItemsVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FormFieldValueItemsVariant1ItemDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FormFieldValueItemsVariant1ItemDiscriminatorType), TypeInfoPropertyName = "FormFieldValueItemsVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<long>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.FormTextGrounding))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>), TypeInfoPropertyName = "AnyOfFormListTextItemFormListItem2")]
@@ -465,7 +466,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.Form>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.GeminiEmbedding))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.GroundedChar))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<long>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.GroundedWord>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.GroundedWord))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.GroundedChar>))]
@@ -607,7 +607,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineFile))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseConcernItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseJobDeleteConflictDetail))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseJobDeleteConflictDetailReason), TypeInfoPropertyName = "ParseJobDeleteConflictDetailReason2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseJobDeleteConflictResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseJobDeleteResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseJobQueryResponse))]
@@ -763,6 +762,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.SplitSegmentResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitSegmentResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized), TypeInfoPropertyName = "SplitStrategyAllowUncategorized2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategySegmentBoundary), TypeInfoPropertyName = "SplitStrategySegmentBoundary2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitV1ParametersParseTier), TypeInfoPropertyName = "SplitV1ParametersParseTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTier), TypeInfoPropertyName = "SpreadsheetV1ParametersTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity), TypeInfoPropertyName = "SpreadsheetV1ParametersTableMergeSensitivity2")]
@@ -1019,7 +1019,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParsePlanLevel?), TypeInfoPropertyName = "NullableParsePlanLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PGVectorDistanceMethod?), TypeInfoPropertyName = "NullablePGVectorDistanceMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PGVectorVectorType?), TypeInfoPropertyName = "NullablePGVectorVectorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseJobDeleteConflictDetailReason?), TypeInfoPropertyName = "NullableParseJobDeleteConflictDetailReason2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseJobResponseStatus?), TypeInfoPropertyName = "NullableParseJobResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string>?), TypeInfoPropertyName = "NullableAnyOfParseRequestConfigurationTierString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.ParseRequestConfigurationTier?), TypeInfoPropertyName = "NullableParseRequestConfigurationTier2")]
@@ -1061,6 +1060,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitConfigurationWarningCode?), TypeInfoPropertyName = "NullableSplitConfigurationWarningCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitJobResponseDocumentInputType?), TypeInfoPropertyName = "NullableSplitJobResponseDocumentInputType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized?), TypeInfoPropertyName = "NullableSplitStrategyAllowUncategorized2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategySegmentBoundary?), TypeInfoPropertyName = "NullableSplitStrategySegmentBoundary2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitV1ParametersParseTier?), TypeInfoPropertyName = "NullableSplitV1ParametersParseTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTier?), TypeInfoPropertyName = "NullableSpreadsheetV1ParametersTier2")]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
@@ -1179,6 +1179,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ItemsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.JsonItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ValueItemsVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<long>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ItemsItem3>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems>?>>))]
@@ -1189,7 +1190,6 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.GroundedLine>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.Form>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<long>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.GroundedWord>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.GroundedChar>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LlamaParse.ValidationError>))]
@@ -1811,10 +1811,6 @@ namespace LlamaParse
 
                     || typeToConvert == typeof(global::LlamaParse.PGVectorVectorType?)
 
-                    || typeToConvert == typeof(global::LlamaParse.ParseJobDeleteConflictDetailReason)
-
-                    || typeToConvert == typeof(global::LlamaParse.ParseJobDeleteConflictDetailReason?)
-
                     || typeToConvert == typeof(global::LlamaParse.ParseJobResponseStatus)
 
                     || typeToConvert == typeof(global::LlamaParse.ParseJobResponseStatus?)
@@ -1966,6 +1962,10 @@ namespace LlamaParse
                     || typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized)
 
                     || typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary?)
 
                     || typeToConvert == typeof(global::LlamaParse.SplitV1ParametersParseTier)
 
@@ -2948,16 +2948,6 @@ namespace LlamaParse
                     return new global::LlamaParse.JsonConverters.PGVectorVectorTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::LlamaParse.ParseJobDeleteConflictDetailReason))
-                {
-                    return new global::LlamaParse.JsonConverters.ParseJobDeleteConflictDetailReasonJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::LlamaParse.ParseJobDeleteConflictDetailReason?))
-                {
-                    return new global::LlamaParse.JsonConverters.ParseJobDeleteConflictDetailReasonNullableJsonConverter();
-                }
-
                 if (typeToConvert == typeof(global::LlamaParse.ParseJobResponseStatus))
                 {
                     return new global::LlamaParse.JsonConverters.ParseJobResponseStatusJsonConverter();
@@ -3336,6 +3326,16 @@ namespace LlamaParse
                 if (typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized?))
                 {
                     return new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitStrategySegmentBoundaryJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary?))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitStrategySegmentBoundaryNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LlamaParse.SplitV1ParametersParseTier))

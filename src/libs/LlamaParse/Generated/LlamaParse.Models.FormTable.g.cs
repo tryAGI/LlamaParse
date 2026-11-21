@@ -59,6 +59,12 @@ namespace LlamaParse
         public string? Html { get; set; }
 
         /// <summary>
+        /// `[start, end)` UTF-8 byte offsets of the table caption in its page's `markdown` string, on some Agentic Plus jobs from version 2026-11-19. Absent on other jobs and when it has no place in the markdown
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("markdown_span")]
+        public global::System.Collections.Generic.IList<long>? MarkdownSpan { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -92,6 +98,9 @@ namespace LlamaParse
         /// <param name="html">
         /// HTML representation of the table, as a regular table item has.
         /// </param>
+        /// <param name="markdownSpan">
+        /// `[start, end)` UTF-8 byte offsets of the table caption in its page's `markdown` string, on some Agentic Plus jobs from version 2026-11-19. Absent on other jobs and when it has no place in the markdown
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -103,7 +112,8 @@ namespace LlamaParse
             string? label,
             global::System.Collections.Generic.IList<string>? columns,
             global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox,
-            string? html)
+            string? html,
+            global::System.Collections.Generic.IList<long>? markdownSpan)
         {
             this.Grounding = grounding;
             this.Type = type;
@@ -113,6 +123,7 @@ namespace LlamaParse
             this.Rows = rows ?? throw new global::System.ArgumentNullException(nameof(rows));
             this.Bbox = bbox;
             this.Html = html;
+            this.MarkdownSpan = markdownSpan;
         }
 
         /// <summary>
