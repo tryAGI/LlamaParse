@@ -62,6 +62,13 @@ namespace LlamaParse
         public required global::System.Collections.Generic.IList<global::LlamaParse.SplitCategory> Categories { get; set; }
 
         /// <summary>
+        /// Split version used for this job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("version")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Version { get; set; }
+
+        /// <summary>
         /// Current status of the job. Valid values are: pending, processing, completed, failed, cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -104,6 +111,9 @@ namespace LlamaParse
         /// <param name="categories">
         /// Categories used for splitting.
         /// </param>
+        /// <param name="version">
+        /// Split version used for this job.
+        /// </param>
         /// <param name="status">
         /// Current status of the job. Valid values are: pending, processing, completed, failed, cancelled.
         /// </param>
@@ -131,6 +141,7 @@ namespace LlamaParse
             string userId,
             global::LlamaParse.SplitDocumentInput documentInput,
             global::System.Collections.Generic.IList<global::LlamaParse.SplitCategory> categories,
+            string version,
             string status,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
@@ -146,6 +157,7 @@ namespace LlamaParse
             this.ConfigurationId = configurationId;
             this.DocumentInput = documentInput ?? throw new global::System.ArgumentNullException(nameof(documentInput));
             this.Categories = categories ?? throw new global::System.ArgumentNullException(nameof(categories));
+            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Result = result;
             this.ErrorMessage = errorMessage;

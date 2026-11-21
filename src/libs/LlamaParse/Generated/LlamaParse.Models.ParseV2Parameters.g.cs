@@ -31,7 +31,7 @@ namespace LlamaParse
         /// - `fast`: `2026-11-12`<br/>
         /// - `cost_effective`: `2026-11-09`<br/>
         /// - `agentic`: `2026-11-09`<br/>
-        /// - `agentic_plus`: `2026-11-17`<br/>
+        /// - `agentic_plus`: `2026-11-19`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
@@ -130,7 +130,7 @@ namespace LlamaParse
         /// - `fast`: `2026-11-12`<br/>
         /// - `cost_effective`: `2026-11-09`<br/>
         /// - `agentic`: `2026-11-09`<br/>
-        /// - `agentic_plus`: `2026-11-17`<br/>
+        /// - `agentic_plus`: `2026-11-19`<br/>
         /// Full list: `GET /api/v2/parse/versions`.
         /// </param>
         /// <param name="webhookConfigurationIds">

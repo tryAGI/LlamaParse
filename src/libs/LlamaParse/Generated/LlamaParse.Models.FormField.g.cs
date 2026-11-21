@@ -67,6 +67,18 @@ namespace LlamaParse
         public global::System.Collections.Generic.IList<global::LlamaParse.BBox>? Bbox { get; set; }
 
         /// <summary>
+        /// `[start, end)` UTF-8 byte offsets of the field's value in its page's `markdown` string, on some Agentic Plus jobs from version 2026-11-19. A checkbox covers its `[x]` or `[ ]`, and a blank table cell covers the whole cell. Absent on other jobs and when the value has no place in the markdown
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("markdown_span")]
+        public global::System.Collections.Generic.IList<long>? MarkdownSpan { get; set; }
+
+        /// <summary>
+        /// `[start, end)` UTF-8 byte offsets of the field's printed caption (a table cell's column header) in its page's `markdown` string, on some Agentic Plus jobs from version 2026-11-19. Absent on other jobs and when it has no place in the markdown
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("label_markdown_span")]
+        public global::System.Collections.Generic.IList<long>? LabelMarkdownSpan { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -103,6 +115,12 @@ namespace LlamaParse
         /// <param name="bbox">
         /// Bounding boxes of the field's fillable area on the page.
         /// </param>
+        /// <param name="markdownSpan">
+        /// `[start, end)` UTF-8 byte offsets of the field's value in its page's `markdown` string, on some Agentic Plus jobs from version 2026-11-19. A checkbox covers its `[x]` or `[ ]`, and a blank table cell covers the whole cell. Absent on other jobs and when the value has no place in the markdown
+        /// </param>
+        /// <param name="labelMarkdownSpan">
+        /// `[start, end)` UTF-8 byte offsets of the field's printed caption (a table cell's column header) in its page's `markdown` string, on some Agentic Plus jobs from version 2026-11-19. Absent on other jobs and when it has no place in the markdown
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -115,7 +133,9 @@ namespace LlamaParse
             global::LlamaParse.AnyOf<string, bool?>? value,
             bool? isEmpty,
             global::System.Collections.Generic.IList<global::LlamaParse.ValueItemsVariant1Item>? valueItems,
-            global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox)
+            global::System.Collections.Generic.IList<global::LlamaParse.BBox>? bbox,
+            global::System.Collections.Generic.IList<long>? markdownSpan,
+            global::System.Collections.Generic.IList<long>? labelMarkdownSpan)
         {
             this.Grounding = grounding;
             this.Type = type;
@@ -126,6 +146,8 @@ namespace LlamaParse
             this.IsEmpty = isEmpty;
             this.ValueItems = valueItems;
             this.Bbox = bbox;
+            this.MarkdownSpan = markdownSpan;
+            this.LabelMarkdownSpan = labelMarkdownSpan;
         }
 
         /// <summary>

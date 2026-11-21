@@ -16,6 +16,12 @@ namespace LlamaParse
         public required global::System.Collections.Generic.IList<global::LlamaParse.GroundedLine> Lines { get; set; }
 
         /// <summary>
+        /// Single box around all lines; omitted when no reliable box exists
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bbox")]
+        public global::LlamaParse.BBox? Bbox { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -27,13 +33,18 @@ namespace LlamaParse
         /// <param name="lines">
         /// Supported lines. Word requests include supported words; gaps are valid. Boxes use final page coordinates and optional local rotation r.
         /// </param>
+        /// <param name="bbox">
+        /// Single box around all lines; omitted when no reliable box exists
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FormTextGrounding(
-            global::System.Collections.Generic.IList<global::LlamaParse.GroundedLine> lines)
+            global::System.Collections.Generic.IList<global::LlamaParse.GroundedLine> lines,
+            global::LlamaParse.BBox? bbox)
         {
             this.Lines = lines ?? throw new global::System.ArgumentNullException(nameof(lines));
+            this.Bbox = bbox;
         }
 
         /// <summary>

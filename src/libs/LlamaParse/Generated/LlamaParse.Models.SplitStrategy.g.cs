@@ -30,6 +30,12 @@ namespace LlamaParse
         public string? CustomInstructions { get; set; }
 
         /// <summary>
+        /// Where a new segment starts: document at each new document, category wherever the category changes. Unset means document. category requires version 1.3.0 or later.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("segment_boundary")]
+        public global::LlamaParse.SplitStrategySegmentBoundary? SegmentBoundary { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -49,17 +55,22 @@ namespace LlamaParse
         /// <param name="customInstructions">
         /// Free-form guidance for where segment boundaries are placed.
         /// </param>
+        /// <param name="segmentBoundary">
+        /// Where a new segment starts: document at each new document, category wherever the category changes. Unset means document. category requires version 1.3.0 or later.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SplitStrategy(
             global::LlamaParse.SplitStrategyAllowUncategorized? allowUncategorized,
             int? minPagesPerSplit,
-            string? customInstructions)
+            string? customInstructions,
+            global::LlamaParse.SplitStrategySegmentBoundary? segmentBoundary)
         {
             this.AllowUncategorized = allowUncategorized;
             this.MinPagesPerSplit = minPagesPerSplit;
             this.CustomInstructions = customInstructions;
+            this.SegmentBoundary = segmentBoundary;
         }
 
         /// <summary>

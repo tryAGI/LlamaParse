@@ -246,6 +246,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LlamaParse.SplitSegmentResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitSegmentResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized), TypeInfoPropertyName = "SplitStrategyAllowUncategorized2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategySegmentBoundary), TypeInfoPropertyName = "SplitStrategySegmentBoundary2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitV1ParametersParseTier), TypeInfoPropertyName = "SplitV1ParametersParseTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTier), TypeInfoPropertyName = "SpreadsheetV1ParametersTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity), TypeInfoPropertyName = "SpreadsheetV1ParametersTableMergeSensitivity2")]
@@ -357,6 +358,7 @@ namespace LlamaParse
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.PipelineFileResponseStatus?), TypeInfoPropertyName = "NullablePipelineFileResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.RetrievalMode?), TypeInfoPropertyName = "NullableRetrievalMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategyAllowUncategorized?), TypeInfoPropertyName = "NullableSplitStrategyAllowUncategorized2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitStrategySegmentBoundary?), TypeInfoPropertyName = "NullableSplitStrategySegmentBoundary2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SplitV1ParametersParseTier?), TypeInfoPropertyName = "NullableSplitV1ParametersParseTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTier?), TypeInfoPropertyName = "NullableSpreadsheetV1ParametersTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LlamaParse.SpreadsheetV1ParametersTableMergeSensitivity?), TypeInfoPropertyName = "NullableSpreadsheetV1ParametersTableMergeSensitivity2")]
@@ -785,6 +787,10 @@ namespace LlamaParse
                     || typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized)
 
                     || typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized?)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary)
+
+                    || typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary?)
 
                     || typeToConvert == typeof(global::LlamaParse.SplitV1ParametersParseTier)
 
@@ -1323,6 +1329,16 @@ namespace LlamaParse
                 if (typeToConvert == typeof(global::LlamaParse.SplitStrategyAllowUncategorized?))
                 {
                     return new global::LlamaParse.JsonConverters.SplitStrategyAllowUncategorizedNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitStrategySegmentBoundaryJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LlamaParse.SplitStrategySegmentBoundary?))
+                {
+                    return new global::LlamaParse.JsonConverters.SplitStrategySegmentBoundaryNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LlamaParse.SplitV1ParametersParseTier))

@@ -9,12 +9,11 @@ namespace LlamaParse
     public sealed partial class ParseJobDeleteConflictDetail
     {
         /// <summary>
-        /// `job_running`: cancel the job, then delete it. `held_by_evaluate`: a document in Evaluate reads its ground truth from the job; remove the document from Evaluate, or delete the project.
+        /// `job_running`: cancel the job, then delete it.
         /// </summary>
+        /// <default>"job_running"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LlamaParse.JsonConverters.ParseJobDeleteConflictDetailReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LlamaParse.ParseJobDeleteConflictDetailReason Reason { get; set; }
+        public string Reason { get; set; } = "job_running";
 
         /// <summary>
         /// The same, in words, naming the job's status where it helps.
@@ -32,18 +31,18 @@ namespace LlamaParse
         /// <summary>
         /// Initializes a new instance of the <see cref="ParseJobDeleteConflictDetail" /> class.
         /// </summary>
-        /// <param name="reason">
-        /// `job_running`: cancel the job, then delete it. `held_by_evaluate`: a document in Evaluate reads its ground truth from the job; remove the document from Evaluate, or delete the project.
-        /// </param>
         /// <param name="message">
         /// The same, in words, naming the job's status where it helps.
+        /// </param>
+        /// <param name="reason">
+        /// `job_running`: cancel the job, then delete it.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ParseJobDeleteConflictDetail(
-            global::LlamaParse.ParseJobDeleteConflictDetailReason reason,
-            string message)
+            string message,
+            string reason = "job_running")
         {
             this.Reason = reason;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -54,6 +53,18 @@ namespace LlamaParse
         /// </summary>
         public ParseJobDeleteConflictDetail()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ParseJobDeleteConflictDetail"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ParseJobDeleteConflictDetail FromMessage(string message)
+        {
+            return new ParseJobDeleteConflictDetail
+            {
+                Message = message,
+            };
         }
 
     }

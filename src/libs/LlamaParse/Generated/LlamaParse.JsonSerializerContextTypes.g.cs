@@ -1538,123 +1538,123 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormTextGrounding? Type375 { get; set; }
+        public global::System.Collections.Generic.IList<long>? Type375 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>>? Type376 { get; set; }
+        public global::LlamaParse.FormTextGrounding? Type376 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.AnyOf<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>? Type377 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>>? Type377 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormListTextItem? Type378 { get; set; }
+        public global::LlamaParse.AnyOf<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>? Type378 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormSectionGrounding? Type379 { get; set; }
+        public global::LlamaParse.FormListTextItem? Type379 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem3>? Type380 { get; set; }
+        public global::LlamaParse.FormSectionGrounding? Type380 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ItemsItem3? Type381 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem3>? Type381 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormSectionItemDiscriminator? Type382 { get; set; }
+        public global::LlamaParse.ItemsItem3? Type382 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormSectionItemDiscriminatorType? Type383 { get; set; }
+        public global::LlamaParse.FormSectionItemDiscriminator? Type383 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormTableGrounding? Type384 { get; set; }
+        public global::LlamaParse.FormSectionItemDiscriminatorType? Type384 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems>?>>? Type385 { get; set; }
+        public global::LlamaParse.FormTableGrounding? Type385 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems>?>? Type386 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems>?>>? Type386 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems>? Type387 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems>?>? Type387 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormTableCellItems? Type388 { get; set; }
+        public global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems>? Type388 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem5>? Type389 { get; set; }
+        public global::LlamaParse.FormTableCellItems? Type389 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ItemsItem5? Type390 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ItemsItem5>? Type390 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormTableCellItemsItemDiscriminator? Type391 { get; set; }
+        public global::LlamaParse.ItemsItem5? Type391 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormTableCellItemsItemDiscriminatorType? Type392 { get; set; }
+        public global::LlamaParse.FormTableCellItemsItemDiscriminator? Type392 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.FormTextGrounding>? Type393 { get; set; }
+        public global::LlamaParse.FormTableCellItemsItemDiscriminatorType? Type393 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::LlamaParse.FormTextGrounding>>? Type394 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.FormTextGrounding>? Type394 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.GroundedLine>? Type395 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::LlamaParse.FormTextGrounding>>? Type395 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.GroundedLine? Type396 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.GroundedLine>? Type396 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormsResult? Type397 { get; set; }
+        public global::LlamaParse.GroundedLine? Type397 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>>? Type398 { get; set; }
+        public global::LlamaParse.FormsResult? Type398 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.AnyOf<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>? Type399 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.AnyOf<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>>? Type399 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.FormsResultPage? Type400 { get; set; }
+        public global::LlamaParse.AnyOf<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>? Type400 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.Form>? Type401 { get; set; }
+        public global::LlamaParse.FormsResultPage? Type401 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.GeminiEmbedding? Type402 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.Form>? Type402 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.GroundedChar? Type403 { get; set; }
+        public global::LlamaParse.GeminiEmbedding? Type403 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<long>? Type404 { get; set; }
+        public global::LlamaParse.GroundedChar? Type404 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2166,627 +2166,627 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseJobDeleteConflictDetailReason? Type532 { get; set; }
+        public global::LlamaParse.ParseJobDeleteConflictResponse? Type532 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseJobDeleteConflictResponse? Type533 { get; set; }
+        public global::LlamaParse.ParseJobDeleteResponse? Type533 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseJobDeleteResponse? Type534 { get; set; }
+        public global::LlamaParse.ParseJobQueryResponse? Type534 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseJobQueryResponse? Type535 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ParseJobResponse>? Type535 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ParseJobResponse>? Type536 { get; set; }
+        public global::LlamaParse.ParseJobResponse? Type536 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseJobResponse? Type537 { get; set; }
+        public global::LlamaParse.ParseJobResponseStatus? Type537 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseJobResponseStatus? Type538 { get; set; }
+        public global::LlamaParse.ParseLatestVersions? Type538 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseLatestVersions? Type539 { get; set; }
+        public global::LlamaParse.ParseRequestConfiguration? Type539 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseRequestConfiguration? Type540 { get; set; }
+        public global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string>? Type540 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationTier?, string>? Type541 { get; set; }
+        public global::LlamaParse.ParseRequestConfigurationTier? Type541 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseRequestConfigurationTier? Type542 { get; set; }
+        public global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationVersion?, string>? Type542 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.AnyOf<global::LlamaParse.ParseRequestConfigurationVersion?, string>? Type543 { get; set; }
+        public global::LlamaParse.ParseRequestConfigurationVersion? Type543 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseRequestConfigurationVersion? Type544 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? Type544 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.LlamaParseWebhookConfiguration>? Type545 { get; set; }
+        public global::LlamaParse.ParseResultResponse? Type545 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseResultResponse? Type546 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::LlamaParse.ResultTypeMetadata>? Type546 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::LlamaParse.ResultTypeMetadata>? Type547 { get; set; }
+        public global::LlamaParse.ResultTypeMetadata? Type547 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ResultTypeMetadata? Type548 { get; set; }
+        public global::LlamaParse.TextResult? Type548 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.TextResult? Type549 { get; set; }
+        public global::LlamaParse.StructuredResult? Type549 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.StructuredResult? Type550 { get; set; }
+        public global::LlamaParse.ParseV2ParametersTier? Type550 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseV2ParametersTier? Type551 { get; set; }
+        public global::LlamaParse.AnyOf<global::LlamaParse.ParseV2ParametersVersion?, string>? Type551 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.AnyOf<global::LlamaParse.ParseV2ParametersVersion?, string>? Type552 { get; set; }
+        public global::LlamaParse.ParseV2ParametersVersion? Type552 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseV2ParametersVersion? Type553 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.StoredParseWebhookConfiguration>? Type553 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.StoredParseWebhookConfiguration>? Type554 { get; set; }
+        public global::LlamaParse.StoredParseWebhookConfiguration? Type554 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.StoredParseWebhookConfiguration? Type555 { get; set; }
+        public global::LlamaParse.ParseVersionsResponse? Type555 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseVersionsResponse? Type556 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseFastItem>? Type556 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseFastItem>? Type557 { get; set; }
+        public global::LlamaParse.ParseVersionsResponseFastItem? Type557 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseVersionsResponseFastItem? Type558 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseCostEffectiveItem>? Type558 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseCostEffectiveItem>? Type559 { get; set; }
+        public global::LlamaParse.ParseVersionsResponseCostEffectiveItem? Type559 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseVersionsResponseCostEffectiveItem? Type560 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseAgenticItem>? Type560 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseAgenticItem>? Type561 { get; set; }
+        public global::LlamaParse.ParseVersionsResponseAgenticItem? Type561 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseVersionsResponseAgenticItem? Type562 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseAgenticPlu>? Type562 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ParseVersionsResponseAgenticPlu>? Type563 { get; set; }
+        public global::LlamaParse.ParseVersionsResponseAgenticPlu? Type563 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParseVersionsResponseAgenticPlu? Type564 { get; set; }
+        public global::LlamaParse.ParsingJob? Type564 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParsingJob? Type565 { get; set; }
+        public global::LlamaParse.ParsingJobJsonResult? Type565 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParsingJobJsonResult? Type566 { get; set; }
+        public global::LlamaParse.ParsingJobMarkdownResult? Type566 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParsingJobMarkdownResult? Type567 { get; set; }
+        public global::LlamaParse.ParsingJobStructuredResult? Type567 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParsingJobStructuredResult? Type568 { get; set; }
+        public global::LlamaParse.ParsingJobTextResult? Type568 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ParsingJobTextResult? Type569 { get; set; }
+        public global::LlamaParse.PartitionNames? Type569 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PartitionNames? Type570 { get; set; }
+        public global::LlamaParse.Pipeline? Type570 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.Pipeline? Type571 { get; set; }
+        public global::LlamaParse.PipelineType? Type571 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineType? Type572 { get; set; }
+        public global::LlamaParse.SparseModelConfig? Type572 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SparseModelConfig? Type573 { get; set; }
+        public global::LlamaParse.PipelineConfigurationHashes? Type573 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineConfigurationHashes? Type574 { get; set; }
+        public global::LlamaParse.AnyOf<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>? Type574 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.AnyOf<global::LlamaParse.AutoTransformConfig, global::LlamaParse.AdvancedModeTransformConfig>? Type575 { get; set; }
+        public global::LlamaParse.PipelineStatus? Type575 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineStatus? Type576 { get; set; }
+        public global::LlamaParse.PipelineMetadataConfig? Type576 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineMetadataConfig? Type577 { get; set; }
+        public global::LlamaParse.EmbeddingConfig3? Type577 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.EmbeddingConfig3? Type578 { get; set; }
+        public global::LlamaParse.PipelineEmbeddingConfigDiscriminator? Type578 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineEmbeddingConfigDiscriminator? Type579 { get; set; }
+        public global::LlamaParse.PipelineEmbeddingConfigDiscriminatorType? Type579 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineEmbeddingConfigDiscriminatorType? Type580 { get; set; }
+        public global::LlamaParse.PipelineCreate? Type580 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineCreate? Type581 { get; set; }
+        public global::LlamaParse.EmbeddingConfigVariant1? Type581 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.EmbeddingConfigVariant1? Type582 { get; set; }
+        public global::LlamaParse.PipelineCreateEmbeddingConfigVariant1Discriminator? Type582 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineCreateEmbeddingConfigVariant1Discriminator? Type583 { get; set; }
+        public global::LlamaParse.PipelineCreateEmbeddingConfigVariant1DiscriminatorType? Type583 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineCreateEmbeddingConfigVariant1DiscriminatorType? Type584 { get; set; }
+        public global::LlamaParse.PipelineDataSource? Type584 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineDataSource? Type585 { get; set; }
+        public global::LlamaParse.PipelineDataSourceStatus? Type585 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineDataSourceStatus? Type586 { get; set; }
+        public global::LlamaParse.PipelineDataSourceCreate? Type586 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineDataSourceCreate? Type587 { get; set; }
+        public global::LlamaParse.PipelineDataSourceUpdate? Type587 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineDataSourceUpdate? Type588 { get; set; }
+        public global::LlamaParse.PipelineFileStatus? Type588 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineFileStatus? Type589 { get; set; }
+        public global::LlamaParse.PipelineFileCreate? Type589 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineFileCreate? Type590 { get; set; }
+        public global::LlamaParse.PipelineFileListResponse? Type590 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineFileListResponse? Type591 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.PipelineFileResponse>? Type591 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.PipelineFileResponse>? Type592 { get; set; }
+        public global::LlamaParse.PipelineFileResponse? Type592 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineFileResponse? Type593 { get; set; }
+        public global::LlamaParse.PipelineFileResponseStatus? Type593 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineFileResponseStatus? Type594 { get; set; }
+        public global::LlamaParse.PipelineFileUpdate? Type594 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineFileUpdate? Type595 { get; set; }
+        public global::LlamaParse.PipelineListItem? Type595 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineListItem? Type596 { get; set; }
+        public global::LlamaParse.PipelineListItemStatus? Type596 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineListItemStatus? Type597 { get; set; }
+        public global::LlamaParse.EmbeddingConfigVariant13? Type597 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.EmbeddingConfigVariant13? Type598 { get; set; }
+        public global::LlamaParse.PipelineListItemEmbeddingConfigVariant1Discriminator? Type598 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineListItemEmbeddingConfigVariant1Discriminator? Type599 { get; set; }
+        public global::LlamaParse.PipelineListItemEmbeddingConfigVariant1DiscriminatorType? Type599 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineListItemEmbeddingConfigVariant1DiscriminatorType? Type600 { get; set; }
+        public global::LlamaParse.PipelineQueryResponse? Type600 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineQueryResponse? Type601 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.PipelineResponse>? Type601 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.PipelineResponse>? Type602 { get; set; }
+        public global::LlamaParse.PipelineResponse? Type602 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineResponse? Type603 { get; set; }
+        public global::LlamaParse.PipelineResponsePipelineType? Type603 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineResponsePipelineType? Type604 { get; set; }
+        public global::LlamaParse.PipelineResponseStatus? Type604 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineResponseStatus? Type605 { get; set; }
+        public global::LlamaParse.PipelineUpdate? Type605 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineUpdate? Type606 { get; set; }
+        public global::LlamaParse.EmbeddingConfigVariant12? Type606 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.EmbeddingConfigVariant12? Type607 { get; set; }
+        public global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1Discriminator? Type607 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1Discriminator? Type608 { get; set; }
+        public global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType? Type608 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType? Type609 { get; set; }
+        public global::LlamaParse.PlaygroundSession? Type609 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.PlaygroundSession? Type610 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ChatMessage>? Type610 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ChatMessage>? Type611 { get; set; }
+        public global::LlamaParse.RetrievalMode? Type611 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RetrievalMode? Type612 { get; set; }
+        public global::LlamaParse.ProcessingResultMetadata? Type612 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ProcessingResultMetadata? Type613 { get; set; }
+        public global::LlamaParse.Project? Type613 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.Project? Type614 { get; set; }
+        public global::LlamaParse.ProjectQueryResponse? Type614 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ProjectQueryResponse? Type615 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ProjectResponse>? Type615 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ProjectResponse>? Type616 { get; set; }
+        public global::LlamaParse.ProjectResponse? Type616 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ProjectResponse? Type617 { get; set; }
+        public global::LlamaParse.ReRankerType? Type617 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ReRankerType? Type618 { get; set; }
+        public global::LlamaParse.RelatedNodeInfo? Type618 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RelatedNodeInfo? Type619 { get; set; }
+        public global::LlamaParse.AnyOf<global::LlamaParse.ObjectType?, string>? Type619 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.AnyOf<global::LlamaParse.ObjectType?, string>? Type620 { get; set; }
+        public global::LlamaParse.RerankConfig2? Type620 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RerankConfig2? Type621 { get; set; }
+        public global::LlamaParse.RetrievalParams? Type621 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RetrievalParams? Type622 { get; set; }
+        public global::LlamaParse.RetrievalResult? Type622 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RetrievalResult? Type623 { get; set; }
+        public global::LlamaParse.StaticFields? Type623 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.StaticFields? Type624 { get; set; }
+        public global::LlamaParse.RetrieveParams? Type624 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RetrieveParams? Type625 { get; set; }
+        public global::LlamaParse.AnyOf<global::LlamaParse.ValueFilter, global::System.Collections.Generic.IList<global::LlamaParse.NumericRangeFilter>>? Type625 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.AnyOf<global::LlamaParse.ValueFilter, global::System.Collections.Generic.IList<global::LlamaParse.NumericRangeFilter>>? Type626 { get; set; }
+        public global::LlamaParse.ValueFilter? Type626 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ValueFilter? Type627 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.NumericRangeFilter>? Type627 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.NumericRangeFilter>? Type628 { get; set; }
+        public global::LlamaParse.RetrieveResult? Type628 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RetrieveResult? Type629 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.RetrievalResult>? Type629 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.RetrievalResult>? Type630 { get; set; }
+        public global::LlamaParse.RetrieveResults? Type630 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RetrieveResults? Type631 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.TextNodeWithScore>? Type631 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.TextNodeWithScore>? Type632 { get; set; }
+        public global::LlamaParse.TextNodeWithScore? Type632 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.TextNodeWithScore? Type633 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Type633 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, double>? Type634 { get; set; }
+        public global::LlamaParse.Retriever? Type634 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.Retriever? Type635 { get; set; }
+        public global::LlamaParse.RetrieverCreate? Type635 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RetrieverCreate? Type636 { get; set; }
+        public global::LlamaParse.RetrieverQueryResponse? Type636 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RetrieverQueryResponse? Type637 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.Retriever>? Type637 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.Retriever>? Type638 { get; set; }
+        public global::LlamaParse.RetrieverUpdate? Type638 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RetrieverUpdate? Type639 { get; set; }
+        public global::LlamaParse.Revision? Type639 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.Revision? Type640 { get; set; }
+        public global::LlamaParse.RevisionType? Type640 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RevisionType? Type641 { get; set; }
+        public global::LlamaParse.RevisionBBox? Type641 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RevisionBBox? Type642 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.RevisionTargetSpan>? Type642 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.RevisionTargetSpan>? Type643 { get; set; }
+        public global::LlamaParse.RevisionTargetSpan? Type643 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.RevisionTargetSpan? Type644 { get; set; }
+        public global::LlamaParse.SearchRequest? Type644 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SearchRequest? Type645 { get; set; }
+        public global::LlamaParse.SessionCreate? Type645 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SessionCreate? Type646 { get; set; }
+        public global::LlamaParse.SessionCreateSharedAccess? Type646 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SessionCreateSharedAccess? Type647 { get; set; }
+        public global::LlamaParse.SessionDetail? Type647 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SessionDetail? Type648 { get; set; }
+        public global::LlamaParse.SessionDetailSharedAccess? Type648 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SessionDetailSharedAccess? Type649 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.EventsItem>? Type649 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.EventsItem>? Type650 { get; set; }
+        public global::LlamaParse.EventsItem? Type650 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.EventsItem? Type651 { get; set; }
+        public global::LlamaParse.ThinkingDeltaEvent? Type651 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ThinkingDeltaEvent? Type652 { get; set; }
+        public global::LlamaParse.TextDeltaEvent? Type652 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.TextDeltaEvent? Type653 { get; set; }
+        public global::LlamaParse.ThinkingEvent? Type653 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ThinkingEvent? Type654 { get; set; }
+        public global::LlamaParse.TextEvent? Type654 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.TextEvent? Type655 { get; set; }
+        public global::LlamaParse.ToolCallEvent? Type655 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ToolCallEvent? Type656 { get; set; }
+        public global::LlamaParse.ToolResultEvent? Type656 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.ToolResultEvent? Type657 { get; set; }
+        public global::LlamaParse.StopEvent? Type657 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.StopEvent? Type658 { get; set; }
+        public global::LlamaParse.UserInputEvent? Type658 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.UserInputEvent? Type659 { get; set; }
+        public global::LlamaParse.SessionDetailEventDiscriminator? Type659 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SessionDetailEventDiscriminator? Type660 { get; set; }
+        public global::LlamaParse.SessionDetailEventDiscriminatorType? Type660 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SessionDetailEventDiscriminatorType? Type661 { get; set; }
+        public global::LlamaParse.SessionList? Type661 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SessionList? Type662 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.ChatSessionSummary>? Type662 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.ChatSessionSummary>? Type663 { get; set; }
+        public global::LlamaParse.SparseModelType? Type663 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SparseModelType? Type664 { get; set; }
+        public global::LlamaParse.SplitCategory? Type664 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitCategory? Type665 { get; set; }
+        public global::LlamaParse.SplitConfiguration? Type665 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitConfiguration? Type666 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.SplitCategory>? Type666 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.SplitCategory>? Type667 { get; set; }
+        public global::LlamaParse.SplitStrategy? Type667 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitStrategy? Type668 { get; set; }
+        public global::LlamaParse.SplitConfigurationParseTier? Type668 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitConfigurationParseTier? Type669 { get; set; }
+        public global::LlamaParse.SplitConfigurationBeta? Type669 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitConfigurationBeta? Type670 { get; set; }
+        public global::LlamaParse.SplitConfigurationWarning? Type670 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitConfigurationWarning? Type671 { get; set; }
+        public global::LlamaParse.SplitConfigurationWarningCode? Type671 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitConfigurationWarningCode? Type672 { get; set; }
+        public global::LlamaParse.SplitCreateRequest? Type672 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitCreateRequest? Type673 { get; set; }
+        public global::LlamaParse.SplitCreateRequestBeta? Type673 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitCreateRequestBeta? Type674 { get; set; }
+        public global::LlamaParse.SplitDocumentInput? Type674 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitDocumentInput? Type675 { get; set; }
+        public global::LlamaParse.SplitJobQueryResponse? Type675 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitJobQueryResponse? Type676 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.SplitJobResponse>? Type676 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.SplitJobResponse>? Type677 { get; set; }
+        public global::LlamaParse.SplitJobResponse? Type677 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitJobResponse? Type678 { get; set; }
+        public global::LlamaParse.SplitJobQueryResponseBeta? Type678 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitJobQueryResponseBeta? Type679 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.SplitJobResponseBeta>? Type679 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.SplitJobResponseBeta>? Type680 { get; set; }
+        public global::LlamaParse.SplitJobResponseBeta? Type680 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitJobResponseBeta? Type681 { get; set; }
+        public global::LlamaParse.SplitJobResponseDocumentInputType? Type681 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitJobResponseDocumentInputType? Type682 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.SplitConfigurationWarning>? Type682 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.SplitConfigurationWarning>? Type683 { get; set; }
+        public global::LlamaParse.SplitResultResponse? Type683 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitResultResponse? Type684 { get; set; }
+        public global::System.Collections.Generic.IList<global::LlamaParse.SplitSegmentResponse>? Type684 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LlamaParse.SplitSegmentResponse>? Type685 { get; set; }
+        public global::LlamaParse.SplitSegmentResponse? Type685 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitSegmentResponse? Type686 { get; set; }
+        public global::LlamaParse.SplitStrategyAllowUncategorized? Type686 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LlamaParse.SplitStrategyAllowUncategorized? Type687 { get; set; }
+        public global::LlamaParse.SplitStrategySegmentBoundary? Type687 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3475,47 +3475,47 @@ namespace LlamaParse
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>>? ListType42 { get; set; }
+        public global::System.Collections.Generic.List<long>? ListType42 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.ItemsItem3>? ListType43 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.FormListTextItem, global::LlamaParse.FormListItem>>? ListType43 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems>?>>? ListType44 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.ItemsItem3>? ListType44 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems>?>? ListType45 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems>?>>? ListType45 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.ItemsItem5>? ListType46 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.AnyOf<string, global::LlamaParse.FormTableCellItems>?>? ListType46 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.FormTextGrounding>? ListType47 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.ItemsItem5>? ListType47 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::LlamaParse.FormTextGrounding>>? ListType48 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.FormTextGrounding>? ListType48 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.GroundedLine>? ListType49 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::LlamaParse.FormTextGrounding>>? ListType49 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>>? ListType50 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.GroundedLine>? ListType50 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LlamaParse.Form>? ListType51 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.AnyOf<global::LlamaParse.FormsResultPage, global::LlamaParse.FailedFormsPage>>? ListType51 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<long>? ListType52 { get; set; }
+        public global::System.Collections.Generic.List<global::LlamaParse.Form>? ListType52 { get; set; }
         /// <summary>
         ///
         /// </summary>
